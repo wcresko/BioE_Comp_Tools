@@ -1,11 +1,14 @@
 ---
 title: "BioEngineering Statistics 2025"
+image: 2014_Lab_Personnel.jpg
+about:
+  template: jolla
+  image-shape: rounded
+  image-width: 50em
+links: 
+  - text: Email
+    icon: envelope
+    href: mailto:wcresko@uoregon.edu
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+This is a Quarto website. To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

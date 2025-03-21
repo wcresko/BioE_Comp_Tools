@@ -4,13 +4,41 @@
     "href": "index.html",
     "title": "BioEngineering Statistics 2025",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "This is a Quarto website. To learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\nAdding some text just to try."
+  },
+  {
+    "objectID": "Syllabus.html",
+    "href": "Syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "xxx xxx xxx"
+  },
+  {
+    "objectID": "Lecture_1.html",
+    "href": "Lecture_1.html",
+    "title": "lecture_1",
+    "section": "",
+    "text": "x\nxx\nblue"
+  },
+  {
+    "objectID": "Lecture_1.html#slide-1",
+    "href": "Lecture_1.html#slide-1",
+    "title": "lecture_1",
+    "section": "slide 1",
+    "text": "slide 1\n\nx\nxx\nblue"
+  },
+  {
+    "objectID": "Lecture_1.html#slide-2",
+    "href": "Lecture_1.html#slide-2",
+    "title": "lecture_1",
+    "section": "slide 2",
+    "text": "slide 2\n\nyy\ny\ngray"
   }
 ]
