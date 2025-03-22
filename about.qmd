@@ -2,10 +2,14 @@
 title: "About"
 ---
 
-About this site
+Welcome to the website for BioE610 - Statistics for Bioengineers in the Knight Campus for Accelerating Scientific Impact at the University of Oregon.
 
-```{r}
-1 + 1
-```
+| Col2        | Col3                          |
+|-------------|-------------------------------|
+| Instructor  | Bill Cresko                   |
+| Class times | Tuesday/Thursday 4:00 to 5:50 |
+| Class room  | KC158                         |
 
-Adding some text just to try.
+
+---
+

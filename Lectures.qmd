@@ -1,0 +1,5 @@
+---
+title: "Lectures"
+---
+
+[Lecture_1](Lecture_Folder/Lecture_1.qmd)

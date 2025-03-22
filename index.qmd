@@ -1,6 +1,6 @@
 ---
 title: "BioEngineering Statistics 2025"
-image: 2014_Lab_Personnel.jpg
+image: Cover_image.tiff
 about:
   template: jolla
   image-shape: rounded

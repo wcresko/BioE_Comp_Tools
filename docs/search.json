@@ -11,7 +11,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\nAdding some text just to try."
+    "text": "Welcome to the website for BioE610 - Statistics for Bioengineers in the Knight Campus for Accelerating Scientific Impact at the University of Oregon.\n\n\n\nCol2\nCol3\n\n\n\n\nInstructor\nBill Cresko\n\n\nClass times\nTuesday/Thursday 4:00 to 5:50\n\n\nClass room\nKC158"
   },
   {
     "objectID": "Syllabus.html",
@@ -37,6 +37,34 @@
   {
     "objectID": "Lecture_1.html#slide-2",
     "href": "Lecture_1.html#slide-2",
+    "title": "lecture_1",
+    "section": "slide 2",
+    "text": "slide 2\n\nyy\ny\ngray"
+  },
+  {
+    "objectID": "Lectures.html",
+    "href": "Lectures.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "Lecture_1"
+  },
+  {
+    "objectID": "Lecture_Folder/Lecture_1.html",
+    "href": "Lecture_Folder/Lecture_1.html",
+    "title": "lecture_1",
+    "section": "",
+    "text": "x\nxx\nblue"
+  },
+  {
+    "objectID": "Lecture_Folder/Lecture_1.html#slide-1",
+    "href": "Lecture_Folder/Lecture_1.html#slide-1",
+    "title": "lecture_1",
+    "section": "slide 1",
+    "text": "slide 1\n\nx\nxx\nblue"
+  },
+  {
+    "objectID": "Lecture_Folder/Lecture_1.html#slide-2",
+    "href": "Lecture_Folder/Lecture_1.html#slide-2",
     "title": "lecture_1",
     "section": "slide 2",
     "text": "slide 2\n\nyy\ny\ngray"

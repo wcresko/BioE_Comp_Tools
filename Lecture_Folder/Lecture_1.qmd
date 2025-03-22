@@ -5,12 +5,12 @@ format: revealjs
 
 ## slide 1
 
-- x
-- xx
-- blue
+-   x
+-   xx
+-   blue
 
 ## slide 2
 
-- yy
-- y
-- gray
+-   yy
+-   y
+-   gray
