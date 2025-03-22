@@ -1,10 +1,10 @@
 ---
 title: "BioEngineering Statistics 2025"
-image: Cover_image.tiff
+image: Cover2.tiff
 about:
   template: jolla
-  image-shape: rounded
-  image-width: 50em
+  image-shape: round
+  image-width: 40em
 links: 
   - text: Email
     icon: envelope
