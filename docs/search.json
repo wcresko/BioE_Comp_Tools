@@ -9,16 +9,16 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About the Course",
     "section": "",
-    "text": "Welcome to the website for BioE610 - Statistics for Bioengineers in the Knight Campus for Accelerating Scientific Impact at the University of Oregon.\n\n\n\nCol2\nCol3\n\n\n\n\nInstructor\nBill Cresko\n\n\nClass times\nTuesday/Thursday 4:00 to 5:50\n\n\nClass room\nKC158"
+    "text": "Welcome to the website for BioE610 - Statistics for Bioengineers in the Knight Campus for Accelerating Scientific Impact at the University of Oregon.\nBelow you will find the core information for the course. More detailed information on schedule and topics can be found under the ‘Syllabus’ link.\nI will be posting the lectures after each class under the ‘Lectures’ header."
   },
   {
     "objectID": "Syllabus.html",
     "href": "Syllabus.html",
     "title": "Syllabus 2025",
     "section": "",
-    "text": "Date\nTopics\nReadings\n\n\n\n\n01 April\nxxxxssssssssssssssssssssssssssssssssssss\nxxxx\n\n\n03 April\n\n\n\n\n\n08 April\n\n\n\n\n10 April\n\n\n\n\n\n15 April\n\n\n\n\n17 April\n\n\n\n\n\n22 April\n\n\n\n\n24 April\n\n\n\n\n\n29 April\n\n\n\n\n01 May\n\n\n\n\n\n06 May\n\n\n\n\n08 May\n\n\n\n\n\n13 May\n\n\n\n\n15 May\n\n\n\n\n\n20 May\n\n\n\n\n22 May\n\n\n\n\n\n27 May\n\n\n\n\n29 May\n\n\n\n\n\n3 June\n\n\n\n\n5 June\n\n\n\n\n\n10 June\nFINALS WEEK"
+    "text": "Online Course Resources\n\nWe will be using Canvas as well as this GitHub Pages website for the course.\n\nTo access our course Canvas site, log into canvas.uoregon.edu using your DuckID.\nIf you have questions about using Canvas, visit the Canvas support page.\nCanvas and Technology Support also is available by phone (541-346-4357) or by live chat.\n\n\n\nTechnical Requirements\n\nWe will be using R and RStudio.\nYou will be working on your own laptop computer.\nIf you would like to borrow a laptop let me know.\n\n\n\nBooks and reading materials\n\nRequired\n\nR for Data Science. Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. O’Reilly Press.\nModern Statistics with R. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning. James, Witten, Hastie, Tibshirani. Springer\nBioengineering Statistics. Cresko et al. \n\n\n\nAdditional resources\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nxxx\n\n\n\n\nCourse schedule\n\n\n\n\n\n\n\n\nDate\nTopics\nReadings\n\n\n\n\n01 April\nxxxxssssssssssssssssssssssssssssssssssss\nxxxx\n\n\n03 April\n\n\n\n\n\n08 April\n\n\n\n\n10 April\n\n\n\n\n\n15 April\n\n\n\n\n17 April\n\n\n\n\n\n22 April\n\n\n\n\n24 April\n\n\n\n\n\n29 April\n\n\n\n\n01 May\n\n\n\n\n\n06 May\n\n\n\n\n08 May\n\n\n\n\n\n13 May\n\n\n\n\n15 May\n\n\n\n\n\n20 May\n\n\n\n\n22 May\n\n\n\n\n\n27 May\n\n\n\n\n29 May\n\n\n\n\n\n3 June\n\n\n\n\n5 June\n\n\n\n\n\n10 June\nFINALS WEEK\n\n\n\n\n\n\nCourse Policies\n\nCommunicating with me\n\nHow will I communicate with you? Our class will communicate through our Canvas site. Announcements and emails are archived there, automatically forwarded to your UO email, and can even reach you by text. Check and adjust your settings under Account &gt; Notifications.\n\nEvery Monday I will post an Announcement that previews critical concepts we’ll work on that week and a checklist of the week’s due dates. You can also find this information in the overview page in each Canvas module.\nI get in touch with individual students when needed through email. When giving feedback on assignments, I do so in Canvas, and turnaround time for feedback is generally one week.\n\nHow can you communicate with me? If your question (or comment) is • a practical, yes/no one about an assignment, reading, or other component of our class, please post your question on the Discussion thread titled “Class Questions and Answers,” which I respond to daily, and where your peers can also pose questions and share answers. • about a technical challenge with Canvas or another technology, please contact the UO Service Portal. • about course content or activities, about something personal, time sensitive, or something else that doesn’t feel like it fits above, please reach out to me by email or by attending office hours!\n\nI try to respond to questions within one business day.\n\nWhy should you communicate with me? I enjoy talking with students about our course material! Are you confused or excited about something? Wondering how what we’re learning relates to current events, career choices, or other classes you can take UO? Please be in touch! Please also be in touch to tell me how you are doing in the course. If you are having trouble with some aspect of it, I would like to strategize with you. I believe every student can succeed in this course, and I care about your success.\nOffice hour details When & where: I will host office hours each week on [day/time] and at [location]. I welcome meetings outside my regular office hours as well. Just email me or call me at [office number] to set a time.\n\nWhat: During office hours, students bring in a wide range of concerns, questions, and successes. We might talk through a specific concept or problem to clarify it, might think together about an issue a student is curious about that relates to the class, might discuss a student’s post-graduation goals, might identify more supportive methods to study for a future exam or to begin a project, or any number of other topics. Some students have never been to an instructor’s office hours—if that is you, please change that this term by attending! Feel free to come with a peer if that is useful for you.\nRegardless of the format, I look forward to connecting!\n\n\nClassroom Community Expectations\nAll members of the class (both students and instructor) can expect to: Participate and Contribute:  All students are expected to participate by sharing ideas and contributing to the learning environment. This entails preparing, following instructions, and engaging respectfully and thoughtfully with others.\nWhile all students should participate, participation is not just talking, and a range of participation activities support learning. Participation might look like speaking aloud in the full class and in small groups as well as submitting questions prior to class or engaging with Discussion posts.\nWe will establish more specific participation guidelines and criteria for contributions in our first weeks of the term.   \nExpect and Respect Diversity: All classes at the University of Oregon welcome and respect diverse experiences, perspectives, and approaches. What is not welcome are behaviors or contributions that undermine, demean, or marginalize others based on race, ethnicity, gender, sex, age, sexual orientation, religion, ability, or socioeconomic status. We will value differences and communicate disagreements with respect. We may establish more specific guidelines and protocols to ensure inclusion and equity for all members of our learning community.   \nHelp Everyone Learn: Part of how we learn together is by learning from one another. To do this effectively, we need to be patient with each other, identify ways we can assist others, and be open-minded to receiving help and feedback from others. Don’t hesitate to contact me to ask for assistance or offer suggestions that might help us learn better.   \n\n\nWorkload expectations\nThis is a 4-credit hour course, so you should expect to complete 120 hours of work for the course—an average of about 12 hours each week (this includes time in-class). My estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling. • In-class meetings: 3 hours • Pre-class reading: 4 hours • Weekly writing reflection: 1 hour • Discussion board: 30 minutes • Research, drafting, editing for mid-term paper or final project: 3 hours I encourage working ahead of due dates. Reading a chapter or two each day is much easier than trying to finish a novel just before class. Doing a few hours of work each week on your mid-term paper is much easier than staying up all night before the day it is due. I hope these time estimates help you plan for success.\n\n\nGrading Policies\nxxxx\n\n\nGenerative Artificial Intelligence Use\nStudents can use GenAI tools in this class to help with certain aspects of course work and assignments. This includes brainstorming ideas, creating a paper outline, or summarizing research findings of articles. However, you cannot use content such as text or graphics created by GenAI tools in your work; rather, you must be the author/creator of your work submissions. For example, you can use a GenAI tool to suggest a paper outline based on a draft you provide it, but you cannot submit a paper with text generated by GenAI as if the text is your own writing. Be advised, in accordance with UO policy, if I believe you’ve handed in work created whole or in part by GenAI tools, I may submit a report of suspected academic misconduct to the Office of Student Conduct and Community Standards for that office to make a determination of responsibility and, if warranted, assess a grade penalty. So, if you are in doubt or have questions about a particular GenAI tool and if its use is okay, check in with me and let’s discuss!\n\n\nUniversity Course Policies\nPlease read and make sure you are familiar with the important policies that apply to all UO courses, which can be found here."
   },
   {
     "objectID": "Lecture_1.html",
@@ -68,5 +68,47 @@
     "title": "lecture_1",
     "section": "slide 2",
     "text": "slide 2\n\nyy\ny\ngray"
+  },
+  {
+    "objectID": "Syllabus.html#course-schedule",
+    "href": "Syllabus.html#course-schedule",
+    "title": "BioE 610 - Bioengineering Statistics - Syllabus 2025",
+    "section": "",
+    "text": "Date\nTopics\nReadings\n\n\n\n\n01 April\nxxxxssssssssssssssssssssssssssssssssssss\nxxxx\n\n\n03 April\n\n\n\n\n\n08 April\n\n\n\n\n10 April\n\n\n\n\n\n15 April\n\n\n\n\n17 April\n\n\n\n\n\n22 April\n\n\n\n\n24 April\n\n\n\n\n\n29 April\n\n\n\n\n01 May\n\n\n\n\n\n06 May\n\n\n\n\n08 May\n\n\n\n\n\n13 May\n\n\n\n\n15 May\n\n\n\n\n\n20 May\n\n\n\n\n22 May\n\n\n\n\n\n27 May\n\n\n\n\n29 May\n\n\n\n\n\n3 June\n\n\n\n\n5 June\n\n\n\n\n\n10 June\nFINALS WEEK"
+  },
+  {
+    "objectID": "about.html#instructor-and-class-information",
+    "href": "about.html#instructor-and-class-information",
+    "title": "About the Course",
+    "section": "Instructor and class information",
+    "text": "Instructor and class information\n\n\n\n\nInstructor\nBill Cresko\n\n\nClass times\nTuesday/Thursday 4:00 to 5:50\n\n\nClass room\nKC158\n\n\nOffice Hours\nMonday 3:30 to 4:30\n\n\ne-mail\nwcresko@uoregon.edu"
+  },
+  {
+    "objectID": "about.html#course-description",
+    "href": "about.html#course-description",
+    "title": "About the Course",
+    "section": "Course Description",
+    "text": "Course Description"
+  },
+  {
+    "objectID": "about.html#course-objectives",
+    "href": "about.html#course-objectives",
+    "title": "About the Course",
+    "section": "Course Objectives",
+    "text": "Course Objectives\n\n/"
+  },
+  {
+    "objectID": "about.html#instructor-information",
+    "href": "about.html#instructor-information",
+    "title": "About the Course",
+    "section": "Instructor information",
+    "text": "Instructor information\n\n\n\nInstructor\nBill Cresko\n\n\nOffices\nxxx and Pacific 312\n\n\ne-mail\nwcresko@uoregon.edu"
+  },
+  {
+    "objectID": "about.html#class-information",
+    "href": "about.html#class-information",
+    "title": "About the Course",
+    "section": "Class information",
+    "text": "Class information\n\n\n\nClass times\nTuesday/Thursday 4:00 to 5:50\n\n\nClass room\nKC158\n\n\nOffice Hours\nMonday 3:30 to 4:30\n\n\nOffice hour location\nxxx"
   }
 ]
