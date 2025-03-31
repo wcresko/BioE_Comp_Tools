@@ -3,9 +3,7 @@ title: "About the Course"
 ---
 
 -   Welcome to the website for BioE610 - Statistics for Bioengineers in the Knight Campus for Accelerating Scientific Impact at the University of Oregon.
-
 -   Below you will find the core information for the course. More detailed information on schedule and topics can be found under the 'Syllabus' link.
-
 -   I will be posting the lectures after each class under the 'Lectures' header.
 
 ## Instructor information
@@ -13,10 +11,8 @@ title: "About the Course"
 |            |                      |
 |------------|----------------------|
 | Instructor | Bill Cresko          |
-| Offices    | xxx and Pacific 312  |
+| Offices    | M306 KC East Tower and Pacific 312  |
 | e-mail     | wcresko\@uoregon.edu |
-
-------------------------------------------------------------------------
 
 ## Class information
 
@@ -25,16 +21,61 @@ title: "About the Course"
 | Class times          | Tuesday/Thursday 4:00 to 5:50 |
 | Class room           | KC158                         |
 | Office Hours         | Monday 3:30 to 4:30           |
-| Office hour location | xxx                           |
-
-------------------------------------------------------------------------
+| Office hour location | TBD                           |
 
 ## Course Description
 
-------------------------------------------------------------------------
+This course in an introduction to data management, data visualization and statistical inference that is intended for early-stage graduate students with no background in statistics. The primary objective of the course is to get students up to speed with respect to organization, manipulation, visualization, and analysis of data, using the R statistical language. Students will learn to organize and analyze data sets in the form of RStudio projects, using R Markdown files to reproducibly capture and render code, visualizations and analyses. This is a practical course with a foundation of conceptual intuition with the goal of enabling students to analyze their own data sets with confidence using reasonable approaches, and to provide a foundation for more advanced courses in statistics, data science and machine learning. The course is designed to primarily on univariate (single response variable) analysis. For students interested in multivariate analysis, other courses in Department of Data Science will be available. Examples and assignments in class will largely be drawn from the life sciences in general, and bioengineering in particular. For learning outcomes, and specific topics covered in class, please see the course goals below and the schedule on the 'Syllabus' page of this website.
+
+
+## Course Structure
+
+We will hold on Tuesdays and Thursdays from 4:00PM to 5:50PM. These meetings will be relatively informal, and will usually begin with a 20-30 min. review of the most salient topics from the course book, possibly including some R coding demonstrations. I will post all lecture slides as Markdown and HTML after class to the course website under the 'Lectures' tab. The remaining meeting time will be reserved for questions, answers, and discussion (similar to a "recitation", or additional "office hours"). I encourage students to work on exercises and assignments during these periods so that questions can be directly addressed as they emerge.
+
 
 ## Course Objectives
 
-------------------------------------------------------------------------
+- _Scientific Computing Fundamentals_
+  - Describe fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.
+  - Read and write code in Unix.
+  - Read and write code in R using RStudio.
+  - Properly organize and format primary data and metadata files for analysis
+  - Learn programming fundamentals of the R statistical language, including objects, functions, iteration, and simulation.
+  - Articulate the importance of and requirements for reproducible science in bioinformatics.
+  - Utilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.
+  
+- _Probability and Exploratory Data Analysis_
+  - Describe the history of data analysis and statistics, particularly its eugenics origins.
+  - Explain probability in the context of distributions and sampling.
+  - Describe the meaning of p-values, test statistics, and types of errors.
+  
+- _Statistical Visualization_
+  - Produce well-designed and informative figures in RStudio.
+  - Make publication-quality data visualizations, including scatterplots, boxplots, frequency distributions, mosaic plots, etc.
+
+- _Point Estimation_
+  - Parameters and statistics
+  - Confidence intervals
+  - Statistical distributions
+  - T-statistics
+
+- _Experimental Design and Linear Models_
+  - Design experiments and clinical trials to produce the necessary types of data required to answer a given scientific question.
+  - Understand Type I and Type II statistical error, including p-values and power analysis.
+  - Understand ordinary least-squares regression and linear models in general
+  - Learn to apply general linear models to basic univariate analysis problems,including Analysis of Variance (ANOVA)
+  
+- _Application of Linear Models to Machine Learning_
+  - xxx
+  - xxx
+  - xxx
+
+- _Nonparameteric Statistics_
+  - Learn nonparametric approaches to parameter estimate and statistical inference, 
+  - including resampling (bootstrapping), permutation, and rank-based analysis.
+  - Understand how to analyze binary response variables and frequency-based (e.g. contingency table) data sets.
+
+
+
 
 /

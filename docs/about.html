@@ -123,6 +123,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#instructor-information" id="toc-instructor-information" class="nav-link active" data-scroll-target="#instructor-information">Instructor information</a></li>
   <li><a href="#class-information" id="toc-class-information" class="nav-link" data-scroll-target="#class-information">Class information</a></li>
   <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course Description</a></li>
+  <li><a href="#course-structure" id="toc-course-structure" class="nav-link" data-scroll-target="#course-structure">Course Structure</a></li>
   <li><a href="#course-objectives" id="toc-course-objectives" class="nav-link" data-scroll-target="#course-objectives">Course Objectives</a></li>
   </ul>
 </nav>
@@ -150,9 +151,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <ul>
-<li><p>Welcome to the website for BioE610 - Statistics for Bioengineers in the Knight Campus for Accelerating Scientific Impact at the University of Oregon.</p></li>
-<li><p>Below you will find the core information for the course. More detailed information on schedule and topics can be found under the ‘Syllabus’ link.</p></li>
-<li><p>I will be posting the lectures after each class under the ‘Lectures’ header.</p></li>
+<li>Welcome to the website for BioE610 - Statistics for Bioengineers in the Knight Campus for Accelerating Scientific Impact at the University of Oregon.</li>
+<li>Below you will find the core information for the course. More detailed information on schedule and topics can be found under the ‘Syllabus’ link.</li>
+<li>I will be posting the lectures after each class under the ‘Lectures’ header.</li>
 </ul>
 <section id="instructor-information" class="level2">
 <h2 class="anchored" data-anchor-id="instructor-information">Instructor information</h2>
@@ -164,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Offices</td>
-<td>xxx and Pacific 312</td>
+<td>M306 KC East Tower and Pacific 312</td>
 </tr>
 <tr class="odd">
 <td>e-mail</td>
@@ -172,7 +173,6 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<hr>
 </section>
 <section id="class-information" class="level2">
 <h2 class="anchored" data-anchor-id="class-information">Class information</h2>
@@ -192,19 +192,70 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Office hour location</td>
-<td>xxx</td>
+<td>TBD</td>
 </tr>
 </tbody>
 </table>
-<hr>
 </section>
 <section id="course-description" class="level2">
 <h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
-<hr>
+<p>This course in an introduction to data management, data visualization and statistical inference that is intended for early-stage graduate students with no background in statistics. The primary objective of the course is to get students up to speed with respect to organization, manipulation, visualization, and analysis of data, using the R statistical language. Students will learn to organize and analyze data sets in the form of RStudio projects, using R Markdown files to reproducibly capture and render code, visualizations and analyses. This is a practical course with a foundation of conceptual intuition with the goal of enabling students to analyze their own data sets with confidence using reasonable approaches, and to provide a foundation for more advanced courses in statistics, data science and machine learning. The course is designed to primarily on univariate (single response variable) analysis. For students interested in multivariate analysis, other courses in Department of Data Science will be available. Examples and assignments in class will largely be drawn from the life sciences in general, and bioengineering in particular. For learning outcomes, and specific topics covered in class, please see the course goals below and the schedule on the ‘Syllabus’ page of this website.</p>
+</section>
+<section id="course-structure" class="level2">
+<h2 class="anchored" data-anchor-id="course-structure">Course Structure</h2>
+<p>We will hold on Tuesdays and Thursdays from 4:00PM to 5:50PM. These meetings will be relatively informal, and will usually begin with a 20-30 min. review of the most salient topics from the course book, possibly including some R coding demonstrations. I will post all lecture slides as Markdown and HTML after class to the course website under the ‘Lectures’ tab. The remaining meeting time will be reserved for questions, answers, and discussion (similar to a “recitation”, or additional “office hours”). I encourage students to work on exercises and assignments during these periods so that questions can be directly addressed as they emerge.</p>
 </section>
 <section id="course-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="course-objectives">Course Objectives</h2>
-<hr>
+<ul>
+<li><em>Scientific Computing Fundamentals</em>
+<ul>
+<li>Describe fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.</li>
+<li>Read and write code in Unix.</li>
+<li>Read and write code in R using RStudio.</li>
+<li>Properly organize and format primary data and metadata files for analysis</li>
+<li>Learn programming fundamentals of the R statistical language, including objects, functions, iteration, and simulation.</li>
+<li>Articulate the importance of and requirements for reproducible science in bioinformatics.</li>
+<li>Utilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.</li>
+</ul></li>
+<li><em>Probability and Exploratory Data Analysis</em>
+<ul>
+<li>Describe the history of data analysis and statistics, particularly its eugenics origins.</li>
+<li>Explain probability in the context of distributions and sampling.</li>
+<li>Describe the meaning of p-values, test statistics, and types of errors.</li>
+</ul></li>
+<li><em>Statistical Visualization</em>
+<ul>
+<li>Produce well-designed and informative figures in RStudio.</li>
+<li>Make publication-quality data visualizations, including scatterplots, boxplots, frequency distributions, mosaic plots, etc.</li>
+</ul></li>
+<li><em>Point Estimation</em>
+<ul>
+<li>Parameters and statistics</li>
+<li>Confidence intervals</li>
+<li>Statistical distributions</li>
+<li>T-statistics</li>
+</ul></li>
+<li><em>Experimental Design and Linear Models</em>
+<ul>
+<li>Design experiments and clinical trials to produce the necessary types of data required to answer a given scientific question.</li>
+<li>Understand Type I and Type II statistical error, including p-values and power analysis.</li>
+<li>Understand ordinary least-squares regression and linear models in general</li>
+<li>Learn to apply general linear models to basic univariate analysis problems,including Analysis of Variance (ANOVA)</li>
+</ul></li>
+<li><em>Application of Linear Models to Machine Learning</em>
+<ul>
+<li>xxx</li>
+<li>xxx</li>
+<li>xxx</li>
+</ul></li>
+<li><em>Nonparameteric Statistics</em>
+<ul>
+<li>Learn nonparametric approaches to parameter estimate and statistical inference,</li>
+<li>including resampling (bootstrapping), permutation, and rank-based analysis.</li>
+<li>Understand how to analyze binary response variables and frequency-based (e.g.&nbsp;contingency table) data sets.</li>
+</ul></li>
+</ul>
 <p>/</p>
 
 
