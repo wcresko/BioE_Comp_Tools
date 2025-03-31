@@ -4,11 +4,11 @@ title: "Syllabus"
 
 ## Course Description
 
-This course in an introduction to data management, data visualization and statistical inference that is intended for early-stage graduate students with no background in statistics. The primary objective of the course is to get students up to speed with respect to organization, manipulation, visualization, and analysis of data, using the R statistical language. Students will learn to organize and analyze data sets in the form of RStudio projects, using R Markdown files to reproducibly capture and render code, visualizations and analyses. This is a practical course with a foundation of conceptual intuition with the goal of enabling students to analyze their own data sets with confidence using reasonable approaches, and to provide a foundation for more advanced courses in statistics, data science and machine learning. The course is designed to primarily on univariate (single response variable) analysis. For students interested in multivariate analysis, other courses in Department of Data Science will be available. Examples and assignments in class will largely be drawn from the life sciences in general, and bioengineering in particular. For learning outcomes, and specific topics covered in class, please see the course goals below and the schedule on the 'Syllabus' page of this website.
+This course in an introduction to data management, data visualization and statistical inference that is intended for early-stage bioengineering and bioscience graduate students with no background in statistics. This is a practical course with a foundation of conceptual intuition matched with hands-on coding each week. The primary objective of the course is to provide foundational training in the organization, manipulation, visualization, and analysis of data, using the R statistical language in a reproducible manner. After this course students will be able to analyze their own data sets with confidence using reasonable approaches, and to provide a foundation for more advanced courses in statistics, data science and machine learning. The course is designed to primarily for the analysis of univariate (single response variable) data. For students interested in multivariate analysis, other courses in Department of Data Science are available. Examples and assignments in class will largely be drawn from bioengineering and the life sciences.
 
 ## Course Structure
 
-We will hold on Tuesdays and Thursdays from 4:00PM to 5:50PM. These meetings will be relatively informal, and will usually begin with a 20-30 min. review of the most salient topics from the course book, possibly including some R coding demonstrations. I will post all lecture slides as Markdown and HTML after class to the course website under the 'Lectures' tab. The remaining meeting time will be reserved for questions, answers, and discussion (similar to a "recitation", or additional "office hours"). I encourage students to work on exercises and assignments during these periods so that questions can be directly addressed as they emerge.
+We will hold on Tuesdays and Thursdays from 4:00PM to 5:50PM. These meetings will be relatively informal, and will usually begin with a 30-45 min. conceptual overview of topics with R coding demonstrations. I will post all lecture slides as Markdown and HTML after class to the course website under the 'Lectures' tab. The remaining meeting time will be reserved for group work, questions, answers, and discussion (similar to a "recitation", or additional "office hours"). I encourage students to work on exercises and assignments during these periods so that questions can be directly addressed as they emerge.
 
 ## Course Objectives
 
@@ -38,53 +38,26 @@ We will hold on Tuesdays and Thursdays from 4:00PM to 5:50PM. These meetings wil
     -   Understand ordinary least-squares regression and linear models in general
     -   Learn to apply general linear models to basic univariate analysis problems,including Analysis of Variance (ANOVA)
 -   *Application of Linear Models to Machine Learning*
-    -   xxx
-    -   xxx
-    -   xxx
+    -   Examining linear models as classical machine learning
+    -   Prediction and estimation
+    -   Shrinkage and regularization
+    -   Cross-validation
 -   *Nonparameteric Statistics*
     -   Learn nonparametric approaches to parameter estimate and statistical inference,
     -   including resampling (bootstrapping), permutation, and rank-based analysis.
     -   Understand how to analyze binary response variables and frequency-based (e.g. contingency table) data sets.
 
-### Online Course Resources
-
--   We will be using Canvas as well as this GitHub Pages website for the course.
--   To access our course Canvas site, log into canvas.uoregon.edu using your DuckID.
--   If you have questions about using Canvas, visit the Canvas support page.
--   Canvas and Technology Support also is available by phone (541-346-4357) or by live chat.
-
-### Technical Requirements
-
--   You will be working on your own laptop computer, but if you would like to borrow a laptop let me know.
--   Latest version of R ([install here](https://www.r-project.org))
--   Latest version of RStudio ([install here](https://www.rstudio.org))
--   A terminal that allows ssh connection to the UO computing cluster (Talapas)
-
-### Books and reading materials
-
-#### *Required*
-
--   [R for Data Science](https://r4ds.hadley.nz). Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. O'Reilly Press.
--   [Modern Statistics with R](https://www.modernstatisticswithr.com). Måns Thulin, CRC Press.
--   [An Introduction to Statistical Learning](https://www.statlearning.com). James, Witten, Hastie, Tibshirani. Springer
-
-#### *Additional resources*
-
--   [Modern Statistics for Modern Biology](https://web.stanford.edu/class/bios221/book/). 2019. Holmes and Huber. Cambridge University Press.
--   [ggPlot2: Elegant Graphics for Data Analysis, 3rd Edition](https://ggplot2-book.org). Wickham, Navarro, Pedersen. Springer.
--   [The Visual Display of Quantitative Information.](https://www.amazon.com/Visual-Display-Quantitative-Information/dp/1930824130) Tufte, E.R. Graphics Press, Cheshire CT
-
-#### *Graded Assignments*
+## Graded Assignments
 
 **Problem sets:** Students will be assigned four problem sets (roughly one every 2 weeks) to complete independently. These will mostly focus on one or a few data sets each, and the goal will be for the students to organize, visualize, analyze, and interpret the data sets in light of specific scientific motivations. - 80% of grade.
 
-**Term project:** Students will choose to analyze a dataset of their choice from their own research. The goal of this project is allow students agency in applying what they are learning in class to their own data, and to format the results in an appropriate Rmarkdown or Quarto format that can form the nucleus of a subsequent publication - 20% of grade.
+**Term project:** Students will choose to analyze a dataset of their choice from their own research. The goal of this project is allow students agency in applying what they are learning in class to their own data, and to format the results in an appropriate Rmarkdown or Quarto document that can form the nucleus of a subsequent publication - 20% of grade.
 
-**Preparing and submitting assignments:** The information required to complete all in-class assignments and problem sets will be given in instructions on Canvas. Students should carefully follow the detailed instructions associated with each assignment. Students are encouraged to work together and share information. In particular, some students will have a higher skill level than others, and we encourage those students with more experience to help their peers. *However, no direct sharing of code is allowed – each student must write their own code.*
+**Preparing and submitting assignments:** The information required to complete all in-class assignments and problem sets will be given in instructions on Canvas. Students should carefully follow the detailed instructions associated with each assignment. Students are encouraged to work together and share information. In particular, some students will have a higher skill level than others, and we encourage those students with more experience to help their peers. *However, no direct sharing of code is allowed.*
 
-**Preparing and submitting assignments:** Assignments will be submitted on Canvas in the form of R Markdown files, with the rendered html output. Be sure to include your name on the document. Be professional – appropriately name your files, make sure they are organized, and submit only the information requested. Late assignments will not be accepted.
+**Preparing and submitting assignments:** Assignments will be submitted on Canvas in the form of Quarto files, with the rendered html output. Be sure to include your name on the document. Be professional – appropriately name your files, make sure they are organized, and submit only the information requested. Late assignments will not be accepted.
 
-#### *Grading*
+### *Grading*
 
 | Assignment                          | Percentage of Total Grade |
 |-------------------------------------|:-------------------------:|
@@ -92,10 +65,9 @@ We will hold on Tuesdays and Thursdays from 4:00PM to 5:50PM. These meetings wil
 | Term-long Projects                  |            20%            |
 
 | Grade Percentage | Letter Grade | Pass/No Pass Grade |
-|:-----------------|:------------:|:------------------:|
-| 100% - 90%       |      A       |        Pass        |
-| 89% - 80%        |      B       |        Pass        |
-| 79% - 80%        |      C       |      No Pass       |
-| 69% - 60%        |      D       |      No Pass       |
-| 60% - 0%         |      F       |      No Pass       |
-
+|:----------------:|:------------:|:------------------:|
+|    100% - 90%    |      A       |        Pass        |
+|    89% - 80%     |      B       |        Pass        |
+|    79% - 80%     |      C       |      No Pass       |
+|    69% - 60%     |      D       |      No Pass       |
+|     60% - 0%     |      F       |      No Pass       |
