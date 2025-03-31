@@ -10,7 +10,10 @@ website:
         text: Home
       - about.qmd
       - Syllabus.qmd
+      - Policies.qmd
+      - Schedule.qmd
       - Lectures.qmd
+      - Resources.qmd
 
 format:
   html:
