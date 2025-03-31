@@ -1,15 +1,15 @@
 ---
-title: "lecture_1"
+title: "lecture_1 - placeholder"
 format: revealjs
 ---
 
-## slide 1
+## xxx
 
 -   x
 -   xx
 -   blue
 
-## slide 2
+## xxx
 
 -   yy
 -   y
