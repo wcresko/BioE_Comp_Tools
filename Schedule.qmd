@@ -33,27 +33,25 @@ title: "Schedule"
 |          |              | -   R scripts & reproducible analysis     | -   MSR: 1-2                               |             |
 |          |              | -   Use of GenAI                          | -   [Happy Git](https://happygitwithr.com) |             |
 |          |              | -   Tidy data and data wrangling          |                                            |             |
-|          |              | -   Probability & sampling distributions  |                                            |             |
 |          |              | -   Git, GitHub & Markdown                |                                            |             |
 |          |              | -   Sundry history of statistics          |                                            |             |
 +----------+--------------+-------------------------------------------+--------------------------------------------+-------------+
 | 2        | April8/10    | -   Exploratory data analysis             | -   RDS: 9-11                              |             |
 |          |              | -   Data visualization                    | -   MSR: 3-5                               |             |
-|          |              | -   Probability & sampling distributions  |                                            |             |
-|          |              | -   Estimation & confidence intervals     |                                            |             |
+|          |              | -   Parameters & statistics               |                                            |             |
+|          |              | -   Probability distributions             |                                            |             |
+|          |              | -   Estimates & confidence intervals      |                                            |             |
 |          |              | -   Clinical trials & experimental design |                                            |             |
 +----------+--------------+-------------------------------------------+--------------------------------------------+-------------+
 | 3        | April15/17   | -   Hypothesis testing & significance     | -   MSR: 6-7                               | HW1 Due     |
-|          |              | -   Simulation in statistics              |                                            |             |
-|          |              | -   Test statistics & p-values            |                                            |             |
 |          |              | -   Type I & II errors                    |                                            |             |
+|          |              | -   T-tests                               |                                            |             |
 +----------+--------------+-------------------------------------------+--------------------------------------------+-------------+
 | 4        | April22/24   | -   Frequency analyses                    |                                            |             |
 |          |              | -   Contingency tests                     |                                            |             |
 |          |              | -   Non-parametric tests                  |                                            |             |
-|          |              | -   Correlation & covariance              |                                            |             |
 +----------+--------------+-------------------------------------------+--------------------------------------------+-------------+
-| 5        | April29/May1 | -   Modeling basics & ingredients         | -   MSR: 8                                 | HW2 Due     |
+| 5        | April29/May1 | -   Correlation & covariance              | -   MSR: 8                                 | HW2 Due     |
 |          |              | -   Ordinary Linear Models (OLMs)         |                                            |             |
 |          |              | -   Simple linear regression              |                                            |             |
 +----------+--------------+-------------------------------------------+--------------------------------------------+-------------+
@@ -67,10 +65,12 @@ title: "Schedule"
 +----------+--------------+-------------------------------------------+--------------------------------------------+-------------+
 | 8        | May 20/22    | -   Hierarchical & mixed models           | -   ISLR: 1-3                              |             |
 |          |              | -   Generalized Linear Models (GLMs)      |                                            |             |
+|          |              | -   Logistic & Poisson regression         |                                            |             |
 +----------+--------------+-------------------------------------------+--------------------------------------------+-------------+
-| 9        | May 27/29    | -   Intro to Statistical Learning         | -   MSR: 11                                | HW4 Due     |
-|          |              | -   Classification & Prediction           | -   ISLR: 4-6                              |             |
+| 9        | May 27/29    | -   Intro to statistical learning         | -   MSR: 11                                | HW4 Due     |
+|          |              | -   Classification & prediction           | -   ISLR: 4-6                              |             |
 |          |              | -   Validation                            |                                            |             |
+|          |              | -   Simulation in statistics              |                                            |             |
 +----------+--------------+-------------------------------------------+--------------------------------------------+-------------+
 | 10       | June 3/5     | -   Remote super computing                |                                            |             |
 |          |              | -   Talapas and SLURM                     |                                            |             |
