@@ -23,6 +23,8 @@ title: "Schedule"
 -   Latest version of R ([install here](https://www.r-project.org))
 -   Latest version of RStudio ([install here](https://www.rstudio.org))
 -   A terminal that allows ssh connection to the UO computing cluster (Talapas)
+-   Git installed and a GitHub account
+-   LaTeX installed on your computer
 
 ## Course schedule
 

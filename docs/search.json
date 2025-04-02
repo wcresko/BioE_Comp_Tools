@@ -151,7 +151,7 @@
     "href": "Schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "R for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)"
+    "text": "R for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
   },
   {
     "objectID": "Resources.html",
@@ -221,7 +221,7 @@
     "href": "Schedule.html#reading-materials-and-tools",
     "title": "Schedule",
     "section": "",
-    "text": "R for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)"
+    "text": "R for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
   },
   {
     "objectID": "about.html#online-course-resources",
@@ -271,5 +271,47 @@
     "title": "Policies",
     "section": "University Course Policies",
     "text": "University Course Policies\nPlease read and make sure you are familiar with the important policies that apply to all UO courses, which can be found here."
+  },
+  {
+    "objectID": "Software.html",
+    "href": "Software.html",
+    "title": "Software",
+    "section": "",
+    "text": "Latest version of R\nLatest version of RStudio\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account for version control and collaboration\nLaTeX installed on your computer for mathematical typesetting"
+  },
+  {
+    "objectID": "Software.html#software-tools-to-install",
+    "href": "Software.html#software-tools-to-install",
+    "title": "Software",
+    "section": "",
+    "text": "Latest version of R\nLatest version of RStudio\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account for version control and collaboration\nLaTeX installed on your computer for mathematical typesetting"
+  },
+  {
+    "objectID": "Software.html#r-and-rstudio",
+    "href": "Software.html#r-and-rstudio",
+    "title": "Software",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\nLatest version of R (install here)\nLatest version of RStudio (install here)"
+  },
+  {
+    "objectID": "Software.html#accessing-the-shell-via-a-terminal-application",
+    "href": "Software.html#accessing-the-shell-via-a-terminal-application",
+    "title": "Software",
+    "section": "Accessing the shell via a terminal application",
+    "text": "Accessing the shell via a terminal application\n\nMac or Linux users\n\nopen the native “Terminal” app on Mac or Linux\ninstall another terminal like “iTerm2”\n\n\n\nWindows users\n\nGuide: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview\nRun Windows PowerShell as administrator\nInstall WSL2 by typing wsl --install\nRestart your computer\nSearch for and install Ubuntu from Microsoft store app\nOR type wsl --install -d ubuntu on PowerShell to do both at once\n\n\n\nAccessing the shell on Windows\n\nOpen Ubuntu and set up a username and password\nDoes not have to match your login info for Windows\nRun sudo apt update then sudo apt upgrade to ensure everything is up to date\nWill need to create folders and files within your Ubuntu folder on your computer"
+  },
+  {
+    "objectID": "Software.html#git-and-github",
+    "href": "Software.html#git-and-github",
+    "title": "Software",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\n\nLastest version of Git (install here)\nA GitHub account (information here)"
+  },
+  {
+    "objectID": "Software.html#latex",
+    "href": "Software.html#latex",
+    "title": "Software",
+    "section": "LaTeX",
+    "text": "LaTeX\n\nLastest version of LaTeX (install here)"
   }
 ]

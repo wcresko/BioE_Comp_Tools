@@ -13,6 +13,7 @@ website:
       - Policies.qmd
       - Schedule.qmd
       - Lectures.qmd
+      - Software.qmd
       - Resources.qmd
 
 format:
