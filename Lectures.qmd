@@ -2,4 +2,4 @@
 title: "Lectures"
 ---
 
-[Lecture_1](Lecture_Folder/Lecture_1.qmd)
+[Lecture_1a](Lecture_Folder/Week1a.qmd)

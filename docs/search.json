@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1"
+    "text": "Lecture_1a"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -313,5 +313,117 @@
     "title": "Software",
     "section": "LaTeX",
     "text": "LaTeX\n\nLastest version of LaTeX (install here)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html",
+    "href": "Lecture_Folder/Week1a.html",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\ntheme_set(theme_minimal())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#statistics-for-bioengineers",
+    "href": "Lecture_Folder/Week1a.html#statistics-for-bioengineers",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Statistics for Bioengineers",
+    "text": "Statistics for Bioengineers\n{height = “50”}"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#goals-of-the-course",
+    "href": "Lecture_Folder/Week1a.html#goals-of-the-course",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Goals of the course",
+    "text": "Goals of the course\n\n\n\n\n\n\n\nThis is a practical course and we will learn by doing\n\n\n\nTeach fundamental skills for your scientific careers\nProvide a broad coverage of the core components of modern statistics\nProvide you with the computational tools necessary to carry out your work\nTo prepare you for more advanced statistics and programming education"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#class-introductions",
+    "href": "Lecture_Folder/Week1a.html#class-introductions",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Class Introductions",
+    "text": "Class Introductions\n\n\n\n\n\n\n\nWho are you?\n\n\n\nYour name\nYear in grad school\nHome lab or rotation lab\nWhat is your good news this week?\nWhat has your experience with programming/statistics been like?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#what-will-you-learn",
+    "href": "Lecture_Folder/Week1a.html#what-will-you-learn",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "What will you learn?",
+    "text": "What will you learn?\n\n\nRead and write code in Unix and R\nImplement reproducible research practices through\n\nMarkdown\nGitHub\nTalapas and Amazon Web Services (AWS)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#what-will-you-learn-1",
+    "href": "Lecture_Folder/Week1a.html#what-will-you-learn-1",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "What will you learn?",
+    "text": "What will you learn?\n\n\nExploratory data analysis and visualization\nProbability in the context of distributions and sampling\nExperimental design\np-values, test statistics, and types of errors\nStatistical analyses such as t-tests and contigency tests\nLinear and non-linear modeling\nClassical machine learning"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#class-logistics",
+    "href": "Lecture_Folder/Week1a.html#class-logistics",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Class Logistics",
+    "text": "Class Logistics\n\n\nMeet Tuesdays and Thursdays from 4:00pm - 5:50pm in KC158\n\nMost of class time will be hands-on coding practice, less time lecturing\n\nCoding and statistics practice via homework in Weeks 2-9\n\nAvailable Tuesday of that week, due before class on Tuesday in two weeks\n\nWeeks 10-11 you will complete a final coding project\n\nDesign script(s) that works with your research and interests using the skills you’ve learned this term"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#required-materials",
+    "href": "Lecture_Folder/Week1a.html#required-materials",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Required Materials",
+    "text": "Required Materials\n\nNo textbooks or purchases required\nAccess to a laptop or computer running Windows, MacOS, or Linux operating systems\nAn account on Talapas (through your lab, or through CBDS)\nAnnouncements and assignments posted on Canvas\nThe majority of course material on our class website https://wcresko.github.io/BioE_Stats/"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#section-5",
+    "href": "Lecture_Folder/Week1a.html#section-5",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "",
+    "text": "Note\n\n\n\nMac and Linux systems run using the same language, but previous versions of Windows lacks some of the basic features found on other systems\nTo help you practice and learn how to code in Unix, we will help you install some programs on your computer for running Unix\nR and RStudio should work on any computer"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#running-r",
+    "href": "Lecture_Folder/Week1a.html#running-r",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Running R",
+    "text": "Running R\n\nNeed to make sure that you have R installed\n\nlocally or on a server\nhttps://www.r-project.org\n\nCan run R from the command line\n\njust type R\ncan run it locally as well as on clusters"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#running-r-1",
+    "href": "Lecture_Folder/Week1a.html#running-r-1",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Running R",
+    "text": "Running R\n\nInstall an R Integrated Development Environment (IDE)\n\nRStudio: http://www.rstudio.com\nMakes working with R much easier, particularly for a new R user\nRun on Windows, Mac or Linux OS\nUse the RStudio Desktop Open Source (Free)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#rstudio",
+    "href": "Lecture_Folder/Week1a.html#rstudio",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "RStudio",
+    "text": "RStudio"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#accessing-the-shell",
+    "href": "Lecture_Folder/Week1a.html#accessing-the-shell",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Accessing the shell",
+    "text": "Accessing the shell\n\nMac users: open the “Terminal” app, or use another app like ‘iTerm2’\nLinux users: open one of several “Terminal” apps\n\n\n\n\n\n\nWindows users have a little more work to do\n\n\nSee the next slides"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#accessing-the-shell-1",
+    "href": "Lecture_Folder/Week1a.html#accessing-the-shell-1",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Accessing the shell",
+    "text": "Accessing the shell\nWindows users\n\nGuide: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview\nRun Windows PowerShell as administrator\nInstall WSL2 by typing wsl --install\nRestart your computer\nSearch for and install Ubuntu from Microsoft store app\nOR type wsl --install -d ubuntu on PowerShell to do both at once"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#accessing-the-shell-on-windows",
+    "href": "Lecture_Folder/Week1a.html#accessing-the-shell-on-windows",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Accessing the shell on Windows",
+    "text": "Accessing the shell on Windows\n\nOpen Ubuntu and set up a username and password\nDoes not have to match your login info for Windows\nRun sudo apt update then sudo apt upgrade to ensure everything is up to date\nWill need to create folders and files within your Ubuntu folder on your computer"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1a.html#terminal-in-rstudio",
+    "href": "Lecture_Folder/Week1a.html#terminal-in-rstudio",
+    "title": "Week 1a Statistics for Bioengineering",
+    "section": "Terminal in RStudio",
+    "text": "Terminal in RStudio\n\n\n\n\n\n\nImportant\n\n\nRStudio has a terminal pane all it's own that you can use"
   }
 ]
