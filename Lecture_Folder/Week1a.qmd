@@ -3,7 +3,7 @@ title: "Week 1a Statistics for Bioengineering"
 author: "Bill Cresko"
 format: 
   revealjs:
-    footer: BioE_Stats_2025 - Knight Campus
+    footer: BioE_Stats_2025 - Knight Campus (https://wcresko.github.io/BioE_Stats/)
     transition: fade
     transition-speed: slow
 editor: visual
