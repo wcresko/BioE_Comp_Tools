@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -929,5 +929,1517 @@
     "title": "Week 1b - Statistics for Bioengineering",
     "section": "Summary stats and figures",
     "text": "Summary stats and figures\n\nsummary1 &lt;- summary(RNAseq_Data $ENSGACG00000000003)\nprint (summary1)\n\nhist(RNAseq_Data $ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003~RNAseq_Data$Population)\nplot(RNAseq_Data $ENSGACG00000000003, RNAseq_Data$ENSGACG00000000003)\n\nboxplot(RNAseq_Data $ENSGACG00000000003~RNAseq_Data$Treatment, \n        col = \"red\", ylab = \"Expression Level\", xlab = \"Treatment level\", \n        border =\"orange\", \n        main = \"Boxplot of variation in gene expression across microbiota treatments\")\n\n\n\n\nBioE_Stats_2025 - Knight Campus"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html",
+    "href": "Lecture_Folder/Week2b.html",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#today-we-will",
+    "href": "Lecture_Folder/Week2b.html#today-we-will",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Today we will",
+    "text": "Today we will\n\nFinish Markdown, Latex\nExploratory data analysis with ggplot2\nProbability and distributions\n\n\n\n\n\n\n\nNote\n\n\n\nHomeworks will be assigned this evening and be due in 2 weeks"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#what-is-markdown",
+    "href": "Lecture_Folder/Week2b.html#what-is-markdown",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "What is markdown?",
+    "text": "What is markdown?\n\nLightweight formal markup languages are used to add formatting to plaintext documents\n\nAdding basic syntax to the text will make elements look different once rendered/knit\nAvailable in many base editors\n\nYou then need a markdown application with a markdown processor/parser to render your text files into something more exciting\n\nStatic and dynamic outputs!\npdf, HTML, presentations, websites, scientific articles, books etc"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#formatting-text",
+    "href": "Lecture_Folder/Week2b.html#formatting-text",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Formatting text",
+    "text": "Formatting text\n\n*Italic* or _Italic_\n**Bold** or __Bold__\n\n\nItalic or Italic\nBold or Bold"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#formatting-text-1",
+    "href": "Lecture_Folder/Week2b.html#formatting-text-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Formatting text",
+    "text": "Formatting text\n\n&gt; \"You know the greatest danger facing us is ourselves, an irrational fear of the unknown. \nBut there’s no such thing as the unknown — only things temporarily hidden, temporarily not understood.\"\n&gt;\n&gt; --- Captain James T. Kirk\n\n\n“You know the greatest danger facing us is ourselves, an irrational fear of the unknown. But there’s no such thing as the unknown — only things temporarily hidden, temporarily not understood.”\n— Captain James T. Kirk"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#formatting-lists",
+    "href": "Lecture_Folder/Week2b.html#formatting-lists",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Formatting lists",
+    "text": "Formatting lists\n\n- list_element\n    - sub_list_element #double tab to indent\n    - sub_list_element #double tab to indent\n    - sub_list_element #double tab to indent\n- list_element\n    - sub_list_element #double tab to indent\n#note the space after each dash- this is important!\n\n\nlist_element\n\nsub_list_element\nsub_list_element\nsub_list_element\n\nlist_element\n\nsub_list_element"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#formatting-lists-1",
+    "href": "Lecture_Folder/Week2b.html#formatting-lists-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Formatting lists",
+    "text": "Formatting lists\n\n1. One\n2. Two\n3. Three\n4. Four\n\n\nOne\nTwo\nThree\nFour"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#inserting-images-or-urls",
+    "href": "Lecture_Folder/Week2b.html#inserting-images-or-urls",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Inserting images or URLs",
+    "text": "Inserting images or URLs\n\n[Link](https://commonmark.org/help/)\n![Image](https://i1.wp.com/evomics.org/wp-content/uploads/2012/07/20120115-IMG_0297.jpg)\n\nLink"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#including-code-chunks",
+    "href": "Lecture_Folder/Week2b.html#including-code-chunks",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Including code chunks",
+    "text": "Including code chunks\n\nx &lt;- 2\nx^2\n\n[1] 4"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#what-is-latex",
+    "href": "Lecture_Folder/Week2b.html#what-is-latex",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "What is LaTeX?",
+    "text": "What is LaTeX?\n\nPronounced «Lah-tech» or «Lay-tech» (to rhyme with «Bertolt Brecht»)\nA document preparation system for high-quality typesetting\nIt is most often used for medium-to-large technical or scientific documents\nCan be used for almost any form of publishing.\nTypesetting journal articles, technical reports, books, and slide presentations\nAllows for precise mathematical statements\nhttps://www.latex-project.org\nImportantly, LaTeX can be included right into Markdown documents"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#operators-and-symbols",
+    "href": "Lecture_Folder/Week2b.html#operators-and-symbols",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Operators and Symbols",
+    "text": "Operators and Symbols\n\n$$ \\large a^x, \\sqrt[n]{x}, \\vec{\\jmath}, \\tilde{\\imath}$$\n\n\\[ \\large a^x, \\sqrt[n]{x}, \\vec{\\jmath}, \\tilde{\\imath}\\]\n\n$$ \\large \\alpha, \\beta, \\gamma$$\n\n\\[ \\large \\alpha, \\beta, \\gamma\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#operators-and-symbols-1",
+    "href": "Lecture_Folder/Week2b.html#operators-and-symbols-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Operators and Symbols",
+    "text": "Operators and Symbols\n\n$$ \\large\\approx, \\neq, \\nsim $$\n\n\\[ \\large\\approx, \\neq, \\nsim \\]\n\n$$\\large \\partial, \\mathbb{R}, \\flat$$\n\n\\[\\large \\partial, \\mathbb{R}, \\flat\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#equations",
+    "href": "Lecture_Folder/Week2b.html#equations",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Equations",
+    "text": "Equations\nBinomial sampling equation\n\n$$\\large f(k) = {n \\choose k} p^{k} (1-p)^{n-k}$$\n\n\\[\\large f(k) = {n \\choose k} p^{k} (1-p)^{n-k}\\]\nPoisson Sampling Equation\n\n$$\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}$$\n\n\\[\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#differential-equations",
+    "href": "Lecture_Folder/Week2b.html#differential-equations",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Differential Equations",
+    "text": "Differential Equations\n\n$$\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3$$\n\n\\[\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#matrix-formulations",
+    "href": "Lecture_Folder/Week2b.html#matrix-formulations",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Matrix formulations",
+    "text": "Matrix formulations\n\n$$  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} $$\n\n\\[  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#in-line-versus-fenced",
+    "href": "Lecture_Folder/Week2b.html#in-line-versus-fenced",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "In-line versus fenced",
+    "text": "In-line versus fenced\n\nThis equation, $y=\\frac{1}{2}$, is included inline\n\nThis equation, \\(y=\\frac{1}{2}\\), is included inline\n\nWhereas this equation, $$y=\\frac{1}{2}$$, is put on a separate line\n\nWhereas this equation \\[y=\\frac{1}{2}\\] is put on a separate line"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#markdown-is-very-flexible",
+    "href": "Lecture_Folder/Week2b.html#markdown-is-very-flexible",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Markdown is very flexible",
+    "text": "Markdown is very flexible\n\nYou can import RMarkdown templates into RStudio and open as a new Rmarkdown file\nBetter yet there are packages that add functionality\n\nbooks\njournal articles\nslide shows (these slides!)\ninteractive exercises"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#reading-in-and-exporting-data-frames",
+    "href": "Lecture_Folder/Week2b.html#reading-in-and-exporting-data-frames",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Reading in and Exporting Data Frames",
+    "text": "Reading in and Exporting Data Frames\n\n\n\n\nYourFile &lt;- read.table('yourfile.csv', header=T, row.names=1, sep=',')\nYourFile &lt;- read.table('yourfile.txt', header=T, row.names=1, sep='\\t')\n\n\n\n\n\nwrite.table(YourFile, \"yourfile.csv\", quote=F, row.names=T, sep=\",\")\nwrite.table(YourFile, \"yourfile.txt\", quote=F, row.names=T, sep=\"\\t\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#indexing-in-data-frames",
+    "href": "Lecture_Folder/Week2b.html#indexing-in-data-frames",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Indexing in data frames",
+    "text": "Indexing in data frames\n\nNext up - indexing just a subset of the data\nThis is a very important idea in R, that you can analyze just a subset of the data.\nThis is analyzing only the data in the file you made that has the factor value ‘mixed’.\n\n\nprint (YourFile[,2])\nprint (YourFile$variable)\nprint (YourFile[2,])\nplot (YourFile$variable1, YourFile$variable2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#types-of-vectors-of-data",
+    "href": "Lecture_Folder/Week2b.html#types-of-vectors-of-data",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Types of vectors of data",
+    "text": "Types of vectors of data\n\nint stands for integers\ndbl stands for doubles, or real numbers\nchr stands for character vectors, or strings\ndttm stands for date-times (a date + a time)\nlgl stands for logical, vectors that contain only TRUE or FALSE\nfctr stands for factors, which R uses to represent categorical variables with fixed possible values\ndate stands for dates\n\n\n\n\n\n\n\nNote\n\n\n\n\nInteger and double vectors are known collectively as numeric vectors.\nIn R numbers are doubles by default."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#types-of-vectors-of-data-1",
+    "href": "Lecture_Folder/Week2b.html#types-of-vectors-of-data-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Types of vectors of data",
+    "text": "Types of vectors of data\n\nLogical vectors can take only three possible values:\n\nFALSE\nTRUE\nNA which is ‘not available’.\n\nIntegers have one special value: NA, while doubles have four:\n\nNA\nNaN which is ‘not a number’\nInf\n-Inf"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#plotting-using-ggplot2",
+    "href": "Lecture_Folder/Week2b.html#plotting-using-ggplot2",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Plotting using ggplot2()",
+    "text": "Plotting using ggplot2()\n\nPart of the tidyverse suite of packages\nIn most cases, you start with ggplot2()\nSupply a dataset and aesthetic mapping with aes()\nDetermine the type of plot using geom_point() or geom_histogram() or others\nMany more options and controls available!\nMore info: https://ggplot2.tidyverse.org/"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#ggplot2-and-the-grammar-of-graphics",
+    "href": "Lecture_Folder/Week2b.html#ggplot2-and-the-grammar-of-graphics",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "GGPlot2 and the Grammar of Graphics",
+    "text": "GGPlot2 and the Grammar of Graphics\n\nGG stands for ‘Grammar of Graphics’\nA good paragraph uses good grammar to convey information\nA good figure uses good grammar in the same way\nSeven general components can be used to create most figures"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#ggplot2-and-the-grammar-of-graphics-1",
+    "href": "Lecture_Folder/Week2b.html#ggplot2-and-the-grammar-of-graphics-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "GGPlot2 and the Grammar of Graphics",
+    "text": "GGPlot2 and the Grammar of Graphics"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#plotting-using-ggplot",
+    "href": "Lecture_Folder/Week2b.html#plotting-using-ggplot",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Plotting using ggplot()",
+    "text": "Plotting using ggplot()\n\nInstall and load ggplot2\n\n\n# install.packages(\"ggplot2\")\nlibrary(\"ggplot2\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#scatterplots-with-ggplot",
+    "href": "Lecture_Folder/Week2b.html#scatterplots-with-ggplot",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Scatterplots with ggplot",
+    "text": "Scatterplots with ggplot\n\nUse the preloaded mpg dataset available in RStudio\n\n\nggplot(mpg, aes(displ, hwy, color = class)) + \n  geom_point()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#boxplots-in-ggplot",
+    "href": "Lecture_Folder/Week2b.html#boxplots-in-ggplot",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Boxplots in ggplot",
+    "text": "Boxplots in ggplot\n\nggplot(mpg, aes(manufacturer, hwy, colour = class)) + \n  geom_boxplot() + \n  theme_classic() + \n  theme(axis.text.x = element_text(angle = 45, hjust=1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#the-geom_bar-function",
+    "href": "Lecture_Folder/Week2b.html#the-geom_bar-function",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "The geom_bar function",
+    "text": "The geom_bar function\n\nggplot(data=diamonds) +\n  geom_bar(mapping=aes(x=cut))\n\nNow try this…\n\nggplot(data=diamonds) +\n  geom_bar(mapping=aes(x=cut, color=cut))\n\nand this…\n\nggplot(data=diamonds) +\n  geom_bar(mapping=aes(x=cut, fill=cut))\n\nand finally this…\n\nggplot(data=diamonds) +\n  geom_bar(mapping=aes(x=cut, fill=clarity), position=\"dodge\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#the-geom_histogram-and-geom_freqpolyfunction",
+    "href": "Lecture_Folder/Week2b.html#the-geom_histogram-and-geom_freqpolyfunction",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "The geom_histogram and geom_freqpolyfunction",
+    "text": "The geom_histogram and geom_freqpolyfunction\nWith this function you can make a histogram\n\nggplot(data=diamonds) +\n  geom_histogram(mapping=aes(x=carat), binwidth=0.5)\n\nThis allows you to make a frequency polygram\n\nggplot(data=diamonds) +\n  geom_histogram(mapping=aes(x=carat), binwidth=0.5)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#the-geom_boxplot-function",
+    "href": "Lecture_Folder/Week2b.html#the-geom_boxplot-function",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "The geom_boxplot function",
+    "text": "The geom_boxplot function\nBoxplots are very useful for visualizing data\n\nggplot(data=diamonds, mapping=aes(x=cut, y=price)) +\n  geom_boxplot()\n\n\n\n\nggplot(data=mpg, mapping=aes(x=reorder(class, hwy, FUN=median), y=hwy)) +\n  coordflip()\n\n\n\n\nggplot(data=mpg, mapping=aes(x=class, y=hwy)) +\n  geom_boxplot() +\n  coordflip"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#the-geom_point-geom_smooth-functions",
+    "href": "Lecture_Folder/Week2b.html#the-geom_point-geom_smooth-functions",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "The geom_point & geom_smooth functions",
+    "text": "The geom_point & geom_smooth functions\n\nggplot(data=diamonds2, mapping=aes(x=x, y=y)) +\n  geompoint()\n\n\n\n\nggplot(data=mpg) +\n  geompoint(mapping=aes(x=displ, y=hwy)) +\n  facet_wrap(~class, nrow=2)\n\n\n\n\nggplot(data=mpg) +\n  geompoint(mapping=aes(x=displ, y=hwy)) +\n  facet_grid(drv~cyl)\n\n\n\n\nggplot(data=mpg) +\n  geomsmooth(mapping=aes(x=displ, y=hwy))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#combining-geoms",
+    "href": "Lecture_Folder/Week2b.html#combining-geoms",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Combining geoms",
+    "text": "Combining geoms\n\nggplot(data=mpg) +\n  geom_point(mapping=aes(x=displ, y=hwy)) +\n  geom_smooth(mapping=aes(x=displ, y=hwy))\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#adding-labels",
+    "href": "Lecture_Folder/Week2b.html#adding-labels",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Adding labels",
+    "text": "Adding labels\n\nggplot(data=mpg, aes(displ, hwy)) +\n  geom_point(aes(color=class)) +\n  geom_smooth(se=FALSE) +\n  labs(\n    title = \"Fuel efficiency generally decreases with engine size\",\n    caption = \"Data from fueleconomy.gov\"\n  )\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#what-type-of-plot-do-i-use-for-each-data-type",
+    "href": "Lecture_Folder/Week2b.html#what-type-of-plot-do-i-use-for-each-data-type",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "What type of plot do I use for each data type?",
+    "text": "What type of plot do I use for each data type?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#different-flavors-of-inferential-statistics",
+    "href": "Lecture_Folder/Week2b.html#different-flavors-of-inferential-statistics",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Different flavors of inferential statistics",
+    "text": "Different flavors of inferential statistics\n\nFrequentist Statistics\n\nClassical or standard approaches\nNull hypothesis testing\n\n\n\nHierarchical Probabilistic Modeling\n\nMaximum Likelihood\nBayesian Analyses\nMachine Learning"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#what-is-probability",
+    "href": "Lecture_Folder/Week2b.html#what-is-probability",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "What is probability",
+    "text": "What is probability\n\nFrequency interpretation\n\n“Probabilities are understood as mathematically convenient approximations to long run relative frequencies.”\n\nSubjective (Bayesian) interpretation\n\n“A probability statement expresses the opinion of some individual regarding how certain an event is to occur.”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#random-variables-probability",
+    "href": "Lecture_Folder/Week2b.html#random-variables-probability",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Random variables & probability",
+    "text": "Random variables & probability\n\nProbability is the expression of belief in some future outcome\nA random variable can take on different values with different probabilities\nThe sample space of a random variable is the universe of all possible values"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#random-variables-probability-1",
+    "href": "Lecture_Folder/Week2b.html#random-variables-probability-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Random variables & probability",
+    "text": "Random variables & probability\n\nThe sample space can be represented by a\n\nprobability distribution (discrete)\nprobability density function (PDF) (continuous)\nalgebra and calculus are used for each respectively\nprobabilities of a sample space always sum to 1.0\n\nHow does it make sense that a sample space will always sum to 1?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#bernoulli-distribution",
+    "href": "Lecture_Folder/Week2b.html#bernoulli-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Bernoulli distribution",
+    "text": "Bernoulli distribution\n\nDescribes the expected outcome of a single event with probability p\nExample of flipping of a fair coin once\n\n\\[Pr(X=\\text{Head}) = \\frac{1}{2} = 0.5 = p \\]\n\\[Pr(X=\\text{Tails}) = \\frac{1}{2} = 0.5 = 1 - p = q \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#bernoulli-distribution-1",
+    "href": "Lecture_Folder/Week2b.html#bernoulli-distribution-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Bernoulli distribution",
+    "text": "Bernoulli distribution\n\nIf the coin isn’t fair then \\(p \\neq 0.5\\)\nHowever, the probabilities still sum to 1\n\n\\[ p + (1-p) = 1 \\] \\[ p + q = 1 \\]\n\nSame is true for other binary possibilities\n\nsuccess or failure\nyes or no answers\nchoosing an allele from a population based upon allele frequencies (Hardy-Weinberg ring any bells??)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#probability-rules",
+    "href": "Lecture_Folder/Week2b.html#probability-rules",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Probability rules",
+    "text": "Probability rules\n\nFlip a coin twice\nRepresent the first flip as ‘X’ and the second flip as ‘Y’\n\n\\[ Pr(\\text{X=H and Y=H}) = p*p = p^2 \\] \\[ Pr(\\text{X=H and Y=T}) = p*q = pq = p^2 \\] \\[ Pr(\\text{X=T and Y=H}) = q*p = pq \\] \\[ Pr(\\text{X=T and Y=T}) = q*q = q^2 \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#probability-rules-1",
+    "href": "Lecture_Folder/Week2b.html#probability-rules-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Probability rules",
+    "text": "Probability rules\n\nProbability that the H and T can occur in any order\n\n\\[ \\text{Pr(X=H) or Pr(X=T)} = p+q=1\\]\n\\[ \\text{Pr(X=H and Y=T) or Pr(X=T and Y=H)} = \\] \\[ (p*q) + (p*q) = 2pq \\]\n\nThese are the ‘and’ and ‘or’ rules of probability\n\n‘and’ means multiply the probabilities\n‘or’ means sum the probabilities\nmost probability distributions can be built up from these simple rules"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#lets-simulate-some-coin-flips",
+    "href": "Lecture_Folder/Week2b.html#lets-simulate-some-coin-flips",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Let’s simulate some coin flips",
+    "text": "Let’s simulate some coin flips\n\n# tossing a fair coin\ncoin &lt;- c(\"heads\", \"tails\")\n\nsample(coin)\n\n[1] \"tails\" \"heads\""
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#lets-simulate-some-coin-flips-1",
+    "href": "Lecture_Folder/Week2b.html#lets-simulate-some-coin-flips-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Let’s simulate some coin flips",
+    "text": "Let’s simulate some coin flips\n\nWhat happens when we change the probabilities or the sample size? How confident are we that our coin is fair?\n\n\nflips &lt;- sample(coin, prob = c(0.5, 0.5), size=10, replace=TRUE)\nbarplot(table(flips))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#expectation-and-moments-of-distributions",
+    "href": "Lecture_Folder/Week2b.html#expectation-and-moments-of-distributions",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Expectation and Moments of Distributions",
+    "text": "Expectation and Moments of Distributions\n\nDistributions have moments that can be estimated\n1st, 2nd, 3rd and 4th moments of a distribution?\nThe expectation or mean of a random variable X is:\n\n\\[E[X] = \\sum_{\\text{all x}}^{}xP(X=x) = \\mu\\]\n\nOften we want to know how dispersed the random variable is around its mean.\nOne measure of dispersion is the variance\n\n\\[Var(X) = E[X^2] = \\sigma^2\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#joint-probability",
+    "href": "Lecture_Folder/Week2b.html#joint-probability",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Joint probability",
+    "text": "Joint probability\n\\[Pr(X,Y) = Pr(X) * Pr(Y)\\]\n\nNote that this is true for two independent events\nHowever, for two non-independent events we also have to take into account their covariance\nTo do this we need conditional probabilities"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#conditional-probability",
+    "href": "Lecture_Folder/Week2b.html#conditional-probability",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Conditional probability",
+    "text": "Conditional probability\n\nFor two independent variables: Probability of Y, given X, or the probability of X, given Y.\n\n\\[Pr(Y|X) = Pr(Y)\\text{ and }Pr(X|Y) = Pr(X)\\]\n\nFor two non-independent variables\n\n\\[Pr(Y|X) \\neq Pr(Y)\\text{ and }Pr(X|Y) \\neq Pr(X)\\]\n\nVariables that are non-independent have a shared variance, which is also known as the covariance\nCovariance standardized to a mean of zero and a unit standard deviation is correlation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#what-is-likelihood-vs.-probability",
+    "href": "Lecture_Folder/Week2b.html#what-is-likelihood-vs.-probability",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "What is Likelihood vs. Probability?",
+    "text": "What is Likelihood vs. Probability?\n\nThe probability of an event is the proportion of times that the event would occur if we repeated a random trial over and over again under the same conditions.\nThe likelihood is a conditional probability of a parameter value given a set of data\nThe likelihood of a population parameter equaling a specific value, given the data\n\nL[parameter|data] = Pr[data|parameter]\n\nLikelihood function which can have a maximum"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#extra-bayesian-material",
+    "href": "Lecture_Folder/Week2b.html#extra-bayesian-material",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Extra Bayesian material",
+    "text": "Extra Bayesian material"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#who-wants-to-win-a-car",
+    "href": "Lecture_Folder/Week2b.html#who-wants-to-win-a-car",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Who wants to win a car?",
+    "text": "Who wants to win a car?\n\nPretend that there are three doors, and behind one is a car. Behind the other doors are cats.\nYou choose one of the doors, and then Monte Hall opens one of the two remaining doors to reveal a cat.\nAt this point you have the choice of changing doors or staying with your original choice.\nWhat should you do?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#geometric-distribution",
+    "href": "Lecture_Folder/Week2b.html#geometric-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Geometric Distribution",
+    "text": "Geometric Distribution\n\nIf a single event has two possible outcomes the probability of having to observe k trials before the first “one” appears is given by the geometric distribution\nThe probability that the first “one” would appear on the first trial is p, but the probability that the first “one” appears on the second trial is (1-p)*p\nBy generalizing this procedure, the probability that there will be k-1 failures before the first success is:\n\n\\[P(X=k)=(1-p)^{k-1}p\\]\n\nmean = \\(\\frac{1}{p}\\)\nvariance = \\(\\frac{(1-p)}{p^2}\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#geometric-distribution-1",
+    "href": "Lecture_Folder/Week2b.html#geometric-distribution-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Geometric Distribution",
+    "text": "Geometric Distribution\n\nExample: If the probability of extinction of an endangered population is estimated to be 0.1 every year, what is the expected time until extinction?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#geometric-distribution-2",
+    "href": "Lecture_Folder/Week2b.html#geometric-distribution-2",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Geometric Distribution",
+    "text": "Geometric Distribution\n\nThe distribution gives the probability of extinction in a given year (requiring that the population did not go extinct in all of the years prior)\nIf we want to know the probability of the population going exticnt by year 4, we simply add up the probabilities for years 1-3 using “or” rules"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#testing-geometric-distributions",
+    "href": "Lecture_Folder/Week2b.html#testing-geometric-distributions",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Testing Geometric Distributions",
+    "text": "Testing Geometric Distributions\n\ndgeom gives the density (probability) of an event (p) after (x) failures\n\n\n#dgeom(x=20, p=0.1)\n# 0.01215767\nplot(dgeom(1:20,0.1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#testing-geometric-distributions-1",
+    "href": "Lecture_Folder/Week2b.html#testing-geometric-distributions-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Testing Geometric Distributions",
+    "text": "Testing Geometric Distributions\n\npgeom gives the cumulative probability of event (p) in (q) trials\n\n\npgeom(q=20, p=0.1)\n\n[1] 0.890581"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#binomial-distribution",
+    "href": "Lecture_Folder/Week2b.html#binomial-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\n\nA binomial distribution results from the combination of several independent Bernoulli events\nExample\n\nPretend that you flip 20 fair coins\n\nor collect alleles from a heterozygote\n\nNow repeat that process and record the number of heads\nWe expect that most of the time we will get approximately 10 heads\nSometimes we get many fewer heads or many more heads"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#binomial-distribution-1",
+    "href": "Lecture_Folder/Week2b.html#binomial-distribution-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\n\nThe distribution of probabilities for each combination of outcomes is\n\n\\[\\large f(k) = {n \\choose k} p^{k} (1-p)^{n-k}\\]\n\nn is the total number of trials\nk is the number of successes\np is the probability of success\nq is the probability of not success\nFor binomial as with the Bernoulli p = 1-q"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#binomial-probability-distribution",
+    "href": "Lecture_Folder/Week2b.html#binomial-probability-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Binomial Probability Distribution",
+    "text": "Binomial Probability Distribution"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#testing-binomial-distributions",
+    "href": "Lecture_Folder/Week2b.html#testing-binomial-distributions",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Testing Binomial Distributions",
+    "text": "Testing Binomial Distributions\n\ndbinom gives the density (probability) of number successes (x) in number trials (size), with (prob) probability between 0-1\n\n\n# dbinom(x=5, size=10, p=0.5)\n# 0.246\nplot(dbinom(x=1:10, size=10, p=0.5))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#testing-binomial-distributions-1",
+    "href": "Lecture_Folder/Week2b.html#testing-binomial-distributions-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Testing Binomial Distributions",
+    "text": "Testing Binomial Distributions\n\npbinom gives the cumulative probability of reaching at least (q) number of successes after (size) number of trials\n\n\nplot(pbinom(q=1:100, size=100, p=0.5))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#negative-binomial-distribution",
+    "href": "Lecture_Folder/Week2b.html#negative-binomial-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Negative Binomial Distribution",
+    "text": "Negative Binomial Distribution\n\nExtension of the geometric distribution describing the waiting time until r “successes” have happened.\nGeneralizes the geometric distribution\nProbability of the \\(r^{th}\\) “success” appearing on the \\(k^{th}\\) trial\nmean = \\(\\frac{r}{p}\\)\nvariance = \\(r(1-p)/p^2\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#negative-binomial-distribution-1",
+    "href": "Lecture_Folder/Week2b.html#negative-binomial-distribution-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Negative Binomial Distribution",
+    "text": "Negative Binomial Distribution\n\nExample: If a predator must capture 10 prey before it can grow large enough to reproduce\nWhat would the mean age of onset of reproduction be if the probability of capturing a prey on any given day is 0.1?\nNotice that the variance is quite high (~1000) and that the distribution looks quite skewed"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#poisson-probability-distribution",
+    "href": "Lecture_Folder/Week2b.html#poisson-probability-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution",
+    "text": "Poisson Probability Distribution\n\nAnother common situation in biology is when each trial is discrete, but the number of observations of each outcome is observed/counted\nSome examples are\n\ncounts of snails in several plots of land\nobservations of the firing of a neuron in a unit of time\ncount of genes in a genome binned to units of 500 AA\n\nJust like before you have ‘successes’, but\n\nnow you count them for each replicate\nthe replicates now are units of area or time\nthe values can now range from 0 to a large number"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#poisson-probability-distribution-1",
+    "href": "Lecture_Folder/Week2b.html#poisson-probability-distribution-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution",
+    "text": "Poisson Probability Distribution\n\nFor example, you can examine 1000 genes\n\ncount the number of base pairs in the coding region of each gene\nwhat is the probability of observing a gene with ‘r’ bp?\n\nPr(Y=r) is the probability that the number of occurrences of an event y equals a count r in the total number of trials"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#poisson-probability-distribution-2",
+    "href": "Lecture_Folder/Week2b.html#poisson-probability-distribution-2",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution",
+    "text": "Poisson Probability Distribution\n\nNote that this is a single parameter function because \\(\\mu = \\sigma^2\\)\nThe two together are often just represented by \\(\\lambda\\)\n\n\\[Pr(y=r) = \\frac{e^{-\\lambda}\\lambda^r}{r!}\\]\n\nThis means that for a variable that is truly Poisson distributed:\n\nthe mean and variance should be equal to one another\nvariables that are approximately Poisson distributed but have a larger variance than mean are often called ‘overdispersed’\nquite common in RNA-seq and microbiome data"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#poisson-probability-distribution-gene-length-by-bins-of-500-nucleotides",
+    "href": "Lecture_Folder/Week2b.html#poisson-probability-distribution-gene-length-by-bins-of-500-nucleotides",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution | gene length by bins of 500 nucleotides",
+    "text": "Poisson Probability Distribution | gene length by bins of 500 nucleotides"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#poisson-probability-distribution-increasing-parameter-values-of-lambda",
+    "href": "Lecture_Folder/Week2b.html#poisson-probability-distribution-increasing-parameter-values-of-lambda",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution | increasing parameter values of \\(\\lambda\\)",
+    "text": "Poisson Probability Distribution | increasing parameter values of \\(\\lambda\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#testing-poisson-distributions",
+    "href": "Lecture_Folder/Week2b.html#testing-poisson-distributions",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Testing Poisson Distributions",
+    "text": "Testing Poisson Distributions\nNumber of counts (x) given a mean and variance of lambda\n\ndpois(x=2, lambda=1)\n\n[1] 0.1839397\n\nplot(dpois(x=1:10, lambda=3))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#uniform-distribution",
+    "href": "Lecture_Folder/Week2b.html#uniform-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Uniform Distribution",
+    "text": "Uniform Distribution\n\nMeans that the probability is equal for all possible outcomes\nLike drawing m&m out of a bag with equal proportions of colors\n\n\ndunif(x=1,min=0, max=10)\n\n[1] 0.1"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#uniform-distribution-1",
+    "href": "Lecture_Folder/Week2b.html#uniform-distribution-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Uniform Distribution",
+    "text": "Uniform Distribution\n\nplot(dunif(1:10, 0, 10))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#exponential-distribution",
+    "href": "Lecture_Folder/Week2b.html#exponential-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Exponential Distribution",
+    "text": "Exponential Distribution\n\nFor example, let equal the instantaneous death rate of an individual.\nThe lifespan of the individual would be described by an exponential distribution (assuming that does not change over time)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#exponential-distribution-1",
+    "href": "Lecture_Folder/Week2b.html#exponential-distribution-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Exponential Distribution",
+    "text": "Exponential Distribution\n\nplot(dexp(1:100, rate = 0.1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gamma-distribution",
+    "href": "Lecture_Folder/Week2b.html#gamma-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Gamma Distribution",
+    "text": "Gamma Distribution\n\nThe gamma distribution generalizes the exponential distribution.\nIt describes the waiting time until the \\(r^{th}\\) event for a process that occurs randomly over time at a rate \\(\\lambda\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gamma-distribution-1",
+    "href": "Lecture_Folder/Week2b.html#gamma-distribution-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Gamma Distribution",
+    "text": "Gamma Distribution\n\nExample: If, in a PCR reaction, DNA polymerase synthesizes new DNA strands at a rate of 1 per millisecond, how long until 1000 new DNA strands are produced?\nAssume that DNA synthesis does not deplete the pool of primers or nucleotides in the chamber, so that each event is independent of other events in the PCR chamber."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#the-gaussian-or-normal-distribution",
+    "href": "Lecture_Folder/Week2b.html#the-gaussian-or-normal-distribution",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "The Gaussian or Normal Distribution",
+    "text": "The Gaussian or Normal Distribution"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#log-normal-pdf-continuous-version-of-poisson--ish",
+    "href": "Lecture_Folder/Week2b.html#log-normal-pdf-continuous-version-of-poisson--ish",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Log-normal PDF | Continuous version of Poisson (-ish)",
+    "text": "Log-normal PDF | Continuous version of Poisson (-ish)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#transformations-to-normalize-data",
+    "href": "Lecture_Folder/Week2b.html#transformations-to-normalize-data",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Transformations to ‘normalize’ data",
+    "text": "Transformations to ‘normalize’ data"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#transformations-to-normalize-data-1",
+    "href": "Lecture_Folder/Week2b.html#transformations-to-normalize-data-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Transformations to ‘normalize’ data",
+    "text": "Transformations to ‘normalize’ data"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#binomial-to-normal-categorical-to-continuous",
+    "href": "Lecture_Folder/Week2b.html#binomial-to-normal-categorical-to-continuous",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Binomial to Normal | Categorical to continuous",
+    "text": "Binomial to Normal | Categorical to continuous"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#the-normal-aka-gaussian-probability-density-function-pdf",
+    "href": "Lecture_Folder/Week2b.html#the-normal-aka-gaussian-probability-density-function-pdf",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "The Normal (aka Gaussian) | Probability Density Function (PDF)",
+    "text": "The Normal (aka Gaussian) | Probability Density Function (PDF)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#normal-pdf",
+    "href": "Lecture_Folder/Week2b.html#normal-pdf",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Normal PDF",
+    "text": "Normal PDF"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#normal-pdf-a-function-of-two-parameters",
+    "href": "Lecture_Folder/Week2b.html#normal-pdf-a-function-of-two-parameters",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Normal PDF | A function of two parameters",
+    "text": "Normal PDF | A function of two parameters\n\n(\\(\\mu\\) and \\(\\sigma\\))\n\n\n\n\n\n\n\n\n\nwhere \\[\\large \\pi \\approx 3.14159\\]\n\\[\\large \\epsilon \\approx 2.71828\\]\nTo write that a variable (v) is distributed as a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\), we write the following:\n\\[\\large v \\sim \\mathcal{N} (\\mu,\\sigma^2)\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#normal-pdf-estimates-of-mean-and-variance",
+    "href": "Lecture_Folder/Week2b.html#normal-pdf-estimates-of-mean-and-variance",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Normal PDF | estimates of mean and variance",
+    "text": "Normal PDF | estimates of mean and variance\nEstimate of the mean from a single sample\n\\[\\Large \\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n}{x_i} \\]\nEstimate of the variance from a single sample\n\\[\\Large s^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}{(x_i - \\bar{x})^2} \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#normal-pdf-1",
+    "href": "Lecture_Folder/Week2b.html#normal-pdf-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Normal PDF",
+    "text": "Normal PDF"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#why-is-the-normal-special-in-biology",
+    "href": "Lecture_Folder/Week2b.html#why-is-the-normal-special-in-biology",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Why is the Normal special in biology?",
+    "text": "Why is the Normal special in biology?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#why-is-the-normal-special-in-biology-1",
+    "href": "Lecture_Folder/Week2b.html#why-is-the-normal-special-in-biology-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Why is the Normal special in biology?",
+    "text": "Why is the Normal special in biology?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#why-is-the-normal-special-in-biology-2",
+    "href": "Lecture_Folder/Week2b.html#why-is-the-normal-special-in-biology-2",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Why is the Normal special in biology?",
+    "text": "Why is the Normal special in biology?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#parent-offspring-resemblance",
+    "href": "Lecture_Folder/Week2b.html#parent-offspring-resemblance",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Parent-offspring resemblance",
+    "text": "Parent-offspring resemblance"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#genetic-model-of-complex-traits",
+    "href": "Lecture_Folder/Week2b.html#genetic-model-of-complex-traits",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Genetic model of complex traits",
+    "text": "Genetic model of complex traits"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#distribution-of-f_2-genotypes-really-just-binomial-sampling",
+    "href": "Lecture_Folder/Week2b.html#distribution-of-f_2-genotypes-really-just-binomial-sampling",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Distribution of \\(F_2\\) genotypes | really just binomial sampling",
+    "text": "Distribution of \\(F_2\\) genotypes | really just binomial sampling"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#why-else-is-the-normal-special",
+    "href": "Lecture_Folder/Week2b.html#why-else-is-the-normal-special",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Why else is the Normal special?",
+    "text": "Why else is the Normal special?\n\nThe normal distribution is immensely useful because of the central limit theorem, which says that the mean of many random variables independently drawn from the same distribution is distributed approximately normally\nOne can think of numerous situations, such as\n\nwhen multiple genes contribute to a phenotype\nor that many factors contribute to a biological process\n\nIn addition, whenever there is variance introduced by stochastic factors the central limit theorem holds\nThus, normal distributions occur throughout genomics\nIt’s also the basis of the majority of classical statistics"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#z-scores-of-normal-variables",
+    "href": "Lecture_Folder/Week2b.html#z-scores-of-normal-variables",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "z-scores of normal variables",
+    "text": "z-scores of normal variables\n\nOften we want to make variables more comparable to one another\nFor example, consider measuring the leg length of mice and of elephants\n\nWhich animal has longer legs in absolute terms?\nProportional to their body size?\n\nA good way to answer these last questions is to use ‘z-scores’"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#z-scores-of-normal-variables-1",
+    "href": "Lecture_Folder/Week2b.html#z-scores-of-normal-variables-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "z-scores of normal variables",
+    "text": "z-scores of normal variables\n\nz-scores are standardized to a mean of 0 and a standard deviation of 1\nWe can modify any normal distribution to have a mean of 0 and a standard deviation of 1\nAnother term for this is the standard normal distribution\n\n\\[\\huge z_i = \\frac{(x_i - \\bar{x})}{s}\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#resources",
+    "href": "Lecture_Folder/Week2b.html#resources",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Resources:",
+    "text": "Resources:\n\nVignette (from the tidyr package)\nOriginal paper (Hadley Wickham, 2014 JSS)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#r-packages-youll-need-today",
+    "href": "Lecture_Folder/Week2b.html#r-packages-youll-need-today",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "R packages you’ll need today",
+    "text": "R packages you’ll need today\ntidyverse\nnycflights13"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#tidyverse-vs.-base-r-cont.",
+    "href": "Lecture_Folder/Week2b.html#tidyverse-vs.-base-r-cont.",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Tidyverse vs. base R (cont.)",
+    "text": "Tidyverse vs. base R (cont.)\nOne point of convenience is that there is often a direct correspondence between a tidyverse command and its base R equivalent.\nThese generally follow a tidyverse::snake_case vs base::period.case rule. E.g. Compare:\n\n\n\ntidyverse\nbase\n\n\n\n\n?readr::read_csv\n?utils::read.csv\n\n\n?dplyr::if_else\n?base::ifelse\n\n\n?tibble::tibble\n?base::data.frame\n\n\n\nEtcetera.\nIf you call up the above examples, you’ll see that the tidyverse alternative typically offers some enhancements or other useful options (and sometimes restrictions) over its base counterpart.\n–\nRemember: There are (almost) always multiple ways to achieve a single goal in R."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#tidyverse-packages",
+    "href": "Lecture_Folder/Week2b.html#tidyverse-packages",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Tidyverse packages",
+    "text": "Tidyverse packages\nLet’s load the tidyverse meta-package and check the output.\n\nlibrary(tidyverse)\n\n–\nWe see that we have actually loaded a number of packages (which could also be loaded individually): ggplot2, tibble, dplyr, etc. - We can also see information about the package versions and some namespace conflicts."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#tidyverse-packages-cont.",
+    "href": "Lecture_Folder/Week2b.html#tidyverse-packages-cont.",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Tidyverse packages (cont.)",
+    "text": "Tidyverse packages (cont.)\nThe tidyverse actually comes with a lot more packages than those that are just loaded automatically.1\n\ntidyverse_packages()\n\n [1] \"broom\"         \"conflicted\"    \"cli\"           \"dbplyr\"       \n [5] \"dplyr\"         \"dtplyr\"        \"forcats\"       \"ggplot2\"      \n [9] \"googledrive\"   \"googlesheets4\" \"haven\"         \"hms\"          \n[13] \"httr\"          \"jsonlite\"      \"lubridate\"     \"magrittr\"     \n[17] \"modelr\"        \"pillar\"        \"purrr\"         \"ragg\"         \n[21] \"readr\"         \"readxl\"        \"reprex\"        \"rlang\"        \n[25] \"rstudioapi\"    \"rvest\"         \"stringr\"       \"tibble\"       \n[29] \"tidyr\"         \"xml2\"          \"tidyverse\"    \n\n\nWe’ll use several of these additional packages during the remainder of this course.\n\nE.g. The lubridate package for working with dates and the rvest package for webscraping.\nHowever, bear in mind that these packages will have to be loaded separately.\n\n.footnote[ 1 It also includes a lot of dependencies upon installation. This is a matter of some controversy.]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#tidyverse-packages-cont.-1",
+    "href": "Lecture_Folder/Week2b.html#tidyverse-packages-cont.-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Tidyverse packages (cont.)",
+    "text": "Tidyverse packages (cont.)\nI hope to cover most of the tidyverse packages over the length of this course.\nToday, however, I’m only really going to focus on two packages: 1. dplyr 2. tidyr\nThese are the workhorse packages for cleaning and wrangling data. They are thus the ones that you will likely make the most use of (alongside ggplot2, which we already met back in Lecture 1). - Data cleaning and wrangling occupies an inordinate amount of time, no matter where you are in your research career."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#an-aside-on-pipes",
+    "href": "Lecture_Folder/Week2b.html#an-aside-on-pipes",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "An aside on pipes: %>%",
+    "text": "An aside on pipes: %&gt;%\nThe tidyverse loads its own pipe operator, denoted %&gt;%.\n\n## These next two lines of code do exactly the same thing.\nmpg %&gt;% filter(manufacturer==\"audi\") %&gt;% group_by(model) %&gt;% summarise(hwy_mean = mean(hwy))\nsummarise(group_by(filter(mpg, manufacturer==\"audi\"), model), hwy_mean = mean(hwy))\n\n–\nThe first line reads from left to right, exactly how I thought of the operations in my head. - Take this object (mpg), do this (filter), then do this (group_by), etc.\nThe second line totally inverts this logical order (the final operation comes first!) - Who wants to read things inside out?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#an-aside-on-pipes-cont.",
+    "href": "Lecture_Folder/Week2b.html#an-aside-on-pipes-cont.",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "An aside on pipes: %>% (cont.)",
+    "text": "An aside on pipes: %&gt;% (cont.)\nThe piped version of the code is even more readable if we write it over several lines. Here it is again and, this time, I’ll run it for good measure so you can see the output:\n\nmpg %&gt;% \n  filter(manufacturer==\"audi\") %&gt;% \n  group_by(model) %&gt;% \n  summarise(hwy_mean = mean(hwy))\n\n# A tibble: 3 × 2\n  model      hwy_mean\n  &lt;chr&gt;         &lt;dbl&gt;\n1 a4             28.3\n2 a4 quattro     25.8\n3 a6 quattro     24  \n\n\nRemember: Using vertical space costs nothing and makes for much more readable/writeable code than cramming things horizontally."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#dplyr",
+    "href": "Lecture_Folder/Week2b.html#dplyr",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "dplyr",
+    "text": "dplyr"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#key-dplyr-verbs",
+    "href": "Lecture_Folder/Week2b.html#key-dplyr-verbs",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Key dplyr verbs",
+    "text": "Key dplyr verbs\nThere are five key dplyr verbs that you need to learn.\n\nfilter: Filter (i.e. subset) rows based on their values.\narrange: Arrange (i.e. reorder) rows based on their values.\nselect: Select (i.e. subset) columns by their names:\nmutate: Create new columns.\nsummarise: Collapse multiple rows into a single summary value.1"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#other-dplyr-goodies",
+    "href": "Lecture_Folder/Week2b.html#other-dplyr-goodies",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Other dplyr goodies",
+    "text": "Other dplyr goodies\ngroup_by and ungroup: For (un)grouping. - Particularly useful with the summarise and mutate commands, as we’ve already seen.\n\n\nslice: Subset rows by position rather than filtering by values. - E.g. starwars %&gt;% slice(c(1, 5))\n\n\npull: Extract a column from as a data frame as a vector or scalar. - E.g. starwars %&gt;% filter(gender==\"female\") %&gt;% pull(height)\n\n\ncount and distinct: Number and isolate unique observations. - E.g. starwars %&gt;% count(species), or starwars %&gt;% distinct(species) - You could also use a combination of mutate, group_by, and n(), e.g. starwars %&gt;% group_by(species) %&gt;% mutate(num = n())."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#data-cleaning-and-manipulation",
+    "href": "Lecture_Folder/Week2b.html#data-cleaning-and-manipulation",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Data cleaning and manipulation",
+    "text": "Data cleaning and manipulation\n\nHere, we differentiate “data cleaning” from “data manipulation”, which is perhaps an arbitrary distinction.\n“Data cleaning” typically refers to altering variable class information, fixing mistakes that could have arisen in the data (e.g., an extra ‘.’ symbol in a numeric value), and things of this nature.\n“Data manipulation”, in my mind, refers to altering the structure of the data in a way that changes the functional structure the data (e.g., an addition of a column, deletion of rows, long/wide formatting change)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gapminder-data",
+    "href": "Lecture_Folder/Week2b.html#gapminder-data",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "gapminder data",
+    "text": "gapminder data\nThe gapminder data are commonly used to explore concepts of data exploration and manipulation, maybe because of the combination of character and numeric variables, nested structure in terms of country and year, or maybe it is just out of ease in copying notes from other people.\n\ndat &lt;- read.delim(file = \"http://www.stat.ubc.ca/~jenny/notOcto/STAT545A/examples/gapminder/data/gapminderDataFiveYear.txt\")\n\n\nhead(dat)\n\n      country year      pop continent lifeExp gdpPercap\n1 Afghanistan 1952  8425333      Asia  28.801  779.4453\n2 Afghanistan 1957  9240934      Asia  30.332  820.8530\n3 Afghanistan 1962 10267083      Asia  31.997  853.1007\n4 Afghanistan 1967 11537966      Asia  34.020  836.1971\n5 Afghanistan 1972 13079460      Asia  36.088  739.9811\n6 Afghanistan 1977 14880372      Asia  38.438  786.1134\n\nstr(dat)\n\n'data.frame':   1704 obs. of  6 variables:\n $ country  : chr  \"Afghanistan\" \"Afghanistan\" \"Afghanistan\" \"Afghanistan\" ...\n $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ pop      : num  8425333 9240934 10267083 11537966 13079460 ...\n $ continent: chr  \"Asia\" \"Asia\" \"Asia\" \"Asia\" ...\n $ lifeExp  : num  28.8 30.3 32 34 36.1 ...\n $ gdpPercap: num  779 821 853 836 740 ..."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gapminder-data-1",
+    "href": "Lecture_Folder/Week2b.html#gapminder-data-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "gapminder data",
+    "text": "gapminder data\nWe can use what we learned before in terms of base R functions to calculate summary statistics.\n\n# mean life expectancy\nmean(dat$lifeExp)\n\n[1] 59.47444\n\n\nBut what does mean life expectancy really tell us, when we also have information on space (country) and time (year)? So we may wish to subset the data to a specific country or time period. We can do this using which statements.\n\ndat[which(dat$country == 'Afghanistan'), ]\ndat[which(dat$year &lt; 1960), ]\n\nRecall that which evaluates a condition, and then determines the index of each TRUE value. So for the first example, the which tells us the indices where the vector dat$country is equal to “Afghanistan”. Putting this result vector of indices within the square brackets allows us to subset the data.frame based on these indices (specifically, we are subsetting specific rows of data).\nIn the second example, we want to see all data that was recorded prior to 1960. As you will quickly realize, there are always multiple ways to do the same thing when programming. For instance, this second statement could be done in base R using the subset function.\n\nsubset(dat, dat$year &lt; 1960)\n\nThe subset function also allows you to ‘select’ specific columns in the output.\n\nsubset(dat, dat$year &lt; 1955, select=c(lifeExp,gdpPercap))\n\nHowever, this is the same as\n\ndat[which(dat$year &lt; 1960), c(\"lifeExp\",\"gdpPercap\")]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gapminder-data-2",
+    "href": "Lecture_Folder/Week2b.html#gapminder-data-2",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "gapminder data",
+    "text": "gapminder data\nTo refresh your memory and clarify the use of conditionals, the list below provides a bit more information.\n\n==: equals exactly\n&lt;, &lt;=: is smaller than, is smaller than or equal to\n&gt;, &gt;=: is bigger than, is bigger than or equal to\n!=: not equal to"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gapminder-data-3",
+    "href": "Lecture_Folder/Week2b.html#gapminder-data-3",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "gapminder data",
+    "text": "gapminder data\nAnd some that we did not go into before, but will go into a bit more detail on now:\n\n!: NOT operator, to specify things that should be omitted\n&: AND operator, allows you to chain two conditions which must both be met\n|: OR operator, to chains two conditions when at least one should be met\n%in%: belongs to one of the following (usually followed by a vector of possible values)\n\nThe AND (&) and the OR (|) operators are also super useful when you want to separate data based on multiple conditions."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gapminder-data-4",
+    "href": "Lecture_Folder/Week2b.html#gapminder-data-4",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "gapminder data",
+    "text": "gapminder data\n\ndat[which(dat$country=='Afghanistan' & dat$year==1977),]\ndat[which(dat$lifeExp &lt; 40 | dat$gdpPercap &lt; 500), ]\n\nFinally, the %in% operator is super useful when you want to subset data based on multiple conditions\n\n#fails\ndat[which(dat$country == c('Afghanistan', 'Turkey')), ]\n\n         country year      pop continent lifeExp gdpPercap\n1    Afghanistan 1952  8425333      Asia  28.801  779.4453\n3    Afghanistan 1962 10267083      Asia  31.997  853.1007\n5    Afghanistan 1972 13079460      Asia  36.088  739.9811\n7    Afghanistan 1982 12881816      Asia  39.854  978.0114\n9    Afghanistan 1992 16317921      Asia  41.674  649.3414\n11   Afghanistan 2002 25268405      Asia  42.129  726.7341\n1574      Turkey 1957 25670939    Europe  48.079 2218.7543\n1576      Turkey 1967 33411317    Europe  54.336 2826.3564\n1578      Turkey 1977 42404033    Europe  59.507 4269.1223\n1580      Turkey 1987 52881328    Europe  63.108 5089.0437\n1582      Turkey 1997 63047647    Europe  68.835 6601.4299\n1584      Turkey 2007 71158647    Europe  71.777 8458.2764\n\n#does not fail\ndat[which(dat$country %in% c('Afghanistan', 'Turkey')), ]\n\n         country year      pop continent lifeExp gdpPercap\n1    Afghanistan 1952  8425333      Asia  28.801  779.4453\n2    Afghanistan 1957  9240934      Asia  30.332  820.8530\n3    Afghanistan 1962 10267083      Asia  31.997  853.1007\n4    Afghanistan 1967 11537966      Asia  34.020  836.1971\n5    Afghanistan 1972 13079460      Asia  36.088  739.9811\n6    Afghanistan 1977 14880372      Asia  38.438  786.1134\n7    Afghanistan 1982 12881816      Asia  39.854  978.0114\n8    Afghanistan 1987 13867957      Asia  40.822  852.3959\n9    Afghanistan 1992 16317921      Asia  41.674  649.3414\n10   Afghanistan 1997 22227415      Asia  41.763  635.3414\n11   Afghanistan 2002 25268405      Asia  42.129  726.7341\n12   Afghanistan 2007 31889923      Asia  43.828  974.5803\n1573      Turkey 1952 22235677    Europe  43.585 1969.1010\n1574      Turkey 1957 25670939    Europe  48.079 2218.7543\n1575      Turkey 1962 29788695    Europe  52.098 2322.8699\n1576      Turkey 1967 33411317    Europe  54.336 2826.3564\n1577      Turkey 1972 37492953    Europe  57.005 3450.6964\n1578      Turkey 1977 42404033    Europe  59.507 4269.1223\n1579      Turkey 1982 47328791    Europe  61.036 4241.3563\n1580      Turkey 1987 52881328    Europe  63.108 5089.0437\n1581      Turkey 1992 58179144    Europe  66.146 5678.3483\n1582      Turkey 1997 63047647    Europe  68.835 6601.4299\n1583      Turkey 2002 67308928    Europe  70.845 6508.0857\n1584      Turkey 2007 71158647    Europe  71.777 8458.2764"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gapminder-data-5",
+    "href": "Lecture_Folder/Week2b.html#gapminder-data-5",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "gapminder data",
+    "text": "gapminder data\nRelated to %in%, is match. match is best for identifying the index of single types in a vector of unique values. For instance,\n\ndat[match(c('Afghanistan', 'Turkey'), dat$country),]\n\n         country year      pop continent lifeExp gdpPercap\n1    Afghanistan 1952  8425333      Asia  28.801  779.4453\n1573      Turkey 1952 22235677    Europe  43.585 1969.1010"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gapminder-data-6",
+    "href": "Lecture_Folder/Week2b.html#gapminder-data-6",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "gapminder data",
+    "text": "gapminder data\nonly returns two rows, because it only matches the first instance of both countries in the data. We can use match to get the index associated with a single value (useful when writing functions).\n\nmatch('dog', c('dog', 'cat', 'snake'))\n\n[1] 1\n\n#not ideal behavior\nmatch('dog', c('dog', 'cat', 'snake', 'dog'))\n\n[1] 1\n\n\nor it can be used to identify multiple instances of a single value across a vector of values.\n\nmatch(c('dog', 'cat', 'snake', 'dog'), 'dog')\n\n[1]  1 NA NA  1\n\nmatch(c('dog', 'cat', 'snake', 'dog'), c('dog', 'cat'))\n\n[1]  1  2 NA  1"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#gapminder-data-7",
+    "href": "Lecture_Folder/Week2b.html#gapminder-data-7",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "gapminder data",
+    "text": "gapminder data\nWhile a bit opaque, these functions are pretty useful in a variety of situations. Speaking of data manipulation functions that are useful but a bit conceptually difficult, do.call and Reduce are solid base R functions.\ndo.call is a way of calling the same function recursively on multiple objects, and may have similar output to Reduce, which is also a way to recursively apply a function.\n\nlst &lt;- list(1:10, 1:10, 1:10, 1:10, 1:10)\nlst\n\n[[1]]\n [1]  1  2  3  4  5  6  7  8  9 10\n\n[[2]]\n [1]  1  2  3  4  5  6  7  8  9 10\n\n[[3]]\n [1]  1  2  3  4  5  6  7  8  9 10\n\n[[4]]\n [1]  1  2  3  4  5  6  7  8  9 10\n\n[[5]]\n [1]  1  2  3  4  5  6  7  8  9 10\n\n#this makes a single rbind call with each element of the list as an argument\nstr(do.call(rbind, lst))\n\n int [1:5, 1:10] 1 1 1 1 1 2 2 2 2 2 ...\n\n#this does it iteratively (so makes n-1 rbind calls)\nReduce(rbind, lst)\n\n     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\ninit    1    2    3    4    5    6    7    8    9    10\n        1    2    3    4    5    6    7    8    9    10\n        1    2    3    4    5    6    7    8    9    10\n        1    2    3    4    5    6    7    8    9    10\n        1    2    3    4    5    6    7    8    9    10"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#the-tidyverse",
+    "href": "Lecture_Folder/Week2b.html#the-tidyverse",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "The tidyverse",
+    "text": "The tidyverse\n\nThere are many R libraries designed to manipulate data and work with specific data structures (e.g., purrr for list objects, lubridate for dates, etc.).\nFor the sake of brevity and generality, we will examine one main useful packages for data manipulation: dplyr."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#rename",
+    "href": "Lecture_Folder/Week2b.html#rename",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "rename",
+    "text": "rename\n\ndf &lt;- data.frame(A=runif(100), B=runif(100), D=rnorm(100,1,1))\ndf2 &lt;- dplyr::rename(df, a=A, b=B, d=D)\n\nThis is the same functionality as the base R function colnames (or names for a data.frame)\nnames(df2) &lt;- c('a', 'b', 'd')\n#or \nnames(df2) &lt;- tolower(names(df))\nThe nice part about dplyr::rename() is that we specify the old and new column names, meaning that there is little risk of an indexing error as with using the colnames() or names() functions."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#select",
+    "href": "Lecture_Folder/Week2b.html#select",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "select",
+    "text": "select\nMany of the next functions are directly analogs of functions from another programming language used to query databases (SQL). This makes it really nice to learn, as you can essentially learn two languages while learning one. SQL is pretty powerful when working with relational data. I will not go into what I mean by this, unless there is time during lecture and interest among you all.\nWe use dplyr::select when we want to…select…columns.\n\ndplyr::select(df2, a)\ndplyr::select(df2, obs = starts_with('a'))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#filter",
+    "href": "Lecture_Folder/Week2b.html#filter",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "filter",
+    "text": "filter\ndplyr::filter is another one of those useful functions that we already know how to use in base R. Previously, we have used which statements or the subset function. dplyr::filter is used to filter down a data.frame by some condition applied to rows.\n\ndplyr::filter(df2, a &lt; 0.5)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#mutate",
+    "href": "Lecture_Folder/Week2b.html#mutate",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "mutate",
+    "text": "mutate\ndplyr::mutate is used when we wish to create a new covariate based on our existing covariates. For instance, if we wanted to create a column e on df2 that was the sum of a+b divided by d…\n\ndf2 &lt;- dplyr::mutate(df2, e=(a+b)/d)\nhead(df2,5)\n\n          a          b          d           e\n1 0.3243548 0.79117276  1.5810743  0.70555041\n2 0.2800363 0.28220355 -0.4963027 -1.13285681\n3 0.9318768 0.75790762  0.9595241  1.76106510\n4 0.7583689 0.04228768  1.2519443  0.63953053\n5 0.1081216 0.07187200  2.8208981  0.06380719\n\n\nNotice that the function creates a new column and appends it to the existing data.frame, but does not “write in place”. That is, the df2 object is not modified unless it is stored (which we do above)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#group_by",
+    "href": "Lecture_Folder/Week2b.html#group_by",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "group_by",
+    "text": "group_by\ndplyr::group_by is really useful as an intermediate step to getting at summary statistics which take into account grouping by a character or factor variable. For instance, if we wanted to calculate the mean life expectancy (lifeExp) for every country in the gapminder data (dat), we would first have to group by country.\n\ndatG &lt;- dplyr::group_by(dat, country)\n\nThis is a bit like a non-function, since dat and datG are essentially the same….but they are not for the purposes of computing group-wise statistics. This is done using the dplyr::summarise function."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#summarise",
+    "href": "Lecture_Folder/Week2b.html#summarise",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "summarise",
+    "text": "summarise\nSo if we wanted to calculate mean life expectancy (lifeExp) per country, we could use the grouped data.frame datG and the dplyr::summarise function to do so.\n\ndplyr::summarise(datG, mnLife=mean(lifeExp))\n\n# A tibble: 142 × 2\n   country     mnLife\n   &lt;chr&gt;        &lt;dbl&gt;\n 1 Afghanistan   37.5\n 2 Albania       68.4\n 3 Algeria       59.0\n 4 Angola        37.9\n 5 Argentina     69.1\n 6 Australia     74.7\n 7 Austria       73.1\n 8 Bahrain       65.6\n 9 Bangladesh    49.8\n10 Belgium       73.6\n# ℹ 132 more rows"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#joins",
+    "href": "Lecture_Folder/Week2b.html#joins",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "joins",
+    "text": "joins\njoins are something taken directly from SQL. Table joins are ways of combining relational data by some index variable. That is, we often have situations where our data are inherently multi-dimensional. If we have a data.frame containing rows corresponding to observations of a species at a given location, we could have another data.frame containing species-level morphometric or trait data. While we could mash this into a single data.frame, it would repeat many values, which is not ideal for data clarity or memory management.\n\ndf$species &lt;- sample(c('dog', 'cat', 'bird'),100, replace=TRUE)\n\ninfo &lt;- data.frame(species=c('dog', 'cat', 'bird', 'snake'),\n    annoying=c(10, 2, 100, 1), \n    meanBodySize=c(20, 5, 1, 2))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#joins-1",
+    "href": "Lecture_Folder/Week2b.html#joins-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "joins",
+    "text": "joins\nNow we can join some stuff together, combining data on mean species-level characteristics with individual-level observations.\n\n# maintains the structure of df (the \"left\" data structure)\nleft_join(df, info, by='species')\n\n# maintains the structure of info (the \"right\" data structure)\nright_join(df,info, by='species')\n\n# return things that are in info but not in df\nanti_join(info, df, by='species')\n\nThere are other forms of joins (full_join, inner_join, etc.), but I find that I mostly use the left or right variations of the joins, as it specifically allows me to control the output (i.e., using dplyr::left_join, I know that the resulting data.frame will have the same number of rows as the left hand data.frame)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#piping",
+    "href": "Lecture_Folder/Week2b.html#piping",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "piping",
+    "text": "piping\nAlright. So before we discussed joins, we were describing the different main verbs of dplyr. We discussed rename, select, mutate, group_by, and summarise. A final point, and something tidyverse folks really love, is the use of these functions in nested statements through the use of piping.\nPipes in bash scripting look like |, pipes in R syntax look like %&gt;%. It does not matter what it looks like though, it matter what it does. Here is a simple example of the use of piping. We can go back to the example of calculating the mean life expectancy per country from the gapminder data.\nThe usual way\n\ntmp &lt;- dplyr::group_by(dat, country)\ntmp2 &lt;- dplyr::summarise(tmp, mnLifeExp=mean(lifeExp))\n\nThe piped way\n\ntmp3 &lt;- dat %&gt;%\n    dplyr::group_by(country) %&gt;%\n    dplyr::summarise(mnLifeExp=mean(lifeExp))\n\nThe results of these two are identical (all(tmp3==tmp2) returns TRUE).\nThis is useful, as commands can be chained together, including the creation of new variables, subsetting and summarising of existing variables, etc. One thing to keep in mind is to check intermediate results – instead of just piping all the way through – as data manipulation errors can be introduced mid-statement and go unnoticed. That is, in some situations, piping does not help reproducibility. Many proponents argue that it helps with code readability, while many others say that actively makes code less human readable. It definitely does require adopting a certain syntax and the assumption that every end user is on the tidyverse train, which is not ideal when reproducibility involves everyone, not just the cool tidy/Hadley/RStudio crowd."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#midterm-feedback",
+    "href": "Lecture_Folder/Week2b.html#midterm-feedback",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Midterm Feedback",
+    "text": "Midterm Feedback\n\nThank you all for providing thoughtful feedback on the last Problem Set!\nYou all really enjoy in-class exercises - we’ll do more of that!\nThe homework difficulty doesn’t always align well with the lectures - will try to remedy this"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#understanding-populations-and-their-parameters",
+    "href": "Lecture_Folder/Week2b.html#understanding-populations-and-their-parameters",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Understanding Populations and their Parameters",
+    "text": "Understanding Populations and their Parameters\n\nWe often think about the samples we are collecting as a part of a larger population\nSince we can’t measure every member of that population, we instead use sampling to estimate the parameters of the population as a whole\n\nSome common parameters: mean, range, median\nIf we performed random sampling, we assume that the parameter estimates of our sample are equitable to the true population parameters"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#simulations-to-compare-parameter-estimates-2",
+    "href": "Lecture_Folder/Week2b.html#simulations-to-compare-parameter-estimates-2",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Simulations to compare parameter estimates",
+    "text": "Simulations to compare parameter estimates\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=1000, lambda = 5)\nhist(true_pop, xlim = c(0,16))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#calculating-parameters",
+    "href": "Lecture_Folder/Week2b.html#calculating-parameters",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Calculating parameters",
+    "text": "Calculating parameters\n\nHow would we calculate the mean and range for this population?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#calculating-parameters-1",
+    "href": "Lecture_Folder/Week2b.html#calculating-parameters-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Calculating parameters",
+    "text": "Calculating parameters\n\nHow would we calculate the mean and range for this population?\n\n\nmean(true_pop)\n\n[1] 4.927\n\nrange(true_pop)\n\n[1]  0 13\n\nmedian(true_pop)\n\n[1] 5"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#sampling-exercise",
+    "href": "Lecture_Folder/Week2b.html#sampling-exercise",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Sampling Exercise",
+    "text": "Sampling Exercise\n\nSince we are working with simulated data, we can also afford to simulate our sampling!\nTry taking a sample from our true_pop dataset and change the sample size, then calculate the mean and range for your sample and see how it compares to the true values.\nHow many college students are you including in your survey?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#sampling-exercise-1",
+    "href": "Lecture_Folder/Week2b.html#sampling-exercise-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Sampling Exercise",
+    "text": "Sampling Exercise\n\n\n\n\n\n\n\n\n\n[1] \"Mean: \" \"4.95\"  \n\n\n[1] \"Range: \" \"1\"       \"10\""
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#randomness-in-sampling",
+    "href": "Lecture_Folder/Week2b.html#randomness-in-sampling",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Randomness in Sampling",
+    "text": "Randomness in Sampling\n\nBecause of the randomness of sampling, you may get close to the true estimates even with a small sample size - but your results will change each time you take a new sample of the same size\nHow do we get a feel for how accurate each sample size is? Or which sample size is recommended?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#surveying-your-sampling",
+    "href": "Lecture_Folder/Week2b.html#surveying-your-sampling",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Surveying your Sampling",
+    "text": "Surveying your Sampling\n\nsamps_var &lt;- replicate(50, sample(true_pop, 10)) #Take 50 samples of size 10\nsamps_var_means &lt;- apply(samps_var, 2, mean) #Calculate the mean from each sample\nhist(samps_var_means) #Plot the distribution of sample means"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#surveying-your-sampling-1",
+    "href": "Lecture_Folder/Week2b.html#surveying-your-sampling-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Surveying your Sampling",
+    "text": "Surveying your Sampling\n\nWe get close to the true mean (4.9) about 2/3rds of the time - is this good enough?\n\n\ntable(samps_var_means &gt; 4.5 & samps_var_means &lt; 5.5)\n\n\nFALSE  TRUE \n   19    31"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#surveying-your-sampling-2",
+    "href": "Lecture_Folder/Week2b.html#surveying-your-sampling-2",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Surveying your Sampling",
+    "text": "Surveying your Sampling\n\nThis sampling variation is what we have to deal with, and account for, as empirical scientists.\nIf this had been a real-world scenario, we likely would be basing our estimate for the true mean on just a single sample mean.\nGetting close to the idea of power - does our experimental design have the power to detect the parameters we are interested in?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#normal-sampling-distributions",
+    "href": "Lecture_Folder/Week2b.html#normal-sampling-distributions",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Normal Sampling Distributions",
+    "text": "Normal Sampling Distributions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#normal-sampling-distributions-1",
+    "href": "Lecture_Folder/Week2b.html#normal-sampling-distributions-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Normal Sampling Distributions",
+    "text": "Normal Sampling Distributions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#sampling-distributions---its-been-normal-this-whole-time",
+    "href": "Lecture_Folder/Week2b.html#sampling-distributions---its-been-normal-this-whole-time",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Sampling Distributions - It’s been Normal this whole time?!",
+    "text": "Sampling Distributions - It’s been Normal this whole time?!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#sampling-distributions---exercise",
+    "href": "Lecture_Folder/Week2b.html#sampling-distributions---exercise",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Sampling Distributions - Exercise",
+    "text": "Sampling Distributions - Exercise\n\nTry creating some data using one of the other distributions we discussed last time (Exponential Distribution) and then create a sampling distribution. Is it normal?\n\n\ntrue_pop &lt;- rexp(n, rate)\nsamps_var &lt;- replicate(n = , sample(true_pop, size = ))\nsamps_var_means &lt;- apply(samps_var, 2, mean)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#the-central-limit-theorem",
+    "href": "Lecture_Folder/Week2b.html#the-central-limit-theorem",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "The Central Limit Theorem",
+    "text": "The Central Limit Theorem\n\nFor most real world data sets we can’t empirically determine a sampling distribution by taking many actual samples, because we often have just the one sample.\nFortunately, we can rely on the Central Limit Theorem to make some assumptions about sampling distributions, particularly when estimating a mean from a single sample, or when estimating most any parameter using a “pseudo” or re-sampling process we refer to as “bootstrapping”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#standard-error",
+    "href": "Lecture_Folder/Week2b.html#standard-error",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Standard Error",
+    "text": "Standard Error\n\nThe sample size and the spread of the distribution (range) - contribute to what is known as the standard error of a random variable.\nThe standard error for any given sample attribute (such as a sample mean), can be calculated either based on distributional assumptions, or by a process called “resampling.”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#standard-error-1",
+    "href": "Lecture_Folder/Week2b.html#standard-error-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Standard error",
+    "text": "Standard error"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#calculating-the-standard-error",
+    "href": "Lecture_Folder/Week2b.html#calculating-the-standard-error",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Calculating the Standard Error",
+    "text": "Calculating the Standard Error\n\nStandard Error of the Mean (SEM)\nSEM = SD / sqrt(sample size)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#calculating-the-standard-error-1",
+    "href": "Lecture_Folder/Week2b.html#calculating-the-standard-error-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Calculating the Standard Error",
+    "text": "Calculating the Standard Error\n\nThink conceptually - how will SEM change as sample size increases?\n\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=1000, lambda = 5)\nsamps_var &lt;- replicate(n = 50, sample(true_pop, size = 5))\nsamps_var_means &lt;- apply(samps_var, 2, mean)\nsem = sd(samps_var_means)/ sqrt(length(samps_var_means))\nprint(sem)\n\n[1] 0.1299607"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#easy-steps-for-bootstrapping-in-r",
+    "href": "Lecture_Folder/Week2b.html#easy-steps-for-bootstrapping-in-r",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Easy steps for bootstrapping in R",
+    "text": "Easy steps for bootstrapping in R\n\nTake a random sample (with replacement) from your sample data\nCalculate the estimate using the measurements in the bootstrap sample (step 1). This is the first bootstrap replicate estimate\nRepeat steps 1 and 2 a large number of times (1000 times is reasonable)\nCalculate the sample standard deviation of all the bootstrap replicate estimates obtained in step 3 (SSD = sd(sample)/sqrt(sample size))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#bootstrapping-1",
+    "href": "Lecture_Folder/Week2b.html#bootstrapping-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\n\nThe resulting quantity is called the “bootstrap standard error”\nThe bootstrap can be applied to almost any sample statistic, including means, proportions, correlations, and regression parameters.\nIt works when there is no ready formula for a standard error, for example when estimating the median, trimmed mean, correlation, eigenvalue, etc.\nIt is nonparametric, so doesn’t require normally-distributed data, as mentioned. - - It works well for parameter estimates that are based on complicated sampling procedures or calculations. For example, it is used to assess confidence in local relationships within phylogenetic trees."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#confidence-intervals",
+    "href": "Lecture_Folder/Week2b.html#confidence-intervals",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\n\nA confidence interval is a range of values about a parameter estimate, such that we are X% certain that the true population parameter value lies within that interval.\nFor now, know that for a normally distributed sample, a confidence interval about the population mean can be calculated using the t.test() function in base R.\nThe 95% confidence interval is commonly reported in statistical analysis results, by convention, but other values are occasionally reported as well."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#relationship-between-mean-and-variance-1",
+    "href": "Lecture_Folder/Week2b.html#relationship-between-mean-and-variance-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Relationship between mean and variance",
+    "text": "Relationship between mean and variance\n\nThis means it is inappropriate to compare variations of different populations with largely different means\n\nFor instance, comparing the standard deviation for a body measurement in a population of mice, with the same body measurement in a population of elephants is not meaningful."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#test-it-out",
+    "href": "Lecture_Folder/Week2b.html#test-it-out",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Test it out",
+    "text": "Test it out\n\nTry changing the lambda of the original population, and see how the SD changes\n\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=1000, lambda = 5)\nprint(sd(true_pop))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#coefficient-of-variation",
+    "href": "Lecture_Folder/Week2b.html#coefficient-of-variation",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Coefficient of Variation",
+    "text": "Coefficient of Variation\n\nTo make standard deviations comparable across populations with very different means, we can instead compare a standardized metric called the “coefficient of variation” (CV), which is simply the sample standard deviation divided by the sample mean (and usually expressed as a % by multiplying by 100)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#today-well-be-talking-about",
+    "href": "Lecture_Folder/Week2b.html#today-well-be-talking-about",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Today we’ll be talking about",
+    "text": "Today we’ll be talking about\n\nA roadmap for the rest of the term\nThe unethical history of statistics and data science\nLast week’s homework"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#thinking-about-your-final-project",
+    "href": "Lecture_Folder/Week2b.html#thinking-about-your-final-project",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Thinking about your final project",
+    "text": "Thinking about your final project\n\nAs we’re going through these statistical techniques, think about which one(s) might be most appropriate for your data analysis.\nThe project ideally will take in some sort of raw data, analyze it (summary statistics, significance tests), and plot your findings.\nCan incorporate Unix and/or R, can be presented via a script and/or RMarkdown document."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#galton-as-the-father-of-eugenics",
+    "href": "Lecture_Folder/Week2b.html#galton-as-the-father-of-eugenics",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Galton as the Father of Eugenics",
+    "text": "Galton as the Father of Eugenics\n\nFrancis Galton: Darwin’s half cousin\nStudied human variation and genetic inheritance\n\nHuman height, fingerprints, intelligence\nCorrelation, regression toward the mean, and “nature versus nurture”\nPioneered twin studies\n\n\n\n\n\nGalton"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#galton-as-the-father-of-eugenics-1",
+    "href": "Lecture_Folder/Week2b.html#galton-as-the-father-of-eugenics-1",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Galton as the Father of Eugenics",
+    "text": "Galton as the Father of Eugenics\n\nBelieved that intelligence was hereditary based on surveying prominent academics in Europe\nUsed the ideas of correlation and regression towards the mean to argue that the upper class should breed amongst themselves to keep those “good genes” pure\nWanted to provide monetary incentives for “good” couples to marry and reproduce as a way to avoid the upper class being genetically muddied by the lower class"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#a-common-sight-at-state-fairs-around-the-u.s.-in-the-1930s",
+    "href": "Lecture_Folder/Week2b.html#a-common-sight-at-state-fairs-around-the-u.s.-in-the-1930s",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "A common sight at state fairs around the U.S. in the 1930s",
+    "text": "A common sight at state fairs around the U.S. in the 1930s\n\nCompetitions for the “perfect family” to encourage public consciousness and support for eugenics"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#galton-with-charles-davenport-and-g.-stanley-hall",
+    "href": "Lecture_Folder/Week2b.html#galton-with-charles-davenport-and-g.-stanley-hall",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Galton with Charles Davenport and G. Stanley Hall",
+    "text": "Galton with Charles Davenport and G. Stanley Hall\n\nAmerican Eugenics Record Office (ERO) founded in Cold Springs Harbor"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#logo-of-the-us-eugenics-society",
+    "href": "Lecture_Folder/Week2b.html#logo-of-the-us-eugenics-society",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Logo of the US eugenics society",
+    "text": "Logo of the US eugenics society"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#eugenics-societies-in-america",
+    "href": "Lecture_Folder/Week2b.html#eugenics-societies-in-america",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Eugenics societies in America",
+    "text": "Eugenics societies in America\n\nAdvocated for state laws to ban interracial marriages and promote sterilization of “unfit” individuals (negative eugenics) - especially black, Latinx, and Native American women\n30 states passed laws to force mental institution patients to be sterilized\nBetween 1907 and 1963, over 64,000 individuals were forcibly sterilized under eugenic legislation in the United States"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#ra-fisher-and-eugenics-in-london",
+    "href": "Lecture_Folder/Week2b.html#ra-fisher-and-eugenics-in-london",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "RA Fisher and Eugenics in London",
+    "text": "RA Fisher and Eugenics in London\n\nDeveloper of Fishers exact test, analysis of variance (ANOVA), null hypothesis, p values, maximum likelihood, probability density functions\nFounding Chairman of the University of Cambridge Eugenics Society"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#ra-fisher-and-eugenics",
+    "href": "Lecture_Folder/Week2b.html#ra-fisher-and-eugenics",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "RA Fisher and Eugenics",
+    "text": "RA Fisher and Eugenics\n\n1/3rd of his work “The Genetical Theory of Natural Selection” discussed eugenics and his theory that the fall of civilizations was due to the fertility of their upper classes being diminished\nUsed these statistical methods to test data on human variation to prove biological differences between human races\nEugenics and racism were the primary motivators for many of these statistical tests that we use today"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#eugenics-has-a-direct-line-to-hitler-and-nazism",
+    "href": "Lecture_Folder/Week2b.html#eugenics-has-a-direct-line-to-hitler-and-nazism",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Eugenics has a direct line to Hitler and Nazism",
+    "text": "Eugenics has a direct line to Hitler and Nazism\n\nEugenics existed in America (and England) before it became popular in Germany.\nBy 1933, California had subjected more people to forceful sterilization than all other U.S. states combined.\nThe forced sterilization program engineered by the Nazis was partly inspired by California’s."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#sterilizations-continue-in-america",
+    "href": "Lecture_Folder/Week2b.html#sterilizations-continue-in-america",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Sterilizations continue in America",
+    "text": "Sterilizations continue in America\n\nOur history books paint Nazi Germany as the primary evil of that time, while we try to cover up our significant role in eugenics\nIt wasn’t until 1978 that the US passed regulations on sterilization procedures\nCalifornia only passed a bill to outlaw sterilization of inmates in 2014\nCertain members of the genetic engineering community threaten to bring back eugenics ideas"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#so-what-do-we-do-from-here",
+    "href": "Lecture_Folder/Week2b.html#so-what-do-we-do-from-here",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "So, what do we do from here?",
+    "text": "So, what do we do from here?\n\nThe statistical methods that Galton, Fisher, and others developed are useful science tools\nImportant to use these tools for good - improving our planet, human health, and technology\nImportant to acknowledge and not forget the history of science - educate others to avoid repeating history"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2b.html#interested-in-learning-more",
+    "href": "Lecture_Folder/Week2b.html#interested-in-learning-more",
+    "title": "Week 2b - Statistics for Bioengineering",
+    "section": "Interested in learning more?",
+    "text": "Interested in learning more?\n\n\n\n\n\n\n\n\n\n\nSee also “The Gene” by Siddhartha Mukherjee"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html",
+    "href": "Lecture_Folder/Week2a.html",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\ntheme_set(theme_minimal())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#an-example-to-get-us-started",
+    "href": "Lecture_Folder/Week2a.html#an-example-to-get-us-started",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "An example to get us started",
+    "text": "An example to get us started"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#data-set-rules-of-thumb-aka-tidy-data",
+    "href": "Lecture_Folder/Week2a.html#data-set-rules-of-thumb-aka-tidy-data",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Data set rules of thumb (aka Tidy Data)",
+    "text": "Data set rules of thumb (aka Tidy Data)\n\nStore a copy of data in nonproprietary software and hardware formats, such as plain ASCII text (aka a flat file)\nLeave an uncorrected file when doing analyses\nUse descriptive names for your data files and variables\nInclude a header line with descriptive variable names\nMaintain effective metadata about the data (data dictionary)\nWhen you add observations to a database, add rows\nWhen you add variables to a database, add columns, not rows\nA column of data should contain only one data type"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#not-all-data-are-tidy-to-begin-with",
+    "href": "Lecture_Folder/Week2a.html#not-all-data-are-tidy-to-begin-with",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Not all data are tidy to begin with",
+    "text": "Not all data are tidy to begin with\n\nSometimes need to do some data wrangling\nBut also contingency tables"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#types-of-data",
+    "href": "Lecture_Folder/Week2a.html#types-of-data",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Types of data",
+    "text": "Types of data\n\n\n\n\n\n\n\n\n\nCategorical\n\nQuantitative\n\n\n\nOrdinal\nNominal\nRatio\nInterval\n\n\nsmall, medium, large\napples, oranges, bananas\nkilograms, dollars, years\ntemperature, calendar year\n\n\nordered character\ncharacter\nnumeric\ninteger\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n‘Factor’ is a special type of character variable that we will explore more later"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#computational-tools---r-and-rstudio",
+    "href": "Lecture_Folder/Week2a.html#computational-tools---r-and-rstudio",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Computational Tools - R and RStudio",
+    "text": "Computational Tools - R and RStudio"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#why-use-r",
+    "href": "Lecture_Folder/Week2a.html#why-use-r",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Why use R?",
+    "text": "Why use R?\n\n\nGood general scripting tool for statistics and mathematics\nPowerful and flexible and free\nRuns on all computer platforms\nNew enhancements coming out all the time\nSuperb data management & graphics capabilities"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#why-use-r-1",
+    "href": "Lecture_Folder/Week2a.html#why-use-r-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Why use R?",
+    "text": "Why use R?\n\n\nReproducibility - can keep your scripts to see exactly what was done\nYou can write your own functions\nLots of online help available\nCan use a nice GUI front end such as Rstudio\nCan embed your R analyses in dynamic, polished files using Markdown\nMarkdown can be reused for websites, papers, books, presentations…"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#r-scripts-and-markdown-files",
+    "href": "Lecture_Folder/Week2a.html#r-scripts-and-markdown-files",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "R scripts and Markdown files",
+    "text": "R scripts and Markdown files\n\nOften we want to write scripts that can just be run\nWe can also embed code in Markdown files that provide more annotations\nhttps://quarto.org/docs/authoring/markdown-basics.html\nYou can insert Rchunks into Quarto markdown documents"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#rscript-basics",
+    "href": "Lecture_Folder/Week2a.html#rscript-basics",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Rscript basics",
+    "text": "Rscript basics\n\nA series of R commands that will be executed\nCan add comments using hashtags #\nCan have pipes (|&gt;) to connect one step to the next"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#markdown-basics",
+    "href": "Lecture_Folder/Week2a.html#markdown-basics",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Markdown basics",
+    "text": "Markdown basics\n\na very simplified way for standard typesetting\nsimple markdown can be rendered in numerous different ways\nLists, codeblocks, images and more can all be inserted"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#inserting-equations-in-markdown",
+    "href": "Lecture_Folder/Week2a.html#inserting-equations-in-markdown",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Inserting equations in markdown",
+    "text": "Inserting equations in markdown\n$$e=mc^2$$\n\\[e=mc^2\\]\n$$\\iint\\limits_{a}^{b} f(x,y) \\, dx \\, dy$$\n\\[\\iint\\limits_{a}^{b} f(x,y) \\, dx \\, dy\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#basics-of-r",
+    "href": "Lecture_Folder/Week2a.html#basics-of-r",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "BASICS of R",
+    "text": "BASICS of R\n\nCommands can be submitted through the terminal, console or scripts\nIn your scripts, anything that follows ‘#’ symbol (aka hash) is just for humans\nNotice on these slides I’m evaluating the code chunks and showing output\nThe output is shown here after the two # symbols and the number of output items is in []\nAlso notice that R follows the normal priority of mathematical evaluation\n\n\n4*4\n\n[1] 16\n\n\n\n(4+3*2^2)\n\n[1] 16"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#assigning-variables",
+    "href": "Lecture_Folder/Week2a.html#assigning-variables",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Assigning Variables",
+    "text": "Assigning Variables\n\nA better way to do this is to assign variables\nVariables are assigned values using the &lt;- operator.\nVariable names must begin with a letter, but other than that, just about anything goes.\nDo keep in mind that R is case sensitive."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#assigning-variables-1",
+    "href": "Lecture_Folder/Week2a.html#assigning-variables-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Assigning Variables",
+    "text": "Assigning Variables\n\nx &lt;- 2\nx*3\n\n[1] 6\n\ny &lt;- x * 3\ny-2\n\n[1] 4\n\n\nThese do not work\n\n3y &lt;- 3\n3*y &lt;- 3"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#arithmetic-operations-on-functions",
+    "href": "Lecture_Folder/Week2a.html#arithmetic-operations-on-functions",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Arithmetic operations on functions",
+    "text": "Arithmetic operations on functions\n\nArithmetic operations can be performed easily on functions as well as numbers.\nTry the following, and then your own.\n\n\nx+2\nx^2\nlog(x)\n\n\nNote that the last of these - log - is a built in function of R, and therefore the object of the function needs to be put in parentheses\nThese parentheses will be important, and we’ll come back to them later when we add arguments after the object in the parentheses\n\nThe outcome of calculations can be assigned to new variables as well, and the results can be checked using the ‘print’ command"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#arithmetic-operations-on-functions-1",
+    "href": "Lecture_Folder/Week2a.html#arithmetic-operations-on-functions-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Arithmetic operations on functions",
+    "text": "Arithmetic operations on functions\n\ny &lt;- 67\nprint(y)\n\n[1] 67\n\nx &lt;- 124\nz &lt;- (x*y)^2\nprint(z)\n\n[1] 69022864"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#strings",
+    "href": "Lecture_Folder/Week2a.html#strings",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "STRINGS",
+    "text": "STRINGS\n\nVariables and operations can be performed on characters as well\nNote that characters need to be set off by quotation marks to differentiate them from numbers\nThe c stands for concatenate\nNote that we are using the same variable names as we did previously, which means that we’re overwriting our previous assignment\nA good rule of thumb is to use new names for each variable, and make them short but still descriptive"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#strings-1",
+    "href": "Lecture_Folder/Week2a.html#strings-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "STRINGS",
+    "text": "STRINGS\n\nx &lt;- \"I Love\"\nprint (x)\n\n[1] \"I Love\"\n\ny &lt;- \"Biostatistics\"\nprint (y)\n\n[1] \"Biostatistics\"\n\nz &lt;- c(x,y)\nprint (z)\n\n[1] \"I Love\"        \"Biostatistics\""
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#factors",
+    "href": "Lecture_Folder/Week2a.html#factors",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "FACTORS",
+    "text": "FACTORS\n\nThe variable z is now what is called a list of character values.\nSometimes we would like to treat the characters as if they were units for subsequent calculations.\nThese are called factors, and we can redefine our character variables as factors.\nThis might seem a bit strange, but it’s important for statistical analyses where we might want to see the mean or variance for two different treatments."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#factors-1",
+    "href": "Lecture_Folder/Week2a.html#factors-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "FACTORS",
+    "text": "FACTORS\n\nz_factor &lt;- as.factor(z)\nprint (z_factor)\n\n\nNote that factor levels are reported alphabetically"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#vectors",
+    "href": "Lecture_Folder/Week2a.html#vectors",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "VECTORS",
+    "text": "VECTORS\n\nIn general R thinks in terms of vectors (a list of characters, factors or numerical values)\nit will benefit any R user to try to write programs with that in mind, as it will simplify most things.\nVectors can be assigned directly using the ‘c()’ function and then entering the exact values."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#vectors-1",
+    "href": "Lecture_Folder/Week2a.html#vectors-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "VECTORS",
+    "text": "VECTORS\n\nx &lt;- c(2,3,4,2,1,2,4,5,10,8,9)\nprint(x)\n\n [1]  2  3  4  2  1  2  4  5 10  8  9"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#basic-statistics",
+    "href": "Lecture_Folder/Week2a.html#basic-statistics",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Basic Statistics",
+    "text": "Basic Statistics\n\nMany functions exist to operate on vectors.\nCombine these with your previous variable to see what happens.\nAlso, try to find other functions (e.g. standard deviation)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#basic-statistics-1",
+    "href": "Lecture_Folder/Week2a.html#basic-statistics-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Basic Statistics",
+    "text": "Basic Statistics\n\nmean(x)\nmedian(x)\nvar(x)\nlog(x)\nln(x)\nsqrt(x)\nsum(x)\nlength(x)\nsample(x, replace = T)\n\n\nNotice that the last function (sample) has an argument (replace=T)\nArguments simply modify or direct the function in some way\nThere are many arguments for each function, some of which are defaults"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#getting-help",
+    "href": "Lecture_Folder/Week2a.html#getting-help",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nGetting Help on any function is very easy - just type a question mark and the name of the function.\nThere are functions for just about anything within R and it is easy enough to write your own functions if none already exist to do what you want to do.\nIn general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters to send to the function.\nHelp pages exist for all functions that, at a minimum, explain what parameters exist for the function.\n\nHelp can be accessed a few ways - try them :"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#getting-help-1",
+    "href": "Lecture_Folder/Week2a.html#getting-help-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Getting Help",
+    "text": "Getting Help\n\n- help(mean)\n- ?mean\n- example(mean)\n- help.search(\"mean\")\n- apropos(\"mean\")\n- args(mean)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#creating-vectors",
+    "href": "Lecture_Folder/Week2a.html#creating-vectors",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Creating vectors",
+    "text": "Creating vectors\n\nCreating vector of new data by entering it by hand can be a drag\nHowever, it is also very easy to use functions such as seq and sample\nTry the examples below Can you figure out what the three arguments in the parentheses mean?\nTry varying the arguments to see what happens.\nDon’t go too crazy with the last one or your computer might slow way down"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#creating-vectors-1",
+    "href": "Lecture_Folder/Week2a.html#creating-vectors-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Creating vectors",
+    "text": "Creating vectors\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1)\nprint(seq_1)\n\n  [1]  0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  1.3  1.4\n [16]  1.5  1.6  1.7  1.8  1.9  2.0  2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9\n [31]  3.0  3.1  3.2  3.3  3.4  3.5  3.6  3.7  3.8  3.9  4.0  4.1  4.2  4.3  4.4\n [46]  4.5  4.6  4.7  4.8  4.9  5.0  5.1  5.2  5.3  5.4  5.5  5.6  5.7  5.8  5.9\n [61]  6.0  6.1  6.2  6.3  6.4  6.5  6.6  6.7  6.8  6.9  7.0  7.1  7.2  7.3  7.4\n [76]  7.5  7.6  7.7  7.8  7.9  8.0  8.1  8.2  8.3  8.4  8.5  8.6  8.7  8.8  8.9\n [91]  9.0  9.1  9.2  9.3  9.4  9.5  9.6  9.7  9.8  9.9 10.0\n\nseq_2 &lt;- seq(10.0, 0.0, by = -0.1)\nprint(seq_2)\n\n  [1] 10.0  9.9  9.8  9.7  9.6  9.5  9.4  9.3  9.2  9.1  9.0  8.9  8.8  8.7  8.6\n [16]  8.5  8.4  8.3  8.2  8.1  8.0  7.9  7.8  7.7  7.6  7.5  7.4  7.3  7.2  7.1\n [31]  7.0  6.9  6.8  6.7  6.6  6.5  6.4  6.3  6.2  6.1  6.0  5.9  5.8  5.7  5.6\n [46]  5.5  5.4  5.3  5.2  5.1  5.0  4.9  4.8  4.7  4.6  4.5  4.4  4.3  4.2  4.1\n [61]  4.0  3.9  3.8  3.7  3.6  3.5  3.4  3.3  3.2  3.1  3.0  2.9  2.8  2.7  2.6\n [76]  2.5  2.4  2.3  2.2  2.1  2.0  1.9  1.8  1.7  1.6  1.5  1.4  1.3  1.2  1.1\n [91]  1.0  0.9  0.8  0.7  0.6  0.5  0.4  0.3  0.2  0.1  0.0"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#creating-vectors-2",
+    "href": "Lecture_Folder/Week2a.html#creating-vectors-2",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Creating vectors",
+    "text": "Creating vectors\n\nseq_square &lt;- (seq_2)*(seq_2)\nprint(seq_square)\n\n  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81\n [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61\n [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41\n [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21\n [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01\n [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81\n [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61\n [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41\n [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21\n [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01\n[101]   0.00"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#creating-vectors-3",
+    "href": "Lecture_Folder/Week2a.html#creating-vectors-3",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Creating vectors",
+    "text": "Creating vectors\n\nseq_square_new &lt;- (seq_2)^2\nprint(seq_square_new)\n\n  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81\n [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61\n [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41\n [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21\n [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01\n [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81\n [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61\n [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41\n [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21\n [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01\n[101]   0.00"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions",
+    "href": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nHere is a way to create your own data sets that are random samples.\nAgain, play around with the arguments in the parentheses to see what happens."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-1",
+    "href": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nplot(x,y)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-2",
+    "href": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-2",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nplot(xy)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-3",
+    "href": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-3",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nhist(x)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-4",
+    "href": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-4",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nYou’ve probably figured out that y from the last example is drawing numbers with equal probability.\nWhat if you want to draw from a distribution?\nAgain, play around with the arguments in the parentheses to see what happens."
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-5",
+    "href": "Lecture_Folder/Week2a.html#drawing-samples-from-distributions-5",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nx &lt;-rnorm(1000, 0, 100)\nhist(x, xlim = c(-500,500))\ncurve(50000*dnorm(x, 0, 100), xlim = c(-500,500), add=TRUE, col='Red')\n\n\n\n\n\n\n\n\n\ndnorm() generates the probability density, which can be plotted using the curve() function.\nNote that is curve is added to the plot using add=TRUE"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#visualizing-data",
+    "href": "Lecture_Folder/Week2a.html#visualizing-data",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Visualizing Data",
+    "text": "Visualizing Data\n\nSo far you’ve been visualizing just the list of output numbers\nExcept for the last example where I snuck in a hist function.\nYou can also visualize all of the variables that you’ve created using the plot function (as well as a number of more sophisticated plotting functions).\nEach of these is called a high level plotting function, which sets the stage\nLow level plotting functions will tweak the plots and make them beautiful"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#visualizing-data-1",
+    "href": "Lecture_Folder/Week2a.html#visualizing-data-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Visualizing Data",
+    "text": "Visualizing Data\n\nWhat do you think that each of the arguments means for the plot function?\nA cool thing about R is that the options for the arguments make sense.\nTry adjusting an argument and see if it works\nNote soon we will be exploring the plotting in ggplot2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#visualizing-data-2",
+    "href": "Lecture_Folder/Week2a.html#visualizing-data-2",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Visualizing Data",
+    "text": "Visualizing Data\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1) \nplot (seq_1, xlab=\"space\", ylab =\"function of space\", type = \"p\", col = \"red\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#putting-plots-in-a-single-figure",
+    "href": "Lecture_Folder/Week2a.html#putting-plots-in-a-single-figure",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Putting plots in a single figure",
+    "text": "Putting plots in a single figure\n\nOn the next slide\nThe first line of the lower script tells R that you are going to create a composite figure that has two rows and two columns. Can you tell how?\nNow, modify the code to add two more variables and add one more row of two panels.\n\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1)\nseq_2 &lt;- seq(10.0, 0.0, by = -0.1)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#putting-plots-in-a-single-figure-1",
+    "href": "Lecture_Folder/Week2a.html#putting-plots-in-a-single-figure-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Putting plots in a single figure",
+    "text": "Putting plots in a single figure\n\npar(mfrow=c(2,2))\nplot (seq_1, xlab=\"time\", ylab =\"p in population 1\", type = \"p\", col = 'red')\nplot (seq_2, xlab=\"time\", ylab =\"p in population 2\", type = \"p\", col = 'green')\nplot (seq_square, xlab=\"time\", ylab =\"p2 in population 2\", type = \"p\", col = 'blue')\nplot (seq_square_new, xlab=\"time\", ylab =\"p in population 1\", type = \"l\", col = 'yellow')"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#example-using-binomial-distribution",
+    "href": "Lecture_Folder/Week2a.html#example-using-binomial-distribution",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Example using binomial distribution",
+    "text": "Example using binomial distribution\n\nAs above for the normal distribution, data can be generated by being sampled from nearly any distribution and then visualized.\nBelow I’m having you use the ‘histogram’ function. What does it do?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#example-using-binomial-distribution-1",
+    "href": "Lecture_Folder/Week2a.html#example-using-binomial-distribution-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Example using binomial distribution",
+    "text": "Example using binomial distribution\n\n10 successes (out of 20 trials) is the most frequent outcome\n\n\nheads &lt;- rbinom(n=1000, size=20, prob=0.5)\nhist(heads)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#example-using-binomial-distribution-2",
+    "href": "Lecture_Folder/Week2a.html#example-using-binomial-distribution-2",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Example using binomial distribution",
+    "text": "Example using binomial distribution\n\nThis kind of statement can be run in one line as well, which is sometimes easier.\n\n\nhist(rbinom(n=1000, size=20, prob=0.5))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#creating-data-frames-in-r",
+    "href": "Lecture_Folder/Week2a.html#creating-data-frames-in-r",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Creating Data Frames in R",
+    "text": "Creating Data Frames in R\n\nAs you have seen, in R you can generate your own random data set drawn from nearly any distribution very easily.\nOften we will want to use collected data.\nNow, let’s make a dummy dataset to get used to dealing with data frames\nSet up three variables (hydrogel_concentration, compression and conductivity) as vectors\n\n\nhydrogel_concentration &lt;- factor(c(\"low\", \"high\", \"high\", \"high\", \"medium\", \"medium\", \"medium\",\"low\"))\ncompression &lt;- c(3.4, 3.4, 8.4, 3, 5.6, 8.1, 8.3, 4.5)\nconductivity &lt;- c(0, 9.2, 3.8, 5, 5.6, 4.1, 7.1, 5.3)\n\n\nCreate a data frame where vectors become columns\n\n\nmydata &lt;- data.frame(hydrogel_concentration, compression, conductivity)\nrow.names(mydata) &lt;- c(\"Sample_1\", \"Sample_2\", \"Sample_3\", \"Sample_4\", \n                       \"Sample_5\", \"Sample_6\", \"Sample_7\", \"Sample_8\")\n\n\nNow you have a hand-made data frame with row names\nTake a look at it in the data section of RStudio"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#reading-in-data-frames-in-r",
+    "href": "Lecture_Folder/Week2a.html#reading-in-data-frames-in-r",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Reading in Data Frames in R",
+    "text": "Reading in Data Frames in R\n\nA strength of R is being able to import data from an external source\nCreate the same table that you did above in a spreadsheet like Excel\nExport it to comma separated and tab separated text files for importing into R.\nThe first will read in a comma-delimited file, whereas the second is a tab-delimited\nIn both cases the header and row.names arguments indicate that there is a header row and row label column\nNote that the name of the file by itself will have R look in the CWD, whereas a full path can also be used"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#reading-in-data-frames-in-r-1",
+    "href": "Lecture_Folder/Week2a.html#reading-in-data-frames-in-r-1",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Reading in Data Frames in R",
+    "text": "Reading in Data Frames in R\n\nYourFile &lt;- read.table('yourfile.csv', header=T, row.names=1, sep=',')\nYourFile &lt;- read.table('yourfile.txt', header=T, row.names=1, sep='\\t')"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#exporting-data-frames-in-r",
+    "href": "Lecture_Folder/Week2a.html#exporting-data-frames-in-r",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Exporting Data Frames in R",
+    "text": "Exporting Data Frames in R\n\nwrite.table(YourFile, \"yourfile.csv\", quote=F, row.names=T, sep=\",\")\nwrite.table(YourFile, \"yourfile.txt\", quote=F, row.names=T, sep=\"\\t\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#indexing-in-data-frames",
+    "href": "Lecture_Folder/Week2a.html#indexing-in-data-frames",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Indexing in data frames",
+    "text": "Indexing in data frames\n\nNext up - indexing just a subset of the data\nThis is a very important idea in R, that you can analyze just a subset of the data.\nThis is analyzing only the data in the file you made that has the factor value ‘mixed’.\n\n\nprint (YourFile[,2])\nprint (YourFile$variable)\nprint (YourFile[2,])\nplot (YourFile$variable1, YourFile$variable2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#r-interlude-some-real-transcriptomic-data",
+    "href": "Lecture_Folder/Week2a.html#r-interlude-some-real-transcriptomic-data",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Some real transcriptomic data",
+    "text": "R INTERLUDE | Some real transcriptomic data\n\nExamine the data file\nHow many many rows and columns are there?\nHow many different variables are there?\nWhat are the general types of variables?\nNow let’s read the data file into R and analyze it\nThis exercise will help you get used to reading in and manipulating genomic data files\nFirst off, remember to set your working directory to find your file correctly"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#some-real-transcriptomic-data",
+    "href": "Lecture_Folder/Week2a.html#some-real-transcriptomic-data",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Some real transcriptomic data",
+    "text": "Some real transcriptomic data\n\nRNAseq_Data &lt;- read.table('&lt;name_of_file&gt;', header=TRUE, sep=',')\n\nprint (RNAseq_Data)\nhead (RNAseq_Data)\ntail (RNAseq_Data)\n\nprint (RNAseq_Data[,2])\nprint (RNAseq_Data[1,])\nprint (RNAseq_Data[1,2])\nprint (RNAseq_Data$ENSGACG00000000010)\nprint (RNAseq_Data$ENSGACG00000000010&gt;45.0)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2a.html#summary-stats-and-figures",
+    "href": "Lecture_Folder/Week2a.html#summary-stats-and-figures",
+    "title": "Week 2a - Statistics for Bioengineering",
+    "section": "Summary stats and figures",
+    "text": "Summary stats and figures\n\nsummary1 &lt;- summary(RNAseq_Data $ENSGACG00000000003)\nprint (summary1)\n\nhist(RNAseq_Data $ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003~RNAseq_Data$Population)\nplot(RNAseq_Data $ENSGACG00000000003, RNAseq_Data$ENSGACG00000000003)\n\nboxplot(RNAseq_Data $ENSGACG00000000003~RNAseq_Data$Treatment, \n        col = \"red\", ylab = \"Expression Level\", xlab = \"Treatment level\", \n        border =\"orange\", \n        main = \"Boxplot of variation in gene expression across microbiota treatments\")"
   }
 ]
