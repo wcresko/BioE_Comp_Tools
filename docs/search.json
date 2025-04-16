@@ -2447,14 +2447,14 @@
     "href": "Lecture_Folder/Week3a.html#what-type-of-plot-do-i-use-for-each-data-type",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "What type of plot do I use for each data type?",
-    "text": "What type of plot do I use for each data type?\n\nFlow chart to determine what type of data visualization and which ggplot geom to use"
+    "text": "What type of plot do I use for each data type?\n\n\n\nFlow chart to determine what type of data visualization and which ggplot geom to use"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#three-dimensional-data",
     "href": "Lecture_Folder/Week3a.html#three-dimensional-data",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Three dimensional data",
-    "text": "Three dimensional data\n\nset.seed(345) # make the example reproducible\na &lt;- rnorm(100,10,10)\nb &lt;- rnorm(100,5,5)\nc &lt;- rnorm(100,1,1)\nd &lt;- data.frame(a,b,c)\n\nlibrary(MASS)\nDENS &lt;- kde2d(d$a,d$b)\ncontour(DENS)"
+    "text": "Three dimensional data\n\nset.seed(345) # make the example reproducible\na &lt;- rnorm(100,10,10)\nb &lt;- rnorm(100,5,5)\nc &lt;- rnorm(100,1,1)\nd &lt;- data.frame(a,b,c)\n\nlibrary(MASS)\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\nDENS &lt;- kde2d(d$a,d$b)\ncontour(DENS)"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#three-dimensional-data-1",
@@ -2482,14 +2482,14 @@
     "href": "Lecture_Folder/Week3a.html#ticker-tape-parade",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Ticker tape parade",
-    "text": "Ticker tape parade\n\nRoeder K 1994 DNA fingerprinting: A review of the controversy with discussion . Statistical Science 9:222T278, Figure 4"
+    "text": "Ticker tape parade\n\n\n\nRoeder K 1994 DNA fingerprinting: A review of the controversy with discussion . Statistical Science 9:222T278, Figure 4"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#a-line-to-no-understanding",
     "href": "Lecture_Folder/Week3a.html#a-line-to-no-understanding",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "A line to no understanding",
-    "text": "A line to no understanding\n\nEpstein MP, Satten GA 2003 Inference on haplotype effects in caseTcontrol studies using unphased genotype data. American Journal of Human Genetics 73:1316T1329, Figure 1"
+    "text": "A line to no understanding\n\n\n\nEpstein MP, Satten GA 2003 Inference on haplotype effects in caseTcontrol studies using unphased genotype data. American Journal of Human Genetics 73:1316T1329, Figure 1"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#a-hot-cup-o-mixed-messages",
@@ -2503,21 +2503,21 @@
     "href": "Lecture_Folder/Week3a.html#i-want-the-biggest-slice-of-the-tfbs-pie",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "I want the biggest slice of the TFBS pie",
-    "text": "I want the biggest slice of the TFBS pie\n\nCawley S, et al. 2004 Unbiased mapping of transcription factor binding sites along human chromosomes 21 and 22 points to widespread regulation of noncoding RNAs. Cell 116:499T509, Figure 1"
+    "text": "I want the biggest slice of the TFBS pie\n\n\n\nCawley S, et al. 2004 Unbiased mapping of transcription factor binding sites along human chromosomes 21 and 22 points to widespread regulation of noncoding RNAs. Cell 116:499T509, Figure 1"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#a-bake-sale-of-pie-charts",
     "href": "Lecture_Folder/Week3a.html#a-bake-sale-of-pie-charts",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "A bake sale of pie charts",
-    "text": "A bake sale of pie charts\n\nBell ML, et al. 2007 Spatial and temporal variation in PM2.5 chemical composition in the United States for health effects studies. Environmental Health Perspectives 115:989T995, Figure 3"
+    "text": "A bake sale of pie charts\n\n\n\nBell ML, et al. 2007 Spatial and temporal variation in PM2.5 chemical composition in the United States for health effects studies. Environmental Health Perspectives 115:989T995, Figure 3"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#wack-a-mole",
     "href": "Lecture_Folder/Week3a.html#wack-a-mole",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Wack a mole",
-    "text": "Wack a mole\n\nCotter DJ, et al. 2004 Hematocrit was not validated as a surrogate endpoint for survival amoung epoetinTtreated hemodialysis patients. Journal of Clinical Epidemiology 57:1086T1095, Figure 2"
+    "text": "Wack a mole\n\n\n\nCotter DJ, et al. 2004 Hematocrit was not validated as a surrogate endpoint for survival amoung epoetinTtreated hemodialysis patients. Journal of Clinical Epidemiology 57:1086T1095, Figure 2"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#principles-of-effective-display",
@@ -2531,7 +2531,7 @@
     "href": "Lecture_Folder/Week3a.html#the-best-statistical-graphic-ever-drawn-according-to-edward-tufte",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "The best statistical graphic ever drawn according to Edward Tufte",
-    "text": "The best statistical graphic ever drawn according to Edward Tufte\n\nThis map by Charles Joseph Minard portrays the losses suffered by Napoleon’s army in the Russian campaign of 1812"
+    "text": "The best statistical graphic ever drawn according to Edward Tufte\n\n\n\nThis map by Charles Joseph Minard portrays the losses suffered by Napoleon’s army in the Russian campaign of 1812"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#principles-of-effective-display-1",
@@ -2545,21 +2545,21 @@
     "href": "Lecture_Folder/Week3a.html#above-all-else-show-the-data-tufte-1983",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "“Above all else show the data” | Tufte 1983",
-    "text": "“Above all else show the data” | Tufte 1983\n\nThe relationship between the numbers of native tropical stingless bees and Africanized honey bees onflowering shrubs in French Guiana. The data have been erased in the left panel. Redrawn from Roubik 1978."
+    "text": "“Above all else show the data” | Tufte 1983\n\n\n\nThe relationship between the numbers of native tropical stingless bees and Africanized honey bees onflowering shrubs in French Guiana. The data have been erased in the left panel. Redrawn from Roubik 1978."
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#maximize-the-data-to-ink-ratio-within-reason-tufte-1983",
     "href": "Lecture_Folder/Week3a.html#maximize-the-data-to-ink-ratio-within-reason-tufte-1983",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "“Maximize the data to ink ratio, within reason” | Tufte 1983",
-    "text": "“Maximize the data to ink ratio, within reason” | Tufte 1983\nDraw graphical elements clearly, minimizing clutter\n\nThe percentage of adults over 18 with a “body mass index” greater than 25 in different years The Economist 2006 . Body mass index is a measure of weight relative to height."
+    "text": "“Maximize the data to ink ratio, within reason” | Tufte 1983\nDraw graphical elements clearly, minimizing clutter\n\n\n\nThe percentage of adults over 18 with a “body mass index” greater than 25 in different years The Economist 2006 . Body mass index is a measure of weight relative to height."
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#a-graphic-does-not-distort-if-the-visual-representation-of-the-data-is-consistent-with-the-numerical-representation-tufte-1983",
     "href": "Lecture_Folder/Week3a.html#a-graphic-does-not-distort-if-the-visual-representation-of-the-data-is-consistent-with-the-numerical-representation-tufte-1983",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "“A graphic does not distort if the visual representation of the data is consistent with the numerical representation” – Tufte 1983",
-    "text": "“A graphic does not distort if the visual representation of the data is consistent with the numerical representation” – Tufte 1983\nRepresent magnitudes honestly and accurately\n\nSlow wave sleep in the brain hemispheres of mallard ducks sleeping with one eye open. From Rattenborg et al. 1999 Nature"
+    "text": "“A graphic does not distort if the visual representation of the data is consistent with the numerical representation” – Tufte 1983\nRepresent magnitudes honestly and accurately\n\n\n\nSlow wave sleep in the brain hemispheres of mallard ducks sleeping with one eye open. From Rattenborg et al. 1999 Nature"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#how-fox-news-makes-a-figure-.",
@@ -2699,7 +2699,7 @@
     "href": "Lecture_Folder/Week3a.html#tidyverse-family-of-packages",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Tidyverse family of packages",
-    "text": "Tidyverse family of packages\n\nLet’s load the tidyverse meta-package and check the output.\n\nlibrary(tidyverse)"
+    "text": "Tidyverse family of packages\n\n\n\n\n\n\n\n\n\nLet’s load the tidyverse meta-package and check the output.\n\nlibrary(tidyverse)"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#tidyverse-family-of-packages-1",
@@ -2741,7 +2741,7 @@
     "href": "Lecture_Folder/Week3a.html#tidyverse-packages-cont.",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Tidyverse packages (cont.)",
-    "text": "Tidyverse packages (cont.)\nThe tidyverse actually comes with a lot more packages than those that are just loaded automatically.1\n\n\n [1] \"broom\"         \"conflicted\"    \"cli\"           \"dbplyr\"       \n [5] \"dplyr\"         \"dtplyr\"        \"forcats\"       \"ggplot2\"      \n [9] \"googledrive\"   \"googlesheets4\" \"haven\"         \"hms\"          \n[13] \"httr\"          \"jsonlite\"      \"lubridate\"     \"magrittr\"     \n[17] \"modelr\"        \"pillar\"        \"purrr\"         \"ragg\"         \n[21] \"readr\"         \"readxl\"        \"reprex\"        \"rlang\"        \n[25] \"rstudioapi\"    \"rvest\"         \"stringr\"       \"tibble\"       \n[29] \"tidyr\"         \"xml2\"          \"tidyverse\"    \n\n\nWe’ll use several of these additional packages during the remainder of this course.\n\nE.g. The lubridate package for working with dates and the rvest package for webscraping.\nHowever, bear in mind that these packages will have to be loaded separately."
+    "text": "Tidyverse packages (cont.)\nThe tidyverse actually comes with a lot more packages than those that are just loaded automatically.1\n\ntidyverse_packages()\n\n [1] \"broom\"         \"conflicted\"    \"cli\"           \"dbplyr\"       \n [5] \"dplyr\"         \"dtplyr\"        \"forcats\"       \"ggplot2\"      \n [9] \"googledrive\"   \"googlesheets4\" \"haven\"         \"hms\"          \n[13] \"httr\"          \"jsonlite\"      \"lubridate\"     \"magrittr\"     \n[17] \"modelr\"        \"pillar\"        \"purrr\"         \"ragg\"         \n[21] \"readr\"         \"readxl\"        \"reprex\"        \"rlang\"        \n[25] \"rstudioapi\"    \"rvest\"         \"stringr\"       \"tibble\"       \n[29] \"tidyr\"         \"xml2\"          \"tidyverse\"    \n\n\nWe’ll use several of these additional packages during the remainder of this course.\n\nE.g. The lubridate package for working with dates and the rvest package for webscraping.\nHowever, bear in mind that these packages will have to be loaded separately."
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#key-dplyr-verbs",
@@ -2846,7 +2846,7 @@
     "href": "Lecture_Folder/Week3a.html#testing-geometric-distributions-1",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Testing Geometric Distributions",
-    "text": "Testing Geometric Distributions\n\npgeom gives the cumulative probability of event (p) in (q) trials\n\n\n\n[1] 0.890581"
+    "text": "Testing Geometric Distributions\n\npgeom gives the cumulative probability of event (p) in (q) trials\n\n\npgeom(q=20, p=0.1)\n\n[1] 0.890581"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#binomial-distribution",
@@ -2902,7 +2902,7 @@
     "href": "Lecture_Folder/Week3a.html#testing-binomial-distributions-1",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Testing Binomial Distributions",
-    "text": "Testing Binomial Distributions\n\npbinom gives the cumulative probability of reaching at least (q) number of successes after (size) number of trials"
+    "text": "Testing Binomial Distributions\n\npbinom gives the cumulative probability of reaching at least (q) number of successes after (size) number of trials\n\n\nplot(pbinom(q=1:100, size=100, p=0.5))"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#negative-binomial-distribution",
@@ -3007,7 +3007,7 @@
     "href": "Lecture_Folder/Week3a.html#testing-poisson-distributions",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Testing Poisson Distributions",
-    "text": "Testing Poisson Distributions\nNumber of counts (x) given a mean and variance of lambda\n\n\n[1] 0.1839397"
+    "text": "Testing Poisson Distributions\nNumber of counts (x) given a mean and variance of lambda\n\ndpois(x=2, lambda=1)\n\n[1] 0.1839397\n\nplot(dpois(x=1:10, lambda=3))"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#poisson-probability-distribution-6",
@@ -3063,14 +3063,14 @@
     "href": "Lecture_Folder/Week3a.html#uniform-distribution-1",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Uniform Distribution",
-    "text": "Uniform Distribution\n\nMeans that the probability is equal for all possible outcomes\nLike drawing m&m out of a bag with equal proportions of colors\n\n\n\n[1] 0.1"
+    "text": "Uniform Distribution\n\nMeans that the probability is equal for all possible outcomes\nLike drawing m&m out of a bag with equal proportions of colors\n\n\ndunif(x=1,min=0, max=10)\n\n[1] 0.1"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#uniform-distribution-2",
     "href": "Lecture_Folder/Week3a.html#uniform-distribution-2",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Uniform Distribution",
-    "text": "Uniform Distribution"
+    "text": "Uniform Distribution\n\nplot(dunif(1:10, 0, 10))"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#exponential-distribution",
@@ -3098,7 +3098,7 @@
     "href": "Lecture_Folder/Week3a.html#exponential-distribution-3",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Exponential Distribution",
-    "text": "Exponential Distribution"
+    "text": "Exponential Distribution\n\nplot(dexp(1:100, rate = 0.1))"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#gamma-distribution",
@@ -3210,7 +3210,7 @@
     "href": "Lecture_Folder/Week3a.html#normal-pdf-a-function-of-two-parameters",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Normal PDF | A function of two parameters",
-    "text": "Normal PDF | A function of two parameters\n(\\(\\mu\\) and \\(\\sigma\\))\n\nwhere \\[\\large \\pi \\approx 3.14159\\]\n\\[\\large \\epsilon \\approx 2.71828\\]\nTo write that a variable (v) is distributed as a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\), we write the following:\n\\[\\large v \\sim \\mathcal{N} (\\mu,\\sigma^2)\\]"
+    "text": "Normal PDF | A function of two parameters\n\n(\\(\\mu\\) and \\(\\sigma\\))\n\n\n\n\n\n\n\n\n\nwhere \\[\\large \\pi \\approx 3.14159\\]\n\\[\\large \\epsilon \\approx 2.71828\\]\nTo write that a variable (v) is distributed as a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\), we write the following:\n\\[\\large v \\sim \\mathcal{N} (\\mu,\\sigma^2)\\]"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#normal-pdf-estimates-of-mean-and-variance",
@@ -3504,7 +3504,7 @@
     "href": "Lecture_Folder/Week3a.html#sampling-exercise-1",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Sampling Exercise",
-    "text": "Sampling Exercise\n\n\n\n[1] \"Mean: \" \"4.95\"  \n\n\n[1] \"Range: \" \"1\"       \"10\""
+    "text": "Sampling Exercise\n\n\n\n\n\n\n\n\n\n[1] \"Mean: \" \"4.95\"  \n\n\n[1] \"Range: \" \"1\"       \"10\""
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#randomness-in-sampling",
@@ -3518,14 +3518,14 @@
     "href": "Lecture_Folder/Week3a.html#surveying-your-sampling",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Surveying your Sampling",
-    "text": "Surveying your Sampling"
+    "text": "Surveying your Sampling\n\nsamps_var &lt;- replicate(50, sample(true_pop, 10)) #Take 50 samples of size 10\nsamps_var_means &lt;- apply(samps_var, 2, mean) #Calculate the mean from each sample\nhist(samps_var_means) #Plot the distribution of sample means"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#surveying-your-sampling-1",
     "href": "Lecture_Folder/Week3a.html#surveying-your-sampling-1",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Surveying your Sampling",
-    "text": "Surveying your Sampling\n\nWe get close to the true mean (4.9) about 2/3rds of the time - is this good enough?\n\n\n\n\nFALSE  TRUE \n   19    31"
+    "text": "Surveying your Sampling\n\nWe get close to the true mean (4.9) about 2/3rds of the time - is this good enough?\n\n\ntable(samps_var_means &gt; 4.5 & samps_var_means &lt; 5.5)\n\n\nFALSE  TRUE \n   19    31"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#surveying-your-sampling-2",
@@ -3574,7 +3574,7 @@
     "href": "Lecture_Folder/Week3a.html#calculating-the-standard-error-1",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Calculating the Standard Error",
-    "text": "Calculating the Standard Error\n\nThink conceptually - how will SEM change as sample size increases?\n\n\n\n[1] 0.1299607"
+    "text": "Calculating the Standard Error\n\nThink conceptually - how will SEM change as sample size increases?\n\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=1000, lambda = 5)\nsamps_var &lt;- replicate(n = 50, sample(true_pop, size = 5))\nsamps_var_means &lt;- apply(samps_var, 2, mean)\nsem = sd(samps_var_means)/ sqrt(length(samps_var_means))\nprint(sem)\n\n[1] 0.1299607"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#easy-steps-for-bootstrapping-in-r",
@@ -3609,7 +3609,7 @@
     "href": "Lecture_Folder/Week3a.html#test-it-out-1",
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Test it out",
-    "text": "Test it out\n\nTry changing the lambda of the original population, and see how the SD changes"
+    "text": "Test it out\n\nTry changing the lambda of the original population, and see how the SD changes\n\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=1000, lambda = 5)\nprint(sd(true_pop))"
   },
   {
     "objectID": "Lecture_Folder/Week3a.html#coefficient-of-variation",
@@ -3617,5 +3617,54 @@
     "title": "Week 3a - Statistics for Bioengineering",
     "section": "Coefficient of Variation",
     "text": "Coefficient of Variation\n\nTo make standard deviations comparable across populations with very different means, we can instead compare a standardized metric called the “coefficient of variation” (CV), which is simply the sample standard deviation divided by the sample mean (and usually expressed as a % by multiplying by 100)."
+  },
+  {
+    "objectID": "Homework.html",
+    "href": "Homework.html",
+    "title": "Homeworks",
+    "section": "",
+    "text": "Homework 1"
+  },
+  {
+    "objectID": "Homework_Folder/HW1_2025.html",
+    "href": "Homework_Folder/HW1_2025.html",
+    "title": "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use both the microbiota/RNAseq data set that you have been using in class, as well as the dataset that you’ve identified for your term long project. Try to accomplish a version of the tasks I lay out below on your own dataset, but you’re undoubtedly going to need to make some modifications and adjustments. In addition, you will be performing one set of power analyses using simulation on a hypothetical problem\nDue: Submit your work via Canvas by the end of the day (midnight) on Tuesday, April 29th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+  },
+  {
+    "objectID": "Homework_Folder/HW1_2025.html#directions",
+    "href": "Homework_Folder/HW1_2025.html#directions",
+    "title": "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use both the microbiota/RNAseq data set that you have been using in class, as well as the dataset that you’ve identified for your term long project. Try to accomplish a version of the tasks I lay out below on your own dataset, but you’re undoubtedly going to need to make some modifications and adjustments. In addition, you will be performing one set of power analyses using simulation on a hypothetical problem\nDue: Submit your work via Canvas by the end of the day (midnight) on Tuesday, April 29th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+  },
+  {
+    "objectID": "Homework_Folder/HW1_2025.html#problem-1---exploratory-data-analysis",
+    "href": "Homework_Folder/HW1_2025.html#problem-1---exploratory-data-analysis",
+    "title": "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations",
+    "section": "Problem 1 - Exploratory Data Analysis",
+    "text": "Problem 1 - Exploratory Data Analysis\n\nRead in the data\n\nRead in the files\nUse str, head and glimpse to get an idea of the data structure\nCreate a tibble data object using this dataset (the function is as_tibble)\n\n\n\nPerform some wrangling\n\nSelect all of the categorical variables and only 4 of the gene count variables and put them into a new data object.\nMutate each of the 4 gene expression values by performing a square root transformation making a new variable for each of the original (keep all eight variables in the dataset).\nSummarise the mean and standard deviation for each of the gene count variables grouped by the ‘Microbiota’ and ‘Genotype’ categorical variables (hint, using group_by may make this easier; also remember your na.rm=TRUE to remove the na values)\n\n\n\nGraphical Communication with ggplot2\nInsert a code chunk and complete the following tasks using your gene expression tibble:\n\nCreate a barplot of microbiota and genotype- what does this tell you about experimental design?\nCreate a histogram and frequency polygram of the expression of one particular gene.\nCreate a boxplot of the expression of one gene by microbiota/genotype combination. Reorder it by median expression and flip the coordinates.\nExplore the coexpression patterns among your genes by plotting a couple pairwise combinations using geom_point. Plot your most interesting coexpression by treatment using facet_wrap."
+  },
+  {
+    "objectID": "Homework_Folder/HW1_2025.html#problem-2---parametric-t-test-in-r",
+    "href": "Homework_Folder/HW1_2025.html#problem-2---parametric-t-test-in-r",
+    "title": "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations",
+    "section": "Problem 2 - Parametric t-test in R",
+    "text": "Problem 2 - Parametric t-test in R\n\nUsing R to make a dummy data set that contains one continuous and one categorical value with two levels. To do so draw individuals of the two different factor levels from normal distributions (check the ‘norm’ family of functions) with slightly different means but equal standard deviations. Take 100 observations per factor level.\nNow, perform a t-test to see if the two populations are statistically different from one another (see below)\n\n\nboxplot(continuous_variable~cat_variable, dataset name) \nt.test(continuous_variable~cat_variable, dataset name) \n\n\nRepeat steps 1 and 2 above but use different sample sizes (e.g. 10 , then 100, then 1000, then 10,000 obsv. per factor level). How does the sample size affect the statistics?\nWhat if you run the test again and make the means of the categorical groups more dissimilar?\nWhat happens if you change the standard deviation of your normal distributions to be very small or very large?\nNow perform the t-test using the dataset provided in class and your own data for two variables."
+  },
+  {
+    "objectID": "Homework_Folder/HW1_2025.html#problem-3---a-priori-power-analyses-via-simulation",
+    "href": "Homework_Folder/HW1_2025.html#problem-3---a-priori-power-analyses-via-simulation",
+    "title": "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations",
+    "section": "Problem 3 - a priori power analyses via simulation",
+    "text": "Problem 3 - a priori power analyses via simulation\nYou have been asked by your colleagues to aid in the design of an experiment to determine how many mice might be needed to test the efficacy of a specific medical device on bone growth. The in vivo trials are expensive, and so the researchers would like your help to figure out how many mice are needed to achieve a reasonable level of precision. In particular, they are interested in both the number of microns that bones grow over a 3 month period, and whether mice that have the implant have a greater rate of growth than those that do not.\nTo help them, you should do a power analysis, and write up the results in a short, readable section. Your colleagues will be interested in the cost-precision tradeoff, so you should include graphical displays that convey both (a) how accurately the mean number microns of growth can be estimated, and (b) how likely it is that a real difference in mean between treated and control of a given, reasonable size will be detected (have a \\(p\\)-value less than 0.05), both as a function of sample size. I’m leaving it up to you precisely how to convey these things.\nI’d like you to do this power analysis using simulation: by using the computer to do the experiment in silico in the case where you know the truth, and seeing how close your estimates are to the truth. To do this, you’ll have to make some stuff up: for instance, plausible values for what the mean growth rate is, and what sort of mean difference between the treated and control that your colleagues might plausibly care about. You don’t have to do independent research to find good values, but you should discuss the choices you made. You will also have to decide what a good range of sample sizes is to display your results across. I’ll save you the burden of making one thing up: you can assume that the distribution of distances traveled is Poisson distributed, so you can simulate your fake surveys using the function rpois( ). Your final report for this section should be readable and not include visible code in the compiled version. However, you should explain clearly in words what you did to arrive at your answers.\nThe purposes of this section of the homework are to practice writing reports in Quarto markdown; doing simulation-based power analyses, and communicating results in plain language."
+  },
+  {
+    "objectID": "Lecture_Folder/Week3a.html",
+    "href": "Lecture_Folder/Week3a.html",
+    "title": "Week 3a - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)"
   }
 ]

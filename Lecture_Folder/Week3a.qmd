@@ -15,7 +15,6 @@ library(gt)
 library(readxl)
 ```
 
-
 ## What type of plot do I use for each data type?
 
 ![Flow chart to determine what type of data visualization and which ggplot geom to use](images/Chart_flow_chart.jpeg)
@@ -1608,4 +1607,3 @@ print(sd(true_pop))
 -   To make standard deviations comparable across populations with very different means, we can instead compare a standardized metric called the “coefficient of variation” (CV), which is simply the sample standard deviation divided by the sample mean (and usually expressed as a % by multiplying by 100).
 
 ------------------------------------------------------------------------
-

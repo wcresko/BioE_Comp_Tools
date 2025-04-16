@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Schedule – BioEngineering Statistics Spring 2025</title>
+<title>BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations – BioEngineering Statistics Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,8 +101,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">BioEngineering Statistics Spring 2025</span>
     </a>
   </div>
@@ -89,40 +152,39 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Syllabus.html"> 
+    <a class="nav-link" href="../Syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Policies.html"> 
+    <a class="nav-link" href="../Policies.html"> 
 <span class="menu-text">Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Schedule.html" aria-current="page"> 
+    <a class="nav-link" href="../Schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Lectures.html"> 
+    <a class="nav-link" href="../Lectures.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item">
-    <span class="nav-link">
-<span class="menu-text">Homeworks.qmd</span>
-    </span>
+    <a class="nav-link" href="../Homework.html"> 
+<span class="menu-text">Homeworks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Software.html"> 
+    <a class="nav-link" href="../Software.html"> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Resources.html"> 
+    <a class="nav-link" href="../Resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -141,13 +203,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reading-materials-and-tools" id="toc-reading-materials-and-tools" class="nav-link active" data-scroll-target="#reading-materials-and-tools">Reading materials and tools</a>
+  <li><a href="#directions" id="toc-directions" class="nav-link active" data-scroll-target="#directions">Directions</a></li>
+  <li><a href="#problem-1---exploratory-data-analysis" id="toc-problem-1---exploratory-data-analysis" class="nav-link" data-scroll-target="#problem-1---exploratory-data-analysis">Problem 1 - Exploratory Data Analysis</a>
   <ul class="collapse">
-  <li><a href="#required-free-online" id="toc-required-free-online" class="nav-link" data-scroll-target="#required-free-online"><em>Required (free online)</em></a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><em>Additional resources</em></a></li>
-  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><em>Tools</em></a></li>
+  <li><a href="#read-in-the-data" id="toc-read-in-the-data" class="nav-link" data-scroll-target="#read-in-the-data">Read in the data</a></li>
+  <li><a href="#perform-some-wrangling" id="toc-perform-some-wrangling" class="nav-link" data-scroll-target="#perform-some-wrangling">Perform some wrangling</a></li>
+  <li><a href="#graphical-communication-with-ggplot2" id="toc-graphical-communication-with-ggplot2" class="nav-link" data-scroll-target="#graphical-communication-with-ggplot2">Graphical Communication with <code>ggplot2</code></a></li>
   </ul></li>
-  <li><a href="#course-schedule" id="toc-course-schedule" class="nav-link" data-scroll-target="#course-schedule">Course schedule</a></li>
+  <li><a href="#problem-2---parametric-t-test-in-r" id="toc-problem-2---parametric-t-test-in-r" class="nav-link" data-scroll-target="#problem-2---parametric-t-test-in-r">Problem 2 - Parametric t-test in R</a></li>
+  <li><a href="#problem-3---a-priori-power-analyses-via-simulation" id="toc-problem-3---a-priori-power-analyses-via-simulation" class="nav-link" data-scroll-target="#problem-3---a-priori-power-analyses-via-simulation">Problem 3 - <em>a priori</em> power analyses via simulation</a></li>
   </ul>
 </nav>
     </div>
@@ -156,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Schedule</h1>
+<h1 class="title">BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations</h1>
 </div>
 
 
@@ -173,196 +237,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="reading-materials-and-tools" class="level2">
-<h2 class="anchored" data-anchor-id="reading-materials-and-tools">Reading materials and tools</h2>
-<section id="required-free-online" class="level3">
-<h3 class="anchored" data-anchor-id="required-free-online"><em>Required (free online)</em></h3>
+<section id="directions" class="level2">
+<h2 class="anchored" data-anchor-id="directions">Directions</h2>
+<p><strong>Assignment:</strong> Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use both the <strong>microbiota/RNAseq data</strong> set that you have been using in class, as well as <strong>the dataset that you’ve identified for your term long project</strong>. Try to accomplish a version of the tasks I lay out below on your own dataset, but you’re undoubtedly going to need to make some modifications and adjustments. In addition, you will be performing one set of power analyses using simulation on a hypothetical problem</p>
+<p><strong>Due:</strong> Submit your work via Canvas by the end of the day (midnight) on <strong>Tuesday, April 29th.</strong> Please submit <strong>both the Quarto_md file <em>and</em> the resulting html or pdf file</strong>. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself.</p>
+</section>
+<section id="problem-1---exploratory-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1---exploratory-data-analysis">Problem 1 - Exploratory Data Analysis</h2>
+<section id="read-in-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-the-data">Read in the data</h3>
 <ul>
-<li><a href="https://r4ds.hadley.nz">R for Data Science</a> (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.</li>
-<li><a href="https://www.modernstatisticswithr.com">Modern Statistics with R</a> (MSR). 2025. Måns Thulin, CRC Press.</li>
-<li><a href="https://www.statlearning.com">An Introduction to Statistical Learning</a> (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer</li>
+<li>Read in the files</li>
+<li>Use <code>str</code>, <code>head</code> and <code>glimpse</code> to get an idea of the data structure</li>
+<li>Create a <code>tibble</code> data object using this dataset (the function is <code>as_tibble</code>)</li>
 </ul>
 </section>
-<section id="additional-resources" class="level3">
-<h3 class="anchored" data-anchor-id="additional-resources"><em>Additional resources</em></h3>
+<section id="perform-some-wrangling" class="level3">
+<h3 class="anchored" data-anchor-id="perform-some-wrangling">Perform some wrangling</h3>
 <ul>
-<li><a href="https://web.stanford.edu/class/bios221/book/">Modern Statistics for Modern Biology</a>. 2019. Holmes and Huber. Cambridge University Press.</li>
-<li><a href="https://ggplot2-book.org">ggPlot2: Elegant Graphics for Data Analysis, 3rd Edition</a>. Wickham, Navarro, Pedersen. Springer.</li>
-<li><a href="https://www.amazon.com/Visual-Display-Quantitative-Information/dp/1930824130">The Visual Display of Quantitative Information.</a> Tufte, E.R. Graphics Press, Cheshire CT</li>
+<li><code>Select</code> all of the categorical variables and only 4 of the gene count variables and put them into a new data object.</li>
+<li><code>Mutate</code> each of the 4 gene expression values by performing a square root transformation making a new variable for each of the original (keep all eight variables in the dataset).</li>
+<li><code>Summarise</code> the mean and standard deviation for each of the gene count variables grouped by the ‘Microbiota’ and ‘Genotype’ categorical variables (hint, using <code>group_by</code> may make this easier; also remember your <code>na.rm=TRUE</code> to remove the <code>na</code> values)</li>
 </ul>
 </section>
-<section id="tools" class="level3">
-<h3 class="anchored" data-anchor-id="tools"><em>Tools</em></h3>
+<section id="graphical-communication-with-ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-communication-with-ggplot2">Graphical Communication with <code>ggplot2</code></h3>
+<p>Insert a code chunk and complete the following tasks using your gene expression tibble:</p>
 <ul>
-<li>You will be working on your own laptop computeri</li>
-<li>If you would like to borrow a laptop let me know.</li>
-<li>Latest version of R (<a href="https://www.r-project.org">install here</a>)</li>
-<li>Latest version of RStudio (<a href="https://www.rstudio.org">install here</a>)</li>
-<li>A terminal that allows ssh connection to the UO computing cluster (Talapas)</li>
-<li>Git installed and a GitHub account</li>
-<li>LaTeX installed on your computer</li>
+<li><p>Create a barplot of microbiota and genotype- what does this tell you about experimental design?</p></li>
+<li><p>Create a histogram and frequency polygram of the expression of one particular gene.</p></li>
+<li><p>Create a boxplot of the expression of one gene by microbiota/genotype combination. Reorder it by median expression and flip the coordinates.</p></li>
+<li><p>Explore the coexpression patterns among your genes by plotting a couple pairwise combinations using <code>geom_point</code>. Plot your most interesting coexpression by treatment using <code>facet_wrap</code>.</p></li>
 </ul>
 </section>
 </section>
-<section id="course-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="course-schedule">Course schedule</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Week</th>
-<th>Dates</th>
-<th>Topics</th>
-<th>Readings</th>
-<th style="text-align: center;">Assignments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td>April1/3</td>
-<td><ul>
-<li>Unix &amp; shell commands</li>
-<li>R scripts &amp; reproducible analysis</li>
-<li>Use of GenAI</li>
-<li>Tidy data and data wrangling</li>
-<li>Git, GitHub &amp; Markdown</li>
-<li>Sundry history of statistics</li>
-</ul></td>
-<td><ul>
-<li>RDS: 1-8; 27-29</li>
-<li>MSR: 1-2</li>
-<li><a href="https://happygitwithr.com">Happy Git</a></li>
-</ul></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td>April8/10</td>
-<td><ul>
-<li>Exploratory data analysis</li>
-<li>Data visualization</li>
-<li>Parameters &amp; statistics</li>
-<li>Probability distributions</li>
-<li>Estimates &amp; confidence intervals</li>
-<li>Clinical trials &amp; experimental design</li>
-</ul></td>
-<td><ul>
-<li>RDS: 9-11</li>
-<li>MSR: 3-5</li>
-</ul></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td>April15/17</td>
-<td><ul>
-<li>Hypothesis testing &amp; significance</li>
-<li>Type I &amp; II errors</li>
-<li>T-tests</li>
-</ul></td>
-<td><ul>
-<li>MSR: 6-7</li>
-</ul></td>
-<td style="text-align: center;">HW1 Due</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td>April22/24</td>
-<td><ul>
-<li>Frequency analyses</li>
-<li>Contingency tests</li>
-<li>Non-parametric tests</li>
-</ul></td>
-<td></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td>April29/May1</td>
-<td><ul>
-<li>Correlation &amp; covariance</li>
-<li>Ordinary Linear Models (OLMs)</li>
-<li>Simple linear regression</li>
-</ul></td>
-<td><ul>
-<li>MSR: 8</li>
-</ul></td>
-<td style="text-align: center;">HW2 Due</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td>May 6/8</td>
-<td><ul>
-<li>Analysis of Variance (ANOVA)</li>
-<li>Single factor ANOVA</li>
-<li>Planned &amp; post hoc comparisons</li>
-</ul></td>
-<td><ul>
-<li>MSR: 8</li>
-</ul></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td>May 13/15</td>
-<td><ul>
-<li>Multiple factor ANOVA</li>
-<li>Factorial &amp; Nested ANOVA</li>
-<li>Random effects</li>
-</ul></td>
-<td><ul>
-<li>MSR: 8</li>
-</ul></td>
-<td style="text-align: center;">HW3 Due</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td>May 20/22</td>
-<td><ul>
-<li>Hierarchical &amp; mixed models</li>
-<li>Generalized Linear Models (GLMs)</li>
-<li>Logistic &amp; Poisson regression</li>
-</ul></td>
-<td><ul>
-<li>ISLR: 1-3</li>
-</ul></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td>May 27/29</td>
-<td><ul>
-<li>Intro to statistical learning</li>
-<li>Classification &amp; prediction</li>
-<li>Validation</li>
-<li>Simulation in statistics</li>
-</ul></td>
-<td><ul>
-<li>MSR: 11</li>
-<li>ISLR: 4-6</li>
-</ul></td>
-<td style="text-align: center;">HW4 Due</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td>June 3/5</td>
-<td><ul>
-<li>Remote super computing</li>
-<li>Talapas and SLURM</li>
-<li>AWS Azure</li>
-</ul></td>
-<td></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">11</td>
-<td>10 June</td>
-<td>FINALS WEEK</td>
-<td></td>
-<td style="text-align: center;">Project Due</td>
-</tr>
-</tbody>
-</table>
+<section id="problem-2---parametric-t-test-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2---parametric-t-test-in-r">Problem 2 - Parametric t-test in R</h2>
+<ul>
+<li><p>Using R to make a dummy data set that contains one continuous and one categorical value with two levels. To do so draw individuals of the two different factor levels from normal distributions (check the ‘norm’ family of functions) with slightly different means but equal standard deviations. Take 100 observations per factor level.</p></li>
+<li><p>Now, perform a t-test to see if the two populations are statistically different from one another (see below)</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(continuous_variable<span class="sc">~</span>cat_variable, dataset name) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(continuous_variable<span class="sc">~</span>cat_variable, dataset name) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Repeat steps 1 and 2 above but use different sample sizes (e.g.&nbsp;10 , then 100, then 1000, then 10,000 obsv. per factor level). How does the sample size affect the statistics?</p></li>
+<li><p>What if you run the test again and make the means of the categorical groups more dissimilar?</p></li>
+<li><p>What happens if you change the standard deviation of your normal distributions to be very small or very large?</p></li>
+<li><p>Now perform the t-test using the dataset provided in class and your own data for two variables.</p></li>
+</ul>
+</section>
+<section id="problem-3---a-priori-power-analyses-via-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3---a-priori-power-analyses-via-simulation">Problem 3 - <em>a priori</em> power analyses via simulation</h2>
+<p>You have been asked by your colleagues to aid in the design of an experiment to determine how many mice might be needed to test the efficacy of a specific medical device on bone growth. The <em>in vivo</em> trials are expensive, and so the researchers would like your help to figure out <strong>how many mice are needed</strong> to achieve a reasonable <strong>level of precision</strong>. In particular, they are interested in both the number of microns that bones grow over a 3 month period, and whether mice that have the implant have a greater rate of growth than those that do not.</p>
+<p>To help them, you should do a <em>power analysis</em>, and write up the results in a short, readable section. Your colleagues will be interested in the cost-precision tradeoff, so you should include graphical displays that convey both (a) how accurately the mean number microns of growth can be estimated, and (b) how likely it is that a real difference in mean between treated and control of a given, reasonable size will be detected (have a <span class="math inline">\(p\)</span>-value less than 0.05), both as a function of sample size. I’m leaving it up to you precisely how to convey these things.</p>
+<p>I’d like you to do this power analysis using <em>simulation</em>: by using the computer to do the experiment <em>in silico</em> in the case where you know the truth, and seeing how close your estimates are to the truth. To do this, you’ll have to <em>make some stuff up</em>: for instance, plausible values for what the mean growth rate <em>is</em>, and what sort of mean difference between the treated and control that your colleagues might plausibly care about. You don’t have to do independent research to find good values, but you should discuss the choices you made. You will also have to decide what a good range of sample sizes is to display your results across. I’ll save you the burden of making <em>one</em> thing up: you can assume that the distribution of distances traveled is <strong>Poisson distributed</strong>, so you can simulate your fake surveys using the function <code>rpois( )</code>. Your final report for this section should be readable and <em>not</em> include visible code in the compiled version. However, you should explain clearly in words what you did to arrive at your answers.</p>
+<p>The purposes of this section of the homework are to practice writing reports in Quarto markdown; doing simulation-based power analyses, and communicating results in plain language.</p>
 
 
 </section>
