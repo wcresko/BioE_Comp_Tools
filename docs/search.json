@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -151,7 +151,7 @@
     "href": "Schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "R for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
+    "text": "I’ve started putting together out online textbook\nHere’s a link\n\n\n\n\n\nR for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
   },
   {
     "objectID": "Resources.html",
@@ -221,7 +221,7 @@
     "href": "Schedule.html#reading-materials-and-tools",
     "title": "Schedule",
     "section": "",
-    "text": "R for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
+    "text": "I’ve started putting together out online textbook\nHere’s a link\n\n\n\n\n\nR for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
   },
   {
     "objectID": "about.html#online-course-resources",
@@ -3756,7 +3756,7 @@
     "href": "Lecture_Folder/Week3b.html#lets-simulate-some-coin-flips",
     "title": "Week 3b - Statistics for Bioengineering",
     "section": "Let’s simulate some coin flips",
-    "text": "Let’s simulate some coin flips\n\n# tossing a fair coin\ncoin &lt;- c(\"heads\", \"tails\")\n\nsample(coin)\n\n[1] \"tails\" \"heads\""
+    "text": "Let’s simulate some coin flips\n\n# tossing a fair coin\ncoin &lt;- c(\"heads\", \"tails\")\n\nsample(coin)\n\n[1] \"heads\" \"tails\""
   },
   {
     "objectID": "Lecture_Folder/Week3b.html#lets-simulate-some-coin-flips-1",
@@ -3833,7 +3833,7 @@
     "href": "Lecture_Folder/Week3b.html#testing-binomial-distributions-1",
     "title": "Week 3b - Statistics for Bioengineering",
     "section": "Testing Binomial Distributions",
-    "text": "Testing Binomial Distributions\n\npbinom gives the cumulative probability of reaching at least (q) number of successes after (size) number of trials"
+    "text": "Testing Binomial Distributions\n\npbinom gives the cumulative probability of reaching at least (q) number of successes after (size) number of trials\n\n\nplot(pbinom(q=1:100, size=100, p=0.5))"
   },
   {
     "objectID": "Lecture_Folder/Week3b.html#poisson-probability-distribution",
@@ -5304,5 +5304,1055 @@
     "title": "Week 3b - Statistics for Bioengineering",
     "section": "Show the data! | Anscombe’s Quartet",
     "text": "Show the data! | Anscombe’s Quartet\n\nMean of x in each case 9 (exact)\nVariance of x in each case 11 (exact)\nMean of y in each case 7.50 (to 2 decimal places)\nVariance of y in each case 4.122 or 4.127 (to 3 decimal places)\nCorrelation between x and y in each case 0.816 (to 3 decimal places)\nLinear regression line in each case \\(y =3.00 + 0.50x\\) (to 2 decimal places)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3b.html",
+    "href": "Lecture_Folder/Week3b.html",
+    "title": "Week 3b - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(nycflights23)\ntheme_set(theme_minimal())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html",
+    "href": "Lecture_Folder/Week4a.html",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(nycflights23)\ntheme_set(theme_minimal())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#this-week",
+    "href": "Lecture_Folder/Week4a.html#this-week",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "This week",
+    "text": "This week\n\nFinish parameter estimation\nt-test\nHypothesis testing\nPower\nStart linear models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#poisson-probability-distribution",
+    "href": "Lecture_Folder/Week4a.html#poisson-probability-distribution",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution",
+    "text": "Poisson Probability Distribution\n\nAnother common situation in bioengineering is when each trial is discrete, but the number of observations of each outcome is observed/counted\nSome examples are\n\ncounts of snails in several plots of land\nobservations of the firing of a neuron in a unit of time\nthe number of muscle contractions during a bout of exercise\ncount of genes in a genome binned to units of 500kb\n\nJust like before you have ‘successes’, but\n\nnow you count them for each replicate\nthe replicates now are units of area or time\nthe values can now range from 0 to a large number"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#poisson-probability-distribution-1",
+    "href": "Lecture_Folder/Week4a.html#poisson-probability-distribution-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution",
+    "text": "Poisson Probability Distribution\n\n\nFor example, you can examine 100 participants\n\ncount the number of jumps they can perform in 2 minutes\nwhat is the probability of observing a particpant with r jumps?\n\nPr(Y=r) is the probability that the number of occurrences of an event y equals a count r in the total number of trials\n\n\n\\[Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#poisson-probability-distribution-2",
+    "href": "Lecture_Folder/Week4a.html#poisson-probability-distribution-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution",
+    "text": "Poisson Probability Distribution\n\nNote that the Poisson is a single parameter function because \\(\\mu = \\sigma^2\\)\nThe two together are often just represented by \\(\\lambda\\)\n\n\\[Pr(y=r) = \\frac{e^{-\\lambda}\\lambda^r}{r!}\\]\n\nThis means that for a variable that is truly Poisson distributed:\n\nthe mean and variance should be equal to one another\nvariables that are approximately Poisson distributed but have a larger variance than mean are often called ‘overdispersed’\nquite common in RNA-seq and microbiome data"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#poisson-probability-distribution-with-gene-length-by-bins-of-500-nucleotides",
+    "href": "Lecture_Folder/Week4a.html#poisson-probability-distribution-with-gene-length-by-bins-of-500-nucleotides",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution with gene length by bins of 500 nucleotides",
+    "text": "Poisson Probability Distribution with gene length by bins of 500 nucleotides"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#poisson-probability-distribution-with-increasing-parameter-values-of-lambda",
+    "href": "Lecture_Folder/Week4a.html#poisson-probability-distribution-with-increasing-parameter-values-of-lambda",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Poisson Probability Distribution with increasing parameter values of \\(\\lambda\\)",
+    "text": "Poisson Probability Distribution with increasing parameter values of \\(\\lambda\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#testing-poisson-distributions",
+    "href": "Lecture_Folder/Week4a.html#testing-poisson-distributions",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Testing Poisson Distributions",
+    "text": "Testing Poisson Distributions\nNumber of counts (x) given a mean and variance of lambda\n\ndpois(x=2, lambda=1)\n\n[1] 0.1839397\n\nplot(dpois(x=1:10, lambda=3))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#geometric-distribution",
+    "href": "Lecture_Folder/Week4a.html#geometric-distribution",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Geometric Distribution",
+    "text": "Geometric Distribution\n\nIf a single event has two possible outcomes the probability of having to observe k trials before the first “one” appears is given by the geometric distribution\nThe probability that the first “one” would appear on the first trial is p, but the probability that the first “one” appears on the second trial is (1-p)*p\nBy generalizing this procedure, the probability that there will be k-1 failures before the first success is:\n\n\\[P(X=k)=(1-p)^{k-1}p\\]\n\nmean = \\(\\frac{1}{p}\\)\nvariance = \\(\\frac{(1-p)}{p^2}\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#geometric-distribution-1",
+    "href": "Lecture_Folder/Week4a.html#geometric-distribution-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Geometric Distribution",
+    "text": "Geometric Distribution\n\nExample: If the probability of extinction of an endangered population is estimated to be 0.1 every year, what is the expected time until extinction?\nThe distribution gives the probability of extinction in a given year (requiring that the population did not go extinct in all of the years prior)\nIf we want to know the probability of the population going exticnt by year 4, we simply add up the probabilities for years 1-3 using “or” rules"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#testing-geometric-distributions",
+    "href": "Lecture_Folder/Week4a.html#testing-geometric-distributions",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Testing Geometric Distributions",
+    "text": "Testing Geometric Distributions\n\ndgeom gives the density (probability) of an event (p) after (x) failures\n\n\ndgeom(x=20, p=0.1)\n\n[1] 0.01215767\n\nplot(dgeom(1:20,0.1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#testing-geometric-distributions-1",
+    "href": "Lecture_Folder/Week4a.html#testing-geometric-distributions-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Testing Geometric Distributions",
+    "text": "Testing Geometric Distributions\n\npgeom gives the cumulative probability of event (p) in (q) trials\n\n\npgeom(q=20, p=0.1)\n\n[1] 0.890581\n\nplot(pgeom(q=1:20, p=0.1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#negative-binomial-distribution",
+    "href": "Lecture_Folder/Week4a.html#negative-binomial-distribution",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Negative Binomial Distribution",
+    "text": "Negative Binomial Distribution\n\nExtension of the geometric distribution describing the waiting time until r “ones” have appeared.\nGeneralizes the geometric distribution\nProbability of the \\(r^{th}\\) “one” appearing on the \\(k^{th}\\) trial:\n\n\\[P(X=k)=(\\frac{k-1}{r-1})p^{r-1}(1-p)^{k-r}p\\]\n\nwhich simplifies to\n\\[P(X=k)=(\\frac{k-1}{r-1})p^{r}(1-p)^{k-r}\\]\n\nmean = \\(\\frac{r}{p}\\)\nvariance = \\(r(1-p)/p^2\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#negative-binomial-distribution-1",
+    "href": "Lecture_Folder/Week4a.html#negative-binomial-distribution-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Negative Binomial Distribution",
+    "text": "Negative Binomial Distribution\n\nExample: If a predator must capture 10 prey before it can grow large enough to reproduce\nWhat would the mean age of onset of reproduction be if the probability of capturing a prey on any given day is 0.1?\nNotice that the variance is quite high (~1000) and that the distribution looks quite skewed"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#continuous-probability-distributions-1",
+    "href": "Lecture_Folder/Week4a.html#continuous-probability-distributions-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Continuous probability distributions",
+    "text": "Continuous probability distributions\nP(observation lies within dx of x) = f(x)dx\n\\[P(a\\leq X \\leq b) = \\int_{a}^{b} f(x) dx\\]\nRemember that the indefinite integral sums to one\n\\[\\int_{-\\infty}^{\\infty} f(x) dx = 1\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#continuous-probabilities",
+    "href": "Lecture_Folder/Week4a.html#continuous-probabilities",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Continuous probabilities",
+    "text": "Continuous probabilities\n\nE[X] may be found by integrating the product of x and the probability density function over all possible values of x:\n\\[E[X] = \\int_{-\\infty}^{\\infty} xf(x) dx \\]\n\n\\(Var(X) = E[X^2] - (E[X])^2\\), where the expectation of \\(X^2\\) is\n\\[E[X^2] = \\int_{-\\infty}^{\\infty} x^2f(x) dx \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#uniform-distribution",
+    "href": "Lecture_Folder/Week4a.html#uniform-distribution",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Uniform Distribution",
+    "text": "Uniform Distribution\n\n\\[E[X] = \\int_{a}^{b} x\\frac{1}{b-a} dx = \\frac{(a+b)}{2} \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#uniform-distribution-1",
+    "href": "Lecture_Folder/Week4a.html#uniform-distribution-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Uniform Distribution",
+    "text": "Uniform Distribution\n\nMeans that the probability is equal for all possible outcomes\nLike drawing m&m out of a bag with equal proportions of colors\n\n\ndunif(x=1,min=0, max=10)\n\n[1] 0.1\n\nplot(dunif(1:10, 0, 10))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#exponential-distribution",
+    "href": "Lecture_Folder/Week4a.html#exponential-distribution",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Exponential Distribution",
+    "text": "Exponential Distribution\n\n\\[f(x)=\\lambda e^{-\\lambda x}\\]\n\n\nE[X] can be found be integrating \\(xf(x)\\) from 0 to infinity\n\n\n\nleading to the result that\n\n\n\n\\(E[X] = \\frac{1}{\\lambda}\\)\n\\(E[X^2] = \\frac{1}{\\lambda^2}\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#exponential-distribution-1",
+    "href": "Lecture_Folder/Week4a.html#exponential-distribution-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Exponential Distribution",
+    "text": "Exponential Distribution\n\nFor example, let equal the instantaneous death rate of an individual.\nThe lifespan of the individual would be described by an exponential distribution (assuming that does not change over time)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#exponential-distribution-2",
+    "href": "Lecture_Folder/Week4a.html#exponential-distribution-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Exponential Distribution",
+    "text": "Exponential Distribution\n\ndexp(10, rate = 0.1)\n\n[1] 0.03678794\n\nplot(dexp(1:100, rate = 0.1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#gamma-distribution",
+    "href": "Lecture_Folder/Week4a.html#gamma-distribution",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Gamma Distribution",
+    "text": "Gamma Distribution\n\nThe gamma distribution generalizes the exponential distribution.\nIt describes the waiting time until the \\(r^{th}\\) event for a process that occurs randomly over time at a rate \\(\\lambda\\) :\n\n\n\\[f(x) = \\frac{e^{-\\lambda x}\\lambda x^{r-1}}{(r-1)!}\\lambda\\]\n\n\\[ Mean =  \\frac{r}{\\lambda} \\] \\[ Variance = \\frac{r}{\\lambda^2} \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#gamma-distribution-1",
+    "href": "Lecture_Folder/Week4a.html#gamma-distribution-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Gamma Distribution",
+    "text": "Gamma Distribution\n\nExample: If, in a PCR reaction, DNA polymerase synthesizes new DNA strands at a rate of 1 per millisecond, how long until 1000 new DNA strands are produced?\nAssume that DNA synthesis does not deplete the pool of primers or nucleotides in the chamber, so that each event is independent of other events in the PCR chamber.\nThe gamma distribution generalizes the exponential distribution.\nIt describes the waiting time until the \\(r^{th}\\) event for a process that occurs randomly over time at a rate \\(\\lambda\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#normal-pdf---mu-and-sigma",
+    "href": "Lecture_Folder/Week4a.html#normal-pdf---mu-and-sigma",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Normal PDF - (\\(\\mu\\) and \\(\\sigma\\))",
+    "text": "Normal PDF - (\\(\\mu\\) and \\(\\sigma\\))\n\\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma}} \\, \\mathrm{e}^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}\\]\nwhere \\[\\large \\pi \\approx 3.14159\\]\n\\[\\large \\mathrm{e} \\approx 2.71828\\]\nTo write that a variable (v) is distributed as a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\), we write the following:\n\\[\\large v \\sim \\mathcal{N} (\\mu,\\sigma^2)\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#estimates-of-mean-and-variance",
+    "href": "Lecture_Folder/Week4a.html#estimates-of-mean-and-variance",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Estimates of mean and variance",
+    "text": "Estimates of mean and variance\nEstimate of the mean from a single sample\n\\[\\Large \\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n}{x_i} \\]\nEstimate of the variance from a single sample\n\\[\\Large s^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}{(x_i - \\bar{x})^2} \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#normal-pdf",
+    "href": "Lecture_Folder/Week4a.html#normal-pdf",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Normal PDF",
+    "text": "Normal PDF"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#why-is-the-normal-special-in-biosciences",
+    "href": "Lecture_Folder/Week4a.html#why-is-the-normal-special-in-biosciences",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Why is the Normal special in biosciences?",
+    "text": "Why is the Normal special in biosciences?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#why-is-the-normal-special-in-biosciences-1",
+    "href": "Lecture_Folder/Week4a.html#why-is-the-normal-special-in-biosciences-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Why is the Normal special in biosciences?",
+    "text": "Why is the Normal special in biosciences?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#why-is-the-normal-special-in-biosciences-2",
+    "href": "Lecture_Folder/Week4a.html#why-is-the-normal-special-in-biosciences-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Why is the Normal special in biosciences?",
+    "text": "Why is the Normal special in biosciences?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#parent-offspring-resemblance",
+    "href": "Lecture_Folder/Week4a.html#parent-offspring-resemblance",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Parent-offspring resemblance",
+    "text": "Parent-offspring resemblance"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#genetic-model-of-complex-traits",
+    "href": "Lecture_Folder/Week4a.html#genetic-model-of-complex-traits",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Genetic model of complex traits",
+    "text": "Genetic model of complex traits"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#distribution-of-f_2-genotypes-really-just-binomial-sampling",
+    "href": "Lecture_Folder/Week4a.html#distribution-of-f_2-genotypes-really-just-binomial-sampling",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Distribution of \\(F_2\\) genotypes | really just binomial sampling",
+    "text": "Distribution of \\(F_2\\) genotypes | really just binomial sampling"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#why-else-is-the-normal-special",
+    "href": "Lecture_Folder/Week4a.html#why-else-is-the-normal-special",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Why else is the Normal special?",
+    "text": "Why else is the Normal special?\n\nIt is the basis of estimation and precision of the expected value of all distributions\nProvides a mathematical basis for moving from single samples to point estimates.\nProvides a way to use simulation to generate empirical sample and test distributions through Monte Carlo approaches"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#z-scores-of-normal-variables",
+    "href": "Lecture_Folder/Week4a.html#z-scores-of-normal-variables",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "z-scores of normal variables",
+    "text": "z-scores of normal variables\n\nOften we want to make variables more comparable to one another\nFor example, consider measuring the leg length of mice and of elephants\n\nWhich animal has longer legs in absolute terms?\nProportional to their body size?\n\nA good way to answer these last questions is to use ‘z-scores’"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#z-scores-of-normal-variables-1",
+    "href": "Lecture_Folder/Week4a.html#z-scores-of-normal-variables-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "z-scores of normal variables",
+    "text": "z-scores of normal variables\n\nz-scores are standardized to a mean of 0 and a standard deviation of 1\nWe can modify any normal distribution to have\n\na mean of 0 and\na standard deviation of 1\n\nAnother term for this is the standard normal distribution\n\n\\[\\huge z_i = \\frac{(x_i - \\bar{x})}{s}\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#common-theme-in-r-for-distributions",
+    "href": "Lecture_Folder/Week4a.html#common-theme-in-r-for-distributions",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Common theme in R for distributions",
+    "text": "Common theme in R for distributions\n\n\n\n\n\n\n\n\n\n\n\nd\nprobability mass function\np\ncumulative distribution\nq\nquantile function\nr\npseudorandom number generate\n\n\n\n\nbinomial\ndbinom\npbinom\nqbinom\nrbinom\n\n\npoisson\ndpois\nppois\nqpois\nrpois\n\n\nexponential\ndexp\npexp\nqexp\nrexp\n\n\nnormal\ndnorm\npnorm\nqnorm\nrnorm"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#parameter-estimation",
+    "href": "Lecture_Folder/Week4a.html#parameter-estimation",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Parameter Estimation",
+    "text": "Parameter Estimation\n\nEstimation is the process of inferring a population parameter from sample data\nThe value of one sample estimate is almost never the same as the population parameter because of random sampling error\nMost will be close, but some will be far away\nSampling distribution of an estimate\n\nall values we might have obtained from our sample\nprobabilities of occurrence\n\nStandard error of an estimate\n\nstandard deviation of a sampling distribution\nmeasures the precision of the parameter estimate\nNO ESTIMATE IS USEFUL WITHOUT IT!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#parameter-estimation-1",
+    "href": "Lecture_Folder/Week4a.html#parameter-estimation-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Parameter Estimation",
+    "text": "Parameter Estimation\n\nParametric (a few special exceptions, like the sample mean and its standard error)\nResampling - bootstrapping and randomization to create empirical null distributions\nOrdinary Least Squares (OLS) - optimized procedure that produces one definitive result, easy to use but no estimates of confidence\nMaximum Likelihood (ML) - Can provide model-based estimates with confidence, but harder to calculate\nBayesian Approaches - Incorporates prior information into ML estimation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#accuracy-vs.-precision",
+    "href": "Lecture_Folder/Week4a.html#accuracy-vs.-precision",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Accuracy vs. Precision",
+    "text": "Accuracy vs. Precision"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#accuracy-vs.-precision-1",
+    "href": "Lecture_Folder/Week4a.html#accuracy-vs.-precision-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Accuracy vs. Precision",
+    "text": "Accuracy vs. Precision\n\nAccuracy is the closeness of an estimated value to its true value\nPrecision is the closeness of repeated estimates to one another\nOur goal is to have unbiased estimates that are the most precise\nWe have to estimate parameters and test hypotheses by taking samples that approximate the underlying distribution\nThe goal of replication is to quantify variation at as many levels in a study as possible\nThe goal of randomization is to avoid bias as much as possible"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-central-limit-theorem-1",
+    "href": "Lecture_Folder/Week4a.html#the-central-limit-theorem-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The Central Limit Theorem",
+    "text": "The Central Limit Theorem\n\nFor most real world data sets we can’t empirically determine a sampling distribution by taking many actual samples, because we often have just the one sample.\nFortunately, we can rely on the Central Limit Theorem to make some assumptions about sampling distributions, particularly when estimating a mean from a single sample, or when estimating most any parameter using a “pseudo” or re-sampling process we refer to as “bootstrapping”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#standard-error-of-the-mean-sem",
+    "href": "Lecture_Folder/Week4a.html#standard-error-of-the-mean-sem",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Standard Error of the Mean (SEM)",
+    "text": "Standard Error of the Mean (SEM)\n\\[\\huge \\sigma_{\\bar{x}} \\approx s_{\\bar{x}} = \\frac{s}{\\sqrt{n}} \\]\n\nwhere \\(s_{\\bar{x}}\\) is the estimated standard error of the distribution of the mean estimates\nwhich is usually just referred to as the ’standard error of the mean (SEM)\nnote that this is not the standard deviation of the original distribution\nimportantly, the SEM will go down as the sample size increases"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#calculating-the-standard-error-of-the-mean-sem",
+    "href": "Lecture_Folder/Week4a.html#calculating-the-standard-error-of-the-mean-sem",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Calculating the Standard Error of the Mean (SEM)",
+    "text": "Calculating the Standard Error of the Mean (SEM)\n\nThink conceptually - how will SEM change as sample size increases?\n\n\nset.seed(32)\ntrue_pop &lt;- rnorm(n=1000, mean=2, sd=5)\nsamps_var &lt;- replicate(n = 50, sample(true_pop, size = 5))\nsamps_var_means &lt;- apply(samps_var, 2, mean)\nsem = sd(samps_var_means)/ sqrt(length(samps_var_means))\nprint(sem)\n\n[1] 0.2646669\n\n\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=1000, lambda = 5)\nsamps_var &lt;- replicate(n = 50, sample(true_pop, size = 5))\nsamps_var_means &lt;- apply(samps_var, 2, mean)\nsem = sd(samps_var_means)/ sqrt(length(samps_var_means))\nprint(sem)\n\n[1] 0.1299607\n\n\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=1000, lambda = 5)\nsamps_var &lt;- replicate(n = 50, sample(true_pop, size = 50))\nsamps_var_means &lt;- apply(samps_var, 2, mean)\nsem = sd(samps_var_means)/ sqrt(length(samps_var_means))\nprint(sem)\n\n[1] 0.04635888"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#estimation-and-confidence-intervals",
+    "href": "Lecture_Folder/Week4a.html#estimation-and-confidence-intervals",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Estimation and confidence intervals",
+    "text": "Estimation and confidence intervals"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#estimation-and-confidence-intervals-1",
+    "href": "Lecture_Folder/Week4a.html#estimation-and-confidence-intervals-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Estimation and confidence intervals",
+    "text": "Estimation and confidence intervals"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#estimation-and-confidence-intervals-2",
+    "href": "Lecture_Folder/Week4a.html#estimation-and-confidence-intervals-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Estimation and confidence intervals",
+    "text": "Estimation and confidence intervals"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#confidence-intervals",
+    "href": "Lecture_Folder/Week4a.html#confidence-intervals",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\n\nA confidence interval is a range of values about a parameter estimate, such that we are X% certain that the true population parameter value lies within that interval.\nFor now, know that for a normally distributed sample, a confidence interval about the population mean can be calculated using the t.test() function in base R.\nThe 95% confidence interval is commonly reported in statistical analysis results, by convention, but other values are occasionally reported as well."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#coefficient-of-variation",
+    "href": "Lecture_Folder/Week4a.html#coefficient-of-variation",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Coefficient of Variation",
+    "text": "Coefficient of Variation\n\nTo make standard deviations comparable across populations with very different means, we can instead compare a standardized metric called the “coefficient of variation” (CV), which is simply the sample standard deviation divided by the sample mean (and usually expressed as a % by multiplying by 100)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#bootstrapping",
+    "href": "Lecture_Folder/Week4a.html#bootstrapping",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\n-Unfortunately, most other kinds of estimates (anything not the mean) do not have this amazing property, but we can rely on another approach to calculate the standard error. - This involves generating your own sampling distribution for the estimate using the “bootstrap,” a method invented by Efron (1979). - We call the bootstrap, and other methods that do not rely on distributional assumptions of the variable itself, “nonparametric” approaches."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-etymology-of-the-term-bootstrap",
+    "href": "Lecture_Folder/Week4a.html#the-etymology-of-the-term-bootstrap",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The etymology of the term ‘bootstrap’",
+    "text": "The etymology of the term ‘bootstrap’"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#why-the-bootstrap-is-good",
+    "href": "Lecture_Folder/Week4a.html#why-the-bootstrap-is-good",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Why the bootstrap is good",
+    "text": "Why the bootstrap is good\n\nCan be applied to almost any sample statistic\n\nThis includes means, proportions, correlations, regression\n\nWorks when there is no ready formula for a standard error\n\nFor example the median, trimmed mean, correlation, eigenvalue, etc.\n\nIs nonparametric, so doesn’t require normally-distributed data\nWorks for estimates based on complicated sampling procedures or calculations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#easy-steps-for-bootstrapping-in-r",
+    "href": "Lecture_Folder/Week4a.html#easy-steps-for-bootstrapping-in-r",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Easy steps for bootstrapping in R",
+    "text": "Easy steps for bootstrapping in R\n\nTake a random sample (with replacement) from your sample data\nCalculate the estimate using the measurements in the bootstrap sample (step 1). This is the first bootstrap replicate estimate\nRepeat steps 1 and 2 a large number of times (1000 times is reasonable)\nCalculate the sample standard deviation of all the bootstrap replicate estimates obtained in step 3 (SSD = sd(sample)/sqrt(sample size))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#bootstrapping-1",
+    "href": "Lecture_Folder/Week4a.html#bootstrapping-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\n\nThe resulting quantity is called the “bootstrap standard error”\nThe bootstrap can be applied to almost any sample statistic, including means, proportions, correlations, and regression parameters.\nIt works when there is no ready formula for a standard error, for example when estimating the median, trimmed mean, correlation, eigenvalue, etc.\nIt is nonparametric, so doesn’t require normally-distributed data, as mentioned.\nIt works well for parameter estimates that are based on complicated sampling procedures or calculations. For example, it is used to assess confidence in local relationships within phylogenetic trees."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#loops-in-r",
+    "href": "Lecture_Folder/Week4a.html#loops-in-r",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Loops in R",
+    "text": "Loops in R\n\nR is very good at performing repetitive tasks.\nIf we want a set of operations to be repeated several times we use what’s known as a loop.\nWhen you create a loop, R will execute the instructions in the loop a specified number of times or until a specified condition is met.\nThere are two common types of loop in R: the for loop and the while loop"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#for-loops",
+    "href": "Lecture_Folder/Week4a.html#for-loops",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "For loops",
+    "text": "For loops\n\nThe most commonly used loop structure when you want to repeat a task a defined number of times is the for loop. The most basic example of a for loop is:\nHow does this appear to be working?\n\n\n# Notice the sequence of parentheses and brackets used in this example\nfor (i in 1:5) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#while-loops",
+    "href": "Lecture_Folder/Week4a.html#while-loops",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "While loops",
+    "text": "While loops\n\nAnother type of loop that you may use is the while loop.\nThe while loop is used when you want to keep looping until a specific logical condition is satisfied.\n\n\ni &lt;- 0\nwhile (i &lt;= 4) {\n  i &lt;- i + 1\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#if-and-else-statements",
+    "href": "Lecture_Folder/Week4a.html#if-and-else-statements",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "If and Else Statements",
+    "text": "If and Else Statements\n\nConditional statements are how you inject some logic into your code.\nThe most commonly used conditional statement is if.\n\nWhenever you see an if statement, read it as ‘If X is TRUE, then do a thing’.\n\nAnother statement is else, which extends the logic to ‘If X is TRUE, do a thing, or else do something different’."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#a-programming-joke-for-conditional-statements",
+    "href": "Lecture_Folder/Week4a.html#a-programming-joke-for-conditional-statements",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "A programming joke for conditional statements",
+    "text": "A programming joke for conditional statements\nA programmer’s partner says: ‘Please go to the store and buy a carton of milk and if they have eggs, get six.’\nThe programmer returned with 6 cartons of milk.\nWhen the partner sees this, and exclaims ‘Why the heck did you buy six cartons of milk?’\nThe programmer replied ‘They had eggs’\n\neggs &lt;- TRUE # Whether there were eggs in the store\n\n  if (eggs == TRUE) { # If there are eggs\n  n.milk &lt;- 6 # Get 6 cartons of milk\n    } else { # If there are not eggs\n  n.milk &lt;- 1 # Get 1 carton of milk\n  }"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude---simulate-a-population-and-sample-it",
+    "href": "Lecture_Folder/Week4a.html#r-interlude---simulate-a-population-and-sample-it",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE - Simulate a population and sample it!",
+    "text": "R INTERLUDE - Simulate a population and sample it!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#simulations-to-compare-parameter-estimates",
+    "href": "Lecture_Folder/Week4a.html#simulations-to-compare-parameter-estimates",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Simulations to compare parameter estimates",
+    "text": "Simulations to compare parameter estimates\n\nLet’s use our distribution functions from last time to set up some data to play with\nLet’s imagine our data is made up of counts, with an average of 3 counts - which distribution would fit that data best?\nEx: number of hours per day spent doing homework by UO undergraduates\n\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=10000, lambda = 3)\nhist(true_pop, xlim = c(0,16))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#calculating-parameters",
+    "href": "Lecture_Folder/Week4a.html#calculating-parameters",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Calculating parameters",
+    "text": "Calculating parameters\n\nHow would we calculate the mean and range for this population?\n\n\nmean(true_pop)\n\n[1] 2.9817\n\nrange(true_pop)\n\n[1]  0 12\n\nmedian(true_pop)\n\n[1] 3\n\n\n\nhow about the variance and the standard deviation?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#sampling-exercise",
+    "href": "Lecture_Folder/Week4a.html#sampling-exercise",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Sampling Exercise",
+    "text": "Sampling Exercise\n\nSince we are working with simulated data, we can also afford to simulate our sampling!\nTry taking a sample from our true_pop dataset and change the sample size, then calculate the mean and range for your sample and see how it compares to the true values.\nHow many college students are you including in your survey?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#randomness-in-sampling",
+    "href": "Lecture_Folder/Week4a.html#randomness-in-sampling",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Randomness in Sampling",
+    "text": "Randomness in Sampling\n\nBecause of the randomness of sampling, you may get close to the true estimates even with a small sample size\nBut your results will change each time you take a new sample of the same size\nHow do we get a feel for how accurate each sample size is? Or which sample size is recommended?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#surveying-your-sampling",
+    "href": "Lecture_Folder/Week4a.html#surveying-your-sampling",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Surveying your Sampling",
+    "text": "Surveying your Sampling\nStep 1 - take 50 samples of size 10 Step 2 - Calculate the mean from each sample Step 3 - Plot the distribution of sample mean estimates\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=10000, lambda = 3)\nsamps_var &lt;- replicate(50, sample(true_pop, 10))\nsamps_var_means &lt;- apply(samps_var, 2, mean)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#histograms",
+    "href": "Lecture_Folder/Week4a.html#histograms",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Histograms",
+    "text": "Histograms\n\n\n\nhist(true_pop)\n\n\n\n\n\n\n\n\n\n\nhist(samps_var_means)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#surveying-your-sampling-1",
+    "href": "Lecture_Folder/Week4a.html#surveying-your-sampling-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Surveying your Sampling",
+    "text": "Surveying your Sampling\n\nThis sampling variation is what we have to deal with, and account for, as empirical scientists.\nIf this had been a real-world scenario, we likely would be basing our estimate for the true mean on just a single sample mean.\nGetting close to the idea of power - does our experimental design have the power to detect the parameters we are interested in?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#challenge---bootstrapping-to-produce-a-confidence-interval",
+    "href": "Lecture_Folder/Week4a.html#challenge---bootstrapping-to-produce-a-confidence-interval",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "CHALLENGE - Bootstrapping to produce a confidence interval",
+    "text": "CHALLENGE - Bootstrapping to produce a confidence interval\n\nThe 2.5th and 97.5th percentiles of the bootstrap sampling distribution are a passable 95% confidence interval\nNote that no transformations or normality assumptions needed\nYou can use the quantile() function to calculate these\nYou can also use qnorm\nUse R to figure out the bootstrap distribution for other parameters (such as variance).\nTry to produce bootstrap distributions for the mean and variance of gene expresssion of one gene from the stickleback data set\nPlot the resulting distributions\nDetermine the value of the 2.5th and 97.5th percentiles"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#what-is-a-hypothesis",
+    "href": "Lecture_Folder/Week4a.html#what-is-a-hypothesis",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "What is a hypothesis",
+    "text": "What is a hypothesis\n\nA statement of belief about the world\nNeed a critical test to\n\naccept or reject the hypothesis\ncompare the relative merits of different models\n\nThis is where statistical sampling distributions come into play"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#what-is-a-hypothesis-1",
+    "href": "Lecture_Folder/Week4a.html#what-is-a-hypothesis-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "What is a hypothesis?",
+    "text": "What is a hypothesis?\n\nWe can compare estimated parameters, while also including measures of uncertainty, using frequentist methods\nRequires statistical hypotheses: a statement of belief about the world\nNeed a critical test to\n\naccept or reject the hypothesis\ncompare the relative merits of different models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#what-is-a-hypothesis-2",
+    "href": "Lecture_Folder/Week4a.html#what-is-a-hypothesis-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "What is a hypothesis?",
+    "text": "What is a hypothesis?\n\nThis is where statistical sampling distributions come into play\n\nStatistical distributions are built upon sampling distributions\nWill tell us how “frequently” we expect to see a result as extreme as ours"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#hypothesis-tests",
+    "href": "Lecture_Folder/Week4a.html#hypothesis-tests",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Hypothesis tests",
+    "text": "Hypothesis tests\n\\(H_0\\) : Null hypothesis : Ponderosa pine trees are the same height on average as Douglas fir trees\n\\(H_A\\) : Alternative Hypothesis: Ponderosa pine trees are not the same height on average as Douglas fir trees"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#hypothesis-tests-1",
+    "href": "Lecture_Folder/Week4a.html#hypothesis-tests-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Hypothesis tests",
+    "text": "Hypothesis tests\n\nWhat is the probability that we would reject a true null hypothesis?\nWhat is the probability that we would accept a false null hypothesis?\nHow do we decide when to reject a null hypothesis and support an alternative?\nWhat can we conclude if we fail to reject a null hypothesis?\nWhat parameter estimates of distributions are important to test hypotheses?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#null-and-alternative-hypotheses-population-distributions",
+    "href": "Lecture_Folder/Week4a.html#null-and-alternative-hypotheses-population-distributions",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Null and alternative hypotheses | population distributions",
+    "text": "Null and alternative hypotheses | population distributions\n\nWhich scenario do you think will be easier to find a difference?\nWhat factor(s) will make our statistical tests better?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#statistical-sampling-distributions-1",
+    "href": "Lecture_Folder/Week4a.html#statistical-sampling-distributions-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Statistical sampling distributions",
+    "text": "Statistical sampling distributions\n\nIn many cases we create a null statistical distribution that models the distribution of a test statistic under the null hypothesis.\nSimilar to point estimates, we calculate an observed test statistic value for our data.\nThen see how probable it was by comparing against the null distribution.\nThe probability of seeing that value or greater is called the p-value of the statistic."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#statistical-sampling-distributions-2",
+    "href": "Lecture_Folder/Week4a.html#statistical-sampling-distributions-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Statistical sampling distributions",
+    "text": "Statistical sampling distributions\n\nAn example of a test statistic is the t-statistic.\nThe t-statistic is a standardized difference between two sample means\n\nt = 0 indicates no difference between population means\nt-distribution is Normal, with the center and peak at 0\n\nWe can evaluate the t-statistic for our sample data and see whether it falls far enough away from zero - then we reject the null hypothesis"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#null-and-alternative-hypotheses-population-distributions-1",
+    "href": "Lecture_Folder/Week4a.html#null-and-alternative-hypotheses-population-distributions-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Null and alternative hypotheses | population distributions",
+    "text": "Null and alternative hypotheses | population distributions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#null-and-alternative-hypotheses-population-distributions-2",
+    "href": "Lecture_Folder/Week4a.html#null-and-alternative-hypotheses-population-distributions-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Null and alternative hypotheses | population distributions",
+    "text": "Null and alternative hypotheses | population distributions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#four-common-statistical-distributions",
+    "href": "Lecture_Folder/Week4a.html#four-common-statistical-distributions",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Four common statistical distributions",
+    "text": "Four common statistical distributions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution",
+    "href": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution",
+    "text": "The t-test and t sampling distribution\n\\[\\huge t = \\frac{(\\bar{y}_1-\\bar{y}_2)}{s_{\\bar{y}_1-\\bar{y}_2}} \\]\nwhere\n\n\n\n\n\n\n\n\n\nwhich is the calculation for the standard error of the mean difference"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-under-different-degrees-of-freedom",
+    "href": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-under-different-degrees-of-freedom",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution | under different degrees of freedom",
+    "text": "The t-test and t sampling distribution | under different degrees of freedom"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-one-tailed-test",
+    "href": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-one-tailed-test",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution | one-tailed test",
+    "text": "The t-test and t sampling distribution | one-tailed test"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-two-tailed-test",
+    "href": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-two-tailed-test",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution | two-tailed test",
+    "text": "The t-test and t sampling distribution | two-tailed test"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-1",
+    "href": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution",
+    "text": "The t-test and t sampling distribution\n\\(H_0\\) : Null hypothesis : Ponderosa pine trees are the same height on average as Douglas fir trees\n\\[H_0 : \\mu_1 = \\mu_2\\]\n\\(H_A\\) : Alternative Hypothesis: Ponderosa pine trees are not the same height as Douglas fir trees\n\\[H_A : \\mu_1 \\neq \\mu_2\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-2",
+    "href": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution",
+    "text": "The t-test and t sampling distribution\nwhere\n\n\n\n\n\n\n\n\n\nwhich is the calculation for the standard error of the mean difference"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#assumptions-of-parameteric-t-tests",
+    "href": "Lecture_Folder/Week4a.html#assumptions-of-parameteric-t-tests",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Assumptions of parameteric t-tests",
+    "text": "Assumptions of parameteric t-tests\n\n\nThe theoretical t-distributions for each degree of freedom were calculated for populations that are:\n\nnormally distributed\nhave equal variances (if comparing two means)\nobservations are independent (randomly drawn)\n\nThis is an example of a parametric test\nWhat do you do if the there is non-normality?\n\nnonparametric tests such as Mann-Whitney-Wilcoxon\nrandomization tests to create a null distribution"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#a-tangent-on-degrees-of-freedom",
+    "href": "Lecture_Folder/Week4a.html#a-tangent-on-degrees-of-freedom",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "A tangent on degrees of freedom",
+    "text": "A tangent on degrees of freedom\n\nIn statistics, degrees of freedom refers to the number of values in a calculation that are free to vary.\nExample: you have a set of numbers, like 1, 2, 3, and 4. If you know the average (mean) of these numbers is 3, you can actually choose three of the numbers freely, but the fourth number will be determined by the other three. So in this case, you have three degrees of freedom.\nThis answer comes from ChatGPT!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#degrees-of-freedom-exercise",
+    "href": "Lecture_Folder/Week4a.html#degrees-of-freedom-exercise",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Degrees of freedom exercise",
+    "text": "Degrees of freedom exercise\n\nTry out this concept in R\n\nRandomly sample from a list of numbers (1-10) 5 numbers\nCalculate the mean for that group of numbers\nIf you were to add a sixth number, what would it have to be for the mean to = 7?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#on-a-scale-of-murica-to-10-how-many-degrees-of-freedom-do-you-have",
+    "href": "Lecture_Folder/Week4a.html#on-a-scale-of-murica-to-10-how-many-degrees-of-freedom-do-you-have",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "On a scale of Murica to 10, how many degrees of freedom do you have?",
+    "text": "On a scale of Murica to 10, how many degrees of freedom do you have?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#type-1-and-type-2-errors",
+    "href": "Lecture_Folder/Week4a.html#type-1-and-type-2-errors",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Type 1 and Type 2 errors",
+    "text": "Type 1 and Type 2 errors"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#components-of-hypothesis-testing",
+    "href": "Lecture_Folder/Week4a.html#components-of-hypothesis-testing",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Components of hypothesis testing",
+    "text": "Components of hypothesis testing\n\np-value = the long run probability of rejecting a true null hypothesis\n\\(\\alpha\\) = critical value of p-value cutoff for experiments. The Type I error we are willing to tolerate.\n\\(\\beta\\) = cutoff for probability of accepting a false null hypothesis\nPower = the probability that a test will reject a false null hypothesis (1 - beta). It depends on effect size, sample size, chosen alpha, and population standard deviation\nMultiple testing = performing the same or similar tests multiple times - need to correct alpha value\nCan correct multiple testing using a tax (e.g. Bonferonni) or directly estimating a False Discovery Rate (FDR)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#statistical-power",
+    "href": "Lecture_Folder/Week4a.html#statistical-power",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Statistical power",
+    "text": "Statistical power\n\n\nType 1 error - \\(\\alpha\\) - incorrectly rejecting a true null hypothesis\n\nThis is saying that there is an effect when there isn’t\n\nType 2 error - \\(\\beta\\) - incorrectly accepting a false null hypothesis\n\nThis is saying that there isn’t an effect when there is\n\nPower is the probability of rejecting a false null hypothesis\nMostly we shoot for a power of around 80%\nPower can be calculated post hoc or a priori"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#why-do-we-use-alpha-0.5-as-a-cutoff",
+    "href": "Lecture_Folder/Week4a.html#why-do-we-use-alpha-0.5-as-a-cutoff",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Why do we use \\(\\alpha = 0.5\\) as a cutoff?",
+    "text": "Why do we use \\(\\alpha = 0.5\\) as a cutoff?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#components-of-hypothesis-testing-1",
+    "href": "Lecture_Folder/Week4a.html#components-of-hypothesis-testing-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Components of hypothesis testing",
+    "text": "Components of hypothesis testing\n\nMultiple testing = performing the same or similar tests multiple times - need to correct alpha value\nCan correct multiple testing using a tax (e.g. Bonferonni) or directly estimating a False Discovery Rate (FDR)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#statistical-power-1",
+    "href": "Lecture_Folder/Week4a.html#statistical-power-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Statistical power",
+    "text": "Statistical power\n\nType 1 error - \\(\\alpha\\) - incorrectly rejecting a true null hypothesis\n\nThis is saying that there is an effect when there isn’t\n\nType 2 error - \\(\\beta\\) - incorrectly accepting a false null hypothesis\n\nThis is saying that there isn’t an effect when there is\n\nPower is the probability of rejecting a false null hypothesis\nMostly we shoot for a power of around 80%\nPower can be calculated post hoc or a priori"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#power-the-things-one-needs-to-know",
+    "href": "Lecture_Folder/Week4a.html#power-the-things-one-needs-to-know",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Power | the things one needs to know",
+    "text": "Power | the things one needs to know\n\\[ Power \\propto \\frac{(ES)(\\alpha)(\\sqrt n)}{\\sigma}\\]\n\nPower is proportional to the combination of these parameters\n\nES - effect size; how large is the change of interest?\n\\(\\alpha\\) - significance level (usually 0.05)\nn - sample size\n\\(\\sigma\\) - standard deviation among experimental units within the same group."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#power-what-we-usually-want-to-know",
+    "href": "Lecture_Folder/Week4a.html#power-what-we-usually-want-to-know",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Power | what we usually want to know",
+    "text": "Power | what we usually want to know"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#power-rough-calculation",
+    "href": "Lecture_Folder/Week4a.html#power-rough-calculation",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Power | rough calculation",
+    "text": "Power | rough calculation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#what-is-a-power-analysis",
+    "href": "Lecture_Folder/Week4a.html#what-is-a-power-analysis",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "What is a power analysis?",
+    "text": "What is a power analysis?\n\nType 1 error - \\(\\alpha\\) - incorrectly rejecting a true null hypothesis\n\nThis is saying that there is an effect when there isn’t\n\nType 2 error - \\(\\beta\\) - incorrectly accepting a false null hypothesis\n\nThis is saying that there isn’t an effect when there is\n\nPower is the probability of rejecting a false null hypothesis\nMostly we shoot for a power of around 80%\nPower can be calculated post hoc or a priori"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#statistical-power-2",
+    "href": "Lecture_Folder/Week4a.html#statistical-power-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Statistical power",
+    "text": "Statistical power\n\nWhat factors can affect the power of our experiment - our ability to avoid a Type 2 error?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#statistical-power-3",
+    "href": "Lecture_Folder/Week4a.html#statistical-power-3",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Statistical power",
+    "text": "Statistical power\n\nWhat factors can affect the power of our experiment - our ability to avoid a Type 2 error?\n\nSample size\nEffect size (difference between the groups)\nVariance (range of values for this trait/measure)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#a-priori-power-analyses",
+    "href": "Lecture_Folder/Week4a.html#a-priori-power-analyses",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "A priori Power analyses",
+    "text": "A priori Power analyses\n\nBefore we start an experiment, we are interested in what sample size we should collect\nWe can use simulations to test different sample sizes"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#an-example",
+    "href": "Lecture_Folder/Week4a.html#an-example",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "An example",
+    "text": "An example\n\nLet’s say we’re studying college students again, and we’re interested in seeing if there’s a difference in study hours between freshman and seniors\nHow many students should we sample?\n\nThis will depend on our predictions about the effect size of this measurement"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#steps-to-power-analysis",
+    "href": "Lecture_Folder/Week4a.html#steps-to-power-analysis",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Steps to power analysis",
+    "text": "Steps to power analysis\n\nSimulate the true distributions of our populations (decide on effect size, distribution type, and variance)\nDraw random samples of different sizes from those populations\nPerform our statistical test (t-test) on these samples\nRepeat 2 & 3 ~1000 times\nPlot our resulting p-values against sample size"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-1-simulating-our-true-populations",
+    "href": "Lecture_Folder/Week4a.html#step-1-simulating-our-true-populations",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 1: simulating our true populations",
+    "text": "Step 1: simulating our true populations\n\nWhat is the distribution type?\nWhat is the effect size: difference in means between populations?\nWhat is the variance?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-1-simulating-our-true-populations-1",
+    "href": "Lecture_Folder/Week4a.html#step-1-simulating-our-true-populations-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 1: simulating our true populations",
+    "text": "Step 1: simulating our true populations\n\nsenior &lt;- rpois(5000, lambda = 10)\nfresh &lt;- rpois(5000, lambda = 12)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-1-simulating-our-true-populations-2",
+    "href": "Lecture_Folder/Week4a.html#step-1-simulating-our-true-populations-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 1: simulating our true populations",
+    "text": "Step 1: simulating our true populations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-2-drawing-a-sample",
+    "href": "Lecture_Folder/Week4a.html#step-2-drawing-a-sample",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 2: drawing a sample",
+    "text": "Step 2: drawing a sample\n\nsample_s &lt;- sample(senior, size = 10, replace = FALSE)\nsample_f &lt;- sample(fresh, size = 10, replace = FALSE)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-2-drawing-a-sample-1",
+    "href": "Lecture_Folder/Week4a.html#step-2-drawing-a-sample-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 2: drawing a sample",
+    "text": "Step 2: drawing a sample"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-3-statistical-test",
+    "href": "Lecture_Folder/Week4a.html#step-3-statistical-test",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 3: statistical test",
+    "text": "Step 3: statistical test\n\nt.test(sample_f, sample_s)\n\n\n    Welch Two Sample t-test\n\ndata:  sample_f and sample_s\nt = 1.1234, df = 16.683, p-value = 0.2772\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -1.497353  4.897353\nsample estimates:\nmean of x mean of y \n     12.0      10.3"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-4-setting-up-our-replicates",
+    "href": "Lecture_Folder/Week4a.html#step-4-setting-up-our-replicates",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 4: setting up our replicates",
+    "text": "Step 4: setting up our replicates\n\nTake a look at the “samps_var” vectors, how are they arranged? How would we begin conducting t-tests using each replicate from the two populations?\n\n\n## sample size of 10\nsamps_var_s &lt;- replicate(n = 100, sample(senior, size = 10))\nsamps_var_f &lt;- replicate(n = 100, sample(fresh, size = 10))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-4-testing-our-replicates",
+    "href": "Lecture_Folder/Week4a.html#step-4-testing-our-replicates",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 4: Testing our replicates",
+    "text": "Step 4: Testing our replicates\n\n# setting up a \"test\" dataframe\ntests &lt;- data.frame(1:100)\ntests$SampleSize &lt;- rep(\"10\", 100)\n\nfor (i in 1:ncol(samps_var_f)){\n  tests$result[i] &lt;- t.test(samps_var_s[,i], samps_var_f[,i])$p.value\n}\ntable(tests$result &lt; 0.05)\n\n\nFALSE  TRUE \n   85    15"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-4-contd-changing-the-sample-size",
+    "href": "Lecture_Folder/Week4a.html#step-4-contd-changing-the-sample-size",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 4 contd: changing the sample size",
+    "text": "Step 4 contd: changing the sample size"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#step-4-contd-multiple-sample-sizes",
+    "href": "Lecture_Folder/Week4a.html#step-4-contd-multiple-sample-sizes",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Step 4 contd: multiple sample sizes",
+    "text": "Step 4 contd: multiple sample sizes\n\nRequires a more complex for loop"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-complete-exercises-3.2-3.4",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-complete-exercises-3.2-3.4",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R Interlude | Complete Exercises 3.2-3.4",
+    "text": "R Interlude | Complete Exercises 3.2-3.4"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#components-of-hypothesis-testing-2",
+    "href": "Lecture_Folder/Week4a.html#components-of-hypothesis-testing-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Components of hypothesis testing",
+    "text": "Components of hypothesis testing\n\np-value = the long run probability of rejecting a true null hypothesis\nalpha = critical value of p-value cutoff for experiments. The Type I error we are willing to tolerate.\nbeta = cutoff for probability of accepting a false null hypothesis\nPower = the probability that a test will reject a false null hypothesis (1 - beta). It depends on effect size, sample size, chosen alpha, and population standard deviation\nMultiple testing = performing the same or similar tests multiple times - need to correct"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#null-distributions-and-p-values",
+    "href": "Lecture_Folder/Week4a.html#null-distributions-and-p-values",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Null distributions and p-values",
+    "text": "Null distributions and p-values"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#why-do-we-use-alpha-0.5-as-a-cutoff-1",
+    "href": "Lecture_Folder/Week4a.html#why-do-we-use-alpha-0.5-as-a-cutoff-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Why do we use \\(\\alpha = 0.5\\) as a cutoff?",
+    "text": "Why do we use \\(\\alpha = 0.5\\) as a cutoff?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-4",
+    "href": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-4",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution",
+    "text": "The t-test and t sampling distribution\n\nTo calculate the t-statistic for two populations:\n\n\\[\\large t = \\frac{(\\bar{y}_1-\\bar{y}_2)}{s_{\\bar{y}_1-\\bar{y}_2}} \\]\nwhere s is the standard error of the mean difference"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-one-tailed-test-1",
+    "href": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-one-tailed-test-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution | one-tailed test",
+    "text": "The t-test and t sampling distribution | one-tailed test"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-two-tailed-test-1",
+    "href": "Lecture_Folder/Week4a.html#the-t-test-and-t-sampling-distribution-two-tailed-test-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution | two-tailed test",
+    "text": "The t-test and t sampling distribution | two-tailed test"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#assumptions-of-parameteric-t-tests-1",
+    "href": "Lecture_Folder/Week4a.html#assumptions-of-parameteric-t-tests-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Assumptions of parameteric t-tests",
+    "text": "Assumptions of parameteric t-tests\n\nThe theoretical t-distributions for each degree of freedom were calculated for populations that are:\n\nnormally distributed\nhave equal variances (if comparing two means)\nobservations are independent (randomly drawn)\n\nThis is an example of a parametric test"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#lets-try-it-out",
+    "href": "Lecture_Folder/Week4a.html#lets-try-it-out",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Let’s try it out",
+    "text": "Let’s try it out\n\nUse the below code to set up two simulated populations:\n\n\nset.seed(518)\npop1 &lt;- sample(rnorm(n=10000, mean=2, sd=0.5), size = 100)\npop2 &lt;- sample(rnorm(n=10000, mean=5, sd=0.5), size = 100)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#lets-try-it-out-1",
+    "href": "Lecture_Folder/Week4a.html#lets-try-it-out-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "LEt’s try it out",
+    "text": "LEt’s try it out"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#first-is-the-distributionspread-the-same",
+    "href": "Lecture_Folder/Week4a.html#first-is-the-distributionspread-the-same",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "First, is the distribution/spread the same?",
+    "text": "First, is the distribution/spread the same?\n\nUse the function var.test() in R\nHow do we interpret this?\n\n\nvar.test(pop1, pop2)\n\n\n    F test to compare two variances\n\ndata:  pop1 and pop2\nF = 0.8257, num df = 99, denom df = 99, p-value = 0.3423\nalternative hypothesis: true ratio of variances is not equal to 1\n95 percent confidence interval:\n 0.5555635 1.2271791\nsample estimates:\nratio of variances \n         0.8256973"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#now-for-the-t-test",
+    "href": "Lecture_Folder/Week4a.html#now-for-the-t-test",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Now for the t-test!",
+    "text": "Now for the t-test!\n\nUse the function t.test() in R\nHow do we interpret this? How would you write this conclusion as a sentence?\n\n\nt.test(pop1, pop2)\n\n\n    Welch Two Sample t-test\n\ndata:  pop1 and pop2\nt = -41.396, df = 196.21, p-value &lt; 2.2e-16\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -3.075616 -2.795896\nsample estimates:\nmean of x mean of y \n 2.035190  4.970946"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#mann-whitney-wilcoxon-tests",
+    "href": "Lecture_Folder/Week4a.html#mann-whitney-wilcoxon-tests",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Mann-Whitney-Wilcoxon Tests",
+    "text": "Mann-Whitney-Wilcoxon Tests\n\nThe Mann-Whitney U (also called “Mann-Whitney-Wilcoxon) Test tests for distributional differences between the ranks of two samples.\nIn R the function wilcox.test() can be used to perform it, in much the same way the t.test() function is used."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#lets-try-it-out-2",
+    "href": "Lecture_Folder/Week4a.html#lets-try-it-out-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Let’s try it out",
+    "text": "Let’s try it out\n\nset.seed(518)\npop1 &lt;- sample(rnorm(n=10000, mean=2, sd=0.5), size = 100)\npop2 &lt;- sample(rnorm(n=10000, mean=5, sd=1.5), size = 100)\nhist(pop2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#test-the-variance",
+    "href": "Lecture_Folder/Week4a.html#test-the-variance",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Test the variance",
+    "text": "Test the variance\n\nUse the function we used before to see if the variance is the same or different between pop1 and pop2\nHow do we interpret this?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-mann-whit-u-test",
+    "href": "Lecture_Folder/Week4a.html#the-mann-whit-u-test",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The Mann Whit U Test",
+    "text": "The Mann Whit U Test\n\nUse the function wilcox.test() in R to compare pop1 and pop2\nHow do we interpret that result? How would you write it as a sentence for a paper?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#the-mann-whit-u-test-1",
+    "href": "Lecture_Folder/Week4a.html#the-mann-whit-u-test-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "The Mann Whit U Test",
+    "text": "The Mann Whit U Test\n\nwilcox.test(pop1, pop2)\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  pop1 and pop2\nW = 440, p-value &lt; 2.2e-16\nalternative hypothesis: true location shift is not equal to 0"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#null-distributions-and-p-values-1",
+    "href": "Lecture_Folder/Week4a.html#null-distributions-and-p-values-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Null distributions and p-values",
+    "text": "Null distributions and p-values\n\nWe can also create a null statistical distribution that models the distribution of a test statistic under the null hypothesis\nTo create the null distribution we can use either randomization or resampling"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#creating-a-null-distribution-through-randomization",
+    "href": "Lecture_Folder/Week4a.html#creating-a-null-distribution-through-randomization",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Creating a null distribution through randomization",
+    "text": "Creating a null distribution through randomization\n\nCombine values from both populations into a single vector\nRandomly shuffle the vector using the sample() function\nCalculate a t statistic based on the first n1 and n2 observations as our “pseudo samples” from “populations” 1 and 2, respectively, and save the value\nRepeat steps 2 and 3 many times (e.g. 1000)\nCalculate the proportion of pseudo replicates in which t is ≥ to our original, observed value of t. This proportion is our estimated p-value for the test."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#lets-do-it---the-starting-populations",
+    "href": "Lecture_Folder/Week4a.html#lets-do-it---the-starting-populations",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Let’s do it - the starting populations",
+    "text": "Let’s do it - the starting populations\n\nset.seed(56)\npop_1 &lt;- rnorm(n=50, mean=20.1, sd=2)#simulate population 1 for this example\npop_2 &lt;- rnorm(n=50, mean=19.3, sd=2)#simulate population 2 for this example"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#calculate-the-t-test",
+    "href": "Lecture_Folder/Week4a.html#calculate-the-t-test",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Calculate the t-test",
+    "text": "Calculate the t-test\n\n# Store the t statistic calculated from our samples, using t.test()\nt_obs &lt;- t.test(x=pop_1, y=pop_2, alternative=\"greater\")$statistic"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#combine-the-populations-sample-from-that-and-calculate-t-tests",
+    "href": "Lecture_Folder/Week4a.html#combine-the-populations-sample-from-that-and-calculate-t-tests",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Combine the populations, sample from that, and calculate t-tests",
+    "text": "Combine the populations, sample from that, and calculate t-tests\n\n# Combine both population vectors into one\npops_comb &lt;- c(pop_1, pop_2)\n\n# Randomly shuffle and calculate t statistic 1000 times\nt_rand &lt;- replicate(1000, {\n  pops_shuf &lt;- sample(pops_comb)\n  t.test(x=pops_shuf[1:50], y=pops_shuf[51:100], alternative=\"greater\")$statistic\n  })"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#plot-the-null-distribution",
+    "href": "Lecture_Folder/Week4a.html#plot-the-null-distribution",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Plot the null distribution",
+    "text": "Plot the null distribution\n\n# Plot the \"null distribution\" from the randomization-based t-values\nhist(t_rand)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#null-distributions-and-p-values-2",
+    "href": "Lecture_Folder/Week4a.html#null-distributions-and-p-values-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "Null distributions and p-values",
+    "text": "Null distributions and p-values"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#whats-our-result",
+    "href": "Lecture_Folder/Week4a.html#whats-our-result",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "What’s our result?",
+    "text": "What’s our result?\n\nHow do we interpret this?\n\n\n# Calculate the p-value for the test as the number of randomization t-values greater\n# than or equal to our actual t-value observed from the data\np &lt;- sum(t_rand&gt;=t_obs)/1000\n\np\n\n[1] 0.016"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-parametric-t-test-in-r",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-parametric-t-test-in-r",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Parametric t-test in R",
+    "text": "R INTERLUDE | Parametric t-test in R\n\nMake a dummy data set that contains one continuous and one categorical value (with two levels). Draw individuals of the two different factor levels from normal distributions with slightly different means. Take 100 obsv. per factor level.\nNow, perform a t-test to see if the two populations are statistically different from one another\n\n\nboxplot(continuous_variable~cat_variable, dataset name) \nt.test(continuous_variable~cat_variable, dataset name) \n\n\nRepeat steps 1 and 2 above but use different sample sizes (e.g. 10 , then 100, then 1000, then 10,000 obsv. per factor level)\nRepeat steps 1 and 2 above but now test between a categorical and continuous variable in the perchlorate data set (or any of your favorite data sets)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-parametric-t-test-in-r-1",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-parametric-t-test-in-r-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Parametric t-test in R",
+    "text": "R INTERLUDE | Parametric t-test in R\n\nNow, apply the equations for the t-statistic above to your simulated sample to perform the same test, but using a resampling approach\n\nhint: go back to your Bootstrapping script\n\nUse this approach to calculate a distribution of random t statistics assuming the the null hypothesis of no difference is true.\nNow, compare your observed value to your created null distribution.\nWhat is the probability of that value occurring by chance under the null?\n\nThis is your p-value! (Assume you’re doing a one-tailed test)\nhint: Proportion of values in the null distribution equal to or larger than the observed t-value = p-value"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-permutation-t-test-in-r",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-permutation-t-test-in-r",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Permutation t-test in R",
+    "text": "R INTERLUDE | Permutation t-test in R\n\nRandomization test example 1\nData: The number of successful broods of pseudoscorpion females that were mated twice to either a single male (SM) or two different males (DM).\n\nSM: 4 0 3 1 2 3 4 2 4 2 0 2 0 1 2 6 0 2 3 3\nDM: 2 0 2 6 4 3 4 4 2 7 4 1 6 3 6 4\n\nObserved difference in the means between the two\n\n\\(\\bar{Y}_{SM}\\) − \\(\\bar{Y}_{DM}\\) = 2.2−3.625 = −1.425"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-permutation-t-test-in-r-1",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-permutation-t-test-in-r-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Permutation t-test in R",
+    "text": "R INTERLUDE | Permutation t-test in R\n\nSteps of the randomization test\nFirst, create a randomized data set in which the measurements are randomly reassigned (without replacement) to the two groups\n\nFor example, the following\nSM: 4 0 7 4 2 2 2 1 4 4 0 3 3 4 6 2 4 6 0 0\nDM: 2 2 3 3 2 3 3 4 1 2 1 4 6 6 2 0\n\nSecond, calculate the test statistic measuring the association between variables\n\ndifference between group means\nthis is the first bootstrap replicate\n\nRepeat steps 1 and 2 many times to produce many bootstrap replicates"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-permutation-t-test-in-r-2",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-permutation-t-test-in-r-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Permutation t-test in R",
+    "text": "R INTERLUDE | Permutation t-test in R\n\nBelow is the null distribution of the test statistic from 10,000 replications\n\nThis is produced by the randomized assignment of values to each group (SM or DM)\nThus this is the distribution we’d expect under the null hypothesis of no difference\n\nThe observed value from the data is –1.425\nThe area in red is the tail beyond this observed value and is therefore the bootstrap p-value"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-permutation-t-test-in-r-3",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-permutation-t-test-in-r-3",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Permutation t-test in R",
+    "text": "R INTERLUDE | Permutation t-test in R\n\nOf these 10,000 randomizations, only 176 had a test statistic (difference between means) equal to or less than the observed value, –1.425.\nYou can use the simulated null distribution in the same way as t or F distribution in conventional tests.\nProportion of values in the null distribution equal or larger than the observed value of the test statistic is 176/10000 = 0.0176."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-perform-a-one-way-anova-with-power",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-perform-a-one-way-anova-with-power",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Perform a one-way ANOVA with power",
+    "text": "R INTERLUDE | Perform a one-way ANOVA with power\n\nRead in the perchlorate data again\nPerform an ANOVA to test Strain on T4_Hormone_Level, but log-transform (base 10) the T4 variable\n\n\nperc &lt;- read.table('perchlorate_data.tsv', header=T, sep='\\t')\nx &lt;- perc$Strain\ny &lt;- log10(perc$T4_Hormone_Level)\n\nMyANOVA &lt;- aov(y ~ x)\nsummary (MyANOVA)\nboxplot(y ~ x)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-perform-a-one-way-anova-with-power-1",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-perform-a-one-way-anova-with-power-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Perform a one-way ANOVA with power",
+    "text": "R INTERLUDE | Perform a one-way ANOVA with power\n\nConsider the parameters of this test related to power:\n\nThe per-group sample sizes\nThe standard deviation (use the higher within-group sd)\nThe effect size (|difference between means| / within-grp sd)\n\nFor more complex ANOVA power calculations (&gt;2 groups):\n\nThe total variance\nThe within-group variance (use the higher one)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-post-hoc-and-a-priori-power-analyses",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-post-hoc-and-a-priori-power-analyses",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | post hoc and a priori power analyses",
+    "text": "R INTERLUDE | post hoc and a priori power analyses\nBased on your results, calculate the power for your ANOVA.\n\n   pwr.t2n.test(n1=xxx, n2=xxx, d=xxx, sig.level=.05, power=NULL)\n\nCheck out the functions in the ‘pwr’ library (Unnecessary in this case, but could use ANOVA version):\n\n   pwr.anova.test(k=2, n=190, f=0.25, sig.level=.05, power=NULL)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-post-hoc-and-a-priori-power-analyses-1",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-post-hoc-and-a-priori-power-analyses-1",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | post hoc and a priori power analyses",
+    "text": "R INTERLUDE | post hoc and a priori power analyses\n\neffect size approximations:\n\nf=0.1 (small)\nf=0.25 (medium)\nf=0.4 (large)\n\nsee http://www.statmethods.net/stats/power.html"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4a.html#r-interlude-post-hoc-and-a-priori-power-analyses-2",
+    "href": "Lecture_Folder/Week4a.html#r-interlude-post-hoc-and-a-priori-power-analyses-2",
+    "title": "Week 4a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | post hoc and a priori power analyses",
+    "text": "R INTERLUDE | post hoc and a priori power analyses\n\nLet’s say you have to repeat the experiment, but your IACUC wants you to get by by using fewer fish.\nYou want to be able to detect a minimum mean difference of 1.3 T4 units (about 0.114 on the log10 scale), at a power of 90%.\nFirst, divide 0.114 by std.dev. of transformed WK values (the higher std. dev. of the two groups) to get a conservative “d”.\nWhat kind of sample size for the WK group would you need???\n(Again use the pwr.t2n.test() function, but this time specify the WK sample size as the unknown parameter)"
   }
 ]

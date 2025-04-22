@@ -4,6 +4,11 @@ title: "Schedule"
 
 ## Reading materials and tools
 
+### NEW!
+
+- I've started putting together out online textbook
+- [Here's a link](https://wcresko.github.io/BioE_R_book/)
+
 ### *Required (free online)*
 
 -   [R for Data Science](https://r4ds.hadley.nz) (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O'Reilly Press.
