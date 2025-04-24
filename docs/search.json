@@ -6354,5 +6354,460 @@
     "title": "Week 4a - Statistics for Bioengineering",
     "section": "R INTERLUDE | post hoc and a priori power analyses",
     "text": "R INTERLUDE | post hoc and a priori power analyses\n\nLet’s say you have to repeat the experiment, but your IACUC wants you to get by by using fewer fish.\nYou want to be able to detect a minimum mean difference of 1.3 T4 units (about 0.114 on the log10 scale), at a power of 90%.\nFirst, divide 0.114 by std.dev. of transformed WK values (the higher std. dev. of the two groups) to get a conservative “d”.\nWhat kind of sample size for the WK group would you need???\n(Again use the pwr.t2n.test() function, but this time specify the WK sample size as the unknown parameter)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html",
+    "href": "Lecture_Folder/Week4b.html",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(nycflights23)\ntheme_set(theme_minimal())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#r-interlude---simulate-a-population-and-sample-it",
+    "href": "Lecture_Folder/Week4b.html#r-interlude---simulate-a-population-and-sample-it",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "R INTERLUDE - Simulate a population and sample it!",
+    "text": "R INTERLUDE - Simulate a population and sample it!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#sampling-exercise",
+    "href": "Lecture_Folder/Week4b.html#sampling-exercise",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Sampling Exercise",
+    "text": "Sampling Exercise\n\nStep 1 - take 50 samples of\n\nsize 10\nsize 100\nsize 1000\n\nStep 2 - Calculate the range from each sample\nStep 3 - Calculate key statistics using summary\nStep 4 - Plot the distribution of sample mean estimates\nStep 5 - Calculate the 2.5% and 97.5% quantiles"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#different-sample-sizes",
+    "href": "Lecture_Folder/Week4b.html#different-sample-sizes",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Different sample sizes",
+    "text": "Different sample sizes\n\nSample size of 10\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=10000, lambda = 3)\nsamps_var_10 &lt;- replicate(50, sample(true_pop, 10))\nsamps_var_means_10 &lt;- apply(samps_var_10, 2, mean)\n\n\n\nSample size of 100\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=10000, lambda = 3)\nsamps_var_1000 &lt;- replicate(50, sample(true_pop, 100))\nsamps_var_means_100 &lt;- apply(samps_var_1000, 2, mean)\n\n\n\nSample size of 1000\n\nset.seed(32)\ntrue_pop &lt;- rpois(n=10000, lambda = 3)\nsamps_var_1000 &lt;- replicate(50, sample(true_pop, 1000))\nsamps_var_means_1000 &lt;- apply(samps_var_1000, 2, mean)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#statistics-for-original-distribution",
+    "href": "Lecture_Folder/Week4b.html#statistics-for-original-distribution",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Statistics for original distribution",
+    "text": "Statistics for original distribution\n\nrange(true_pop)\n\n[1]  0 12\n\nsummary(true_pop)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  0.000   2.000   3.000   2.982   4.000  12.000 \n\n\n\n\n\nhist(true_pop)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#section",
+    "href": "Lecture_Folder/Week4b.html#section",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "",
+    "text": "Sample size of 10\n\nrange(samps_var_means_10)\n\n[1] 1.9 4.0\n\nsummary(samps_var_means_10)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n    1.9     2.6     2.9     2.9     3.3     4.0 \n\n\n\n\nSample size of 100\n\nrange(samps_var_means_100)\n\n[1] 2.66 3.26\n\nsummary(samps_var_means_100)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  2.660   2.835   2.950   2.967   3.070   3.260 \n\n\n\n\nSample size of 1000\n\nrange(samps_var_means_1000)\n\n[1] 2.886 3.072\n\nsummary(samps_var_means_1000)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  2.886   2.941   2.985   2.976   3.005   3.072"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#histograms",
+    "href": "Lecture_Folder/Week4b.html#histograms",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Histograms",
+    "text": "Histograms\n\n\n\nhist(true_pop)\n\n\n\n\n\n\n\n\n\n\nhist(samps_var_means_10, xlim =c(0,5))\n\n\n\n\n\n\n\n\n\n\nhist(samps_var_means_100, xlim =c(0,5))\n\n\n\n\n\n\n\n\n\n\nhist(samps_var_means_1000, xlim =c(0,5))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#percentiles-and-quantiles",
+    "href": "Lecture_Folder/Week4b.html#percentiles-and-quantiles",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Percentiles and quantiles",
+    "text": "Percentiles and quantiles\n\nPercentile - an intuitive way of measuring a relative position in a data set\np-th percentile is a value that is greater than p% of the data\n50th percentile of a data set is the median\n25th percentile is the 1st quartile\n75th percentile is the 3rd quartile\nQuantiles divide a dataset into equal parts\nThe number of groups can be any integer, but is often 10\nAlso the basis of the p-value for test statistics"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#percentiles-and-quantiles-in-r",
+    "href": "Lecture_Folder/Week4b.html#percentiles-and-quantiles-in-r",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Percentiles and quantiles in R",
+    "text": "Percentiles and quantiles in R\n\ndata_RNAseq &lt;- read.table(\"Stickle_RNAseq.tsv\", header=TRUE, sep = \"\\t\")\nquantile(data_RNAseq$Gene20, probs = c(0.25, 0.5, 0.75))\n\n  25%   50%   75% \n 2.00  3.50 21.25 \n\n\n\n\n\ndata_RNAseq &lt;- read.table(\"Stickle_RNAseq.tsv\", header=TRUE, sep = \"\\t\")\nsummary(data_RNAseq$Gene20)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   0.00    2.00    3.50   13.11   21.25   44.00 \n\n\n\n\n\ndata_RNAseq &lt;- read.table(\"Stickle_RNAseq.tsv\", header=TRUE, sep = \"\\t\")\ndata_RNAseq$Gene20 |&gt;\nsummary()\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   0.00    2.00    3.50   13.11   21.25   44.00"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#challenge---bootstrapping-to-produce-a-confidence-interval",
+    "href": "Lecture_Folder/Week4b.html#challenge---bootstrapping-to-produce-a-confidence-interval",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "CHALLENGE - Bootstrapping to produce a confidence interval",
+    "text": "CHALLENGE - Bootstrapping to produce a confidence interval\n\nThe 2.5th and 97.5th percentiles of the bootstrap sampling distribution are a passable 95% confidence interval\nNote that no transformations or normality assumptions needed\nYou can use the quantile() function to calculate these\nYou can also use qnorm\nUse R to figure out the bootstrap distribution for other parameters (such as variance).\nTry to produce bootstrap distributions for the mean and variance of gene expresssion of one gene from the stickleback data set\nPlot the resulting distributions\nDetermine the value of the 2.5th and 97.5th percentiles"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#finding-the-cis-of-the-empirical-distribution",
+    "href": "Lecture_Folder/Week4b.html#finding-the-cis-of-the-empirical-distribution",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Finding the CI’s of the empirical distribution",
+    "text": "Finding the CI’s of the empirical distribution\n\nSample size of 10\n\nsamps_var_means_10 |&gt;\nquantile(probs = c(0.025, 0.975))\n\n  2.5%  97.5% \n1.9675 3.6775 \n\n\n\n\nSample size of 100\n\nsamps_var_means_100 |&gt;\nquantile(probs = c(0.025, 0.975))\n\n   2.5%   97.5% \n2.70225 3.24775 \n\n\n\n\nSample size of 1000\n\nsamps_var_means_1000 |&gt;\nquantile(probs = c(0.025, 0.975))\n\n    2.5%    97.5% \n2.892575 3.068750"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#what-is-a-hypothesis",
+    "href": "Lecture_Folder/Week4b.html#what-is-a-hypothesis",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "What is a hypothesis",
+    "text": "What is a hypothesis\n\nA statement of belief about the world\nNeed a critical test to\n\naccept or reject the hypothesis\ncompare the relative merits of different models\n\nThis is where statistical sampling distributions come into play\nStatistical sampling distributions are built upon sampling distributions of random variables"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#what-is-a-hypothesis-1",
+    "href": "Lecture_Folder/Week4b.html#what-is-a-hypothesis-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "What is a hypothesis",
+    "text": "What is a hypothesis\n\n\n\\(H_0\\) : Null hypothesis : The amino acid substitution does not change the catalytic rate of an enzyme\n\n\n\n\n\\(H_A\\) : Alternative Hypothesis: The amino acid substitution does change the catalytic rate of an enzyme\n\\(H_A\\) : Alternative Hypothesis: The amino acid substitution increases the catalytic rate of an enzyme\n\\(H_A\\) : Alternative Hypothesis: The amino acid substitution decreases the catalytic rate of an enzyme"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#hypothesis-tests",
+    "href": "Lecture_Folder/Week4b.html#hypothesis-tests",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Hypothesis tests",
+    "text": "Hypothesis tests\n\nWhat is the probability that we would reject a true null hypothesis?\nWhat is the probability that we would accept a false null hypothesis?\nHow do we decide when to reject a null hypothesis and support an alternative?\nWhat can we conclude if we fail to reject a null hypothesis?\nWhat parameter estimates of distributions are important to test hypotheses?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#null-and-alternative-hypotheses-population-distributions",
+    "href": "Lecture_Folder/Week4b.html#null-and-alternative-hypotheses-population-distributions",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Null and alternative hypotheses | population distributions",
+    "text": "Null and alternative hypotheses | population distributions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#null-and-alternative-hypotheses---population-distributions",
+    "href": "Lecture_Folder/Week4b.html#null-and-alternative-hypotheses---population-distributions",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Null and alternative hypotheses - population distributions",
+    "text": "Null and alternative hypotheses - population distributions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#type-1-and-type-2-errors",
+    "href": "Lecture_Folder/Week4b.html#type-1-and-type-2-errors",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Type 1 and Type 2 errors",
+    "text": "Type 1 and Type 2 errors"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#components-of-hypothesis-testing",
+    "href": "Lecture_Folder/Week4b.html#components-of-hypothesis-testing",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Components of hypothesis testing",
+    "text": "Components of hypothesis testing\n\np-value = the long run probability of rejecting a true null hypothesis\n\\(\\alpha\\) = critical value of p-value cutoff for experiments. The Type I error we are willing to tolerate.\n\\(\\beta\\) = cutoff for probability of accepting a false null hypothesis\nPower = the probability that a test will reject a false null hypothesis (1 - \\(\\beta\\)).\n\nIt depends on effect size, sample size, chosen alpha, and population standard deviation\nMakes sense - probability of rejecting a false null hypothesis\n\nMultiple testing = performing the same or similar tests multiple times - need to correct alpha value\nCan correct multiple testing using a tax (e.g. Bonferonni) or directly estimating a False Discovery Rate (FDR)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#why-do-we-use-alpha-0.5-as-a-cutoff",
+    "href": "Lecture_Folder/Week4b.html#why-do-we-use-alpha-0.5-as-a-cutoff",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Why do we use \\(\\alpha = 0.5\\) as a cutoff?",
+    "text": "Why do we use \\(\\alpha = 0.5\\) as a cutoff?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#statistical-sampling-distributions",
+    "href": "Lecture_Folder/Week4b.html#statistical-sampling-distributions",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Statistical sampling distributions",
+    "text": "Statistical sampling distributions\n\nStatistical tests provide a way to perform critical tests of hypotheses\nJust like raw data, statistics are random variables and depend on sampling distributions of the underlying data\nThe particular form of the statistical distribution depends on the test statistic and parameters such as the degrees of freedom that are determined by sample size.\nEssentially we get a distribution for statistics values too\nHow frequently do we see a statistics value as large/small as this one?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#statistical-tests---parametric",
+    "href": "Lecture_Folder/Week4b.html#statistical-tests---parametric",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Statistical tests - parametric",
+    "text": "Statistical tests - parametric\n\nIn some cases we can perform parameteric statistical tests where we make assumptions about the distributions of the underlying variables\nMathematical proofs relate the observed test statistic to a theoretical probability distribution based upon the sample size\nThey are called parametric because we are estimating the parameter of an assumed distribution\nThe assumed distribution means that parametric tests often have assumptions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#statistical-tests---non-parametric",
+    "href": "Lecture_Folder/Week4b.html#statistical-tests---non-parametric",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Statistical tests - non-parametric",
+    "text": "Statistical tests - non-parametric\n\nIn many other cases we create an empricial null statistical distribution that models the distribution of a test statistic under the null hypothesis.\nWe can use this for non-parametric statistical tests\nSimilar to point estimates, we calculate an observed test statistic value for our data.\nThen see how probable it was by comparing against the null distribution.\nThe probability of seeing that value or greater is called the p-value of the statistic.\nParametric and non-parametric tests function the same way, they really only differ by whether the null distribution is assumed or created empirically through resampling"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#four-common-statistical-distributions",
+    "href": "Lecture_Folder/Week4b.html#four-common-statistical-distributions",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Four common statistical distributions",
+    "text": "Four common statistical distributions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#t-sampling-distribution",
+    "href": "Lecture_Folder/Week4b.html#t-sampling-distribution",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "t sampling distribution",
+    "text": "t sampling distribution\n\nOne of the oldest test statistic is the t-statistic.\nCompares\n\none group mean against a value (one sample t-test)\nor two group means against one another (two sample t-test)\n\nThe t-statistic is a standardized difference between two sample means\n\nt = 0 indicates no difference between population means\nt-distribution is ~ Normal, with the center and peak at 0\n\nWe can evaluate the t-statistic for our sample data and see whether it falls far enough away from zero\nIf our p-value falls below our critical value we reject the null hypothesis"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#section-1",
+    "href": "Lecture_Folder/Week4b.html#section-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "",
+    "text": "\\[\\large t = \\frac{(\\bar{y}_1-\\bar{y}_2)}{s_{\\bar{y}_1-\\bar{y}_2}} \\]\nwhere\n\n\n\n\n\n\n\n\n\nwhich is the calculation for the standard error of the mean difference"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#the-t-test-and-t-sampling-distribution-under-different-degrees-of-freedom",
+    "href": "Lecture_Folder/Week4b.html#the-t-test-and-t-sampling-distribution-under-different-degrees-of-freedom",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution under different degrees of freedom",
+    "text": "The t-test and t sampling distribution under different degrees of freedom"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#the-t-test-and-t-sampling-distribution-one--and-two-tailed-test",
+    "href": "Lecture_Folder/Week4b.html#the-t-test-and-t-sampling-distribution-one--and-two-tailed-test",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution | one- and two-tailed test",
+    "text": "The t-test and t sampling distribution | one- and two-tailed test"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#the-t-test-and-t-sampling-distribution",
+    "href": "Lecture_Folder/Week4b.html#the-t-test-and-t-sampling-distribution",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "The t-test and t sampling distribution",
+    "text": "The t-test and t sampling distribution\n\\(H_0\\) : Null hypothesis : The microbiota treatment of stickleback fish does not change the level of expression of a particular gene\n\\[H_0 : \\mu_{conv} = \\mu_{gf}\\]\n\\(H_A\\) : Alternative hypothesis : The microbiota treatment of stickleback fish does change the level of expression of a particular gene\n\\[H_A : \\mu_{conv} \\neq \\mu_{gf}\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#assumptions-of-parameteric-t-tests",
+    "href": "Lecture_Folder/Week4b.html#assumptions-of-parameteric-t-tests",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Assumptions of parameteric t-tests",
+    "text": "Assumptions of parameteric t-tests\n\n\nThe theoretical t-distributions for each degree of freedom were calculated for populations that are:\n\nnormally distributed\nhave equal variances (if comparing two means)\nobservations are independent (randomly drawn)\n\nWhat do you do if the there is non-normality?\n\nnonparametric tests such as Mann-Whitney-Wilcoxon\nrandomization tests to create a null distribution"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#a-tangent-on-degrees-of-freedom",
+    "href": "Lecture_Folder/Week4b.html#a-tangent-on-degrees-of-freedom",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "A tangent on degrees of freedom",
+    "text": "A tangent on degrees of freedom\n\nIn statistics, degrees of freedom refers to the number of values in a calculation that are free to vary.\nExample: you have a set of numbers, like 1, 2, 3, and 4.\nIf you know the average (mean) of these numbers is 3, you can actually choose three of the numbers freely\nBut the fourth number will be determined by the other three.\nSo in this case, you have three degrees of freedom."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#lets-try-it-out",
+    "href": "Lecture_Folder/Week4b.html#lets-try-it-out",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Let’s try it out",
+    "text": "Let’s try it out\n\nUse the below code to set up two simulated populations:\n\n\nset.seed(518)\npop1 &lt;- sample(rnorm(n=10000, mean=2, sd=0.5), size = 100)\npop2 &lt;- sample(rnorm(n=10000, mean=5, sd=0.5), size = 100)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#lets-try-it-out-1",
+    "href": "Lecture_Folder/Week4b.html#lets-try-it-out-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Let’s try it out",
+    "text": "Let’s try it out\n\n\n\nhist(pop1, xlim = c(0, 10))\n\n\n\n\n\n\n\n\n\n\nhist(pop2, xlim = c(0,10))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#now-for-the-t-test",
+    "href": "Lecture_Folder/Week4b.html#now-for-the-t-test",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Now for the t-test!",
+    "text": "Now for the t-test!\n\nUse the function t.test() in R\nHow do we interpret this? How would you write this conclusion as a sentence?\n\n\nt.test(pop1, pop2)\nt.test(data$continuous, data$categorical)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#now-for-the-t-test-1",
+    "href": "Lecture_Folder/Week4b.html#now-for-the-t-test-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Now for the t-test!",
+    "text": "Now for the t-test!\n\n\n\nt.test(pop1, pop2)\n\n\n    Welch Two Sample t-test\n\ndata:  pop1 and pop2\nt = -41.396, df = 196.21, p-value &lt; 2.2e-16\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -3.075616 -2.795896\nsample estimates:\nmean of x mean of y \n 2.035190  4.970946 \n\n\n\n\nttest_output &lt;- t.test(pop1, pop2)\nprint(ttest_output)\n\n\n    Welch Two Sample t-test\n\ndata:  pop1 and pop2\nt = -41.396, df = 196.21, p-value &lt; 2.2e-16\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -3.075616 -2.795896\nsample estimates:\nmean of x mean of y \n 2.035190  4.970946"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#r-interlude",
+    "href": "Lecture_Folder/Week4b.html#r-interlude",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "R-interlude",
+    "text": "R-interlude\n\ntry doing a two sample t-test on the stickleback microbiome RNA-seq data"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#nonparametric-tests-1",
+    "href": "Lecture_Folder/Week4b.html#nonparametric-tests-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Nonparametric tests",
+    "text": "Nonparametric tests\n\nWhat if your data does not meet the requirements of a parametric t-test?\nWhat do you do if the there is non-normality?\n\nnonparametric tests such as Mann-Whitney-Wilcoxon\nrandomization tests to create a null distribution"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#mann-whitney-wilcoxon-tests",
+    "href": "Lecture_Folder/Week4b.html#mann-whitney-wilcoxon-tests",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Mann-Whitney-Wilcoxon Tests",
+    "text": "Mann-Whitney-Wilcoxon Tests\n\nThe Mann-Whitney U (also called “Mann-Whitney-Wilcoxon) Test tests for distributional differences between the ranks of two samples.\nIn R the function wilcox.test() can be used to perform it, in much the same way the t.test() function is used."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#lets-try-it-out-2",
+    "href": "Lecture_Folder/Week4b.html#lets-try-it-out-2",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Let’s try it out",
+    "text": "Let’s try it out\n\nset.seed(518)\npop1 &lt;- sample(rnorm(n=10000, mean=2, sd=0.5), size = 100)\npop2 &lt;- sample(rnorm(n=10000, mean=5, sd=1.5), size = 100)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#the-mann-whit-u-test",
+    "href": "Lecture_Folder/Week4b.html#the-mann-whit-u-test",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "The Mann Whit U Test",
+    "text": "The Mann Whit U Test\n\nUse the function wilcox.test() in R to compare pop1 and pop2\nHow do we interpret that result?\nHow would you write it as a sentence for a paper?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#the-mann-whit-u-test-1",
+    "href": "Lecture_Folder/Week4b.html#the-mann-whit-u-test-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "The Mann Whit U Test",
+    "text": "The Mann Whit U Test\n\nwilcox.test(pop1, pop2)\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  pop1 and pop2\nW = 440, p-value &lt; 2.2e-16\nalternative hypothesis: true location shift is not equal to 0"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#null-distributions-and-p-values",
+    "href": "Lecture_Folder/Week4b.html#null-distributions-and-p-values",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Null distributions and p-values",
+    "text": "Null distributions and p-values\n\nWe can also create a null statistical distribution that models the distribution of a test statistic under the null hypothesis\nTo create the null distribution we can use either randomization or resampling"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#creating-a-null-distribution-through-randomization",
+    "href": "Lecture_Folder/Week4b.html#creating-a-null-distribution-through-randomization",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Creating a null distribution through randomization",
+    "text": "Creating a null distribution through randomization\n\nCombine values from both populations into a single vector\nRandomly shuffle the vector using the sample() function\nCalculate a t statistic based on the first n1 and n2 observations as our “pseudo samples” from “populations” 1 and 2, respectively, and save the value\nRepeat steps 2 and 3 many times (e.g. 1000)\nCalculate the proportion of pseudo replicates in which t is ≥ to our original, observed value of t. This proportion is our estimated p-value for the test."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#lets-do-it---the-starting-populations",
+    "href": "Lecture_Folder/Week4b.html#lets-do-it---the-starting-populations",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Let’s do it - the starting populations",
+    "text": "Let’s do it - the starting populations\n\nset.seed(56)\npop_1 &lt;- rnorm(n=50, mean=20.1, sd=2)#simulate population 1 for this example\npop_2 &lt;- rnorm(n=50, mean=19.3, sd=2)#simulate population 2 for this example\n\n\nhist(pop_1)\n\n\n\n\n\n\n\nhist(pop_2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#calculate-the-t-test",
+    "href": "Lecture_Folder/Week4b.html#calculate-the-t-test",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Calculate the t-test",
+    "text": "Calculate the t-test\n\n# Store the t statistic calculated from our samples, using t.test()\nt_obs &lt;- t.test(x=pop_1, y=pop_2, alternative=\"greater\")$statistic"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#combine-the-populations-sample-from-that-and-calculate-t-tests",
+    "href": "Lecture_Folder/Week4b.html#combine-the-populations-sample-from-that-and-calculate-t-tests",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Combine the populations, sample from that, and calculate t-tests",
+    "text": "Combine the populations, sample from that, and calculate t-tests\n\n# Combine both population vectors into one\npops_comb &lt;- c(pop_1, pop_2)\n\n# Randomly shuffle and calculate t statistic 1000 times\nt_rand &lt;- replicate(1000, {\n  pops_shuf &lt;- sample(pops_comb)\n  t.test(x=pops_shuf[1:50], y=pops_shuf[51:100], alternative=\"greater\")$statistic\n  })"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#plot-the-null-distribution",
+    "href": "Lecture_Folder/Week4b.html#plot-the-null-distribution",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Plot the null distribution",
+    "text": "Plot the null distribution\n\n# Plot the \"null distribution\" from the randomization-based t-values\nhist(t_rand)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#null-distributions-and-p-values-1",
+    "href": "Lecture_Folder/Week4b.html#null-distributions-and-p-values-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Null distributions and p-values",
+    "text": "Null distributions and p-values"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#whats-our-result",
+    "href": "Lecture_Folder/Week4b.html#whats-our-result",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "What’s our result?",
+    "text": "What’s our result?\n\nHow do we interpret this?\n\n\n# Calculate the p-value for the test as the number of randomization t-values greater\n# than or equal to our actual t-value observed from the data\np &lt;- sum(t_rand&gt;=t_obs)/1000\n\np\n\n[1] 0.016"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#statistical-power-1",
+    "href": "Lecture_Folder/Week4b.html#statistical-power-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Statistical power",
+    "text": "Statistical power\n\nHelps us to interpret the failure to reject a null hypothesis\nWhat factors can affect the power of our experiment - our ability to avoid a Type 2 error?\n\nSample size\nEffect size (difference between the groups)\nVariance (range of values for this trait/measure)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#statistical-power-2",
+    "href": "Lecture_Folder/Week4b.html#statistical-power-2",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Statistical power",
+    "text": "Statistical power\n\nType 1 error - \\(\\alpha\\) - incorrectly rejecting a true null hypothesis\n\nThis is saying that there is an effect when there isn’t\n\nType 2 error - \\(\\beta\\) - incorrectly accepting a false null hypothesis\n\nThis is saying that there isn’t an effect when there is\n\nPower is the probability of rejecting a false null hypothesis\nMostly we shoot for a power of around 80%\nPower can be calculated post hoc or a priori"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#a-priori-power-analyses",
+    "href": "Lecture_Folder/Week4b.html#a-priori-power-analyses",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "A priori Power analyses",
+    "text": "A priori Power analyses\n\nBefore we start an experiment, we are interested in what sample size we should collect\nWe can use simulations to test different sample sizes\nLet’s say we’re studying college students again, and we’re interested in seeing if there’s a difference in study hours between freshman and seniors\nHow many students should we sample?\nThis will depend on our predictions about the effect size of this measurement"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#power-the-things-one-needs-to-know",
+    "href": "Lecture_Folder/Week4b.html#power-the-things-one-needs-to-know",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Power | the things one needs to know",
+    "text": "Power | the things one needs to know\n\\[ Power \\propto \\frac{(ES)(\\alpha)(\\sqrt n)}{\\sigma}\\]\n\nPower is proportional to the combination of these parameters\n\nES - effect size; how large is the change of interest?\n\\(\\alpha\\) - significance level (usually 0.05)\nn - sample size\n\\(\\sigma\\) - standard deviation among experimental units within the same group."
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#power-what-we-usually-want-to-know",
+    "href": "Lecture_Folder/Week4b.html#power-what-we-usually-want-to-know",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Power | what we usually want to know",
+    "text": "Power | what we usually want to know"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#power-rough-calculation",
+    "href": "Lecture_Folder/Week4b.html#power-rough-calculation",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Power | rough calculation",
+    "text": "Power | rough calculation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#steps-to-power-analysis",
+    "href": "Lecture_Folder/Week4b.html#steps-to-power-analysis",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Steps to power analysis",
+    "text": "Steps to power analysis\n\nSimulate the true distributions of our populations (decide on effect size, distribution type, and variance)\nDraw random samples of different sizes from those populations\nPerform our statistical test (t-test) on these samples\nRepeat 2 & 3 ~1000 times\nPlot our resulting p-values against sample size"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-1-simulating-our-true-populations",
+    "href": "Lecture_Folder/Week4b.html#step-1-simulating-our-true-populations",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 1: simulating our true populations",
+    "text": "Step 1: simulating our true populations\n\nWhat is the distribution type?\nWhat is the effect size: difference in means between populations?\nWhat is the variance?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-1-simulating-our-true-populations-1",
+    "href": "Lecture_Folder/Week4b.html#step-1-simulating-our-true-populations-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 1: simulating our true populations",
+    "text": "Step 1: simulating our true populations\n\nsenior &lt;- rpois(5000, lambda = 10)\nfresh &lt;- rpois(5000, lambda = 12)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-1-simulating-our-true-populations-2",
+    "href": "Lecture_Folder/Week4b.html#step-1-simulating-our-true-populations-2",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 1: simulating our true populations",
+    "text": "Step 1: simulating our true populations\n\nhist(senior)\n\n\n\n\n\n\n\nhist(fresh)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-2-drawing-a-sample",
+    "href": "Lecture_Folder/Week4b.html#step-2-drawing-a-sample",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 2: drawing a sample",
+    "text": "Step 2: drawing a sample\n\nsample_s &lt;- sample(senior, size = 10, replace = FALSE)\nsample_f &lt;- sample(fresh, size = 10, replace = FALSE)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-2-drawing-a-sample-1",
+    "href": "Lecture_Folder/Week4b.html#step-2-drawing-a-sample-1",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 2: drawing a sample",
+    "text": "Step 2: drawing a sample\n\nhist(sample_s)\n\n\n\n\n\n\n\nhist(sample_f)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-3-statistical-test",
+    "href": "Lecture_Folder/Week4b.html#step-3-statistical-test",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 3: statistical test",
+    "text": "Step 3: statistical test\n\nt.test(sample_f, sample_s)\n\n\n    Welch Two Sample t-test\n\ndata:  sample_f and sample_s\nt = 0, df = 17.678, p-value = 1\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -4.002509  4.002509\nsample estimates:\nmean of x mean of y \n      9.9       9.9"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-4-setting-up-our-replicates",
+    "href": "Lecture_Folder/Week4b.html#step-4-setting-up-our-replicates",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 4: setting up our replicates",
+    "text": "Step 4: setting up our replicates\n\nTake a look at the “samps_var” vectors, how are they arranged? How would we begin conducting t-tests using each replicate from the two populations?\n\n\n## sample size of 10\nsamps_var_s &lt;- replicate(n = 100, sample(senior, size = 10))\nsamps_var_f &lt;- replicate(n = 100, sample(fresh, size = 10))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-4-testing-our-replicates",
+    "href": "Lecture_Folder/Week4b.html#step-4-testing-our-replicates",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 4: Testing our replicates",
+    "text": "Step 4: Testing our replicates\n\n# setting up a \"test\" dataframe\ntests &lt;- data.frame(1:100)\ntests$SampleSize &lt;- rep(\"10\", 100)\n\nfor (i in 1:ncol(samps_var_f)){\n  tests$result[i] &lt;- t.test(samps_var_s[,i], samps_var_f[,i])$p.value\n}\ntable(tests$result &lt; 0.05)\n\n\nFALSE  TRUE \n   77    23"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-4-contd-changing-the-sample-size",
+    "href": "Lecture_Folder/Week4b.html#step-4-contd-changing-the-sample-size",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 4 contd: changing the sample size",
+    "text": "Step 4 contd: changing the sample size"
+  },
+  {
+    "objectID": "Lecture_Folder/Week4b.html#step-4-contd-multiple-sample-sizes",
+    "href": "Lecture_Folder/Week4b.html#step-4-contd-multiple-sample-sizes",
+    "title": "Week 4b - Statistics for Bioengineering",
+    "section": "Step 4 contd: multiple sample sizes",
+    "text": "Step 4 contd: multiple sample sizes\n\nRequires a more complex for loop\n\n\nresults &lt;- data.frame()\n\n\n# using seq to set up the sample sizes\n\n\nfor (x in seq(10,100, by = 10)){\n  samps_var_s &lt;- replicate(n = 100, sample(senior, size = x))\n  samps_var_f &lt;- replicate(n = 100, sample(fresh, size = x))\n  \n  tests &lt;- data.frame(1:100)\n  tests$SampleSize &lt;- rep(x, 100)\n  for (i in 1:100){\n    tests$p.value[i] &lt;- t.test(samps_var_s[,i], samps_var_f[,i])$p.value\n  }\n  results &lt;- rbind(results, tests)\n}"
   }
 ]
