@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -6809,5 +6809,831 @@
     "title": "Week 4b - Statistics for Bioengineering",
     "section": "Step 4 contd: multiple sample sizes",
     "text": "Step 4 contd: multiple sample sizes\n\nRequires a more complex for loop\n\n\nresults &lt;- data.frame()\n\n\n# using seq to set up the sample sizes\n\n\nfor (x in seq(10,100, by = 10)){\n  samps_var_s &lt;- replicate(n = 100, sample(senior, size = x))\n  samps_var_f &lt;- replicate(n = 100, sample(fresh, size = x))\n  \n  tests &lt;- data.frame(1:100)\n  tests$SampleSize &lt;- rep(x, 100)\n  for (i in 1:100){\n    tests$p.value[i] &lt;- t.test(samps_var_s[,i], samps_var_f[,i])$p.value\n  }\n  results &lt;- rbind(results, tests)\n}"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html",
+    "href": "Lecture_Folder/Week5a.html",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(nycflights23)\ntheme_set(theme_minimal())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#this-week",
+    "href": "Lecture_Folder/Week5a.html#this-week",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "This week",
+    "text": "This week\n\nFinish Power\nStart linear models\nEugenics foundations of statistics"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#power",
+    "href": "Lecture_Folder/Week5a.html#power",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Power",
+    "text": "Power\n\nHelps us to interpret the failure to reject a null hypothesis\nWhat factors can affect the power of our experiment - our ability to avoid a Type 2 error?\n\nSample size\nEffect size (difference between the groups)\nVariance (range of values for this trait/measure)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#power-1",
+    "href": "Lecture_Folder/Week5a.html#power-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Power",
+    "text": "Power\n\nType 1 error - \\(\\alpha\\) - incorrectly rejecting a true null hypothesis\n\nThis is saying that there is an effect when there isn’t\n\nType 2 error - \\(\\beta\\) - incorrectly accepting a false null hypothesis\n\nThis is saying that there isn’t an effect when there is\n\nPower is the probability of rejecting a false null hypothesis and avoiding type II error\nMostly we shoot for a power of around 80%\nJust like \\(\\alpha\\), we want to calculate our power in advance"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#key-components-of-power",
+    "href": "Lecture_Folder/Week5a.html#key-components-of-power",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Key components of power",
+    "text": "Key components of power\n\nEffect Size (ES): The magnitude of the difference you expect to detect.\nSampling standard deviation (sd): a measure of variability within groups\nSample Size (n): The number of observations in the study.\nSignificance Level (\\(\\alpha\\)): The probability of committing a Type I error (rejecting the null hypothesis when it is true), typically set at 0.05.\nPower (1 - \\(\\beta\\)): The probability of correctly rejecting the null hypothesis, commonly set at 0.80 or 80%."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#effect-size-measured-as-cohens-d",
+    "href": "Lecture_Folder/Week5a.html#effect-size-measured-as-cohens-d",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Effect size measured as Cohen’s D",
+    "text": "Effect size measured as Cohen’s D\n\nCohen’s d is a statistical measure that quantifies the effect size between two group means, expressing the difference in standard deviation units.\nIt’s used to determine the magnitude of the difference between two groups in studies, like those using t-tests or ANOVA.\nCohen’s d is calculated by dividing the difference between the two group means by the pooled standard deviation."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#why-perform-power-analysis",
+    "href": "Lecture_Folder/Week5a.html#why-perform-power-analysis",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Why Perform Power Analysis?",
+    "text": "Why Perform Power Analysis?\nHere are the main reasons Why we Perform Power Analysis.\n\nDetermine Sample Size: To ensure your study has enough participants to detect the expected effect.\nAssess Test Feasibility: To understand if your study can achieve meaningful results with available resources.\nOptimize Resource Allocation: To avoid over- or under-sampling, ensuring efficient use of time and resources."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#power-2",
+    "href": "Lecture_Folder/Week5a.html#power-2",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Power",
+    "text": "Power"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#power---rough-calculation",
+    "href": "Lecture_Folder/Week5a.html#power---rough-calculation",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Power - rough calculation",
+    "text": "Power - rough calculation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#parametric-power-in-r",
+    "href": "Lecture_Folder/Week5a.html#parametric-power-in-r",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Parametric Power in R",
+    "text": "Parametric Power in R\nR provides several packages for conducting power analysis, including pwr and statmod. We’ll explore examples using the pwr package.\n\nlibrary(pwr)\n\n# Parameters\neffect_size &lt;- 0.4 # The difference between null and alternative hypotheses\nsample_size &lt;- 50 # The number of observations in each group\nsd &lt;- 4 # The standard deviation\nalpha &lt;- 0.05 # The significance level\n\n\n# Calculate Type II Error\npwr_result &lt;-pwr.t.test(n = sample_size, \n                        d = effect_size / sd, \n                        sig.level = alpha,\n                        type = \"two.sample\",\n                        alternative = \"two.sided\")\n\ntype_II_error &lt;- 1 - pwr_result$power\npower &lt;- pwr_result$power\n\n\nprint(type_II_error)\n\n[1] 0.921476\n\nprint(power)\n\n[1] 0.07852399"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#calculate-sample-size-needed",
+    "href": "Lecture_Folder/Week5a.html#calculate-sample-size-needed",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Calculate sample size needed",
+    "text": "Calculate sample size needed\n\n# Parameters for two-sample t-test\neffect_size_t &lt;- 2.0  \nsd &lt; - 2\n\n[1] FALSE\n\nd_calc &lt;- effect_size_t/sd # Moderate effect size (Cohen's d)\nalpha_t &lt;- 0.05       # Significance level\npower_t &lt;- 0.8        # Desired power\n\n# Calculate required sample size\nsample_size_t &lt;- pwr.t.test(d = d_calc, \n                            sig.level = alpha_t, \n                            power = power_t, \n                            type = \"two.sample\")$n\n\n# Output the result\ncat(\"Sample Size for Two-Sample t-Test:\", sample_size_t, \"\\n\")\n\nSample Size for Two-Sample t-Test: 63.76561"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#generate-power-curve-for-two-sample-t-test",
+    "href": "Lecture_Folder/Week5a.html#generate-power-curve-for-two-sample-t-test",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Generate Power Curve for Two-Sample t-Test",
+    "text": "Generate Power Curve for Two-Sample t-Test\nNow we will generate power curve for Two-Sample t-Test.\n\nsample_size_curve: Specifies the sample size per group (100 in this case).\neffect_sizes_curve: Defines a range of effect sizes (Cohen’s d) from 0.2 to 0.8 with a step of 0.1.\nNext calculates the power values for the power curve by iterating through the specified range of effect sizes and using the pwr.t.test function for each effect size to calculate power based on the given sample size, significance level, and type of test.\nFinally, plots the power curve using the calculated power values against the effect sizes, with appropriate labels for the axes and title for the plot. It visualizes how power varies with different effect sizes in the two-sample t-test scenario."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#generate-power-curve-for-two-sample-t-test-1",
+    "href": "Lecture_Folder/Week5a.html#generate-power-curve-for-two-sample-t-test-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Generate Power Curve for Two-Sample t-Test",
+    "text": "Generate Power Curve for Two-Sample t-Test\n\n# Parameters for power curve\nsample_size_curve &lt;- 100    # Sample size per group\neffect_sizes_curve &lt;- seq(0.2, 0.8, by = 0.1)  # Range of effect sizes\n\n# Calculate power values\npower_values_curve &lt;- sapply(effect_sizes_curve, function(d) pwr.t.test(d = d, \n                                                     n = sample_size_curve, \n                                                     sig.level = alpha_t, \n                                                     type = \"two.sample\")$power)\n\n\n# Plot power curve\nplot(effect_sizes_curve, power_values_curve, type = \"b\",\n     main = \"Power Curve for Two-Sample t-Test\",\n     xlab = \"Effect Size (Cohen's d)\",\n     ylab = \"Power\",\n     ylim = c(0, 1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#generate-a-sample-curve-for-two-sample-t-test",
+    "href": "Lecture_Folder/Week5a.html#generate-a-sample-curve-for-two-sample-t-test",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Generate a Sample Curve for Two-Sample t-Test",
+    "text": "Generate a Sample Curve for Two-Sample t-Test\n\neffect_size_t &lt;- 2.0  \nsd &lt; - 2.0\n\n[1] FALSE\n\nd_calc &lt;- effect_size_t/sd  # Moderate effect size (Cohen's d)\nalpha_t &lt;- 0.05             # Significance level\npower_t &lt;- 0.8              # Desired power\n\nsample_sizes_curve &lt;- seq(2, 200, by = 2)     # Sample size per group\neffect_sizes_curve &lt;- 0.4                     # Range of effect sizes\n\n# Calculate power values\npower_values_curve &lt;- sapply(effect_sizes_curve, function(d) pwr.t.test(d = d_calc, \n                                                     n = sample_sizes_curve, \n                                                     sig.level = alpha_t, \n                                                     type = \"two.sample\")$power)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#plot-power-curve",
+    "href": "Lecture_Folder/Week5a.html#plot-power-curve",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Plot power curve",
+    "text": "Plot power curve\n\nplot(sample_sizes_curve, power_values_curve, type = \"b\",\n     main = \"Sample sizes for Two-Sample t-Test\",\n     xlab = \"Sample size\",\n     ylab = \"Power\",\n     ylim = c(0, 1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#conduct-a-priori-power-analysis-for-one-way-anova",
+    "href": "Lecture_Folder/Week5a.html#conduct-a-priori-power-analysis-for-one-way-anova",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Conduct A Priori Power Analysis for One-Way ANOVA",
+    "text": "Conduct A Priori Power Analysis for One-Way ANOVA\nHere, we set the parameters for conducting a one-way ANOVA power analysis, similar to the t-test but with different effect size and significance level.\npwr.anova.test function to calculate the required sample size (sample_size_anova) for the one-way ANOVA based on the specified effect size, number of groups (k = 3), significance level, and desired power.\n\n# Parameters for one-way ANOVA\neffect_size_anova &lt;- 0.25  # Small effect size (Cohen's f)\nalpha_anova &lt;- 0.05        # Significance level\npower_anova &lt;- 0.8         # Desired power\n\n# Calculate required sample size\nsample_size_anova &lt;- pwr.anova.test(k = 3, f = effect_size_anova, \n                                    sig.level = alpha_anova, \n                                    power = power_anova)$n\n\n# Output the result\ncat(\"Sample Size for One-Way ANOVA:\", sample_size_anova, \"\\n\")\n\nSample Size for One-Way ANOVA: 52.3966"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#cohens-f",
+    "href": "Lecture_Folder/Week5a.html#cohens-f",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Cohen’s f",
+    "text": "Cohen’s f\n\nCohen’s f is an effect size statistic used in Analysis of Variance (ANOVA).\nIt measures the amount of variance in the dependent variable that is explained by the independent variable(s), or more generally, how much the group means differ from the grand mean.\nCohen’s f, along with other effect size measures, provides a standardized way to assess the magnitude of the effect observed in an ANOVA, going beyond simply determining statistical significance.\nCohen’s f is calculated as the square root of the variance due to the independent variable(s) divided by the total variance (or the variance within groups, depending on the specific type of ANOVA).\nCohen (1988) suggested the following interpretation for f:\n\nf = 0.10 is considered a small effect.\nf = 0.25 is considered a medium effect.\nf = 0.40 is considered a large effect."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation",
+    "href": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "On your own - Bootstrap resampling power calculation",
+    "text": "On your own - Bootstrap resampling power calculation\nStep 1: simulating our true populations\n\nWhat is the distribution type?\nWhat is the effect size: difference in means between populations?\nWhat is the variance?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-1",
+    "href": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "On your own - Bootstrap resampling power calculation",
+    "text": "On your own - Bootstrap resampling power calculation\nStep 1: simulating our true populations\n\nsenior &lt;- rpois(5000, lambda = 10)\nfresh &lt;- rpois(5000, lambda = 12)\n\n\nhist(senior)\n\n\n\n\n\n\n\nhist(fresh)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-2",
+    "href": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-2",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "On your own - Bootstrap resampling power calculation",
+    "text": "On your own - Bootstrap resampling power calculation\nStep 2: drawing a sample\n\nsample_s &lt;- sample(senior, size = 10, replace = FALSE)\nsample_f &lt;- sample(fresh, size = 10, replace = FALSE)\n\nStep 2: drawing a sample\n\nhist(sample_s)\n\n\n\n\n\n\n\nhist(sample_f)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-3",
+    "href": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-3",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "On your own - Bootstrap resampling power calculation",
+    "text": "On your own - Bootstrap resampling power calculation\nStep 3: statistical test\n\nt.test(sample_f, sample_s)\n\n\n    Welch Two Sample t-test\n\ndata:  sample_f and sample_s\nt = 2.4498, df = 15.803, p-value = 0.02634\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n 0.4682687 6.5317313\nsample estimates:\nmean of x mean of y \n     13.3       9.8"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-4",
+    "href": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-4",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "On your own - Bootstrap resampling power calculation",
+    "text": "On your own - Bootstrap resampling power calculation\nStep 4: setting up our replicates\nTake a look at the “samps_var” vectors, how are they arranged? How would we begin conducting t-tests using each replicate from the two populations?\n\n## sample size of 10\nsamps_var_s &lt;- replicate(n = 100, sample(senior, size = 10))\nsamps_var_f &lt;- replicate(n = 100, sample(fresh, size = 10))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-5",
+    "href": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-5",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "On your own - Bootstrap resampling power calculation",
+    "text": "On your own - Bootstrap resampling power calculation\nStep 4: Testing our replicates\n\n# setting up a \"test\" dataframe\ntests &lt;- data.frame(1:100)\ntests$SampleSize &lt;- rep(\"10\", 100)\n\nfor (i in 1:ncol(samps_var_f)){\n  tests$result[i] &lt;- t.test(samps_var_s[,i], samps_var_f[,i])$p.value\n}\ntable(tests$result &lt; 0.05)\n\n\nFALSE  TRUE \n   68    32"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-6",
+    "href": "Lecture_Folder/Week5a.html#on-your-own---bootstrap-resampling-power-calculation-6",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "On your own - Bootstrap resampling power calculation",
+    "text": "On your own - Bootstrap resampling power calculation\nRequires a more complex for loop\n\nresults &lt;- data.frame()\n\n# using seq to set up the sample sizes\n\nfor (x in seq(10,100, by = 10)){\n  samps_var_s &lt;- replicate(n = 100, sample(senior, size = x))\n  samps_var_f &lt;- replicate(n = 100, sample(fresh, size = x))\n  \n  tests &lt;- data.frame(1:100)\n  tests$SampleSize &lt;- rep(x, 100)\n  for (i in 1:100){\n    tests$p.value[i] &lt;- t.test(samps_var_s[,i], samps_var_f[,i])$p.value\n  }\n  results &lt;- rbind(results, tests)\n}"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#covariance",
+    "href": "Lecture_Folder/Week5a.html#covariance",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Covariance",
+    "text": "Covariance\n\nHow do we convey that 2 variables covary?\nCovariance statistic: multiplies each y and x deviation from its respective mean, sums that product across all observations, and divides by the total number of observations to yield an average\nPositive or negative covariance depending on the direction of the relationship, covariance of 0 if no relationship between the two"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#correlation",
+    "href": "Lecture_Folder/Week5a.html#correlation",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Correlation",
+    "text": "Correlation\n\nRemember when we said that the larger the mean, the greater the variance?\n\nExample: trying to compare mean body weight between elephants and mice\n\nThis also applies to covariance\nWe can calculate a correlation coefficient to standardize the covariance measure\n\nDividing the covariance y the standard deviations of x and y variables\nRanges from -1 to 1, with closer to 1 indicating a perfect linear relationship, and values close to 0 indicating no relationship"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#correlation-1",
+    "href": "Lecture_Folder/Week5a.html#correlation-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Correlation",
+    "text": "Correlation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#testing-for-correlation",
+    "href": "Lecture_Folder/Week5a.html#testing-for-correlation",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Testing for Correlation",
+    "text": "Testing for Correlation\n\nWe can calculate a t-statistic for our null hypothesis, and there’s a function in R for this!\n\ncor.test()\n\nWhat were the null and alternative hypotheses?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#testing-for-correlation---parametric",
+    "href": "Lecture_Folder/Week5a.html#testing-for-correlation---parametric",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Testing for Correlation - Parametric",
+    "text": "Testing for Correlation - Parametric\n\nR function cor.test()\nFormal hypothesis tests for correlation\n\nNull hypothesis is no correlation (CC = 0)\nAlternative hypothesis is some correlation (CC &gt; 0 or &lt; 0)\n\nRemember that parametric tests come with assumptions\n\nThe relationship being tested is assumed to be linear (as opposed to strongly curvilinear)\nThe probability distribution of the 2 variables is assumed to be normal"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#assumptions-of-parametric-correlation-tests",
+    "href": "Lecture_Folder/Week5a.html#assumptions-of-parametric-correlation-tests",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Assumptions of Parametric Correlation Tests",
+    "text": "Assumptions of Parametric Correlation Tests\n\nRemember that parametric tests come with assumptions\nThe relationship being tested is assumed to be linear (as opposed to strongly curvilinear)\nThe probability distribution of the 2 variables is assumed to be normal"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#nonparametric-correlation-tests",
+    "href": "Lecture_Folder/Week5a.html#nonparametric-correlation-tests",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Nonparametric Correlation tests",
+    "text": "Nonparametric Correlation tests\n\nAssociation between variables is monotonic (consistently increasing or decreasing)\nSpearman’s rank correlation test: good for small sample sizes (&lt; 30)\nKendall’s tau test: appropriate for larger sample sizes (&gt; 30)Testing for Correlation\nFormal hypothesis tests for correlation\n\nNull hypothesis is no correlation (CC = 0)\nAlternative hypothesis is some correlation (CC &gt; 0 or &lt; 0)\n\nWe can calculate a t-statistic for our null hypothesis, and there’s a function in R for this!\n\ncor.test()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#nonparametric-correlation-tests-1",
+    "href": "Lecture_Folder/Week5a.html#nonparametric-correlation-tests-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Nonparametric Correlation tests",
+    "text": "Nonparametric Correlation tests\n\nAssociation between variables is monotonic (consistently increasing or decreasing)\nSpearman’s rank correlation test: good for small sample sizes (&lt; 30)\nKendall’s tau test: appropriate for larger sample sizes (&gt; 30)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#lets-try-it---correlation",
+    "href": "Lecture_Folder/Week5a.html#lets-try-it---correlation",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Let’s try it - Correlation",
+    "text": "Let’s try it - Correlation\n\nCheck out the help page for cor.test()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#lets-try-it---correlation-1",
+    "href": "Lecture_Folder/Week5a.html#lets-try-it---correlation-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Let’s try it - Correlation",
+    "text": "Let’s try it - Correlation\n\nWork with the Drerio_development_complete.csv data set\nLoad it into R, and refamiliarize yourself with the contents\n\n\nfish &lt;- read.csv(file =\"Drerio_development_complete.csv\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#lets-try-it---correlation-2",
+    "href": "Lecture_Folder/Week5a.html#lets-try-it---correlation-2",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Let’s try it - Correlation",
+    "text": "Let’s try it - Correlation\n\nWhat variables might be correlated in this data set?\nTry creating a scatterplot with the different variables. Does anything appear to be correlated?\nPlot a histogram of the variables - do they appear to be normally distributed?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#lets-try-it---correlation-3",
+    "href": "Lecture_Folder/Week5a.html#lets-try-it---correlation-3",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Let’s try it - Correlation",
+    "text": "Let’s try it - Correlation\n\nplot(fish$Weight_mg, fish$Length_cm)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#lets-try-it---correlation-4",
+    "href": "Lecture_Folder/Week5a.html#lets-try-it---correlation-4",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Let’s try it - Correlation",
+    "text": "Let’s try it - Correlation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#lets-try-it---correlation-5",
+    "href": "Lecture_Folder/Week5a.html#lets-try-it---correlation-5",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Let’s try it - Correlation",
+    "text": "Let’s try it - Correlation\n\nRun a correlation test\nWhich method should you use?\n\n\ncor.test()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#lets-try-it---correlation-6",
+    "href": "Lecture_Folder/Week5a.html#lets-try-it---correlation-6",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Let’s try it - Correlation",
+    "text": "Let’s try it - Correlation\n\nRun a correlation test\n\n\ncor.test(fish$Weight_mg, fish$Length_cm, method = c(\"kendall\"))\n\n\n    Kendall's rank correlation tau\n\ndata:  fish$Weight_mg and fish$Length_cm\nz = 29.898, p-value &lt; 2.2e-16\nalternative hypothesis: true tau is not equal to 0\nsample estimates:\n      tau \n0.8161046"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#linear-regression",
+    "href": "Lecture_Folder/Week5a.html#linear-regression",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Linear Regression",
+    "text": "Linear Regression\n\nWe can model linear relationships\n\n\\[ y = B_0 + B_1 x + e \\]\ne represents the “error” (or “residual”) in the model, which accounts for “noise” or random errors in y unexplained by the effect of x\n\nFunction lm() in R"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#parent-offspring-regression",
+    "href": "Lecture_Folder/Week5a.html#parent-offspring-regression",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Parent offspring regression",
+    "text": "Parent offspring regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#bivariate-normality",
+    "href": "Lecture_Folder/Week5a.html#bivariate-normality",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Bivariate normality",
+    "text": "Bivariate normality"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#covariance-and-correlation",
+    "href": "Lecture_Folder/Week5a.html#covariance-and-correlation",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Covariance and correlation",
+    "text": "Covariance and correlation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#anscombes-quartet",
+    "href": "Lecture_Folder/Week5a.html#anscombes-quartet",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Anscombe’s Quartet",
+    "text": "Anscombe’s Quartet"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#anscombes-quartet-1",
+    "href": "Lecture_Folder/Week5a.html#anscombes-quartet-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Anscombe’s Quartet",
+    "text": "Anscombe’s Quartet\n\nMean of x in each case 9 (exact)\nVariance of x in each case 11 (exact)\nMean of y in each case 7.50 (to 2 decimal places)\nVariance of y in each case 4.122 or 4.127 (to 3 decimal places)\nCorrelation between x and y in each case 0.816 (to 3 decimal places)\nLinear regression line in each case \\[ y = 3.00 + 0.50x\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#a-linear-model-to-relate-two-variables",
+    "href": "Lecture_Folder/Week5a.html#a-linear-model-to-relate-two-variables",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "A linear model to relate two variables",
+    "text": "A linear model to relate two variables"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#many-approaches-are-linear-models",
+    "href": "Lecture_Folder/Week5a.html#many-approaches-are-linear-models",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Many approaches are linear models",
+    "text": "Many approaches are linear models\n\nIs flexible: Applicable to many different study designs\nProvides a common set of tools (lm in R for fixed effects)\nIncludes tools to estimate parameters:\n\n(e.g. sizes of effects, like the slope, or change in means)\n\nIs easier to work with, especially with multiple variables"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#many-approaches-are-linear-models-1",
+    "href": "Lecture_Folder/Week5a.html#many-approaches-are-linear-models-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Many approaches are linear models",
+    "text": "Many approaches are linear models\n\nLinear regression\nSingle factor ANOVA\nAnalysis of covariance\nMultiple regression\nMulti-factor ANOVA\nRepeated-measures ANOVA"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#plethora-of-linear-models",
+    "href": "Lecture_Folder/Week5a.html#plethora-of-linear-models",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Plethora of linear models",
+    "text": "Plethora of linear models\n\nGeneral Linear Model (GLM) - two or more continuous variables\nGeneral Linear Mixed Model (GLMM) - a continuous response variable with a mix of continuous and categorical predictor variables\nGeneralized Linear Model - a GLMM that doesn’t assume normality of the response (we’ll get to this later)\nGeneralized Additive Model (GAM) - a model that doesn’t assume linearity (we won’t get to this later)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#linear-models",
+    "href": "Lecture_Folder/Week5a.html#linear-models",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Linear models",
+    "text": "Linear models\nAll an be written in the form\nresponse variable = intercept + (explanatory_variables) + random_error\nin the general form:\n\\[ Y=\\beta_0 +\\beta_1*X_1 + \\beta_2*X_2 +... + error\\]\nwhere \\(\\beta_0, \\beta_1, \\beta_2, ....\\) are the parameters of the linear model"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#linear-model-parameters",
+    "href": "Lecture_Folder/Week5a.html#linear-model-parameters",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "linear model parameters",
+    "text": "linear model parameters"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#linear-model-parameters-1",
+    "href": "Lecture_Folder/Week5a.html#linear-model-parameters-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "linear model parameters",
+    "text": "linear model parameters"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#linear-models-in-r",
+    "href": "Lecture_Folder/Week5a.html#linear-models-in-r",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "linear models in R",
+    "text": "linear models in R\nAll of these will include the intercept\n\nY~X\nY~1+X\nY~X+1\n\nAll of these will exclude the intercept\n\nY~-1+X\nY~X-1\n\nNeed to fit the model and then ‘read’ the output\n\ntrial_lm &lt;- lm(Y~X)\nsummary (trial_lm)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude",
+    "href": "Lecture_Folder/Week5a.html#r-interlude",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE",
+    "text": "R INTERLUDE\nWrite a script to read in the perchlorate data set. Now, add the code to perform a linear model of two continuous variables. Notice how the output of the linear model is specified to a new variable. Also note that the variables and dataset are placeholders\n\nmy_lm &lt;- lm(dataset$variable1 ~ dataset$variable2)\n\nNow look at a summary of the linear model\n\nsummary(my_lm)\nprint(my_lm)\n\nNow let’s produce a nice regression plot\n\nplot(dataset$variable1 ~ dataset$variable2, col = “blue”)\nabline(my_lm, col = “red”)\n\nNotice that you are adding the fitted line from your linear model Finally, remake this plot in GGPlot2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude-1",
+    "href": "Lecture_Folder/Week5a.html#r-interlude-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE",
+    "text": "R INTERLUDE\n\nPerchlorate_Data &lt;- read.table(\"perchlorate_data.tsv\", header=T)\nhead(Perchlorate_Data)\n\n  Strain Perchlorate_Level T4_Hormone_Level Follicle_Area Number_of_Follicles\n1     WK                 A         14.54394       704.939                   9\n2     WK                 A         26.95434       935.739                   9\n3     WK                 A         17.19650       399.945                   9\n4     WK                 A         24.01719       568.041                   9\n5     WK                 A         20.80560       661.448                  13\n6     WK                 A         14.15130       493.970                  13\n  Age_Category Testes_Area Testes_Stage\n1       Embryo   125119.90            0\n2       Embryo   537018.88            0\n3       Embryo   407869.97            0\n4       Embryo    39241.09            0\n5       Embryo     2286.20            0\n6       Embryo    27451.35            0\n\nx &lt;- Perchlorate_Data$T4_Hormone_Level\ny &lt;- Perchlorate_Data$Testes_Area\n\nperc_lm &lt;- lm(y ~ x)\nsummary (perc_lm)\n\n\nCall:\nlm(formula = y ~ x)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-295380 -212504 -142136  214571  757801 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 245576.8    30930.4   7.940 2.21e-14 ***\nx              727.5      711.5   1.022    0.307    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 270600 on 388 degrees of freedom\nMultiple R-squared:  0.002687,  Adjusted R-squared:  0.0001169 \nF-statistic: 1.045 on 1 and 388 DF,  p-value: 0.3072\n\nplot(y ~ x, col = \"blue\")\nabline(perc_lm, col = \"red\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude---checking-the-output",
+    "href": "Lecture_Folder/Week5a.html#r-interlude---checking-the-output",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE - Checking the output",
+    "text": "R INTERLUDE - Checking the output"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#model-fitting-and-hypothesis-tests-in-regression",
+    "href": "Lecture_Folder/Week5a.html#model-fitting-and-hypothesis-tests-in-regression",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Model fitting and hypothesis tests in regression",
+    "text": "Model fitting and hypothesis tests in regression\n\\[H_0 : \\beta_0 = 0\\] \\[H_0 : \\beta_1 = 0\\]\nfull model - \\(y_i = \\beta_0 + \\beta_1*x_i + error_i\\)\nreduced model - \\(y_i = \\beta_0 + 0*x_i + error_i\\)\n\nfits a “reduced” model without slope term (H0)\nfits the “full” model with slope term added back\ncompares fit of full and reduced models using an F test"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#model-fitting-and-hypothesis-tests-in-regression-1",
+    "href": "Lecture_Folder/Week5a.html#model-fitting-and-hypothesis-tests-in-regression-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Model fitting and hypothesis tests in regression",
+    "text": "Model fitting and hypothesis tests in regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#hypothesis-tests-in-linear-regression",
+    "href": "Lecture_Folder/Week5a.html#hypothesis-tests-in-linear-regression",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Hypothesis tests in linear regression",
+    "text": "Hypothesis tests in linear regression\nEstimation of the variation that is explained by the model (SS_model)\nSS_model = SS_total(reduced model) - SS_residual(full model)\nThe variation that is unexplained by the model (SS_residual)\nSS_residual(full model)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#hypothesis-tests-in-linear-regression-1",
+    "href": "Lecture_Folder/Week5a.html#hypothesis-tests-in-linear-regression-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Hypothesis tests in linear regression",
+    "text": "Hypothesis tests in linear regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#hypothesis-tests-in-linear-regression-2",
+    "href": "Lecture_Folder/Week5a.html#hypothesis-tests-in-linear-regression-2",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Hypothesis tests in linear regression",
+    "text": "Hypothesis tests in linear regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r2-as-a-measure-of-model-fit",
+    "href": "Lecture_Folder/Week5a.html#r2-as-a-measure-of-model-fit",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "\\(r^2\\) as a measure of model fit",
+    "text": "\\(r^2\\) as a measure of model fit\n\\[r^2 = SS_{regression}/SS_{total} = 1 - (SS_{residual}/SS_{total})\\] or \\[r^2 = 1 - (SS_{residual(full)}/SS_{total(reduced)})\\] Which is the proportion of the variance in Y that is explained by X"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#relationship-of-correlation-and-regression",
+    "href": "Lecture_Folder/Week5a.html#relationship-of-correlation-and-regression",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Relationship of correlation and regression",
+    "text": "Relationship of correlation and regression\n\\[\\beta_{YX}=\\rho_{YX}*\\sigma_Y/\\sigma_X\\] \\[b_{YX} = r_{YX}*S_Y/S_X\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#residual-analysis-did-we-meet-our-assumptions",
+    "href": "Lecture_Folder/Week5a.html#residual-analysis-did-we-meet-our-assumptions",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Residual Analysis | did we meet our assumptions?",
+    "text": "Residual Analysis | did we meet our assumptions?\n\nIndependent errors (residuals)\nEqual variance of residuals in all groups\nNormally-distributed residuals\nRobustness to departures from these assumptions is improved when sample size is large and design is balanced"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#residual-analysis-did-we-meet-our-assumptions-1",
+    "href": "Lecture_Folder/Week5a.html#residual-analysis-did-we-meet-our-assumptions-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Residual Analysis | did we meet our assumptions?",
+    "text": "Residual Analysis | did we meet our assumptions?\n\\[y_i = \\beta_0 + \\beta_1 * x_I + \\epsilon_i\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#residual-analysis",
+    "href": "Lecture_Folder/Week5a.html#residual-analysis",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Residual Analysis",
+    "text": "Residual Analysis"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#residual-analysis-1",
+    "href": "Lecture_Folder/Week5a.html#residual-analysis-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Residual Analysis",
+    "text": "Residual Analysis"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#handling-violations-of-the-assumptions-of-linear-models",
+    "href": "Lecture_Folder/Week5a.html#handling-violations-of-the-assumptions-of-linear-models",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Handling violations of the assumptions of linear models",
+    "text": "Handling violations of the assumptions of linear models\n\nWhat if your residuals aren’t normal because of outliers?\nNonparametric methods exist, but these don’t provide parameter estimates with CIs.\nRobust regression (rlm)\nRandomization tests"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#anscombes-quartet-again-what-would-residual-plots-look-like-for-these",
+    "href": "Lecture_Folder/Week5a.html#anscombes-quartet-again-what-would-residual-plots-look-like-for-these",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Anscombe’s quartet again | what would residual plots look like for these?",
+    "text": "Anscombe’s quartet again | what would residual plots look like for these?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#anscombes-quartet-again-what-would-residual-plots-look-like-for-these-1",
+    "href": "Lecture_Folder/Week5a.html#anscombes-quartet-again-what-would-residual-plots-look-like-for-these-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Anscombe’s quartet again | what would residual plots look like for these?",
+    "text": "Anscombe’s quartet again | what would residual plots look like for these?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#residual-plots-spotting-assumption-violations",
+    "href": "Lecture_Folder/Week5a.html#residual-plots-spotting-assumption-violations",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Residual Plots | Spotting assumption violations",
+    "text": "Residual Plots | Spotting assumption violations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#residuals-leverage-and-influence",
+    "href": "Lecture_Folder/Week5a.html#residuals-leverage-and-influence",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Residuals | leverage and influence",
+    "text": "Residuals | leverage and influence\n\n\n\n\n\n\n\n\n\n\n1 is an outlier for both Y and X\n2 is not an outlier for either Y or X but has a high residual\n3 is an outlier in just X - and thus a high residual - and therefore has high influence as measured by Cook’s D"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#residuals-leverage-and-influence-1",
+    "href": "Lecture_Folder/Week5a.html#residuals-leverage-and-influence-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Residuals | leverage and influence",
+    "text": "Residuals | leverage and influence\n\nLeverage - a measure of how much of an outlier each point is in x-space (on x-axis) and thus only applies to the predictor variable. (Values &gt; 2*(2/n) for simple regression are cause for concern)\nResiduals - As the residuals are the differences between the observed and predicted values along a vertical plane, they provide a measure of how much of an outlier each point is in y-space (on y-axis). The patterns of residuals against predicted y values (residual plot) are also useful diagnostic tools for investigating linearity and homogeneity of variance assumptions\nCook’s D statistic is a measure of the influence of each point on the fitted model (estimated slope) and incorporates both leverage and residuals. Values ≥ 1 (or even approaching 1) correspond to highly influential observations."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude-residual-analyses",
+    "href": "Lecture_Folder/Week5a.html#r-interlude-residual-analyses",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | residual analyses",
+    "text": "R INTERLUDE | residual analyses\nLet’s look at the zebrafish diet data.\n\nx &lt;- zfish_diet$Protein\ny &lt;- zfish_diet$Weight\n\nzfish_lm &lt;- lm(y ~ x)\nsummary (zfish_lm)\n\nplot(y ~ x, col = \"blue\")\nabline(zfish_lm, col = \"red\")\n\nhist(residuals(zfish_lm), breaks=30)\n\nplot (residuals(zfish_lm) ~ fitted.values(zfish_lm))\nplot (residuals(zfish_lm) ~ x)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude-residual-analyses-1",
+    "href": "Lecture_Folder/Week5a.html#r-interlude-residual-analyses-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | residual analyses",
+    "text": "R INTERLUDE | residual analyses\nOr apply the plot() function to the linear model object directly\n\nplot(zfish_lm)\n\nFigure out what these plots are telling you"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude-2",
+    "href": "Lecture_Folder/Week5a.html#r-interlude-2",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE",
+    "text": "R INTERLUDE\nHow about using the influence.measures function???\n\ninfluence.measures(zfish_lm)\n\nDo we have any high leverage observations we need to worry about??? Now go back and try to recreate these graphs in GGPlot2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude-3",
+    "href": "Lecture_Folder/Week5a.html#r-interlude-3",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE",
+    "text": "R INTERLUDE"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#what-is-a-glm",
+    "href": "Lecture_Folder/Week5a.html#what-is-a-glm",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "What is a GLM?",
+    "text": "What is a GLM?\n\nGeneral Linear Model (GLM) - two or more continuous variables\n\nYou’ll notice that the function lm() in R can work with a GLM too (via PS6)\n\nGeneralized Linear Model - used to conduct linear regressions on non-continuous data, and non-normal data\nGeneral Linear Mixed Model (GLMM) - a continuous response variable with a mix of continuous and categorical predictor variables, can be used to model random effects (for more on this, see Peter Ralph’s Advanced Bio Stats class)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#how-do-we-factor-in-categorical-variables",
+    "href": "Lecture_Folder/Week5a.html#how-do-we-factor-in-categorical-variables",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "How do we factor in categorical variables?",
+    "text": "How do we factor in categorical variables?\n\nFor a single categorical predictor, we can include effects of each factor level:\n\n\\[ y = B_0 + B_1(x~level1) + B_2(x~level2) +~... ~+ e \\]\n\nEach factor level (ex: for Wolbachia: Yes or No) becomes it’s own “effector” that will change the value of y\nInstead of x being a continuous numerical value, for categorical data it will be either a 0 or 1"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#a-generalized-linear-model",
+    "href": "Lecture_Folder/Week5a.html#a-generalized-linear-model",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "A Generalized Linear Model",
+    "text": "A Generalized Linear Model\n\nCheck out the help page in RStudio for glm()\n\n\nglm(formula = y ~ x1 + x2, family = gaussian(link = \"identity\"))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#first-steps-use-a-glm-to-test-wolbachia-infection",
+    "href": "Lecture_Folder/Week5a.html#first-steps-use-a-glm-to-test-wolbachia-infection",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "First steps: use a glm to test Wolbachia infection",
+    "text": "First steps: use a glm to test Wolbachia infection\n\nSet up a glm() to test for the effect of Wolbachia infection on Recombinant Fraction"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#first-steps-use-a-glm-to-test-wolbachia-infection-1",
+    "href": "Lecture_Folder/Week5a.html#first-steps-use-a-glm-to-test-wolbachia-infection-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "First steps: use a glm to test Wolbachia infection",
+    "text": "First steps: use a glm to test Wolbachia infection\n\nWhat do these components mean?\n\n\nmodel &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link=\"identity\"))\nsummary(model)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#interpreting-the-glm",
+    "href": "Lecture_Folder/Week5a.html#interpreting-the-glm",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Interpreting the GLM",
+    "text": "Interpreting the GLM\n\nWhy is our intercept significant?\n\nRemember that the null hypothesis is a model with an intercept and slope of 0\n\nHow would you interpret the “WolbachiaYes” coefficient, especially the estimate and the p value?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#second-steps---adding-more-variables",
+    "href": "Lecture_Folder/Week5a.html#second-steps---adding-more-variables",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Second steps - adding more variables",
+    "text": "Second steps - adding more variables\n\nNow let’s add Food to our model - how does this change our model results?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#second-steps---adding-more-variables-1",
+    "href": "Lecture_Folder/Week5a.html#second-steps---adding-more-variables-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Second steps - adding more variables",
+    "text": "Second steps - adding more variables\n\nmodel2 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, family = gaussian(link = \"identity\"))\nsummary(model2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#interpreting-the-glm-1",
+    "href": "Lecture_Folder/Week5a.html#interpreting-the-glm-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Interpreting the GLM",
+    "text": "Interpreting the GLM\n\nHow would you interpret the Intercept and Food coefficients, especially the estimate and the p value?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#interaction-effects-in-glms",
+    "href": "Lecture_Folder/Week5a.html#interaction-effects-in-glms",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Interaction effects in GLMs",
+    "text": "Interaction effects in GLMs\n\nYou can also model interactions between two categorical variables in glms\n\nWhat if variable x and variable z interact in non-additive ways?\n\nUse the notation x*z in the formula"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#third-steps---adding-interaction-effects",
+    "href": "Lecture_Folder/Week5a.html#third-steps---adding-interaction-effects",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Third steps - adding interaction effects",
+    "text": "Third steps - adding interaction effects\n\nLet’s finally add an interaction between Wolbachia infection and Food to represent Wolbachia titer in our model\nRun the model - what are the results?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#third-steps---adding-interaction-effects-1",
+    "href": "Lecture_Folder/Week5a.html#third-steps---adding-interaction-effects-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Third steps - adding interaction effects",
+    "text": "Third steps - adding interaction effects\n\nHow do we interpret these findings?\n\n\nmodel3 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + fly$Wolbachia*fly$Food, family = gaussian(link = \"identity\"))\nsummary(model3)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#how-do-we-know-which-model-to-use",
+    "href": "Lecture_Folder/Week5a.html#how-do-we-know-which-model-to-use",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "How do we know which model to use?",
+    "text": "How do we know which model to use?\n\nWant to be careful not to overfit your linear model (give too many variables)\nThe Akaike information criterion (AIC) is a metric for comparing different models to find the best fit\n\nNotice the AIC score in your output?\nFor more on this, take Advanced Bio Stats! Or do some reading on the internet."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude-4",
+    "href": "Lecture_Folder/Week5a.html#r-interlude-4",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE",
+    "text": "R INTERLUDE"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#different-types-of-regression-model-1-and-model-2",
+    "href": "Lecture_Folder/Week5a.html#different-types-of-regression-model-1-and-model-2",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Different Types of Regression | Model 1 and Model 2",
+    "text": "Different Types of Regression | Model 1 and Model 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#different-types-of-regression-model-1-and-model-2-1",
+    "href": "Lecture_Folder/Week5a.html#different-types-of-regression-model-1-and-model-2-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Different Types of Regression | Model 1 and Model 2",
+    "text": "Different Types of Regression | Model 1 and Model 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#different-types-of-regression-model-1-and-model-2-2",
+    "href": "Lecture_Folder/Week5a.html#different-types-of-regression-model-1-and-model-2-2",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Different Types of Regression | Model 1 and Model 2",
+    "text": "Different Types of Regression | Model 1 and Model 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#fitting-more-complicated-models",
+    "href": "Lecture_Folder/Week5a.html#fitting-more-complicated-models",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Fitting more complicated models",
+    "text": "Fitting more complicated models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#smoothers-and-local-regression",
+    "href": "Lecture_Folder/Week5a.html#smoothers-and-local-regression",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Smoothers and local regression",
+    "text": "Smoothers and local regression\n\nrunning medians (or less robust running means) generate predicted values that are the medians of the responses in the bands surrounding each observation.\nloess and lowesse (locally weighted scatterplot smoothing) - fit least squares regression lines to successive subsets of the observations weighted according to their distance from the target observation and thus depict changes in the trends throughout the data cloud.\nkernel smoothers - new smoothed y-values are computed as the weighted averages of points within a defined window (bandwidth) or neighbourhood of the original x-values. Hence the bandwidth depends on the scale of the x-axis. Weightings are determined by the type of kernel smoother specified, and for. Nevertheless, the larger the window, the greater the degree of smoothing.\nsplines - join together a series of polynomial fits that have been generated after the entire data cloud is split up into a number of smaller windows, the widths of which determine the smoothness of the resulting piecewise polynomial."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude-model-i-and-ii-regression",
+    "href": "Lecture_Folder/Week5a.html#r-interlude-model-i-and-ii-regression",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Model I and II regression",
+    "text": "R INTERLUDE | Model I and II regression\n\nx &lt;- zfish$SL\ny &lt;- zfish$Weight\n\nsize_lm &lt;- lm(y~x)\nsummary(size_lm)\n\nplot(y~x, col = \"blue\")\nabline(size_lm, col = \"red\")\n\nNote that when we run the lm() function we use Model I regression. Is this appropriate?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude-model-i-and-ii-regression-1",
+    "href": "Lecture_Folder/Week5a.html#r-interlude-model-i-and-ii-regression-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Model I and II regression",
+    "text": "R INTERLUDE | Model I and II regression\n\ninstall.packages(“lmodel2”)\nlibrary(lmodel2)\n\nsize_lm_ModII &lt;- lmodel2(y ~ x)\nsize_lm_ModII\n\nabline(a=0.1912797, b=0.1097880, lty=2)\n\nYou should have generated OLS, MA, and SMA regression models, and the last plots SMA line from parameter estimates"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#r-interlude-model-i-and-ii-regression-2",
+    "href": "Lecture_Folder/Week5a.html#r-interlude-model-i-and-ii-regression-2",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Model I and II regression",
+    "text": "R INTERLUDE | Model I and II regression\n\nSay you measured green fluorescent protein abundance in cell culture across several key, carefully controlled temperatures.\nYou ultimately want to know whether protein expression changes as a function of temperature in your experiment.\nRead in the gfp_temp.tsv data and perform a regression analysis.\nAddress the following questions\n\nWhich is X and which is Y?\nAre residual assumptions met?\nWhat model of regression should we use in this case and why?\nWhat is our decision regarding our null hypothesis of no relationship?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#style-of-a-results-section",
+    "href": "Lecture_Folder/Week5a.html#style-of-a-results-section",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Style of a results section",
+    "text": "Style of a results section\n\nWrite the text of the Results section concisely and objectively.\nThe passive voice will likely dominate here, but use the active voice as much as possible.\nUse the past tense.\nAvoid repetitive paragraph structures. Do not interpret the data here."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#function-of-a-results-section",
+    "href": "Lecture_Folder/Week5a.html#function-of-a-results-section",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Function of a results section",
+    "text": "Function of a results section\n\nThe function is to objectively present your key results, without interpretation, in an orderly and logical sequence using both text and illustrative materials (Tables and Figures).\nThe results section always begins with text, reporting the key results and referring to figures and tables as you proceed.\nThe text of the Results section should be crafted to follow this sequence and highlight the evidence needed to answer the questions/hypotheses you investigated.\nImportant negative results should be reported, too. Authors usually write the text of the results section based upon the sequence of Tables and Figures."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#summaries-of-the-statistical-analyses",
+    "href": "Lecture_Folder/Week5a.html#summaries-of-the-statistical-analyses",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Summaries of the statistical analyses",
+    "text": "Summaries of the statistical analyses\nMay appear either in the text (usually parenthetically) or in the relevant Tables or Figures (in the legend or as footnotes to the Table or Figure). Each Table and Figure must be referenced in the text portion of the results, and you must tell the reader what the key result(s) is that each Table or Figure conveys.\n\nTables and Figures are assigned numbers separately and in the sequence that you will refer to them from the text.\n\nThe first Table you refer to is Table 1, the next Table 2 and so forth.\nSimilarly, the first Figure is Figure 1, the next Figure 2, etc.\n\nEach Table or Figure must include a brief description of the results being presented and other necessary information in a legend.\n\nTable legends go above the Table; tables are read from top to bottom.\nFigure legends go below the figure; figures are usually viewed from bottom to top.\n\nWhen referring to a Figure from the text, “Figure” is abbreviated as Fig.,e.g., (Fig. 1. Table is never abbreviated, e.g., Table 1."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#example",
+    "href": "Lecture_Folder/Week5a.html#example",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Example",
+    "text": "Example\nFor example, suppose you asked the question, “Is the average height of male students the same as female students in a pool of randomly selected Biology majors?” You would first collect height data from large random samples of male and female students. You would then calculate the descriptive statistics for those samples (mean, SD, n, range, etc) and plot these numbers. Suppose you found that male Biology majors are, on average, 12.5 cm taller than female majors; this is the answer to the question. Notice that the outcome of a statistical analysis is not a key result, but rather an analytical tool that helps us understand what is our key result."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#differences-directionality-and-magnitude",
+    "href": "Lecture_Folder/Week5a.html#differences-directionality-and-magnitude",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Differences, directionality, and magnitude",
+    "text": "Differences, directionality, and magnitude\n\nReport your results so as to provide as much information as possible to the reader about the nature of differences or relationships.\nFor example, if you are testing for differences among groups, and you find a significant difference, it is not sufficient to simply report that “groups A and B were significantly different”. How are they different? How much are they different?\nIt is much more informative to say something like, “Group A individuals were 23% larger than those in Group B”, or, “Group B pups gained weight at twice the rate of Group A pups.”\nReport the direction of differences (greater, larger, smaller, etc) and the magnitude of differences (% difference, how many times, etc.) whenever possible."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#statistical-results-in-text",
+    "href": "Lecture_Folder/Week5a.html#statistical-results-in-text",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Statistical results in text",
+    "text": "Statistical results in text\n\nStatistical test summaries (test name, p-value) are usually reported parenthetically in conjunction with the biological results they support. This parenthetical reference should include the statistical test used, the value, degrees of freedom and the level of significance.\nFor example, if you found that the mean height of male Biology majors was significantly larger than that of female Biology majors, you might report this result (in blue) and your statistical conclusion (shown in red) as follows:\n\n“Males (180.5 ± 5.1 cm; n=34) averaged 12.5 cm taller than females (168 ± 7.6 cm; n=34) in the pool of Biology majors (two-sample t-test, t = 5.78, 33 d.f., p &lt; 0.001).”\n\nIf the summary statistics are shown in a figure, the sentence above need not report them specifically, but must include a reference to the figure where they may be seen:\n\n“Males averaged 12.5 cm taller than females in the pool of Biology majors (two-sample t-test, t = 5.78, 33 d.f., p &lt; 0.001; Fig. 1).”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#statistical-results-in-text-1",
+    "href": "Lecture_Folder/Week5a.html#statistical-results-in-text-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Statistical results in text",
+    "text": "Statistical results in text\n\nAlways enter the appropriate units when reporting data or summary statistics.\n\nfor an individual value you would write, “the mean length was 10 cm”, or, “the maximum time was 140 min.”\nWhen including a measure of variability, place the unit after the error value, e.g., “…was 10 ± 2.3 m”.\nLikewise place the unit after the last in a series of numbers all having the same unit. For example: “lengths of 5, 10, 15, and 20 m”, or “no differences were observed after 2, 4, 6, or 8 min. of incubation”."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#galton-as-the-father-of-eugenics",
+    "href": "Lecture_Folder/Week5a.html#galton-as-the-father-of-eugenics",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Galton as the Father of Eugenics",
+    "text": "Galton as the Father of Eugenics\n\nFrancis Galton: Darwin’s half cousin\nStudied human variation and genetic inheritance\n\nHuman height, fingerprints, intelligence\nCorrelation, regression toward the mean, and “nature versus nurture”\nPioneered twin studies\n\n\n\n\n\nGalton"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#galton-as-the-father-of-eugenics-1",
+    "href": "Lecture_Folder/Week5a.html#galton-as-the-father-of-eugenics-1",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Galton as the Father of Eugenics",
+    "text": "Galton as the Father of Eugenics\n\nBelieved that intelligence was hereditary based on surveying prominent academics in Europe\nUsed the ideas of correlation and regression towards the mean to argue that the upper class should breed amongst themselves to keep those “good genes” pure\nWanted to provide monetary incentives for “good” couples to marry and reproduce as a way to avoid the upper class being genetically muddied by the lower class"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#a-common-sight-at-state-fairs-around-the-u.s.-in-the-1930s",
+    "href": "Lecture_Folder/Week5a.html#a-common-sight-at-state-fairs-around-the-u.s.-in-the-1930s",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "A common sight at state fairs around the U.S. in the 1930s",
+    "text": "A common sight at state fairs around the U.S. in the 1930s\n\nCompetitions for the “perfect family” to encourage public consciousness and support for eugenics"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#galton-with-charles-davenport-and-g.-stanley-hall",
+    "href": "Lecture_Folder/Week5a.html#galton-with-charles-davenport-and-g.-stanley-hall",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Galton with Charles Davenport and G. Stanley Hall",
+    "text": "Galton with Charles Davenport and G. Stanley Hall\n\nAmerican Eugenics Record Office (ERO) founded in Cold Springs Harbor"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#logo-of-the-us-eugenics-society",
+    "href": "Lecture_Folder/Week5a.html#logo-of-the-us-eugenics-society",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Logo of the US eugenics society",
+    "text": "Logo of the US eugenics society"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#eugenics-societies-in-america",
+    "href": "Lecture_Folder/Week5a.html#eugenics-societies-in-america",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Eugenics societies in America",
+    "text": "Eugenics societies in America\n\nAdvocated for state laws to ban interracial marriages and promote sterilization of “unfit” individuals (negative eugenics) - especially black, Latinx, and Native American women\n30 states passed laws to force mental institution patients to be sterilized\nBetween 1907 and 1963, over 64,000 individuals were forcibly sterilized under eugenic legislation in the United States"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#ra-fisher-and-eugenics-in-london",
+    "href": "Lecture_Folder/Week5a.html#ra-fisher-and-eugenics-in-london",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "RA Fisher and Eugenics in London",
+    "text": "RA Fisher and Eugenics in London\n\nDeveloper of Fishers exact test, analysis of variance (ANOVA), null hypothesis, p values, maximum likelihood, probability density functions\nFounding Chairman of the University of Cambridge Eugenics Society"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#ra-fisher-and-eugenics",
+    "href": "Lecture_Folder/Week5a.html#ra-fisher-and-eugenics",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "RA Fisher and Eugenics",
+    "text": "RA Fisher and Eugenics\n\n1/3rd of his work “The Genetical Theory of Natural Selection” discussed eugenics and his theory that the fall of civilizations was due to the fertility of their upper classes being diminished\nUsed these statistical methods to test data on human variation to prove biological differences between human races\nEugenics and racism were the primary motivators for many of these statistical tests that we use today"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#eugenics-has-a-direct-line-to-hitler-and-nazism",
+    "href": "Lecture_Folder/Week5a.html#eugenics-has-a-direct-line-to-hitler-and-nazism",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Eugenics has a direct line to Hitler and Nazism",
+    "text": "Eugenics has a direct line to Hitler and Nazism\n\nEugenics existed in America (and England) before it became popular in Germany.\nBy 1933, California had subjected more people to forceful sterilization than all other U.S. states combined.\nThe forced sterilization program engineered by the Nazis was partly inspired by California’s."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#sterilizations-continue-in-america",
+    "href": "Lecture_Folder/Week5a.html#sterilizations-continue-in-america",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Sterilizations continue in America",
+    "text": "Sterilizations continue in America\n\nOur history books paint Nazi Germany as the primary evil of that time, while we try to cover up our significant role in eugenics\nIt wasn’t until 1978 that the US passed regulations on sterilization procedures\nCalifornia only passed a bill to outlaw sterilization of inmates in 2014\nCertain members of the genetic engineering community threaten to bring back eugenics ideas"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#so-what-do-we-do-from-here",
+    "href": "Lecture_Folder/Week5a.html#so-what-do-we-do-from-here",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "So, what do we do from here?",
+    "text": "So, what do we do from here?\n\nThe statistical methods that Galton, Fisher, and others developed are useful science tools\nImportant to use these tools for good - improving our planet, human health, and technology\nImportant to acknowledge and not forget the history of science - educate others to avoid repeating history"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5a.html#interested-in-learning-more",
+    "href": "Lecture_Folder/Week5a.html#interested-in-learning-more",
+    "title": "Week 5a - Statistics for Bioengineering",
+    "section": "Interested in learning more?",
+    "text": "Interested in learning more?\n\n\n\n\n\n\n\n\n\n\nSee also “The Gene” by Siddhartha Mukherjee"
   }
 ]

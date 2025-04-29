@@ -1,0 +1,1136 @@
+---
+title: "Week 5a - Statistics for Bioengineering"
+author: "Bill Cresko"
+format: 
+  revealjs:
+    transition: fade
+    transition-speed: slow
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(readxl)
+library(nycflights23)
+theme_set(theme_minimal())
+```
+
+## This week
+
+-   Finish Power
+
+-   Start linear models
+
+-   Eugenics foundations of statistics
+
+# Statistical Power
+
+## Power
+
+-   Helps us to interpret the failure to reject a null hypothesis
+-   What factors can affect the power of our experiment - our ability to avoid a Type 2 error?
+    -   Sample size
+    -   Effect size (difference between the groups)
+    -   Variance (range of values for this trait/measure)
+
+## Power
+
+-   **Type 1 error** - $\alpha$ - incorrectly rejecting a true null hypothesis
+    -   This is saying that there is an effect when there isn’t
+-   **Type 2 error** - $\beta$ - incorrectly accepting a false null hypothesis
+    -   This is saying that there isn’t an effect when there is
+-   Power is the probability of rejecting a false null hypothesis and avoiding type II error
+-   Mostly we shoot for a power of around 80%
+-   Just like $\alpha$, we want to calculate our power **in advance**
+
+## Key components of power
+
+-   **Effect Size (ES)**: The magnitude of the difference you expect to detect.
+-   **Sampling standard deviation (sd):** a measure of variability within groups
+-   **Sample Size (n)**: The number of observations in the study.
+-   **Significance Level (**$\alpha$**)**: The probability of committing a Type I error (rejecting the null hypothesis when it is true), typically set at 0.05.
+-   **Power (1 -** $\beta$**)**: The probability of correctly rejecting the null hypothesis, commonly set at 0.80 or 80%.
+
+## Effect size measured as Cohen's D
+
+-   Cohen's d is a statistical measure that quantifies the effect size between two group means, expressing the difference in standard deviation units.
+-   It's used to determine the magnitude of the difference between two groups in studies, like those using t-tests or ANOVA.
+-   Cohen's d is calculated by dividing the difference between the two group means by the pooled standard deviation.
+
+## Why Perform Power Analysis?
+
+Here are the main reasons Why we Perform Power Analysis.
+
+-   ***Determine Sample Size***: To ensure your study has enough participants to detect the expected effect.
+-   ***Assess Test Feasibility***: To understand if your study can achieve meaningful results with available resources.
+-   ***Optimize Resource Allocation***: To avoid over- or under-sampling, ensuring efficient use of time and resources.
+
+## Power {.flexbox .vcenter}
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_6b.002.jpeg")
+```
+
+## Power - rough calculation
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_6b.003.jpeg")
+```
+
+## Parametric Power in R {.smaller}
+
+R provides several packages for conducting power analysis, including `pwr` and `statmod`. We'll explore examples using the `pwr` package.
+
+```{r, echo=TRUE}
+library(pwr)
+
+# Parameters
+effect_size <- 0.4 # The difference between null and alternative hypotheses
+sample_size <- 50 # The number of observations in each group
+sd <- 4 # The standard deviation
+alpha <- 0.05 # The significance level
+```
+
+```{r, echo=TRUE}
+# Calculate Type II Error
+pwr_result <-pwr.t.test(n = sample_size, 
+                        d = effect_size / sd, 
+                        sig.level = alpha,
+                        type = "two.sample",
+                        alternative = "two.sided")
+
+type_II_error <- 1 - pwr_result$power
+power <- pwr_result$power
+```
+
+```{r, echo=TRUE}
+print(type_II_error)
+print(power)
+```
+
+## Calculate sample size needed {.smaller}
+
+```{r, echo=TRUE}
+
+# Parameters for two-sample t-test
+effect_size_t <- 2.0  
+sd < - 2
+d_calc <- effect_size_t/sd # Moderate effect size (Cohen's d)
+alpha_t <- 0.05       # Significance level
+power_t <- 0.8        # Desired power
+
+# Calculate required sample size
+sample_size_t <- pwr.t.test(d = d_calc, 
+                            sig.level = alpha_t, 
+                            power = power_t, 
+                            type = "two.sample")$n
+
+# Output the result
+cat("Sample Size for Two-Sample t-Test:", sample_size_t, "\n")
+
+```
+
+## Generate Power Curve for Two-Sample t-Test {.smaller}
+
+Now we will generate power curve for Two-Sample t-Test.
+
+-   sample_size_curve: Specifies the sample size per group (100 in this case).
+
+-   effect_sizes_curve: Defines a range of effect sizes (Cohen's d) from 0.2 to 0.8 with a step of 0.1.
+
+-   Next calculates the power values for the power curve by iterating through the specified range of effect sizes and using the `pwr.t.test` function for each effect size to calculate power based on the given sample size, significance level, and type of test.
+
+-   Finally, plots the power curve using the calculated power values against the effect sizes, with appropriate labels for the axes and title for the plot. It visualizes how power varies with different effect sizes in the two-sample t-test scenario.
+
+## Generate Power Curve for Two-Sample t-Test {.smaller}
+
+```{r, echo=TRUE}
+# Parameters for power curve
+sample_size_curve <- 100    # Sample size per group
+effect_sizes_curve <- seq(0.2, 0.8, by = 0.1)  # Range of effect sizes
+
+# Calculate power values
+power_values_curve <- sapply(effect_sizes_curve, function(d) pwr.t.test(d = d, 
+                                                     n = sample_size_curve, 
+                                                     sig.level = alpha_t, 
+                                                     type = "two.sample")$power)
+```
+
+```{r, echo=TRUE}
+# Plot power curve
+plot(effect_sizes_curve, power_values_curve, type = "b",
+     main = "Power Curve for Two-Sample t-Test",
+     xlab = "Effect Size (Cohen's d)",
+     ylab = "Power",
+     ylim = c(0, 1))
+```
+
+## Generate a Sample Curve for Two-Sample t-Test {.smaller}
+
+```{r, echo=TRUE}
+effect_size_t <- 2.0  
+sd < - 2.0
+d_calc <- effect_size_t/sd  # Moderate effect size (Cohen's d)
+alpha_t <- 0.05             # Significance level
+power_t <- 0.8              # Desired power
+
+sample_sizes_curve <- seq(2, 200, by = 2)     # Sample size per group
+effect_sizes_curve <- 0.4                     # Range of effect sizes
+
+# Calculate power values
+power_values_curve <- sapply(effect_sizes_curve, function(d) pwr.t.test(d = d_calc, 
+                                                     n = sample_sizes_curve, 
+                                                     sig.level = alpha_t, 
+                                                     type = "two.sample")$power)
+```
+
+## Plot power curve
+
+```{r, echo=TRUE}
+plot(sample_sizes_curve, power_values_curve, type = "b",
+     main = "Sample sizes for Two-Sample t-Test",
+     xlab = "Sample size",
+     ylab = "Power",
+     ylim = c(0, 1))
+```
+
+## Conduct A Priori Power Analysis for One-Way ANOVA {.smaller}
+
+Here, we set the parameters for conducting a one-way ANOVA power analysis, similar to the t-test but with different effect size and significance level.
+
+`pwr.anova.test` function to calculate the required sample size (`sample_size_anova`) for the one-way ANOVA based on the specified effect size, number of groups (k = 3), significance level, and desired power.
+
+```{r, echo=TRUE}
+# Parameters for one-way ANOVA
+effect_size_anova <- 0.25  # Small effect size (Cohen's f)
+alpha_anova <- 0.05        # Significance level
+power_anova <- 0.8         # Desired power
+
+# Calculate required sample size
+sample_size_anova <- pwr.anova.test(k = 3, f = effect_size_anova, 
+                                    sig.level = alpha_anova, 
+                                    power = power_anova)$n
+
+# Output the result
+cat("Sample Size for One-Way ANOVA:", sample_size_anova, "\n")
+```
+
+## Cohen's f {.smaller}
+
+-   Cohen's f is an effect size statistic used in Analysis of Variance (ANOVA).
+
+-   It measures the amount of variance in the dependent variable that is explained by the independent variable(s), or more generally, how much the group means differ from the grand mean.
+
+-   Cohen's f, along with other effect size measures, provides a standardized way to assess the magnitude of the effect observed in an ANOVA, going beyond simply determining statistical significance.
+
+-   Cohen's f is calculated as the square root of the variance due to the independent variable(s) divided by the total variance (or the variance within groups, depending on the specific type of ANOVA).
+
+-   Cohen (1988) suggested the following interpretation for f:
+
+    -   f = 0.10 is considered a small effect.
+    -   f = 0.25 is considered a medium effect.
+    -   f = 0.40 is considered a large effect.
+
+## On your own - Bootstrap resampling power calculation {.smaller}
+
+Step 1: simulating our true populations
+
+-   What is the distribution type?
+
+-   What is the effect size: difference in means between populations?
+
+-   What is the variance?
+
+## On your own - Bootstrap resampling power calculation {.smaller}
+
+Step 1: simulating our true populations
+
+```{r, echo=TRUE}
+senior <- rpois(5000, lambda = 10)
+fresh <- rpois(5000, lambda = 12)
+```
+
+```{r, echo=TRUE, out.width="40%"}
+hist(senior)
+hist(fresh)
+```
+
+## On your own - Bootstrap resampling power calculation {.smaller}
+
+Step 2: drawing a sample
+
+```{r, echo=TRUE}
+sample_s <- sample(senior, size = 10, replace = FALSE)
+sample_f <- sample(fresh, size = 10, replace = FALSE)
+```
+
+Step 2: drawing a sample
+
+```{r, echo=TRUE, out.width="40%"}
+hist(sample_s)
+hist(sample_f)
+```
+
+## On your own - Bootstrap resampling power calculation {.smaller}
+
+Step 3: statistical test
+
+```{r, echo=TRUE}
+t.test(sample_f, sample_s)
+```
+
+## On your own - Bootstrap resampling power calculation {.smaller}
+
+Step 4: setting up our replicates
+
+Take a look at the "samps_var" vectors, how are they arranged? How would we begin conducting t-tests using each replicate from the two populations?
+
+```{r, echo=TRUE}
+## sample size of 10
+samps_var_s <- replicate(n = 100, sample(senior, size = 10))
+samps_var_f <- replicate(n = 100, sample(fresh, size = 10))
+```
+
+## On your own - Bootstrap resampling power calculation {.smaller}
+
+Step 4: Testing our replicates
+
+```{r, echo=TRUE}
+# setting up a "test" dataframe
+tests <- data.frame(1:100)
+tests$SampleSize <- rep("10", 100)
+
+for (i in 1:ncol(samps_var_f)){
+  tests$result[i] <- t.test(samps_var_s[,i], samps_var_f[,i])$p.value
+}
+table(tests$result < 0.05)
+
+```
+
+## On your own - Bootstrap resampling power calculation {.smaller}
+
+Requires a more complex for loop
+
+```{r, echo=TRUE, eval = FALSE}
+
+
+results <- data.frame()
+
+# using seq to set up the sample sizes
+
+for (x in seq(10,100, by = 10)){
+  samps_var_s <- replicate(n = 100, sample(senior, size = x))
+  samps_var_f <- replicate(n = 100, sample(fresh, size = x))
+  
+  tests <- data.frame(1:100)
+  tests$SampleSize <- rep(x, 100)
+  for (i in 1:100){
+    tests$p.value[i] <- t.test(samps_var_s[,i], samps_var_f[,i])$p.value
+  }
+  results <- rbind(results, tests)
+}
+
+
+```
+
+------------------------------------------------------------------------
+
+# Linear Models and Regression
+
+# What is a linear model?
+
+-   So far, we've been comparing a single quantitative trait between two groups
+
+-   What if we want to compare two quantitative traits and see if there is an interaction between them?
+
+-   We can model linear relationships
+
+    $$ y = B_0 + B_1 x + e $$
+
+    -   e represents the "error" (or "residual") in the model
+
+-   Function `lm()` in R
+
+## Covariance
+
+-   How do we convey that 2 variables covary?
+-   Covariance statistic: multiplies each y and x deviation from its respective mean, sums that product across all observations, and divides by the total number of observations to yield an average
+-   Positive or negative covariance depending on the direction of the relationship, covariance of 0 if no relationship between the two
+
+## Correlation
+
+-   Remember when we said that the larger the mean, the greater the variance?
+    -   Example: trying to compare mean body weight between elephants and mice
+-   This also applies to covariance
+-   We can calculate a *correlation coefficient* to standardize the covariance measure
+    -   Dividing the covariance y the standard deviations of x and y variables
+    -   Ranges from -1 to 1, with closer to 1 indicating a perfect linear relationship, and values close to 0 indicating no relationship
+
+## Correlation
+
+```{r, echo = FALSE, out.width="60%"}
+knitr::include_graphics("images/week8_correlation.png")
+```
+
+## Testing for Correlation
+
+-   We can calculate a t-statistic for our null hypothesis, and there's a function in R for this!
+    -   `cor.test()`
+-   What were the null and alternative hypotheses?
+
+## Testing for Correlation - Parametric
+
+-   R function `cor.test()`
+-   Formal hypothesis tests for correlation
+    -   Null hypothesis is no correlation (CC = 0)
+    -   Alternative hypothesis is some correlation (CC \> 0 or \< 0)
+-   Remember that parametric tests come with assumptions
+    -   The relationship being tested is assumed to be linear (as opposed to strongly curvilinear)
+    -   The probability distribution of the 2 variables is assumed to be normal
+
+## Assumptions of Parametric Correlation Tests
+
+-   Remember that parametric tests come with assumptions
+-   The relationship being tested is assumed to be linear (as opposed to strongly curvilinear)
+-   The probability distribution of the 2 variables is assumed to be normal
+
+## Nonparametric Correlation tests
+
+-   Association between variables is monotonic (consistently increasing or decreasing)
+-   Spearman's rank correlation test: good for small sample sizes (\< 30)
+-   Kendall's tau test: appropriate for larger sample sizes (\> 30)Testing for Correlation
+
+-   Formal hypothesis tests for correlation
+    -   Null hypothesis is no correlation (CC = 0)
+    -   Alternative hypothesis is some correlation (CC \> 0 or \< 0)
+-   We can calculate a t-statistic for our null hypothesis, and there's a function in R for this!
+    -   `cor.test()`
+
+## Nonparametric Correlation tests
+
+-   Association between variables is monotonic (consistently increasing or decreasing)
+-   Spearman's rank correlation test: good for small sample sizes (\< 30)
+-   Kendall's tau test: appropriate for larger sample sizes (\> 30)
+
+## Let's try it - Correlation
+
+-   Check out the help page for `cor.test()`
+
+## Let's try it - Correlation
+
+-   Work with the `Drerio_development_complete.csv` data set
+-   Load it into R, and refamiliarize yourself with the contents
+
+```{r}
+fish <- read.csv(file ="Drerio_development_complete.csv")
+```
+
+
+## Let's try it - Correlation
+
+-   What variables might be correlated in this data set?
+-   Try creating a scatterplot with the different variables. Does anything appear to be correlated?
+-   Plot a histogram of the variables - do they appear to be normally distributed?
+
+## Let's try it - Correlation
+
+```{r}
+plot(fish$Weight_mg, fish$Length_cm)
+```
+
+## Let's try it - Correlation
+
+```{r, echo=FALSE, out.width="40%"}
+hist(fish$Weight_mg)
+hist(fish$Length_cm)
+```
+
+## Let's try it - Correlation
+
+-   Run a correlation test
+-   Which method should you use?
+
+```{r, eval=FALSE}
+cor.test()
+```
+
+## Let's try it - Correlation
+
+-   Run a correlation test
+
+```{r}
+cor.test(fish$Weight_mg, fish$Length_cm, method = c("kendall"))
+```
+
+# 
+
+## Linear Regression
+
+-   We can model linear relationships
+    -   $$ y = B_0 + B_1 x + e $$
+    -   e represents the "error" (or "residual") in the model, which accounts for "noise" or random errors in y unexplained by the effect of x
+-   Function `lm()` in R
+
+## 
+
+## Parent offspring regression
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.002.jpeg")
+```
+
+## Bivariate normality
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.005.jpeg")
+```
+
+## Covariance and correlation
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.006.jpeg")
+```
+
+## Anscombe's Quartet
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.007.jpeg")
+```
+
+## Anscombe's Quartet {.smaller}
+
+-   *Mean* of x in each case 9 (exact)
+
+-   *Variance* of x in each case 11 (exact)
+
+-   Mean of y in each case 7.50 (to 2 decimal places)
+
+-   Variance of y in each case 4.122 or 4.127 (to 3 decimal places)
+
+-   Correlation between x and y in each case 0.816 (to 3 decimal places)
+
+-   Linear regression line in each case $$ y = 3.00 + 0.50x$$
+
+## A linear model to relate two variables
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.008.jpeg")
+```
+
+## Many approaches are linear models
+
+-   Is flexible: Applicable to many different study designs
+-   Provides a common set of tools (lm in R for fixed effects)
+-   Includes tools to estimate parameters:
+    -   (e.g. sizes of effects, like the slope, or change in means)
+-   Is easier to work with, especially with multiple variables
+
+## Many approaches are linear models
+
+-   Linear regression
+-   Single factor ANOVA
+-   Analysis of covariance
+-   Multiple regression
+-   Multi-factor ANOVA
+-   Repeated-measures ANOVA
+
+## Plethora of linear models
+
+-   General Linear Model (**GLM**) - two or more continuous variables
+
+-   General Linear Mixed Model (**GLMM**) - a continuous response variable with a mix of continuous and categorical predictor variables
+
+-   Generalized Linear Model - a GLMM that doesn’t assume normality of the response (we’ll get to this later)
+
+-   Generalized Additive Model (**GAM**) - a model that doesn’t assume linearity (we won’t get to this later)
+
+## Linear models {.smaller}
+
+All an be written in the form
+
+response variable = intercept + (explanatory_variables) + random_error
+
+in the general form:
+
+$$ Y=\beta_0 +\beta_1*X_1 + \beta_2*X_2 +... + error$$
+
+where $\beta_0, \beta_1, \beta_2, ....$ are the parameters of the linear model
+
+## linear model parameters
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.010.jpeg")
+```
+
+## linear model parameters
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.009.jpeg")
+```
+
+## linear models in R
+
+All of these will *include* the intercept
+
+```{r, echo=TRUE, eval=FALSE}
+Y~X
+Y~1+X
+Y~X+1
+```
+
+All of these will *exclude* the intercept
+
+```{r, echo=TRUE, eval=FALSE}
+Y~-1+X
+Y~X-1
+```
+
+Need to fit the model and then 'read' the output
+
+```{r, echo=TRUE, eval=FALSE}
+trial_lm <- lm(Y~X)
+summary (trial_lm)
+```
+
+## R INTERLUDE {.smaller}
+
+Write a script to read in the perchlorate data set. Now, add the code to perform a linear model of two continuous variables. Notice how the output of the linear model is specified to a new variable. Also note that the variables and dataset are placeholders
+
+```{r, echo=TRUE, eval=FALSE}
+my_lm <- lm(dataset$variable1 ~ dataset$variable2)
+```
+
+Now look at a summary of the linear model
+
+```{r, echo=TRUE, eval=FALSE}
+summary(my_lm)
+print(my_lm)
+```
+
+Now let's produce a nice regression plot
+
+```{r, echo=TRUE, eval=FALSE}
+plot(dataset$variable1 ~ dataset$variable2, col = “blue”)
+abline(my_lm, col = “red”)
+```
+
+Notice that you are adding the fitted line from your linear model Finally, remake this plot in GGPlot2
+
+## R INTERLUDE {.smaller}
+
+```{r, echo=TRUE, eval=TRUE}
+Perchlorate_Data <- read.table("perchlorate_data.tsv", header=T)
+head(Perchlorate_Data)
+
+x <- Perchlorate_Data$T4_Hormone_Level
+y <- Perchlorate_Data$Testes_Area
+
+perc_lm <- lm(y ~ x)
+summary (perc_lm)
+
+plot(y ~ x, col = "blue")
+abline(perc_lm, col = "red")
+```
+
+## R INTERLUDE - Checking the output
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/lmtable.jpeg")
+```
+
+## Model fitting and hypothesis tests in regression
+
+$$H_0 : \beta_0 = 0$$ $$H_0 : \beta_1 = 0$$
+
+full model - $y_i = \beta_0 + \beta_1*x_i + error_i$
+
+reduced model - $y_i = \beta_0 + 0*x_i + error_i$
+
+1.  fits a “reduced” model without slope term (H0)
+2.  fits the “full” model with slope term added back
+3.  compares fit of full and reduced models using an F test
+
+## Model fitting and hypothesis tests in regression
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.011.jpeg")
+```
+
+## Hypothesis tests in linear regression {.smaller}
+
+Estimation of the variation that is explained by the model (SS_model)
+
+SS_model = SS_total(reduced model) - SS_residual(full model)
+
+The variation that is unexplained by the model (SS_residual)
+
+SS_residual(full model)
+
+## Hypothesis tests in linear regression {.smaller}
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.012.jpeg")
+```
+
+## Hypothesis tests in linear regression {.smaller}
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.013.jpeg")
+```
+
+## $r^2$ as a measure of model fit
+
+$$r^2 = SS_{regression}/SS_{total} = 1 - (SS_{residual}/SS_{total})$$ or $$r^2 = 1 - (SS_{residual(full)}/SS_{total(reduced)})$$ Which is the proportion of the variance in Y that is explained by X
+
+## Relationship of correlation and regression
+
+$$\beta_{YX}=\rho_{YX}*\sigma_Y/\sigma_X$$ $$b_{YX} = r_{YX}*S_Y/S_X$$
+
+## Residual Analysis \| did we meet our assumptions?
+
+-   Independent errors (residuals)
+-   Equal variance of residuals in all groups
+-   Normally-distributed residuals
+-   Robustness to departures from these assumptions is improved when sample size is large and design is balanced
+
+## Residual Analysis \| did we meet our assumptions?
+
+$$y_i = \beta_0 + \beta_1 * x_I + \epsilon_i$$
+
+## Residual Analysis
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.015.jpeg")
+```
+
+## Residual Analysis
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.016.jpeg")
+```
+
+## Handling violations of the assumptions of linear models
+
+-   What if your residuals aren’t normal because of outliers?
+
+-   Nonparametric methods exist, but these don’t provide parameter estimates with CIs.
+
+-   Robust regression (rlm)
+
+-   Randomization tests
+
+## Anscombe's quartet again \| what would residual plots look like for these?
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.017.jpeg")
+```
+
+## Anscombe's quartet again \| what would residual plots look like for these?
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.018.jpeg")
+```
+
+## Residual Plots \| Spotting assumption violations
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.020.jpeg")
+```
+
+## Residuals \| leverage and influence {.smaller}
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4b.021.jpeg")
+```
+
+-   1 is an outlier for both Y and X
+-   2 is not an outlier for either Y or X but has a high residual
+-   3 is an outlier in just X - and thus a high residual - and therefore has high influence as measured by Cook's D
+
+## Residuals \| leverage and influence {.smaller}
+
+-   **Leverage** - a measure of how much of an outlier each point is in x-space (on x-axis) and thus only applies to the predictor variable. (Values \> 2\*(2/n) for simple regression are cause for concern)
+
+-   **Residuals** - As the residuals are the differences between the observed and predicted values along a vertical plane, they provide a measure of how much of an outlier each point is in y-space (on y-axis). The patterns of residuals against predicted y values (residual plot) are also useful diagnostic tools for investigating linearity and homogeneity of variance assumptions
+
+-   **Cook’s D** statistic is a measure of the influence of each point on the fitted model (estimated slope) and incorporates both leverage and residuals. Values ≥ 1 (or even approaching 1) correspond to highly influential observations.
+
+## R INTERLUDE \| residual analyses {.smaller}
+
+Let’s look at the zebrafish diet data.
+
+```{r, echo=TRUE, eval=FALSE}
+x <- zfish_diet$Protein
+y <- zfish_diet$Weight
+
+zfish_lm <- lm(y ~ x)
+summary (zfish_lm)
+
+plot(y ~ x, col = "blue")
+abline(zfish_lm, col = "red")
+
+hist(residuals(zfish_lm), breaks=30)
+
+plot (residuals(zfish_lm) ~ fitted.values(zfish_lm))
+plot (residuals(zfish_lm) ~ x)
+```
+
+## R INTERLUDE \| residual analyses {.smaller}
+
+Or apply the plot() function to the linear model object directly
+
+```{r, echo=TRUE, eval=FALSE}
+plot(zfish_lm)
+```
+
+Figure out what these plots are telling you
+
+## R INTERLUDE {.smaller}
+
+How about using the influence.measures function???
+
+```{r, echo=TRUE, eval=FALSE}
+influence.measures(zfish_lm)
+```
+
+Do we have any high leverage observations we need to worry about??? Now go back and try to recreate these graphs in GGPlot2
+
+## R INTERLUDE {.smaller}
+
+------------------------------------------------------------------------
+
+## What is a GLM?
+
+-   General Linear Model (**GLM**) - two or more continuous variables
+
+    -   You'll notice that the function `lm()` in R can work with a GLM too (via PS6)
+
+-   Generalized Linear Model - used to conduct linear regressions on non-continuous data, and non-normal data
+
+-   General Linear Mixed Model (**GLMM**) - a continuous response variable with a mix of continuous and categorical predictor variables, can be used to model random effects (for more on this, see Peter Ralph's Advanced Bio Stats class)
+
+## How do we factor in categorical variables?
+
+-   For a single categorical predictor, we can include effects of each factor level:
+
+$$ y = B_0 + B_1(x~level1) + B_2(x~level2) +~... ~+ e $$
+
+-   Each factor level (ex: for Wolbachia: Yes or No) becomes it's own "effector" that will change the value of y
+-   Instead of x being a continuous numerical value, for categorical data it will be either a 0 or 1
+
+## A Generalized Linear Model
+
+-   Check out the help page in RStudio for `glm()`
+
+```{r, eval=F}
+glm(formula = y ~ x1 + x2, family = gaussian(link = "identity"))
+```
+
+## First steps: use a glm to test Wolbachia infection
+
+-   Set up a `glm()` to test for the effect of Wolbachia infection on Recombinant Fraction
+
+## First steps: use a glm to test Wolbachia infection
+
+-   What do these components mean?
+
+```{r, eval=FALSE}
+model <- glm(fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link="identity"))
+summary(model)
+```
+
+## Interpreting the GLM
+
+-   Why is our intercept significant?
+    -   Remember that the null hypothesis is a model with an intercept and slope of 0
+-   How would you interpret the "WolbachiaYes" coefficient, especially the estimate and the p value?
+
+## Second steps - adding more variables
+
+-   Now let's add Food to our model - how does this change our model results?
+
+## Second steps - adding more variables
+
+```{r, eval=FALSE}
+model2 <- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, family = gaussian(link = "identity"))
+summary(model2)
+```
+
+## Interpreting the GLM
+
+-   How would you interpret the Intercept and Food coefficients, especially the estimate and the p value?
+
+## Interaction effects in GLMs
+
+-   You can also model interactions between two categorical variables in glms
+    -   What if variable x and variable z interact in non-additive ways?
+-   Use the notation x\*z in the formula
+
+## Third steps - adding interaction effects
+
+-   Let's finally add an interaction between Wolbachia infection and Food to represent Wolbachia titer in our model
+-   Run the model - what are the results?
+
+## Third steps - adding interaction effects
+
+-   How do we interpret these findings?
+
+```{r, eval=FALSE}
+model3 <- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + fly$Wolbachia*fly$Food, family = gaussian(link = "identity"))
+summary(model3)
+```
+
+## How do we know which model to use?
+
+-   Want to be careful not to *overfit* your linear model (give too many variables)
+-   The Akaike information criterion (AIC) is a metric for comparing different models to find the best fit
+    -   Notice the AIC score in your output?
+    -   For more on this, take Advanced Bio Stats! Or do some reading on the internet.
+
+------------------------------------------------------------------------
+
+## R INTERLUDE {.smaller}
+
+# Different Types of Regression - Model 1 and Model 2
+
+## Different Types of Regression \| Model 1 and Model 2
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_5a.001.jpeg")
+```
+
+## Different Types of Regression \| Model 1 and Model 2
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_5a.002.jpeg")
+```
+
+## Different Types of Regression \| Model 1 and Model 2
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_5a.003.jpeg")
+```
+
+## Fitting more complicated models
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_5a.004.jpeg")
+```
+
+------------------------------------------------------------------------
+
+## Smoothers and local regression {.smaller}
+
+-   **running medians** (or less robust running means) generate predicted values that are the medians of the responses in the bands surrounding each observation.
+-   **loess and lowesse** (locally weighted scatterplot smoothing) - fit least squares regression lines to successive subsets of the observations weighted according to their distance from the target observation and thus depict changes in the trends throughout the data cloud.
+-   **kernel smoothers** - new smoothed y-values are computed as the weighted averages of points within a defined window (bandwidth) or neighbourhood of the original x-values. Hence the bandwidth depends on the scale of the x-axis. Weightings are determined by the type of kernel smoother specified, and for. Nevertheless, the larger the window, the greater the degree of smoothing.
+-   **splines** - join together a series of polynomial fits that have been generated after the entire data cloud is split up into a number of smaller windows, the widths of which determine the smoothness of the resulting piecewise polynomial.
+
+## R INTERLUDE \| Model I and II regression {.smaller}
+
+```{r, echo=TRUE, eval=FALSE}
+x <- zfish$SL
+y <- zfish$Weight
+
+size_lm <- lm(y~x)
+summary(size_lm)
+
+plot(y~x, col = "blue")
+abline(size_lm, col = "red")
+```
+
+Note that when we run the `lm()` function we use Model I regression. Is this appropriate?
+
+## R INTERLUDE \| Model I and II regression {.smaller}
+
+```{r, echo=TRUE, eval=FALSE}
+install.packages(“lmodel2”)
+library(lmodel2)
+
+size_lm_ModII <- lmodel2(y ~ x)
+size_lm_ModII
+
+abline(a=0.1912797, b=0.1097880, lty=2)
+```
+
+You should have generated OLS, MA, and SMA regression models, and the last plots SMA line from parameter estimates
+
+## R INTERLUDE \| Model I and II regression {.smaller}
+
+-   Say you measured green fluorescent protein abundance in cell culture across several key, carefully controlled temperatures.
+
+-   You ultimately want to know whether protein expression changes as a function of temperature in your experiment.
+
+-   Read in the gfp_temp.tsv data and perform a regression analysis.
+
+-   Address the following questions
+
+    -   Which is X and which is Y?
+    -   Are residual assumptions met?
+    -   What model of regression should we use in this case and why?
+    -   What is our decision regarding our null hypothesis of no relationship?
+
+# How to present your statistical results
+
+## Style of a results section {.flexbox .vcenter}
+
+-   Write the text of the Results section concisely and objectively.
+-   The passive voice will likely dominate here, but use the active voice as much as possible.
+-   Use the past tense.
+-   Avoid repetitive paragraph structures. Do not interpret the data here.
+
+## Function of a results section {.flexbox .vcenter}
+
+-   The function is to objectively present your key results, without interpretation, in an orderly and logical sequence using both text and illustrative materials (Tables and Figures).
+
+-   The results section always begins with text, reporting the key results and referring to figures and tables as you proceed.
+
+-   The text of the Results section should be crafted to follow this sequence and highlight the evidence needed to answer the questions/hypotheses you investigated.
+
+-   Important negative results should be reported, too. Authors usually write the text of the results section based upon the sequence of Tables and Figures.
+
+## Summaries of the statistical analyses {.smaller .flexbox .vcenter}
+
+May appear either in the text (usually parenthetically) or in the relevant Tables or Figures (in the legend or as footnotes to the Table or Figure). Each Table and Figure must be referenced in the text portion of the results, and you must tell the reader what the key result(s) is that each Table or Figure conveys.
+
+-   Tables and Figures are assigned numbers separately and in the sequence that you will refer to them from the text.
+    -   The first Table you refer to is Table 1, the next Table 2 and so forth.
+    -   Similarly, the first Figure is Figure 1, the next Figure 2, etc.
+-   Each Table or Figure must include a brief description of the results being presented and other necessary information in a legend.
+    -   Table legends go above the Table; tables are read from top to bottom.
+    -   Figure legends go below the figure; figures are usually viewed from bottom to top.
+-   When referring to a Figure from the text, "Figure" is abbreviated as Fig.,e.g., (Fig. 1. Table is never abbreviated, e.g., Table 1.
+
+## Example {.flexbox .vcenter}
+
+For example, suppose you asked the question, "Is the average height of male students the same as female students in a pool of randomly selected Biology majors?" You would first collect height data from large random samples of male and female students. You would then calculate the descriptive statistics for those samples (mean, SD, n, range, etc) and plot these numbers. Suppose you found that male Biology majors are, on average, 12.5 cm taller than female majors; this is the answer to the question. Notice that the outcome of a statistical analysis is not a key result, but rather an analytical tool that helps us understand what is our key result.
+
+## Differences, directionality, and magnitude {.smaller .flexbox .vcenter}
+
+-   Report your results so as to provide as much information as possible to the reader about the nature of differences or relationships.
+
+-   For example, if you are testing for differences among groups, and you find a significant difference, it is not sufficient to simply report that "groups A and B were significantly different". How are they different? How much are they different?
+
+-   It is much more informative to say something like, "Group A individuals were 23% larger than those in Group B", or, "Group B pups gained weight at twice the rate of Group A pups."
+
+-   Report the direction of differences (greater, larger, smaller, etc) and the magnitude of differences (% difference, how many times, etc.) whenever possible.
+
+## Statistical results in text {.smaller .flexbox .vcenter}
+
+-   Statistical test summaries (test name, p-value) are usually reported parenthetically in conjunction with the biological results they support. This parenthetical reference should include the statistical test used, the value, degrees of freedom and the level of significance.
+
+-   For example, if you found that the mean height of male Biology majors was significantly larger than that of female Biology majors, you might report this result (in blue) and your statistical conclusion (shown in red) as follows:
+
+    -   "Males (180.5 ± 5.1 cm; n=34) averaged 12.5 cm taller than females (168 ± 7.6 cm; n=34) in the pool of Biology majors (two-sample t-test, t = 5.78, 33 d.f., p \< 0.001).”
+
+-   If the summary statistics are shown in a figure, the sentence above need not report them specifically, but must include a reference to the figure where they may be seen:
+
+    -   "Males averaged 12.5 cm taller than females in the pool of Biology majors (two-sample t-test, t = 5.78, 33 d.f., p \< 0.001; Fig. 1)."
+
+## Statistical results in text {.flexbox .vcenter}
+
+-   Always enter the appropriate units when reporting data or summary statistics.
+    -   for an individual value you would write, "the mean length was 10 cm", or, "the maximum time was 140 min."
+    -   When including a measure of variability, place the unit after the error value, e.g., "...was 10 ± 2.3 m".
+    -   Likewise place the unit after the last in a series of numbers all having the same unit. For example: "lengths of 5, 10, 15, and 20 m", or "no differences were observed after 2, 4, 6, or 8 min. of incubation".
+
+------------------------------------------------------------------------
+
+# Ethics in Statistics and Data Science
+
+# The History of Statistics
+
+## Galton as the Father of Eugenics
+
+-   Francis Galton: Darwin's half cousin
+-   Studied human variation and genetic inheritance
+    -   Human height, fingerprints, intelligence
+    -   Correlation, regression toward the mean, and "nature versus nurture"
+    -   Pioneered twin studies
+
+![Galton](images/week6_Galton.jpeg){fig.align="center"}
+
+## Galton as the Father of Eugenics
+
+-   Believed that intelligence was hereditary based on surveying prominent academics in Europe
+-   Used the ideas of **correlation** and **regression towards the mean** to argue that the upper class should breed amongst themselves to keep those "good genes" pure
+-   Wanted to provide monetary incentives for "good" couples to marry and reproduce as a way to avoid the upper class being genetically muddied by the lower class
+
+## A common sight at state fairs around the U.S. in the 1930s
+
+-   Competitions for the "perfect family" to encourage public consciousness and support for eugenics
+
+```{r, echo=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/IMAGES2.013.jpeg")
+```
+
+## Galton with Charles Davenport and G. Stanley Hall
+
+-   American Eugenics Record Office (ERO) founded in Cold Springs Harbor
+
+```{r, echo=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/IMAGES2.014.jpeg")
+```
+
+## Logo of the US eugenics society
+
+```{r, echo=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/IMAGES2.015.jpeg")
+```
+
+## Eugenics societies in America
+
+-   Advocated for state laws to ban interracial marriages and promote sterilization of "unfit" individuals (negative eugenics) - especially black, Latinx, and Native American women
+-   30 states passed laws to force mental institution patients to be sterilized
+-   Between 1907 and 1963, over 64,000 individuals were forcibly sterilized under eugenic legislation in the United States
+
+## RA Fisher and Eugenics in London
+
+-   Developer of Fishers exact test, analysis of variance (ANOVA), null hypothesis, p values, maximum likelihood, probability density functions
+-   Founding Chairman of the University of Cambridge Eugenics Society
+
+```{r, echo=FALSE, out.width='20%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/week6_fisher.jpeg")
+```
+
+## RA Fisher and Eugenics
+
+-   1/3rd of his work "The Genetical Theory of Natural Selection" discussed eugenics and his theory that the fall of civilizations was due to the fertility of their upper classes being diminished
+-   Used these statistical methods to test data on human variation to prove biological differences between human races
+-   Eugenics and racism were the primary motivators for many of these statistical tests that we use today
+
+## Eugenics has a direct line to Hitler and Nazism
+
+-   Eugenics existed in America (and England) before it became popular in Germany.
+-   By 1933, California had subjected more people to forceful sterilization than all other U.S. states combined.
+-   The forced sterilization program engineered by the Nazis was partly inspired by California's.
+
+```{r, echo=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/IMAGES2.016.jpeg")
+```
+
+## Sterilizations continue in America
+
+-   Our history books paint Nazi Germany as the primary evil of that time, while we try to cover up our significant role in eugenics
+-   It wasn't until 1978 that the US passed regulations on sterilization procedures
+-   California only passed a bill to outlaw sterilization of inmates in 2014
+-   Certain members of the genetic engineering community threaten to bring back eugenics ideas
+
+## So, what do we do from here?
+
+-   The statistical methods that Galton, Fisher, and others developed are useful science tools
+-   Important to use these tools for good - improving our planet, human health, and technology
+-   Important to acknowledge and not forget the history of science - educate others to avoid repeating history
+
+## Interested in learning more?
+
+```{r, echo=FALSE, out.width='20%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/IMAGES2.017.jpeg")
+```
+
+-   See also "The Gene" by Siddhartha Mukherjee
+
+------------------------------------------------------------------------
+
+#  {.smaller}
