@@ -1,10 +1,10 @@
 ---
-title: "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations"
+title: "EDA, t-test and Power Calculations"
 format: html
 editor: visual
 ---
 
-## Directions
+## Problem Set 1 - Directions
 
 **Assignment:** Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use both the **microbiota/RNAseq data** set that you have been using in class, as well as **the dataset that you've identified for your term long project**. Try to accomplish a version of the tasks I lay out below on your own dataset, but you're undoubtedly going to need to make some modifications and adjustments. In addition, you will be performing one set of power analyses using simulation on a hypothetical problem
 
@@ -36,26 +36,24 @@ Insert a code chunk and complete the following tasks using your gene expression 
 
 -   Explore the coexpression patterns among your genes by plotting a couple pairwise combinations using `geom_point`. Plot your most interesting coexpression by treatment using `facet_wrap`.
 
-
 ## Problem 2 - Parametric t-test in R
 
-- Using R to make a dummy data set that contains one continuous and one categorical value with two levels. To do so draw individuals of the two different factor levels from normal distributions (check the 'norm' family of functions) with slightly different means but equal standard deviations. Take 100 observations per factor level.
+-   Using R to make a dummy data set that contains one continuous and one categorical value with two levels. To do so draw individuals of the two different factor levels from normal distributions (check the 'norm' family of functions) with slightly different means but equal standard deviations. Take 100 observations per factor level.
 
-- Now, perform a t-test to see if the two populations are statistically different from one another (see below)
+-   Now, perform a t-test to see if the two populations are statistically different from one another (see below)
 
 ```{r, eval=FALSE, echo=TRUE}
 boxplot(continuous_variable~cat_variable, dataset name) 
 t.test(continuous_variable~cat_variable, dataset name) 
 ```
 
-- Repeat steps 1 and 2 above but use different sample sizes (e.g. 10 , then 100, then 1000, then 10,000 obsv. per factor level). How does the sample size affect the statistics?
+-   Repeat steps 1 and 2 above but use different sample sizes (e.g. 10 , then 100, then 1000, then 10,000 obsv. per factor level). How does the sample size affect the statistics?
 
-- What if you run the test again and make the means of the categorical groups more dissimilar?
+-   What if you run the test again and make the means of the categorical groups more dissimilar?
 
-- What happens if you change the standard deviation of your normal distributions to be very small or very large?
+-   What happens if you change the standard deviation of your normal distributions to be very small or very large?
 
-- Now perform the t-test using the dataset provided in class and your own data for two variables.
-
+-   Now perform the t-test using the dataset provided in class and your own data for two variables.
 
 ## Problem 3 - *a priori* power analyses via simulation
 

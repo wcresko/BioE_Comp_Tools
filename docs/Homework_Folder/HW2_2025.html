@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Homeworks – BioEngineering Statistics Spring 2025</title>
+<title>Linear Regression and ANOVA – BioEngineering Statistics Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,8 +67,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">BioEngineering Statistics Spring 2025</span>
     </a>
   </div>
@@ -89,39 +118,39 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Syllabus.html"> 
+    <a class="nav-link" href="../Syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Policies.html"> 
+    <a class="nav-link" href="../Policies.html"> 
 <span class="menu-text">Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Schedule.html"> 
+    <a class="nav-link" href="../Schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Lectures.html"> 
+    <a class="nav-link" href="../Lectures.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Homework.html" aria-current="page"> 
+    <a class="nav-link" href="../Homework.html"> 
 <span class="menu-text">Homeworks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Software.html"> 
+    <a class="nav-link" href="../Software.html"> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Resources.html"> 
+    <a class="nav-link" href="../Resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -135,15 +164,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#problem-set-2---directions" id="toc-problem-set-2---directions" class="nav-link active" data-scroll-target="#problem-set-2---directions">Problem Set 2 - Directions</a></li>
+  <li><a href="#problem-2.1-multiple-linear-regression-to-examine-the-effect-of-igf-1-on-the-early-growth-of-mice" id="toc-problem-2.1-multiple-linear-regression-to-examine-the-effect-of-igf-1-on-the-early-growth-of-mice" class="nav-link" data-scroll-target="#problem-2.1-multiple-linear-regression-to-examine-the-effect-of-igf-1-on-the-early-growth-of-mice">Problem 2.1 : Multiple linear regression to examine the effect of IGF-1 on the early growth of mice</a></li>
+  <li><a href="#exercise-2.2-factorial-anova-examining-the-effects-of-microbiome-treatment-on-rna-expression-levels-in-the-guts-of-threespine-stickleback" id="toc-exercise-2.2-factorial-anova-examining-the-effects-of-microbiome-treatment-on-rna-expression-levels-in-the-guts-of-threespine-stickleback" class="nav-link" data-scroll-target="#exercise-2.2-factorial-anova-examining-the-effects-of-microbiome-treatment-on-rna-expression-levels-in-the-guts-of-threespine-stickleback">Exercise 2.2: Factorial ANOVA examining the effects of microbiome treatment on RNA expression levels in the guts of threespine stickleback</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homeworks</h1>
+<h1 class="title">Linear Regression and ANOVA</h1>
 </div>
 
 
@@ -160,10 +197,73 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="./Homework_Folder/HW1_2025.html">Homework 1</a></p>
-<p><a href="./Homework_Folder/HW2_2025.html">Homework 2</a></p>
+<section id="problem-set-2---directions" class="level2">
+<h2 class="anchored" data-anchor-id="problem-set-2---directions">Problem Set 2 - Directions</h2>
+<p><strong>Assignment:</strong> Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set of <strong>effects of IGF-1 on growth rate in mouse (<code>igf.tsv</code>)</strong>, and a simplified <strong>stickleback microbiota/RNAseq data (<code>RNAseq_microbiome.csv</code>)</strong> set that you have been using in class. In addition, perform either a simple linear regression (2.1) or an ANOVA (2.2) on <strong>the dataset that you’ve identified for your term long project</strong> depending on the nature of your data.</p>
+<p><strong>Due:</strong> Submit your work via Canvas by the end of the day (midnight) on <strong>Wednesday, May 14th.</strong> Please submit <strong>both the Quarto_md file <em>and</em> the resulting html or pdf file</strong>. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself.</p>
+</section>
+<section id="problem-2.1-multiple-linear-regression-to-examine-the-effect-of-igf-1-on-the-early-growth-of-mice" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2.1-multiple-linear-regression-to-examine-the-effect-of-igf-1-on-the-early-growth-of-mice">Problem 2.1 : Multiple linear regression to examine the effect of IGF-1 on the early growth of mice</h2>
+<p><strong>The Study</strong>. Researchers are studying how levels of the hormone IGF-1 (insulin-like growth factor 1) affect early growth, and have measured IGF-1 levels along with length, weight, and a few maturity-related traits in 710 young mice. Your goal is to investigate how IGF-1 is related to differences in length after accounting for other factors.</p>
+<p>The dataset (<code>igf.tsv</code>) can be found in the data folder on Canvas. This dataset has the following variables</p>
+<ul>
+<li><code>age</code> (in weeks),</li>
+<li><code>sex</code></li>
+<li><code>igf</code> (IGF-1 levels),</li>
+<li><code>maturity</code> (1-5, larger values are more sexually mature),</li>
+<li><code>weight</code> (in g), and</li>
+<li><code>length</code> (body and tail, in cm).</li>
+</ul>
+<p>Perform the following steps:</p>
+<ol type="1">
+<li><p>Describe the data using your skills in exploratory data analysis. Which variables are categorical, which are continuous? Are they coded correctly in r, or do you need to coerce them to a different data type?</p></li>
+<li><p>Fit two linear models, one with <code>weight</code> as the response and the other with <code>length</code> as a response, and both with <code>igf</code> as the predictor variable.</p></li>
+<li><p>Summarize the fitted model in terms of key statistics such as <span class="math inline">\(R^2\)</span>, F-value, degrees of freedom and p-values</p></li>
+<li><p>Perform a residual analysis to see if you have satisfied the assumptions of parametric linear regression, and identify outliers that might have a significant effect on the model</p></li>
+<li><p>Provide visualizations and summaries of what you find.</p></li>
+</ol>
+<hr>
+</section>
+<section id="exercise-2.2-factorial-anova-examining-the-effects-of-microbiome-treatment-on-rna-expression-levels-in-the-guts-of-threespine-stickleback" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2.2-factorial-anova-examining-the-effects-of-microbiome-treatment-on-rna-expression-levels-in-the-guts-of-threespine-stickleback">Exercise 2.2: Factorial ANOVA examining the effects of microbiome treatment on RNA expression levels in the guts of threespine stickleback</h2>
+<p>Load the <code>RNAseq_microbiome.csv</code> dataset which represents RNAseq data collected for three different genes (FGF3, Sox10 and SLC5) from the guts of threespine stickleback fish. In this experiment two different genotypes of stickleback (ocean and freshwater) were tested by subjecting each to two different microbiome treatments (conventional or mono-associated). Stickleback can be made germ free and then either exposed to the conventional microbiome or just one microbe. After exposure the guts were extracted, RNA isolated, and RNAseq data collected.</p>
+<p>The dataset (<code>igf.tsv</code>) can be found in the data folder on Canvas. This dataset has the following variables:</p>
+<ul>
+<li><code>Genotype</code> - whether the fish has an oceanic or freshwater genotype</li>
+<li><code>Microbiota</code> - whether the fish was germ free or conventionalized</li>
+<li><code>FGF3</code> - the level of gene expression of the signalling molecule Fibroblast Growth Factor 3</li>
+<li><code>Sox10</code> - the level of gene expression of the transcription factor gene Sox10</li>
+<li><code>SLC5</code> - the level of gene expression of the small molecule transporter SLC5</li>
+</ul>
+<p>Is <code>R</code> correctly interpreting the class of your variables? It is always good to check this before doing anything.</p>
+<ol type="1">
+<li>Make boxplots to graphically illustrate differences in gene expression distributions among genotype and microbiota treatment for each gene.</li>
+</ol>
+<ul>
+<li>Use the <code>mutate</code> function in <code>dpylr</code> to combine the two categorical variables into a new variable</li>
+<li>Any obvious patterns?</li>
+<li>Would you guess there is a difference among means?</li>
+<li>Does it look like there may be an interaction?</li>
+</ul>
+<ol start="2" type="1">
+<li>Fit the factorial linear model</li>
+</ol>
+<ul>
+<li>Use the summary function to look at your results.</li>
+<li>Is there a statistically significant model?</li>
+<li>Is there a significant interaction between genotype and treatment?</li>
+</ul>
+<ol start="3" type="1">
+<li>Perform a Tukey’s post-hoc means test across treatment groups</li>
+</ol>
+<ul>
+<li>Perform the test separately for each of the two levels for each categorical variable</li>
+<li>Now perform it on your new variable with four levels and rerun the Tukey’s test</li>
+<li>Do all groups differ from one another?</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

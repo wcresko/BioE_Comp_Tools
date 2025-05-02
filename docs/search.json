@@ -3623,12 +3623,12 @@
     "href": "Homework.html",
     "title": "Homeworks",
     "section": "",
-    "text": "Homework 1"
+    "text": "Homework 1\nHomework 2"
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html",
     "href": "Homework_Folder/HW1_2025.html",
-    "title": "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations",
+    "title": "EDA, t-test and Power Calculations",
     "section": "",
     "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use both the microbiota/RNAseq data set that you have been using in class, as well as the dataset that you’ve identified for your term long project. Try to accomplish a version of the tasks I lay out below on your own dataset, but you’re undoubtedly going to need to make some modifications and adjustments. In addition, you will be performing one set of power analyses using simulation on a hypothetical problem\nDue: Submit your work via Canvas by the end of the day (midnight) on Tuesday, April 29th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
   },
@@ -3642,21 +3642,21 @@
   {
     "objectID": "Homework_Folder/HW1_2025.html#problem-1---exploratory-data-analysis",
     "href": "Homework_Folder/HW1_2025.html#problem-1---exploratory-data-analysis",
-    "title": "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations",
+    "title": "EDA, t-test and Power Calculations",
     "section": "Problem 1 - Exploratory Data Analysis",
     "text": "Problem 1 - Exploratory Data Analysis\n\nRead in the data\n\nRead in the files\nUse str, head and glimpse to get an idea of the data structure\nCreate a tibble data object using this dataset (the function is as_tibble)\n\n\n\nPerform some wrangling\n\nSelect all of the categorical variables and only 4 of the gene count variables and put them into a new data object.\nMutate each of the 4 gene expression values by performing a square root transformation making a new variable for each of the original (keep all eight variables in the dataset).\nSummarise the mean and standard deviation for each of the gene count variables grouped by the ‘Microbiota’ and ‘Genotype’ categorical variables (hint, using group_by may make this easier; also remember your na.rm=TRUE to remove the na values)\n\n\n\nGraphical Communication with ggplot2\nInsert a code chunk and complete the following tasks using your gene expression tibble:\n\nCreate a barplot of microbiota and genotype- what does this tell you about experimental design?\nCreate a histogram and frequency polygram of the expression of one particular gene.\nCreate a boxplot of the expression of one gene by microbiota/genotype combination. Reorder it by median expression and flip the coordinates.\nExplore the coexpression patterns among your genes by plotting a couple pairwise combinations using geom_point. Plot your most interesting coexpression by treatment using facet_wrap."
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html#problem-2---parametric-t-test-in-r",
     "href": "Homework_Folder/HW1_2025.html#problem-2---parametric-t-test-in-r",
-    "title": "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations",
+    "title": "EDA, t-test and Power Calculations",
     "section": "Problem 2 - Parametric t-test in R",
     "text": "Problem 2 - Parametric t-test in R\n\nUsing R to make a dummy data set that contains one continuous and one categorical value with two levels. To do so draw individuals of the two different factor levels from normal distributions (check the ‘norm’ family of functions) with slightly different means but equal standard deviations. Take 100 observations per factor level.\nNow, perform a t-test to see if the two populations are statistically different from one another (see below)\n\n\nboxplot(continuous_variable~cat_variable, dataset name) \nt.test(continuous_variable~cat_variable, dataset name) \n\n\nRepeat steps 1 and 2 above but use different sample sizes (e.g. 10 , then 100, then 1000, then 10,000 obsv. per factor level). How does the sample size affect the statistics?\nWhat if you run the test again and make the means of the categorical groups more dissimilar?\nWhat happens if you change the standard deviation of your normal distributions to be very small or very large?\nNow perform the t-test using the dataset provided in class and your own data for two variables."
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html#problem-3---a-priori-power-analyses-via-simulation",
     "href": "Homework_Folder/HW1_2025.html#problem-3---a-priori-power-analyses-via-simulation",
-    "title": "BioE_Stats_2025_HW1 - EDA, t-test and Power Calculations",
+    "title": "EDA, t-test and Power Calculations",
     "section": "Problem 3 - a priori power analyses via simulation",
     "text": "Problem 3 - a priori power analyses via simulation\nYou have been asked by your colleagues to aid in the design of an experiment to determine how many mice might be needed to test the efficacy of a specific medical device on bone growth. The in vivo trials are expensive, and so the researchers would like your help to figure out how many mice are needed to achieve a reasonable level of precision. In particular, they are interested in both the number of microns that bones grow over a 3 month period, and whether mice that have the implant have a greater rate of growth than those that do not.\nTo help them, you should do a power analysis, and write up the results in a short, readable section. Your colleagues will be interested in the cost-precision tradeoff, so you should include graphical displays that convey both (a) how accurately the mean number microns of growth can be estimated, and (b) how likely it is that a real difference in mean between treated and control of a given, reasonable size will be detected (have a \\(p\\)-value less than 0.05), both as a function of sample size. I’m leaving it up to you precisely how to convey these things.\nI’d like you to do this power analysis using simulation: by using the computer to do the experiment in silico in the case where you know the truth, and seeing how close your estimates are to the truth. To do this, you’ll have to make some stuff up: for instance, plausible values for what the mean growth rate is, and what sort of mean difference between the treated and control that your colleagues might plausibly care about. You don’t have to do independent research to find good values, but you should discuss the choices you made. You will also have to decide what a good range of sample sizes is to display your results across. I’ll save you the burden of making one thing up: you can assume that the distribution of distances traveled is Poisson distributed, so you can simulate your fake surveys using the function rpois( ). Your final report for this section should be readable and not include visible code in the compiled version. However, you should explain clearly in words what you did to arrive at your answers.\nThe purposes of this section of the homework are to practice writing reports in Quarto markdown; doing simulation-based power analyses, and communicating results in plain language."
   },
@@ -7992,5 +7992,47 @@
     "title": "Week 5b - Statistics for Bioengineering",
     "section": "Interested in learning more?",
     "text": "Interested in learning more?\n\n\n\n\n\n\n\n\n\n\nSee also\n\n“The Gene” by Siddhartha Mukherjee\n“Control” by Adam Rutherford"
+  },
+  {
+    "objectID": "Homework_Folder/HW2_2025.html",
+    "href": "Homework_Folder/HW2_2025.html",
+    "title": "Linear Regression and ANOVA",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set of effects of IGF-1 on growth rate in mouse (igf.tsv), and a simplified stickleback microbiota/RNAseq data (RNAseq_microbiome.csv) set that you have been using in class. In addition, perform either a simple linear regression (2.1) or an ANOVA (2.2) on the dataset that you’ve identified for your term long project depending on the nature of your data.\nDue: Submit your work via Canvas by the end of the day (midnight) on Wednesday, May 14th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+  },
+  {
+    "objectID": "Homework_Folder/HW2_2025.html#directions",
+    "href": "Homework_Folder/HW2_2025.html#directions",
+    "title": "BioE_Stats_2025_HW2 - Linear Regression and ANOVA",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set of effects of IGF-1 on growth rate in mouse (igf.tsv), and a simplified stickleback microbiota/RNAseq data (RNAseq_microbiome.csv) set that you have been using in class. In addition, perform either a simple linear regression (2.1) or an ANOVA (2.2) on the dataset that you’ve identified for your term long project depending on the nature of your data.\nDue: Submit your work via Canvas by the end of the day (midnight) on Wednesday, May 14th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+  },
+  {
+    "objectID": "Homework_Folder/HW2_2025.html#problem-2.1-multiple-linear-regression-to-examine-the-effect-of-igf-1-on-the-early-growth-of-mice",
+    "href": "Homework_Folder/HW2_2025.html#problem-2.1-multiple-linear-regression-to-examine-the-effect-of-igf-1-on-the-early-growth-of-mice",
+    "title": "Linear Regression and ANOVA",
+    "section": "Problem 2.1 : Multiple linear regression to examine the effect of IGF-1 on the early growth of mice",
+    "text": "Problem 2.1 : Multiple linear regression to examine the effect of IGF-1 on the early growth of mice\nThe Study. Researchers are studying how levels of the hormone IGF-1 (insulin-like growth factor 1) affect early growth, and have measured IGF-1 levels along with length, weight, and a few maturity-related traits in 710 young mice. Your goal is to investigate how IGF-1 is related to differences in length after accounting for other factors.\nThe dataset (igf.tsv) can be found in the data folder on Canvas. This dataset has the following variables\n\nage (in weeks),\nsex\nigf (IGF-1 levels),\nmaturity (1-5, larger values are more sexually mature),\nweight (in g), and\nlength (body and tail, in cm).\n\nPerform the following steps:\n\nDescribe the data using your skills in exploratory data analysis. Which variables are categorical, which are continuous? Are they coded correctly in r, or do you need to coerce them to a different data type?\nFit two linear models, one with weight as the response and the other with length as a response, and both with igf as the predictor variable.\nSummarize the fitted model in terms of key statistics such as \\(R^2\\), F-value, degrees of freedom and p-values\nPerform a residual analysis to see if you have satisfied the assumptions of parametric linear regression, and identify outliers that might have a significant effect on the model\nProvide visualizations and summaries of what you find."
+  },
+  {
+    "objectID": "Homework_Folder/HW2_2025.html#exercise-2.2-factorial-anova-examining-the-effects-of-microbiome-treatment-on-rna-expression-levels-in-the-guts-of-threespine-stickleback",
+    "href": "Homework_Folder/HW2_2025.html#exercise-2.2-factorial-anova-examining-the-effects-of-microbiome-treatment-on-rna-expression-levels-in-the-guts-of-threespine-stickleback",
+    "title": "Linear Regression and ANOVA",
+    "section": "Exercise 2.2: Factorial ANOVA examining the effects of microbiome treatment on RNA expression levels in the guts of threespine stickleback",
+    "text": "Exercise 2.2: Factorial ANOVA examining the effects of microbiome treatment on RNA expression levels in the guts of threespine stickleback\nLoad the RNAseq_microbiome.csv dataset which represents RNAseq data collected for three different genes (FGF3, Sox10 and SLC5) from the guts of threespine stickleback fish. In this experiment two different genotypes of stickleback (ocean and freshwater) were tested by subjecting each to two different microbiome treatments (conventional or mono-associated). Stickleback can be made germ free and then either exposed to the conventional microbiome or just one microbe. After exposure the guts were extracted, RNA isolated, and RNAseq data collected.\nThe dataset (igf.tsv) can be found in the data folder on Canvas. This dataset has the following variables:\n\nGenotype - whether the fish has an oceanic or freshwater genotype\nMicrobiota - whether the fish was germ free or conventionalized\nFGF3 - the level of gene expression of the signalling molecule Fibroblast Growth Factor 3\nSox10 - the level of gene expression of the transcription factor gene Sox10\nSLC5 - the level of gene expression of the small molecule transporter SLC5\n\nIs R correctly interpreting the class of your variables? It is always good to check this before doing anything.\n\nMake boxplots to graphically illustrate differences in gene expression distributions among genotype and microbiota treatment for each gene.\n\n\nUse the mutate function in dpylr to combine the two categorical variables into a new variable\nAny obvious patterns?\nWould you guess there is a difference among means?\nDoes it look like there may be an interaction?\n\n\nFit the factorial linear model\n\n\nUse the summary function to look at your results.\nIs there a statistically significant model?\nIs there a significant interaction between genotype and treatment?\n\n\nPerform a Tukey’s post-hoc means test across treatment groups\n\n\nPerform the test separately for each of the two levels for each categorical variable\nNow perform it on your new variable with four levels and rerun the Tukey’s test\nDo all groups differ from one another?"
+  },
+  {
+    "objectID": "Homework_Folder/HW2_2025.html#problem-set-2---directions",
+    "href": "Homework_Folder/HW2_2025.html#problem-set-2---directions",
+    "title": "Linear Regression and ANOVA",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set of effects of IGF-1 on growth rate in mouse (igf.tsv), and a simplified stickleback microbiota/RNAseq data (RNAseq_microbiome.csv) set that you have been using in class. In addition, perform either a simple linear regression (2.1) or an ANOVA (2.2) on the dataset that you’ve identified for your term long project depending on the nature of your data.\nDue: Submit your work via Canvas by the end of the day (midnight) on Wednesday, May 14th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+  },
+  {
+    "objectID": "Homework_Folder/HW1_2025.html#problem-set-1---directions",
+    "href": "Homework_Folder/HW1_2025.html#problem-set-1---directions",
+    "title": "EDA, t-test and Power Calculations",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use both the microbiota/RNAseq data set that you have been using in class, as well as the dataset that you’ve identified for your term long project. Try to accomplish a version of the tasks I lay out below on your own dataset, but you’re undoubtedly going to need to make some modifications and adjustments. In addition, you will be performing one set of power analyses using simulation on a hypothetical problem\nDue: Submit your work via Canvas by the end of the day (midnight) on Tuesday, April 29th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
   }
 ]
