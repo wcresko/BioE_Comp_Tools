@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -8040,14 +8040,14 @@
     "href": "Lecture_Folder/Week6a.html",
     "title": "Week 6a - Statistics for Bioengineering",
     "section": "",
-    "text": "Model 1 and 2 regression\nMultiple linear regression\nAnalysis of Variance (ANOVA)\nKey principles of experimental design\nHow to report statistics in papers"
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)"
   },
   {
     "objectID": "Lecture_Folder/Week6a.html#this-week",
     "href": "Lecture_Folder/Week6a.html#this-week",
     "title": "Week 6a - Statistics for Bioengineering",
-    "section": "",
-    "text": "Model 1 and 2 regression\nMultiple linear regression\nAnalysis of Variance (ANOVA)\nKey principles of experimental design\nHow to report statistics in papers"
+    "section": "This week",
+    "text": "This week\n\nModel 1 and 2 regression\nMultiple linear regression\nAnalysis of Variance (ANOVA)\nKey principles of experimental design\nHow to report statistics in papers"
   },
   {
     "objectID": "Lecture_Folder/Week6a.html#general-linear-model---two-or-more-continuous-variables",
@@ -8082,14 +8082,14 @@
     "href": "Lecture_Folder/Week6a.html#r-interlude-model-i-and-ii-regression-1",
     "title": "Week 6a - Statistics for Bioengineering",
     "section": "R INTERLUDE | Model I and II regression",
-    "text": "R INTERLUDE | Model I and II regression\n\nWe can fit the line\n\n\nlibrary(ggplot2)\n\nggplot(size_lm, aes(x = weight, y = length)) +\n  geom_point(color = \"blue\", size = 2, alpha = 0.2) +                  \n  geom_smooth(method = \"lm\", color = \"red\", se = TRUE) +\n  labs(\n    title = \"Linear regression of zebrafish weight on standard length\",\n    x = \"zebrafish length in cm\",\n    y = \"zebrafish weight in gm\"\n  ) +\n  theme_minimal()"
+    "text": "R INTERLUDE | Model I and II regression\n\nWe can fit the line\n\n\nlibrary(ggplot2)\n\nggplot(size_lm, aes(x = weight, y = length)) +\n  geom_point(color = \"blue\", size = 2, alpha = 0.2) +                  \n  geom_smooth(method = \"lm\", color = \"red\", se = TRUE) +\n  labs(\n    title = \"Linear regression of zebrafish weight on standard length\",\n    x = \"zebrafish length in cm\",\n    y = \"zebrafish weight in gm\"\n  ) +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "Lecture_Folder/Week6a.html#r-interlude-model-i-and-ii-regression-2",
     "href": "Lecture_Folder/Week6a.html#r-interlude-model-i-and-ii-regression-2",
     "title": "Week 6a - Statistics for Bioengineering",
     "section": "R INTERLUDE | Model I and II regression",
-    "text": "R INTERLUDE | Model I and II regression\n\nWe can fit a LOESS line\n\n\nlibrary(ggplot2)\n\nggplot(size_lm, aes(x = weight, y = length)) +\n  geom_point(color = \"blue\", size = 2, alpha = 0.2) +                  \n  geom_smooth(method = \"loess\", color = \"red\", se = TRUE) +\n  labs(\n    title = \"Linear regression of zebrafish weight on standard length\",\n    x = \"zebrafish length in cm\",\n    y = \"zebrafish weight in gm\"\n  ) +\n  theme_minimal()"
+    "text": "R INTERLUDE | Model I and II regression\n\nWe can fit a LOESS line\n\n\nlibrary(ggplot2)\n\nggplot(size_lm, aes(x = weight, y = length)) +\n  geom_point(color = \"blue\", size = 2, alpha = 0.2) +                  \n  geom_smooth(method = \"loess\", color = \"red\", se = TRUE) +\n  labs(\n    title = \"Linear regression of zebrafish weight on standard length\",\n    x = \"zebrafish length in cm\",\n    y = \"zebrafish weight in gm\"\n  ) +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "Lecture_Folder/Week6a.html#smoothers-and-local-regression",
@@ -8103,7 +8103,7 @@
     "href": "Lecture_Folder/Week6a.html#r-interlude-model-i-and-ii-regression-3",
     "title": "Week 6a - Statistics for Bioengineering",
     "section": "R INTERLUDE | Model I and II regression",
-    "text": "R INTERLUDE | Model I and II regression\n\nlibrary(lmodel2)\n\nsize_lm_ModII &lt;- lmodel2(weight ~ length)\nsize_lm_ModII\n\n\nModel II regression\n\nCall: lmodel2(formula = weight ~ length)\n\nn = 600   r = 0.9574514   r-square = 0.9167132 \nParametric P-values:   2-tailed = 0    1-tailed = 0 \nAngle between the two OLS regression lines = 1.418965 degrees\n\nRegression results\n  Method Intercept    Slope Angle (degrees) P-perm (1-tailed)\n1    OLS  2.421359 3.063034        71.91950                NA\n2     MA  1.662671 3.316382        73.22019                NA\n3    SMA  2.013729 3.199153        72.64166                NA\n\nConfidence intervals\n  Method 2.5%-Intercept 97.5%-Intercept 2.5%-Slope 97.5%-Slope\n1    OLS       2.169579        2.673139   2.988886    3.137182\n2     MA       1.416796        1.897871   3.237842    3.398487\n3    SMA       1.789108        2.233204   3.125864    3.274161\n\nEigenvalues: 28.63954 0.1960763 \n\nH statistic used for computing C.I. of MA: 4.476936e-05 \n\n\n\nYou should also have generated OLS (Ordinary Least Squares), MA (Moving Average), and SMA (Standard Major Axis) regression models, and the last plots SMA line from parameter estimates"
+    "text": "R INTERLUDE | Model I and II regression\n\nlibrary(lmodel2)\n\nsize_lm_ModII &lt;- lmodel2(weight ~ length)\n\nRMA was not requested: it will not be computed.\n\n\nNo permutation test will be performed\n\nsize_lm_ModII\n\n\nModel II regression\n\nCall: lmodel2(formula = weight ~ length)\n\nn = 600   r = 0.9574514   r-square = 0.9167132 \nParametric P-values:   2-tailed = 0    1-tailed = 0 \nAngle between the two OLS regression lines = 1.418965 degrees\n\nRegression results\n  Method Intercept    Slope Angle (degrees) P-perm (1-tailed)\n1    OLS  2.421359 3.063034        71.91950                NA\n2     MA  1.662671 3.316382        73.22019                NA\n3    SMA  2.013729 3.199153        72.64166                NA\n\nConfidence intervals\n  Method 2.5%-Intercept 97.5%-Intercept 2.5%-Slope 97.5%-Slope\n1    OLS       2.169579        2.673139   2.988886    3.137182\n2     MA       1.416796        1.897871   3.237842    3.398487\n3    SMA       1.789108        2.233204   3.125864    3.274161\n\nEigenvalues: 28.63954 0.1960763 \n\nH statistic used for computing C.I. of MA: 4.476936e-05 \n\n\n\nYou should also have generated OLS (Ordinary Least Squares), MA (Moving Average), and SMA (Standard Major Axis) regression models, and the last plots SMA line from parameter estimates"
   },
   {
     "objectID": "Lecture_Folder/Week6a.html#r-interlude---on-your-own",
@@ -8145,7 +8145,7 @@
     "href": "Lecture_Folder/Week6a.html#checking-for-multi-collinearity",
     "title": "Week 6a - Statistics for Bioengineering",
     "section": "checking for multi-collinearity",
-    "text": "checking for multi-collinearity\n\nlibrary(car)\nzfish_data &lt;- read.table(\"Drerio_development_complete.csv\", header=T, sep=\",\")\n\nlength &lt;- zfish_data$Length_cm\nweight &lt;- zfish_data$Weight_mg\nage &lt;- zfish_data$Age_Days\npigment &lt;- zfish_data$Pigmentation\n\n\nscatterplotMatrix(~length+pigment+age, diag=\"boxplot\")"
+    "text": "checking for multi-collinearity\n\nlibrary(car)\n\nLoading required package: carData\n\n\n\nAttaching package: 'car'\n\n\nThe following object is masked from 'package:dplyr':\n\n    recode\n\n\nThe following object is masked from 'package:purrr':\n\n    some\n\nzfish_data &lt;- read.table(\"Drerio_development_complete.csv\", header=T, sep=\",\")\n\nlength &lt;- zfish_data$Length_cm\nweight &lt;- zfish_data$Weight_mg\nage &lt;- zfish_data$Age_Days\npigment &lt;- zfish_data$Pigmentation\n\n\nscatterplotMatrix(~length+pigment+age, diag=\"boxplot\")\n\nWarning in applyDefaults(diagonal, defaults = list(method = \"adaptiveDensity\"),\n: unnamed diag arguments, will be ignored"
   },
   {
     "objectID": "Lecture_Folder/Week6a.html#r-interlude-multiple-regression-with-2-predictor-variables",
@@ -9357,5 +9357,1237 @@
     "title": "Week 1b - Statistics for Bioengineering",
     "section": "",
     "text": "Intro to Unix and the command line\nScripting\nR & RStudio\nMarkdown\n\nOn Tuesday\n\nGit and GitHub\nExploratory Data Analysis (EDA)\n\n\n\n\n\nIt is incredibly fast and powerful, particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands\nAbility to analyze large datasets that Excel and other GUIs can’t handle well\nAccess to thousands of free programs made for and by scientists\nThe commands work almost identically across platforms\nAbility to use computer clusters like Talapas\n\n\n\n\n\n\n\ncoding generally involves computer languages that use compilers\n\nC^{++}, Fortran, etc\n\nscripting generally involves computer languages that are interpreted on the fly\n\nPython, R, Julia, etc.\n\ncoding - faster but less flexible; scripting - flexible but slower\nThe distinction between the two has become somewhat fuzzy and most modern analytical pipelines contain a combination of both\n\n\n\n\n\n\n\nWe almost never know the world perfectly, but still want to draw conclusions or make decisions\nWe need to estimate underlying parameters from samples of data\nSometimes we need to test hypotheses using data\nOther times we need to more succinctly summarize and/or visualize large amounts of data\nThere are well known mathematical rules that help us\nStatistics can be done by hand, but computers let us do most of the mathematics quickly\n\n\n\n\n\n\n\nWe want to turn data into conclusions about the world\n\npoint estimates and confidence intervals\nexperimental design\nhypothesis testing\ndata reduction of highly dimensional data\n\nWe need a firm understanding of probability, sampling and distributions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html",
+    "href": "Lecture_Folder/Week6b.html",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#this-week",
+    "href": "Lecture_Folder/Week6b.html#this-week",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "This week",
+    "text": "This week\n\nModel 1 and 2 regression\nMultiple linear regression\nAnalysis of Variance (ANOVA)\nKey principles of experimental design\nHow to report statistics in papers"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#multiple-linear-regression-additive-and-multiplicative-models-of-2-or-more-predictors",
+    "href": "Lecture_Folder/Week6b.html#multiple-linear-regression-additive-and-multiplicative-models-of-2-or-more-predictors",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Multiple Linear Regression | Additive and multiplicative models of 2 or more predictors",
+    "text": "Multiple Linear Regression | Additive and multiplicative models of 2 or more predictors\nAdditive model \\[y_i = \\beta_0 + \\beta_1x_{1} + \\beta_2x_{2} + ... + \\beta_jx_{j} + \\epsilon_i\\]\n\n\nMultiplicative model (with two predictors) \\[y_i = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\beta_3x_1x_2 + \\epsilon_i\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#multiple-linear-regression-additive-and-multiplicative-models",
+    "href": "Lecture_Folder/Week6b.html#multiple-linear-regression-additive-and-multiplicative-models",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Multiple Linear Regression | Additive and multiplicative models",
+    "text": "Multiple Linear Regression | Additive and multiplicative models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#model-selection",
+    "href": "Lecture_Folder/Week6b.html#model-selection",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Model selection",
+    "text": "Model selection"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#model-selection-the-problems",
+    "href": "Lecture_Folder/Week6b.html#model-selection-the-problems",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Model selection | the problems",
+    "text": "Model selection | the problems\n\nHow to decide the complexity of polynomial: straight line regression, quadratic, cubic, ….\nWhich variables to keep/ discard when building a multiple regression model?\nSelecting from candidate models representing different biological processes."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#model-selection-a-beetle-example",
+    "href": "Lecture_Folder/Week6b.html#model-selection-a-beetle-example",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Model selection | a beetle example",
+    "text": "Model selection | a beetle example"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#start-with-linear-regression",
+    "href": "Lecture_Folder/Week6b.html#start-with-linear-regression",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Start with linear regression",
+    "text": "Start with linear regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#quadratic-2nd-degree-polynomial",
+    "href": "Lecture_Folder/Week6b.html#quadratic-2nd-degree-polynomial",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Quadratic (2nd degree) polynomial?",
+    "text": "Quadratic (2nd degree) polynomial?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#a-polynomial-of-degree-10",
+    "href": "Lecture_Folder/Week6b.html#a-polynomial-of-degree-10",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "A polynomial of degree 10?",
+    "text": "A polynomial of degree 10?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#the-problem-with-this-approach",
+    "href": "Lecture_Folder/Week6b.html#the-problem-with-this-approach",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "The problem with this approach",
+    "text": "The problem with this approach\n\nThe log likelihood of the model increases with the number of parameters\nSo does \\(r^2\\)\nIsn’t this good - the best fit to the data?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#the-problem-with-this-approach-1",
+    "href": "Lecture_Folder/Week6b.html#the-problem-with-this-approach-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "The problem with this approach",
+    "text": "The problem with this approach\n\n“models should be pared down until they are minimal and adequate”\n\nCrawley 2007, p325\n\n\n\n\nParsimony - fit no more parameters than is necessary.\nIf two or more models fit the data almost equally well, prefer the simpler model."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#lets-consider-our-goals",
+    "href": "Lecture_Folder/Week6b.html#lets-consider-our-goals",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Let’s consider our goals",
+    "text": "Let’s consider our goals\n\nModel should predicts well\nApproximates true relationship between the variables\nBe able to evaluate a wider array of models.\nAn overfitted model may not predict well in the future!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#how-do-we-accomplish-these-goals",
+    "href": "Lecture_Folder/Week6b.html#how-do-we-accomplish-these-goals",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "How do we accomplish these goals?",
+    "text": "How do we accomplish these goals?\nHow to accomplish these goals To answer this, we need\n\nA criterion to compare models:\n\nAdjusted \\(R^2\\)\nMallow’s Cp\nAIC (Akaike’s Information Criterion)\nBIC (Bayesian Information Criterion)\n\nA strategy for searching the candidate models\n\nForwards\nBackwards\nAll combinations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#how-do-we-accomplish-these-goals-1",
+    "href": "Lecture_Folder/Week6b.html#how-do-we-accomplish-these-goals-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "How do we accomplish these goals?",
+    "text": "How do we accomplish these goals?\n\nAdjusted \\(R^2\\)\n\nthe proportion of mean amount of variation in response variable explained by the model\nis adjusted for both sample size and the number of terms.\nLarger values indicate better fit.\n\nMallow’s Cp -\n\nis an index resulting from the comparison of the specific model to a model that contain all the possible terms.\nModels with the lowest value and/or values closest to their respective p (the number of model terms, including the y-intercept) indicate best fit.\nFrequently used in multiple regression\nStrategy: Test all possible models and selection the one with the smallest Cp\nCp ~ P - the model is considered to be a good fit\nCp &gt; P - the model might be missing important factors\nCp &lt; P - the model might be overfitting too many parameters\nleaps package in R does a smart search among models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#how-do-we-accomplish-these-goals-2",
+    "href": "Lecture_Folder/Week6b.html#how-do-we-accomplish-these-goals-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "How do we accomplish these goals?",
+    "text": "How do we accomplish these goals?\n\nAkaike Information Criteria (AIC)\n\nThere are several different versions of AIC\nEach version adds a different constant designed to penalize according to the number of parameters and sample size to a likelihood function to produce a relative measure of the information content of a model.\nSignificantly smaller values indicate more parsimonious models.\nAs a rule of thumb, if the difference between two AIC values (delta AIC) is greater than 2, the lower AIC is a significant improvement in parsimony.\n\nBayesian or Schwarz Information Criteria (BIC or SIC)\n\nBIC is outwardly similar to AIC.\nLike AIC, the model with the lowest BIC is typically selected\nThe constant added to the likelihood function penalizes models with more predictor terms more heavily (and thus select more simple models) than AIC.\nIt is for this reason that BIC is favored by many researchers."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude---model-fitting",
+    "href": "Lecture_Folder/Week6b.html#r-interlude---model-fitting",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE - model fitting",
+    "text": "R INTERLUDE - model fitting\n\nThe MASS library is used for stepAIC and stepBIC\nThe leaps library is used for Mallow's Cp\n\n\nlibrary(MASS)       # for stepAIC\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\nlibrary(leaps)      # for regsubsets (Mallow's Cp)\nlibrary(car)        # for vif (optional: multicollinearity)\n\nLoading required package: carData\n\n\n\nAttaching package: 'car'\n\n\nThe following object is masked from 'package:dplyr':\n\n    recode\n\n\nThe following object is masked from 'package:purrr':\n\n    some\n\nbiomarker_data &lt;- read.table(\"biomarkers.tsv\", header=T, sep=\"\\t\")\n\nfull_model &lt;- lm(biomarker_data$marker1 ~ marker2 + marker3 + marker4 + marker5 + marker6, data = biomarker_data)\nsummary(full_model)\n\n\nCall:\nlm(formula = biomarker_data$marker1 ~ marker2 + marker3 + marker4 + \n    marker5 + marker6, data = biomarker_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-25.0998  -6.2578   0.9321   6.5981  24.5741 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 337.886384  38.716208   8.727 1.19e-15 ***\nmarker2       0.011402   0.014156   0.805   0.4215    \nmarker3       0.965065   0.028644  33.691  &lt; 2e-16 ***\nmarker4      -0.066742   0.034039  -1.961   0.0513 .  \nmarker5       0.008825   0.014098   0.626   0.5321    \nmarker6      -0.008459   0.061264  -0.138   0.8903    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 9.805 on 194 degrees of freedom\nMultiple R-squared:  0.9737,    Adjusted R-squared:  0.973 \nF-statistic:  1435 on 5 and 194 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#aic-based-stepwise-selection",
+    "href": "Lecture_Folder/Week6b.html#aic-based-stepwise-selection",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "AIC-based stepwise selection",
+    "text": "AIC-based stepwise selection\n\n### AIC-based stepwise selection ###\n# Stepwise selection using AIC (both directions)\nstep_aic &lt;- stepAIC(full_model, direction = \"both\", trace = FALSE)\nsummary(step_aic)\n\n\nCall:\nlm(formula = biomarker_data$marker1 ~ marker3 + marker4, data = biomarker_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-24.2069  -5.9493   0.9458   6.4603  24.1383 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 344.29166   36.44220   9.448   &lt;2e-16 ***\nmarker3       0.97655    0.02055  47.521   &lt;2e-16 ***\nmarker4      -0.06788    0.03363  -2.019   0.0449 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 9.756 on 197 degrees of freedom\nMultiple R-squared:  0.9735,    Adjusted R-squared:  0.9733 \nF-statistic:  3623 on 2 and 197 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#bic-based-stepwise-selection",
+    "href": "Lecture_Folder/Week6b.html#bic-based-stepwise-selection",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "BIC-based stepwise selection",
+    "text": "BIC-based stepwise selection\n\n### BIC-based stepwise selection ###\n# BIC is calculated as: -2*logLik + log(n)*k\nn &lt;- nrow(df)\nstep_bic &lt;- stepAIC(full_model, direction = \"both\", trace = FALSE)\n# step_bic &lt;- stepAIC(full_model, direction = \"both\", k = log(n), trace = FALSE)\nsummary(step_bic)\n\n\nCall:\nlm(formula = biomarker_data$marker1 ~ marker3 + marker4, data = biomarker_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-24.2069  -5.9493   0.9458   6.4603  24.1383 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 344.29166   36.44220   9.448   &lt;2e-16 ***\nmarker3       0.97655    0.02055  47.521   &lt;2e-16 ***\nmarker4      -0.06788    0.03363  -2.019   0.0449 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 9.756 on 197 degrees of freedom\nMultiple R-squared:  0.9735,    Adjusted R-squared:  0.9733 \nF-statistic:  3623 on 2 and 197 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#mallows-cp-using-all-subsets-regression",
+    "href": "Lecture_Folder/Week6b.html#mallows-cp-using-all-subsets-regression",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Mallow’s Cp using all subsets regression",
+    "text": "Mallow’s Cp using all subsets regression\n\n### Mallow's Cp using all subsets regression ###\n# Use leaps to compute Mallow's Cp\nleaps_result &lt;- regsubsets(biomarker_data$marker1 ~ ., data = biomarker_data, nvmax = ncol(df) - 1)\nleaps_summary &lt;- summary(leaps_result)\n\n# Extract Mallow's Cp values\ncp_values &lt;- leaps_summary$cp\n\n# Find model with minimum Cp\nmin_cp_index &lt;- which.min(cp_values)\nbest_model_vars &lt;- names(coef(leaps_result, min_cp_index))[-1]  # exclude intercept\n\n# Fit model using variables from best Cp\ncp_formula &lt;- as.formula(paste(\"biomarker_data$marker1 ~\", paste(best_model_vars, collapse = \" + \")))\ncp_model &lt;- lm(cp_formula, data = biomarker_data)\nsummary(cp_model)\n\n\nCall:\nlm(formula = cp_formula, data = biomarker_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-24.2069  -5.9493   0.9458   6.4603  24.1383 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 344.29166   36.44220   9.448   &lt;2e-16 ***\nmarker3       0.97655    0.02055  47.521   &lt;2e-16 ***\nmarker4      -0.06788    0.03363  -2.019   0.0449 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 9.756 on 197 degrees of freedom\nMultiple R-squared:  0.9735,    Adjusted R-squared:  0.9733 \nF-statistic:  3623 on 2 and 197 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#comparing-the-models",
+    "href": "Lecture_Folder/Week6b.html#comparing-the-models",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Comparing the models",
+    "text": "Comparing the models\n\n\n\n--- AIC Model ---\n\n\nbiomarker_data$marker1 ~ marker3 + marker4\n\n\nAIC: 1483.712 \n\n\n--- BIC Model ---\n\n\nbiomarker_data$marker1 ~ marker3 + marker4\n\n\nBIC: 1496.905 \n\n\n--- Mallow's Cp Model ---\n\n\nbiomarker_data$marker1 ~ marker3 + marker4\n\n\nCp: -0.4337318"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova",
+    "href": "Lecture_Folder/Week6b.html#anova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nStands for ANalysis of VAriance\nCore statistical procedure in biology\nDeveloped by R.A. Fisher in the early 20th Century\nThe core idea is to ask how much variation exists within vs. among groups\nANOVAs are linear models that have categorical predictor and continuous response variables\nThe categorical predictors are often called factors, and can have two or more levels (important to specify in R)\nEach factor will have a hypothesis test\nThe levels of each factor may also need to be tested (means tests)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#an-example---irises-1",
+    "href": "Lecture_Folder/Week6b.html#an-example---irises-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "An Example - Irises",
+    "text": "An Example - Irises\n\nWe have data built into base R\n3 Different species: Iris versicolor, Iris setosa, and Iris virginica\nLength of sepal as a continuous variable\nQuestion - do the species differ in the length of sepals?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#an-example---irises-2",
+    "href": "Lecture_Folder/Week6b.html#an-example---irises-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "An Example - Irises",
+    "text": "An Example - Irises\n\nstripchart(iris$Sepal.Length ~ iris$Species, vertical=T, method=\"jitter\",\n           ylab=\"sepal length\", xlab=\"species\", pch=19, cex=0.5)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anovas-and-hypotheses",
+    "href": "Lecture_Folder/Week6b.html#anovas-and-hypotheses",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVAs and Hypotheses",
+    "text": "ANOVAs and Hypotheses\n\nAs with any statistical test, we will be testing the probability of accepting or rejecting our null hypothesis, compared to an alternative hypothesis\nWhat are the null and alternative hypotheses for our example?\n\n\\[ H_0: \\mu(\\text{versicolor_length\"}) = \\mu(\\text{setosa_length}) = \\mu(\\text{virginica_length})  \\]\n\n\\[ H_a: \\mu(\\text{versicolor_length\"}) \\neq \\mu(\\text{setosa_length}) \\neq \\mu(\\text{virginica_length}) \\]\n\nNOTE: the alternative hypothesis is that at least one group is different"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-similar-to-regression",
+    "href": "Lecture_Folder/Week6b.html#anova-similar-to-regression",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | similar to regression",
+    "text": "ANOVA | similar to regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-1",
+    "href": "Lecture_Folder/Week6b.html#anova-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA",
+    "text": "ANOVA"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-statistical-results-table",
+    "href": "Lecture_Folder/Week6b.html#anova-statistical-results-table",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | Statistical results table",
+    "text": "ANOVA | Statistical results table"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-f-ratio-calculation",
+    "href": "Lecture_Folder/Week6b.html#anova-f-ratio-calculation",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | F-ratio calculation",
+    "text": "ANOVA | F-ratio calculation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-f-ratio-calculation-1",
+    "href": "Lecture_Folder/Week6b.html#anova-f-ratio-calculation-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | F-ratio calculation",
+    "text": "ANOVA | F-ratio calculation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#assumptions-of-anova",
+    "href": "Lecture_Folder/Week6b.html#assumptions-of-anova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Assumptions of ANOVA",
+    "text": "Assumptions of ANOVA\n\nThe response variable (y) is approximately normal in all groups (factor levels)\n\nDeviation from normality O.K. if sample sizes and variances across groups are equal\n\nVariances equal across groups\nObservations within a group are independent\n\nrandomly sampled\nno structuring"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#lets-practice-with-irises",
+    "href": "Lecture_Folder/Week6b.html#lets-practice-with-irises",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Let’s practice with irises",
+    "text": "Let’s practice with irises\n\nFirst steps, what are the null and alternative hypotheses for our test? (Already done!)\nNext, do our data meet or violate the assumptions of ANOVA tests?\nThen, we can set up our ANOVA\nWhat tests should you run (functions, graphing, etc.) in RStudio to evaluate if the data is O.K. to use in an ANOVA test?\n\nPlot the data for each group as a histogram - is it normally distributed?\nRun variance tests between the groups - do they have equal variance?\nIs our data randomly sampled? Assume yes."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#lets-practice-with-irises-1",
+    "href": "Lecture_Folder/Week6b.html#lets-practice-with-irises-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Let’s practice with irises",
+    "text": "Let’s practice with irises\n\nset &lt;- subset(iris, Species ==\"setosa\")\nvers &lt;- subset(iris, Species ==\"versicolor\")\nvir &lt;- subset(iris, Species==\"virginica\")\nhist(set$Sepal.Length, main = \"I. setosa\")\n\n\n\n\n\n\n\nhist(vers$Sepal.Length, main = \"I. versicolor\")\n\n\n\n\n\n\n\nhist(vir$Sepal.Length, main=\"I. virginica\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#lets-practice-with-irises-2",
+    "href": "Lecture_Folder/Week6b.html#lets-practice-with-irises-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Let’s practice with irises",
+    "text": "Let’s practice with irises\n\niris_aov &lt;- aov(Sepal.Length ~ Species, iris)\nanova(iris_aov)\n\nAnalysis of Variance Table\n\nResponse: Sepal.Length\n           Df Sum Sq Mean Sq F value    Pr(&gt;F)    \nSpecies     2 63.212  31.606  119.26 &lt; 2.2e-16 ***\nResiduals 147 38.956   0.265                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nHow do we interpret these findings?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-results",
+    "href": "Lecture_Folder/Week6b.html#anova-results",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA results",
+    "text": "ANOVA results\n\nSpecies is significantly associated with differences in sepal length!\nThe Mean Square (MS) of our factor (species) explains more of the variance in the response variable (sepal length) than the residuals (random or unmeasured variables)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nonparametric-tests-similar-to-anova",
+    "href": "Lecture_Folder/Week6b.html#nonparametric-tests-similar-to-anova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nonparametric tests similar to ANOVA",
+    "text": "Nonparametric tests similar to ANOVA\n\nThe Kruskal-Wallis test is robust to non-normality and group variance differences\nCheck out the help page for kruskal.test() and run a model on iris sepal length"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nonparametric-tests-similar-to-anova-1",
+    "href": "Lecture_Folder/Week6b.html#nonparametric-tests-similar-to-anova-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nonparametric tests similar to ANOVA",
+    "text": "Nonparametric tests similar to ANOVA\n\nAlso a significant difference between species\n\n\nkruskal.test(Sepal.Length ~ Species, iris)\n\n\n    Kruskal-Wallis rank sum test\n\ndata:  Sepal.Length by Species\nKruskal-Wallis chi-squared = 96.937, df = 2, p-value &lt; 2.2e-16"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-and-linear-models-1",
+    "href": "Lecture_Folder/Week6b.html#anova-and-linear-models-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA and linear models",
+    "text": "ANOVA and linear models\n\nsummary(lm(iris$Sepal.Length ~ iris$Species))\n\n\nCall:\nlm(formula = iris$Sepal.Length ~ iris$Species)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-1.6880 -0.3285 -0.0060  0.3120  1.3120 \n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)              5.0060     0.0728  68.762  &lt; 2e-16 ***\niris$Speciesversicolor   0.9300     0.1030   9.033 8.77e-16 ***\niris$Speciesvirginica    1.5820     0.1030  15.366  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.5148 on 147 degrees of freedom\nMultiple R-squared:  0.6187,    Adjusted R-squared:  0.6135 \nF-statistic: 119.3 on 2 and 147 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#on-your-own",
+    "href": "Lecture_Folder/Week6b.html#on-your-own",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "On your own",
+    "text": "On your own\n\nset up an analysis using the biomarker data\nUse the diagnosis categorical variable as the predictor for one of the markers\nNote that you’ll likely need to coerce the varible to be as.factor"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#post-hoc-comparisons",
+    "href": "Lecture_Folder/Week6b.html#post-hoc-comparisons",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Post Hoc Comparisons",
+    "text": "Post Hoc Comparisons\n\nSo now you’ve got a significant result that says your groups are different from one another!\nBut how are they different? 2 groups could be the same and 1 is different, or all 3 could be different from each other!\nThere are several ways to compare groups after an ANOVA\nOne of the most common ways is by Tukey’s tests (Tukey’s range test, Tukey’s honestly significant difference (HSD) test)\nThe function TukeyHSD() in R"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#lets-practice---using-the-categorical-predictor-variables-in-the-stickleback-data-set",
+    "href": "Lecture_Folder/Week6b.html#lets-practice---using-the-categorical-predictor-variables-in-the-stickleback-data-set",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Let’s practice - using the categorical predictor variables in the stickleback data set",
+    "text": "Let’s practice - using the categorical predictor variables in the stickleback data set\n\nRead in the data as before\nPick one or two categorical predictor variables to include\nMake sure that R sees them as type factor\nSet up the model and evaluate the overall fit\nDo a post-hoc means test with Tukey’s HSD"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#fitting-the-model",
+    "href": "Lecture_Folder/Week6b.html#fitting-the-model",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Fitting the model",
+    "text": "Fitting the model\n\nstickle_micro &lt;-read.table(\"Stickle_RNAseq.tsv\", header=T, sep=\"\\t\")\n  \nstickle_micro_anova &lt;- aov(Gene42 ~ Geno.Micro, stickle_micro)\nanova(stickle_micro_anova)\n\nAnalysis of Variance Table\n\nResponse: Gene42\n           Df Sum Sq Mean Sq F value    Pr(&gt;F)    \nGeno.Micro  3 120764   40255  25.328 1.837e-11 ***\nResiduals  76 120789    1589                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#tukeys-posthoc",
+    "href": "Lecture_Folder/Week6b.html#tukeys-posthoc",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Tukey’s posthoc",
+    "text": "Tukey’s posthoc\n\nTukeyHSD(stickle_micro_anova)\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = Gene42 ~ Geno.Micro, data = stickle_micro)\n\n$Geno.Micro\n              diff        lwr        upr     p adj\nconvB-convA   50.5   17.38429  83.615711 0.0008090\nmonoA-convA  -29.1  -62.21571   4.015711 0.1051497\nmonoB-convA  -53.9  -87.01571 -20.784289 0.0003145\nmonoA-convB  -79.6 -112.71571 -46.484289 0.0000001\nmonoB-convB -104.4 -137.51571 -71.284289 0.0000000\nmonoB-monoA  -24.8  -57.91571   8.315711 0.2095350"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#plot-of-the-different-levels",
+    "href": "Lecture_Folder/Week6b.html#plot-of-the-different-levels",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Plot of the different levels",
+    "text": "Plot of the different levels\n\nlibrary(ggplot2)\nggplot(stickle_micro, aes(x = Geno.Micro, y = Gene42)) +\n  geom_boxplot(fill = \"lightblue\", color = \"black\") +\n  geom_jitter(width = 0.2, alpha = 0.5) +\n  stat_summary(fun = mean, geom = \"point\", shape = 20, size = 3, color = \"red\") +\n  labs(\n    title = \"Box Plot by Category\",\n    x = \"Category\",\n    y = \"Value\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#on-your-own---irises-and-biomarker-data",
+    "href": "Lecture_Folder/Week6b.html#on-your-own---irises-and-biomarker-data",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "On your own - Irises and Biomarker Data",
+    "text": "On your own - Irises and Biomarker Data\n\nThe function TukeyHSD() in R\nRun post-hoc analyses on your anova model using TukeyHSD function\n\nCheck out the help page to figure out how to run\n\nHow do you interpret the results?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#lets-practice---irises-and-biomarker-data",
+    "href": "Lecture_Folder/Week6b.html#lets-practice---irises-and-biomarker-data",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Let’s practice - Irises and Biomarker Data",
+    "text": "Let’s practice - Irises and Biomarker Data\n\niris_aov &lt;- aov(Sepal.Length ~ Species, iris)\nTukeyHSD(iris_aov)\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = Sepal.Length ~ Species, data = iris)\n\n$Species\n                      diff       lwr       upr p adj\nversicolor-setosa    0.930 0.6862273 1.1737727     0\nvirginica-setosa     1.582 1.3382273 1.8257727     0\nvirginica-versicolor 0.652 0.4082273 0.8957727     0"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#what-is-a-glmm",
+    "href": "Lecture_Folder/Week6b.html#what-is-a-glmm",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "What is a GLMM?",
+    "text": "What is a GLMM?\n\nGeneral Linear Mixed Model (GLMM) - a continuous response variable with a mix of continuous and categorical predictor variables, can be used to model random effects (for more on this, see Peter Ralph’s Advanced Bio Stats class)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#how-do-we-factor-in-categorical-variables",
+    "href": "Lecture_Folder/Week6b.html#how-do-we-factor-in-categorical-variables",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "How do we factor in categorical variables?",
+    "text": "How do we factor in categorical variables?\n\nFor a single categorical predictor, we can include effects of each factor level:\n\n\\[ y = B_0 + B_1(x~level1) + B_2(x~level2) +~... ~+ e \\]\n\nEach factor level (ex: for Wolbachia: Yes or No) becomes it’s own “effector” that will change the value of y\nInstead of x being a continuous numerical value, for categorical data it will be either a 0 or 1"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#a-generalized-linear-model",
+    "href": "Lecture_Folder/Week6b.html#a-generalized-linear-model",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "A Generalized Linear Model",
+    "text": "A Generalized Linear Model\n\nCheck out the help page in RStudio for glm()\n\n\nglm(formula = y ~ x1 + x2, family = gaussian(link = \"identity\"))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#first-steps-use-a-glm-to-test-wolbachia-infection",
+    "href": "Lecture_Folder/Week6b.html#first-steps-use-a-glm-to-test-wolbachia-infection",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "First steps: use a glm to test Wolbachia infection",
+    "text": "First steps: use a glm to test Wolbachia infection\n\nSet up a glm() to test for the effect of Wolbachia infection on Recombinant Fraction"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#first-steps-use-a-glm-to-test-wolbachia-infection-1",
+    "href": "Lecture_Folder/Week6b.html#first-steps-use-a-glm-to-test-wolbachia-infection-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "First steps: use a glm to test Wolbachia infection",
+    "text": "First steps: use a glm to test Wolbachia infection\n\nWhat do these components mean?\n\n\nmodel &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link=\"identity\"))\nsummary(model)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#interpreting-the-glm",
+    "href": "Lecture_Folder/Week6b.html#interpreting-the-glm",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Interpreting the GLM",
+    "text": "Interpreting the GLM\n\nWhy is our intercept significant?\n\nRemember that the null hypothesis is a model with an intercept and slope of 0\n\nHow would you interpret the “WolbachiaYes” coefficient, especially the estimate and the p value?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#second-steps---adding-more-variables",
+    "href": "Lecture_Folder/Week6b.html#second-steps---adding-more-variables",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Second steps - adding more variables",
+    "text": "Second steps - adding more variables\n\nNow let’s add Food to our model - how does this change our model results?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#second-steps---adding-more-variables-1",
+    "href": "Lecture_Folder/Week6b.html#second-steps---adding-more-variables-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Second steps - adding more variables",
+    "text": "Second steps - adding more variables\n\nmodel2 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, family = gaussian(link = \"identity\"))\nsummary(model2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#interpreting-the-glm-1",
+    "href": "Lecture_Folder/Week6b.html#interpreting-the-glm-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Interpreting the GLM",
+    "text": "Interpreting the GLM\n\nHow would you interpret the Intercept and Food coefficients, especially the estimate and the p value?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#interaction-effects-in-glms",
+    "href": "Lecture_Folder/Week6b.html#interaction-effects-in-glms",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Interaction effects in GLMs",
+    "text": "Interaction effects in GLMs\n\nYou can also model interactions between two categorical variables in glms\n\nWhat if variable x and variable z interact in non-additive ways?\n\nUse the notation x*z in the formula"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#third-steps---adding-interaction-effects",
+    "href": "Lecture_Folder/Week6b.html#third-steps---adding-interaction-effects",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Third steps - adding interaction effects",
+    "text": "Third steps - adding interaction effects\n\nLet’s finally add an interaction between Wolbachia infection and Food to represent Wolbachia titer in our model\nRun the model - what are the results?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#third-steps---adding-interaction-effects-1",
+    "href": "Lecture_Folder/Week6b.html#third-steps---adding-interaction-effects-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Third steps - adding interaction effects",
+    "text": "Third steps - adding interaction effects\n\nHow do we interpret these findings?\n\n\nmodel3 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + fly$Wolbachia*fly$Food, family = gaussian(link = \"identity\"))\nsummary(model3)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#how-do-we-know-which-model-to-use",
+    "href": "Lecture_Folder/Week6b.html#how-do-we-know-which-model-to-use",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "How do we know which model to use?",
+    "text": "How do we know which model to use?\n\nWant to be careful not to overfit your linear model (give too many variables)\nThe Akaike information criterion (AIC) is a metric for comparing different models to find the best fit\n\nNotice the AIC score in your output?\nFor more on this, take Advanced Bio Stats! Or do some reading on the internet."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#multiple-linear-regression---goals",
+    "href": "Lecture_Folder/Week6b.html#multiple-linear-regression---goals",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Multiple Linear Regression - Goals",
+    "text": "Multiple Linear Regression - Goals\n\nTo develop a better predictive model than is possible from models based on single independent variables.\nTo investigate the relative individual effects of each of the multiple independent variables above and beyond the effects of the other variables.\nThe individual effects of each of the predictor variables on the response variable can be depicted by single partial regression lines.\nThe slope of any single partial regression line (partial regression slope) thereby represents the rate of change or effect of that specific predictor variable (holding all the other predictor variables constant to their respective mean values) on the response variable."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-one-way-anova",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-one-way-anova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | One way ANOVA",
+    "text": "R INTERLUDE | One way ANOVA\n\nAgain, use the RNAseq_lip.tsv data again.\nLet’s test for an effect of Population on Gene01 expression levels\nFirst, let’s look at how the data are distributed\n\n\nRNAseq_Data &lt;- read.table('RNAseq_lip.tsv', header=T, sep='\\t')\ng1 &lt;- RNAseq_Data$Gene01\nPop &lt;- RNAseq_Data$Population\nboxplot(g1~Pop, col=c(\"blue\",\"green\"))\n\nOr, to plot all points:\n\nstripchart(g1~Pop, vertical=T, pch=19, col=c(\"blue\",\"green\"), \n           at=c(1.25,1.75), method=\"jitter\", jitter=0.05)\nPop_Anova &lt;- aov(g1 ~ Pop)\nsummary(Pop_Anova)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-one-way-anova-1",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-one-way-anova-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | One way ANOVA",
+    "text": "R INTERLUDE | One way ANOVA"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-one-or-more-predictor-variables",
+    "href": "Lecture_Folder/Week6b.html#anova-one-or-more-predictor-variables",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | One or more predictor variables",
+    "text": "ANOVA | One or more predictor variables\n\nOne-way ANOVAs just have a single factor\nMulti-factor ANOVAs\n\nFactorial - two or more factors and their interactions\nNested - the levels of one factor are contained within another level\nThe models can be quite complex\n\nANOVAs use an F-statistic to test factors in a model\n\nRatio of two variances (numerator and denominator)\nThe numerator and denominator d.f. need to be included (e.g. \\(F_{1, 34} = 29.43\\))\n\nDetermining the appropriate test ratios for complex ANOVAs takes some work"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-assumptions",
+    "href": "Lecture_Folder/Week6b.html#anova-assumptions",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | Assumptions",
+    "text": "ANOVA | Assumptions\n\nNormally distributed groups\n\nrobust to non-normality if equal variances and sample sizes\n\nEqual variances across groups\n\nokay if largest-to-smallest variance ratio &lt; 3:1\nproblematic if there is a mean-variance relationship among groups\n\nObservations in a group are independent\n\nrandomly selected\ndon’t confound group with another factor"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-fixed-effects-of-factors",
+    "href": "Lecture_Folder/Week6b.html#anova-fixed-effects-of-factors",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | Fixed effects of factors",
+    "text": "ANOVA | Fixed effects of factors\n\nGroups are predetermined, of direct interest, repeatable.\nFor example:\n\nmedical treatments in a clinical trial\npredetermined doses of a toxin\nage groups in a population\nhabitat, season, etc.\n\nAny conclusions reached in the study about differences among groups can be applied only to the groups included in the study.\nThe results cannot be generalized to other treatments, habitats, etc. not included in the study."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-random-effects-of-factors",
+    "href": "Lecture_Folder/Week6b.html#anova-random-effects-of-factors",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | Random effects of factors",
+    "text": "ANOVA | Random effects of factors\n\nMeasurements that come in groups. A group can be:\n\na family made up of siblings\na subject measured repeatedly\na transect of quadrats in a sampling survey\na block of an experiment done at a given time\n\nGroups are assumed to be randomly sampled from a population of groups.\nTherefore, conclusions reached about groups can be generalized to the population of groups.\nWith random effects, the variance among groups is the main quantity of interest, not the specific group attributes."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-random-effects-of-factors-1",
+    "href": "Lecture_Folder/Week6b.html#anova-random-effects-of-factors-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | Random effects of factors",
+    "text": "ANOVA | Random effects of factors\n\nBelow are cases where you are likely to treat factors as random effects\nWhenever your sampling design is nested\n\nquadrats within transects\ntransects within woodlots\nwoodlots within districts\n\nWhenever you divide up plots and apply separate treatments to subplots\nWhenever your replicates are grouped spatially or temporally\n\nin blocks\nin batches\n\nWhenever you take measurements on related individuals\nWhenever you measure subjects or other sampling units repeatedly"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-random-effects-of-factors-2",
+    "href": "Lecture_Folder/Week6b.html#anova-random-effects-of-factors-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | Random effects of factors",
+    "text": "ANOVA | Random effects of factors"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-random-effects---test-your-understanding",
+    "href": "Lecture_Folder/Week6b.html#anova-random-effects---test-your-understanding",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | Random effects - test your understanding",
+    "text": "ANOVA | Random effects - test your understanding\n\nFactor is sex (Male vs. Female)\nFactor is fish tank (10 tanks in an experiment)\nFactor is family (measure multiple sibs per family)\nFactor is temperature (10 arbitrary temps over natural range)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#anova-caution-about-fixed-vs.-random-effects",
+    "href": "Lecture_Folder/Week6b.html#anova-caution-about-fixed-vs.-random-effects",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANOVA | Caution about fixed vs. random effects",
+    "text": "ANOVA | Caution about fixed vs. random effects\n\nUsing fixed vs. random effects changes the way that statistical tests are performed in ANOVA\nMost statistical packages assume that all factors are fixed unless you instruct it otherwise\nDesignating factors as random takes extra work and probably a read of the manual\nIn R, lm assumes that all effects are fixed\nFor random effects, use lme instead (part of the nlme package)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#means-for-greater-than-two-factor-levels",
+    "href": "Lecture_Folder/Week6b.html#means-for-greater-than-two-factor-levels",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Means for greater than two factor levels?",
+    "text": "Means for greater than two factor levels?\n\nThe F-ratio test for a single-factor ANOVA tests for any difference among groups.\nIf we want to understand specific differences, we need further “contrasts”.\nUnplanned comparisons (post hoc):\n\nMultiple comparisons carried out after the results are obtained.\nUsed to find where the differences lie (which means differ from which other means)\nComparisons require protection for inflated Type 1 error rates:\n\nTukey tests: compare all pairs of means and control for multiple comparisons\nScheffé contrasts: compare all combinations of means\n\n\nPlanned comparisons (a priori):\n\nComparisons between group means that were decided when the experiment was designed (not after the data were in)\nMust be few in number to avoid inflating Type 1 error rates"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#planned-a-priori-contrasts",
+    "href": "Lecture_Folder/Week6b.html#planned-a-priori-contrasts",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Planned (a priori) contrasts",
+    "text": "Planned (a priori) contrasts\n\nA well planned experiment often dictates which comparison of means are of most interest, whereas other comparisons are of no interest.\nBy restricting the comparisons to just the ones of interest, researchers can mitigate the multiple testing problem associated with post-hoc tests.\nSome statisticians argue that, in fact, planned comparisons allow researchers to avoid adjusting p-values all together because each test is therefore unique.\nContrasts can also allow more complicated tests of the relationships among means.\nCoding a priori contrasts in R is quite easy and just depends upon writing the right series of coefficient contrasts."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#planned-a-priori-contrasts-1",
+    "href": "Lecture_Folder/Week6b.html#planned-a-priori-contrasts-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Planned (a priori) contrasts",
+    "text": "Planned (a priori) contrasts"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#understand-the-coefficients-table",
+    "href": "Lecture_Folder/Week6b.html#understand-the-coefficients-table",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Understand the coefficients table",
+    "text": "Understand the coefficients table"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-planned-contrasts",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-planned-contrasts",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Planned contrasts",
+    "text": "R INTERLUDE | Planned contrasts\n\nTake the RNAseq data you’ve examined before and create a new four level genotype by combining genotype and microbiota treatment into a single variable\nThink about how to do this using dplyr functions.\n\n\nRNAseq_Data &lt;- read.table(\"RNAseq.tsv\", header=T, sep='')\n\nx &lt;- RNAseq_Data$categorical_var\ny &lt;- RNAseq_Data$continuous_var1\nz &lt;- RNAseq_Data$continuous_var2\n\n\nSet up the a priori contrasts specifically testing one group mean against another\nThese are just examples - you should figure out the logic of the contrasts\n\n\ncontrasts(x) &lt;- cbind(c(0, 1, 0, -1), c(2, -1, 0, -1), c(-1, -1, 3, -1))\n\n\nConfirm that the contrasts are orthogonal\n\n\nround(crossprod(contrasts(x)), 2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-planned-contrasts-1",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-planned-contrasts-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Planned contrasts",
+    "text": "R INTERLUDE | Planned contrasts\n\nDefine the contrast labels\n\n\nrnaseq_data_list &lt;- list(x = list(‘xxx vs. xxx’ = 1, ‘xxx vs. xxx’ = 2, ‘xxx vs. xxx’ = 3))\n\n\nThen fit the fixed effect model\n\n\nRNAseq_aov_fixed &lt;- aov(y ~ x)\nplot(RNAseq_aov_fixed)\nboxplot(y ~ x)\nsummary(RNAseq_aov_fixed, split = rnaseq_data_list)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-unplanned-contrasts",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-unplanned-contrasts",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Unplanned contrasts",
+    "text": "R INTERLUDE | Unplanned contrasts\n\nRemember that this is when you had no hypotheses of differences in means in advance\nRead in the perchlorate data from Week 3\nLet’s assess the effects of the 4 perchlorate levels on T4\nWhich perchlorate levels differ in their effect on T4?\n\n\nperc &lt;- read.table('perchlorate_data.tsv', header=T, sep='\\t')\n\nx &lt;- perc$Perchlorate_Level\ny &lt;- log10(perc$T4_Hormone_Level)\n\nMyANOVA &lt;- aov(y ~ x)\nsummary (MyANOVA)\nboxplot(y ~ x)\n\ninstall.packages(\"multcomp\")\nlibrary(multcomp)\n\nsummary(glht(MyANOVA, linfct = mcp(x = \"Tukey\")))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#multifactor-anova-1",
+    "href": "Lecture_Folder/Week6b.html#multifactor-anova-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Multifactor ANOVA",
+    "text": "Multifactor ANOVA\n\nNested ANOVA or nested design\n\nfactors might be hierarchical - in other words nested - within one another\nThe sources of variance are therefore hierarchical too\n\nThe factorial ANOVA design is the most common experimental design used to investigate more than one treatment variable\n\nIn a factorial design every combination of treatments from two (or more) treatment variables is investigated.\nThe main purpose of a factorial design is to evaluate possible interactions between variables.\nAn interaction between two explanatory variables means that the effect of one variable on the response depends on the state of a second variable."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#multifactor-anova-key-difference-between-nested-and-factorial-designs",
+    "href": "Lecture_Folder/Week6b.html#multifactor-anova-key-difference-between-nested-and-factorial-designs",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Multifactor ANOVA | Key difference between nested and factorial designs",
+    "text": "Multifactor ANOVA | Key difference between nested and factorial designs\n\nNested designs are hierarchical\n\noften contain sub-replicates that are random, uncontrolled, nuisance effects\nbut the nested factors can be of interest too\n\nFactorial designs are\n\nall pairwise combinations,\nand often involve all combinations of factor levels\nwhen each factor is fixed interactions can be assessed\n\nCompletely nested designs therefore have no interaction terms, whereas factorial designs do\nMixed models can have a combination of fixed and random factors that are more complicated"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nested-anova-walking-stick-example",
+    "href": "Lecture_Folder/Week6b.html#nested-anova-walking-stick-example",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nested ANOVA | Walking stick example",
+    "text": "Nested ANOVA | Walking stick example\n\nExample 1: Study of “repeatability” (simple nested design)\nThe walking stick, Timema cristinae, is a wingless herbivorous insect on plants in chaparral habitats of California.\nNosil and Crespi (2006) measured individuals using digital photographs.\nTo evaluate measurement repeatability they took two separate photographs of each specimen.\nAfter measuring traits on one set of photographs, they repeated the measurements on the second set."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nested-anova-walking-stick-example-1",
+    "href": "Lecture_Folder/Week6b.html#nested-anova-walking-stick-example-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nested ANOVA | Walking stick example",
+    "text": "Nested ANOVA | Walking stick example\nEach pair of dots represents the two measurements"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nested-anova-walking-stick-example-2",
+    "href": "Lecture_Folder/Week6b.html#nested-anova-walking-stick-example-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nested ANOVA | Walking stick example",
+    "text": "Nested ANOVA | Walking stick example"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nested-anova-anova-table-of-results",
+    "href": "Lecture_Folder/Week6b.html#nested-anova-anova-table-of-results",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nested ANOVA | ANOVA Table of Results",
+    "text": "Nested ANOVA | ANOVA Table of Results"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nesting-logic",
+    "href": "Lecture_Folder/Week6b.html#nesting-logic",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nesting Logic",
+    "text": "Nesting Logic"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nesting-equations",
+    "href": "Lecture_Folder/Week6b.html#nesting-equations",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nesting equations",
+    "text": "Nesting equations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nesting-hypothesis-tests",
+    "href": "Lecture_Folder/Week6b.html#nesting-hypothesis-tests",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nesting hypothesis tests",
+    "text": "Nesting hypothesis tests"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nesting-ms-calculations",
+    "href": "Lecture_Folder/Week6b.html#nesting-ms-calculations",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nesting MS calculations",
+    "text": "Nesting MS calculations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#nested-anova-table-of-results",
+    "href": "Lecture_Folder/Week6b.html#nested-anova-table-of-results",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Nested ANOVA table of results",
+    "text": "Nested ANOVA table of results"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-nested-anova",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-nested-anova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Nested ANOVA",
+    "text": "R INTERLUDE | Nested ANOVA"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-nested-anova-1",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-nested-anova-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Nested ANOVA",
+    "text": "R INTERLUDE | Nested ANOVA\n\nandrew_data &lt;- read.table('andrew.tsv', header=T, sep=‘\\t')\nhead(andrew_data)\n\n\nThere are four variables: ‘TREAT’, ‘PATCH’, ‘QUAD’ and ‘ALGAE’\nThe main effect factor is TREAT\nMake a simplified factor called TREAT2, in which 0% and 33% are a level called “low” and 66% and 100% are “high”\n\n\nandrew_data$TREAT2 &lt;- factor(c(rep(“low”,40),rep(“high”,40))\n\n\nThe nested factor is PATCH - also need to turn this into a factor\n\n\nandrew_data$PATCH &lt;- factor(andrew_data$PATCH)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-nested-anova-2",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-nested-anova-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Nested ANOVA",
+    "text": "R INTERLUDE | Nested ANOVA\n\nIn this case, our response variable is ALGAE\nLook at the distribution of ALGAE for the two levels of TREAT2 using boxplots based on the patch means, which are the replicates in this case.\n\n\nandrew.agg &lt;- with(andrew_data, aggregate(data.frame(ALGAE), \n                  by = list(TREAT2=TREAT2, PATCH=PATCH), mean)\n\nlibrary(nlme)\nandrew.agg &lt;- gsummary(andrew_data, groups=andrew_data$PATCH)\n\nboxplot(ALGAE ~ TREAT2, andrew.agg)\n\n\nEvaluate assumptions based on the boxplots\nIs the design balanced (equal numbers of sub-replicates per PATCH)?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-nested-anova-3",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-nested-anova-3",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Nested ANOVA",
+    "text": "R INTERLUDE | Nested ANOVA\n\nRun the nested ANOVA:\n\n\nnested.aov &lt;- aov(ALGAE ~ TREAT2 + Error(PATCH), data=andrew_data)\nsummary(nested.aov)\n\n\nDo we detect an effect of TREAT2 (high vs low sea urchin density)?\nEstimate variance components to assess relative contributions of the random factors\n\n\nlibrary(nlme)\nVarCorr(lme(ALGAE ~ 1, random = ~1 | TREAT2/PATCH, andrew_data))\n\n\nCalculate the % of variation due to between-treatment differences vs. due to among patches within treatment differences.\nSee pg. 302 in Logan if you need help.\nWhat do these variance component estimates tell us???"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#multifactor-anova-2",
+    "href": "Lecture_Folder/Week6b.html#multifactor-anova-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Multifactor ANOVA",
+    "text": "Multifactor ANOVA\n\nFor example, Relyae (2003) looked at how a moderate dose (1.6mg/L) of a commonly used pesticide, carbaryl (Sevin), affected bullfrog tadpole survival.\nIn particular, the experiment asked how the effect of carbaryl depended on whether a native predator, the red-spotted newt, was also present.\nThe newt was caged and could cause no direct harm, but it emitted visual and chemical cues to other tadpoles\nThe experiment was carried out in 10-L tubs (experimental units), each containing 10 tadpoles.\nThe four combinations of pesticide treatment (carbaryl vs. water only) and predator treatment (present or absent) were randomly assigned to tubs.\nThe results showed that survival was high except when pesticide was applied together with the predator.\nThus, the two treatments, predation and pesticide, seem to have interacted."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#multifactor-anova-3",
+    "href": "Lecture_Folder/Week6b.html#multifactor-anova-3",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Multifactor ANOVA",
+    "text": "Multifactor ANOVA"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#two-factor-factorial-designs",
+    "href": "Lecture_Folder/Week6b.html#two-factor-factorial-designs",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Two Factor Factorial Designs",
+    "text": "Two Factor Factorial Designs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#three-factor-factorial-designs",
+    "href": "Lecture_Folder/Week6b.html#three-factor-factorial-designs",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Three Factor Factorial Designs",
+    "text": "Three Factor Factorial Designs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#factorial-designs-number-of-replicates",
+    "href": "Lecture_Folder/Week6b.html#factorial-designs-number-of-replicates",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Factorial Designs | Number of Replicates",
+    "text": "Factorial Designs | Number of Replicates"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#model-1-factorial-anova-both-main-effects-fixed",
+    "href": "Lecture_Folder/Week6b.html#model-1-factorial-anova-both-main-effects-fixed",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Model 1 factorial ANOVA | both main effects fixed",
+    "text": "Model 1 factorial ANOVA | both main effects fixed"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#model-2-factorial-anova-both-main-effects-fixed",
+    "href": "Lecture_Folder/Week6b.html#model-2-factorial-anova-both-main-effects-fixed",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Model 2 factorial ANOVA | both main effects fixed",
+    "text": "Model 2 factorial ANOVA | both main effects fixed"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#model-2-factorial-anova-both-main-effects-random",
+    "href": "Lecture_Folder/Week6b.html#model-2-factorial-anova-both-main-effects-random",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Model 2 factorial ANOVA | both main effects random",
+    "text": "Model 2 factorial ANOVA | both main effects random"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#the-mean-squares-for-a-factorial-model",
+    "href": "Lecture_Folder/Week6b.html#the-mean-squares-for-a-factorial-model",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "The mean squares for a factorial model",
+    "text": "The mean squares for a factorial model"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#the-f-ratios-for-a-factorial-model",
+    "href": "Lecture_Folder/Week6b.html#the-f-ratios-for-a-factorial-model",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "The F-ratios for a factorial model",
+    "text": "The F-ratios for a factorial model"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#interpretation-significant-main-and-interaction-effects",
+    "href": "Lecture_Folder/Week6b.html#interpretation-significant-main-and-interaction-effects",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Interpretation | significant main and interaction effects",
+    "text": "Interpretation | significant main and interaction effects"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#interaction-plots",
+    "href": "Lecture_Folder/Week6b.html#interaction-plots",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Interaction plots",
+    "text": "Interaction plots"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-2-by-2-fixed-effect-factorial-anova",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-2-by-2-fixed-effect-factorial-anova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | 2-by-2 fixed effect factorial ANOVA",
+    "text": "R INTERLUDE | 2-by-2 fixed effect factorial ANOVA\n\nrnadata &lt;- read.table('RNAseq.tsv', header=T, sep='')\nhead(rnadata)\n\n\ncontinuous response variable and two main effect categorical variables\n\n\ngene &lt;- rnadata$Gene80\nmicrobiota &lt;- rnadata$Microbiota\ngenotype &lt;- rnadata$Genotype\nboxplot(gene ~ microbiota)\nboxplot(gene ~ genotype)\nboxplot(gene ~ microbiota*genotype)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#fit-the-factorial-linear-model-two-different-ways-to-do-the-same-thing",
+    "href": "Lecture_Folder/Week6b.html#fit-the-factorial-linear-model-two-different-ways-to-do-the-same-thing",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Fit the factorial linear model | two different ways to do the same thing",
+    "text": "Fit the factorial linear model | two different ways to do the same thing\n\nrna_aov &lt;- aov(gene ~ microbiota + genotype + microbiota:genotype)\nrna_aov &lt;- aov(gene ~ microbiota*genotype)\n\n\nExamine the fitted model diagnostics and the ANOVA results table\n\n\nplot(rna_aov)\nsummary(rna_aov)\nanova(rna_aov)\n\n\nWhat are the general results of our hypothesis tests?\nIf there is an interaction, can we understand it by looking at the boxplots?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-2-by-3-fixed-effect-factorial-anova",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-2-by-3-fixed-effect-factorial-anova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | 2-by-3 fixed effect factorial ANOVA",
+    "text": "R INTERLUDE | 2-by-3 fixed effect factorial ANOVA\n\nTry the following code to produce an interaction plot for the response variable cell count.\nIn this case there are 2 genotypes and 3 treatment levels.\nDownload the IntPlot_data file and IntPlot_Example.R\nGo through the R script, get a feel for what it’s doing, and try to produce and interpret the interaction plot."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#means-tests-factor-level-combinations-in-multi-factor-anova",
+    "href": "Lecture_Folder/Week6b.html#means-tests-factor-level-combinations-in-multi-factor-anova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Means tests | factor level combinations in multi-factor ANOVA",
+    "text": "Means tests | factor level combinations in multi-factor ANOVA\n\nThe F-ratio test for a single-factor ANOVA tests for any difference among groups.\nIf we want to understand specific differences, we need further “contrasts”.\nUnplanned comparisons (post hoc)\nPlanned comparisons (a priori)\nNow we need to make ‘pseudo-factors’ that combine our levels of interest"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#planned-a-priori-contrasts-2",
+    "href": "Lecture_Folder/Week6b.html#planned-a-priori-contrasts-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Planned (a priori) contrasts",
+    "text": "Planned (a priori) contrasts"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-2x2-fixed-effects-factorial-anova-contrasts-interaction",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-2x2-fixed-effects-factorial-anova-contrasts-interaction",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | 2x2 Fixed-Effects Factorial ANOVA contrasts & interaction",
+    "text": "R INTERLUDE | 2x2 Fixed-Effects Factorial ANOVA contrasts & interaction\ncontinuous response and two main effect variables\n\nrnadata &lt;- read.table('RNAseq.tsv', header=T, sep='')\ngene &lt;- rnadata$Gene80\nmicrobiota &lt;- rnadata$Microbiota\ngenotype &lt;- rnadata$Genotype\n\nmake new “pseudo factor,” combining genotype and microbiota\n\ngxm &lt;- interaction(genotype,microbiota)\nlevels(gxm)\nboxplot(gene ~ gxm)\n\nspecify the following 2 contrasts\n\ncontrasts(gxm) &lt;- cbind(c(2, -1, 0, -1), c(-1, -1, 3, -1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-2x2-fixed-effects-factorial-anova-contrasts-interaction-1",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-2x2-fixed-effects-factorial-anova-contrasts-interaction-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | 2x2 Fixed-Effects Factorial ANOVA contrasts & interaction",
+    "text": "R INTERLUDE | 2x2 Fixed-Effects Factorial ANOVA contrasts & interaction\nFit the factorial linear model\n\nrna_aov &lt;- aov(gene ~ gxm)\n\nExamine the ANOVA table, using supplied contrasts. Figure out the appropriate titles to give them.\n\nsummary(rna_aov, split = list(gxm = list('xxx'=1,'xxx'=2)))\n\nWhat does the contrast summary tell you about the nature of the interaction?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#attributes-of-mixed-effects-models",
+    "href": "Lecture_Folder/Week6b.html#attributes-of-mixed-effects-models",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Attributes of mixed effects models",
+    "text": "Attributes of mixed effects models\n\nLinear models that include both fixed and random effects.\nThe model is split into fixed and random parts:\n\nFixed effects influence mean of the response variable Y.\nRandom effects influence the variance of Y.\n\nThere is a different error variance for each level of grouping.\nEstimation and testing is based on restricted maximum likelihood, which can handle unequal sample size.\nP-values for fixed effects are conservative when design unbalanced.\nImplemented in the nlme & lme4 packages in R."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#assumptions-of-mixed-effects-models",
+    "href": "Lecture_Folder/Week6b.html#assumptions-of-mixed-effects-models",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Assumptions of mixed-effects models",
+    "text": "Assumptions of mixed-effects models\n\nVariation within groups follows a normal distribution with equal variance among groups.\nGroups are randomly sampled from “population” of groups.\nGroup means follow a normal distribution.\nMeasurements within groups are independent."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#hypotheses-for-model-3-anova-factorial-design-with-mixed-effects",
+    "href": "Lecture_Folder/Week6b.html#hypotheses-for-model-3-anova-factorial-design-with-mixed-effects",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Hypotheses for Model 3 ANOVA Factorial Design With Mixed Effects",
+    "text": "Hypotheses for Model 3 ANOVA Factorial Design With Mixed Effects"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#general-r-syntax-for-two-factor-factorial-designs",
+    "href": "Lecture_Folder/Week6b.html#general-r-syntax-for-two-factor-factorial-designs",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "General R syntax for two factor factorial designs",
+    "text": "General R syntax for two factor factorial designs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-variance-components-with-2-random-factors-using-lme4",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-variance-components-with-2-random-factors-using-lme4",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Variance components with 2 random factors using LME4",
+    "text": "R INTERLUDE | Variance components with 2 random factors using LME4\n\nrnadata &lt;- read.table('RNAseq.tsv', header=T, sep='')\nhead(rnadata)\n\nvariables excluding first 5 and last 5 observations\n\ngene &lt;- rnadata$Gene80[6:75] \nmicrobiota &lt;- rnadata$Microbiota[6:75]\ngenotype &lt;- rnadata$Genotype[6:75]\nboxplot(gene ~ microbiota)\nboxplot(gene ~ genotype)\nboxplot(gene ~ microbiota*genotype)\n\nEstimate the variance components using Restricted Maximum Likelihood (REML)\n\nlibrary(lme4)\nlmer(gene ~ 1 + (1 | microbiota) + (1 | genotype) + (1 | microbiota:genotype))\n\nBased on the REML sd estimates, what are the relative contributions of the factors to total variance in gene expression?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#brain-body-size-neaderthals-as-compared-to-humans",
+    "href": "Lecture_Folder/Week6b.html#brain-body-size-neaderthals-as-compared-to-humans",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Brain & body size | neaderthals as compared to humans",
+    "text": "Brain & body size | neaderthals as compared to humans"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#brain-body-size-neaderthals-as-compared-to-humans-1",
+    "href": "Lecture_Folder/Week6b.html#brain-body-size-neaderthals-as-compared-to-humans-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Brain & body size | neaderthals as compared to humans",
+    "text": "Brain & body size | neaderthals as compared to humans"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#brain-body-size-neaderthals-as-compared-to-humans-2",
+    "href": "Lecture_Folder/Week6b.html#brain-body-size-neaderthals-as-compared-to-humans-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Brain & body size | neaderthals as compared to humans",
+    "text": "Brain & body size | neaderthals as compared to humans"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova",
+    "href": "Lecture_Folder/Week6b.html#ancova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA",
+    "text": "ANCOVA\n\nAnalysis of covariance - mixture of regression and ANOVA\nResponse is still a normally distributed continuous variable\nOne or more continuous predictor variables (covariates)\nSometimes the covariates are of biological interest\nMost often we want to remove unexplained variance\nIn this way they are similar to a blocking variable in ANOVA\nOperationally, ANCOVA is regular ANOVA in which the group and overall means are replaced by group and overall relationships"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova-adjusting-for-the-covariate",
+    "href": "Lecture_Folder/Week6b.html#ancova-adjusting-for-the-covariate",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA | Adjusting for the covariate",
+    "text": "ANCOVA | Adjusting for the covariate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova-adjusting-for-the-covariate-1",
+    "href": "Lecture_Folder/Week6b.html#ancova-adjusting-for-the-covariate-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA | Adjusting for the covariate",
+    "text": "ANCOVA | Adjusting for the covariate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova-linear-model-with-two-covariates",
+    "href": "Lecture_Folder/Week6b.html#ancova-linear-model-with-two-covariates",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA | Linear model with two covariates",
+    "text": "ANCOVA | Linear model with two covariates"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova-factor-and-covariate-hypothesis-tests",
+    "href": "Lecture_Folder/Week6b.html#ancova-factor-and-covariate-hypothesis-tests",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA | Factor and covariate hypothesis tests",
+    "text": "ANCOVA | Factor and covariate hypothesis tests"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova-f-ratio-tests",
+    "href": "Lecture_Folder/Week6b.html#ancova-f-ratio-tests",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA | F ratio tests",
+    "text": "ANCOVA | F ratio tests"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova-assumptions",
+    "href": "Lecture_Folder/Week6b.html#ancova-assumptions",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA | Assumptions",
+    "text": "ANCOVA | Assumptions\n\nThe residuals are normally distributed\nThe residuals show homoscedasticity of variance\nThe residuals are independent of one another\nThe relationship between the response variable and each covariate is linear\nHomogeneity of slopes among the groups\nSimilar covariate ranges among the groups"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova-heterogeneous-slopes",
+    "href": "Lecture_Folder/Week6b.html#ancova-heterogeneous-slopes",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA | Heterogeneous slopes",
+    "text": "ANCOVA | Heterogeneous slopes"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova-heterogeneous-slopes-1",
+    "href": "Lecture_Folder/Week6b.html#ancova-heterogeneous-slopes-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA | Heterogeneous slopes",
+    "text": "ANCOVA | Heterogeneous slopes\n\nProblem - adjusting to a mean is difficult or impossible if the slopes are different\nIn essence, the samples for the groups come from two different populations\nA test for homogeneity of slopes can be performed\nThe assumption is tested by looking for a significant interaction term between the categorical response variables and the covariate(s)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#ancova-non-overlapping-range-of-the-covariate",
+    "href": "Lecture_Folder/Week6b.html#ancova-non-overlapping-range-of-the-covariate",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "ANCOVA | Non-overlapping range of the covariate",
+    "text": "ANCOVA | Non-overlapping range of the covariate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-ancova",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-ancova",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | ANCOVA",
+    "text": "R INTERLUDE | ANCOVA\n\nImpacts of sexual activity on male fruitfly longevity\nData from Partridge and Faraquhar (1981)\nLongevity of male measured in response to access to\n\nno females\none virgin\neight virgins\none mated\neight mated\n\nThe male fruit flies also varied in size\nThe males were assigned randomly to each of the treatment levels, and then measured thorax length as a covariate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-ancova-1",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-ancova-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | ANCOVA",
+    "text": "R INTERLUDE | ANCOVA\n\nlongevity_data &lt;- read.table('longevity.csv', header=T, sep=',')\nhead(longevity_data)\n\nVariables\n\nlong &lt;- longevity_data$LONGEVITY\ntreat &lt;- longevity_data$TREATMENT\nthorax &lt;- longevity_data$THORAX\n\n\ncheck to see if the covariate should be included\n\n\nboxplot(long ~ treat)\nplot(long ~ thorax)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-ancova-2",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-ancova-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | ANCOVA",
+    "text": "R INTERLUDE | ANCOVA\n\nassess assumptions of normality and homogeneity of variance\n\n\nplot(aov(long ~ thorax + treat ), which = 1)\n\n\n†ry it again with a transformed response variable\n\n\nplot(aov(log10(long) ~ thorax + treat ), which = 1)\n\n\nvisually assess linearity, homogenetiy of slopes and covariate range equality\n\n\nlibrary(lattice)\nprint(xyplot(log10(long) ~ thorax | treat, type = c(\"r\", \"p\")))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#r-interlude-ancova-3",
+    "href": "Lecture_Folder/Week6b.html#r-interlude-ancova-3",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | ANCOVA",
+    "text": "R INTERLUDE | ANCOVA\n\nformally test homogenetiy of slopes by testing the interaction term\n\n\nanova(aov(log10(long) ~ thorax*treat))\n\n\nformally test covariate range disparity by modeling the effect of the treatments on the covariate\n\n\nanova(aov(thorax ~ treat))\n\n\nFINALLY, set up contrasts, fit the additive model and visualize the results (pg. 459 and 460 of your Logan book)\nSummarize the trends in a nice plot (pg. 461 of your Logan book)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#what-is-an-experimental-study",
+    "href": "Lecture_Folder/Week6b.html#what-is-an-experimental-study",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "What is an experimental study?",
+    "text": "What is an experimental study?\n\nIn an experimental study the researcher assigns treatments to units\nIn an observational study nature does the assigning of treatments to units\nThe crucial advantage of experiments derives from the random assignment of treatments to units\nRandom assignment, or randomization, minimizes the influence of confounding variables\nCan infer cause and effect more easily"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#key-components-of-a-good-experiment",
+    "href": "Lecture_Folder/Week6b.html#key-components-of-a-good-experiment",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Key components of a good experiment",
+    "text": "Key components of a good experiment\nAn experiment is when two or more treatment groups are assigned to research units - randomization - research units are assigne at random to tratment groups in one of several ways. In particular neither the researcher or the unit should decide who gets the treatment - control - different treatemnt groups are as identical as posible, ecept for the specfic treatment they receive. A lack of controls can lead to confounding variables. Note the placebo effect. - replication - repeated to be able to estimate sampling variation. Different types of random sampling depending upon the nature of the experiment - blinding - single or better yet double blind - neither the subject nor the"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#mount-everest-example",
+    "href": "Lecture_Folder/Week6b.html#mount-everest-example",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Mount Everest example",
+    "text": "Mount Everest example\nSurvival of climbers of Mount Everest is higher for individuals taking supplemental oxygen than those who don’t.\nWhy?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#mount-everest-example-1",
+    "href": "Lecture_Folder/Week6b.html#mount-everest-example-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Mount Everest example",
+    "text": "Mount Everest example\n\nOne possibility is that supplemental oxygen (explanatory variable) really does cause higher survival (response variable).\nThe other is that the two variables are associated because other variables affect both supplemental oxygen and survival.\nUse of supplemental oxygen might be a benign indicator of a greater overall preparedness of the climbers that use it.\nVariables (like preparedness) that distort the causal relationship between the measured variables of interest (oxygen use and survival) are called confounding variables\nThey are correlated with the variable of interest, and therefore preventing a decision about cause and effect.\nWith random assignment, no confounding variables will be associated with treatment except by chance."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#clinical-trials",
+    "href": "Lecture_Folder/Week6b.html#clinical-trials",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Clinical Trials",
+    "text": "Clinical Trials\n\nThe gold standard of experimental designs is the clinical trial\nExperimental design in all areas of biology have been informed by procedures used in clinical trials\nA clinical trial is an experimental study in which two or more treatments are assigned to human subjects\nThe design of clinical trials has been refined because the cost of making a mistake with human subjects is so high\nExperiments on nonhuman subjects are simply called “laboratory experiments”or “field experiments”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#example-of-a-clinical-trial",
+    "href": "Lecture_Folder/Week6b.html#example-of-a-clinical-trial",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Example of a clinical trial",
+    "text": "Example of a clinical trial\n\nTransmission of the HIV-1 virus via sex workers contributes to the rapid spread of AIDS in Africa\nThe spermicide nonoxynol-9 had shown in vitro activity against HIV-1, which motivated a clinical trial by van Damme et al. (2002).\nThey tested whether a vaginal gel containing the chemical would reduce the risk of acquiring the disease by female sex workers.\nData were gathered on a volunteer sample of 765 HIV-free sex-workers in six clinics in Asia and Africa.\nTwo gel treatments were assigned randomly to women at each clinic.\nOne gel contained nonoxynol-9 and the other a placebo.\nNeither the subjects nor the researchers making observations at the clinics knew who received the treatment and who got the placebo."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#example-of-a-clinical-trial-1",
+    "href": "Lecture_Folder/Week6b.html#example-of-a-clinical-trial-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Example of a clinical trial",
+    "text": "Example of a clinical trial"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#design-components-of-a-clinical-trial",
+    "href": "Lecture_Folder/Week6b.html#design-components-of-a-clinical-trial",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Design components of a clinical trial",
+    "text": "Design components of a clinical trial\nThe goal of experimental design is to eliminate bias and to reduce sampling error when estimating and testing effects of one variable on another.\n\nTo reduce bias, the experiment included:\n\nSimultaneous control group: study included both the treatment of interest and a control group (the women receiving the placebo).\nRandomization: treatments were randomly assigned to women at each clinic.\nBlinding: neither the subjects nor the clinicians knew which women were assigned which treatment."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#design-components-of-a-clinical-trial-1",
+    "href": "Lecture_Folder/Week6b.html#design-components-of-a-clinical-trial-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Design components of a clinical trial",
+    "text": "Design components of a clinical trial\n\nTo reduce the effects of sampling error, the experiment included:\n\nReplication: study was carried out on multiple independent subjects.\nBalance: number of women was nearly equal in the two groups at every clinic.\nBlocking: subjects were grouped according to the clinic they attended, yielding multiple repetitions of the same experiment in different settings (“blocks”)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#simultaneous-control-group",
+    "href": "Lecture_Folder/Week6b.html#simultaneous-control-group",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Simultaneous control group",
+    "text": "Simultaneous control group\n\nIn clinical trials either a placebo or the currently accepted treatment should be provided.\nIn experiments requiring intrusive methods to administer treatment, such as\n\ninjections\nsurgery\nrestraint\nconfinement\n\nthe control subjects should be perturbed in the same way as the other subjects, except for the treatment itself, as far as ethical considerations permit."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#simultaneous-control-group-1",
+    "href": "Lecture_Folder/Week6b.html#simultaneous-control-group-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Simultaneous control group",
+    "text": "Simultaneous control group\n\nThe “sham operation”, in which surgery is carried out without the experimental treatment itself, is an example.\nIn field experiments, applying a treatment of interest may physically disturb the plots receiving it and the surrounding areas, perhaps by trampling the ground by the researchers.\nIdeally, the same disturbance should be applied to the control plots."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#randomization",
+    "href": "Lecture_Folder/Week6b.html#randomization",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Randomization",
+    "text": "Randomization\n\nThe researcher should randomize assignment of treatments to units or subjects\nChance rather than conscious or unconscious decision determines which units end up receiving the treatment and which the control\nA completely randomized design is one in which treatments are assigned to all units by randomization"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#randomization-1",
+    "href": "Lecture_Folder/Week6b.html#randomization-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Randomization",
+    "text": "Randomization\n\nRandomization breaks the association between possible confounding variables and the explanatory variable\nRandomization doesn’t eliminate the variation contributed by confounding variables, only their correlation with treatment\nRandomization ensures that variation from confounding variables is similar between the different treatment groups."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#randomization-2",
+    "href": "Lecture_Folder/Week6b.html#randomization-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Randomization",
+    "text": "Randomization\n\nRandomization should be carried out using a random process:\n\nList all n subjects, one per row, in a computer spreadsheet.\nUse the computer to give each individual a random number.\nAssign treatment A to those subjects receiving the lowest numbers and treatment B to those with the highest numbers.\n\nOther ways of assigning treatments to subjects are almost always inferior because they do not eliminate the effects of confounding variables.\n“Haphazard” assignment, in which the researcher chooses a treatment while trying to make it random, has repeatedly been shown to be non-random and prone to bias."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#randomization-types",
+    "href": "Lecture_Folder/Week6b.html#randomization-types",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Randomization Types",
+    "text": "Randomization Types\n\nCompletely randomized design - all subjects are placed to treatment or control with equal probability\nRandomized block - first broken into gropus (e.g. age or gender) then assigend to tratment groups at random\nMathced pair design - sujects are paired by similarity before being randoly assigned to treatment groups"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#sampling-approaches",
+    "href": "Lecture_Folder/Week6b.html#sampling-approaches",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Sampling approaches",
+    "text": "Sampling approaches\n\nsimple random sample - every sample has equal probability of being chosen\nstratified sample - divvided into groups then a simple random sample are taken from each\ncluster sample - divided into similar gropu, usually naturally occure, a simple random samples of clusters is then taken and very member of the cluster is included in the sample\nmultistage sampling - combines the above. First clusters are random sampled. Second random samples are take from each. Then process is repeated\nsystematic sample - members of a sample are chosen in a pre-determiend ways. e.g Choose everyth 20th person coming into a store"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#bias-in-experiments",
+    "href": "Lecture_Folder/Week6b.html#bias-in-experiments",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Bias in experiments",
+    "text": "Bias in experiments\n\nlack of control\nlac of blinidng\nlack of reandomiztaion"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#bias-in-surveys",
+    "href": "Lecture_Folder/Week6b.html#bias-in-surveys",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Bias in surveys",
+    "text": "Bias in surveys\n\nsamplign bias - not all members of the ppulation or cluster are equally likely\nnon-response bias - xxx\nasymmetric questions - xxx\nsocial desirability bias - xxx"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#statistical-sampling",
+    "href": "Lecture_Folder/Week6b.html#statistical-sampling",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Statistical sampling",
+    "text": "Statistical sampling\n\ncensuse - collect ifnormation from a completel population of interest\nsampling bad ways\n\nanecdotal evidence\nconveience sample - easily acessible (say students in a class\nRandom sample - a random process is used, and the point is to avoid bias\n\n\n)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blinding",
+    "href": "Lecture_Folder/Week6b.html#blinding",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blinding",
+    "text": "Blinding\n\nBlinding is the process of concealing information from participants (sometimes including researchers) about which subjects receive which treatment.\nBlinding prevents subjects and researchers from changing their behavior, consciously or unconsciously, as a result of knowing which treatment they were receiving or administering.\nFor example, studies showing that acupuncture has a significant effect on back pain are limited to those without blinding (Ernst and White 1998)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blinding-1",
+    "href": "Lecture_Folder/Week6b.html#blinding-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blinding",
+    "text": "Blinding\n\nIn a single-blind experiment, the subjects are unaware of the treatment that they have been assigned.\nTreatments must be indistinguishable to subjects, which prevents them from responding differently according to knowledge of treatment.\nBlinding can also be a concern in non-human studies where animals respond to stimuli"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blinding-2",
+    "href": "Lecture_Folder/Week6b.html#blinding-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blinding",
+    "text": "Blinding\n\nIn a double-blind experiment the researchers administering the treatments and measuring the response are also unaware of which subjects are receiving which treatments\n\nResearchers sometimes have pet hypotheses, and they might treat experimental subjects in different ways depending on their hopes for the outcome\nMany response variables are difficult to measure and require some subjective interpretation, which makes the results prone to a bias\nResearchers are naturally more interested in the treated subjects than the control subjects, and this increased attention can itself result in improved response"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blinding-3",
+    "href": "Lecture_Folder/Week6b.html#blinding-3",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blinding",
+    "text": "Blinding\n\nReviews of medical studies have revealed that studies carried out without double- blinding exaggerated treatment effects by 16% on average compared with studies carried out with double-blinding (Jüni et al. 2001).\nExperiments on non–human subjects are also prone to bias from lack of blinding."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blinding-4",
+    "href": "Lecture_Folder/Week6b.html#blinding-4",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blinding",
+    "text": "Blinding\n\nBebarta et al.(2003) reviewed 290 two-treatment experiments carried out on animals or on cell lines. The odds of detecting a positive effect of treatment were more than threefold higher in studies without blinding than in studies with blinding.\nBlinding can be incorporated into experiments on nonhuman subjects using coded tags that identify the subject to a “blind” observer without revealing the treatment (and who measures units from different treatments in random order)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#replication",
+    "href": "Lecture_Folder/Week6b.html#replication",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Replication",
+    "text": "Replication\n\nThe goal of experiments is to estimate and test treatment effects against the background of variation between individuals (“noise”) caused by other variables\nOne way to reduce noise is to make the experimental conditions constant\nIn field experiments, however, highly constant experimental conditions might not be feasible nor desirable\nBy limiting the conditions of an experiment, we also limit the generality of the results\nAnother way to make treatment effects stand out is to include extreme treatments and to replicate the data."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#replication-1",
+    "href": "Lecture_Folder/Week6b.html#replication-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Replication",
+    "text": "Replication\n\nReplication is the assignment of each treatment to multiple, independent experimental units.\nWithout replication, we would not know whether response differences were due to the treatments or just chance differences between the treatments caused by other factors.\nStudies that use more units (i.e. that have larger sample sizes) will have smaller standard errors and a higher probability of getting the correct answer from a hypothesis test.\nLarger samples mean more information, and more information means better estimates and more powerful tests."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#replication-2",
+    "href": "Lecture_Folder/Week6b.html#replication-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Replication",
+    "text": "Replication\n\nReplication is not about the number of plants or animals used, but the number of independent units in the experiment. An “experimental unit” is the independent unit to which treatments are assigned.\nThe figure shows three experimental designs used to compare plant growth under two temperature treatments (indicated by the shading of the pots). The first two designs are un-replicated."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#pseudoreplication",
+    "href": "Lecture_Folder/Week6b.html#pseudoreplication",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Pseudoreplication",
+    "text": "Pseudoreplication"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#balance",
+    "href": "Lecture_Folder/Week6b.html#balance",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Balance",
+    "text": "Balance\n\nA study design is balanced if all treatments have the same sample size.\nConversely, a design is unbalanced if there are unequal sample sizes between treatments.\nBalance is a second way to reduce the influence of sampling error on estimation and hypothesis testing.\nTo appreciate this, look again at the equation for the standard error of the difference between two treatment means."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#balance-1",
+    "href": "Lecture_Folder/Week6b.html#balance-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Balance",
+    "text": "Balance\n\nFor a fixed total number of experimental units, n1 + n2, the standard error is smallest when n1 and n2 are equal.\nBalance has other benefits. For example, ANOVA is more robust to departures from the assumption of equal variances when designs are balanced or nearly so."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blocking",
+    "href": "Lecture_Folder/Week6b.html#blocking",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blocking",
+    "text": "Blocking\n\nBlocking is the grouping of experimental units that have similar properties. Within each block, treatments are randomly assigned to experimental units.\nBlocking essentially repeats the same, completely randomized experiment multiple times, once for each block.\nDifferences between treatments are only evaluated within blocks, and in this way the component of variation arising from differences between blocks is discarded."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blocking-paired-designs",
+    "href": "Lecture_Folder/Week6b.html#blocking-paired-designs",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blocking | Paired designs",
+    "text": "Blocking | Paired designs\n\nFor example, consider the design choices for a two-treatment experiment to investigate the effect of clear cutting on salamander density.\nIn the completely randomized (“two-sample”) design we take a random sample of forest plots from the population and then randomly assign each plot to either the clear-cut treatment or the no clear-cut treatment.\nIn the paired design we take a random sample of forest plots and clear-cut a randomly chosen half of each plot, leaving the other half untouched."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blocking-paired-designs-1",
+    "href": "Lecture_Folder/Week6b.html#blocking-paired-designs-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blocking | Paired designs",
+    "text": "Blocking | Paired designs\n\nIn the paired design, measurements on adjacent plot-halves are not independent. This is because they are likely to be similar in soil, water, sunlight, and other conditions that affect the number of salamanders.\nAs a result, we must analyze paired data differently than when every plot is independent of all the others, as in the case of the two-sample design.\nPaired design is usually more powerful than completely randomized design because it controls for a lot of the extraneous variation between plots or sampling units that sometimes obscures the effects we are looking for."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blocking-paired-designs-2",
+    "href": "Lecture_Folder/Week6b.html#blocking-paired-designs-2",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blocking | Paired designs",
+    "text": "Blocking | Paired designs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#blocking-randomized-complete-block-design",
+    "href": "Lecture_Folder/Week6b.html#blocking-randomized-complete-block-design",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Blocking | Randomized complete block design",
+    "text": "Blocking | Randomized complete block design\n\nRCB design is analogous to the paired design, but may have more than two treatments. Each treatment is applied once to every block.\nAs in the paired design, treatment effects in a randomized block design are measured by differences between treatments exclusively within blocks.\nBy accounting for some sources of sampling variation blocking can make differences between treatments stand out.\nBlocking is worthwhile if units within blocks are relatively homogeneous, apart from treatment effects, and units belonging to different blocks vary because of environmental or other differences."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#what-if-you-cant-do-experiments",
+    "href": "Lecture_Folder/Week6b.html#what-if-you-cant-do-experiments",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "What if you can’t do experiments?",
+    "text": "What if you can’t do experiments?\n\nExperimental studies are not always feasible, in which case we must fall back upon observational studies.\nThe best observational studies incorporate as many of the features of good experimental design as possible to minimize bias (e.g., blinding) and the impact of sampling error (e.g., replication, balance, blocking, and even extreme treatments) except for one: randomization.\nRandomization is out of the question, because in an observational study the researcher does not assign treatments to subjects.\nTwo strategies are used to limit the effects of confounding variables on a difference between treatments in a controlled observational study: matching; and adjusting for known confounding variables (covariates)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#style-of-a-results-section",
+    "href": "Lecture_Folder/Week6b.html#style-of-a-results-section",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Style of a results section",
+    "text": "Style of a results section\n\nWrite the text of the Results section concisely and objectively.\nThe passive voice will likely dominate here, but use the active voice as much as possible.\nUse the past tense.\nAvoid repetitive paragraph structures. Do not interpret the data here."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#function-of-a-results-section",
+    "href": "Lecture_Folder/Week6b.html#function-of-a-results-section",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Function of a results section",
+    "text": "Function of a results section\n\nThe function is to objectively present your key results, without interpretation, in an orderly and logical sequence using both text and illustrative materials (Tables and Figures).\nThe results section always begins with text, reporting the key results and referring to figures and tables as you proceed.\nThe text of the Results section should be crafted to follow this sequence and highlight the evidence needed to answer the questions/hypotheses you investigated.\nImportant negative results should be reported, too. Authors usually write the text of the results section based upon the sequence of Tables and Figures."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#summaries-of-the-statistical-analyses",
+    "href": "Lecture_Folder/Week6b.html#summaries-of-the-statistical-analyses",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Summaries of the statistical analyses",
+    "text": "Summaries of the statistical analyses\nMay appear either in the text (usually parenthetically) or in the relevant Tables or Figures (in the legend or as footnotes to the Table or Figure). Each Table and Figure must be referenced in the text portion of the results, and you must tell the reader what the key result(s) is that each Table or Figure conveys.\n\nTables and Figures are assigned numbers separately and in the sequence that you will refer to them from the text.\n\nThe first Table you refer to is Table 1, the next Table 2 and so forth.\nSimilarly, the first Figure is Figure 1, the next Figure 2, etc.\n\nEach Table or Figure must include a brief description of the results being presented and other necessary information in a legend.\n\nTable legends go above the Table; tables are read from top to bottom.\nFigure legends go below the figure; figures are usually viewed from bottom to top.\n\nWhen referring to a Figure from the text, “Figure” is abbreviated as Fig.,e.g., (Fig. 1. Table is never abbreviated, e.g., Table 1."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#example",
+    "href": "Lecture_Folder/Week6b.html#example",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Example",
+    "text": "Example\nFor example, suppose you asked the question, “Is the average height of male students the same as female students in a pool of randomly selected Biology majors?” You would first collect height data from large random samples of male and female students. You would then calculate the descriptive statistics for those samples (mean, SD, n, range, etc) and plot these numbers. Suppose you found that male Biology majors are, on average, 12.5 cm taller than female majors; this is the answer to the question. Notice that the outcome of a statistical analysis is not a key result, but rather an analytical tool that helps us understand what is our key result."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#differences-directionality-and-magnitude",
+    "href": "Lecture_Folder/Week6b.html#differences-directionality-and-magnitude",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Differences, directionality, and magnitude",
+    "text": "Differences, directionality, and magnitude\n\nReport your results so as to provide as much information as possible to the reader about the nature of differences or relationships.\nFor example, if you are testing for differences among groups, and you find a significant difference, it is not sufficient to simply report that “groups A and B were significantly different”. How are they different? How much are they different?\nIt is much more informative to say something like, “Group A individuals were 23% larger than those in Group B”, or, “Group B pups gained weight at twice the rate of Group A pups.”\nReport the direction of differences (greater, larger, smaller, etc) and the magnitude of differences (% difference, how many times, etc.) whenever possible."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#statistical-results-in-text",
+    "href": "Lecture_Folder/Week6b.html#statistical-results-in-text",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Statistical results in text",
+    "text": "Statistical results in text\n\nStatistical test summaries (test name, p-value) are usually reported parenthetically in conjunction with the biological results they support. This parenthetical reference should include the statistical test used, the value, degrees of freedom and the level of significance.\nFor example, if you found that the mean height of male Biology majors was significantly larger than that of female Biology majors, you might report this result (in blue) and your statistical conclusion (shown in red) as follows:\n\n“Males (180.5 ± 5.1 cm; n=34) averaged 12.5 cm taller than females (168 ± 7.6 cm; n=34) in the pool of Biology majors (two-sample t-test, t = 5.78, 33 d.f., p &lt; 0.001).”\n\nIf the summary statistics are shown in a figure, the sentence above need not report them specifically, but must include a reference to the figure where they may be seen:\n\n“Males averaged 12.5 cm taller than females in the pool of Biology majors (two-sample t-test, t = 5.78, 33 d.f., p &lt; 0.001; Fig. 1).”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6b.html#statistical-results-in-text-1",
+    "href": "Lecture_Folder/Week6b.html#statistical-results-in-text-1",
+    "title": "Week 6b - Statistics for Bioengineering",
+    "section": "Statistical results in text",
+    "text": "Statistical results in text\n\nAlways enter the appropriate units when reporting data or summary statistics.\n\nfor an individual value you would write, “the mean length was 10 cm”, or, “the maximum time was 140 min.”\nWhen including a measure of variability, place the unit after the error value, e.g., “…was 10 ± 2.3 m”.\nLikewise place the unit after the last in a series of numbers all having the same unit. For example: “lengths of 5, 10, 15, and 20 m”, or “no differences were observed after 2, 4, 6, or 8 min. of incubation”."
   }
 ]
