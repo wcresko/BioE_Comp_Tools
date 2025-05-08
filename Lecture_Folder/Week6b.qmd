@@ -107,8 +107,6 @@ Crawley 2007, p325
 -   Parsimony - fit no more parameters than is necessary.
 -   If two or more models fit the data almost equally well, prefer the simpler model.
 
-
-
 ## Let's consider our goals
 
 -   Model should predicts well
@@ -123,54 +121,49 @@ Crawley 2007, p325
 
 How to accomplish these goals To answer this, we need
 
-1. A criterion to compare models:
+1.  A criterion to compare models:
     -   Adjusted $R^2$
     -   Mallow’s Cp
     -   AIC (Akaike’s Information Criterion)
     -   BIC (Bayesian Information Criterion)
-2. A strategy for searching the candidate models
-    - Forwards
-    - Backwards
-    - All combinations
-
+2.  A strategy for searching the candidate models
+    -   Forwards
+    -   Backwards
+    -   All combinations
 
 ## How do we accomplish these goals? {.smaller}
 
--   **Adjusted** $R^2$ 
-      - the proportion of mean amount of variation in response variable explained by the model
-      - is adjusted for both sample size and the number of terms. 
-      - Larger values indicate better fit.
-
--   **Mallow’s Cp** - 
-    - is an index resulting from the comparison of the specific model to a model that contain all the possible terms. 
-    - Models with the lowest value and/or values closest to their respective p (the number of model terms, including the y-intercept) indicate best fit.
+-   **Adjusted** $R^2$
+    -   the proportion of mean amount of variation in response variable explained by the model
+    -   is adjusted for both sample size and the number of terms.
+    -   Larger values indicate better fit.
+-   **Mallow’s Cp** -
+    -   is an index resulting from the comparison of the specific model to a model that contain all the possible terms.
+    -   Models with the lowest value and/or values closest to their respective p (the number of model terms, including the y-intercept) indicate best fit.
     -   Frequently used in multiple regression
     -   Strategy: Test all possible models and selection the one with the smallest Cp
-    -   Cp ~ P - the model is considered to be a good fit
-    -   Cp > P - the model might be missing important factors
-    -   Cp < P - the model might be overfitting too many parameters
+    -   Cp \~ P - the model is considered to be a good fit
+    -   Cp \> P - the model might be missing important factors
+    -   Cp \< P - the model might be overfitting too many parameters
     -   `leaps` package in R does a smart search among models
 
 ## How do we accomplish these goals? {.smaller}
 
--   **Akaike Information Criteria (AIC)** 
-    - There are several different versions of AIC
-    - Each version adds a different constant designed to penalize according to the number of parameters and sample size to a likelihood function to produce a relative measure of the information content of a model. 
-    - ***Significantly*** smaller values indicate more parsimonious models. 
-    - As a rule of thumb, if the difference between two AIC values (delta AIC) is greater than 2, the lower AIC is a significant improvement in parsimony.
-
--   **Bayesian or Schwarz Information Criteria (BIC or SIC)** 
-    - BIC is outwardly similar to AIC. 
-    - Like AIC, the model with the lowest BIC is typically selected
-    - The constant added to the likelihood function penalizes models with more predictor terms more heavily (and thus select more simple models) than AIC. 
-    - It is for this reason that BIC is favored by many researchers.
-
-
+-   **Akaike Information Criteria (AIC)**
+    -   There are several different versions of AIC
+    -   Each version adds a different constant designed to penalize according to the number of parameters and sample size to a likelihood function to produce a relative measure of the information content of a model.
+    -   ***Significantly*** smaller values indicate more parsimonious models.
+    -   As a rule of thumb, if the difference between two AIC values (delta AIC) is greater than 2, the lower AIC is a significant improvement in parsimony.
+-   **Bayesian or Schwarz Information Criteria (BIC or SIC)**
+    -   BIC is outwardly similar to AIC.
+    -   Like AIC, the model with the lowest BIC is typically selected
+    -   The constant added to the likelihood function penalizes models with more predictor terms more heavily (and thus select more simple models) than AIC.
+    -   It is for this reason that BIC is favored by many researchers.
 
 ## R INTERLUDE - model fitting {.smaller}
 
-- The `MASS` library is used for `stepAIC` and `stepBIC`
-- The `leaps` library is used for `Mallow's Cp`
+-   The `MASS` library is used for `stepAIC` and `stepBIC`
+-   The `leaps` library is used for `Mallow's Cp`
 
 ```{r, echo=TRUE, eval=TRUE}
 library(MASS)       # for stepAIC
@@ -192,24 +185,24 @@ step_aic <- stepAIC(full_model, direction = "both", trace = FALSE)
 summary(step_aic)
 ```
 
-
-## BIC-based stepwise selection  {.smaller}
+## BIC-based stepwise selection {.smaller}
 
 ```{r, echo=TRUE, eval=TRUE}
 ### BIC-based stepwise selection ###
 # BIC is calculated as: -2*logLik + log(n)*k
-n <- nrow(df)
-step_bic <- stepAIC(full_model, direction = "both", trace = FALSE)
-# step_bic <- stepAIC(full_model, direction = "both", k = log(n), trace = FALSE)
+n <- nrow(biomarker_data)
+#step_bic <- stepAIC(full_model, direction = "both", trace = FALSE)
+step_bic <- stepAIC(full_model, direction = "both", k = log(n), trace = FALSE)
 summary(step_bic)
 ```
 
-## Mallow's Cp using all subsets regression  {.smaller}
+## Mallow's Cp using all subsets regression {.smaller}
+
 ```{r, echo=TRUE, eval=TRUE}
 
 ### Mallow's Cp using all subsets regression ###
 # Use leaps to compute Mallow's Cp
-leaps_result <- regsubsets(biomarker_data$marker1 ~ ., data = biomarker_data, nvmax = ncol(df) - 1)
+leaps_result <- regsubsets(biomarker_data$marker1 ~ ., data = biomarker_data, nvmax = ncol(biomarker_data) - 1)
 leaps_summary <- summary(leaps_result)
 
 # Extract Mallow's Cp values
@@ -225,8 +218,7 @@ cp_model <- lm(cp_formula, data = biomarker_data)
 summary(cp_model)
 ```
 
-
-## Comparing the models  {.smaller}
+## Comparing the models {.smaller}
 
 ```{r, echo=FALSE, eval=TRUE}
 # OPTIONAL: Compare models
@@ -243,7 +235,6 @@ print(cp_formula)
 cat("Cp:", cp_values[min_cp_index], "\n")
 
 ```
-
 
 ------------------------------------------------------------------------
 
@@ -296,7 +287,6 @@ $$ H_a: \mu(\text{versicolor_length"}) \neq \mu(\text{setosa_length}) \neq \mu(\
 
 -   NOTE: the alternative hypothesis is that at least one group is different
 
-
 ## ANOVA \| similar to regression {.vcenter .flexbox}
 
 ```{r, echo=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
@@ -308,7 +298,6 @@ knitr::include_graphics("images/images_5b.016.jpeg")
 ```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/images_5b.015.jpeg")
 ```
-
 
 ## ANOVA \| Statistical results table {.vcenter .flexbox}
 
@@ -365,7 +354,6 @@ hist(vir$Sepal.Length, main="I. virginica")
 
 ## Let's practice with irises
 
-
 ```{r, echo=TRUE, eval=TRUE}
 iris_aov <- aov(Sepal.Length ~ Species, iris)
 anova(iris_aov)
@@ -403,11 +391,11 @@ kruskal.test(Sepal.Length ~ Species, iris)
 summary(lm(iris$Sepal.Length ~ iris$Species))
 ```
 
-## On your own 
+## On your own
 
-- set up an analysis using the biomarker data
-- Use the `diagnosis` categorical variable as the predictor for one of the markers
-- Note that you'll likely need to coerce the varible to be `as.factor`
+-   set up an analysis using the biomarker data
+-   Use the `diagnosis` categorical variable as the predictor for one of the markers
+-   Note that you'll likely need to coerce the varible to be `as.factor`
 
 # Testing what levels of factor variable differ from one another
 
@@ -419,7 +407,6 @@ summary(lm(iris$Sepal.Length ~ iris$Species))
 -   One of the most common ways is by Tukey's tests (Tukey's range test, Tukey's honestly significant difference (HSD) test)
 -   The function `TukeyHSD()` in R
 
-
 ## Let's practice - using the categorical predictor variables in the stickleback data set
 
 -   Read in the data as before
@@ -427,7 +414,6 @@ summary(lm(iris$Sepal.Length ~ iris$Species))
 -   Make sure that R sees them as type `factor`
 -   Set up the model and evaluate the overall fit
 -   Do a post-hoc means test with Tukey's HSD
-
 
 ## Fitting the model
 
@@ -444,7 +430,6 @@ anova(stickle_micro_anova)
 ```{r, echo=TRUE, eval=TRUE}
 TukeyHSD(stickle_micro_anova)
 ```
-
 
 ## Plot of the different levels
 
@@ -1338,8 +1323,6 @@ anova(aov(thorax ~ treat))
 -   FINALLY, set up contrasts, fit the additive model and visualize the results (pg. 459 and 460 of your Logan book)
 -   Summarize the trends in a nice plot (pg. 461 of your Logan book)
 
-
-
 # Design principles for planning a good experiment
 
 ## What is an experimental study?
@@ -1352,11 +1335,7 @@ anova(aov(thorax ~ treat))
 
 ## Key components of a good experiment
 
-An experiment is when two or more treatment groups are assigned to research units
-- randomization - research units are assigne at random to tratment groups in one of several ways. In particular neither the researcher or the unit should decide who gets the treatment
-- control - different treatemnt groups are as identical as posible, ecept for the specfic treatment they receive. A lack of controls can lead to confounding variables. Note the placebo effect.
-- replication - repeated to be able to estimate sampling variation. Different types of random sampling depending upon the nature of the experiment
-- blinding - single or better yet double blind - neither the subject nor the 
+An experiment is when two or more treatment groups are assigned to research units - randomization - research units are assigne at random to tratment groups in one of several ways. In particular neither the researcher or the unit should decide who gets the treatment - control - different treatemnt groups are as identical as posible, ecept for the specfic treatment they receive. A lack of controls can lead to confounding variables. Note the placebo effect. - replication - repeated to be able to estimate sampling variation. Different types of random sampling depending upon the nature of the experiment - blinding - single or better yet double blind - neither the subject nor the
 
 ## Mount Everest example {.vcenter .flexbox}
 
@@ -1454,38 +1433,41 @@ The goal of experimental design is to eliminate bias and to reduce sampling erro
 
 ## Randomization Types
 
-- Completely randomized design - all subjects are placed to treatment or control with equal probability
-- Randomized block - first broken into gropus (e.g. age or gender) then assigend to tratment groups at random
+-   Completely randomized design - all subjects are placed to treatment or control with equal probability
 
-- Mathced pair design - sujects are paired by similarity before being randoly assigned to treatment groups
+-   Randomized block - first broken into gropus (e.g. age or gender) then assigend to tratment groups at random
 
-## Sampling approaches 
-- simple random sample - every sample has equal probability of being chosen
-- stratified sample - divvided into groups then a simple random sample are taken from each
-- cluster sample - divided into similar gropu, usually naturally occure, a simple random samples of clusters is then taken and very member of the cluster is included in the sample
-- multistage sampling - combines the above. First clusters are random sampled. Second random samples are take from each.
-Then process is repeated
-- systematic sample - members of a sample are chosen in a pre-determiend ways. e.g Choose everyth 20th person coming into a store
+-   Mathced pair design - sujects are paired by similarity before being randoly assigned to treatment groups
+
+## Sampling approaches
+
+-   simple random sample - every sample has equal probability of being chosen
+-   stratified sample - divvided into groups then a simple random sample are taken from each
+-   cluster sample - divided into similar gropu, usually naturally occure, a simple random samples of clusters is then taken and very member of the cluster is included in the sample
+-   multistage sampling - combines the above. First clusters are random sampled. Second random samples are take from each. Then process is repeated
+-   systematic sample - members of a sample are chosen in a pre-determiend ways. e.g Choose everyth 20th person coming into a store
 
 ## Bias in experiments
-- lack of control
-- lac of blinidng
-- lack of reandomiztaion
+
+-   lack of control
+-   lac of blinidng
+-   lack of reandomiztaion
 
 ## Bias in surveys
-- samplign bias - not all members of the ppulation or cluster are equally likely
-- non-response bias - xxx
-- asymmetric questions - xxx
-- social desirability bias - xxx
+
+-   samplign bias - not all members of the ppulation or cluster are equally likely
+-   non-response bias - xxx
+-   asymmetric questions - xxx
+-   social desirability bias - xxx
 
 ## Statistical sampling
 
-- censuse - collect ifnormation from a completel population of interest
-- sampling bad ways
-    - anecdotal evidence
-    - conveience sample - easily acessible (say students in a class
-    - Random sample - a random process is used, and the point is to avoid bias
-    
+-   censuse - collect ifnormation from a completel population of interest
+-   sampling bad ways
+    -   anecdotal evidence
+    -   conveience sample - easily acessible (say students in a class
+    -   Random sample - a random process is used, and the point is to avoid bias
+
 )
 
 ## Blinding

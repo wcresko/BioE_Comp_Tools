@@ -786,30 +786,29 @@ F-statistic:  3623 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">### BIC-based stepwise selection </span><span class="al">###</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># BIC is calculated as: -2*logLik + log(n)*k</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>step_bic <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(full_model, <span class="at">direction =</span> <span class="st">"both"</span>, <span class="at">trace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># step_bic &lt;- stepAIC(full_model, direction = "both", k = log(n), trace = FALSE)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(biomarker_data)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#step_bic &lt;- stepAIC(full_model, direction = "both", trace = FALSE)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>step_bic <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(full_model, <span class="at">direction =</span> <span class="st">"both"</span>, <span class="at">k =</span> <span class="fu">log</span>(n), <span class="at">trace =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(step_bic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = biomarker_data$marker1 ~ marker3 + marker4, data = biomarker_data)
+lm(formula = biomarker_data$marker1 ~ marker3, data = biomarker_data)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--24.2069  -5.9493   0.9458   6.4603  24.1383 
+    Min      1Q  Median      3Q     Max 
+-25.681  -6.947   1.079   6.938  23.419 
 
 Coefficients:
              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 344.29166   36.44220   9.448   &lt;2e-16 ***
-marker3       0.97655    0.02055  47.521   &lt;2e-16 ***
-marker4      -0.06788    0.03363  -2.019   0.0449 *  
+(Intercept) 271.15909    3.95699   68.53   &lt;2e-16 ***
+marker3       1.01041    0.01196   84.45   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 9.756 on 197 degrees of freedom
-Multiple R-squared:  0.9735,    Adjusted R-squared:  0.9733 
-F-statistic:  3623 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 9.832 on 198 degrees of freedom
+Multiple R-squared:  0.973, Adjusted R-squared:  0.9729 
+F-statistic:  7132 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </section>
@@ -818,7 +817,7 @@ F-statistic:  3623 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Mallow's Cp using all subsets regression </span><span class="al">###</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use leaps to compute Mallow's Cp</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>leaps_result <span class="ot">&lt;-</span> <span class="fu">regsubsets</span>(biomarker_data<span class="sc">$</span>marker1 <span class="sc">~</span> ., <span class="at">data =</span> biomarker_data, <span class="at">nvmax =</span> <span class="fu">ncol</span>(df) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>leaps_result <span class="ot">&lt;-</span> <span class="fu">regsubsets</span>(biomarker_data<span class="sc">$</span>marker1 <span class="sc">~</span> ., <span class="at">data =</span> biomarker_data, <span class="at">nvmax =</span> <span class="fu">ncol</span>(biomarker_data) <span class="sc">-</span> <span class="dv">1</span>)</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>leaps_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(leaps_result)</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract Mallow's Cp values</span></span>
@@ -872,10 +871,10 @@ F-statistic:  3623 on 2 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
 <pre><code>--- BIC Model ---</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>biomarker_data$marker1 ~ marker3 + marker4</code></pre>
+<pre><code>biomarker_data$marker1 ~ marker3</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>BIC: 1496.905 </code></pre>
+<pre><code>BIC: 1495.701 </code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>--- Mallow's Cp Model ---</code></pre>
