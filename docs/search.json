@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -10812,7 +10812,7 @@
     "href": "Lecture_Folder/Week7a.html#anova-r-interlude",
     "title": "Week 7a - Statistics for Bioengineering",
     "section": "ANOVA | R interlude",
-    "text": "ANOVA | R interlude\n\nSet up an analysis of the stickleback data but with the factor as a random effect\n\n\nlibrary(nlme)\n\n\nAttaching package: 'nlme'\n\n\nThe following object is masked from 'package:dplyr':\n\n    collapse\n\nRNAseq_Data &lt;- read.table(\"Stickle_RNAseq.tsv\", header=T, sep='')\n\nRNAseq_Data$Geno.Micro &lt;- factor(RNAseq_Data$Geno.Micro)\n\nmicro_model_random_effect &lt;- lme(fixed = Gene202 ~ 1,\n                                 random = ~1 | Geno.Micro,\n                                 data = stickle_micro)\n\nsummary(micro_model_random_effect)\n\nLinear mixed-effects model fit by REML\n  Data: stickle_micro \n       AIC      BIC    logLik\n  1108.535 1115.644 -551.2677\n\nRandom effects:\n Formula: ~1 | Geno.Micro\n        (Intercept) Residual\nStdDev:    272.6901  237.105\n\nFixed effects:  Gene202 ~ 1 \n               Value Std.Error DF  t-value p-value\n(Intercept) 257.2125  138.8982 76 1.851806  0.0679\n\nStandardized Within-Group Residuals:\n        Min          Q1         Med          Q3         Max \n-2.69680500 -0.24080838 -0.06883669  0.22398290  3.62528785 \n\nNumber of Observations: 80\nNumber of Groups: 4"
+    "text": "ANOVA | R interlude\n\nSet up an analysis of the stickleback data but with the factor as a random effect\n\n\nlibrary(nlme)\nRNAseq_Data &lt;- read.table(\"Stickle_RNAseq.tsv\", header=T, sep='')\n\nRNAseq_Data$Geno.Micro &lt;- factor(RNAseq_Data$Geno.Micro)\n\nmicro_model_random_effect &lt;- lme(fixed = Gene202 ~ 1,\n                                 random = ~1 | Geno.Micro,\n                                 data = stickle_micro)\n\nsummary(micro_model_random_effect)"
   },
   {
     "objectID": "Lecture_Folder/Week7a.html#style-of-a-results-section",
@@ -11595,6 +11595,783 @@
     "objectID": "Lecture_Folder/Week7a.html#r-interlude-ancova-3",
     "href": "Lecture_Folder/Week7a.html#r-interlude-ancova-3",
     "title": "Week 7a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | ANCOVA",
+    "text": "R INTERLUDE | ANCOVA\n\nformally test homogenetiy of slopes by testing the interaction term\n\n\nanova(aov(log10(long) ~ thorax*treat))\n\n\nformally test covariate range disparity by modeling the effect of the treatments on the covariate\n\n\nanova(aov(thorax ~ treat))\n\n\nFINALLY, set up contrasts, fit the additive model and visualize the results (pg. 459 and 460 of your Logan book)\nSummarize the trends in a nice plot (pg. 461 of your Logan book)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7a.html#anova-r-interlude-1",
+    "href": "Lecture_Folder/Week7a.html#anova-r-interlude-1",
+    "title": "Week 7a - Statistics for Bioengineering",
+    "section": "ANOVA | R interlude",
+    "text": "ANOVA | R interlude\n\n\n\nAttaching package: 'nlme'\n\n\nThe following object is masked from 'package:dplyr':\n\n    collapse\n\n\nLinear mixed-effects model fit by REML\n  Data: stickle_micro \n       AIC      BIC    logLik\n  1108.535 1115.644 -551.2677\n\nRandom effects:\n Formula: ~1 | Geno.Micro\n        (Intercept) Residual\nStdDev:    272.6901  237.105\n\nFixed effects:  Gene202 ~ 1 \n               Value Std.Error DF  t-value p-value\n(Intercept) 257.2125  138.8982 76 1.851806  0.0679\n\nStandardized Within-Group Residuals:\n        Min          Q1         Med          Q3         Max \n-2.69680500 -0.24080838 -0.06883669  0.22398290  3.62528785 \n\nNumber of Observations: 80\nNumber of Groups: 4"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html",
+    "href": "Lecture_Folder/Week7b.html",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#this-week",
+    "href": "Lecture_Folder/Week7b.html#this-week",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "This week",
+    "text": "This week\n\nMultifactor ANOVA\n\nFactorial\nNested\n\nKey principles of experimental design\nGeneralized Linear Mixed Models (GLMMs)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#multifactor-anova-1",
+    "href": "Lecture_Folder/Week7b.html#multifactor-anova-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Multifactor ANOVA",
+    "text": "Multifactor ANOVA\n\nThe factorial ANOVA design is the most common experimental design used to investigate more than one treatment variable\n\nIn a factorial design every combination of treatments from two (or more) treatment variables is investigated.\nThe main purpose of a factorial design is to evaluate possible interactions between variables.\nAn interaction between two explanatory variables means that the effect of one variable on the response depends on the state of a second variable.\n\nNested ANOVA or nested design\n\nfactors might be hierarchical - in other words nested - within one another\nThe sources of variance are therefore hierarchical too\nA common situation is where sampling of observations occurs within groups"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#multifactor-anova-key-difference-between-nested-and-factorial-designs",
+    "href": "Lecture_Folder/Week7b.html#multifactor-anova-key-difference-between-nested-and-factorial-designs",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Multifactor ANOVA | Key difference between nested and factorial designs",
+    "text": "Multifactor ANOVA | Key difference between nested and factorial designs\n\nFactorial designs are\n\nall pairwise combinations,\nand often involve all combinations of factor levels\nwhen each factor is fixed interactions can be assessed\n\nNested designs are hierarchical\n\noften contain sub-replicates that are random, uncontrolled, nuisance effects\nbut the nested factors can be of interest too\n\nCompletely nested designs therefore have no interaction terms, whereas factorial designs do\nMixed models can have a combination of fixed and random factors that are more complicated"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#multifactor-anova-2",
+    "href": "Lecture_Folder/Week7b.html#multifactor-anova-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Multifactor ANOVA",
+    "text": "Multifactor ANOVA\n\nRelyae (2003) looked at how a moderate dose (1.6mg/L) of a commonly used pesticide, carbaryl (Sevin), affected bullfrog tadpole survival.\nIn particular, the experiment asked how the effect of carbaryl depended on whether a native predator, the red-spotted newt, was also present.\nThe experiment was carried out in 10-L tubs (experimental units), each containing 10 tadpoles.\nThe four combinations of pesticide treatment (carbaryl vs. water only) and predator treatment (present or absent) were randomly assigned to tubs.\nThe results showed that survival was high except when pesticide was applied together with the predator.\nThus, the two treatments, predation and pesticide, seem to have interacted."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#multifactor-anova-3",
+    "href": "Lecture_Folder/Week7b.html#multifactor-anova-3",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Multifactor ANOVA",
+    "text": "Multifactor ANOVA"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#two-factor-factorial-designs",
+    "href": "Lecture_Folder/Week7b.html#two-factor-factorial-designs",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Two Factor Factorial Designs",
+    "text": "Two Factor Factorial Designs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#three-factor-factorial-designs",
+    "href": "Lecture_Folder/Week7b.html#three-factor-factorial-designs",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Three Factor Factorial Designs",
+    "text": "Three Factor Factorial Designs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#factorial-anova-both-main-effects-fixed",
+    "href": "Lecture_Folder/Week7b.html#factorial-anova-both-main-effects-fixed",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Factorial ANOVA | both main effects fixed",
+    "text": "Factorial ANOVA | both main effects fixed"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#factorial-designs-number-of-replicates",
+    "href": "Lecture_Folder/Week7b.html#factorial-designs-number-of-replicates",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Factorial Designs | Number of Replicates",
+    "text": "Factorial Designs | Number of Replicates"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#factorial-anova-both-main-effects-random",
+    "href": "Lecture_Folder/Week7b.html#factorial-anova-both-main-effects-random",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Factorial ANOVA | both main effects random",
+    "text": "Factorial ANOVA | both main effects random"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#the-mean-squares-for-a-factorial-model",
+    "href": "Lecture_Folder/Week7b.html#the-mean-squares-for-a-factorial-model",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "The mean squares for a factorial model",
+    "text": "The mean squares for a factorial model"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#the-f-ratios-for-a-factorial-model",
+    "href": "Lecture_Folder/Week7b.html#the-f-ratios-for-a-factorial-model",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "The F-ratios for a factorial model",
+    "text": "The F-ratios for a factorial model"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#interpretation-significant-main-and-interaction-effects",
+    "href": "Lecture_Folder/Week7b.html#interpretation-significant-main-and-interaction-effects",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Interpretation | significant main and interaction effects",
+    "text": "Interpretation | significant main and interaction effects"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#interaction-plots",
+    "href": "Lecture_Folder/Week7b.html#interaction-plots",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Interaction plots",
+    "text": "Interaction plots"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-2-by-2-fixed-effect-factorial-anova",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-2-by-2-fixed-effect-factorial-anova",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | 2-by-2 fixed effect factorial ANOVA",
+    "text": "R INTERLUDE | 2-by-2 fixed effect factorial ANOVA\n\nrna_data &lt;-read.table(\"Stickle_RNAseq.tsv\", header=T, sep=\"\\t\")\nhead(rna_data)\n\n  Individual Genotype   Microbiota Geno.Micro Gene1 Gene2 Gene3 Gene4 Gene5\n1        AC1        A conventional      convA    16    15    71   153     2\n2        AC2        A conventional      convA     7     6    72   123     1\n3        AC3        A conventional      convA     9     8    22   178     0\n4        AC4        A conventional      convA     8    18    15   128     2\n5        AC5        A conventional      convA    11    19    51   210     1\n6        AC6        A conventional      convA    19    20    31   148     2\n  Gene6 Gene7 Gene8 Gene9 Gene10 Gene11 Gene12 Gene13 Gene14 Gene15 Gene16\n1    11     9    11   540    104    866   1004     39     31      1     88\n2     4    11    17   374     84    837    908     38     29     20    100\n3    17    13    24   410    119    883   1261     31    105      3      5\n4    14    11    25   434     63    844    900     33      1     17    116\n5     9    11    15   390     84    843   1358     26    116      3     59\n6    14    13    18   541     95    815   1401     34     80     10     70\n  Gene17 Gene18 Gene19 Gene20 Gene21 Gene22 Gene23 Gene24 Gene25 Gene26 Gene27\n1     85   1429     16     21    166      8      4      5    136    178      2\n2     51   1564     17     10    177     10      9      9    102    173     12\n3     25   1656     16     37    179      3     16      8    203    221     13\n4    102   1587     17     23    174     16     11      6    190    170     11\n5     53   1471     17     21    177      4     17      7    201    162      8\n6     40   1517     16     23    173     12     10      9    116    210      5\n  Gene28 Gene29 Gene30 Gene31 Gene32 Gene33 Gene34 Gene35 Gene36 Gene37 Gene38\n1      5      4    825    172    196   1887     17     34    111    139     11\n2      1      4    836    204    137   1800     11     44    255    120      7\n3      1      9    661    341     48   2401     23     18      7    120      0\n4      3      4    905    193    202   2782     17     26     15    145      9\n5      3      5    931    220    261   2200     17      2    225    114     18\n6      2     10    686    221     58   2285     15     53     54    107     10\n  Gene39 Gene40 Gene41 Gene42 Gene43 Gene44 Gene45 Gene46 Gene47 Gene48 Gene49\n1     21      4     95    294    133      8      8    143      8    112     15\n2     12      5     78    303    116      9      2    322     11     95     14\n3      5      9     96    401    188      7     14      9     17      8     16\n4     28      5     86    344    146      7      9    176     13    135     16\n5     17     10     86    337    159      8      2    123     13    142     16\n6     16      6    100    277    109      8      3    369      7    114     15\n  Gene50 Gene51 Gene52 Gene53 Gene54 Gene55 Gene56 Gene57 Gene58 Gene59 Gene60\n1     23      2    141      4     15      9    303    112      4      2      9\n2      8      0    154      5     27      9    633    219      6      3      8\n3     23      2    167      8      1     14      0      2     72     49      8\n4      7      3    156      4      6     16    726     85    110     23      9\n5     23      2    144      6     22     14     34    346     23     62      9\n6     19      3    132      7      1      6    189    125      8     19      9\n  Gene61 Gene62 Gene63 Gene64 Gene65 Gene66 Gene67 Gene68 Gene69 Gene70 Gene71\n1      9      8     23  12310      3    225    287      1    211    675     20\n2     11     12     38  10732      4    175    285      0    178    469     23\n3     25     17     31   7924      2    115    283      1    216    328     63\n4     36     16     23  10259      3    112    287      1    174     88     18\n5      5     11     23   9190      5    288    286      1    173    429     36\n6      7     18     39  10743      3    146    282      0    203    331     26\n  Gene72 Gene73 Gene74 Gene75 Gene76 Gene77 Gene78 Gene79 Gene80 Gene81 Gene82\n1     35     13   8781      9     85      0      0      4     74    268    119\n2     59     16   8585      9     81      0      2      2    106    149    133\n3      1     13  11252      5    118      0      1      7    302     89    151\n4     75     12   7089      4     87      0      1      4     98    115    126\n5     49     12  10185      8     89      0      0      2    311    234    105\n6     40     13   8259      8     85      0      2      4    110    217    134\n  Gene83 Gene84 Gene85 Gene86 Gene87 Gene88 Gene89 Gene90 Gene91 Gene92 Gene93\n1     56      1    275    118    157   1126    248     15    155     66     28\n2     49      0    326    115    160   1100    250     24    147    118     34\n3     37      3    247    105    221    801    195      1    151     11     37\n4     42      0    233    110    169    918    245      4    148    135     31\n5     47      1    330    114    193    732    253     16    148     22     32\n6     40      1    191    112    179   1000    222     20    149      7     32\n  Gene94 Gene95 Gene96 Gene97 Gene98 Gene99 Gene100 Gene101 Gene102 Gene103\n1     50    224    131    276     12    108     937      17       1     148\n2     52    270    139    237     16     98     974      18       9     130\n3     90    162    142    463      0    147    1202       0       2     186\n4     81    166    138    266      7    105    1048       9       9     164\n5     27    314    131    316      2    145     982       7       2     154\n6     72    195    134    353     18    125     729      23       5     142\n  Gene104 Gene105 Gene106 Gene107 Gene108 Gene109 Gene110 Gene111 Gene112\n1     385       3      49      17      15      16      77      46      37\n2     269      14      95      11      10      17      55      26      20\n3     188       9       3      29      21       8      23      10       0\n4     364       9      46      35      12      19      49      31      35\n5     176       4      72      28      11      15       2      30       9\n6     427      29      62      15      20      10      16      60      25\n  Gene113 Gene114 Gene115 Gene116 Gene117 Gene118 Gene119 Gene120 Gene121\n1       1      21       8       1     853      37     240     776       4\n2       2      20      14       2     746      43     211     724       2\n3       1       8       6       1     247      60     294     185       2\n4       1      25       8       2     568      55     236     465       2\n5       0       9       6       2     511      53     222     675       4\n6       2       9      13       1    1066      45     316    1085       2\n  Gene122 Gene123 Gene124 Gene125 Gene126 Gene127 Gene128 Gene129 Gene130\n1       3      24     303      40      89     142     141    1582     557\n2       2      24     444      24      69     100     132    1511     609\n3       3      76     145      41     120     203     255    1885     163\n4       3      14     338      26     125     181     202    1744     612\n5       3      77     515      19      81     201     218    2121     266\n6       3      15     313      40      39      83       2    1527     481\n  Gene131 Gene132 Gene133 Gene134 Gene135 Gene136 Gene137 Gene138 Gene139\n1     351      55    1016      50     243      20     104     158       5\n2     322      41    1441      45     250      15      88     206       6\n3     507      84     907      94      47      22      62     315       5\n4     366     100    1162      74     194      19      47     353       5\n5     474      37    1432      96     274      22     105     110       6\n6     353      69    1520      10     281      21      54     169       4\n  Gene140 Gene141 Gene142 Gene143 Gene144 Gene145 Gene146 Gene147 Gene148\n1       1     252      22      40     104       8      26     404     634\n2       4     254      18     118      88       3      31     407     808\n3       0     397      88       0      26       1      25     389     769\n4       1     491      26      20     114       1      29     398     722\n5       1     361      42      23      76       7      30     396     733\n6       1     423       1      15     127       2      33     397     810\n  Gene149 Gene150 Gene151 Gene152 Gene153 Gene154 Gene155 Gene156 Gene157\n1      40      13       8      35     622      36      30      65     220\n2      20      17       4      78     531      41      26      41     193\n3      22      31       3       0     469      84       5      79     207\n4      36      28       4      17     374      14      31      55     224\n5      10      18       8       4     510     116      32      40     205\n6      31      25       1      90     425       6      22      43     190\n  Gene158 Gene159 Gene160 Gene161 Gene162 Gene163 Gene164 Gene165 Gene166\n1       9     517      61      21     102     205      35     159     420\n2      10     413      81      16      81     202      28     210     216\n3       3     555      54      38     130     341      19     204      38\n4       7     570      83       3     109     258      36     183     216\n5       7     518      58      12      63     273      29     212     324\n6       3     504      44      19     100     375      21     179     183\n  Gene167 Gene168 Gene169 Gene170 Gene171 Gene172 Gene173 Gene174 Gene175\n1     103     915       1     331       2     239     891    1823     489\n2      83     854       0     269       0     236     750    1707     465\n3      95    1084       3     369       0      87     318     581     677\n4      95    1111       1     432       0      72    1042     150     608\n5      83     938       1     354       0     318    1102    3281     585\n6      82     960       1     335       0     156     810     448     505\n  Gene176 Gene177 Gene178 Gene179 Gene180 Gene181 Gene182 Gene183 Gene184\n1      44     138      94      28      71     148     276     597       2\n2      99     180      98      27      80     108     349     581       5\n3       2     272      27       7       3     172     302     603       5\n4      78     195     123      10      56     113     324     590       6\n5      95     234      75      31      91     123     267     584       4\n6      61     170      84      11      37     205     261     605       3\n  Gene185 Gene186 Gene187 Gene188 Gene189 Gene190 Gene191 Gene192 Gene193\n1      32     157     111      90      15     186      76    3133      16\n2      46     161      84      96      14     216      86    2941      28\n3       6      81     162     107       1     892     526    3985      11\n4      20     126      15     103       4      41     189    4552      20\n5      58     155     185      94      12     248     635    3488      26\n6      56      94      93      90      15    1013     310    3643      14\n  Gene194 Gene195 Gene196 Gene197 Gene198 Gene199 Gene200 Gene201 Gene202\n1     110     869      27      58     196      17    1431      74      58\n2     114     820      48      45     194      17    1332      65      85\n3     308     928       5      19     219      13    3909      82      56\n4     234     820      13      47     206      18    3193      76      62\n5     370     884      33      28     193      14    3491      82      67\n6     182     793       3      35     205      16    2670      73      72\n  Gene203 Gene204 Gene205 Gene206 Gene207 Gene208 Gene209 Gene210 Gene211\n1       5      23       8       2      13     175       3    1054       4\n2       9      23       2       1      12     154       1    1041       4\n3       2       6       1       0      14     211       0      86      23\n4       0      12       5       0      13     196       0     580      12\n5       2      20       4       0      13     203       0     555       5\n6       3      17       3       2      13     184       0    1069       3\n  Gene212 Gene213 Gene214 Gene215 Gene216 Gene217 Gene218 Gene219 Gene220\n1    2226       2      83      53     160      15       3     250       8\n2    1952       6      27      82     139      19       5     239       9\n3     519       3      54      13     231      30      14     252       8\n4    1592       4      43      16     138      22       5     251       9\n5    1248       8      96      59     132      34       2     249       9\n6    1422       5      64      91     294      30       9     245       8\n  Gene221 Gene222 Gene223 Gene224 Gene225 Gene226 Gene227 Gene228 Gene229\n1     319    1678     293    3756     162      35     151     201      38\n2     303    1447     230    2859     161      20      77     188      37\n3     310    1430      73    3078     186      58      16     221       2\n4     326    1542     262    3511     172      26      20     225      79\n5     309    1665     204    3014     188       8     149     186      31\n6     314    1467     276    2215     183      56     243     219      22\n  Gene230 Gene231 Gene232 Gene233 Gene234 Gene235 Gene236 Gene237 Gene238\n1      40     578    1770     247      74     141     105     239      58\n2      21     553    1616     256     101      88      82     220     117\n3       3     696     438     225      59       3     148     130       9\n4      32     637    1553     236      77       3     141     108      64\n5       4     489    1830     246      82     165     118     104     118\n6       8     697    1401     256      47     152     139     302      52\n  Gene239 Gene240 Gene241 Gene242 Gene243 Gene244 Gene245 Gene246 Gene247\n1     335     116       4      63     364      31      67    8266       2\n2     308      96       4      59     326      74      51    8664       8\n3     470     208      23      95     412       3      41    8327      13\n4     329     213      11      71     343      56      34    8332      13\n5     380     122       4      71     402      34      66    8552       5\n6     334      86      12      84     330      18      62    8886      12\n  Gene248 Gene249 Gene250 Gene251 Gene252 Gene253 Gene254 Gene255 Gene256\n1      39      51      13      78       2     144      93      17     627\n2      48      47      24      84       6     194     106      20     611\n3       8      56      19      59       3     434     176      84     853\n4      29      50      22      87       4     279     152       6     615\n5      67      53      31      62       5     132     123      32     779\n6      25      50      11      85       2     135     203      32     825\n  Gene257 Gene258 Gene259 Gene260 Gene261 Gene262 Gene263 Gene264 Gene265\n1      30      14     419     102     675      46     120      23      21\n2      38      17     523     113     607     111     101       8      20\n3       7       2     757      94     399       1       7      60      13\n4      55       5     609     103     502      57     143       3      19\n5      26       3     280      81     463     130      19      41       5\n6       7       7     746      96     534      44      48       7      15\n  Gene266 Gene267 Gene268 Gene269 Gene270 Gene271 Gene272 Gene273 Gene274\n1      16       1      62     709       3     141      11     108      69\n2       9       2      54     661       2     163      17     100     110\n3       5       1      52     601      22     152       6      98      30\n4       7       1      69     646       7     130       8     105      58\n5       2       1      69     589      16     151      11      97     167\n6      15       2      57     694       8     144      15     102      67\n  Gene275 Gene276 Gene277 Gene278 Gene279 Gene280 Gene281 Gene282 Gene283\n1     110     216      26      39       5    2571      69     377    4921\n2      98     243      27      44       4    2889      69     448    4836\n3     113      72      14      60       1     485     116     495    4370\n4     115     193      33      32       2    3963     100     479    4641\n5     122     205      16      54       2    1215     121     455    4476\n6     102      96      20      47       0    2046      47     411    4622\n  Gene284 Gene285 Gene286 Gene287 Gene288 Gene289 Gene290 Gene291 Gene292\n1      24     237      71    2764     125     307    1344     437     429\n2      19     230      71    2742      94     303    1254     844     601\n3      24     262      96    2906     155     388    1477     143     114\n4      25     244      57    2606     115     427    1324    1076     522\n5      22     254      75    2844      84     311    1404     312      88\n6      22     263      98    2831     135     249    1524     576     150\n  Gene293 Gene294 Gene295 Gene296 Gene297 Gene298 Gene299 Gene300 Gene301\n1      55     157       5      24      16     594       8      55       2\n2      64     194      10      22      22     498      18      44       3\n3      52     264       6      30      51     785      17       1       2\n4      52     280       5      26      14     679      13      37       2\n5      56      91      10      26      28     680      11      18       1\n6      63     171       5      27       7     845      16       4       2\n  Gene302 Gene303 Gene304 Gene305 Gene306 Gene307 Gene308 Gene309 Gene310\n1    7380      72       5      49      16      18     167      39     131\n2    6331      90       8      43      36      11     183      36     121\n3    6978     114      13      46      27      17     208       9      33\n4    6661      89      11      52      19      22     211       6      59\n5    6519     105      10      48      29      13     153      27      74\n6    6528      87      14      53      15      17     164      50      92\n  Gene311 Gene312 Gene313 Gene314 Gene315 Gene316 Gene317 Gene318 Gene319\n1     655      63     115      11     140     282    1225     109       6\n2     296      67      97       8     139     236    1157     114       3\n3      55     180     121      19     121     338     273      91       5\n4     365      74     114       5     143     291     907     103       8\n5     586       5     139       9     135     363    1182     116       3\n6     759     123     119      20     135     280     334      93       5\n  Gene320 Gene321 Gene322 Gene323 Gene324 Gene325 Gene326 Gene327 Gene328\n1     330      57      33      43     306      86      22       4      28\n2     316      68      29      59     572      69      22       4      25\n3     330      81      30     134     124     164      21       6      33\n4     326      66      31      86     123      64      21       4      31\n5     331      53      30      50     107     121      22       2      33\n6     332      43      32      71     483     110      21       2      33\n  Gene329 Gene330 Gene331 Gene332 Gene333 Gene334 Gene335 Gene336 Gene337\n1     307      33       8     278      58       9       7      22      14\n2     404      24      11     227      56       9      15      36      14\n3     488      43      10     406      56       1      15       8       2\n4     357      20      13     264      55      10       9      32      13\n5     241      18       8     444      56       9      10      18       4\n6     402      42      10     513      57       8      16      19      17\n  Gene338 Gene339 Gene340 Gene341 Gene342 Gene343 Gene344 Gene345 Gene346\n1      12      88       7      45    1896      35       9      19    1042\n2      14     103      14      70    1717      27      21      19    2227\n3       6      70       6       9    1578      11      31       8     137\n4      11     127       4      48    1925      27      20      12    2354\n5       9      70       8      21    1684      22      20      19    3050\n6       7      88      11       8    1859      17      21      24    1112\n  Gene347 Gene348 Gene349 Gene350 Gene351 Gene352 Gene353 Gene354 Gene355\n1      30      77     159     164      53     122      36      18      66\n2      21     114     147     160      42     132      51      22      58\n3      42      25     216     236      46     152      42       6      87\n4      13      67     148     223      47     128      57       6      88\n5      19      41     125     211      54     125      34      29      56\n6      38      81     178     250      44     128      34      17      81\n  Gene356 Gene357 Gene358 Gene359 Gene360 Gene361 Gene362 Gene363 Gene364\n1      14     267       9     168       2       9      18       0     120\n2      22     243       5     382       2       1      21       0     101\n3       3     259       9       0      10       6      51       0      45\n4      20     258       8      84       3       6      39       0     185\n5      10     257       6     325       3       4      27       0      15\n6       8     248       5     234       5       3      41       0      64\n  Gene365 Gene366 Gene367 Gene368 Gene369 Gene370 Gene371 Gene372 Gene373\n1     790      51      98       6    1179     198    2562     346     296\n2     747      67      94      12    1324     424    2635     295     306\n3     857     259     313       1    2478       3    2814     361     313\n4     765     173     190      15    1594      62    2559     334     308\n5     845       2      28       1    2649     178    2586     371     292\n6     801     351     276       8    1781     301    2571     339     317\n  Gene374 Gene375 Gene376 Gene377 Gene378 Gene379 Gene380 Gene381 Gene382\n1     612      13     166      21      61      26      27    1155     978\n2     613      14     319      22      85      11      39     960     911\n3     160      19      10      27      65      32      13    1108     908\n4     313      16     282      21      85       2      24    1127     990\n5     434      16      77      18      79      17      30    1001     955\n6      93       8      57      21      61      38      27     916     938\n  Gene383 Gene384 Gene385 Gene386 Gene387 Gene388 Gene389 Gene390 Gene391\n1     124       3     267     245      77     128      98     272     282\n2     127       1     255     245      68     135      98     512     562\n3     144      37     495      52      80      24      96      97      66\n4     136      22     152     189      79      85      95     334     643\n5     121       1     306     184      73     115      97     334     515\n6     117       4     427     325      76     111      97      18      18\n  Gene392 Gene393 Gene394 Gene395 Gene396 Gene397 Gene398 Gene399 Gene400\n1     208     157     592       5     241      57    1146      13    1720\n2     362     233     547      34     442     101    2001      24    2700\n3      43      24     692       1      56       7     286      13    1043\n4     217     239     599       6     661      98    2298      21    2418\n5     120     328     606      13      44      86    1498      16     800\n6     126     170     713       9     394      57    1005      20     681\n  Gene401 Gene402 Gene403 Gene404 Gene405 Gene406 Gene407 Gene408 Gene409\n1    3289     841      44     102     137      51      78    2416     139\n2    4943    1245      47     111     152      56      67    2398     139\n3    1670     543      79     112     172      64      94    2285     276\n4    3322    1161      61     106     151      54      87    2204     134\n5    5556     606      41     113     144      48      73    2347     177\n6    5801    1017      39     103     178      54      60    2375      41\n  Gene410 Gene411 Gene412 Gene413 Gene414 Gene415 Gene416 Gene417 Gene418\n1     228     312      14    1683      97      54      24    1101    1568\n2     205     315      22    1224    1211      30      28    1015    1556\n3     192     383      25     908     107       5      13     324     369\n4     207     401      15    1666     481       5      19    1127     903\n5     217     345      19    1569     181      38      27     855     700\n6     198     278      26    1486      71      63      22    1733     882\n  Gene419 Gene420 Gene421 Gene422 Gene423 Gene424 Gene425 Gene426 Gene427\n1      19      36      50     787     657      69       3     826      58\n2      26      45      39     756     676      79       1     493      52\n3      14       5      41     210     826     126       1     231      94\n4      19      23      31      87     740      48       4     277      89\n5      22      60      43    1166     801     113       4     656      73\n6      15      31      39     470     793      98       2     570      59\n  Gene428 Gene429 Gene430 Gene431 Gene432 Gene433 Gene434 Gene435 Gene436\n1      18     464     135       9     105      59      11      15     174\n2      17     431     143      16     142      57      24      23     175\n3      23     435     192      10      99     110       0       9     293\n4      18     456     234       5     147      11      12      12      88\n5      17     443     139      17     109       1      20      19     175\n6      25     439     179       4     125      73       8      14     224\n  Gene437 Gene438 Gene439 Gene440 Gene441 Gene442 Gene443 Gene444 Gene445\n1      32      89      47      22      50     164     136       1     435\n2      30      79      34      19      44     113     124       0     533\n3      40       5       8      38      47      45     155       0     476\n4      27      98      31      15      45     110     130       1     513\n5      36      60      32      19      45     120     135       1     513\n6      31      26      33      39      45     186     163       0     392\n  Gene446 Gene447 Gene448 Gene449 Gene450 Gene451 Gene452 Gene453 Gene454\n1      27     130    1719     370      26      42       1      19      46\n2      33     141     858     325      26      54       1      10      41\n3      99     177     344     145       6       1       0      21      27\n4      72     179     501     146      23      13       0      12      38\n5      35     174     992     342      29      18       0      10      17\n6      29     180    1274     233      16      60       0      21      31\n  Gene455 Gene456 Gene457 Gene458 Gene459 Gene460 Gene461 Gene462 Gene463\n1       2       1      54      22     112     472     660      32      17\n2       0       2      39      11     110     411     618      50      20\n3      35      16      23      13     114     315     843      83      57\n4       7      12      47      21     110     486     748      79      49\n5       1      21      18      16     112     419     668      34      32\n6      14      19      16      16     112     451     712      67      32\n  Gene464 Gene465 Gene466 Gene467 Gene468 Gene469 Gene470 Gene471 Gene472\n1      42     104     937     162     116     605      34      14      66\n2      21      62     481     135     106     590      32      12      42\n3      55       9     321     239       3     564      23       2      11\n4      35       1     581     229      63     599      40      15      45\n5      60      34     579     177     117     575      29      12      78\n6      28     127     457     243     203     588      26       7      57\n  Gene473 Gene474 Gene475 Gene476 Gene477 Gene478 Gene479 Gene480 Gene481\n1      32    1073     138    1258     163      20       6      53     762\n2      35     970     171    1193     199      11       9      56     740\n3       7     209     178    2135     131       9      17     128     231\n4       3     287     172     982     106      17       5     153     238\n5      26     611     194    1686     104       3      11       4      76\n6      14     577     167    1685     197      20      10     137     560\n  Gene482 Gene483 Gene484 Gene485 Gene486 Gene487 Gene488 Gene489 Gene490\n1     992    1082      15     423      69     730      58     218    1675\n2     902     926      12     203      87     838      78     224    1728\n3     201     212       2      32     326     710      66     277    1808\n4    1061     678       8       1      72     825      69     280    1812\n5     826    1473      18     334       8     794      82     282    1788\n6      59    1122       7     198     420     643      68     262    1818\n  Gene491 Gene492 Gene493 Gene494 Gene495 Gene496 Gene497 Gene498 Gene499\n1     535    1937     166       3    2405     275    2008    1681      65\n2     549    1528     177       3    2262     273    1959    1654      70\n3     494    3667     237       7      67       6     534     439       5\n4     532    3312     223       3    2556     196    1169     374      14\n5     507    2511     171       2    1933     250    1330     922      29\n6     478    1160     208       3    1158       1    2213      18      14\n  Gene500 Gene501 Gene502 Gene503 Gene504 Gene505 Gene506 Gene507 Gene508\n1       4       1      20     205      23     176      47      14      22\n2       6      10      31     180      12     380      92      45      32\n3       7       5      38       7      18      11       5     123     148\n4       8       8      38      22      15     131      59      50      56\n5       6       4      21      90      25     312       4      71      83\n6       3       1      31     274      28     240       4      25      86\n  Gene509 Gene510 Gene511 Gene512 Gene513 Gene514 Gene515 Gene516 Gene517\n1      24     137     143     455      23       7       1       5     499\n2      53     147     113     406      31       4       9      12     505\n3     313     197     242     401       0      11       1      10    1154\n4      58      80      80     481       4       9       2       6     472\n5     154     198     141     415      31       9       3       7     742\n6     332     143     127     385       5      11       8      10     661\n  Gene518 Gene519 Gene520 Gene521 Gene522 Gene523 Gene524 Gene525 Gene526\n1     112    1030    2644       8      76      33       2      55    3567\n2     109     838    2676       9      67      51       2      36    2726\n3      73     226    2727      11      21      62       2      37    1033\n4      76    1538    2696       9      42      41       2      37    2523\n5      99     996    2667      11      26      45       2      46    1669\n6     130     298    2706       6      49      48       2      60    4378\n  Gene527 Gene528 Gene529 Gene530 Gene531 Gene532 Gene533 Gene534 Gene535\n1     292     312     290      64       0      57     574     144      56\n2     310     323     275      41       8      67     488     140      85\n3     300     283     381      90      10     131     967      37     113\n4     293     283     339     117      11     111     492      82      95\n5     311     317     299      16       1      92     431     117      56\n6     301     337     189      16      11       5     682     128      51\n  Gene536 Gene537 Gene538 Gene539 Gene540 Gene541 Gene542 Gene543 Gene544\n1     231      84     101    1252      43       2    1026      89      62\n2     219      63     120    1278      47       8     734      56      80\n3      59      23     106    1260      23      17     633      51     111\n4     348      26     106    1270      34       6     760      78      97\n5      73      76     113    1261      45       5    1030      46      42\n6     197     128     107    1260      45       9     643      57     109\n  Gene545 Gene546 Gene547 Gene548 Gene549 Gene550 Gene551 Gene552 Gene553\n1     175     324      82      27      53      53      17       6     313\n2     179     285      50      33      58      29      19       3     415\n3     170     394     355      16      48      51       6      47     305\n4     175     384     133      26      47      48       6      11     311\n5     175     246     288      23      58      55       9      19     324\n6     177     295     218      20      51      32      18      32     323\n  Gene554 Gene555 Gene556 Gene557 Gene558 Gene559 Gene560 Gene561 Gene562\n1       7     655      17     299      19     207      15      96      13\n2      17     606      19     263      19     153       9     114      25\n3      59     744      27     388      21     217      11      88       7\n4      20     716      27     185      18     221      11      81      28\n5       9     792      24     316      19     190      14      84      11\n6      52     751      17     299      20     210       9     110       0\n  Gene563 Gene564 Gene565 Gene566 Gene567 Gene568 Gene569 Gene570 Gene571\n1      33     158      51      28      17       1       5      19      23\n2      36     141      52      25       1       1       5      20      17\n3      68     183      73      49      13       1       2      22     152\n4      54     162      59      22       9       1       4      20      60\n5      45     186      48      14       1       1       6      19     165\n6      62     201      66      34      13       1       4      21      40\n  Gene572 Gene573 Gene574 Gene575 Gene576 Gene577 Gene578 Gene579 Gene580\n1      52       0      42     189     252      55     639      41      52\n2      88       2      63     189     239      77     668      48      41\n3     142      10       5     150     296      98     228      48      14\n4     185       5      42     163     272      66     609      45      22\n5      48       1       9     168     297      80     409      52      14\n6     112       2      48     205     299      83     458      47      41\n  Gene581 Gene582 Gene583 Gene584 Gene585 Gene586 Gene587 Gene588 Gene589\n1     310       9     332    1458     173      45      55     147     129\n2     308       8     164    1879     325      55      46     147     116\n3      95      10      96    1285       2      82       0       0     155\n4     298       8     428    1606     280      76      48      46     147\n5     247       9     101    1082     109      47      65     111     150\n6      79       8     305    1487     343      54      71      37     133\n  Gene590 Gene591 Gene592 Gene593 Gene594 Gene595 Gene596 Gene597 Gene598\n1      30       0       0       2       1      14      22      11       1\n2     770       4       2       2       2      22      14      24       6\n3      24       1       0       1       0      22      17      13       1\n4     593       4       1       1       1      24      22      32       7\n5     244       5       1       2       2      17      17      21       0\n6     544       3       0       1       1      21      21      21       2\n  Gene599 Gene600\n1      24      69\n2      82      88\n3      25      70\n4      37      87\n5       4      66\n6      25      80"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-2-by-2-fixed-effect-factorial-anova-1",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-2-by-2-fixed-effect-factorial-anova-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | 2-by-2 fixed effect factorial ANOVA",
+    "text": "R INTERLUDE | 2-by-2 fixed effect factorial ANOVA\n\ncontinuous response variable and two main effect categorical variables\n\n\ngene &lt;- rna_data$Gene80\nmicrobiota &lt;- rna_data$Microbiota\ngenotype &lt;- rna_data$Genotype\nboxplot(gene ~ microbiota)\nboxplot(gene ~ genotype)\nboxplot(gene ~ microbiota*genotype)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#by-2-fixed-effect-boxplots",
+    "href": "Lecture_Folder/Week7b.html#by-2-fixed-effect-boxplots",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "2-by-2 fixed effect boxplots",
+    "text": "2-by-2 fixed effect boxplots"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#by-2-fixed-effect-boxplots-1",
+    "href": "Lecture_Folder/Week7b.html#by-2-fixed-effect-boxplots-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "2-by-2 fixed effect boxplots",
+    "text": "2-by-2 fixed effect boxplots"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#by-2-fixed-effect-boxplots-2",
+    "href": "Lecture_Folder/Week7b.html#by-2-fixed-effect-boxplots-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "2-by-2 fixed effect boxplots",
+    "text": "2-by-2 fixed effect boxplots"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing",
+    "href": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Fit the factorial linear model | different ways to do the same thing",
+    "text": "Fit the factorial linear model | different ways to do the same thing\n\nrna_aov &lt;- aov(gene ~ microbiota + genotype + microbiota:genotype)\nrna_aov &lt;- aov(gene ~ microbiota*genotype)\nrna_lm &lt;- lm(gene ~ microbiota + genotype + microbiota:genotype)\nrna_lm &lt;- lm(gene ~ microbiota*genotype)\n\n\nExamine the fitted model diagnostics and the ANOVA results table"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing-1",
+    "href": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Fit the factorial linear model | different ways to do the same thing",
+    "text": "Fit the factorial linear model | different ways to do the same thing\n\nplot(rna_aov)\nsummary(rna_aov)\nanova(rna_aov)\n\nplot(rna_lm)\nsummary(rna_alm)\nanova(rna_alm)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing-2",
+    "href": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Fit the factorial linear model | different ways to do the same thing",
+    "text": "Fit the factorial linear model | different ways to do the same thing\n\nanova(rna_aov)\n\nAnalysis of Variance Table\n\nResponse: gene\n                    Df Sum Sq Mean Sq F value    Pr(&gt;F)    \nmicrobiota           1 665760  665760 51.7040 3.835e-10 ***\ngenotype             1 140114  140114 10.8815  0.001480 ** \nmicrobiota:genotype  1 111901  111901  8.6904  0.004247 ** \nResiduals           76 978605   12876                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nanova(rna_lm)\n\nAnalysis of Variance Table\n\nResponse: gene\n                    Df Sum Sq Mean Sq F value    Pr(&gt;F)    \nmicrobiota           1 665760  665760 51.7040 3.835e-10 ***\ngenotype             1 140114  140114 10.8815  0.001480 ** \nmicrobiota:genotype  1 111901  111901  8.6904  0.004247 ** \nResiduals           76 978605   12876                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing-3",
+    "href": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing-3",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Fit the factorial linear model | different ways to do the same thing",
+    "text": "Fit the factorial linear model | different ways to do the same thing\n\nsummary(rna_aov)\n\n                    Df Sum Sq Mean Sq F value   Pr(&gt;F)    \nmicrobiota           1 665760  665760   51.70 3.83e-10 ***\ngenotype             1 140114  140114   10.88  0.00148 ** \nmicrobiota:genotype  1 111901  111901    8.69  0.00425 ** \nResiduals           76 978605   12876                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nsummary(rna_lm)\n\n\nCall:\nlm(formula = gene ~ microbiota * genotype)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-269.30  -63.96    0.95   32.95  300.70 \n\nCoefficients:\n                         Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                171.55      25.37   6.761 2.47e-09 ***\nmicrobiotamono             107.65      35.88   3.000  0.00365 ** \ngenotypeB                 -158.50      35.88  -4.417 3.27e-05 ***\nmicrobiotamono:genotypeB   149.60      50.75   2.948  0.00425 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 113.5 on 76 degrees of freedom\nMultiple R-squared:  0.484, Adjusted R-squared:  0.4636 \nF-statistic: 23.76 on 3 and 76 DF,  p-value: 5.981e-11"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#interaction-plots-1",
+    "href": "Lecture_Folder/Week7b.html#interaction-plots-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Interaction Plots",
+    "text": "Interaction Plots\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\nsummary_df &lt;- rna_data |&gt;\n  group_by(Genotype, Microbiota) |&gt;\n  summarise(mean_response = mean(Gene80), .groups = \"drop\")\n\nsummary_df &lt;- rna_data |&gt;\n  group_by(Genotype, Microbiota) |&gt;\n  summarise(mean_response = mean(Gene80),\n            se = sd(Gene80) / sqrt(n()), .groups = \"drop\")\n\n# ggplot interaction plot\nggplot(summary_df, aes(x = Genotype, y = mean_response, group = Microbiota, color = Microbiota)) +\n  geom_line(size = 1.2) +\n  geom_point(size = 3) +\n  geom_errorbar(aes(ymin = mean_response - se, ymax = mean_response + se), width = 0.2) +\n  labs(title = \"Interaction Plot with SE\",\n       x = \"Genotype\",\n       y = \"Mean Expression of Gene80\",\n       color = \"Microbiota\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#interaction-plots-2",
+    "href": "Lecture_Folder/Week7b.html#interaction-plots-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Interaction Plots",
+    "text": "Interaction Plots\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#means-tests-factor-level-combinations-in-multi-factor-anova",
+    "href": "Lecture_Folder/Week7b.html#means-tests-factor-level-combinations-in-multi-factor-anova",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Means tests | factor level combinations in multi-factor ANOVA",
+    "text": "Means tests | factor level combinations in multi-factor ANOVA\n\nThe F-ratio test for a single-factor ANOVA tests for any difference among groups.\nIf we want to understand specific differences, we need further “contrasts”.\nUnplanned comparisons (post hoc)\nPlanned comparisons (a priori)\nNow we need to make ‘pseudo-factors’ that combine our levels of interest"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#planned-a-priori-contrasts",
+    "href": "Lecture_Folder/Week7b.html#planned-a-priori-contrasts",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Planned (a priori) contrasts",
+    "text": "Planned (a priori) contrasts"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-2x2-fixed-effects-factorial-anova-contrasts-interaction",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-2x2-fixed-effects-factorial-anova-contrasts-interaction",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | 2x2 Fixed-Effects Factorial ANOVA contrasts & interaction",
+    "text": "R INTERLUDE | 2x2 Fixed-Effects Factorial ANOVA contrasts & interaction\ncontinuous response and two main effect variables\n\nrna_data &lt;-read.table(\"Stickle_RNAseq.tsv\", header=T, sep=\"\\t\")\ngene &lt;- rna_data$Gene80\nmicrobiota &lt;- rna_data$Microbiota\ngenotype &lt;- rna_data$Genotype\n\nmake new “pseudo factor,” combining genotype and microbiota\n\ngxm &lt;- interaction(genotype,microbiota)\nlevels(gxm)\n\n[1] \"A.conventional\" \"B.conventional\" \"A.mono\"         \"B.mono\"        \n\nboxplot(gene ~ gxm)\n\n\n\n\n\n\n\n\nspecify the following 2 contrasts\n\ncontrasts(gxm) &lt;- cbind(c(2, -1, 0, -1), c(-1, -1, 3, -1))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-2x2-fixed-effects-factorial-anova-contrasts-interaction-1",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-2x2-fixed-effects-factorial-anova-contrasts-interaction-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | 2x2 Fixed-Effects Factorial ANOVA contrasts & interaction",
+    "text": "R INTERLUDE | 2x2 Fixed-Effects Factorial ANOVA contrasts & interaction\nFit the factorial linear model\n\nrna_aov &lt;- aov(gene ~ gxm)\n\nExamine the ANOVA table, using supplied contrasts. Figure out the appropriate titles to give them.\n\nsummary(rna_aov, split = list(gxm = list('xxx'=1,'xxx'=2)))\n\nWhat does the contrast summary tell you about the nature of the interaction?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#nested-anova-walking-stick-example",
+    "href": "Lecture_Folder/Week7b.html#nested-anova-walking-stick-example",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Nested ANOVA | Walking stick example",
+    "text": "Nested ANOVA | Walking stick example\n\nExample 1: Study of “repeatability” (simple nested design)\nThe walking stick, Timema cristinae, is a wingless herbivorous insect on plants in chaparral habitats of California.\nNosil and Crespi (2006) measured individuals using digital photographs.\nTo evaluate measurement repeatability they took two separate photographs of each specimen.\nAfter measuring traits on one set of photographs, they repeated the measurements on the second set."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#nested-anova-walking-stick-example-1",
+    "href": "Lecture_Folder/Week7b.html#nested-anova-walking-stick-example-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Nested ANOVA | Walking stick example",
+    "text": "Nested ANOVA | Walking stick example\nEach pair of dots represents the two measurements"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#nested-anova-walking-stick-example-2",
+    "href": "Lecture_Folder/Week7b.html#nested-anova-walking-stick-example-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Nested ANOVA | Walking stick example",
+    "text": "Nested ANOVA | Walking stick example"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#nested-anova-anova-table-of-results",
+    "href": "Lecture_Folder/Week7b.html#nested-anova-anova-table-of-results",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Nested ANOVA | ANOVA Table of Results",
+    "text": "Nested ANOVA | ANOVA Table of Results"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#nesting-logic",
+    "href": "Lecture_Folder/Week7b.html#nesting-logic",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Nesting Logic",
+    "text": "Nesting Logic"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#nesting-equations",
+    "href": "Lecture_Folder/Week7b.html#nesting-equations",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Nesting equations",
+    "text": "Nesting equations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#nesting-hypothesis-tests",
+    "href": "Lecture_Folder/Week7b.html#nesting-hypothesis-tests",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Nesting hypothesis tests",
+    "text": "Nesting hypothesis tests"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#nesting-ms-calculations",
+    "href": "Lecture_Folder/Week7b.html#nesting-ms-calculations",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Nesting MS calculations",
+    "text": "Nesting MS calculations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#nested-anova-table-of-results",
+    "href": "Lecture_Folder/Week7b.html#nested-anova-table-of-results",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Nested ANOVA table of results",
+    "text": "Nested ANOVA table of results"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-nested-anova",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-nested-anova",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Nested ANOVA",
+    "text": "R INTERLUDE | Nested ANOVA"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-nested-anova-1",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-nested-anova-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Nested ANOVA",
+    "text": "R INTERLUDE | Nested ANOVA\n\nandrew_data &lt;- read.table('andrew.tsv', header=T, sep=‘\\t')\nhead(andrew_data)\n\n\nThere are four variables: ‘TREAT’, ‘PATCH’, ‘QUAD’ and ‘ALGAE’\nThe main effect factor is TREAT\nMake a simplified factor called TREAT2, in which 0% and 33% are a level called “low” and 66% and 100% are “high”\n\n\nandrew_data$TREAT2 &lt;- factor(c(rep(“low”,40),rep(“high”,40))\n\n\nThe nested factor is PATCH - also need to turn this into a factor\n\n\nandrew_data$PATCH &lt;- factor(andrew_data$PATCH)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-nested-anova-2",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-nested-anova-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Nested ANOVA",
+    "text": "R INTERLUDE | Nested ANOVA\n\nIn this case, our response variable is ALGAE\nLook at the distribution of ALGAE for the two levels of TREAT2 using boxplots based on the patch means, which are the replicates in this case.\n\n\nandrew.agg &lt;- with(andrew_data, aggregate(data.frame(ALGAE), \n                  by = list(TREAT2=TREAT2, PATCH=PATCH), mean)\n\nlibrary(nlme)\nandrew.agg &lt;- gsummary(andrew_data, groups=andrew_data$PATCH)\n\nboxplot(ALGAE ~ TREAT2, andrew.agg)\n\n\nEvaluate assumptions based on the boxplots\nIs the design balanced (equal numbers of sub-replicates per PATCH)?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-nested-anova-3",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-nested-anova-3",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Nested ANOVA",
+    "text": "R INTERLUDE | Nested ANOVA\n\nRun the nested ANOVA:\n\n\nnested.aov &lt;- aov(ALGAE ~ TREAT2 + Error(PATCH), data=andrew_data)\nsummary(nested.aov)\n\n\nDo we detect an effect of TREAT2 (high vs low sea urchin density)?\nEstimate variance components to assess relative contributions of the random factors\n\n\nlibrary(nlme)\nVarCorr(lme(ALGAE ~ 1, random = ~1 | TREAT2/PATCH, andrew_data))\n\n\nCalculate the % of variation due to between-treatment differences vs. due to among patches within treatment differences.\nWhat do these variance component estimates tell us???"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#what-is-an-experimental-study",
+    "href": "Lecture_Folder/Week7b.html#what-is-an-experimental-study",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "What is an experimental study?",
+    "text": "What is an experimental study?\n\nIn an experimental study the researcher assigns treatments to units\nIn an observational study nature does the assigning of treatments to units\nThe crucial advantage of experiments derives from the random assignment of treatments to units\nRandomization minimizes the influence of confounding variables\nCan infer cause and effect more easily"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#mount-everest-example",
+    "href": "Lecture_Folder/Week7b.html#mount-everest-example",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Mount Everest example",
+    "text": "Mount Everest example\nSurvival of climbers of Mount Everest is higher for individuals taking supplemental oxygen than those who don’t.\nWhy?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#mount-everest-example-1",
+    "href": "Lecture_Folder/Week7b.html#mount-everest-example-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Mount Everest example",
+    "text": "Mount Everest example\n\nOne possibility is that supplemental oxygen (explanatory variable) really does cause higher survival (response variable).\nThe other is that the two variables are associated because other variables affect both supplemental oxygen and survival.\nUse of supplemental oxygen might be a benign indicator of a greater overall preparedness of the climbers that use it.\nVariables (like preparedness) that distort the causal relationship between the measured variables of interest (oxygen use and survival) are called confounding variables\nThey are correlated with the variable of interest, and therefore preventing a decision about cause and effect.\nWith random assignment, no confounding variables will be associated with treatment except by chance."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#clinical-trials",
+    "href": "Lecture_Folder/Week7b.html#clinical-trials",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Clinical Trials",
+    "text": "Clinical Trials\n\nThe gold standard of experimental designs is the clinical trial\nExperimental design in all areas of biology have been informed by procedures used in clinical trials\nA clinical trial is an experimental study in which two or more treatments are assigned to human subjects\nThe design of clinical trials has been refined because the cost of making a mistake with human subjects is so high\nExperiments on nonhuman subjects are simply called “laboratory experiments”or “field experiments”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#example-of-a-clinical-trial",
+    "href": "Lecture_Folder/Week7b.html#example-of-a-clinical-trial",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Example of a clinical trial",
+    "text": "Example of a clinical trial\n\nTransmission of the HIV-1 virus via sex workers contributes to the rapid spread of AIDS in Africa\nThe spermicide nonoxynol-9 had shown in vitro activity against HIV-1, which motivated a clinical trial by van Damme et al. (2002).\nThey tested whether a vaginal gel containing the chemical would reduce the risk of acquiring the disease by female sex workers.\nData were gathered on a volunteer sample of 765 HIV-free sex-workers in six clinics in Asia and Africa.\nTwo gel treatments were assigned randomly to women at each clinic.\nOne gel contained nonoxynol-9 and the other a placebo.\nNeither the subjects nor the researchers making observations at the clinics knew who received the treatment and who got the placebo."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#example-of-a-clinical-trial-1",
+    "href": "Lecture_Folder/Week7b.html#example-of-a-clinical-trial-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Example of a clinical trial",
+    "text": "Example of a clinical trial"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#design-components-of-a-clinical-trial",
+    "href": "Lecture_Folder/Week7b.html#design-components-of-a-clinical-trial",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Design components of a clinical trial",
+    "text": "Design components of a clinical trial\nThe goal of experimental design is to eliminate bias and to reduce sampling error when estimating and testing effects of one variable on another.\n\nTo reduce bias, the experiment included:\n\nSimultaneous control group: study included both the treatment of interest and a control group (the women receiving the placebo).\nRandomization: treatments were randomly assigned to women at each clinic.\nBlinding: neither the subjects nor the clinicians knew which women were assigned which treatment."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#design-components-of-a-clinical-trial-1",
+    "href": "Lecture_Folder/Week7b.html#design-components-of-a-clinical-trial-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Design components of a clinical trial",
+    "text": "Design components of a clinical trial\n\nTo reduce the effects of sampling error, the experiment included:\n\nReplication: study was carried out on multiple independent subjects.\nBalance: number of women was nearly equal in the two groups at every clinic.\nBlocking: subjects were grouped according to the clinic they attended, yielding multiple repetitions of the same experiment in different settings (“blocks”)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#simultaneous-control-group",
+    "href": "Lecture_Folder/Week7b.html#simultaneous-control-group",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "1. Simultaneous control group",
+    "text": "1. Simultaneous control group\n\nIn clinical trials either a placebo or the currently accepted treatment should be provided.\nIn experiments requiring intrusive methods to administer treatment, such as\n\ninjections\nsurgery\nrestraint\nconfinement\n\nthe control subjects should be perturbed in the same way as the other subjects, except for the treatment itself, as far as ethical considerations permit."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#simultaneous-control-group-1",
+    "href": "Lecture_Folder/Week7b.html#simultaneous-control-group-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "1. Simultaneous control group",
+    "text": "1. Simultaneous control group\n\nThe “sham operation”, in which surgery is carried out without the experimental treatment itself, is an example.\nIn field experiments, applying a treatment of interest may physically disturb the plots receiving it and the surrounding areas, perhaps by trampling the ground by the researchers.\nIdeally, the same disturbance should be applied to the control plots."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#randomization",
+    "href": "Lecture_Folder/Week7b.html#randomization",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "2. Randomization",
+    "text": "2. Randomization\n\nThe researcher should randomize assignment of treatments to units or subjects\nChance rather than conscious or unconscious decision determines which units end up receiving the treatment and which the control\nA completely randomized design is one in which treatments are assigned to all units by randomization"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#randomization-1",
+    "href": "Lecture_Folder/Week7b.html#randomization-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "2. Randomization",
+    "text": "2. Randomization\n\nRandomization breaks the association between possible confounding variables and the explanatory variable\nRandomization doesn’t eliminate the variation contributed by confounding variables, only their correlation with treatment\nRandomization ensures that variation from confounding variables is similar between the different treatment groups."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#randomization-2",
+    "href": "Lecture_Folder/Week7b.html#randomization-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "2. Randomization",
+    "text": "2. Randomization\n\nRandomization should be carried out using a random process:\n\nList all n subjects, one per row, in a computer spreadsheet.\nUse the computer to give each individual a random number.\nAssign treatment A to those subjects receiving the lowest numbers and treatment B to those with the highest numbers.\n\nOther ways of assigning treatments to subjects are almost always inferior because they do not eliminate the effects of confounding variables.\n“Haphazard” assignment, in which the researcher chooses a treatment while trying to make it random, has repeatedly been shown to be non-random and prone to bias."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#randomization-types",
+    "href": "Lecture_Folder/Week7b.html#randomization-types",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "2. Randomization Types",
+    "text": "2. Randomization Types\n\nCompletely randomized design - all subjects are placed to treatment or control with equal probability\nRandomized block - first broken into groups (e.g. age or gender) then assigned to treatment groups at random\nMatched pair design - subjects are paired by similarity before being randomly assigned to treatment groups"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#random-sampling-approaches",
+    "href": "Lecture_Folder/Week7b.html#random-sampling-approaches",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "2. Random sampling approaches",
+    "text": "2. Random sampling approaches\n\nsimple random sample - every sample has equal probability of being chosen\nstratified sample - divided into groups then a simple random sample are taken from each\ncluster sample - divided into similar group, usually naturally occured, a simple random samples of clusters is then taken and very member of the cluster is included in the sample\nmultistage sampling - combines the above. First clusters are random sampled. Second random samples are take from each. Then process is repeated\nsystematic sample - members of a sample are chosen in a pre-determined ways. e.g Choose every 20th person coming into a store"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blinding",
+    "href": "Lecture_Folder/Week7b.html#blinding",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "3. Blinding",
+    "text": "3. Blinding\n\nBlinding is the process of concealing information from participants (sometimes including researchers) about which subjects receive which treatment.\nBlinding prevents subjects and researchers from changing their behavior, consciously or unconsciously, as a result of knowing which treatment they were receiving or administering.\nFor example, studies showing that acupuncture has a significant effect on back pain are limited to those without blinding (Ernst and White 1998)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blinding-1",
+    "href": "Lecture_Folder/Week7b.html#blinding-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "3. Blinding",
+    "text": "3. Blinding\n\nIn a single-blind experiment, the subjects are unaware of the treatment that they have been assigned.\nTreatments must be indistinguishable to subjects, which prevents them from responding differently according to knowledge of treatment.\nBlinding can also be a concern in non-human studies where animals respond to stimuli"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blinding-2",
+    "href": "Lecture_Folder/Week7b.html#blinding-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "3. Blinding",
+    "text": "3. Blinding\n\nIn a double-blind experiment the researchers administering the treatments and measuring the response are also unaware of which subjects are receiving which treatments\n\nResearchers sometimes have pet hypotheses, and they might treat experimental subjects in different ways depending on their hopes for the outcome\nMany response variables are difficult to measure and require some subjective interpretation, which makes the results prone to a bias\nResearchers are naturally more interested in the treated subjects than the control subjects, and this increased attention can itself result in improved response"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blinding-3",
+    "href": "Lecture_Folder/Week7b.html#blinding-3",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "3. Blinding",
+    "text": "3. Blinding\n\nReviews of medical studies have revealed that studies carried out without double- blinding exaggerated treatment effects by 16% on average compared with studies carried out with double-blinding (Jüni et al. 2001).\nExperiments on non–human subjects are also prone to bias from lack of blinding."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blinding-4",
+    "href": "Lecture_Folder/Week7b.html#blinding-4",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "3. Blinding",
+    "text": "3. Blinding\n\nBebarta et al.(2003) reviewed 290 two-treatment experiments carried out on animals or on cell lines. The odds of detecting a positive effect of treatment were more than threefold higher in studies without blinding than in studies with blinding.\nBlinding can be incorporated into experiments on nonhuman subjects using coded tags that identify the subject to a “blind” observer without revealing the treatment (and who measures units from different treatments in random order)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#replication",
+    "href": "Lecture_Folder/Week7b.html#replication",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "4. Replication",
+    "text": "4. Replication\n\nThe goal of experiments is to estimate and test treatment effects against the background of variation between individuals (“noise”) caused by other variables\nOne way to reduce noise is to make the experimental conditions constant\nIn field experiments, however, highly constant experimental conditions might not be feasible nor desirable\nBy limiting the conditions of an experiment, we also limit the generality of the results\nAnother way to make treatment effects stand out is to include extreme treatments and to replicate the data."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#replication-1",
+    "href": "Lecture_Folder/Week7b.html#replication-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "4. Replication",
+    "text": "4. Replication\n\nReplication is the assignment of each treatment to multiple, independent experimental units.\nWithout replication, we would not know whether response differences were due to the treatments or just chance differences between the treatments caused by other factors.\nStudies that use more units (i.e. that have larger sample sizes) will have smaller standard errors and a higher probability of getting the correct answer from a hypothesis test.\nLarger samples mean more information, and more information means better estimates and more powerful tests."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#replication-2",
+    "href": "Lecture_Folder/Week7b.html#replication-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "4. Replication",
+    "text": "4. Replication\n\nReplication is not about the number of plants or animals used, but the number of independent units in the experiment. An “experimental unit” is the independent unit to which treatments are assigned.\nThe figure shows three experimental designs used to compare plant growth under two temperature treatments (indicated by the shading of the pots). The first two designs are un-replicated."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#pseudoreplication",
+    "href": "Lecture_Folder/Week7b.html#pseudoreplication",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "4. Pseudoreplication",
+    "text": "4. Pseudoreplication"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#balance",
+    "href": "Lecture_Folder/Week7b.html#balance",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "5. Balance",
+    "text": "5. Balance\n\nA study design is balanced if all treatments have the same sample size.\nConversely, a design is unbalanced if there are unequal sample sizes between treatments.\nBalance is a second way to reduce the influence of sampling error on estimation and hypothesis testing.\nTo appreciate this, look again at the equation for the standard error of the difference between two treatment means."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#balance-1",
+    "href": "Lecture_Folder/Week7b.html#balance-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "5. Balance",
+    "text": "5. Balance\n\nFor a fixed total number of experimental units, n1 + n2, the standard error is smallest when n1 and n2 are equal.\nBalance has other benefits. For example, ANOVA is more robust to departures from the assumption of equal variances when designs are balanced or nearly so."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blocking",
+    "href": "Lecture_Folder/Week7b.html#blocking",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "6. Blocking",
+    "text": "6. Blocking\n\nBlocking is the grouping of experimental units that have similar properties. Within each block, treatments are randomly assigned to experimental units.\nBlocking essentially repeats the same, completely randomized experiment multiple times, once for each block.\nDifferences between treatments are only evaluated within blocks, and in this way the component of variation arising from differences between blocks is discarded."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blocking-paired-designs",
+    "href": "Lecture_Folder/Week7b.html#blocking-paired-designs",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "6. Blocking | Paired designs",
+    "text": "6. Blocking | Paired designs\n\nFor example, consider the design choices for a two-treatment experiment to investigate the effect of clear cutting on salamander density.\nIn the completely randomized (“two-sample”) design we take a random sample of forest plots from the population and then randomly assign each plot to either the clear-cut treatment or the no clear-cut treatment.\nIn the paired design we take a random sample of forest plots and clear-cut a randomly chosen half of each plot, leaving the other half untouched."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blocking-paired-designs-1",
+    "href": "Lecture_Folder/Week7b.html#blocking-paired-designs-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "6. Blocking | Paired designs",
+    "text": "6. Blocking | Paired designs\n\nIn the paired design, measurements on adjacent plot-halves are not independent. This is because they are likely to be similar in soil, water, sunlight, and other conditions that affect the number of salamanders.\nAs a result, we must analyze paired data differently than when every plot is independent of all the others, as in the case of the two-sample design.\nPaired design is usually more powerful than completely randomized design because it controls for a lot of the extraneous variation between plots or sampling units that sometimes obscures the effects we are looking for."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blocking-paired-designs-2",
+    "href": "Lecture_Folder/Week7b.html#blocking-paired-designs-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "6. Blocking | Paired designs",
+    "text": "6. Blocking | Paired designs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#blocking-randomized-complete-block-design",
+    "href": "Lecture_Folder/Week7b.html#blocking-randomized-complete-block-design",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "6. Blocking | Randomized complete block design",
+    "text": "6. Blocking | Randomized complete block design\n\nRCB design is analogous to the paired design, but may have more than two treatments. Each treatment is applied once to every block.\nAs in the paired design, treatment effects in a randomized block design are measured by differences between treatments exclusively within blocks.\nBy accounting for some sources of sampling variation blocking can make differences between treatments stand out.\nBlocking is worthwhile if units within blocks are relatively homogeneous, apart from treatment effects, and units belonging to different blocks vary because of environmental or other differences."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#what-if-you-cant-do-experiments",
+    "href": "Lecture_Folder/Week7b.html#what-if-you-cant-do-experiments",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "What if you can’t do experiments?",
+    "text": "What if you can’t do experiments?\n\nExperimental studies are not always feasible, in which case we must fall back upon observational studies.\nThe best observational studies incorporate as many of the features of good experimental design as possible to minimize bias (e.g., blinding) and the impact of sampling error (e.g., replication, balance, blocking, and even extreme treatments) except for one: randomization.\nRandomization is out of the question, because in an observational study the researcher does not assign treatments to subjects.\nTwo strategies are used to limit the effects of confounding variables on a difference between treatments in a controlled observational study: matching; and adjusting for known confounding variables (covariates)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#what-is-a-glmm",
+    "href": "Lecture_Folder/Week7b.html#what-is-a-glmm",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "What is a GLMM?",
+    "text": "What is a GLMM?\n\nGeneral Linear Mixed Model (GLMM) - a continuous response variable with a mix of continuous and categorical predictor variables, can be used to model random effects"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#how-do-we-factor-in-categorical-variables",
+    "href": "Lecture_Folder/Week7b.html#how-do-we-factor-in-categorical-variables",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "How do we factor in categorical variables?",
+    "text": "How do we factor in categorical variables?\n\nFor a single categorical predictor, we can include effects of each factor level:\n\n\\[ y = B_0 + B_1(x~level1) + B_2(x~level2) +~... ~+ e \\]\n\nEach factor level (ex: for Wolbachia: Yes or No) becomes it’s own “effector” that will change the value of y\nInstead of x being a continuous numerical value, for categorical data it will be either a 0 or 1"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#a-generalized-linear-model",
+    "href": "Lecture_Folder/Week7b.html#a-generalized-linear-model",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "A Generalized Linear Model",
+    "text": "A Generalized Linear Model\n\nCheck out the help page in RStudio for glm()\n\n\nglm(formula = y ~ x1 + x2, family = gaussian(link = \"identity\"))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#first-steps-use-a-glm-to-test-wolbachia-infection",
+    "href": "Lecture_Folder/Week7b.html#first-steps-use-a-glm-to-test-wolbachia-infection",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "First steps: use a glm to test Wolbachia infection",
+    "text": "First steps: use a glm to test Wolbachia infection\n\nSet up a glm() to test for the effect of Wolbachia infection on Recombinant Fraction"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#first-steps-use-a-glm-to-test-wolbachia-infection-1",
+    "href": "Lecture_Folder/Week7b.html#first-steps-use-a-glm-to-test-wolbachia-infection-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "First steps: use a glm to test Wolbachia infection",
+    "text": "First steps: use a glm to test Wolbachia infection\n\nWhat do these components mean?\n\n\nfly &lt;- read.table(\"Mostoufi2022_Recombination_Edit.csv\", header=T, sep=',')\nmodel &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link=\"identity\"))\nsummary(model)\n\n\nCall:\nglm(formula = fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link = \"identity\"))\n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)      0.348054   0.005845  59.545   &lt;2e-16 ***\nfly$WolbachiaYes 0.021664   0.008474   2.557   0.0112 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 0.00406577)\n\n    Null deviance: 0.94137  on 226  degrees of freedom\nResidual deviance: 0.91480  on 225  degrees of freedom\nAIC: -601.48\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#interpreting-the-glm",
+    "href": "Lecture_Folder/Week7b.html#interpreting-the-glm",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Interpreting the GLM",
+    "text": "Interpreting the GLM\n\nWhy is our intercept significant?\n\nRemember that the null hypothesis is a model with an intercept and slope of 0\n\nHow would you interpret the “WolbachiaYes” coefficient, especially the estimate and the p value?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#second-steps---adding-more-variables",
+    "href": "Lecture_Folder/Week7b.html#second-steps---adding-more-variables",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Second steps - adding more variables",
+    "text": "Second steps - adding more variables\n\nNow let’s add Food to our model - how does this change our model results?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#second-steps---adding-more-variables-1",
+    "href": "Lecture_Folder/Week7b.html#second-steps---adding-more-variables-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Second steps - adding more variables",
+    "text": "Second steps - adding more variables\n\nmodel2 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, family = gaussian(link = \"identity\"))\nsummary(model2)\n\n\nCall:\nglm(formula = fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, \n    family = gaussian(link = \"identity\"))\n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)      0.344691   0.008121  42.445   &lt;2e-16 ***\nfly$WolbachiaYes 0.021731   0.008504   2.555   0.0113 *  \nfly$FoodSucrose  0.002933   0.010481   0.280   0.7799    \nfly$FoodYeast    0.007366   0.010128   0.727   0.4678    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 0.00409246)\n\n    Null deviance: 0.94137  on 226  degrees of freedom\nResidual deviance: 0.91262  on 223  degrees of freedom\nAIC: -598.02\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#interpreting-the-glm-1",
+    "href": "Lecture_Folder/Week7b.html#interpreting-the-glm-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Interpreting the GLM",
+    "text": "Interpreting the GLM\n\nHow would you interpret the Intercept and Food coefficients, especially the estimate and the p value?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#interaction-effects-in-glms",
+    "href": "Lecture_Folder/Week7b.html#interaction-effects-in-glms",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Interaction effects in GLMs",
+    "text": "Interaction effects in GLMs\n\nYou can also model interactions between two categorical variables in glms\n\nWhat if variable x and variable z interact in non-additive ways?\n\nUse the notation x*z in the formula"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#third-steps---adding-interaction-effects",
+    "href": "Lecture_Folder/Week7b.html#third-steps---adding-interaction-effects",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Third steps - adding interaction effects",
+    "text": "Third steps - adding interaction effects\n\nLet’s finally add an interaction between Wolbachia infection and Food to represent Wolbachia titer in our model\nRun the model - what are the results?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#third-steps---adding-interaction-effects-1",
+    "href": "Lecture_Folder/Week7b.html#third-steps---adding-interaction-effects-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Third steps - adding interaction effects",
+    "text": "Third steps - adding interaction effects\n\nHow do we interpret these findings?\n\n\nmodel3 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + fly$Wolbachia*fly$Food, family = gaussian(link = \"identity\"))\nsummary(model3)\n\n\nCall:\nglm(formula = fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + \n    fly$Wolbachia * fly$Food, family = gaussian(link = \"identity\"))\n\nCoefficients:\n                                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                       0.344520   0.009760  35.298   &lt;2e-16 ***\nfly$WolbachiaYes                  0.022080   0.013970   1.581    0.115    \nfly$FoodSucrose                   0.010286   0.014458   0.711    0.478    \nfly$FoodYeast                     0.001256   0.014059   0.089    0.929    \nfly$WolbachiaYes:fly$FoodSucrose -0.015873   0.021002  -0.756    0.451    \nfly$WolbachiaYes:fly$FoodYeast    0.012910   0.020282   0.637    0.525    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 0.004096248)\n\n    Null deviance: 0.94137  on 226  degrees of freedom\nResidual deviance: 0.90527  on 221  degrees of freedom\nAIC: -595.86\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#how-do-we-know-which-model-to-use",
+    "href": "Lecture_Folder/Week7b.html#how-do-we-know-which-model-to-use",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "How do we know which model to use?",
+    "text": "How do we know which model to use?\n\nWant to be careful not to overfit your linear model (give too many variables)\nThe Akaike information criterion (AIC) is a metric for comparing different models to find the best fit\n\nNotice the AIC score in your output?\nFor more on this, take Advanced Bio Stats! Or do some reading on the internet."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#attributes-of-mixed-effects-models",
+    "href": "Lecture_Folder/Week7b.html#attributes-of-mixed-effects-models",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Attributes of mixed effects models",
+    "text": "Attributes of mixed effects models\n\nLinear models that include both fixed and random effects.\nThe model is split into fixed and random parts:\n\nFixed effects influence mean of the response variable Y.\nRandom effects influence the variance of Y.\n\nThere is a different error variance for each level of grouping.\nEstimation and testing is based on restricted maximum likelihood, which can handle unequal sample size.\nP-values for fixed effects are conservative when design unbalanced.\nImplemented in the nlme & lme4 packages in R."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#assumptions-of-mixed-effects-models",
+    "href": "Lecture_Folder/Week7b.html#assumptions-of-mixed-effects-models",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Assumptions of mixed-effects models",
+    "text": "Assumptions of mixed-effects models\n\nVariation within groups follows a normal distribution with equal variance among groups.\nGroups are randomly sampled from “population” of groups.\nGroup means follow a normal distribution.\nMeasurements within groups are independent."
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#hypotheses-for-model-3-anova-factorial-design-with-mixed-effects",
+    "href": "Lecture_Folder/Week7b.html#hypotheses-for-model-3-anova-factorial-design-with-mixed-effects",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Hypotheses for Model 3 ANOVA Factorial Design With Mixed Effects",
+    "text": "Hypotheses for Model 3 ANOVA Factorial Design With Mixed Effects"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#general-r-syntax-for-two-factor-factorial-designs",
+    "href": "Lecture_Folder/Week7b.html#general-r-syntax-for-two-factor-factorial-designs",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "General R syntax for two factor factorial designs",
+    "text": "General R syntax for two factor factorial designs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-variance-components-with-2-random-factors-using-lme4",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-variance-components-with-2-random-factors-using-lme4",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Variance components with 2 random factors using LME4",
+    "text": "R INTERLUDE | Variance components with 2 random factors using LME4\n\nrnadata &lt;- read.table('RNAseq.tsv', header=T, sep='')\nhead(rnadata)\n\nvariables excluding first 5 and last 5 observations\n\ngene &lt;- rnadata$Gene80[6:75] \nmicrobiota &lt;- rnadata$Microbiota[6:75]\ngenotype &lt;- rnadata$Genotype[6:75]\nboxplot(gene ~ microbiota)\nboxplot(gene ~ genotype)\nboxplot(gene ~ microbiota*genotype)\n\nEstimate the variance components using Restricted Maximum Likelihood (REML)\n\nlibrary(lme4)\nlmer(gene ~ 1 + (1 | microbiota) + (1 | genotype) + (1 | microbiota:genotype))\n\nBased on the REML sd estimates, what are the relative contributions of the factors to total variance in gene expression?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#brain-body-size-neaderthals-as-compared-to-humans",
+    "href": "Lecture_Folder/Week7b.html#brain-body-size-neaderthals-as-compared-to-humans",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Brain & body size | neaderthals as compared to humans",
+    "text": "Brain & body size | neaderthals as compared to humans"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#brain-body-size-neaderthals-as-compared-to-humans-1",
+    "href": "Lecture_Folder/Week7b.html#brain-body-size-neaderthals-as-compared-to-humans-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Brain & body size | neaderthals as compared to humans",
+    "text": "Brain & body size | neaderthals as compared to humans"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#brain-body-size-neaderthals-as-compared-to-humans-2",
+    "href": "Lecture_Folder/Week7b.html#brain-body-size-neaderthals-as-compared-to-humans-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "Brain & body size | neaderthals as compared to humans",
+    "text": "Brain & body size | neaderthals as compared to humans"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova",
+    "href": "Lecture_Folder/Week7b.html#ancova",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA",
+    "text": "ANCOVA\n\nAnalysis of covariance - mixture of regression and ANOVA\nResponse is still a normally distributed continuous variable\nOne or more continuous predictor variables (covariates)\nSometimes the covariates are of biological interest\nMost often we want to remove unexplained variance\nIn this way they are similar to a blocking variable in ANOVA\nOperationally, ANCOVA is regular ANOVA in which the group and overall means are replaced by group and overall relationships"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova-adjusting-for-the-covariate",
+    "href": "Lecture_Folder/Week7b.html#ancova-adjusting-for-the-covariate",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA | Adjusting for the covariate",
+    "text": "ANCOVA | Adjusting for the covariate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova-adjusting-for-the-covariate-1",
+    "href": "Lecture_Folder/Week7b.html#ancova-adjusting-for-the-covariate-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA | Adjusting for the covariate",
+    "text": "ANCOVA | Adjusting for the covariate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova-linear-model-with-two-covariates",
+    "href": "Lecture_Folder/Week7b.html#ancova-linear-model-with-two-covariates",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA | Linear model with two covariates",
+    "text": "ANCOVA | Linear model with two covariates"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova-factor-and-covariate-hypothesis-tests",
+    "href": "Lecture_Folder/Week7b.html#ancova-factor-and-covariate-hypothesis-tests",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA | Factor and covariate hypothesis tests",
+    "text": "ANCOVA | Factor and covariate hypothesis tests"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova-f-ratio-tests",
+    "href": "Lecture_Folder/Week7b.html#ancova-f-ratio-tests",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA | F ratio tests",
+    "text": "ANCOVA | F ratio tests"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova-assumptions",
+    "href": "Lecture_Folder/Week7b.html#ancova-assumptions",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA | Assumptions",
+    "text": "ANCOVA | Assumptions\n\nThe residuals are normally distributed\nThe residuals show homoscedasticity of variance\nThe residuals are independent of one another\nThe relationship between the response variable and each covariate is linear\nHomogeneity of slopes among the groups\nSimilar covariate ranges among the groups"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova-heterogeneous-slopes",
+    "href": "Lecture_Folder/Week7b.html#ancova-heterogeneous-slopes",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA | Heterogeneous slopes",
+    "text": "ANCOVA | Heterogeneous slopes"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova-heterogeneous-slopes-1",
+    "href": "Lecture_Folder/Week7b.html#ancova-heterogeneous-slopes-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA | Heterogeneous slopes",
+    "text": "ANCOVA | Heterogeneous slopes\n\nProblem - adjusting to a mean is difficult or impossible if the slopes are different\nIn essence, the samples for the groups come from two different populations\nA test for homogeneity of slopes can be performed\nThe assumption is tested by looking for a significant interaction term between the categorical response variables and the covariate(s)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#ancova-non-overlapping-range-of-the-covariate",
+    "href": "Lecture_Folder/Week7b.html#ancova-non-overlapping-range-of-the-covariate",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "ANCOVA | Non-overlapping range of the covariate",
+    "text": "ANCOVA | Non-overlapping range of the covariate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-ancova",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-ancova",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | ANCOVA",
+    "text": "R INTERLUDE | ANCOVA\n\nImpacts of sexual activity on male fruitfly longevity\nData from Partridge and Faraquhar (1981)\nLongevity of male measured in response to access to\n\nno females\none virgin\neight virgins\none mated\neight mated\n\nThe male fruit flies also varied in size\nThe males were assigned randomly to each of the treatment levels, and then measured thorax length as a covariate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-ancova-1",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-ancova-1",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | ANCOVA",
+    "text": "R INTERLUDE | ANCOVA\n\nlongevity_data &lt;- read.table('longevity.csv', header=T, sep=',')\nhead(longevity_data)\n\nVariables\n\nlong &lt;- longevity_data$LONGEVITY\ntreat &lt;- longevity_data$TREATMENT\nthorax &lt;- longevity_data$THORAX\n\n\ncheck to see if the covariate should be included\n\n\nboxplot(long ~ treat)\nplot(long ~ thorax)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-ancova-2",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-ancova-2",
+    "title": "Week 7b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | ANCOVA",
+    "text": "R INTERLUDE | ANCOVA\n\nassess assumptions of normality and homogeneity of variance\n\n\nplot(aov(long ~ thorax + treat ), which = 1)\n\n\n†ry it again with a transformed response variable\n\n\nplot(aov(log10(long) ~ thorax + treat ), which = 1)\n\n\nvisually assess linearity, homogenetiy of slopes and covariate range equality\n\n\nlibrary(lattice)\nprint(xyplot(log10(long) ~ thorax | treat, type = c(\"r\", \"p\")))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week7b.html#r-interlude-ancova-3",
+    "href": "Lecture_Folder/Week7b.html#r-interlude-ancova-3",
+    "title": "Week 7b - Statistics for Bioengineering",
     "section": "R INTERLUDE | ANCOVA",
     "text": "R INTERLUDE | ANCOVA\n\nformally test homogenetiy of slopes by testing the interaction term\n\n\nanova(aov(log10(long) ~ thorax*treat))\n\n\nformally test covariate range disparity by modeling the effect of the treatments on the covariate\n\n\nanova(aov(thorax ~ treat))\n\n\nFINALLY, set up contrasts, fit the additive model and visualize the results (pg. 459 and 460 of your Logan book)\nSummarize the trends in a nice plot (pg. 461 of your Logan book)"
   }
