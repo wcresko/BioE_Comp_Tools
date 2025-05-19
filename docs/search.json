@@ -3623,7 +3623,7 @@
     "href": "Homework.html",
     "title": "Homeworks",
     "section": "",
-    "text": "Homework 1\nHomework 2"
+    "text": "Homework 1\nHomework 2\nHomework 3"
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html",
@@ -12374,5 +12374,75 @@
     "title": "Week 7b - Statistics for Bioengineering",
     "section": "R INTERLUDE | ANCOVA",
     "text": "R INTERLUDE | ANCOVA\n\nformally test homogenetiy of slopes by testing the interaction term\n\n\nanova(aov(log10(long) ~ thorax*treat))\n\n\nformally test covariate range disparity by modeling the effect of the treatments on the covariate\n\n\nanova(aov(thorax ~ treat))\n\n\nFINALLY, set up contrasts, fit the additive model and visualize the results (pg. 459 and 460 of your Logan book)\nSummarize the trends in a nice plot (pg. 461 of your Logan book)"
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html",
+    "href": "Homework_Folder/HW3_2025.html",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set studying the effects of different types of seasonal flu on immune response in humans (flu.tsv), a small data table of cystic fibrosis patients\nIn addition, perform at least one of these statistical analyses on the dataset that you’ve identified for your term long project depending on the nature of your data.\nDue: Submit your work via Canvas by the end of the day (midnight) on Wednesday, May 28th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html#directions",
+    "href": "Homework_Folder/HW3_2025.html#directions",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set studying the effects of different types of seasonal flu on immune response in humans (flu.tsv), a small data table of cystic fibrosis patients\nIn addition, perform at least one of these statistical analyses on the dataset that you’ve identified for your term long project depending on the nature of your data.\nDue: Submit your work via Canvas by the end of the day (midnight) on Wednesday, May 28th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html#problem-3.1-factorial-anova-of-flu-data-and-immune-response",
+    "href": "Homework_Folder/HW3_2025.html#problem-3.1-factorial-anova-of-flu-data-and-immune-response",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "Problem 3.1 : Factorial ANOVA of Flu data and Immune Response",
+    "text": "Problem 3.1 : Factorial ANOVA of Flu data and Immune Response"
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html#the-study",
+    "href": "Homework_Folder/HW3_2025.html#the-study",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "The Study",
+    "text": "The Study\nYou are working with a group studying immune response to different types of seasonal flu. From a large number of blood samples from people with the flu but otherwise healthy, the group has determined for each person the strain of flu, the strength of the immune response (in units of pg/mL of interleukin-1β), and the person’s genotype at an immune-regulating gene. The group is interested in a fine-scale classification of flu, so they have divided the flu samples up into a fairly large number of distinct strains. The main question they are interested in is whether the mean strength of immune response (measured using interleukin-1β concentration) differs by flu strains. Next they are interested in which strains (if any) tend to induce stronger, or weaker, responses. Of course, they would like to know how any differences compare to natural variation in immune response. In previous studies, mean immune response differed by genotype of the immune-regulating gene, so the analysis should take this into account. You should look at the data, then answer these questions using a multifactor ANOVA. In particular, you should examine both whether there is an effect of flu strain and whether that effect depends on person’s genotype (i.e., if there are significant interaction effects). Your report should explain, in your own words, how each analysis works what the conclusions are, and what to conclude after looking at both sets of results.\nThe dataset (flu.tsv) can be found in the data folder on Canvas. This dataset has the following variables\n\nid\nstrain of the flu virus\ngenotype of the individual\nresponse in terms of interleukin-1β\n\nThe data are available on Canvas. Note: this is fake data; for real information on flu strains see nextflu.org.\n\nYour Tasks:\n\nFit and interpret the ANOVA model.\nMake an interaction plot for this question: the x-axis should show the various flu strains; the y-axis should show immune response, and there should be one line for each genotype, connecting the mean response to each flu strain for people of that genotype. The plot should show not just the means, but also the range of variation in the data.\nCreate a combined variable of the two factor variables and perform a Tukey’s post-hoc means test, as well as one a priori test of your choice."
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html#exercise-3.2-goodness-of-fit-test-for-cystic-fibrosis",
+    "href": "Homework_Folder/HW3_2025.html#exercise-3.2-goodness-of-fit-test-for-cystic-fibrosis",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "Exercise 3.2: Goodness of Fit Test for Cystic Fibrosis",
+    "text": "Exercise 3.2: Goodness of Fit Test for Cystic Fibrosis\n\nThe Study\nCystic fibrosis (CF) is an autosomal recessive genetic disorder. When both parents are carriers (genotype Ff), each child has the following expected probab:\n\n25% chance of being homozygous dominant (FF) — unaffected, not a carrier\n50% chance of being heterozygous (Ff) — unaffected carrier\n25% chance of being homozygous recessive (ff) — affected by cystic fibrosis\n\nA genetic counselor collects data from 200 children born to heterozygous carrier parents in a particular community and records the following distribution of genotypes:\n\n\n\nGenotype\nPhenotype Status\nObserved Count\n\n\n\n\nFF\nUnaffected (not carrier)\n69\n\n\nFf\nCarrier\n206\n\n\nff\nAffected (CF)\n102\n\n\n\nThe genetic counselor suspects that there might divergence from Hardy-Weinberg Equilibrium (HWE) in this community due to some unmeasured environmental or genetic factors.\n\n\nYour Tasks:\n\nState the null and alternative hypotheses for a Chi-square goodness of fit test to determine whether the observed genotypic distribution follows HWE expectations.\nCalculate the expected counts for each genotype under the 1:2:1 Mendelian ratio by first calculating the allele frequencies in this population.\nUse R to perform the Chi-square goodness of fit test to compare the expected genotype counts to the observed genotype counts.\nInterpret your results in the context of Mendelian genetics. Use a significance level of α = 0.05.\nWhat would you recommend that the genetic counselor conclude about whether something else might be going on?"
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html#the-study-1",
+    "href": "Homework_Folder/HW3_2025.html#the-study-1",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "The Study",
+    "text": "The Study\nCystic fibrosis (CF) is an autosomal recessive genetic disorder. When both parents are carriers (genotype Ff), each child has the following expected probab:\n\n25% chance of being homozygous dominant (FF) — unaffected, not a carrier\n50% chance of being heterozygous (Ff) — unaffected carrier\n25% chance of being homozygous recessive (ff) — affected by cystic fibrosis\n\nA genetic counselor collects data from 200 children born to heterozygous carrier parents in a particular community and records the following distribution of genotypes:\n\n\n\nGenotype\nPhenotype Status\nObserved Count\n\n\n\n\nFF\nUnaffected (not carrier)\n69\n\n\nFf\nCarrier\n206\n\n\nff\nAffected (CF)\n102\n\n\n\nThe genetic counselor suspects that there might divergence from Hardy-Weinberg Equilibrium (HWE) in this community due to some unmeasured environmental or genetic factors.\n\nYour Tasks:\n\nState the null and alternative hypotheses for a Chi-square goodness of fit test to determine whether the observed genotypic distribution follows HWE expectations.\nCalculate the expected counts for each genotype under the 1:2:1 Mendelian ratio by first calculating the allele frequencies in this population.\nUse R to perform the Chi-square goodness of fit test to compare the expected genotype counts to the observed genotype counts.\nInterpret your results in the context of Mendelian genetics. Use a significance level of α = 0.05.\nWhat would you recommend that the genetic counselor conclude about whether something else might be going on?"
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html#exercise-3.3-chi-squar-contigency-table-analysis-of-successful-regeneration",
+    "href": "Homework_Folder/HW3_2025.html#exercise-3.3-chi-squar-contigency-table-analysis-of-successful-regeneration",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "Exercise 3.3: Chi-squar contigency table analysis of successful regeneration",
+    "text": "Exercise 3.3: Chi-squar contigency table analysis of successful regeneration"
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html#the-study-2",
+    "href": "Homework_Folder/HW3_2025.html#the-study-2",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "The Study",
+    "text": "The Study\nA team of bioengineers is evaluating how scaffold material and stem cell type influence the success of tissue regeneration in a lab-grown cartilage model. They use three different scaffold materials and three types of stem cells and record whether the engineered cartilage shows successful regeneration (defined by a set of mechanical and histological markers) after 4 weeks.\nThey test the following materials\n\nScaffold Materials: \n\nCollagen\nHydrogel\nBioceramic\n\nStem Cell Types: \n\nAdipose-derived stem cells (ASC)\nBone marrow-derived stem cells (BMSC)\nInduced pluripotent stem cells (iPSC)\n\n\nThe counts below represent the number of successful regenerations in each combination of material and cell type.\n\n\n\n\nASC\nBMSC\niPSC\n\n\n\n\nCollagen\n18\n22\n15\n\n\nHydrogel\n25\n27\n30\n\n\nBioceramic\n20\n23\n21\n\n\n\n\nYour Tasks:\n\nState the null and alternative hypotheses for this test.\nUsing R, perform a Chi-square test of independence. Include the R code and output.\nCalculate the odds ratio and LOD score for just the collagen/hydrogel vs. ASC/BMSC combination.\nWhat do the results suggest? Use a significance level of α = 0.05.\nWould you conclude that scaffold type and cell type influence regeneration success independently, or do they interact?"
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html#problem-3.1-factorial-anova-of-flu-and-immune-response",
+    "href": "Homework_Folder/HW3_2025.html#problem-3.1-factorial-anova-of-flu-and-immune-response",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "Problem 3.1 : Factorial ANOVA of Flu and Immune Response",
+    "text": "Problem 3.1 : Factorial ANOVA of Flu and Immune Response\n\nThe Study\nYou are working with a group studying immune response to different types of seasonal flu. From a large number of blood samples from people with the flu but otherwise healthy, the group has determined for each person the strain of flu, the strength of the immune response (in units of pg/mL of interleukin-1β), and the person’s genotype at an immune-regulating gene. The group is interested in a fine-scale classification of flu, so they have divided the flu samples up into a fairly large number of distinct strains. The main question they are interested in is whether the mean strength of immune response (measured using interleukin-1β concentration) differs by flu strains. Next they are interested in which strains (if any) tend to induce stronger, or weaker, responses. Of course, they would like to know how any differences compare to natural variation in immune response. In previous studies, mean immune response differed by genotype of the immune-regulating gene, so the analysis should take this into account. You should look at the data, then answer these questions using a multifactor ANOVA. In particular, you should examine both whether there is an effect of flu strain and whether that effect depends on person’s genotype (i.e., if there are significant interaction effects). Your report should explain, in your own words, how each analysis works what the conclusions are, and what to conclude after looking at both sets of results.\nThe dataset (flu.tsv) can be found in the data folder on Canvas. This dataset has the following variables\n\nid\nstrain of the flu virus\ngenotype of the individual\nresponse in terms of interleukin-1β\n\nThe data are available on Canvas. Note: this is fake data; for real information on flu strains see nextflu.org.\n\n\nYour Tasks:\n\nFit and interpret the ANOVA model.\nMake an interaction plot for this question: the x-axis should show the various flu strains; the y-axis should show immune response, and there should be one line for each genotype, connecting the mean response to each flu strain for people of that genotype. The plot should show not just the means, but also the range of variation in the data.\nCreate a combined variable of the two factor variables and perform a Tukey’s post-hoc means test, as well as one a priori test of your choice."
+  },
+  {
+    "objectID": "Homework_Folder/HW3_2025.html#exercise-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration",
+    "href": "Homework_Folder/HW3_2025.html#exercise-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration",
+    "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
+    "section": "Exercise 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration",
+    "text": "Exercise 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration\n\nThe Study\nA team of bioengineers is evaluating how scaffold material and stem cell type influence the success of tissue regeneration in a lab-grown cartilage model. They use three different scaffold materials and three types of stem cells and record whether the engineered cartilage shows successful regeneration (defined by a set of mechanical and histological markers) after 4 weeks.\nThey test the following materials\n\nScaffold Materials:\n\nCollagen\nHydrogel\nBioceramic\n\nStem Cell Types:\n\nAdipose-derived stem cells (ASC)\nBone marrow-derived stem cells (BMSC)\nInduced pluripotent stem cells (iPSC)\n\n\nThe counts below represent the number of successful regenerations in each combination of material and cell type.\n\n\n\n\nASC\nBMSC\niPSC\n\n\n\n\nCollagen\n48\n22\n15\n\n\nHydrogel\n25\n57\n30\n\n\nBioceramic\n20\n23\n61\n\n\n\n\n\nYour Tasks:\n\nState the null and alternative hypotheses for this test.\nUsing R, perform a Chi-square test of independence. Include the R code and output.\nCalculate the odds ratio and LOD score for just the collagen/hydrogel vs. ASC/BMSC combination.\nWhat do the results suggest? Use a significance level of α = 0.05.\nWould you conclude that scaffold type and cell type influence regeneration success independently, or do they interact?"
   }
 ]
