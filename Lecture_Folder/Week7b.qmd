@@ -134,7 +134,7 @@ head(rna_data)
 -   continuous response variable and two main effect categorical variables
 
 ```{r, echo=TRUE, eval=FALSE}
-gene <- rna_data$Gene80
+gene <- rna_data$Gene100
 microbiota <- rna_data$Microbiota
 genotype <- rna_data$Genotype
 boxplot(gene ~ microbiota)
@@ -145,7 +145,7 @@ boxplot(gene ~ microbiota*genotype)
 ## 2-by-2 fixed effect boxplots
 
 ```{r, echo=FALSE, eval=TRUE}
-gene <- rna_data$Gene80
+gene <- rna_data$Gene100
 microbiota <- rna_data$Microbiota
 genotype <- rna_data$Genotype
 boxplot(gene ~ microbiota)
@@ -154,7 +154,7 @@ boxplot(gene ~ microbiota)
 ## 2-by-2 fixed effect boxplots
 
 ```{r, echo=FALSE, eval=TRUE}
-gene <- rna_data$Gene80
+gene <- rna_data$Gene100
 microbiota <- rna_data$Microbiota
 genotype <- rna_data$Genotype
 boxplot(gene ~ genotype)
@@ -163,7 +163,7 @@ boxplot(gene ~ genotype)
 ## 2-by-2 fixed effect boxplots
 
 ```{r, echo=FALSE, eval=TRUE}
-gene <- rna_data$Gene80
+gene <- rna_data$Gene100
 microbiota <- rna_data$Microbiota
 genotype <- rna_data$Genotype
 boxplot(gene ~ microbiota*genotype)
@@ -217,12 +217,12 @@ library(dplyr)
 
 summary_df <- rna_data |>
   group_by(Genotype, Microbiota) |>
-  summarise(mean_response = mean(Gene80), .groups = "drop")
+  summarise(mean_response = mean(Gene100), .groups = "drop")
 
 summary_df <- rna_data |>
   group_by(Genotype, Microbiota) |>
-  summarise(mean_response = mean(Gene80),
-            se = sd(Gene80) / sqrt(n()), .groups = "drop")
+  summarise(mean_response = mean(Gene100),
+            se = sd(Gene100) / sqrt(n()), .groups = "drop")
 
 # ggplot interaction plot
 ggplot(summary_df, aes(x = Genotype, y = mean_response, group = Microbiota, color = Microbiota)) +
@@ -231,7 +231,7 @@ ggplot(summary_df, aes(x = Genotype, y = mean_response, group = Microbiota, colo
   geom_errorbar(aes(ymin = mean_response - se, ymax = mean_response + se), width = 0.2) +
   labs(title = "Interaction Plot with SE",
        x = "Genotype",
-       y = "Mean Expression of Gene80",
+       y = "Mean Expression of Gene100",
        color = "Microbiota") +
   theme_minimal()
 
@@ -248,11 +248,11 @@ library(dplyr)
 
 summary_df <- rna_data |>
   group_by(Genotype, Microbiota) |>
-  summarise(mean_response = mean(Gene80), .groups = "drop")
+  summarise(mean_response = mean(Gene100), .groups = "drop")
 
 summary_df <- rna_data |>
   group_by(Genotype, Microbiota) |>
-  summarise(mean_response = mean(Gene80),
+  summarise(mean_response = mean(Gene100),
             se = sd(Gene80) / sqrt(n()), .groups = "drop")
 
 # ggplot interaction plot
@@ -262,7 +262,7 @@ ggplot(summary_df, aes(x = Genotype, y = mean_response, group = Microbiota, colo
   geom_errorbar(aes(ymin = mean_response - se, ymax = mean_response + se), width = 0.2) +
   labs(title = "Interaction Plot with SE",
        x = "Genotype",
-       y = "Mean Expression of Gene80",
+       y = "Mean Expression of Gene100",
        color = "Microbiota") +
   theme_minimal()
 
@@ -686,312 +686,3 @@ knitr::include_graphics("images/images_6a.009.jpeg")
 -   The best observational studies incorporate as many of the features of good experimental design as possible to minimize bias (e.g., blinding) and the impact of sampling error (e.g., replication, balance, blocking, and even extreme treatments) except for one: randomization.
 -   Randomization is out of the question, because in an observational study the researcher does not assign treatments to subjects.
 -   Two strategies are used to limit the effects of confounding variables on a difference between treatments in a controlled observational study: matching; and adjusting for known confounding variables (covariates).
-
-------------------------------------------------------------------------
-
-# General Linear Mixed Models
-
-## What is a GLMM?
-
--   General Linear Mixed Model (**GLMM**) - a continuous response variable with a mix of continuous and categorical predictor variables, can be used to model random effects
-
-## How do we factor in categorical variables?
-
--   For a single categorical predictor, we can include effects of each factor level:
-
-$$ y = B_0 + B_1(x~level1) + B_2(x~level2) +~... ~+ e $$
-
--   Each factor level (ex: for Wolbachia: Yes or No) becomes it's own "effector" that will change the value of y
--   Instead of x being a continuous numerical value, for categorical data it will be either a 0 or 1
-
-## A Generalized Linear Model
-
--   Check out the help page in RStudio for `glm()`
-
-```{r, echo=TRUE, eval=FALSE}
-glm(formula = y ~ x1 + x2, family = gaussian(link = "identity"))
-```
-
-## First steps: use a glm to test Wolbachia infection
-
--   Set up a `glm()` to test for the effect of Wolbachia infection on Recombinant Fraction
-
-## First steps: use a glm to test Wolbachia infection
-
--   What do these components mean?
-
-```{r, echo=TRUE, eval=TRUE}
-fly <- read.table("Mostoufi2022_Recombination_Edit.csv", header=T, sep=',')
-model <- glm(fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link="identity"))
-summary(model)
-```
-
-## Interpreting the GLM
-
--   Why is our intercept significant?
-    -   Remember that the null hypothesis is a model with an intercept and slope of 0
--   How would you interpret the "WolbachiaYes" coefficient, especially the estimate and the p value?
-
-## Second steps - adding more variables
-
--   Now let's add Food to our model - how does this change our model results?
-
-## Second steps - adding more variables
-
-```{r, echo=TRUE, eval=TRUE}
-model2 <- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, family = gaussian(link = "identity"))
-summary(model2)
-```
-
-## Interpreting the GLM
-
--   How would you interpret the Intercept and Food coefficients, especially the estimate and the p value?
-
-## Interaction effects in GLMs
-
--   You can also model interactions between two categorical variables in glms
-    -   What if variable x and variable z interact in non-additive ways?
--   Use the notation x\*z in the formula
-
-## Third steps - adding interaction effects
-
--   Let's finally add an interaction between Wolbachia infection and Food to represent Wolbachia titer in our model
--   Run the model - what are the results?
-
-## Third steps - adding interaction effects
-
--   How do we interpret these findings?
-
-```{r, echo=TRUE, eval=TRUE}
-model3 <- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + fly$Wolbachia*fly$Food, family = gaussian(link = "identity"))
-summary(model3)
-```
-
-## How do we know which model to use?
-
--   Want to be careful not to *overfit* your linear model (give too many variables)
--   The Akaike information criterion (AIC) is a metric for comparing different models to find the best fit
-    -   Notice the AIC score in your output?
-    -   For more on this, take Advanced Bio Stats! Or do some reading on the internet.
-
-------------------------------------------------------------------------
-
-# Mixed effect models with unequal sample sizes {.flexbox .vcenter}
-
-## Attributes of mixed effects models {.flexbox .vcenter}
-
--   Linear models that include both fixed and random effects.
--   The model is split into fixed and random parts:
-    -   Fixed effects influence mean of the response variable Y.
-    -   Random effects influence the variance of Y.
--   There is a different error variance for each level of grouping.
--   Estimation and testing is based on restricted maximum likelihood, which can handle unequal sample size.
--   P-values for fixed effects are conservative when design unbalanced.
--   Implemented in the `nlme` & `lme4` packages in `R`.
-
-## Assumptions of mixed-effects models {.flexbox .vcenter}
-
--   Variation within groups follows a normal distribution with equal variance among groups.
--   Groups are randomly sampled from “population” of groups.
--   Group means follow a normal distribution.
--   Measurements within groups are independent.
-
-## Hypotheses for Model 3 ANOVA Factorial Design With Mixed Effects {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.003.jpeg")
-```
-
-## General R syntax for two factor factorial designs {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.004.jpeg")
-```
-
-## R INTERLUDE \| Variance components with 2 random factors using LME4 {.smaller}
-
-```{r, echo=TRUE, eval=FALSE}
-rnadata <- read.table('RNAseq.tsv', header=T, sep='')
-head(rnadata)
-```
-
-variables excluding first 5 and last 5 observations
-
-```{r, echo=TRUE, eval=FALSE}
-gene <- rnadata$Gene80[6:75] 
-microbiota <- rnadata$Microbiota[6:75]
-genotype <- rnadata$Genotype[6:75]
-boxplot(gene ~ microbiota)
-boxplot(gene ~ genotype)
-boxplot(gene ~ microbiota*genotype)
-```
-
-Estimate the variance components using Restricted Maximum Likelihood (REML)
-
-```{r, echo=TRUE, eval=FALSE}
-library(lme4)
-lmer(gene ~ 1 + (1 | microbiota) + (1 | genotype) + (1 | microbiota:genotype))
-```
-
-Based on the REML sd estimates, what are the relative contributions of the factors to total variance in gene expression?
-
-# Analysis of Covariance (ANCOVA)
-
-## Brain & body size \| neaderthals as compared to humans {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.005.jpeg")
-```
-
-## Brain & body size \| neaderthals as compared to humans {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.006.jpeg")
-```
-
-## Brain & body size \| neaderthals as compared to humans {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.007.jpeg")
-```
-
-## ANCOVA {.flexbox .vcenter}
-
--   Analysis of covariance - mixture of regression and ANOVA
--   Response is still a normally distributed continuous variable
--   One or more continuous predictor variables (covariates)
--   Sometimes the covariates are of biological interest
--   Most often we want to remove unexplained variance
--   In this way they are similar to a blocking variable in ANOVA
--   Operationally, ANCOVA is regular ANOVA in which the group and overall means are replaced by group and overall relationships
-
-## ANCOVA \| Adjusting for the covariate {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.008.jpeg")
-```
-
-## ANCOVA \| Adjusting for the covariate {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.009.jpeg")
-```
-
-## ANCOVA \| Linear model with two covariates {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.010.jpeg")
-```
-
-## ANCOVA \| Factor and covariate hypothesis tests {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.011.jpeg")
-```
-
-## ANCOVA \| F ratio tests {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.012.jpeg")
-```
-
-## ANCOVA \| Assumptions {.flexbox .vcenter}
-
--   The residuals are normally distributed
--   The residuals show homoscedasticity of variance
--   The residuals are independent of one another
--   The relationship between the response variable and each covariate is linear
--   Homogeneity of slopes among the groups
--   Similar covariate ranges among the groups
-
-## ANCOVA \| Heterogeneous slopes {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.013.jpeg")
-```
-
-## ANCOVA \| Heterogeneous slopes {.flexbox .vcenter}
-
--   Problem - adjusting to a mean is difficult or impossible if the slopes are different
--   In essence, the samples for the groups come from two different populations
--   A test for homogeneity of slopes can be performed
--   The assumption is tested by looking for a significant interaction term between the categorical response variables and the covariate(s)
-
-## ANCOVA \| Non-overlapping range of the covariate {.flexbox .vcenter}
-
-```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("images/images_7b.014.jpeg")
-```
-
-## R INTERLUDE \| ANCOVA
-
--   Impacts of sexual activity on male fruitfly longevity
--   Data from Partridge and Faraquhar (1981)
--   Longevity of male measured in response to access to
-    -   no females
-    -   one virgin
-    -   eight virgins
-    -   one mated
-    -   eight mated
--   The male fruit flies also varied in size
--   The males were assigned randomly to each of the treatment levels, and then measured thorax length as a covariate
-
-## R INTERLUDE \| ANCOVA {.smaller}
-
-```{r, echo=TRUE, eval=FALSE}
-longevity_data <- read.table('longevity.csv', header=T, sep=',')
-head(longevity_data)
-```
-
-Variables
-
-```{r, echo=TRUE, eval=FALSE}
-long <- longevity_data$LONGEVITY
-treat <- longevity_data$TREATMENT
-thorax <- longevity_data$THORAX
-```
-
--   check to see if the covariate should be included
-
-```{r, echo=TRUE, eval=FALSE}
-boxplot(long ~ treat)
-plot(long ~ thorax)
-```
-
-## R INTERLUDE \| ANCOVA {.smaller}
-
--   assess assumptions of normality and homogeneity of variance
-
-```{r, echo=TRUE, eval=FALSE}
-plot(aov(long ~ thorax + treat ), which = 1)
-```
-
--   †ry it again with a transformed response variable
-
-```{r, echo=TRUE, eval=FALSE}
-plot(aov(log10(long) ~ thorax + treat ), which = 1)
-```
-
--   visually assess linearity, homogenetiy of slopes and covariate range equality
-
-```{r, echo=TRUE, eval=FALSE}
-library(lattice)
-print(xyplot(log10(long) ~ thorax | treat, type = c("r", "p")))
-```
-
-## R INTERLUDE \| ANCOVA {.smaller}
-
--   formally test homogenetiy of slopes by testing the interaction term
-
-```{r, echo=TRUE, eval=FALSE}
-anova(aov(log10(long) ~ thorax*treat))
-```
-
--   formally test covariate range disparity by modeling the effect of the treatments on the covariate
-
-```{r, echo=TRUE, eval=FALSE}
-anova(aov(thorax ~ treat))
-```
-
--   FINALLY, set up contrasts, fit the additive model and visualize the results (pg. 459 and 460 of your Logan book)
--   Summarize the trends in a nice plot (pg. 461 of your Logan book)

@@ -104,35 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -295,50 +266,6 @@ window.Quarto = {
   <li><a href="#blocking-randomized-complete-block-design" id="toc-blocking-randomized-complete-block-design" class="nav-link" data-scroll-target="#blocking-randomized-complete-block-design">6. Blocking | Randomized complete block design</a></li>
   <li><a href="#what-if-you-cant-do-experiments" id="toc-what-if-you-cant-do-experiments" class="nav-link" data-scroll-target="#what-if-you-cant-do-experiments">What if you can’t do experiments?</a></li>
   </ul></li>
-  <li><a href="#general-linear-mixed-models" id="toc-general-linear-mixed-models" class="nav-link" data-scroll-target="#general-linear-mixed-models">General Linear Mixed Models</a>
-  <ul class="collapse">
-  <li><a href="#what-is-a-glmm" id="toc-what-is-a-glmm" class="nav-link" data-scroll-target="#what-is-a-glmm">What is a GLMM?</a></li>
-  <li><a href="#how-do-we-factor-in-categorical-variables" id="toc-how-do-we-factor-in-categorical-variables" class="nav-link" data-scroll-target="#how-do-we-factor-in-categorical-variables">How do we factor in categorical variables?</a></li>
-  <li><a href="#a-generalized-linear-model" id="toc-a-generalized-linear-model" class="nav-link" data-scroll-target="#a-generalized-linear-model">A Generalized Linear Model</a></li>
-  <li><a href="#first-steps-use-a-glm-to-test-wolbachia-infection" id="toc-first-steps-use-a-glm-to-test-wolbachia-infection" class="nav-link" data-scroll-target="#first-steps-use-a-glm-to-test-wolbachia-infection">First steps: use a glm to test Wolbachia infection</a></li>
-  <li><a href="#first-steps-use-a-glm-to-test-wolbachia-infection-1" id="toc-first-steps-use-a-glm-to-test-wolbachia-infection-1" class="nav-link" data-scroll-target="#first-steps-use-a-glm-to-test-wolbachia-infection-1">First steps: use a glm to test Wolbachia infection</a></li>
-  <li><a href="#interpreting-the-glm" id="toc-interpreting-the-glm" class="nav-link" data-scroll-target="#interpreting-the-glm">Interpreting the GLM</a></li>
-  <li><a href="#second-steps---adding-more-variables" id="toc-second-steps---adding-more-variables" class="nav-link" data-scroll-target="#second-steps---adding-more-variables">Second steps - adding more variables</a></li>
-  <li><a href="#second-steps---adding-more-variables-1" id="toc-second-steps---adding-more-variables-1" class="nav-link" data-scroll-target="#second-steps---adding-more-variables-1">Second steps - adding more variables</a></li>
-  <li><a href="#interpreting-the-glm-1" id="toc-interpreting-the-glm-1" class="nav-link" data-scroll-target="#interpreting-the-glm-1">Interpreting the GLM</a></li>
-  <li><a href="#interaction-effects-in-glms" id="toc-interaction-effects-in-glms" class="nav-link" data-scroll-target="#interaction-effects-in-glms">Interaction effects in GLMs</a></li>
-  <li><a href="#third-steps---adding-interaction-effects" id="toc-third-steps---adding-interaction-effects" class="nav-link" data-scroll-target="#third-steps---adding-interaction-effects">Third steps - adding interaction effects</a></li>
-  <li><a href="#third-steps---adding-interaction-effects-1" id="toc-third-steps---adding-interaction-effects-1" class="nav-link" data-scroll-target="#third-steps---adding-interaction-effects-1">Third steps - adding interaction effects</a></li>
-  <li><a href="#how-do-we-know-which-model-to-use" id="toc-how-do-we-know-which-model-to-use" class="nav-link" data-scroll-target="#how-do-we-know-which-model-to-use">How do we know which model to use?</a></li>
-  </ul></li>
-  <li><a href="#mixed-effect-models-with-unequal-sample-sizes" id="toc-mixed-effect-models-with-unequal-sample-sizes" class="nav-link" data-scroll-target="#mixed-effect-models-with-unequal-sample-sizes">Mixed effect models with unequal sample sizes</a>
-  <ul class="collapse">
-  <li><a href="#attributes-of-mixed-effects-models" id="toc-attributes-of-mixed-effects-models" class="nav-link" data-scroll-target="#attributes-of-mixed-effects-models">Attributes of mixed effects models</a></li>
-  <li><a href="#assumptions-of-mixed-effects-models" id="toc-assumptions-of-mixed-effects-models" class="nav-link" data-scroll-target="#assumptions-of-mixed-effects-models">Assumptions of mixed-effects models</a></li>
-  <li><a href="#hypotheses-for-model-3-anova-factorial-design-with-mixed-effects" id="toc-hypotheses-for-model-3-anova-factorial-design-with-mixed-effects" class="nav-link" data-scroll-target="#hypotheses-for-model-3-anova-factorial-design-with-mixed-effects">Hypotheses for Model 3 ANOVA Factorial Design With Mixed Effects</a></li>
-  <li><a href="#general-r-syntax-for-two-factor-factorial-designs" id="toc-general-r-syntax-for-two-factor-factorial-designs" class="nav-link" data-scroll-target="#general-r-syntax-for-two-factor-factorial-designs">General R syntax for two factor factorial designs</a></li>
-  <li><a href="#r-interlude-variance-components-with-2-random-factors-using-lme4" id="toc-r-interlude-variance-components-with-2-random-factors-using-lme4" class="nav-link" data-scroll-target="#r-interlude-variance-components-with-2-random-factors-using-lme4">R INTERLUDE | Variance components with 2 random factors using LME4</a></li>
-  </ul></li>
-  <li><a href="#analysis-of-covariance-ancova" id="toc-analysis-of-covariance-ancova" class="nav-link" data-scroll-target="#analysis-of-covariance-ancova">Analysis of Covariance (ANCOVA)</a>
-  <ul class="collapse">
-  <li><a href="#brain-body-size-neaderthals-as-compared-to-humans" id="toc-brain-body-size-neaderthals-as-compared-to-humans" class="nav-link" data-scroll-target="#brain-body-size-neaderthals-as-compared-to-humans">Brain &amp; body size | neaderthals as compared to humans</a></li>
-  <li><a href="#brain-body-size-neaderthals-as-compared-to-humans-1" id="toc-brain-body-size-neaderthals-as-compared-to-humans-1" class="nav-link" data-scroll-target="#brain-body-size-neaderthals-as-compared-to-humans-1">Brain &amp; body size | neaderthals as compared to humans</a></li>
-  <li><a href="#brain-body-size-neaderthals-as-compared-to-humans-2" id="toc-brain-body-size-neaderthals-as-compared-to-humans-2" class="nav-link" data-scroll-target="#brain-body-size-neaderthals-as-compared-to-humans-2">Brain &amp; body size | neaderthals as compared to humans</a></li>
-  <li><a href="#ancova" id="toc-ancova" class="nav-link" data-scroll-target="#ancova">ANCOVA</a></li>
-  <li><a href="#ancova-adjusting-for-the-covariate" id="toc-ancova-adjusting-for-the-covariate" class="nav-link" data-scroll-target="#ancova-adjusting-for-the-covariate">ANCOVA | Adjusting for the covariate</a></li>
-  <li><a href="#ancova-adjusting-for-the-covariate-1" id="toc-ancova-adjusting-for-the-covariate-1" class="nav-link" data-scroll-target="#ancova-adjusting-for-the-covariate-1">ANCOVA | Adjusting for the covariate</a></li>
-  <li><a href="#ancova-linear-model-with-two-covariates" id="toc-ancova-linear-model-with-two-covariates" class="nav-link" data-scroll-target="#ancova-linear-model-with-two-covariates">ANCOVA | Linear model with two covariates</a></li>
-  <li><a href="#ancova-factor-and-covariate-hypothesis-tests" id="toc-ancova-factor-and-covariate-hypothesis-tests" class="nav-link" data-scroll-target="#ancova-factor-and-covariate-hypothesis-tests">ANCOVA | Factor and covariate hypothesis tests</a></li>
-  <li><a href="#ancova-f-ratio-tests" id="toc-ancova-f-ratio-tests" class="nav-link" data-scroll-target="#ancova-f-ratio-tests">ANCOVA | F ratio tests</a></li>
-  <li><a href="#ancova-assumptions" id="toc-ancova-assumptions" class="nav-link" data-scroll-target="#ancova-assumptions">ANCOVA | Assumptions</a></li>
-  <li><a href="#ancova-heterogeneous-slopes" id="toc-ancova-heterogeneous-slopes" class="nav-link" data-scroll-target="#ancova-heterogeneous-slopes">ANCOVA | Heterogeneous slopes</a></li>
-  <li><a href="#ancova-heterogeneous-slopes-1" id="toc-ancova-heterogeneous-slopes-1" class="nav-link" data-scroll-target="#ancova-heterogeneous-slopes-1">ANCOVA | Heterogeneous slopes</a></li>
-  <li><a href="#ancova-non-overlapping-range-of-the-covariate" id="toc-ancova-non-overlapping-range-of-the-covariate" class="nav-link" data-scroll-target="#ancova-non-overlapping-range-of-the-covariate">ANCOVA | Non-overlapping range of the covariate</a></li>
-  <li><a href="#r-interlude-ancova" id="toc-r-interlude-ancova" class="nav-link" data-scroll-target="#r-interlude-ancova">R INTERLUDE | ANCOVA</a></li>
-  <li><a href="#r-interlude-ancova-1" id="toc-r-interlude-ancova-1" class="nav-link" data-scroll-target="#r-interlude-ancova-1">R INTERLUDE | ANCOVA</a></li>
-  <li><a href="#r-interlude-ancova-2" id="toc-r-interlude-ancova-2" class="nav-link" data-scroll-target="#r-interlude-ancova-2">R INTERLUDE | ANCOVA</a></li>
-  <li><a href="#r-interlude-ancova-3" id="toc-r-interlude-ancova-3" class="nav-link" data-scroll-target="#r-interlude-ancova-3">R INTERLUDE | ANCOVA</a></li>
-  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Week7b.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -376,7 +303,7 @@ window.Quarto = {
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
 ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
 ✔ purrr     1.0.4     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -1048,7 +975,7 @@ window.Quarto = {
 <li>continuous response variable and two main effect categorical variables</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gene <span class="ot">&lt;-</span> rna_data<span class="sc">$</span>Gene80</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gene <span class="ot">&lt;-</span> rna_data<span class="sc">$</span>Gene100</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>microbiota <span class="ot">&lt;-</span> rna_data<span class="sc">$</span>Microbiota</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>genotype <span class="ot">&lt;-</span> rna_data<span class="sc">$</span>Genotype</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(gene <span class="sc">~</span> microbiota)</span>
@@ -1124,11 +1051,11 @@ window.Quarto = {
 <pre><code>Analysis of Variance Table
 
 Response: gene
-                    Df Sum Sq Mean Sq F value    Pr(&gt;F)    
-microbiota           1 665760  665760 51.7040 3.835e-10 ***
-genotype             1 140114  140114 10.8815  0.001480 ** 
-microbiota:genotype  1 111901  111901  8.6904  0.004247 ** 
-Residuals           76 978605   12876                      
+                    Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+microbiota           1  243763  243763  6.8179   0.01087 *  
+genotype             1    4234    4234  0.1184   0.73170    
+microbiota:genotype  1 1452066 1452066 40.6133 1.299e-08 ***
+Residuals           76 2717264   35753                      
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1137,11 +1064,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <pre><code>Analysis of Variance Table
 
 Response: gene
-                    Df Sum Sq Mean Sq F value    Pr(&gt;F)    
-microbiota           1 665760  665760 51.7040 3.835e-10 ***
-genotype             1 140114  140114 10.8815  0.001480 ** 
-microbiota:genotype  1 111901  111901  8.6904  0.004247 ** 
-Residuals           76 978605   12876                      
+                    Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+microbiota           1  243763  243763  6.8179   0.01087 *  
+genotype             1    4234    4234  0.1184   0.73170    
+microbiota:genotype  1 1452066 1452066 40.6133 1.299e-08 ***
+Residuals           76 2717264   35753                      
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1152,11 +1079,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rna_aov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                    Df Sum Sq Mean Sq F value   Pr(&gt;F)    
-microbiota           1 665760  665760   51.70 3.83e-10 ***
-genotype             1 140114  140114   10.88  0.00148 ** 
-microbiota:genotype  1 111901  111901    8.69  0.00425 ** 
-Residuals           76 978605   12876                     
+<pre><code>                    Df  Sum Sq Mean Sq F value  Pr(&gt;F)    
+microbiota           1  243763  243763   6.818  0.0109 *  
+genotype             1    4234    4234   0.118  0.7317    
+microbiota:genotype  1 1452066 1452066  40.613 1.3e-08 ***
+Residuals           76 2717264   35753                    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -1168,20 +1095,20 @@ lm(formula = gene ~ microbiota * genotype)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--269.30  -63.96    0.95   32.95  300.70 
+-336.00 -131.85   19.52  144.00  507.00 
 
 Coefficients:
                          Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)                171.55      25.37   6.761 2.47e-09 ***
-microbiotamono             107.65      35.88   3.000  0.00365 ** 
-genotypeB                 -158.50      35.88  -4.417 3.27e-05 ***
-microbiotamono:genotypeB   149.60      50.75   2.948  0.00425 ** 
+(Intercept)               1004.95      42.28  23.768  &lt; 2e-16 ***
+microbiotamono             159.05      59.79   2.660  0.00953 ** 
+genotypeB                  254.90      59.79   4.263 5.73e-05 ***
+microbiotamono:genotypeB  -538.90      84.56  -6.373 1.30e-08 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 113.5 on 76 degrees of freedom
-Multiple R-squared:  0.484, Adjusted R-squared:  0.4636 
-F-statistic: 23.76 on 3 and 76 DF,  p-value: 5.981e-11</code></pre>
+Residual standard error: 189.1 on 76 degrees of freedom
+Multiple R-squared:  0.3849,    Adjusted R-squared:  0.3606 
+F-statistic: 15.85 on 3 and 76 DF,  p-value: 4.254e-08</code></pre>
 </div>
 </div>
 </section>
@@ -1193,12 +1120,12 @@ F-statistic: 23.76 on 3 and 76 DF,  p-value: 5.981e-11</code></pre>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>summary_df <span class="ot">&lt;-</span> rna_data <span class="sc">|&gt;</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Genotype, Microbiota) <span class="sc">|&gt;</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_response =</span> <span class="fu">mean</span>(Gene80), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_response =</span> <span class="fu">mean</span>(Gene100), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>summary_df <span class="ot">&lt;-</span> rna_data <span class="sc">|&gt;</span></span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Genotype, Microbiota) <span class="sc">|&gt;</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_response =</span> <span class="fu">mean</span>(Gene80),</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">se =</span> <span class="fu">sd</span>(Gene80) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">n</span>()), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_response =</span> <span class="fu">mean</span>(Gene100),</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">se =</span> <span class="fu">sd</span>(Gene100) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">n</span>()), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot interaction plot</span></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summary_df, <span class="fu">aes</span>(<span class="at">x =</span> Genotype, <span class="at">y =</span> mean_response, <span class="at">group =</span> Microbiota, <span class="at">color =</span> Microbiota)) <span class="sc">+</span></span>
@@ -1207,7 +1134,7 @@ F-statistic: 23.76 on 3 and 76 DF,  p-value: 5.981e-11</code></pre>
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_response <span class="sc">-</span> se, <span class="at">ymax =</span> mean_response <span class="sc">+</span> se), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Interaction Plot with SE"</span>,</span>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Genotype"</span>,</span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mean Expression of Gene80"</span>,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mean Expression of Gene100"</span>,</span>
 <span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Microbiota"</span>) <span class="sc">+</span></span>
 <span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1810,495 +1737,6 @@ F-statistic: 23.76 on 3 and 76 DF,  p-value: 5.981e-11</code></pre>
 <li>The best observational studies incorporate as many of the features of good experimental design as possible to minimize bias (e.g., blinding) and the impact of sampling error (e.g., replication, balance, blocking, and even extreme treatments) except for one: randomization.</li>
 <li>Randomization is out of the question, because in an observational study the researcher does not assign treatments to subjects.</li>
 <li>Two strategies are used to limit the effects of confounding variables on a difference between treatments in a controlled observational study: matching; and adjusting for known confounding variables (covariates).</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="general-linear-mixed-models" class="level1">
-<h1>General Linear Mixed Models</h1>
-<section id="what-is-a-glmm" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-glmm">What is a GLMM?</h2>
-<ul>
-<li>General Linear Mixed Model (<strong>GLMM</strong>) - a continuous response variable with a mix of continuous and categorical predictor variables, can be used to model random effects</li>
-</ul>
-</section>
-<section id="how-do-we-factor-in-categorical-variables" class="level2">
-<h2 class="anchored" data-anchor-id="how-do-we-factor-in-categorical-variables">How do we factor in categorical variables?</h2>
-<ul>
-<li>For a single categorical predictor, we can include effects of each factor level:</li>
-</ul>
-<p><span class="math display">\[ y = B_0 + B_1(x~level1) + B_2(x~level2) +~... ~+ e \]</span></p>
-<ul>
-<li>Each factor level (ex: for Wolbachia: Yes or No) becomes it’s own “effector” that will change the value of y</li>
-<li>Instead of x being a continuous numerical value, for categorical data it will be either a 0 or 1</li>
-</ul>
-</section>
-<section id="a-generalized-linear-model" class="level2">
-<h2 class="anchored" data-anchor-id="a-generalized-linear-model">A Generalized Linear Model</h2>
-<ul>
-<li>Check out the help page in RStudio for <code>glm()</code></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(<span class="at">formula =</span> y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="first-steps-use-a-glm-to-test-wolbachia-infection" class="level2">
-<h2 class="anchored" data-anchor-id="first-steps-use-a-glm-to-test-wolbachia-infection">First steps: use a glm to test Wolbachia infection</h2>
-<ul>
-<li>Set up a <code>glm()</code> to test for the effect of Wolbachia infection on Recombinant Fraction</li>
-</ul>
-</section>
-<section id="first-steps-use-a-glm-to-test-wolbachia-infection-1" class="level2">
-<h2 class="anchored" data-anchor-id="first-steps-use-a-glm-to-test-wolbachia-infection-1">First steps: use a glm to test Wolbachia infection</h2>
-<ul>
-<li>What do these components mean?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>fly <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"Mostoufi2022_Recombination_Edit.csv"</span>, <span class="at">header=</span>T, <span class="at">sep=</span><span class="st">','</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">glm</span>(fly<span class="sc">$</span>RecombinantFraction <span class="sc">~</span> fly<span class="sc">$</span>Wolbachia, <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link=</span><span class="st">"identity"</span>))</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-glm(formula = fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link = "identity"))
-
-Coefficients:
-                 Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)      0.348054   0.005845  59.545   &lt;2e-16 ***
-fly$WolbachiaYes 0.021664   0.008474   2.557   0.0112 *  
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-(Dispersion parameter for gaussian family taken to be 0.00406577)
-
-    Null deviance: 0.94137  on 226  degrees of freedom
-Residual deviance: 0.91480  on 225  degrees of freedom
-AIC: -601.48
-
-Number of Fisher Scoring iterations: 2</code></pre>
-</div>
-</div>
-</section>
-<section id="interpreting-the-glm" class="level2">
-<h2 class="anchored" data-anchor-id="interpreting-the-glm">Interpreting the GLM</h2>
-<ul>
-<li>Why is our intercept significant?
-<ul>
-<li>Remember that the null hypothesis is a model with an intercept and slope of 0</li>
-</ul></li>
-<li>How would you interpret the “WolbachiaYes” coefficient, especially the estimate and the p value?</li>
-</ul>
-</section>
-<section id="second-steps---adding-more-variables" class="level2">
-<h2 class="anchored" data-anchor-id="second-steps---adding-more-variables">Second steps - adding more variables</h2>
-<ul>
-<li>Now let’s add Food to our model - how does this change our model results?</li>
-</ul>
-</section>
-<section id="second-steps---adding-more-variables-1" class="level2">
-<h2 class="anchored" data-anchor-id="second-steps---adding-more-variables-1">Second steps - adding more variables</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(fly<span class="sc">$</span>RecombinantFraction <span class="sc">~</span> fly<span class="sc">$</span>Wolbachia <span class="sc">+</span> fly<span class="sc">$</span>Food, <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>))</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-glm(formula = fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, 
-    family = gaussian(link = "identity"))
-
-Coefficients:
-                 Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)      0.344691   0.008121  42.445   &lt;2e-16 ***
-fly$WolbachiaYes 0.021731   0.008504   2.555   0.0113 *  
-fly$FoodSucrose  0.002933   0.010481   0.280   0.7799    
-fly$FoodYeast    0.007366   0.010128   0.727   0.4678    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-(Dispersion parameter for gaussian family taken to be 0.00409246)
-
-    Null deviance: 0.94137  on 226  degrees of freedom
-Residual deviance: 0.91262  on 223  degrees of freedom
-AIC: -598.02
-
-Number of Fisher Scoring iterations: 2</code></pre>
-</div>
-</div>
-</section>
-<section id="interpreting-the-glm-1" class="level2">
-<h2 class="anchored" data-anchor-id="interpreting-the-glm-1">Interpreting the GLM</h2>
-<ul>
-<li>How would you interpret the Intercept and Food coefficients, especially the estimate and the p value?</li>
-</ul>
-</section>
-<section id="interaction-effects-in-glms" class="level2">
-<h2 class="anchored" data-anchor-id="interaction-effects-in-glms">Interaction effects in GLMs</h2>
-<ul>
-<li>You can also model interactions between two categorical variables in glms
-<ul>
-<li>What if variable x and variable z interact in non-additive ways?</li>
-</ul></li>
-<li>Use the notation x*z in the formula</li>
-</ul>
-</section>
-<section id="third-steps---adding-interaction-effects" class="level2">
-<h2 class="anchored" data-anchor-id="third-steps---adding-interaction-effects">Third steps - adding interaction effects</h2>
-<ul>
-<li>Let’s finally add an interaction between Wolbachia infection and Food to represent Wolbachia titer in our model</li>
-<li>Run the model - what are the results?</li>
-</ul>
-</section>
-<section id="third-steps---adding-interaction-effects-1" class="level2">
-<h2 class="anchored" data-anchor-id="third-steps---adding-interaction-effects-1">Third steps - adding interaction effects</h2>
-<ul>
-<li>How do we interpret these findings?</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(fly<span class="sc">$</span>RecombinantFraction <span class="sc">~</span> fly<span class="sc">$</span>Wolbachia <span class="sc">+</span> fly<span class="sc">$</span>Food <span class="sc">+</span> fly<span class="sc">$</span>Wolbachia<span class="sc">*</span>fly<span class="sc">$</span>Food, <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">"identity"</span>))</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-glm(formula = fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + 
-    fly$Wolbachia * fly$Food, family = gaussian(link = "identity"))
-
-Coefficients:
-                                  Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)                       0.344520   0.009760  35.298   &lt;2e-16 ***
-fly$WolbachiaYes                  0.022080   0.013970   1.581    0.115    
-fly$FoodSucrose                   0.010286   0.014458   0.711    0.478    
-fly$FoodYeast                     0.001256   0.014059   0.089    0.929    
-fly$WolbachiaYes:fly$FoodSucrose -0.015873   0.021002  -0.756    0.451    
-fly$WolbachiaYes:fly$FoodYeast    0.012910   0.020282   0.637    0.525    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-(Dispersion parameter for gaussian family taken to be 0.004096248)
-
-    Null deviance: 0.94137  on 226  degrees of freedom
-Residual deviance: 0.90527  on 221  degrees of freedom
-AIC: -595.86
-
-Number of Fisher Scoring iterations: 2</code></pre>
-</div>
-</div>
-</section>
-<section id="how-do-we-know-which-model-to-use" class="level2">
-<h2 class="anchored" data-anchor-id="how-do-we-know-which-model-to-use">How do we know which model to use?</h2>
-<ul>
-<li>Want to be careful not to <em>overfit</em> your linear model (give too many variables)</li>
-<li>The Akaike information criterion (AIC) is a metric for comparing different models to find the best fit
-<ul>
-<li>Notice the AIC score in your output?</li>
-<li>For more on this, take Advanced Bio Stats! Or do some reading on the internet.</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="mixed-effect-models-with-unequal-sample-sizes" class="level1 flexbox vcenter">
-<h1 class="flexbox vcenter">Mixed effect models with unequal sample sizes</h1>
-<section id="attributes-of-mixed-effects-models" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="attributes-of-mixed-effects-models">Attributes of mixed effects models</h2>
-<ul>
-<li>Linear models that include both fixed and random effects.</li>
-<li>The model is split into fixed and random parts:
-<ul>
-<li>Fixed effects influence mean of the response variable Y.</li>
-<li>Random effects influence the variance of Y.</li>
-</ul></li>
-<li>There is a different error variance for each level of grouping.</li>
-<li>Estimation and testing is based on restricted maximum likelihood, which can handle unequal sample size.</li>
-<li>P-values for fixed effects are conservative when design unbalanced.</li>
-<li>Implemented in the <code>nlme</code> &amp; <code>lme4</code> packages in <code>R</code>.</li>
-</ul>
-</section>
-<section id="assumptions-of-mixed-effects-models" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="assumptions-of-mixed-effects-models">Assumptions of mixed-effects models</h2>
-<ul>
-<li>Variation within groups follows a normal distribution with equal variance among groups.</li>
-<li>Groups are randomly sampled from “population” of groups.</li>
-<li>Group means follow a normal distribution.</li>
-<li>Measurements within groups are independent.</li>
-</ul>
-</section>
-<section id="hypotheses-for-model-3-anova-factorial-design-with-mixed-effects" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="hypotheses-for-model-3-anova-factorial-design-with-mixed-effects">Hypotheses for Model 3 ANOVA Factorial Design With Mixed Effects</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.003.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="general-r-syntax-for-two-factor-factorial-designs" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="general-r-syntax-for-two-factor-factorial-designs">General R syntax for two factor factorial designs</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.004.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="r-interlude-variance-components-with-2-random-factors-using-lme4" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="r-interlude-variance-components-with-2-random-factors-using-lme4">R INTERLUDE | Variance components with 2 random factors using LME4</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>rnadata <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">'RNAseq.tsv'</span>, <span class="at">header=</span>T, <span class="at">sep=</span><span class="st">''</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rnadata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>variables excluding first 5 and last 5 observations</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>gene <span class="ot">&lt;-</span> rnadata<span class="sc">$</span>Gene80[<span class="dv">6</span><span class="sc">:</span><span class="dv">75</span>] </span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>microbiota <span class="ot">&lt;-</span> rnadata<span class="sc">$</span>Microbiota[<span class="dv">6</span><span class="sc">:</span><span class="dv">75</span>]</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>genotype <span class="ot">&lt;-</span> rnadata<span class="sc">$</span>Genotype[<span class="dv">6</span><span class="sc">:</span><span class="dv">75</span>]</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(gene <span class="sc">~</span> microbiota)</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(gene <span class="sc">~</span> genotype)</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(gene <span class="sc">~</span> microbiota<span class="sc">*</span>genotype)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Estimate the variance components using Restricted Maximum Likelihood (REML)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lmer</span>(gene <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> microbiota) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> genotype) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> microbiota<span class="sc">:</span>genotype))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Based on the REML sd estimates, what are the relative contributions of the factors to total variance in gene expression?</p>
-</section>
-</section>
-<section id="analysis-of-covariance-ancova" class="level1">
-<h1>Analysis of Covariance (ANCOVA)</h1>
-<section id="brain-body-size-neaderthals-as-compared-to-humans" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="brain-body-size-neaderthals-as-compared-to-humans">Brain &amp; body size | neaderthals as compared to humans</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.005.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="brain-body-size-neaderthals-as-compared-to-humans-1" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="brain-body-size-neaderthals-as-compared-to-humans-1">Brain &amp; body size | neaderthals as compared to humans</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.006.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="brain-body-size-neaderthals-as-compared-to-humans-2" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="brain-body-size-neaderthals-as-compared-to-humans-2">Brain &amp; body size | neaderthals as compared to humans</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.007.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="ancova" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova">ANCOVA</h2>
-<ul>
-<li>Analysis of covariance - mixture of regression and ANOVA</li>
-<li>Response is still a normally distributed continuous variable</li>
-<li>One or more continuous predictor variables (covariates)</li>
-<li>Sometimes the covariates are of biological interest</li>
-<li>Most often we want to remove unexplained variance</li>
-<li>In this way they are similar to a blocking variable in ANOVA</li>
-<li>Operationally, ANCOVA is regular ANOVA in which the group and overall means are replaced by group and overall relationships</li>
-</ul>
-</section>
-<section id="ancova-adjusting-for-the-covariate" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova-adjusting-for-the-covariate">ANCOVA | Adjusting for the covariate</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.008.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="ancova-adjusting-for-the-covariate-1" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova-adjusting-for-the-covariate-1">ANCOVA | Adjusting for the covariate</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.009.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="ancova-linear-model-with-two-covariates" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova-linear-model-with-two-covariates">ANCOVA | Linear model with two covariates</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.010.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="ancova-factor-and-covariate-hypothesis-tests" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova-factor-and-covariate-hypothesis-tests">ANCOVA | Factor and covariate hypothesis tests</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.011.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="ancova-f-ratio-tests" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova-f-ratio-tests">ANCOVA | F ratio tests</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.012.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="ancova-assumptions" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova-assumptions">ANCOVA | Assumptions</h2>
-<ul>
-<li>The residuals are normally distributed</li>
-<li>The residuals show homoscedasticity of variance</li>
-<li>The residuals are independent of one another</li>
-<li>The relationship between the response variable and each covariate is linear</li>
-<li>Homogeneity of slopes among the groups</li>
-<li>Similar covariate ranges among the groups</li>
-</ul>
-</section>
-<section id="ancova-heterogeneous-slopes" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova-heterogeneous-slopes">ANCOVA | Heterogeneous slopes</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.013.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="ancova-heterogeneous-slopes-1" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova-heterogeneous-slopes-1">ANCOVA | Heterogeneous slopes</h2>
-<ul>
-<li>Problem - adjusting to a mean is difficult or impossible if the slopes are different</li>
-<li>In essence, the samples for the groups come from two different populations</li>
-<li>A test for homogeneity of slopes can be performed</li>
-<li>The assumption is tested by looking for a significant interaction term between the categorical response variables and the covariate(s)</li>
-</ul>
-</section>
-<section id="ancova-non-overlapping-range-of-the-covariate" class="level2 flexbox vcenter">
-<h2 class="flexbox vcenter anchored" data-anchor-id="ancova-non-overlapping-range-of-the-covariate">ANCOVA | Non-overlapping range of the covariate</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/images_7b.014.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="r-interlude-ancova" class="level2">
-<h2 class="anchored" data-anchor-id="r-interlude-ancova">R INTERLUDE | ANCOVA</h2>
-<ul>
-<li>Impacts of sexual activity on male fruitfly longevity</li>
-<li>Data from Partridge and Faraquhar (1981)</li>
-<li>Longevity of male measured in response to access to
-<ul>
-<li>no females</li>
-<li>one virgin</li>
-<li>eight virgins</li>
-<li>one mated</li>
-<li>eight mated</li>
-</ul></li>
-<li>The male fruit flies also varied in size</li>
-<li>The males were assigned randomly to each of the treatment levels, and then measured thorax length as a covariate</li>
-</ul>
-</section>
-<section id="r-interlude-ancova-1" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="r-interlude-ancova-1">R INTERLUDE | ANCOVA</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>longevity_data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">'longevity.csv'</span>, <span class="at">header=</span>T, <span class="at">sep=</span><span class="st">','</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(longevity_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Variables</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>long <span class="ot">&lt;-</span> longevity_data<span class="sc">$</span>LONGEVITY</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>treat <span class="ot">&lt;-</span> longevity_data<span class="sc">$</span>TREATMENT</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>thorax <span class="ot">&lt;-</span> longevity_data<span class="sc">$</span>THORAX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>check to see if the covariate should be included</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(long <span class="sc">~</span> treat)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(long <span class="sc">~</span> thorax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="r-interlude-ancova-2" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="r-interlude-ancova-2">R INTERLUDE | ANCOVA</h2>
-<ul>
-<li>assess assumptions of normality and homogeneity of variance</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">aov</span>(long <span class="sc">~</span> thorax <span class="sc">+</span> treat ), <span class="at">which =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>†ry it again with a transformed response variable</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">aov</span>(<span class="fu">log10</span>(long) <span class="sc">~</span> thorax <span class="sc">+</span> treat ), <span class="at">which =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>visually assess linearity, homogenetiy of slopes and covariate range equality</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lattice)</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">xyplot</span>(<span class="fu">log10</span>(long) <span class="sc">~</span> thorax <span class="sc">|</span> treat, <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"r"</span>, <span class="st">"p"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="r-interlude-ancova-3" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="r-interlude-ancova-3">R INTERLUDE | ANCOVA</h2>
-<ul>
-<li>formally test homogenetiy of slopes by testing the interaction term</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">aov</span>(<span class="fu">log10</span>(long) <span class="sc">~</span> thorax<span class="sc">*</span>treat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>formally test covariate range disparity by modeling the effect of the treatments on the covariate</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(<span class="fu">aov</span>(thorax <span class="sc">~</span> treat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>FINALLY, set up contrasts, fit the additive model and visualize the results (pg. 459 and 460 of your Logan book)</li>
-<li>Summarize the trends in a nice plot (pg. 461 of your Logan book)</li>
 </ul>
 
 

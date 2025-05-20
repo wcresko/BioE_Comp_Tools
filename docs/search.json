@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -11610,7 +11610,7 @@
     "href": "Lecture_Folder/Week7b.html",
     "title": "Week 7b - Statistics for Bioengineering",
     "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)"
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)"
   },
   {
     "objectID": "Lecture_Folder/Week7b.html#this-week",
@@ -11722,7 +11722,7 @@
     "href": "Lecture_Folder/Week7b.html#r-interlude-2-by-2-fixed-effect-factorial-anova-1",
     "title": "Week 7b - Statistics for Bioengineering",
     "section": "R INTERLUDE | 2-by-2 fixed effect factorial ANOVA",
-    "text": "R INTERLUDE | 2-by-2 fixed effect factorial ANOVA\n\ncontinuous response variable and two main effect categorical variables\n\n\ngene &lt;- rna_data$Gene80\nmicrobiota &lt;- rna_data$Microbiota\ngenotype &lt;- rna_data$Genotype\nboxplot(gene ~ microbiota)\nboxplot(gene ~ genotype)\nboxplot(gene ~ microbiota*genotype)"
+    "text": "R INTERLUDE | 2-by-2 fixed effect factorial ANOVA\n\ncontinuous response variable and two main effect categorical variables\n\n\ngene &lt;- rna_data$Gene100\nmicrobiota &lt;- rna_data$Microbiota\ngenotype &lt;- rna_data$Genotype\nboxplot(gene ~ microbiota)\nboxplot(gene ~ genotype)\nboxplot(gene ~ microbiota*genotype)"
   },
   {
     "objectID": "Lecture_Folder/Week7b.html#by-2-fixed-effect-boxplots",
@@ -11764,21 +11764,21 @@
     "href": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing-2",
     "title": "Week 7b - Statistics for Bioengineering",
     "section": "Fit the factorial linear model | different ways to do the same thing",
-    "text": "Fit the factorial linear model | different ways to do the same thing\n\nanova(rna_aov)\n\nAnalysis of Variance Table\n\nResponse: gene\n                    Df Sum Sq Mean Sq F value    Pr(&gt;F)    \nmicrobiota           1 665760  665760 51.7040 3.835e-10 ***\ngenotype             1 140114  140114 10.8815  0.001480 ** \nmicrobiota:genotype  1 111901  111901  8.6904  0.004247 ** \nResiduals           76 978605   12876                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nanova(rna_lm)\n\nAnalysis of Variance Table\n\nResponse: gene\n                    Df Sum Sq Mean Sq F value    Pr(&gt;F)    \nmicrobiota           1 665760  665760 51.7040 3.835e-10 ***\ngenotype             1 140114  140114 10.8815  0.001480 ** \nmicrobiota:genotype  1 111901  111901  8.6904  0.004247 ** \nResiduals           76 978605   12876                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+    "text": "Fit the factorial linear model | different ways to do the same thing\n\nanova(rna_aov)\n\nAnalysis of Variance Table\n\nResponse: gene\n                    Df  Sum Sq Mean Sq F value    Pr(&gt;F)    \nmicrobiota           1  243763  243763  6.8179   0.01087 *  \ngenotype             1    4234    4234  0.1184   0.73170    \nmicrobiota:genotype  1 1452066 1452066 40.6133 1.299e-08 ***\nResiduals           76 2717264   35753                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nanova(rna_lm)\n\nAnalysis of Variance Table\n\nResponse: gene\n                    Df  Sum Sq Mean Sq F value    Pr(&gt;F)    \nmicrobiota           1  243763  243763  6.8179   0.01087 *  \ngenotype             1    4234    4234  0.1184   0.73170    \nmicrobiota:genotype  1 1452066 1452066 40.6133 1.299e-08 ***\nResiduals           76 2717264   35753                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
   },
   {
     "objectID": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing-3",
     "href": "Lecture_Folder/Week7b.html#fit-the-factorial-linear-model-different-ways-to-do-the-same-thing-3",
     "title": "Week 7b - Statistics for Bioengineering",
     "section": "Fit the factorial linear model | different ways to do the same thing",
-    "text": "Fit the factorial linear model | different ways to do the same thing\n\nsummary(rna_aov)\n\n                    Df Sum Sq Mean Sq F value   Pr(&gt;F)    \nmicrobiota           1 665760  665760   51.70 3.83e-10 ***\ngenotype             1 140114  140114   10.88  0.00148 ** \nmicrobiota:genotype  1 111901  111901    8.69  0.00425 ** \nResiduals           76 978605   12876                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nsummary(rna_lm)\n\n\nCall:\nlm(formula = gene ~ microbiota * genotype)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-269.30  -63.96    0.95   32.95  300.70 \n\nCoefficients:\n                         Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                171.55      25.37   6.761 2.47e-09 ***\nmicrobiotamono             107.65      35.88   3.000  0.00365 ** \ngenotypeB                 -158.50      35.88  -4.417 3.27e-05 ***\nmicrobiotamono:genotypeB   149.60      50.75   2.948  0.00425 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 113.5 on 76 degrees of freedom\nMultiple R-squared:  0.484, Adjusted R-squared:  0.4636 \nF-statistic: 23.76 on 3 and 76 DF,  p-value: 5.981e-11"
+    "text": "Fit the factorial linear model | different ways to do the same thing\n\nsummary(rna_aov)\n\n                    Df  Sum Sq Mean Sq F value  Pr(&gt;F)    \nmicrobiota           1  243763  243763   6.818  0.0109 *  \ngenotype             1    4234    4234   0.118  0.7317    \nmicrobiota:genotype  1 1452066 1452066  40.613 1.3e-08 ***\nResiduals           76 2717264   35753                    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nsummary(rna_lm)\n\n\nCall:\nlm(formula = gene ~ microbiota * genotype)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-336.00 -131.85   19.52  144.00  507.00 \n\nCoefficients:\n                         Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)               1004.95      42.28  23.768  &lt; 2e-16 ***\nmicrobiotamono             159.05      59.79   2.660  0.00953 ** \ngenotypeB                  254.90      59.79   4.263 5.73e-05 ***\nmicrobiotamono:genotypeB  -538.90      84.56  -6.373 1.30e-08 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 189.1 on 76 degrees of freedom\nMultiple R-squared:  0.3849,    Adjusted R-squared:  0.3606 \nF-statistic: 15.85 on 3 and 76 DF,  p-value: 4.254e-08"
   },
   {
     "objectID": "Lecture_Folder/Week7b.html#interaction-plots-1",
     "href": "Lecture_Folder/Week7b.html#interaction-plots-1",
     "title": "Week 7b - Statistics for Bioengineering",
     "section": "Interaction Plots",
-    "text": "Interaction Plots\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\nsummary_df &lt;- rna_data |&gt;\n  group_by(Genotype, Microbiota) |&gt;\n  summarise(mean_response = mean(Gene80), .groups = \"drop\")\n\nsummary_df &lt;- rna_data |&gt;\n  group_by(Genotype, Microbiota) |&gt;\n  summarise(mean_response = mean(Gene80),\n            se = sd(Gene80) / sqrt(n()), .groups = \"drop\")\n\n# ggplot interaction plot\nggplot(summary_df, aes(x = Genotype, y = mean_response, group = Microbiota, color = Microbiota)) +\n  geom_line(size = 1.2) +\n  geom_point(size = 3) +\n  geom_errorbar(aes(ymin = mean_response - se, ymax = mean_response + se), width = 0.2) +\n  labs(title = \"Interaction Plot with SE\",\n       x = \"Genotype\",\n       y = \"Mean Expression of Gene80\",\n       color = \"Microbiota\") +\n  theme_minimal()"
+    "text": "Interaction Plots\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\nsummary_df &lt;- rna_data |&gt;\n  group_by(Genotype, Microbiota) |&gt;\n  summarise(mean_response = mean(Gene100), .groups = \"drop\")\n\nsummary_df &lt;- rna_data |&gt;\n  group_by(Genotype, Microbiota) |&gt;\n  summarise(mean_response = mean(Gene100),\n            se = sd(Gene100) / sqrt(n()), .groups = \"drop\")\n\n# ggplot interaction plot\nggplot(summary_df, aes(x = Genotype, y = mean_response, group = Microbiota, color = Microbiota)) +\n  geom_line(size = 1.2) +\n  geom_point(size = 3) +\n  geom_errorbar(aes(ymin = mean_response - se, ymax = mean_response + se), width = 0.2) +\n  labs(title = \"Interaction Plot with SE\",\n       x = \"Genotype\",\n       y = \"Mean Expression of Gene100\",\n       color = \"Microbiota\") +\n  theme_minimal()"
   },
   {
     "objectID": "Lecture_Folder/Week7b.html#interaction-plots-2",
@@ -12444,5 +12444,376 @@
     "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
     "section": "Exercise 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration",
     "text": "Exercise 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration\n\nThe Study\nA team of bioengineers is evaluating how scaffold material and stem cell type influence the success of tissue regeneration in a lab-grown cartilage model. They use three different scaffold materials and three types of stem cells and record whether the engineered cartilage shows successful regeneration (defined by a set of mechanical and histological markers) after 4 weeks.\nThey test the following materials\n\nScaffold Materials:\n\nCollagen\nHydrogel\nBioceramic\n\nStem Cell Types:\n\nAdipose-derived stem cells (ASC)\nBone marrow-derived stem cells (BMSC)\nInduced pluripotent stem cells (iPSC)\n\n\nThe counts below represent the number of successful regenerations in each combination of material and cell type.\n\n\n\n\nASC\nBMSC\niPSC\n\n\n\n\nCollagen\n48\n22\n15\n\n\nHydrogel\n25\n57\n30\n\n\nBioceramic\n20\n23\n61\n\n\n\n\n\nYour Tasks:\n\nState the null and alternative hypotheses for this test.\nUsing R, perform a Chi-square test of independence. Include the R code and output.\nCalculate the odds ratio and LOD score for just the collagen/hydrogel vs. ASC/BMSC combination.\nWhat do the results suggest? Use a significance level of α = 0.05.\nWould you conclude that scaffold type and cell type influence regeneration success independently, or do they interact?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html",
+    "href": "Lecture_Folder/Week8a.html",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(tibble)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#this-week",
+    "href": "Lecture_Folder/Week8a.html#this-week",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "This week",
+    "text": "This week\n\nKey principles of experimental design\nLinear Mixed Models (GLMMs)\nChi-square tests\nGeneralized Linear Models - Logistic and Poisson Regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#what-is-an-experimental-study",
+    "href": "Lecture_Folder/Week8a.html#what-is-an-experimental-study",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "What is an experimental study?",
+    "text": "What is an experimental study?\n\nIn an experimental study the researcher assigns treatments to units\nIn an observational study nature does the assigning of treatments to units\nThe crucial advantage of experiments derives from the random assignment of treatments to units\nRandomization minimizes the influence of confounding variables\nAllows us to infer cause and effect more easily (or at all)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#mount-everest-example",
+    "href": "Lecture_Folder/Week8a.html#mount-everest-example",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Mount Everest example",
+    "text": "Mount Everest example\nSurvival of climbers of Mount Everest is higher for individuals taking supplemental oxygen than those who don’t.\nWhy?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#mount-everest-example-1",
+    "href": "Lecture_Folder/Week8a.html#mount-everest-example-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Mount Everest example",
+    "text": "Mount Everest example\n\nOne possibility is that supplemental oxygen (explanatory variable) really does cause higher survival (response variable).\nThe other is that the two variables are associated because other variables affect both supplemental oxygen and survival.\nUse of supplemental oxygen might be a benign indicator of a greater overall preparedness of the climbers that use it.\nVariables (like preparedness) that distort the causal relationship between the measured variables of interest (oxygen use and survival) are called confounding variables"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#clinical-trials",
+    "href": "Lecture_Folder/Week8a.html#clinical-trials",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Clinical Trials",
+    "text": "Clinical Trials\n\nThe gold standard of experimental designs is the clinical trial\nExperimental design in all areas of biology have been informed by procedures used in clinical trials\nA clinical trial is an experimental study in which two or more treatments are assigned to human subjects\nThe design of clinical trials has been refined because the cost of making a mistake with human subjects is so high\nExperiments on nonhuman subjects are simply called “laboratory experiments”or “field experiments”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#example-of-a-clinical-trial",
+    "href": "Lecture_Folder/Week8a.html#example-of-a-clinical-trial",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Example of a clinical trial",
+    "text": "Example of a clinical trial\n\nTransmission of the HIV-1 virus via sex workers contributes to the rapid spread of AIDS in Africa\nThe spermicide nonoxynol-9 had shown in vitro activity against HIV-1, which motivated a clinical trial by van Damme et al. (2002).\nThey tested whether a vaginal gel containing the chemical would reduce the risk of acquiring the disease by female sex workers.\nData were gathered on a volunteer sample of 765 HIV-free sex-workers in six clinics in Asia and Africa.\nTwo gel treatments were assigned randomly to women at each clinic:\n\nOne gel contained nonoxynol-9\nthe other was a placebo.\n\nNeither the subjects nor the researchers making observations at the clinics knew who received the treatment and who got the placebo."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#outcome-of-the-clinical-trial",
+    "href": "Lecture_Folder/Week8a.html#outcome-of-the-clinical-trial",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Outcome of the clinical trial",
+    "text": "Outcome of the clinical trial\n\n\nNote that these are count data but clinical trials could involve continuous data\nWe will use these data on Thursday for our Chi-square analyses\nAlso there is another variable - what is the nature of that variable?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#design-components-of-a-clinical-trial",
+    "href": "Lecture_Folder/Week8a.html#design-components-of-a-clinical-trial",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Design components of a clinical trial",
+    "text": "Design components of a clinical trial\nThe goal of experimental design is to eliminate bias and to reduce sampling error when estimating and testing effects of one variable on another.\n\nTo reduce bias, the experiment included:\n\nSimultaneous control group: study included both the treatment of interest and a control group (the women receiving the placebo).\nRandomization: treatments were randomly assigned to women at each clinic.\nBlinding: neither the subjects nor the clinicians knew which women were assigned which treatment.\n\nTo reduce the effects of sampling error, the experiment included:\n\nReplication: study was carried out on multiple independent subjects.\nBalance: number of women was nearly equal in the two groups at every clinic.\nBlocking: subjects were grouped according to the clinic they attended, yielding multiple repetitions of the same experiment in different settings (“blocks”)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#simultaneous-control-group",
+    "href": "Lecture_Folder/Week8a.html#simultaneous-control-group",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "1. Simultaneous control group",
+    "text": "1. Simultaneous control group\n\nIn clinical trials either a placebo or the currently accepted treatment should be provided.\nIn experiments requiring intrusive methods to administer treatment, such as\n\ninjections\nsurgery\nrestraint\nconfinement\n\nthe control subjects should be perturbed in the same way as the other subjects, except for the treatment itself, as far as ethical considerations permit.\nThe “sham operation”, in which surgery is carried out without the experimental treatment itself, is an example.\nIn field experiments, applying a treatment of interest may physically disturb the plots receiving it and the surrounding areas, perhaps by trampling the ground by the researchers.\nIdeally, the same disturbance should be applied to the control plots."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#randomization",
+    "href": "Lecture_Folder/Week8a.html#randomization",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "2. Randomization",
+    "text": "2. Randomization\n\nThe researcher should randomize assignment of treatments to units or subjects\nChance rather than conscious or unconscious decision determines which units end up receiving the treatment and which the control\nRandomization breaks the association between possible confounding variables and the explanatory variable\nRandomization doesn’t eliminate the variation contributed by confounding variables, only their correlation with treatment\nRandomization ensures that variation from confounding variables is similar between the different treatment groups."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#randomization-1",
+    "href": "Lecture_Folder/Week8a.html#randomization-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "2. Randomization",
+    "text": "2. Randomization\n\nRandomization should be carried out using a random process:\n\nList all n subjects, one per row, in a computer spreadsheet.\nUse the computer to give each individual a random number.\nAssign treatment A to those subjects receiving the lowest numbers and treatment B to those with the highest numbers.\n\nOther ways of assigning treatments to subjects are almost always inferior because they do not eliminate the effects of confounding variables.\n“Haphazard” assignment, in which the researcher chooses a treatment while trying to make it random, has repeatedly been shown to be non-random and prone to bias."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#randomization-types",
+    "href": "Lecture_Folder/Week8a.html#randomization-types",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "2. Randomization Types",
+    "text": "2. Randomization Types\n\nCompletely randomized design - all subjects are placed to treatment or control with equal probability\nRandomized block - first broken into groups (e.g. age or gender) then assigned to treatment groups at random\nMatched pair design - subjects are paired by similarity before being randomly assigned to treatment groups"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#random-sampling-approaches",
+    "href": "Lecture_Folder/Week8a.html#random-sampling-approaches",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "2. Random sampling approaches",
+    "text": "2. Random sampling approaches\n\nSimple random sample - every sample has equal probability of being chosen\nStratified sample - subjects are randomly divided into groups then a simple random sample are taken from each\nCluster sample - subjects are divided into similar groups, usually naturally occurring, and then a simple random samples of clusters is then taken and every member of the cluster is included in the sample\nMultistage sampling - First clusters are random sampled, and then random samples are take from each cluster.\nSystematic sample - members of a sample are chosen in a pre-determined ways. e.g Choose every 20th person coming into a store"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#blinding",
+    "href": "Lecture_Folder/Week8a.html#blinding",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "3. Blinding",
+    "text": "3. Blinding\n\nBlinding is the process of concealing information from participants (sometimes including researchers) about which subjects receive which treatment.\nBlinding prevents subjects and researchers from changing their behavior, consciously or unconsciously, as a result of knowing which treatment they were receiving or administering.\nFor example, studies showing that acupuncture has a significant effect on back pain are limited to those without blinding.\nReviews of medical studies have revealed that studies carried out without double- blinding exaggerated treatment effects by 16% on average compared with studies carried out with double-blinding (Jüni et al. 2001).\nBebarta et al.(2003) reviewed 290 two-treatment experiments carried out on animals or on cell lines. The odds of detecting a positive effect of treatment were more than threefold higher in studies without blinding than in studies with blinding.\nBlinding can be incorporated into experiments on nonhuman subjects using coded tags that identify the subject to a “blind” observer without revealing the treatment (and who measures units from different treatments in random order)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#blinding-1",
+    "href": "Lecture_Folder/Week8a.html#blinding-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "3. Blinding",
+    "text": "3. Blinding\n\nIn a single-blind experiment, the subjects are unaware of the treatment that they have been assigned.\n\nTreatments must be indistinguishable to subjects, which prevents them from responding differently according to knowledge of treatment.\nBlinding can also be a concern in non-human studies where animals respond to stimuli\n\nIn a double-blind experiment the researchers administering the treatments and measuring the response are also unaware of which subjects are receiving which treatments\n\nResearchers sometimes have pet hypotheses, and they might treat experimental subjects in different ways depending on their hopes for the outcome\nMany response variables are difficult to measure and require some subjective interpretation, which makes the results prone to a bias\nResearchers are naturally more interested in the treated subjects than the control subjects, and this increased attention can itself result in improved response"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#replication",
+    "href": "Lecture_Folder/Week8a.html#replication",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "4. Replication",
+    "text": "4. Replication\n\nReplication is the assignment of each treatment to multiple, independent experimental units.\nThe goal of experiments is to estimate and test treatment effects against the background of variation between individuals (“noise”) caused by other variables\nWithout replication, we would not know whether response differences were due to the treatments or just chance differences between the treatments caused by other factors.\nOne way to reduce noise is to make the experimental conditions constant\nHowever, highly constant experimental conditions might not be feasible nor desirable\nBy limiting the conditions of an experiment, we also limit the generality of the results\nAnother way to make treatment effects stand out is to include extreme treatments and to replicate the data."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#replication-1",
+    "href": "Lecture_Folder/Week8a.html#replication-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "4. Replication",
+    "text": "4. Replication\n\nStudies that use more units (i.e. that have larger sample sizes) will have smaller standard errors and a higher probability of getting the correct answer from a hypothesis test.\nLarger samples mean more information, and more information means better estimates and more powerful tests.\nReplication is not about the number of plants or animals used, but the number of independent units in the experiment. An “experimental unit” is the independent unit to which treatments are assigned.\nThe figure shows three experimental designs used to compare plant growth under two temperature treatments (indicated by the shading of the pots). The first two designs are un-replicated."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#pseudoreplication",
+    "href": "Lecture_Folder/Week8a.html#pseudoreplication",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "4. (Pseudo)replication",
+    "text": "4. (Pseudo)replication"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#balance",
+    "href": "Lecture_Folder/Week8a.html#balance",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "5. Balance",
+    "text": "5. Balance\n\nA study design is balanced if all treatments have the same sample size.\nConversely, a design is unbalanced if there are unequal sample sizes between treatments.\nBalance is a second way to reduce the influence of sampling error on estimation and hypothesis testing.\nTo appreciate this, look again at the equation for the standard error of the difference between two treatment means.\nFor a fixed total number of experimental units, n1 + n2, the standard error is smallest when n1 and n2 are equal.\nBalance has other benefits. For example, ANOVA is more robust to departures from the assumption of equal variances when designs are balanced or nearly so."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#blocking",
+    "href": "Lecture_Folder/Week8a.html#blocking",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "6. Blocking",
+    "text": "6. Blocking\n\nBlocking is the grouping of experimental units that have similar properties. Within each block, treatments are randomly assigned to experimental units.\nBlocking essentially repeats the same, completely randomized experiment multiple times, once for each block.\nDifferences between treatments are only evaluated within blocks, and in this way the component of variation arising from differences between blocks are controlled for."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#what-if-you-cant-do-experiments",
+    "href": "Lecture_Folder/Week8a.html#what-if-you-cant-do-experiments",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "What if you can’t do experiments?",
+    "text": "What if you can’t do experiments?\n\nExperimental studies are not always feasible, in which case we must fall back upon observational studies.\nThe best observational studies incorporate as many of the features of good experimental design as possible to minimize bias (e.g., blinding) and the impact of sampling error (e.g., replication, balance, blocking, and even extreme treatments) except for one: randomization.\nRandomization is out of the question, because in an observational study the researcher does not assign treatments to subjects.\nTwo strategies are used to limit the effects of confounding variables on a difference between treatments in a controlled observational study: matching; and adjusting for known confounding variables (covariates).\nBut beware - there could always be a co-variate that you didn’t include!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#what-is-a-glmm",
+    "href": "Lecture_Folder/Week8a.html#what-is-a-glmm",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "What is a GLMM?",
+    "text": "What is a GLMM?\n\nGeneral Linear Mixed Model (GLMM)\nA continuous response variable with a mix of continuous and categorical predictor variables\nGLMM’s can be used to model random effects"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#attributes-of-mixed-effects-models",
+    "href": "Lecture_Folder/Week8a.html#attributes-of-mixed-effects-models",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Attributes of mixed effects models",
+    "text": "Attributes of mixed effects models\n\nLinear models that include both fixed and random effects.\nThe model is split into fixed and random parts:\n\nFixed effects influence mean of the response variable Y.\nRandom effects influence the variance of Y.\n\nThere is a different error variance for each level of grouping.\nEstimation and testing is based on restricted maximum likelihood, which can handle unequal sample size.\nP-values for fixed effects are conservative when design unbalanced.\nWe can use lm for simple models (which we’ll do today)\nMore complicated models are better performed using the nlme & lme4 packages in R."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#assumptions-of-mixed-effects-models",
+    "href": "Lecture_Folder/Week8a.html#assumptions-of-mixed-effects-models",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Assumptions of mixed-effects models",
+    "text": "Assumptions of mixed-effects models\n\nVariation within groups follows a normal distribution with equal variance among groups.\nGroups are randomly sampled from “population” of groups.\nGroup means follow a normal distribution.\nMeasurements within groups are independent."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#hypotheses-for-model-3-anova-factorial-design-with-mixed-effects",
+    "href": "Lecture_Folder/Week8a.html#hypotheses-for-model-3-anova-factorial-design-with-mixed-effects",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Hypotheses for Model 3 ANOVA Factorial Design With Mixed Effects",
+    "text": "Hypotheses for Model 3 ANOVA Factorial Design With Mixed Effects"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#brain-body-size-neaderthals-as-compared-to-humans",
+    "href": "Lecture_Folder/Week8a.html#brain-body-size-neaderthals-as-compared-to-humans",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Brain & body size | neaderthals as compared to humans",
+    "text": "Brain & body size | neaderthals as compared to humans"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#brain-body-size-neaderthals-as-compared-to-humans-1",
+    "href": "Lecture_Folder/Week8a.html#brain-body-size-neaderthals-as-compared-to-humans-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Brain & body size | neaderthals as compared to humans",
+    "text": "Brain & body size | neaderthals as compared to humans"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#brain-body-size-neaderthals-as-compared-to-humans-2",
+    "href": "Lecture_Folder/Week8a.html#brain-body-size-neaderthals-as-compared-to-humans-2",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Brain & body size | neaderthals as compared to humans",
+    "text": "Brain & body size | neaderthals as compared to humans"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-mixed-model",
+    "href": "Lecture_Folder/Week8a.html#parallel-slopes-mixed-model",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Parallel Slopes Mixed Model",
+    "text": "Parallel Slopes Mixed Model\n\nMixture of regression and ANOVA\nResponse is still a normally distributed continuous variable\nOne or more continuous predictor variables (covariates)\nSometimes the covariates are of biological interest\nMost often we want to remove unexplained variance\nIn this way they are similar to a blocking variable in ANOVA\nOperationally, similar to regular ANOVA in which the group and overall means are replaced by group and overall relationships"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude",
+    "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Parallel Slopes Model - R Interlude",
+    "text": "Parallel Slopes Model - R Interlude\n\nlibrary(ggplot2)\nlibrary(tibble)\nheart_rate_df &lt;- read.csv(\"mouse_rat_heart.csv\", header = TRUE)\n\nggplot(heart_rate_df, aes(x = temp, y = heart_rate, col = species)) + \n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE)\n\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-1",
+    "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Parallel Slopes Model - R Interlude",
+    "text": "Parallel Slopes Model - R Interlude\n\nlibrary(ggplot2)\nlibrary(tibble)\nheart_rate_df &lt;- read.csv(\"mouse_rat_heart.csv\", header = TRUE)\n\nmodel_additive &lt;- lm(heart_rate ~ temp + species, data = heart_rate_df)\nsummary(model_additive)\n\nnew_heart_rate_df &lt;- tibble(\n  species = c(\"mouse\", \"mouse\", \"mouse\", \"rat\", \"rat\", \"rat\"),\n  temp = c(24, 26, 28, 24, 26, 28)\n)\n\npredict(model_additive, new_heart_rate_df)\n\n\n\n\nCall:\nlm(formula = heart_rate ~ temp + species, data = heart_rate_df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.0128 -1.1296 -0.3912  0.9650  3.7800 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  -7.21091    2.55094  -2.827  0.00858 ** \ntemp          3.60275    0.09729  37.032  &lt; 2e-16 ***\nspeciesrat  -10.06529    0.73526 -13.689 6.27e-14 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.786 on 28 degrees of freedom\nMultiple R-squared:  0.9896,    Adjusted R-squared:  0.9888 \nF-statistic:  1331 on 2 and 28 DF,  p-value: &lt; 2.2e-16\n\n\n       1        2        3        4        5        6 \n79.25516 86.46067 93.66617 69.18987 76.39538 83.60088"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-2",
+    "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-2",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Parallel Slopes Model - R Interlude",
+    "text": "Parallel Slopes Model - R Interlude\n\nlibrary(ggplot2)\nlibrary(tibble)\nheart_rate_df &lt;- read.csv(\"mouse_rat_heart.csv\", header = TRUE)\n\nmodel_interactive &lt;- lm(heart_rate ~ temp * species, data = heart_rate_df)\nsummary(model_interactive)\n\nnew_heart_rate_df &lt;- tibble(\n  species = c(\"mouse\", \"mouse\", \"mouse\", \"rat\", \"rat\", \"rat\"),\n  temp = c(24, 26, 28, 24, 26, 28)\n)\n\npredict(model_interactive, new_heart_rate_df)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-3",
+    "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-3",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Parallel Slopes Model - R Interlude",
+    "text": "Parallel Slopes Model - R Interlude\n\n\n\nCall:\nlm(formula = heart_rate ~ temp * species, data = heart_rate_df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.7031 -1.3417 -0.1235  0.8100  3.6330 \n\nCoefficients:\n                Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     -11.0408     4.1515  -2.659    0.013 *  \ntemp              3.7514     0.1601  23.429   &lt;2e-16 ***\nspeciesrat       -4.3484     4.9617  -0.876    0.389    \ntemp:speciesrat  -0.2340     0.2009  -1.165    0.254    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.775 on 27 degrees of freedom\nMultiple R-squared:  0.9901,    Adjusted R-squared:  0.989 \nF-statistic: 898.9 on 3 and 27 DF,  p-value: &lt; 2.2e-16\n\n\n       1        2        3        4        5        6 \n78.99389 86.49678 93.99967 69.02983 76.06475 83.09967"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-mixed-model-1",
+    "href": "Lecture_Folder/Week8a.html#parallel-slopes-mixed-model-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Parallel Slopes Mixed Model",
+    "text": "Parallel Slopes Mixed Model\n\\[ y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\epsilon \\] where\n\\[\ny = \\left\\{\n\\begin{aligned}\n    & \\beta_0 + \\beta_1x_1 + \\epsilon \\\\\n    &(\\beta_0 + \\beta_2) +\\beta_1x_1 + \\epsilon\n\\end{aligned}\n\\right.\n\\]\n\nWhere the intercepts are different from one another but the slopes are not - R gives those estimates in that exact order\n\n\\[\ny = \\left\\{\n\\begin{aligned}\n    & -7.21091 + 3.60275x_1  \\\\\n    &(-7.21091 -10.06529) +3.60275x_1\n\\end{aligned}\n\\right.\n\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#interaction-mixed-model-1",
+    "href": "Lecture_Folder/Week8a.html#interaction-mixed-model-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Interaction Mixed Model",
+    "text": "Interaction Mixed Model\n\nlibrary(tidyverse)\nlibrary(modeldata)\ntheme_set(theme_minimal())\ndata(penguins)\npenguins_sm &lt;- filter(penguins, species != \"Adelie\")\n\nggplot(penguins_sm, aes(x = flipper_length_mm,\n                        y = body_mass_g,\n                        col = species)) + \n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#interaction-mixed-model-2",
+    "href": "Lecture_Folder/Week8a.html#interaction-mixed-model-2",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Interaction Mixed Model",
+    "text": "Interaction Mixed Model\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 1 row containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_point()`)."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#interaction-mixed-model-3",
+    "href": "Lecture_Folder/Week8a.html#interaction-mixed-model-3",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Interaction Mixed Model",
+    "text": "Interaction Mixed Model\n\nlibrary(tidyverse)\nlibrary(modeldata)\ntheme_set(theme_minimal())\ndata(penguins)\npenguins_sm &lt;- filter(penguins, species != \"Adelie\")\n\nmodel &lt;- lm(body_mass_g ~ flipper_length_mm * species,\n            data = penguins_sm)\nsummary(model)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#interaction-mixed-model-4",
+    "href": "Lecture_Folder/Week8a.html#interaction-mixed-model-4",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Interaction Mixed Model",
+    "text": "Interaction Mixed Model\n\n\n\nCall:\nlm(formula = body_mass_g ~ flipper_length_mm * species, data = penguins_sm)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-911.18 -215.38  -42.69  162.67 1015.71 \n\nCoefficients:\n                                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                     -3037.196   1138.679  -2.667  0.00832 ** \nflipper_length_mm                  34.573      5.811   5.950  1.3e-08 ***\nspeciesGentoo                   -3750.085   1534.769  -2.443  0.01548 *  \nflipper_length_mm:speciesGentoo    20.049      7.496   2.674  0.00815 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 339.2 on 187 degrees of freedom\n  (1 observation deleted due to missingness)\nMultiple R-squared:  0.8205,    Adjusted R-squared:  0.8176 \nF-statistic: 284.9 on 3 and 187 DF,  p-value: &lt; 2.2e-16\n\n\n\nMake a dummy data set of values for Gentoo and Chinstrap Penguins\nUse the interaction model that you fit to make new predictions for those values"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#interaction-mixed-model-5",
+    "href": "Lecture_Folder/Week8a.html#interaction-mixed-model-5",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Interaction Mixed Model",
+    "text": "Interaction Mixed Model\n\\[\nx_2 = \\left\\{\n\\begin{aligned}\n    & 0 \\qquad \\text{for Chinstrap} \\\\\n    & 1 \\qquad \\text{for Gentoo}\n\\end{aligned}\n\\right.\n\\] \\[ y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\beta_3x_1x_2 + \\epsilon \\]\n\\[\ny = \\left\\{\n\\begin{aligned}\n    & \\beta_0 + \\beta_1x_1 + \\epsilon \\\\\n    &(\\beta_0 + \\beta_2) +(\\beta_1 +\\beta_3)x_1 + \\epsilon\n\\end{aligned}\n\\right.\n\\] - Where the intercepts are different from one another but the slopes are not - Again R gives those estimates in that exact order\n\\[\ny = \\left\\{\n\\begin{aligned}\n    & -3037.196 + 34.573x_1  \\\\\n    &(-3037.196 - 3750.085) + (34.573 + 20.049)x_1\n\\end{aligned}\n\\right.\n\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#how-do-we-factor-in-categorical-variables",
+    "href": "Lecture_Folder/Week8a.html#how-do-we-factor-in-categorical-variables",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "How do we factor in categorical variables?",
+    "text": "How do we factor in categorical variables?\n\nFor a single categorical predictor, we can include effects of each factor level:\n\n\\[ y = B_0 + B_1(x~level1) + B_2(x~level2) +~... ~+ e \\]\n\nEach factor level (ex: for Wolbachia: Yes or No) becomes it’s own “effector” that will change the value of y\nInstead of x being a continuous numerical value, for categorical data it will be either a 0 or 1"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#a-generalized-linear-model",
+    "href": "Lecture_Folder/Week8a.html#a-generalized-linear-model",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "A Generalized Linear Model",
+    "text": "A Generalized Linear Model\n\nCheck out the help page in RStudio for glm()\n\n\nglm(formula = y ~ x1 + x2, family = gaussian(link = \"identity\"))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#first-steps-use-a-glm-to-test-wolbachia-infection",
+    "href": "Lecture_Folder/Week8a.html#first-steps-use-a-glm-to-test-wolbachia-infection",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "First steps: use a glm to test Wolbachia infection",
+    "text": "First steps: use a glm to test Wolbachia infection\n\nSet up a glm() to test for the effect of Wolbachia infection on Recombinant Fraction"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#first-steps-use-a-glm-to-test-wolbachia-infection-1",
+    "href": "Lecture_Folder/Week8a.html#first-steps-use-a-glm-to-test-wolbachia-infection-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "First steps: use a glm to test Wolbachia infection",
+    "text": "First steps: use a glm to test Wolbachia infection\n\nWhat do these components mean?\n\n\nfly &lt;- read.table(\"Mostoufi2022_Recombination_Edit.csv\", header=T, sep=',')\nmodel &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link=\"identity\"))\nsummary(model)\n\n\nCall:\nglm(formula = fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link = \"identity\"))\n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)      0.348054   0.005845  59.545   &lt;2e-16 ***\nfly$WolbachiaYes 0.021664   0.008474   2.557   0.0112 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 0.00406577)\n\n    Null deviance: 0.94137  on 226  degrees of freedom\nResidual deviance: 0.91480  on 225  degrees of freedom\nAIC: -601.48\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#interpreting-the-glm",
+    "href": "Lecture_Folder/Week8a.html#interpreting-the-glm",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Interpreting the GLM",
+    "text": "Interpreting the GLM\n\nWhy is our intercept significant?\n\nRemember that the null hypothesis is a model with an intercept and slope of 0\n\nHow would you interpret the “WolbachiaYes” coefficient, especially the estimate and the p value?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#second-steps---adding-more-variables",
+    "href": "Lecture_Folder/Week8a.html#second-steps---adding-more-variables",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Second steps - adding more variables",
+    "text": "Second steps - adding more variables\n\nNow let’s add Food to our model - how does this change our model results?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#second-steps---adding-more-variables-1",
+    "href": "Lecture_Folder/Week8a.html#second-steps---adding-more-variables-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Second steps - adding more variables",
+    "text": "Second steps - adding more variables\n\nmodel2 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, family = gaussian(link = \"identity\"))\nsummary(model2)\n\n\nCall:\nglm(formula = fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, \n    family = gaussian(link = \"identity\"))\n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)      0.344691   0.008121  42.445   &lt;2e-16 ***\nfly$WolbachiaYes 0.021731   0.008504   2.555   0.0113 *  \nfly$FoodSucrose  0.002933   0.010481   0.280   0.7799    \nfly$FoodYeast    0.007366   0.010128   0.727   0.4678    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 0.00409246)\n\n    Null deviance: 0.94137  on 226  degrees of freedom\nResidual deviance: 0.91262  on 223  degrees of freedom\nAIC: -598.02\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#interpreting-the-glm-1",
+    "href": "Lecture_Folder/Week8a.html#interpreting-the-glm-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Interpreting the GLM",
+    "text": "Interpreting the GLM\n\nHow would you interpret the Intercept and Food coefficients, especially the estimate and the p value?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#interaction-effects-in-glms",
+    "href": "Lecture_Folder/Week8a.html#interaction-effects-in-glms",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Interaction effects in GLMs",
+    "text": "Interaction effects in GLMs\n\nYou can also model interactions between two categorical variables in glms\n\nWhat if variable x and variable z interact in non-additive ways?\n\nUse the notation x*z in the formula"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#third-steps---adding-interaction-effects",
+    "href": "Lecture_Folder/Week8a.html#third-steps---adding-interaction-effects",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Third steps - adding interaction effects",
+    "text": "Third steps - adding interaction effects\n\nLet’s finally add an interaction between Wolbachia infection and Food to represent Wolbachia titer in our model\nRun the model - what are the results?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#third-steps---adding-interaction-effects-1",
+    "href": "Lecture_Folder/Week8a.html#third-steps---adding-interaction-effects-1",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Third steps - adding interaction effects",
+    "text": "Third steps - adding interaction effects\n\nHow do we interpret these findings?\n\n\nmodel3 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + fly$Wolbachia*fly$Food, family = gaussian(link = \"identity\"))\nsummary(model3)\n\n\nCall:\nglm(formula = fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + \n    fly$Wolbachia * fly$Food, family = gaussian(link = \"identity\"))\n\nCoefficients:\n                                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                       0.344520   0.009760  35.298   &lt;2e-16 ***\nfly$WolbachiaYes                  0.022080   0.013970   1.581    0.115    \nfly$FoodSucrose                   0.010286   0.014458   0.711    0.478    \nfly$FoodYeast                     0.001256   0.014059   0.089    0.929    \nfly$WolbachiaYes:fly$FoodSucrose -0.015873   0.021002  -0.756    0.451    \nfly$WolbachiaYes:fly$FoodYeast    0.012910   0.020282   0.637    0.525    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 0.004096248)\n\n    Null deviance: 0.94137  on 226  degrees of freedom\nResidual deviance: 0.90527  on 221  degrees of freedom\nAIC: -595.86\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#how-do-we-know-which-model-to-use",
+    "href": "Lecture_Folder/Week8a.html#how-do-we-know-which-model-to-use",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "How do we know which model to use?",
+    "text": "How do we know which model to use?\n\nWant to be careful not to overfit your linear model (give too many variables)\nThe Akaike information criterion (AIC) is a metric for comparing different models to find the best fit\n\nNotice the AIC score in your output?\nFor more on this, take Advanced Bio Stats! Or do some reading on the internet."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#r-interlude-variance-components-with-2-random-factors-using-lme4",
+    "href": "Lecture_Folder/Week8a.html#r-interlude-variance-components-with-2-random-factors-using-lme4",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Variance components with 2 random factors using LME4",
+    "text": "R INTERLUDE | Variance components with 2 random factors using LME4\n\nrnadata &lt;- read.table('RNAseq.tsv', header=T, sep='')\nhead(rnadata)\n\nvariables excluding first 5 and last 5 observations\n\ngene &lt;- rnadata$Gene80[6:75] \nmicrobiota &lt;- rnadata$Microbiota[6:75]\ngenotype &lt;- rnadata$Genotype[6:75]\nboxplot(gene ~ microbiota)\nboxplot(gene ~ genotype)\nboxplot(gene ~ microbiota*genotype)\n\nEstimate the variance components using Restricted Maximum Likelihood (REML)\n\nlibrary(lme4)\nlmer(gene ~ 1 + (1 | microbiota) + (1 | genotype) + (1 | microbiota:genotype))\n\nBased on the REML sd estimates, what are the relative contributions of the factors to total variance in gene expression?"
   }
 ]
