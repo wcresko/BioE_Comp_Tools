@@ -31,3 +31,5 @@ title: "Lectures"
 [Lecture_7b](Lecture_Folder/Week7b.qmd)
 
 [Lecture_8a](Lecture_Folder/Week8a.qmd)
+
+[Lecture_8b](Lecture_Folder/Week8b.qmd)

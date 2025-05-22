@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -12499,7 +12499,7 @@
     "href": "Lecture_Folder/Week8a.html#outcome-of-the-clinical-trial",
     "title": "Week 8a - Statistics for Bioengineering",
     "section": "Outcome of the clinical trial",
-    "text": "Outcome of the clinical trial\n\n\nNote that these are count data but clinical trials could involve continuous data\nWe will use these data on Thursday for our Chi-square analyses\nAlso there is another variable - what is the nature of that variable?"
+    "text": "Outcome of the clinical trial\n\n\n\n\n\n\n\n\n\n\nNote that these are count data but clinical trials could involve continuous data\nWe will use these data on Thursday for our Chi-square analyses\nAlso there is another variable - what is the nature of that variable?"
   },
   {
     "objectID": "Lecture_Folder/Week8a.html#design-components-of-a-clinical-trial",
@@ -12660,28 +12660,28 @@
     "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude",
     "title": "Week 8a - Statistics for Bioengineering",
     "section": "Parallel Slopes Model - R Interlude",
-    "text": "Parallel Slopes Model - R Interlude\n\nlibrary(ggplot2)\nlibrary(tibble)\nheart_rate_df &lt;- read.csv(\"mouse_rat_heart.csv\", header = TRUE)\n\nggplot(heart_rate_df, aes(x = temp, y = heart_rate, col = species)) + \n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE)\n\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Parallel Slopes Model - R Interlude\n\nlibrary(ggplot2)\nlibrary(tibble)\nheart_rate_df &lt;- read.csv(\"mouse_rat_heart.csv\", header = TRUE)\n\nggplot(heart_rate_df, aes(x = temp, y = heart_rate, col = species)) + \n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE)"
   },
   {
     "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-1",
     "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-1",
     "title": "Week 8a - Statistics for Bioengineering",
     "section": "Parallel Slopes Model - R Interlude",
-    "text": "Parallel Slopes Model - R Interlude\n\nlibrary(ggplot2)\nlibrary(tibble)\nheart_rate_df &lt;- read.csv(\"mouse_rat_heart.csv\", header = TRUE)\n\nmodel_additive &lt;- lm(heart_rate ~ temp + species, data = heart_rate_df)\nsummary(model_additive)\n\nnew_heart_rate_df &lt;- tibble(\n  species = c(\"mouse\", \"mouse\", \"mouse\", \"rat\", \"rat\", \"rat\"),\n  temp = c(24, 26, 28, 24, 26, 28)\n)\n\npredict(model_additive, new_heart_rate_df)\n\n\n\n\nCall:\nlm(formula = heart_rate ~ temp + species, data = heart_rate_df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.0128 -1.1296 -0.3912  0.9650  3.7800 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  -7.21091    2.55094  -2.827  0.00858 ** \ntemp          3.60275    0.09729  37.032  &lt; 2e-16 ***\nspeciesrat  -10.06529    0.73526 -13.689 6.27e-14 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.786 on 28 degrees of freedom\nMultiple R-squared:  0.9896,    Adjusted R-squared:  0.9888 \nF-statistic:  1331 on 2 and 28 DF,  p-value: &lt; 2.2e-16\n\n\n       1        2        3        4        5        6 \n79.25516 86.46067 93.66617 69.18987 76.39538 83.60088"
+    "text": "Parallel Slopes Model - R Interlude\n\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-2",
     "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-2",
     "title": "Week 8a - Statistics for Bioengineering",
     "section": "Parallel Slopes Model - R Interlude",
-    "text": "Parallel Slopes Model - R Interlude\n\nlibrary(ggplot2)\nlibrary(tibble)\nheart_rate_df &lt;- read.csv(\"mouse_rat_heart.csv\", header = TRUE)\n\nmodel_interactive &lt;- lm(heart_rate ~ temp * species, data = heart_rate_df)\nsummary(model_interactive)\n\nnew_heart_rate_df &lt;- tibble(\n  species = c(\"mouse\", \"mouse\", \"mouse\", \"rat\", \"rat\", \"rat\"),\n  temp = c(24, 26, 28, 24, 26, 28)\n)\n\npredict(model_interactive, new_heart_rate_df)"
+    "text": "Parallel Slopes Model - R Interlude\n\nlibrary(ggplot2)\nlibrary(tibble)\nheart_rate_df &lt;- read.csv(\"mouse_rat_heart.csv\", header = TRUE)\n\nmodel_additive &lt;- lm(heart_rate ~ temp + species, data = heart_rate_df)\nsummary(model_additive)\n\nnew_heart_rate_df &lt;- tibble(\n  species = c(\"mouse\", \"mouse\", \"mouse\", \"rat\", \"rat\", \"rat\"),\n  temp = c(24, 26, 28, 24, 26, 28)\n)\n\npredict(model_additive, new_heart_rate_df)"
   },
   {
     "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-3",
     "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-3",
     "title": "Week 8a - Statistics for Bioengineering",
     "section": "Parallel Slopes Model - R Interlude",
-    "text": "Parallel Slopes Model - R Interlude\n\n\n\nCall:\nlm(formula = heart_rate ~ temp * species, data = heart_rate_df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.7031 -1.3417 -0.1235  0.8100  3.6330 \n\nCoefficients:\n                Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     -11.0408     4.1515  -2.659    0.013 *  \ntemp              3.7514     0.1601  23.429   &lt;2e-16 ***\nspeciesrat       -4.3484     4.9617  -0.876    0.389    \ntemp:speciesrat  -0.2340     0.2009  -1.165    0.254    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.775 on 27 degrees of freedom\nMultiple R-squared:  0.9901,    Adjusted R-squared:  0.989 \nF-statistic: 898.9 on 3 and 27 DF,  p-value: &lt; 2.2e-16\n\n\n       1        2        3        4        5        6 \n78.99389 86.49678 93.99967 69.02983 76.06475 83.09967"
+    "text": "Parallel Slopes Model - R Interlude\n\n\n\nCall:\nlm(formula = heart_rate ~ temp + species, data = heart_rate_df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.0128 -1.1296 -0.3912  0.9650  3.7800 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  -7.21091    2.55094  -2.827  0.00858 ** \ntemp          3.60275    0.09729  37.032  &lt; 2e-16 ***\nspeciesrat  -10.06529    0.73526 -13.689 6.27e-14 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.786 on 28 degrees of freedom\nMultiple R-squared:  0.9896,    Adjusted R-squared:  0.9888 \nF-statistic:  1331 on 2 and 28 DF,  p-value: &lt; 2.2e-16\n\n\n       1        2        3        4        5        6 \n79.25516 86.46067 93.66617 69.18987 76.39538 83.60088"
   },
   {
     "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-mixed-model-1",
@@ -12815,5 +12815,376 @@
     "title": "Week 8a - Statistics for Bioengineering",
     "section": "R INTERLUDE | Variance components with 2 random factors using LME4",
     "text": "R INTERLUDE | Variance components with 2 random factors using LME4\n\nrnadata &lt;- read.table('RNAseq.tsv', header=T, sep='')\nhead(rnadata)\n\nvariables excluding first 5 and last 5 observations\n\ngene &lt;- rnadata$Gene80[6:75] \nmicrobiota &lt;- rnadata$Microbiota[6:75]\ngenotype &lt;- rnadata$Genotype[6:75]\nboxplot(gene ~ microbiota)\nboxplot(gene ~ genotype)\nboxplot(gene ~ microbiota*genotype)\n\nEstimate the variance components using Restricted Maximum Likelihood (REML)\n\nlibrary(lme4)\nlmer(gene ~ 1 + (1 | microbiota) + (1 | genotype) + (1 | microbiota:genotype))\n\nBased on the REML sd estimates, what are the relative contributions of the factors to total variance in gene expression?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-4",
+    "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-4",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Parallel Slopes Model - R Interlude",
+    "text": "Parallel Slopes Model - R Interlude\n\nlibrary(ggplot2)\nlibrary(tibble)\nheart_rate_df &lt;- read.csv(\"mouse_rat_heart.csv\", header = TRUE)\n\nmodel_interactive &lt;- lm(heart_rate ~ temp * species, data = heart_rate_df)\nsummary(model_interactive)\n\nnew_heart_rate_df &lt;- tibble(\n  species = c(\"mouse\", \"mouse\", \"mouse\", \"rat\", \"rat\", \"rat\"),\n  temp = c(24, 26, 28, 24, 26, 28)\n)\n\npredict(model_interactive, new_heart_rate_df)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-5",
+    "href": "Lecture_Folder/Week8a.html#parallel-slopes-model---r-interlude-5",
+    "title": "Week 8a - Statistics for Bioengineering",
+    "section": "Parallel Slopes Model - R Interlude",
+    "text": "Parallel Slopes Model - R Interlude\n\n\n\nCall:\nlm(formula = heart_rate ~ temp * species, data = heart_rate_df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.7031 -1.3417 -0.1235  0.8100  3.6330 \n\nCoefficients:\n                Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     -11.0408     4.1515  -2.659    0.013 *  \ntemp              3.7514     0.1601  23.429   &lt;2e-16 ***\nspeciesrat       -4.3484     4.9617  -0.876    0.389    \ntemp:speciesrat  -0.2340     0.2009  -1.165    0.254    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.775 on 27 degrees of freedom\nMultiple R-squared:  0.9901,    Adjusted R-squared:  0.989 \nF-statistic: 898.9 on 3 and 27 DF,  p-value: &lt; 2.2e-16\n\n\n       1        2        3        4        5        6 \n78.99389 86.49678 93.99967 69.02983 76.06475 83.09967"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html",
+    "href": "Lecture_Folder/Week8b.html",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(tibble)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#this-week",
+    "href": "Lecture_Folder/Week8b.html#this-week",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "This week",
+    "text": "This week\n\nKey principles of experimental design\nLinear Mixed Models (GLMMs)\nGeneralized Linear Models - Logistic and Poisson Regression\nChi-square tests of association and goodness of fit"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#using-glm-for-more-complicated-mixed-models",
+    "href": "Lecture_Folder/Week8b.html#using-glm-for-more-complicated-mixed-models",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Using glm for more complicated mixed models",
+    "text": "Using glm for more complicated mixed models\n\nFor a single categorical predictor, we can include effects of each factor level:\n\n\\[ y_i = \\beta_0 + \\beta_1(x~level1) + \\beta_2(x~level2) + \\beta_3x_3~... ~+ e_1 \\]\n\nEach factor level becomes it’s own “effector” that will change the value of y\nInstead of x being a continuous numerical value, for categorical data it will be either a 0 or 1\n\\(x_3\\) is also a continuous variable so this is a mixed model"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#a-generalized-linear-model",
+    "href": "Lecture_Folder/Week8b.html#a-generalized-linear-model",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "A Generalized Linear Model",
+    "text": "A Generalized Linear Model\n\nCheck out the help page in RStudio for glm()\n\n\nglm(formula = y ~ x1 + x2 + x3, family = gaussian(link = \"identity\"))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#glm-to-test-wolbachia-infection",
+    "href": "Lecture_Folder/Week8b.html#glm-to-test-wolbachia-infection",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "glm to test Wolbachia infection",
+    "text": "glm to test Wolbachia infection\n\nSet up a glm() to test for the effect of Wolbachia infection on Recombinant Fraction\n\n\nfly &lt;- read.table(\"Mostoufi2022_Recombination_Edit.csv\", header=T, sep=',')\nmodel &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link=\"identity\"))\nsummary(model)\n\n\nCall:\nglm(formula = fly$RecombinantFraction ~ fly$Wolbachia, family = gaussian(link = \"identity\"))\n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)      0.348054   0.005845  59.545   &lt;2e-16 ***\nfly$WolbachiaYes 0.021664   0.008474   2.557   0.0112 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 0.00406577)\n\n    Null deviance: 0.94137  on 226  degrees of freedom\nResidual deviance: 0.91480  on 225  degrees of freedom\nAIC: -601.48\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#adding-more-variables",
+    "href": "Lecture_Folder/Week8b.html#adding-more-variables",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Adding more variables",
+    "text": "Adding more variables\n\nmodel2 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, family = gaussian(link = \"identity\"))\nsummary(model2)\n\n\nCall:\nglm(formula = fly$RecombinantFraction ~ fly$Wolbachia + fly$Food, \n    family = gaussian(link = \"identity\"))\n\nCoefficients:\n                 Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)      0.344691   0.008121  42.445   &lt;2e-16 ***\nfly$WolbachiaYes 0.021731   0.008504   2.555   0.0113 *  \nfly$FoodSucrose  0.002933   0.010481   0.280   0.7799    \nfly$FoodYeast    0.007366   0.010128   0.727   0.4678    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 0.00409246)\n\n    Null deviance: 0.94137  on 226  degrees of freedom\nResidual deviance: 0.91262  on 223  degrees of freedom\nAIC: -598.02\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#adding-interaction-effects",
+    "href": "Lecture_Folder/Week8b.html#adding-interaction-effects",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Adding interaction effects",
+    "text": "Adding interaction effects\n\nmodel3 &lt;- glm(fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + fly$Wolbachia*fly$Food, family = gaussian(link = \"identity\"))\nsummary(model3)\n\n\nCall:\nglm(formula = fly$RecombinantFraction ~ fly$Wolbachia + fly$Food + \n    fly$Wolbachia * fly$Food, family = gaussian(link = \"identity\"))\n\nCoefficients:\n                                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                       0.344520   0.009760  35.298   &lt;2e-16 ***\nfly$WolbachiaYes                  0.022080   0.013970   1.581    0.115    \nfly$FoodSucrose                   0.010286   0.014458   0.711    0.478    \nfly$FoodYeast                     0.001256   0.014059   0.089    0.929    \nfly$WolbachiaYes:fly$FoodSucrose -0.015873   0.021002  -0.756    0.451    \nfly$WolbachiaYes:fly$FoodYeast    0.012910   0.020282   0.637    0.525    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 0.004096248)\n\n    Null deviance: 0.94137  on 226  degrees of freedom\nResidual deviance: 0.90527  on 221  degrees of freedom\nAIC: -595.86\n\nNumber of Fisher Scoring iterations: 2"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#how-do-we-know-which-model-to-use",
+    "href": "Lecture_Folder/Week8b.html#how-do-we-know-which-model-to-use",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "How do we know which model to use?",
+    "text": "How do we know which model to use?\n\nWant to be careful not to overfit your linear model (give too many variables)\nWe can use Deviance\nThe Akaike information criterion (AIC) is a metric for comparing different models to find the best fit\n\nNotice the AIC score in your output?\nThis works the same way that it did in multiple linear regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#what-is-deviance",
+    "href": "Lecture_Folder/Week8b.html#what-is-deviance",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "What is Deviance?",
+    "text": "What is Deviance?\n\nDeviance measures model fit in generalized linear models (GLMs)\nSimilar to residual sum of squares in linear regression\nCompares fitted model to a saturated model\nSaturated model: fits data perfectly (one parameter per observation)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#mathematical-definition",
+    "href": "Lecture_Folder/Week8b.html#mathematical-definition",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Mathematical Definition",
+    "text": "Mathematical Definition\n\\[\n\\text{Deviance} = 2 \\times (\\log L_{\\text{saturated}} - \\log L_{\\text{fitted}})\n\\]\n\nLower deviance = better fit\nUsed to compare models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#types-of-deviance-in-glm",
+    "href": "Lecture_Folder/Week8b.html#types-of-deviance-in-glm",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Types of Deviance in glm()",
+    "text": "Types of Deviance in glm()\n\nNull Deviance:\n\nFrom model with only intercept\nMeasures fit using just the mean response\n\nResidual Deviance:\n\nFrom the fitted model (with predictors)\nMeasures how well your model fits relative to saturated model"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#interpreting-deviance",
+    "href": "Lecture_Folder/Week8b.html#interpreting-deviance",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Interpreting Deviance",
+    "text": "Interpreting Deviance\n\nLarge drop from null deviance to residual deviance → better model fit\nTest improvement with chi-square test:\n\nwith(model, pchisq(null.deviance - deviance, \n                   df.null - df.residual, \n                   lower.tail = FALSE))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#example-output",
+    "href": "Lecture_Folder/Week8b.html#example-output",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Example Output",
+    "text": "Example Output\nNull deviance: 120.45  on 99  degrees of freedom\nResidual deviance:  98.23  on 97  degrees of freedom\n\nThe model explains variability beyond just the mean\nCompare deviances to assess predictor usefulness"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#what-is-a-generalized-linear-model",
+    "href": "Lecture_Folder/Week8b.html#what-is-a-generalized-linear-model",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "What is a generalized linear model?",
+    "text": "What is a generalized linear model?\n\nThe response variable of interest is binary - violates normality assumption because binomial distributed (Logistic)\nThe response variable is a count - violates the assumption of independent mean and variance because the data are multinomial or Poisson distributed (Poisson or Log-linear)\nProvides a convenient way to connect predictor variables with categorical response variables\nBasically an extension of general linear models that link the distribution of the response variable to the predictor variables"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#generalized-linear-models-have-three-components",
+    "href": "Lecture_Folder/Week8b.html#generalized-linear-models-have-three-components",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Generalized linear models have three components",
+    "text": "Generalized linear models have three components\n\nThe random component that specifies the residual distribution of the response variable in terms of a function of the mean.\nThe systematic component represents the linear combination of the predictor variables, and is equivalent to what you’ve learned previously for general linear models\nThe link function connects the random and systematic components, and depends on the nature of the random response distribution (e.g. binomial or poisson)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#assumptions",
+    "href": "Lecture_Folder/Week8b.html#assumptions",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nIndependence of observations\nNo observations are overly influential\nLinearity between the response and predictors is not assumed, but the relationship between each of the predictors and the link function is assumed to be linear\nThe dispersion is not extreme (over or under), and fits the assumptions for binomial or Poisson error distributions\nWhat if the dispersion assumption is not met?\n\nCan fit ‘quasibinomial’ or ‘quasipoisson’ distributions where the dispersion parameter is derived from the data\nUse a Generalized Additive Model (GAM)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#what-is-logistic-regression",
+    "href": "Lecture_Folder/Week8b.html#what-is-logistic-regression",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "What is Logistic Regression?",
+    "text": "What is Logistic Regression?\n\nA classification algorithm\nUsed to predict a binary outcome (e.g., success/failure)\nOutputs a probability that is mapped to class labels"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#why-not-linear-regression",
+    "href": "Lecture_Folder/Week8b.html#why-not-linear-regression",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Why Not Linear Regression?",
+    "text": "Why Not Linear Regression?\n\nLinear regression is unbounded\nLogistic regression uses the logit function to map outputs between 0 and 1\n\n\\[P(y = 1 \\mid x) = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x)}}\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#the-logistic-function",
+    "href": "Lecture_Folder/Week8b.html#the-logistic-function",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "The Logistic Function",
+    "text": "The Logistic Function\n\ncurve(1 / (1 + exp(-x)), from = -10, to = 10, col = \"blue\", ylab = \"Probability\", xlab = \"Linear predictor\")\n\n\n\n\n\n\n\n\n\nS-shaped (sigmoid) curve\nConverts linear predictions into probabilities"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#odds-and-log-odds",
+    "href": "Lecture_Folder/Week8b.html#odds-and-log-odds",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Odds and Log-Odds",
+    "text": "Odds and Log-Odds\nLogistic regression models log-odds as a linear function\nOdds: \\[\\frac{P}{1 - P}\\]\nLog-odds (logit):\n\\[\\log\\left(\\frac{P}{1 - P}\\right)\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#equivalent-model-equation",
+    "href": "Lecture_Folder/Week8b.html#equivalent-model-equation",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Equivalent Model Equation",
+    "text": "Equivalent Model Equation\n\\[P(y = 1 \\mid x) = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x)}}\\]\n\\[\n\\log\\left(\\frac{P(y=1)}{1 - P(y=1)}\\right) = \\beta_0 + \\beta_1 x\n\\]\n\nLinear in parameters\nNon-linear in terms of prediction\nWe have linked the two sides with the logit function"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#fitting-the-model",
+    "href": "Lecture_Folder/Week8b.html#fitting-the-model",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Fitting the Model",
+    "text": "Fitting the Model\n\n# Example in R\ndata(mtcars)\nmtcars$am &lt;- factor(mtcars$am)\n\nmodel &lt;- glm(am ~ mpg, data = mtcars, family = binomial)\nsummary(model)\n\n\nCall:\nglm(formula = am ~ mpg, family = binomial, data = mtcars)\n\nCoefficients:\n            Estimate Std. Error z value Pr(&gt;|z|)   \n(Intercept)  -6.6035     2.3514  -2.808  0.00498 **\nmpg           0.3070     0.1148   2.673  0.00751 **\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 43.230  on 31  degrees of freedom\nResidual deviance: 29.675  on 30  degrees of freedom\nAIC: 33.675\n\nNumber of Fisher Scoring iterations: 5\n\n\n\nUses maximum likelihood estimation\nOutput includes coefficients for log-odds"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#interpreting-coefficients",
+    "href": "Lecture_Folder/Week8b.html#interpreting-coefficients",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Interpreting Coefficients",
+    "text": "Interpreting Coefficients\n\nCoefficients are in log-odds\nTo interpret: exponentiate\n\n\nexp(coef(model))\n\n(Intercept)         mpg \n0.001355579 1.359379288 \n\n\n\n\\(\\exp(\\beta_1)\\): multiplicative change in odds for a 1-unit increase in predictor"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#making-predictions",
+    "href": "Lecture_Folder/Week8b.html#making-predictions",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Making Predictions",
+    "text": "Making Predictions\n\npredict(model, newdata = data.frame(mpg = 20), type = \"response\")\n\n        1 \n0.3862832 \n\n\n\nReturns the probability that am = 1 given mpg = 20"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#model-evaluation-metrics",
+    "href": "Lecture_Folder/Week8b.html#model-evaluation-metrics",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Model Evaluation Metrics",
+    "text": "Model Evaluation Metrics\nTo assess the quality of a logistic regression model, we often use:\n\nConfusion matrix\nAccuracy\nPrecision\nRecall\nAUC-ROC"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#confusion-matrix",
+    "href": "Lecture_Folder/Week8b.html#confusion-matrix",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Confusion Matrix",
+    "text": "Confusion Matrix\nA 2x2 table comparing predicted vs. actual values:\n\n\n\n\nPredicted Positive\nPredicted Negative\n\n\n\n\nActual Positive\nTrue Positive (TP)\nFalse Negative (FN)\n\n\nActual Negative\nFalse Positive (FP)\nTrue Negative (TN)\n\n\n\nHelps visualize performance across all classification outcomes."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#accuracy",
+    "href": "Lecture_Folder/Week8b.html#accuracy",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Accuracy",
+    "text": "Accuracy\n\nProportion of correct predictions out of all predictions:\n\n\\[\n\\text{Accuracy} = \\frac{TP + TN}{TP + TN + FP + FN}\n\\]\n\nSimple but may be misleading with imbalanced data."
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#precision",
+    "href": "Lecture_Folder/Week8b.html#precision",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Precision",
+    "text": "Precision\n\nOf all predicted positives, how many are actually positive?\n\n\\[\n\\text{Precision} = \\frac{TP}{TP + FP}\n\\]\n\nHigh precision = low false positive rate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#recall-sensitivity",
+    "href": "Lecture_Folder/Week8b.html#recall-sensitivity",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Recall (Sensitivity)",
+    "text": "Recall (Sensitivity)\n\nOf all actual positives, how many were predicted correctly?\n\n\\[\n\\text{Recall} = \\frac{TP}{TP + FN}\n\\]\n\nHigh recall = low false negative rate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#precision-vs.-recall",
+    "href": "Lecture_Folder/Week8b.html#precision-vs.-recall",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Precision vs. Recall",
+    "text": "Precision vs. Recall\n\nTrade-off: improving one can reduce the other\nUse F1 score to balance both:\n\n\\[\nF1 = 2 \\cdot \\frac{\\text{Precision} \\cdot \\text{Recall}}{\\text{Precision} + \\text{Recall}}\n\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#auc-roc",
+    "href": "Lecture_Folder/Week8b.html#auc-roc",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "AUC-ROC",
+    "text": "AUC-ROC\n\nROC Curve plots TPR (Recall) vs. FPR across thresholds\nAUC (Area Under Curve) summarizes performance:\nProbability the model ranks a random positive higher than a random negative\nRanges from 0.5 (random) to 1.0 (perfect)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#r-interlude-logistic-regression",
+    "href": "Lecture_Folder/Week8b.html#r-interlude-logistic-regression",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Logistic regression",
+    "text": "R INTERLUDE | Logistic regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#dataset-variable-descriptions",
+    "href": "Lecture_Folder/Week8b.html#dataset-variable-descriptions",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Dataset Variable Descriptions",
+    "text": "Dataset Variable Descriptions\n\n\n\n\n\n\n\n\nVariable\nType\nDescription\n\n\n\n\nbiomaterial\nCategorical\nType of biomaterial used in the scaffold (Material_A, Material_B, Material_C)\n\n\nstiffness\nNumeric\nMechanical stiffness of the scaffold (in kilopascals, kPa)\n\n\nage_days\nInteger\nAge of the scaffold at implantation (in days; range: 20–60)\n\n\nsuccess\nBinary\nOutcome of tissue integration (1 = successful, 0 = unsuccessful)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#fitting-the-model-1",
+    "href": "Lecture_Folder/Week8b.html#fitting-the-model-1",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Fitting the model",
+    "text": "Fitting the model\n\nbio_data &lt;- read.csv(\"BioE_logistic_data.csv\", header = TRUE)\nmodel &lt;- glm(success ~ biomaterial + stiffness + age_days, \n             data = bio_data, \n             family = binomial)\n\nsummary(model)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#fitting-the-model-2",
+    "href": "Lecture_Folder/Week8b.html#fitting-the-model-2",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Fitting the model",
+    "text": "Fitting the model\n\n\n\nCall:\nglm(formula = success ~ biomaterial + stiffness + age_days, family = binomial, \n    data = bio_data)\n\nCoefficients:\n                      Estimate Std. Error z value Pr(&gt;|z|)   \n(Intercept)            1.72263    1.42408   1.210  0.22641   \nbiomaterialMaterial_B  0.84062    0.54300   1.548  0.12160   \nbiomaterialMaterial_C  1.34228    0.63184   2.124  0.03364 * \nstiffness              0.23744    0.11396   2.084  0.03720 * \nage_days              -0.06895    0.02441  -2.825  0.00473 **\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 135.17  on 149  degrees of freedom\nResidual deviance: 114.89  on 145  degrees of freedom\nAIC: 124.89\n\nNumber of Fisher Scoring iterations: 5"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#plotting-the-model",
+    "href": "Lecture_Folder/Week8b.html#plotting-the-model",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Plotting the model",
+    "text": "Plotting the model\n\nggplot(bio_data, aes(x = stiffness, y = success, color = biomaterial)) +\n  geom_point(alpha = 0.4, shape = 1) +\n  geom_smooth(method = \"glm\", method.args = list(family = \"binomial\"), \n              formula = success ~ biomaterial + stiffness + age_days, se = FALSE, size = 1.2) +\n  labs(title = \"Predicted Probability of Success\",\n       x = \"Stiffness (kPa)\",\n       y = \"Predicted Probability\",\n       color = \"Biomaterial\") +\n  theme_minimal()\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\nWarning: Failed to fit group 1.\nCaused by error:\n! object 'success' not found\n\n\nWarning: Failed to fit group 2.\nCaused by error:\n! object 'success' not found\n\n\nWarning: Failed to fit group 3.\nCaused by error:\n! object 'success' not found"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#what-is-poisson-regression",
+    "href": "Lecture_Folder/Week8b.html#what-is-poisson-regression",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "What is Poisson Regression?",
+    "text": "What is Poisson Regression?\n\nA type of Generalized Linear Model (GLM)\nUsed to model count data (e.g., number of visits, accidents, events)\nThe outcome variable is assumed to follow a Poisson distribution"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#the-poisson-distribution",
+    "href": "Lecture_Folder/Week8b.html#the-poisson-distribution",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "The Poisson Distribution",
+    "text": "The Poisson Distribution\n\\[ P(Y = y) = \\frac{e^{-\\lambda} \\lambda^y}{y!} \\]\n\nMean = Variance = \\(\\lambda\\)\nSuitable for modeling counts of rare events"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#model-structure",
+    "href": "Lecture_Folder/Week8b.html#model-structure",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Model Structure",
+    "text": "Model Structure\n\\[ Y_i \\sim \\text{Poisson}(\\lambda_i) \\]\n\\[\n\\log(\\lambda_i) = \\beta_0 + \\beta_1 x_{i1} + \\ldots + \\beta_p x_{ip}\n\\]\n\nThe log link ensures ( _i &gt; 0 )\nLinear model for the log of expected counts"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#why-not-use-linear-regression",
+    "href": "Lecture_Folder/Week8b.html#why-not-use-linear-regression",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Why Not Use Linear Regression?",
+    "text": "Why Not Use Linear Regression?\n\nLinear regression may predict negative counts\nIt assumes constant variance, but Poisson variance = mean\nPoisson regression accounts for the distributional structure of count data"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#example",
+    "href": "Lecture_Folder/Week8b.html#example",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Example",
+    "text": "Example\n\nmodel &lt;- glm(y ~ x1 + x2, data = something, family = poisson)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#interpreting-coefficients-1",
+    "href": "Lecture_Folder/Week8b.html#interpreting-coefficients-1",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Interpreting Coefficients",
+    "text": "Interpreting Coefficients\n\nCoefficients are on the log scale\nTo interpret, exponentiate them:\n\n\nexp(coef(model))\n\n\n\\(\\exp(\\beta_j)\\): multiplicative change in expected count for a 1-unit increase in predictor \\(x_j\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#model-assumptions",
+    "href": "Lecture_Folder/Week8b.html#model-assumptions",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Model Assumptions",
+    "text": "Model Assumptions\n\nCounts are Poisson-distributed\nMean equals variance (can be relaxed in quasi-Poisson or negative binomial models)\nLog-linear relationship between predictors and the outcome"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#model-evaluation",
+    "href": "Lecture_Folder/Week8b.html#model-evaluation",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Model Evaluation",
+    "text": "Model Evaluation\n\nDeviance residuals\nAkaike Information Criterion (AIC)\nOverdispersion checks\nPseudo-\\(R^2\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#overdispersion",
+    "href": "Lecture_Folder/Week8b.html#overdispersion",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Overdispersion",
+    "text": "Overdispersion\n\nWhen variance &gt; mean\nCan inflate type I errors\nCheck with:\n\n\\[\n\\text{Dispersion} = \\frac{\\text{Residual deviance}}{\\text{df}}\n\\]\n\nConsider alternatives:\n\nQuasi-Poisson\nNegative Binomial Regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#goodness-of-fit",
+    "href": "Lecture_Folder/Week8b.html#goodness-of-fit",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Goodness-of-Fit",
+    "text": "Goodness-of-Fit\n\nDeviance: compares model to saturated model\nPearson residuals: detect outliers and overdispersion\nUse AIC to compare models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#r-interlude-log-linear-poisson-regression",
+    "href": "Lecture_Folder/Week8b.html#r-interlude-log-linear-poisson-regression",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "R INTERLUDE | Log-linear (Poisson) regression",
+    "text": "R INTERLUDE | Log-linear (Poisson) regression"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#dataset-variable-descriptions-poisson-model",
+    "href": "Lecture_Folder/Week8b.html#dataset-variable-descriptions-poisson-model",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Dataset Variable Descriptions (Poisson Model)",
+    "text": "Dataset Variable Descriptions (Poisson Model)\n\n\n\n\n\n\n\n\nVariable\nType\nDescription\n\n\n\n\nbiomaterial\nCategorical\nType of biomaterial used in the scaffold\n\n\nstiffness\nNumeric\nMechanical stiffness in kilopascals (kPa)\n\n\nage_days\nInteger\nAge of scaffold at implantation (20–60 days)\n\n\nintegration_events\nCount\nNumber of successful tissue integration events (simulated)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#fit-the-model",
+    "href": "Lecture_Folder/Week8b.html#fit-the-model",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Fit the model",
+    "text": "Fit the model\n\n# Load data\nbio_data &lt;- read.csv(\"BioE_poisson_data.csv\")\n\n# Fit log-linear (Poisson) model\nmodel &lt;- glm(integration_events ~ biomaterial + stiffness + age_days,\n             family = poisson, data = bio_data)\n\nsummary(model)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#fit-the-model-1",
+    "href": "Lecture_Folder/Week8b.html#fit-the-model-1",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Fit the model",
+    "text": "Fit the model\n\n\n\nCall:\nglm(formula = integration_events ~ biomaterial + stiffness + \n    age_days, family = poisson, data = bio_data)\n\nCoefficients:\n                      Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)            1.11533    0.16566   6.733 1.67e-11 ***\nbiomaterialMaterial_B  0.42231    0.07179   5.883 4.03e-09 ***\nbiomaterialMaterial_C  0.67282    0.06835   9.843  &lt; 2e-16 ***\nstiffness              0.14544    0.01226  11.864  &lt; 2e-16 ***\nage_days              -0.01885    0.00221  -8.533  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for poisson family taken to be 1)\n\n    Null deviance: 465.13  on 149  degrees of freedom\nResidual deviance: 151.52  on 145  degrees of freedom\nAIC: 755.3\n\nNumber of Fisher Scoring iterations: 4"
+  },
+  {
+    "objectID": "Lecture_Folder/Week8b.html#make-a-plot",
+    "href": "Lecture_Folder/Week8b.html#make-a-plot",
+    "title": "Week 8b - Statistics for Bioengineering",
+    "section": "Make a plot",
+    "text": "Make a plot\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Add predicted counts\nbio_data$predicted_counts &lt;- predict(model, type = \"response\")\n\n# Plot predicted vs actual across stiffness for each biomaterial\nggplot(bio_data, aes(x = stiffness, y = predicted_counts, color = biomaterial)) +\n  geom_point(aes(y = integration_events), alpha = 0.5, shape = 1) +\n  geom_line(size = 1.2) +\n  labs(title = \"Predicted Integration Events\",\n       x = \"Stiffness (kPa)\",\n       y = \"Predicted Count\",\n       color = \"Biomaterial\") +\n  theme_minimal()"
   }
 ]
