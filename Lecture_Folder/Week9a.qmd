@@ -16,13 +16,32 @@ library(ggplot2)
 library(tibble)
 ```
 
-## This week {.smaller}
+## This week
 
 -   Chi-square tests of association and goodness of fit
 
 -   Connections to confusion matrices
 
 -   Basics of statistical (classical) machine learning
+
+-   **Tomorrow** - homework 3 due
+
+-   **On Thursday** - brief presentation to the class of your dataset
+
+-   **Next week** - finish statistical (classical) machine learning
+
+-   **Special session** - Git/GitHub and Talapas
+
+## Analyzing categorical variables
+
+- How do we test **frequencies** of a categorical variable against **what we expect**?
+
+- How do we test for **correlation** among two or more categorical variables?
+
+- How do we measure the **effect size of the correlation** of two or more categorical variables?
+
+- These each involve **contingency tables** and the **$\chi^2$ distribution**
+
 
 ## What is the $\chi^2$ Distribution ?
 
@@ -110,9 +129,9 @@ $$ Mean =  \frac{r}{\lambda} $$ $$ Variance = \frac{r}{\lambda^2} $$
 $$
 f(x; \alpha, \lambda) = 
 \frac{\lambda^{\alpha}}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\lambda x}, \quad x > 0
-$$ 
+$$
 
-- with shape parameter $\alpha$ \> 0 and rate parameter $\lambda$ \> 0
+-   with shape parameter $\alpha$ \> 0 and rate parameter $\lambda$ \> 0
 
 $$
 f(x; \alpha, \theta) = 
@@ -131,7 +150,7 @@ $$
 
 -   **Assume**: that DNA synthesis does not deplete the pool of primers or nucleotides in the chamber, so that each event is independent of other events in the PCR chamber.
 
-## Uses of the Chi-square distribution
+## Uses of the $\chi^2$ distribution
 
 -   **Goodness-of-fit tests**: Does observed data match expected proportions?
 
@@ -139,9 +158,11 @@ $$
 
 -   **Test of homogeneity**: Do different groups have the same distribution?
 
+_________________________
+
 # Goodness of Fit Test
 
-## What is a Chi-square Goodness-of-Fit Test?
+## What is a $\chi^2$ Goodness-of-Fit Test?
 
 -   A **Chi-square Goodness-of-Fit Test** checks whether observed frequencies differ from expected frequencies.
 -   Used when:
@@ -153,7 +174,6 @@ $$
 -   **Null hypothesis (H₀)**: Observed data follows the expected distribution.
 -   **Alternative hypothesis (H₁)**: Observed data does not follow the expected distribution.
 
-------------------------------------------------------------------------
 
 ## When to use this test
 
@@ -167,7 +187,7 @@ $$
 -   Categories are **mutually exclusive**.
 -   Expected count in each category **should be ≥ 5** .
 
-## Test Statistic
+## $\chi^2$ Test Statistic
 
 The test statistic is:
 
@@ -199,8 +219,7 @@ Expected proportions:
 -   Dominant: 0.75
 -   Recessive: 0.25
 
-
-## Goodness of Fit by hand in R
+## $\chi^2$ Goodness of Fit by hand in R
 
 ```{r}
 #| label: gof-example-show
@@ -237,7 +256,7 @@ p_val
 chisq.test(x = observed, p = expected_probs)
 ```
 
-## Goodness of Fit by hand in R
+## $\chi^2$ Goodness of Fit by hand in R
 
 ```{r}
 #| label: gof-example-do
@@ -274,8 +293,9 @@ p_val
 chisq.test(x = observed, p = expected_probs)
 ```
 
+## $\chi^2$ Parametric Test
 
-## Parametric - rolling a six-sided die 60 times
+- rolling a six-sided die 60 times
 
 ```{r}
 #| label: gof-example-dice-show
@@ -289,7 +309,9 @@ expected_probs <- rep(1/6, 6)
 chisq.test(x = observed, p = expected_probs)
 ```
 
-## Parametric - rolling a six-sided die 60 times
+## $\chi^2$ Parametric Test
+
+- rolling a six-sided die 60 times
 
 ```{r}
 #| label: gof-example-dice-tell
@@ -307,8 +329,7 @@ expected_probs <- rep(1/6, 6)
 chisq.test(x = observed, p = expected_probs)
 ```
 
-
-## Goodness of fit using resampling
+## $\chi^2$ goodness of fit test using resampling
 
 ```{r}
 #| label: gof-example-resampling-show
@@ -345,7 +366,7 @@ cat("Observed Chi-square:", obs_chisq, "\n")
 cat("Empirical P-value:", p_value, "\n")
 ```
 
-## Goodness of fit using resampling
+## $\chi^2$ goodness of fit test using resampling
 
 ```{r}
 #| label: gof-example-resampling-tell
@@ -382,7 +403,7 @@ cat("Observed Chi-square:", obs_chisq, "\n")
 cat("Empirical P-value:", p_value, "\n")
 ```
 
-## Goodness of fit null distribution
+## $\chi^2$ goodness of fit null distribution
 
 ```{r}
 hist(sim_chisq, breaks = 50, main = "Resampling Null Distribution",
@@ -393,23 +414,22 @@ legend("topright", legend = "Observed", col = "red", lwd = 2)
 
 ## On your own
 
-- Change around the data in the examples above and see how it affects the results
-- Take your term-long data set or one of the data sets we've examined in class
-- Create a hypothesis of expected proportions and test it
-- Create a side-by-side plot of observed and expected frequencies
+-   Change around the data in the examples above and see how it affects the results
+-   Take your term-long data set or one of the data sets we've examined in class
+-   Create a hypothesis of expected proportions and test it
+-   Create a side-by-side plot of observed and expected frequencies
 
 ------------------------------------------------------------------------
 
-# Chi-square test of association
+# ## $\chi^2$ test of association
 
-## What is a Chi-square Test of Association?
+## What is a $\chi^2$ Test of Association?
 
 -   A statistical test to determine whether **two categorical variables** are associated (not independent).
 
 -   **Null hypothesis (H₀)**: The two variables are **independent**.
 
 -   **Alternative hypothesis (H₁)**: There is an **association** between the variables.
-
 
 ## Assumptions
 
@@ -428,8 +448,7 @@ A researcher surveys students about their study preference:
 
 -   Are study time preference and academic level associated?
 
-
-## Performing a Chi-square test of association in R
+## Performing a $\chi^2$ test of association in R
 
 ```{r}
 #| label: assoc-test-show
@@ -455,7 +474,7 @@ chisq.test(study_table)
 
 ```
 
-## Performing a Chi-square test of association in R
+## Performing a $\chi^2$ test of association in R
 
 ```{r}
 #| label: assoc-test-tell
@@ -547,16 +566,15 @@ mosaicplot(study_table,
 
 $$
 V = \sqrt{\frac{\chi^2}{n(k-1)}}
-$$
-where
+$$ where
 
-- $\chi^2$ is the test statistic
-- n is the total number of observations
-- k is the min(number of rows, number of columns)
-- ranges from 0 to 1, with
-    - 0.1 being a small effect
-    - 0.3 being a medium effect
-    - 0.5 being a large effect
+-   $\chi^2$ is the test statistic
+-   n is the total number of observations
+-   k is the min(number of rows, number of columns)
+-   ranges from 0 to 1, with
+    -   0.1 being a small effect
+    -   0.3 being a medium effect
+    -   0.5 being a large effect
 
 ## Calculating the effect size in R
 
@@ -621,7 +639,6 @@ cramers_v <- sqrt(chisq_val / (n * (k - 1)))
 cat("Cramer's V:", cramers_v)
 ```
 
-
 # Fisher's Exact test
 
 ## What is Fisher’s Exact Test?
@@ -649,20 +666,19 @@ cat("Cramer's V:", cramers_v)
 -   **H₀**: The row and column variables are **independent**.
 -   **H₁**: There is an **association** between the variables.
 
-------------------------------------------------------------------------
+
 
 ## Example Scenario
 
 A researcher asks 20 people whether they prefer coffee or tea.
 
-|       | Coffee | Tea |
-|-------|--------|-----|
-| English   | 8      | 2   |
+|          | Coffee | Tea |
+|----------|--------|-----|
+| English  | 8      | 2   |
 | American | 1      | 9   |
 
 Is beverage preference independent of nationality?
 
-------------------------------------------------------------------------
 
 ## Creating the Table in R
 
@@ -724,7 +740,6 @@ ggplot(df, aes(x = Var2, y = Freq, fill = Var1)) +
   theme_minimal()
 ```
 
-
 ## Mosaic Plot
 
 ```{r}
@@ -755,6 +770,8 @@ mosaicplot(beverage_table,
            color = TRUE)
 ```
 
+_____________________________________________________________________
+
 # Odds ratios
 
 ## What is an Odds Ratio?
@@ -762,6 +779,8 @@ mosaicplot(beverage_table,
 -   An **odds** is the ratio of the probability an event occurs to the probability it does **not** occur.
 
 -   The **odds ratio (OR)** compares the odds of an event between two groups.
+
+-   Can think of this as an analogue of the effect size from linear models.
 
 ## Interpretation
 
@@ -771,20 +790,16 @@ mosaicplot(beverage_table,
     -   Useful for regression and effect size comparison.
 -   A large positive log(OR) indicates strong association.
 
-
-
 ## Example: Coffee Preference by Nationality
 
-|       | Coffee | Tea | Total |
-|-------|--------|-----|-------|
-| American   | 8      | 2   | 10    |
-| English | 1      | 9   | 10    |
+|          | Coffee | Tea | Total |
+|----------|--------|-----|-------|
+| American | 8      | 2   | 10    |
+| English  | 1      | 9   | 10    |
 
 -   Odds (Americans prefer Coffee) = $\frac{8}{2} = 4$
 -   Odds (English prefer Coffee) = $\frac{1}{9} ≈ 0.111$
 -   **Odds Ratio** of preferring coffee = $\frac{4}{0.111} ≈ 36$
-
-
 
 ## Interpreting the Odds Ratio
 
@@ -876,7 +891,6 @@ ggplot(odds_long, aes(x = Nationality, y = Value, fill = Nationality)) +
   theme_minimal(base_size = 14)
 ```
 
-
 # Confusion matrices are contingency tests
 
 ## What Is a Confusion Matrix?
@@ -885,7 +899,6 @@ ggplot(odds_long, aes(x = Nationality, y = Value, fill = Nationality)) +
 -   It compares **predicted** labels to **actual** (true) labels.
 -   Helps identify **where** the model is getting things right or wrong.
 -   Example for binary classification:
-
 
 ## Confusion Matrix Layout (Binary)
 
@@ -909,7 +922,6 @@ ggplot(odds_long, aes(x = Nationality, y = Value, fill = Nationality)) +
 -   Entries are **counts** of observations in each combination of categories.
 -   It is just a **labeled 2×2 (or K×K)** contingency table.
 
-
 # Why This Matters
 
 -   **Confusion matrix** helps **evaluate models**.
@@ -917,7 +929,6 @@ ggplot(odds_long, aes(x = Nationality, y = Value, fill = Nationality)) +
 -   This duality allows:
     -   Calculation of classification metrics (accuracy, precision, etc.)
     -   Application of statistical tests (Chi-square, Fisher’s Exact)
-
 
 ## Key Metrics {.smaller}
 
@@ -945,12 +956,10 @@ $$
 
 ## An example confusion matrix
 
-
-|                | Predicted Positive | Predicted Negative |
-|----------------|--------------------|--------------------|
-| **Actual Positive** | TP = 50           | FN = 10           |
-| **Actual Negative** | FP = 5            | TN = 35           |
-
+|                     | Predicted Positive | Predicted Negative |
+|---------------------|--------------------|--------------------|
+| **Actual Positive** | TP = 50            | FN = 10            |
+| **Actual Negative** | FP = 5             | TN = 35            |
 
 ## Calculating the confusion matrix metrics
 
@@ -1004,8 +1013,6 @@ conf_mat <- matrix(c(50, 10, 5, 35), nrow = 2,
 conf_mat
 ```
 
-
-
 ## Applying Statistical Tests to a Confusion Matrix {.smaller}
 
 -   You can apply a **Chi-square test of independence** to a confusion matrix:
@@ -1026,9 +1033,8 @@ dimnames(conf_matrix) <- list(
 chisq.test(conf_matrix)
 ```
 
-
 ## On your own
 
-- calculate the odds ratios for this confusion matrix
-- can you see how odds ratios can be used to evaluate fit?
-- Particularly in the case of training vs. test data sets?
+-   calculate the odds ratios for this confusion matrix
+-   can you see how odds ratios can be used to evaluate fit?
+-   Particularly in the case of training vs. test data sets?

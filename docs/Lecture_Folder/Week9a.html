@@ -207,6 +207,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#this-week" id="toc-this-week" class="nav-link active" data-scroll-target="#this-week">This week</a></li>
+  <li><a href="#analyzing-categorical-variables" id="toc-analyzing-categorical-variables" class="nav-link" data-scroll-target="#analyzing-categorical-variables">Analyzing categorical variables</a></li>
   <li><a href="#what-is-the-chi2-distribution" id="toc-what-is-the-chi2-distribution" class="nav-link" data-scroll-target="#what-is-the-chi2-distribution">What is the <span class="math inline">\(\chi^2\)</span> Distribution ?</a></li>
   <li><a href="#chi2-distribution-definition" id="toc-chi2-distribution-definition" class="nav-link" data-scroll-target="#chi2-distribution-definition"><span class="math inline">\(\chi^2\)</span> Distribution Definition</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
@@ -216,31 +217,31 @@ window.Quarto = {
   <li><a href="#gamma-distribution-1" id="toc-gamma-distribution-1" class="nav-link" data-scroll-target="#gamma-distribution-1"><strong>Gamma Distribution</strong></a></li>
   <li><a href="#gamma-distribution-2" id="toc-gamma-distribution-2" class="nav-link" data-scroll-target="#gamma-distribution-2">Gamma Distribution</a></li>
   <li><a href="#gamma-distribution-3" id="toc-gamma-distribution-3" class="nav-link" data-scroll-target="#gamma-distribution-3">Gamma Distribution</a></li>
-  <li><a href="#uses-of-the-chi-square-distribution" id="toc-uses-of-the-chi-square-distribution" class="nav-link" data-scroll-target="#uses-of-the-chi-square-distribution">Uses of the Chi-square distribution</a></li>
+  <li><a href="#uses-of-the-chi2-distribution" id="toc-uses-of-the-chi2-distribution" class="nav-link" data-scroll-target="#uses-of-the-chi2-distribution">Uses of the <span class="math inline">\(\chi^2\)</span> distribution</a></li>
   <li><a href="#goodness-of-fit-test" id="toc-goodness-of-fit-test" class="nav-link" data-scroll-target="#goodness-of-fit-test">Goodness of Fit Test</a>
   <ul class="collapse">
-  <li><a href="#what-is-a-chi-square-goodness-of-fit-test" id="toc-what-is-a-chi-square-goodness-of-fit-test" class="nav-link" data-scroll-target="#what-is-a-chi-square-goodness-of-fit-test">What is a Chi-square Goodness-of-Fit Test?</a></li>
+  <li><a href="#what-is-a-chi2-goodness-of-fit-test" id="toc-what-is-a-chi2-goodness-of-fit-test" class="nav-link" data-scroll-target="#what-is-a-chi2-goodness-of-fit-test">What is a <span class="math inline">\(\chi^2\)</span> Goodness-of-Fit Test?</a></li>
   <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
   <li><a href="#when-to-use-this-test" id="toc-when-to-use-this-test" class="nav-link" data-scroll-target="#when-to-use-this-test">When to use this test</a></li>
   <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
-  <li><a href="#test-statistic" id="toc-test-statistic" class="nav-link" data-scroll-target="#test-statistic">Test Statistic</a></li>
+  <li><a href="#chi2-test-statistic" id="toc-chi2-test-statistic" class="nav-link" data-scroll-target="#chi2-test-statistic"><span class="math inline">\(\chi^2\)</span> Test Statistic</a></li>
   <li><a href="#example-scenario" id="toc-example-scenario" class="nav-link" data-scroll-target="#example-scenario">Example Scenario</a></li>
-  <li><a href="#goodness-of-fit-by-hand-in-r" id="toc-goodness-of-fit-by-hand-in-r" class="nav-link" data-scroll-target="#goodness-of-fit-by-hand-in-r">Goodness of Fit by hand in R</a></li>
-  <li><a href="#goodness-of-fit-by-hand-in-r-1" id="toc-goodness-of-fit-by-hand-in-r-1" class="nav-link" data-scroll-target="#goodness-of-fit-by-hand-in-r-1">Goodness of Fit by hand in R</a></li>
-  <li><a href="#parametric---rolling-a-six-sided-die-60-times" id="toc-parametric---rolling-a-six-sided-die-60-times" class="nav-link" data-scroll-target="#parametric---rolling-a-six-sided-die-60-times">Parametric - rolling a six-sided die 60 times</a></li>
-  <li><a href="#parametric---rolling-a-six-sided-die-60-times-1" id="toc-parametric---rolling-a-six-sided-die-60-times-1" class="nav-link" data-scroll-target="#parametric---rolling-a-six-sided-die-60-times-1">Parametric - rolling a six-sided die 60 times</a></li>
-  <li><a href="#goodness-of-fit-using-resampling" id="toc-goodness-of-fit-using-resampling" class="nav-link" data-scroll-target="#goodness-of-fit-using-resampling">Goodness of fit using resampling</a></li>
-  <li><a href="#goodness-of-fit-using-resampling-1" id="toc-goodness-of-fit-using-resampling-1" class="nav-link" data-scroll-target="#goodness-of-fit-using-resampling-1">Goodness of fit using resampling</a></li>
-  <li><a href="#goodness-of-fit-null-distribution" id="toc-goodness-of-fit-null-distribution" class="nav-link" data-scroll-target="#goodness-of-fit-null-distribution">Goodness of fit null distribution</a></li>
+  <li><a href="#chi2-goodness-of-fit-by-hand-in-r" id="toc-chi2-goodness-of-fit-by-hand-in-r" class="nav-link" data-scroll-target="#chi2-goodness-of-fit-by-hand-in-r"><span class="math inline">\(\chi^2\)</span> Goodness of Fit by hand in R</a></li>
+  <li><a href="#chi2-goodness-of-fit-by-hand-in-r-1" id="toc-chi2-goodness-of-fit-by-hand-in-r-1" class="nav-link" data-scroll-target="#chi2-goodness-of-fit-by-hand-in-r-1"><span class="math inline">\(\chi^2\)</span> Goodness of Fit by hand in R</a></li>
+  <li><a href="#chi2-parametric-test" id="toc-chi2-parametric-test" class="nav-link" data-scroll-target="#chi2-parametric-test"><span class="math inline">\(\chi^2\)</span> Parametric Test</a></li>
+  <li><a href="#chi2-parametric-test-1" id="toc-chi2-parametric-test-1" class="nav-link" data-scroll-target="#chi2-parametric-test-1"><span class="math inline">\(\chi^2\)</span> Parametric Test</a></li>
+  <li><a href="#chi2-goodness-of-fit-test-using-resampling" id="toc-chi2-goodness-of-fit-test-using-resampling" class="nav-link" data-scroll-target="#chi2-goodness-of-fit-test-using-resampling"><span class="math inline">\(\chi^2\)</span> goodness of fit test using resampling</a></li>
+  <li><a href="#chi2-goodness-of-fit-test-using-resampling-1" id="toc-chi2-goodness-of-fit-test-using-resampling-1" class="nav-link" data-scroll-target="#chi2-goodness-of-fit-test-using-resampling-1"><span class="math inline">\(\chi^2\)</span> goodness of fit test using resampling</a></li>
+  <li><a href="#chi2-goodness-of-fit-null-distribution" id="toc-chi2-goodness-of-fit-null-distribution" class="nav-link" data-scroll-target="#chi2-goodness-of-fit-null-distribution"><span class="math inline">\(\chi^2\)</span> goodness of fit null distribution</a></li>
   <li><a href="#on-your-own" id="toc-on-your-own" class="nav-link" data-scroll-target="#on-your-own">On your own</a></li>
   </ul></li>
-  <li><a href="#chi-square-test-of-association" id="toc-chi-square-test-of-association" class="nav-link" data-scroll-target="#chi-square-test-of-association">Chi-square test of association</a>
+  <li><a href="#chi2-test-of-association" id="toc-chi2-test-of-association" class="nav-link" data-scroll-target="#chi2-test-of-association">## <span class="math inline">\(\chi^2\)</span> test of association</a>
   <ul class="collapse">
-  <li><a href="#what-is-a-chi-square-test-of-association" id="toc-what-is-a-chi-square-test-of-association" class="nav-link" data-scroll-target="#what-is-a-chi-square-test-of-association">What is a Chi-square Test of Association?</a></li>
+  <li><a href="#what-is-a-chi2-test-of-association" id="toc-what-is-a-chi2-test-of-association" class="nav-link" data-scroll-target="#what-is-a-chi2-test-of-association">What is a <span class="math inline">\(\chi^2\)</span> Test of Association?</a></li>
   <li><a href="#assumptions-1" id="toc-assumptions-1" class="nav-link" data-scroll-target="#assumptions-1">Assumptions</a></li>
   <li><a href="#example-scenario-1" id="toc-example-scenario-1" class="nav-link" data-scroll-target="#example-scenario-1">Example Scenario</a></li>
-  <li><a href="#performing-a-chi-square-test-of-association-in-r" id="toc-performing-a-chi-square-test-of-association-in-r" class="nav-link" data-scroll-target="#performing-a-chi-square-test-of-association-in-r">Performing a Chi-square test of association in R</a></li>
-  <li><a href="#performing-a-chi-square-test-of-association-in-r-1" id="toc-performing-a-chi-square-test-of-association-in-r-1" class="nav-link" data-scroll-target="#performing-a-chi-square-test-of-association-in-r-1">Performing a Chi-square test of association in R</a></li>
+  <li><a href="#performing-a-chi2-test-of-association-in-r" id="toc-performing-a-chi2-test-of-association-in-r" class="nav-link" data-scroll-target="#performing-a-chi2-test-of-association-in-r">Performing a <span class="math inline">\(\chi^2\)</span> test of association in R</a></li>
+  <li><a href="#performing-a-chi2-test-of-association-in-r-1" id="toc-performing-a-chi2-test-of-association-in-r-1" class="nav-link" data-scroll-target="#performing-a-chi2-test-of-association-in-r-1">Performing a <span class="math inline">\(\chi^2\)</span> test of association in R</a></li>
   <li><a href="#paired-histogram" id="toc-paired-histogram" class="nav-link" data-scroll-target="#paired-histogram">Paired Histogram</a></li>
   <li><a href="#paired-histogram-1" id="toc-paired-histogram-1" class="nav-link" data-scroll-target="#paired-histogram-1">Paired Histogram</a></li>
   <li><a href="#mosaic-plot" id="toc-mosaic-plot" class="nav-link" data-scroll-target="#mosaic-plot">Mosaic Plot</a></li>
@@ -344,12 +345,25 @@ window.Quarto = {
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="this-week" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="this-week">This week</h2>
+<section id="this-week" class="level2">
+<h2 class="anchored" data-anchor-id="this-week">This week</h2>
 <ul>
 <li><p>Chi-square tests of association and goodness of fit</p></li>
 <li><p>Connections to confusion matrices</p></li>
 <li><p>Basics of statistical (classical) machine learning</p></li>
+<li><p><strong>Tomorrow</strong> - homework 3 due</p></li>
+<li><p><strong>On Thursday</strong> - brief presentation to the class of your dataset</p></li>
+<li><p><strong>Next week</strong> - finish statistical (classical) machine learning</p></li>
+<li><p><strong>Special session</strong> - Git/GitHub and Talapas</p></li>
+</ul>
+</section>
+<section id="analyzing-categorical-variables" class="level2">
+<h2 class="anchored" data-anchor-id="analyzing-categorical-variables">Analyzing categorical variables</h2>
+<ul>
+<li><p>How do we test <strong>frequencies</strong> of a categorical variable against <strong>what we expect</strong>?</p></li>
+<li><p>How do we test for <strong>correlation</strong> among two or more categorical variables?</p></li>
+<li><p>How do we measure the <strong>effect size of the correlation</strong> of two or more categorical variables?</p></li>
+<li><p>These each involve <strong>contingency tables</strong> and the <strong><span class="math inline">\(\chi^2\)</span> distribution</strong></p></li>
 </ul>
 </section>
 <section id="what-is-the-chi2-distribution" class="level2">
@@ -461,18 +475,19 @@ f(x; \alpha, \theta) =
 <li><strong>Assume</strong>: that DNA synthesis does not deplete the pool of primers or nucleotides in the chamber, so that each event is independent of other events in the PCR chamber.</li>
 </ul>
 </section>
-<section id="uses-of-the-chi-square-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="uses-of-the-chi-square-distribution">Uses of the Chi-square distribution</h2>
+<section id="uses-of-the-chi2-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="uses-of-the-chi2-distribution">Uses of the <span class="math inline">\(\chi^2\)</span> distribution</h2>
 <ul>
 <li><p><strong>Goodness-of-fit tests</strong>: Does observed data match expected proportions?</p></li>
 <li><p><strong>Test of independence</strong>: Are two categorical variables related?</p></li>
 <li><p><strong>Test of homogeneity</strong>: Do different groups have the same distribution?</p></li>
 </ul>
+<hr>
 </section>
 <section id="goodness-of-fit-test" class="level1">
 <h1>Goodness of Fit Test</h1>
-<section id="what-is-a-chi-square-goodness-of-fit-test" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-chi-square-goodness-of-fit-test">What is a Chi-square Goodness-of-Fit Test?</h2>
+<section id="what-is-a-chi2-goodness-of-fit-test" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-chi2-goodness-of-fit-test">What is a <span class="math inline">\(\chi^2\)</span> Goodness-of-Fit Test?</h2>
 <ul>
 <li>A <strong>Chi-square Goodness-of-Fit Test</strong> checks whether observed frequencies differ from expected frequencies.</li>
 <li>Used when:
@@ -488,7 +503,6 @@ f(x; \alpha, \theta) =
 <li><strong>Null hypothesis (H₀)</strong>: Observed data follows the expected distribution.</li>
 <li><strong>Alternative hypothesis (H₁)</strong>: Observed data does not follow the expected distribution.</li>
 </ul>
-<hr>
 </section>
 <section id="when-to-use-this-test" class="level2">
 <h2 class="anchored" data-anchor-id="when-to-use-this-test">When to use this test</h2>
@@ -506,8 +520,8 @@ f(x; \alpha, \theta) =
 <li>Expected count in each category <strong>should be ≥ 5</strong> .</li>
 </ul>
 </section>
-<section id="test-statistic" class="level2">
-<h2 class="anchored" data-anchor-id="test-statistic">Test Statistic</h2>
+<section id="chi2-test-statistic" class="level2">
+<h2 class="anchored" data-anchor-id="chi2-test-statistic"><span class="math inline">\(\chi^2\)</span> Test Statistic</h2>
 <p>The test statistic is:</p>
 <p><span class="math display">\[
 \chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}
@@ -535,8 +549,8 @@ where ( k ) = number of categories</p>
 <li>Recessive: 0.25</li>
 </ul>
 </section>
-<section id="goodness-of-fit-by-hand-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="goodness-of-fit-by-hand-in-r">Goodness of Fit by hand in R</h2>
+<section id="chi2-goodness-of-fit-by-hand-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="chi2-goodness-of-fit-by-hand-in-r"><span class="math inline">\(\chi^2\)</span> Goodness of Fit by hand in R</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Observed data</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Dominant =</span> <span class="dv">72</span>, <span class="at">Recessive =</span> <span class="dv">28</span>)</span>
@@ -566,8 +580,8 @@ where ( k ) = number of categories</p>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x =</span> observed, <span class="at">p =</span> expected_probs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="goodness-of-fit-by-hand-in-r-1" class="level2">
-<h2 class="anchored" data-anchor-id="goodness-of-fit-by-hand-in-r-1">Goodness of Fit by hand in R</h2>
+<section id="chi2-goodness-of-fit-by-hand-in-r-1" class="level2">
+<h2 class="anchored" data-anchor-id="chi2-goodness-of-fit-by-hand-in-r-1"><span class="math inline">\(\chi^2\)</span> Goodness of Fit by hand in R</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.48</code></pre>
@@ -587,8 +601,11 @@ X-squared = 0.48, df = 1, p-value = 0.4884</code></pre>
 </div>
 </div>
 </section>
-<section id="parametric---rolling-a-six-sided-die-60-times" class="level2">
-<h2 class="anchored" data-anchor-id="parametric---rolling-a-six-sided-die-60-times">Parametric - rolling a six-sided die 60 times</h2>
+<section id="chi2-parametric-test" class="level2">
+<h2 class="anchored" data-anchor-id="chi2-parametric-test"><span class="math inline">\(\chi^2\)</span> Parametric Test</h2>
+<ul>
+<li>rolling a six-sided die 60 times</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">10</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -597,8 +614,11 @@ X-squared = 0.48, df = 1, p-value = 0.4884</code></pre>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x =</span> observed, <span class="at">p =</span> expected_probs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="parametric---rolling-a-six-sided-die-60-times-1" class="level2">
-<h2 class="anchored" data-anchor-id="parametric---rolling-a-six-sided-die-60-times-1">Parametric - rolling a six-sided die 60 times</h2>
+<section id="chi2-parametric-test-1" class="level2">
+<h2 class="anchored" data-anchor-id="chi2-parametric-test-1"><span class="math inline">\(\chi^2\)</span> Parametric Test</h2>
+<ul>
+<li>rolling a six-sided die 60 times</li>
+</ul>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -609,8 +629,8 @@ X-squared = 1, df = 5, p-value = 0.9626</code></pre>
 </div>
 </div>
 </section>
-<section id="goodness-of-fit-using-resampling" class="level2">
-<h2 class="anchored" data-anchor-id="goodness-of-fit-using-resampling">Goodness of fit using resampling</h2>
+<section id="chi2-goodness-of-fit-test-using-resampling" class="level2">
+<h2 class="anchored" data-anchor-id="chi2-goodness-of-fit-test-using-resampling"><span class="math inline">\(\chi^2\)</span> goodness of fit test using resampling</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -642,8 +662,8 @@ X-squared = 1, df = 5, p-value = 0.9626</code></pre>
 <span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Empirical P-value:"</span>, p_value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="goodness-of-fit-using-resampling-1" class="level2">
-<h2 class="anchored" data-anchor-id="goodness-of-fit-using-resampling-1">Goodness of fit using resampling</h2>
+<section id="chi2-goodness-of-fit-test-using-resampling-1" class="level2">
+<h2 class="anchored" data-anchor-id="chi2-goodness-of-fit-test-using-resampling-1"><span class="math inline">\(\chi^2\)</span> goodness of fit test using resampling</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Observed Chi-square: 0.48 </code></pre>
@@ -653,8 +673,8 @@ X-squared = 1, df = 5, p-value = 0.9626</code></pre>
 </div>
 </div>
 </section>
-<section id="goodness-of-fit-null-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="goodness-of-fit-null-distribution">Goodness of fit null distribution</h2>
+<section id="chi2-goodness-of-fit-null-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="chi2-goodness-of-fit-null-distribution"><span class="math inline">\(\chi^2\)</span> goodness of fit null distribution</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(sim_chisq, <span class="at">breaks =</span> <span class="dv">50</span>, <span class="at">main =</span> <span class="st">"Resampling Null Distribution"</span>,</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Chi-square statistic"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">border =</span> <span class="st">"white"</span>)</span>
@@ -680,10 +700,10 @@ X-squared = 1, df = 5, p-value = 0.9626</code></pre>
 <hr>
 </section>
 </section>
-<section id="chi-square-test-of-association" class="level1">
-<h1>Chi-square test of association</h1>
-<section id="what-is-a-chi-square-test-of-association" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-chi-square-test-of-association">What is a Chi-square Test of Association?</h2>
+<section id="chi2-test-of-association" class="level1">
+<h1>## <span class="math inline">\(\chi^2\)</span> test of association</h1>
+<section id="what-is-a-chi2-test-of-association" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-chi2-test-of-association">What is a <span class="math inline">\(\chi^2\)</span> Test of Association?</h2>
 <ul>
 <li><p>A statistical test to determine whether <strong>two categorical variables</strong> are associated (not independent).</p></li>
 <li><p><strong>Null hypothesis (H₀)</strong>: The two variables are <strong>independent</strong>.</p></li>
@@ -726,8 +746,8 @@ X-squared = 1, df = 5, p-value = 0.9626</code></pre>
 <li>Are study time preference and academic level associated?</li>
 </ul>
 </section>
-<section id="performing-a-chi-square-test-of-association-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="performing-a-chi-square-test-of-association-in-r">Performing a Chi-square test of association in R</h2>
+<section id="performing-a-chi2-test-of-association-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="performing-a-chi2-test-of-association-in-r">Performing a <span class="math inline">\(\chi^2\)</span> test of association in R</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create contingency table</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>study_table <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">40</span>),</span>
@@ -745,8 +765,8 @@ X-squared = 1, df = 5, p-value = 0.9626</code></pre>
 <span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(study_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="performing-a-chi-square-test-of-association-in-r-1" class="level2">
-<h2 class="anchored" data-anchor-id="performing-a-chi-square-test-of-association-in-r-1">Performing a Chi-square test of association in R</h2>
+<section id="performing-a-chi2-test-of-association-in-r-1" class="level2">
+<h2 class="anchored" data-anchor-id="performing-a-chi2-test-of-association-in-r-1">Performing a <span class="math inline">\(\chi^2\)</span> test of association in R</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>              Morning Evening
@@ -899,7 +919,6 @@ V = \sqrt{\frac{\chi^2}{n(k-1)}}
 <li><strong>H₀</strong>: The row and column variables are <strong>independent</strong>.</li>
 <li><strong>H₁</strong>: There is an <strong>association</strong> between the variables.</li>
 </ul>
-<hr>
 </section>
 <section id="example-scenario-2" class="level2">
 <h2 class="anchored" data-anchor-id="example-scenario-2">Example Scenario</h2>
@@ -926,7 +945,6 @@ V = \sqrt{\frac{\chi^2}{n(k-1)}}
 </tbody>
 </table>
 <p>Is beverage preference independent of nationality?</p>
-<hr>
 </section>
 <section id="creating-the-table-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="creating-the-table-in-r">Creating the Table in R</h2>
@@ -1014,6 +1032,7 @@ odds ratio
 </div>
 </div>
 </div>
+<hr>
 </section>
 </section>
 <section id="odds-ratios" class="level1">
@@ -1023,6 +1042,7 @@ odds ratio
 <ul>
 <li><p>An <strong>odds</strong> is the ratio of the probability an event occurs to the probability it does <strong>not</strong> occur.</p></li>
 <li><p>The <strong>odds ratio (OR)</strong> compares the odds of an event between two groups.</p></li>
+<li><p>Can think of this as an analogue of the effect size from linear models.</p></li>
 </ul>
 </section>
 <section id="interpretation" class="level2">

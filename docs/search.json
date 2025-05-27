@@ -13213,7 +13213,7 @@
     "href": "Lecture_Folder/Week9a.html#this-week",
     "title": "Week 9a - Statistics for Bioengineering",
     "section": "This week",
-    "text": "This week\n\nChi-square tests of association and goodness of fit\nConnections to confusion matrices\nBasics of statistical (classical) machine learning"
+    "text": "This week\n\nChi-square tests of association and goodness of fit\nConnections to confusion matrices\nBasics of statistical (classical) machine learning\nTomorrow - homework 3 due\nOn Thursday - brief presentation to the class of your dataset\nNext week - finish statistical (classical) machine learning\nSpecial session - Git/GitHub and Talapas"
   },
   {
     "objectID": "Lecture_Folder/Week9a.html#what-is-the-chi2-distribution",
@@ -13549,7 +13549,7 @@
     "href": "Lecture_Folder/Week9a.html#what-is-an-odds-ratio",
     "title": "Week 9a - Statistics for Bioengineering",
     "section": "What is an Odds Ratio?",
-    "text": "What is an Odds Ratio?\n\nAn odds is the ratio of the probability an event occurs to the probability it does not occur.\nThe odds ratio (OR) compares the odds of an event between two groups."
+    "text": "What is an Odds Ratio?\n\nAn odds is the ratio of the probability an event occurs to the probability it does not occur.\nThe odds ratio (OR) compares the odds of an event between two groups.\nCan think of this as an analogue of the effect size from linear models."
   },
   {
     "objectID": "Lecture_Folder/Week9a.html#interpretation",
@@ -13655,5 +13655,103 @@
     "title": "Week 9a - Statistics for Bioengineering",
     "section": "On your own",
     "text": "On your own\n\ncalculate the odds ratios for this confusion matrix\ncan you see how odds ratios can be used to evaluate fit?\nParticularly in the case of training vs. test data sets?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#analyzing-categorical-variables",
+    "href": "Lecture_Folder/Week9a.html#analyzing-categorical-variables",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Analyzing categorical variables",
+    "text": "Analyzing categorical variables\n\nHow do we test frequencies of a categorical variable against what we expect?\nHow do we test for correlation among two or more categorical variables?\nHow do we measure the effect size of the correlation of two or more categorical variables?\nThese each involve contingency tables and the \\(\\chi^2\\) distribution"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#uses-of-the-chi2-distribution",
+    "href": "Lecture_Folder/Week9a.html#uses-of-the-chi2-distribution",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Uses of the \\(\\chi^2\\) distribution",
+    "text": "Uses of the \\(\\chi^2\\) distribution\n\nGoodness-of-fit tests: Does observed data match expected proportions?\nTest of independence: Are two categorical variables related?\nTest of homogeneity: Do different groups have the same distribution?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#what-is-a-chi2-goodness-of-fit-test",
+    "href": "Lecture_Folder/Week9a.html#what-is-a-chi2-goodness-of-fit-test",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "What is a \\(\\chi^2\\) Goodness-of-Fit Test?",
+    "text": "What is a \\(\\chi^2\\) Goodness-of-Fit Test?\n\nA Chi-square Goodness-of-Fit Test checks whether observed frequencies differ from expected frequencies.\nUsed when:\n\nYou have one categorical variable.\nYou want to test whether it fits a specified distribution."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-test-statistic",
+    "href": "Lecture_Folder/Week9a.html#chi2-test-statistic",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) Test Statistic",
+    "text": "\\(\\chi^2\\) Test Statistic\nThe test statistic is:\n\\[\n\\chi^2 = \\sum \\frac{(O_i - E_i)^2}{E_i}\n\\]\nWhere:\n\\(O_i\\) = Observed frequency\n\\(E_i\\) = Expected frequency\nDegrees of freedom:\n\\[\ndf = k - 1\n\\]\nwhere ( k ) = number of categories"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-by-hand-in-r",
+    "href": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-by-hand-in-r",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) Goodness of Fit by hand in R",
+    "text": "\\(\\chi^2\\) Goodness of Fit by hand in R\n\n# Observed data\nobserved &lt;- c(Dominant = 72, Recessive = 28)\n\n# Expected proportions\nexpected_probs &lt;- c(0.75, 0.25)\n\n# Expected counts\nexpected &lt;- sum(observed) * expected_probs\n\n# Chi-square test manually\nchisq_stat &lt;- sum((observed - expected)^2 / expected)\nchisq_stat  # Output: Chi-square statistic\n\n# Degrees of freedom\ndf &lt;- length(observed) - 1\n\n# Critical value at alpha = 0.05\ncritical_val &lt;- qchisq(0.95, df)\ncritical_val\n\n# P-value\np_val &lt;- pchisq(chisq_stat, df, lower.tail = FALSE)\np_val\n\n# Alternatively, use chisq.test()\nchisq.test(x = observed, p = expected_probs)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-by-hand-in-r-1",
+    "href": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-by-hand-in-r-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) Goodness of Fit by hand in R",
+    "text": "\\(\\chi^2\\) Goodness of Fit by hand in R\n\n\n[1] 0.48\n\n\n[1] 3.841459\n\n\n[1] 0.4884223\n\n\n\n    Chi-squared test for given probabilities\n\ndata:  observed\nX-squared = 0.48, df = 1, p-value = 0.4884"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-parametric-test",
+    "href": "Lecture_Folder/Week9a.html#chi2-parametric-test",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) Parametric Test",
+    "text": "\\(\\chi^2\\) Parametric Test\n\nrolling a six-sided die 60 times\n\n\nobserved &lt;- c(8, 9, 10, 12, 11, 10)\n\nexpected_probs &lt;- rep(1/6, 6)\n\nchisq.test(x = observed, p = expected_probs)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-parametric-test-1",
+    "href": "Lecture_Folder/Week9a.html#chi2-parametric-test-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) Parametric Test",
+    "text": "\\(\\chi^2\\) Parametric Test\n\nrolling a six-sided die 60 times\n\n\n\n\n    Chi-squared test for given probabilities\n\ndata:  observed\nX-squared = 1, df = 5, p-value = 0.9626"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-test-using-resampling",
+    "href": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-test-using-resampling",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) goodness of fit test using resampling",
+    "text": "\\(\\chi^2\\) goodness of fit test using resampling\n\nset.seed(123)  # For reproducibility\n\n# Observed data\nobserved &lt;- c(Dominant = 72, Recessive = 28)\nn &lt;- sum(observed)\n\n# Expected probabilities\nexpected_probs &lt;- c(0.75, 0.25)\n\n# Number of simulations\nn_sim &lt;- 10000\n\n# Simulate chi-square statistics under the null\nsim_chisq &lt;- replicate(n_sim, {\n  simulated &lt;- rmultinom(1, size = n, prob = expected_probs)\n  expected &lt;- n * expected_probs\n  sum((simulated - expected)^2 / expected)\n})\n\n# Observed chi-square statistic\nobs_chisq &lt;- sum((observed - n * expected_probs)^2 / (n * expected_probs))\n\n# Empirical p-value\np_value &lt;- mean(sim_chisq &gt;= obs_chisq)\n\n# Output results\ncat(\"Observed Chi-square:\", obs_chisq, \"\\n\")\ncat(\"Empirical P-value:\", p_value, \"\\n\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-test-using-resampling-1",
+    "href": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-test-using-resampling-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) goodness of fit test using resampling",
+    "text": "\\(\\chi^2\\) goodness of fit test using resampling\n\n\nObserved Chi-square: 0.48 \n\n\nEmpirical P-value: 0.5615"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-null-distribution",
+    "href": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-null-distribution",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) goodness of fit null distribution",
+    "text": "\\(\\chi^2\\) goodness of fit null distribution\n\nhist(sim_chisq, breaks = 50, main = \"Resampling Null Distribution\",\n     xlab = \"Chi-square statistic\", col = \"lightblue\", border = \"white\")\nabline(v = obs_chisq, col = \"red\", lwd = 2)\nlegend(\"topright\", legend = \"Observed\", col = \"red\", lwd = 2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#what-is-a-chi2-test-of-association",
+    "href": "Lecture_Folder/Week9a.html#what-is-a-chi2-test-of-association",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "What is a \\(\\chi^2\\) Test of Association?",
+    "text": "What is a \\(\\chi^2\\) Test of Association?\n\nA statistical test to determine whether two categorical variables are associated (not independent).\nNull hypothesis (H₀): The two variables are independent.\nAlternative hypothesis (H₁): There is an association between the variables."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#performing-a-chi2-test-of-association-in-r",
+    "href": "Lecture_Folder/Week9a.html#performing-a-chi2-test-of-association-in-r",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Performing a \\(\\chi^2\\) test of association in R",
+    "text": "Performing a \\(\\chi^2\\) test of association in R\n\n# Create contingency table\nstudy_table &lt;- matrix(c(30, 20, 10, 40),\n                      nrow = 2,\n                      byrow = TRUE)\n\n# Add row and column names\nrownames(study_table) &lt;- c(\"Undergraduate\", \"Graduate\")\ncolnames(study_table) &lt;- c(\"Morning\", \"Evening\")\n\n# View the table\nstudy_table\n\n# Perform Chi-square test of independence\nchisq.test(study_table)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#performing-a-chi2-test-of-association-in-r-1",
+    "href": "Lecture_Folder/Week9a.html#performing-a-chi2-test-of-association-in-r-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Performing a \\(\\chi^2\\) test of association in R",
+    "text": "Performing a \\(\\chi^2\\) test of association in R\n\n\n              Morning Evening\nUndergraduate      30      20\nGraduate           10      40\n\n\n\n    Pearson's Chi-squared test with Yates' continuity correction\n\ndata:  study_table\nX-squared = 15.042, df = 1, p-value = 0.0001052"
   }
 ]
