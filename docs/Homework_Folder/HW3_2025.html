@@ -147,12 +147,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-study" id="toc-the-study" class="nav-link" data-scroll-target="#the-study">The Study</a></li>
   <li><a href="#your-tasks" id="toc-your-tasks" class="nav-link" data-scroll-target="#your-tasks">Your Tasks:</a></li>
   </ul></li>
-  <li><a href="#exercise-3.2-goodness-of-fit-test-for-cystic-fibrosis" id="toc-exercise-3.2-goodness-of-fit-test-for-cystic-fibrosis" class="nav-link" data-scroll-target="#exercise-3.2-goodness-of-fit-test-for-cystic-fibrosis">Exercise 3.2: Goodness of Fit Test for Cystic Fibrosis</a>
+  <li><a href="#problem-3.2-goodness-of-fit-test-for-cystic-fibrosis" id="toc-problem-3.2-goodness-of-fit-test-for-cystic-fibrosis" class="nav-link" data-scroll-target="#problem-3.2-goodness-of-fit-test-for-cystic-fibrosis">Problem 3.2: Goodness of Fit Test for Cystic Fibrosis</a>
   <ul class="collapse">
   <li><a href="#the-study-1" id="toc-the-study-1" class="nav-link" data-scroll-target="#the-study-1">The Study</a></li>
   <li><a href="#your-tasks-1" id="toc-your-tasks-1" class="nav-link" data-scroll-target="#your-tasks-1">Your Tasks:</a></li>
   </ul></li>
-  <li><a href="#exercise-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration" id="toc-exercise-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration" class="nav-link" data-scroll-target="#exercise-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration">Exercise 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration</a>
+  <li><a href="#problem-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration" id="toc-problem-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration" class="nav-link" data-scroll-target="#problem-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration">Problem 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration</a>
   <ul class="collapse">
   <li><a href="#the-study-2" id="toc-the-study-2" class="nav-link" data-scroll-target="#the-study-2">The Study</a></li>
   <li><a href="#your-tasks-2" id="toc-your-tasks-2" class="nav-link" data-scroll-target="#your-tasks-2">Your Tasks:</a></li>
@@ -184,10 +184,9 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="directions" class="level2">
 <h2 class="anchored" data-anchor-id="directions">Directions</h2>
-<p><strong>Assignment:</strong> Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set studying the <strong>effects of different types of seasonal flu on immune response in humans (<code>flu.tsv</code>)</strong>, a small data table of cystic fibrosis patients</p>
+<p><strong>Assignment:</strong> Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set studying the <strong>effects of different types of seasonal flu on immune response in humans (<code>flu.tsv</code>)</strong>, a small data table of cystic fibrosis patients, and a data table of the effect of different scaffolds and stem cells for bone regeneration.</p>
 <p>In addition, perform at least one of these statistical analyses on <strong>the dataset that you’ve identified for your term long project</strong> depending on the nature of your data.</p>
 <p><strong>Due:</strong> Submit your work via Canvas by the end of the day (midnight) on <strong>Wednesday, May 28th.</strong> Please submit <strong>both the Quarto_md file <em>and</em> the resulting html or pdf file</strong>. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself.</p>
-<hr>
 </section>
 <section id="problem-3.1-factorial-anova-of-flu-and-immune-response" class="level2">
 <h2 class="anchored" data-anchor-id="problem-3.1-factorial-anova-of-flu-and-immune-response">Problem 3.1 : Factorial ANOVA of Flu and Immune Response</h2>
@@ -210,11 +209,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Make an <em>interaction plot</em> for this question: the x-axis should show the various flu strains; the y-axis should show immune response, and there should be one line for each genotype, connecting the mean response to each flu strain for people of that genotype. The plot should show not just the means, but also the range of variation in the data.</li>
 <li>Create a combined variable of the two factor variables and perform a Tukey’s post-hoc means test, as well as one <em>a priori</em> test of your choice.</li>
 </ol>
-<hr>
 </section>
 </section>
-<section id="exercise-3.2-goodness-of-fit-test-for-cystic-fibrosis" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3.2-goodness-of-fit-test-for-cystic-fibrosis">Exercise 3.2: Goodness of Fit Test for Cystic Fibrosis</h2>
+<section id="problem-3.2-goodness-of-fit-test-for-cystic-fibrosis" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3.2-goodness-of-fit-test-for-cystic-fibrosis">Problem 3.2: Goodness of Fit Test for Cystic Fibrosis</h2>
 <section id="the-study-1" class="level3">
 <h3 class="anchored" data-anchor-id="the-study-1">The Study</h3>
 <p>Cystic fibrosis (CF) is an autosomal recessive genetic disorder. When both parents are carriers (genotype&nbsp;<strong>Ff</strong>), each child has the following expected probab:</p>
@@ -223,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>50% chance of being heterozygous (<strong>Ff</strong>) — unaffected carrier</p></li>
 <li><p>25% chance of being homozygous recessive (<strong>ff</strong>) — affected by cystic fibrosis</p></li>
 </ul>
-<p>A genetic counselor collects data from 200 children born to heterozygous carrier parents in a particular community and records the following distribution of genotypes:</p>
+<p>A genetic counselor collects data from 377 children born to heterozygous carrier parents in a particular community and records the following distribution of genotypes:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -261,11 +259,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Interpret your results in the context of Mendelian genetics. Use a significance level of α = 0.05.</li>
 <li>What would you recommend that the genetic counselor conclude about whether something else might be going on?</li>
 </ol>
-<hr>
 </section>
 </section>
-<section id="exercise-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration">Exercise 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration</h2>
+<section id="problem-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3.3-chi-square-contingency-table-analysis-of-scaffold-materials-and-regeneration">Problem 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration</h2>
 <section id="the-study-2" class="level3">
 <h3 class="anchored" data-anchor-id="the-study-2">The Study</h3>
 <p>A team of bioengineers is evaluating how&nbsp;<strong>scaffold material</strong>&nbsp;and&nbsp;<strong>stem</strong> <strong>cell type</strong>&nbsp;influence the success of tissue regeneration in a lab-grown cartilage model. They use three different scaffold materials and three types of stem cells and record whether the engineered cartilage shows successful regeneration (defined by a set of mechanical and histological markers) after 4 weeks.</p>

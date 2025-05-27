@@ -45,7 +45,7 @@ Cystic fibrosis (CF) is an autosomal recessive genetic disorder. When both paren
 
 -   25% chance of being homozygous recessive (**ff**) — affected by cystic fibrosis
 
-A genetic counselor collects data from 200 children born to heterozygous carrier parents in a particular community and records the following distribution of genotypes:
+A genetic counselor collects data from 377 children born to heterozygous carrier parents in a particular community and records the following distribution of genotypes:
 
 | Genotype | Phenotype Status         | Observed Count |
 |----------|--------------------------|----------------|
