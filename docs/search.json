@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b\nLecture_9a"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -13200,5 +13200,460 @@
     "title": "BioE_Stats_2025_HW3 - Multifactor ANOVA and Chi-square tests",
     "section": "Problem 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration",
     "text": "Problem 3.3: Chi-square Contingency Table Analysis of Scaffold Materials and Regeneration\n\nThe Study\nA team of bioengineers is evaluating how scaffold material and stem cell type influence the success of tissue regeneration in a lab-grown cartilage model. They use three different scaffold materials and three types of stem cells and record whether the engineered cartilage shows successful regeneration (defined by a set of mechanical and histological markers) after 4 weeks.\nThey test the following materials\n\nScaffold Materials:\n\nCollagen\nHydrogel\nBioceramic\n\nStem Cell Types:\n\nAdipose-derived stem cells (ASC)\nBone marrow-derived stem cells (BMSC)\nInduced pluripotent stem cells (iPSC)\n\n\nThe counts below represent the number of successful regenerations in each combination of material and cell type.\n\n\n\n\nASC\nBMSC\niPSC\n\n\n\n\nCollagen\n48\n22\n15\n\n\nHydrogel\n25\n57\n30\n\n\nBioceramic\n20\n23\n61\n\n\n\n\n\nYour Tasks:\n\nState the null and alternative hypotheses for this test.\nUsing R, perform a Chi-square test of independence. Include the R code and output.\nCalculate the odds ratio and LOD score for just the collagen/hydrogel vs. ASC/BMSC combination.\nWhat do the results suggest? Use a significance level of α = 0.05.\nWould you conclude that scaffold type and cell type influence regeneration success independently, or do they interact?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html",
+    "href": "Lecture_Folder/Week9a.html",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(tibble)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#this-week",
+    "href": "Lecture_Folder/Week9a.html#this-week",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "This week",
+    "text": "This week\n\nChi-square tests of association and goodness of fit\nConnections to confusion matrices\nBasics of statistical (classical) machine learning"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#what-is-the-chi2-distribution",
+    "href": "Lecture_Folder/Week9a.html#what-is-the-chi2-distribution",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "What is the \\(\\chi^2\\) Distribution ?",
+    "text": "What is the \\(\\chi^2\\) Distribution ?\n\nHow do we perform statistical tests on one or more categorical variables?\nThe Chi-square distribution (χ²) is a continuous probability distribution.\nIt arises when you sum the squares of independent standard normal variables.\nIt is widely used in statistical tests and in machine learning for evaluation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-distribution-definition",
+    "href": "Lecture_Folder/Week9a.html#chi2-distribution-definition",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) Distribution Definition",
+    "text": "\\(\\chi^2\\) Distribution Definition\n\nStart with a set of variables \\(X_1, X_2, ..., X_k\\)\nThen take the z-scores for each variable\n\nIf \\(Z_1, Z_2, ..., Z_k\\) are independent standard normal variables, then:\n\\[\n\\chi^2_k = \\sum_{i=1}^k Z_i^2\n\\]\n\n\\(\\chi^2_k\\) denotes a chi-square distribution with \\(k\\) degrees of freedom (df).\nThe shape depends on the degrees of freedom.\nAs the mean increases it approaches a normal distribution (via Central Limit Theorem)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#section",
+    "href": "Lecture_Folder/Week9a.html#section",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "",
+    "text": "Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\nChi-square distribution for different degrees of freedom"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-distribution-properties",
+    "href": "Lecture_Folder/Week9a.html#chi2-distribution-properties",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) Distribution Properties",
+    "text": "\\(\\chi^2\\) Distribution Properties\n\nDomain: \\(x \\in [0, \\infty)\\)\nMean: \\(k\\)\nVariance: \\(2k\\)\nRight-skewed distribution"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-distribution-probability-density-function",
+    "href": "Lecture_Folder/Week9a.html#chi2-distribution-probability-density-function",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) Distribution Probability Density Function",
+    "text": "\\(\\chi^2\\) Distribution Probability Density Function\n\\[\nf(x; k) = \\frac{1}{2^{k/2} \\Gamma(k/2)} x^{k/2 - 1} e^{-x/2}, \\quad x &gt; 0\n\\]\n\nWhere \\(\\Gamma\\) is the gamma function.\nThis function defines the shape of the chi-square distribution.\nThe gamma function is linked to the gamma distribution"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#gamma-distribution",
+    "href": "Lecture_Folder/Week9a.html#gamma-distribution",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Gamma Distribution",
+    "text": "Gamma Distribution\n\na continuous probability distribution\nused to model the times that elapses before \\(\\alpha\\) occurrences of a randomly occurring event\ne.g. calls to a pizza place or defects on a production line\nsuch events are said to occur via a Poisson Process"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#gamma-distribution-1",
+    "href": "Lecture_Folder/Week9a.html#gamma-distribution-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Gamma Distribution",
+    "text": "Gamma Distribution\n\nDescribes the waiting time until the \\(r^{th}\\) event for a process that occurs randomly over time at a rate \\(\\lambda\\) :\n\n\n\\[f(x) = \\frac{e^{-\\lambda x}\\lambda x^{r-1}}{(r-1)!}\\lambda\\]\n\n\\[ Mean =  \\frac{r}{\\lambda} \\] \\[ Variance = \\frac{r}{\\lambda^2} \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#gamma-distribution-2",
+    "href": "Lecture_Folder/Week9a.html#gamma-distribution-2",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Gamma Distribution",
+    "text": "Gamma Distribution\n\\[\nf(x; \\alpha, \\lambda) =\n\\frac{\\lambda^{\\alpha}}{\\Gamma(\\alpha)} x^{\\alpha - 1} e^{-\\lambda x}, \\quad x &gt; 0\n\\]\n\nwith shape parameter \\(\\alpha\\) &gt; 0 and rate parameter \\(\\lambda\\) &gt; 0\n\n\\[\nf(x; \\alpha, \\theta) =\n\\frac{1}{\\Gamma(\\alpha) \\theta^\\alpha} x^{\\alpha - 1} e^{-x/\\theta}, \\quad x &gt; 0\n\\]\n\nwith scale parameter \\(\\theta = \\frac{1}{\\lambda}\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#gamma-distribution-3",
+    "href": "Lecture_Folder/Week9a.html#gamma-distribution-3",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Gamma Distribution",
+    "text": "Gamma Distribution\n\n\nExample: If, in a PCR reaction, DNA polymerase synthesizes new DNA strands at a rate of 1 per millisecond, how long until 1000 new DNA strands are produced?\n\n\n\nAssume: that DNA synthesis does not deplete the pool of primers or nucleotides in the chamber, so that each event is independent of other events in the PCR chamber."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#uses-of-the-chi-square-distribution",
+    "href": "Lecture_Folder/Week9a.html#uses-of-the-chi-square-distribution",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Uses of the Chi-square distribution",
+    "text": "Uses of the Chi-square distribution\n\nGoodness-of-fit tests: Does observed data match expected proportions?\nTest of independence: Are two categorical variables related?\nTest of homogeneity: Do different groups have the same distribution?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#what-is-a-chi-square-goodness-of-fit-test",
+    "href": "Lecture_Folder/Week9a.html#what-is-a-chi-square-goodness-of-fit-test",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "What is a Chi-square Goodness-of-Fit Test?",
+    "text": "What is a Chi-square Goodness-of-Fit Test?\n\nA Chi-square Goodness-of-Fit Test checks whether observed frequencies differ from expected frequencies.\nUsed when:\n\nYou have one categorical variable.\nYou want to test whether it fits a specified distribution."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#hypotheses",
+    "href": "Lecture_Folder/Week9a.html#hypotheses",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\nNull hypothesis (H₀): Observed data follows the expected distribution.\nAlternative hypothesis (H₁): Observed data does not follow the expected distribution."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#when-to-use-this-test",
+    "href": "Lecture_Folder/Week9a.html#when-to-use-this-test",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "When to use this test",
+    "text": "When to use this test\n\nMarketing: preference among product categories\nBiology: expected vs observed phenotypes\nEducation: survey responses by category"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#assumptions",
+    "href": "Lecture_Folder/Week9a.html#assumptions",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nData are counts (not percentages or proportions).\nCategories are mutually exclusive.\nExpected count in each category should be ≥ 5 ."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#test-statistic",
+    "href": "Lecture_Folder/Week9a.html#test-statistic",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Test Statistic",
+    "text": "Test Statistic\nThe test statistic is:\n\\[\n\\chi^2 = \\sum \\frac{(O_i - E_i)^2}{E_i}\n\\]\nWhere:\n\\(O_i\\) = Observed frequency\n\\(E_i\\) = Expected frequency\nDegrees of freedom:\n\\[\ndf = k - 1\n\\]\nwhere ( k ) = number of categories"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#example-scenario",
+    "href": "Lecture_Folder/Week9a.html#example-scenario",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Example Scenario",
+    "text": "Example Scenario\nA geneticist expects a 3:1 Mendelian ratio in offspring genotypes.\nObserved counts:\n\nDominant: 72\nRecessive: 28\n\nExpected proportions:\n\nDominant: 0.75\nRecessive: 0.25"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#goodness-of-fit-by-hand-in-r",
+    "href": "Lecture_Folder/Week9a.html#goodness-of-fit-by-hand-in-r",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Goodness of Fit by hand in R",
+    "text": "Goodness of Fit by hand in R\n\n# Observed data\nobserved &lt;- c(Dominant = 72, Recessive = 28)\n\n# Expected proportions\nexpected_probs &lt;- c(0.75, 0.25)\n\n# Expected counts\nexpected &lt;- sum(observed) * expected_probs\n\n# Chi-square test manually\nchisq_stat &lt;- sum((observed - expected)^2 / expected)\nchisq_stat  # Output: Chi-square statistic\n\n# Degrees of freedom\ndf &lt;- length(observed) - 1\n\n# Critical value at alpha = 0.05\ncritical_val &lt;- qchisq(0.95, df)\ncritical_val\n\n# P-value\np_val &lt;- pchisq(chisq_stat, df, lower.tail = FALSE)\np_val\n\n# Alternatively, use chisq.test()\nchisq.test(x = observed, p = expected_probs)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#goodness-of-fit-by-hand-in-r-1",
+    "href": "Lecture_Folder/Week9a.html#goodness-of-fit-by-hand-in-r-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Goodness of Fit by hand in R",
+    "text": "Goodness of Fit by hand in R\n\n\n[1] 0.48\n\n\n[1] 3.841459\n\n\n[1] 0.4884223\n\n\n\n    Chi-squared test for given probabilities\n\ndata:  observed\nX-squared = 0.48, df = 1, p-value = 0.4884"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#parametric---rolling-a-six-sided-die-60-times",
+    "href": "Lecture_Folder/Week9a.html#parametric---rolling-a-six-sided-die-60-times",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Parametric - rolling a six-sided die 60 times",
+    "text": "Parametric - rolling a six-sided die 60 times\n\nobserved &lt;- c(8, 9, 10, 12, 11, 10)\n\nexpected_probs &lt;- rep(1/6, 6)\n\nchisq.test(x = observed, p = expected_probs)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#parametric---rolling-a-six-sided-die-60-times-1",
+    "href": "Lecture_Folder/Week9a.html#parametric---rolling-a-six-sided-die-60-times-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Parametric - rolling a six-sided die 60 times",
+    "text": "Parametric - rolling a six-sided die 60 times\n\n\n\n    Chi-squared test for given probabilities\n\ndata:  observed\nX-squared = 1, df = 5, p-value = 0.9626"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#goodness-of-fit-using-resampling",
+    "href": "Lecture_Folder/Week9a.html#goodness-of-fit-using-resampling",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Goodness of fit using resampling",
+    "text": "Goodness of fit using resampling\n\nset.seed(123)  # For reproducibility\n\n# Observed data\nobserved &lt;- c(Dominant = 72, Recessive = 28)\nn &lt;- sum(observed)\n\n# Expected probabilities\nexpected_probs &lt;- c(0.75, 0.25)\n\n# Number of simulations\nn_sim &lt;- 10000\n\n# Simulate chi-square statistics under the null\nsim_chisq &lt;- replicate(n_sim, {\n  simulated &lt;- rmultinom(1, size = n, prob = expected_probs)\n  expected &lt;- n * expected_probs\n  sum((simulated - expected)^2 / expected)\n})\n\n# Observed chi-square statistic\nobs_chisq &lt;- sum((observed - n * expected_probs)^2 / (n * expected_probs))\n\n# Empirical p-value\np_value &lt;- mean(sim_chisq &gt;= obs_chisq)\n\n# Output results\ncat(\"Observed Chi-square:\", obs_chisq, \"\\n\")\ncat(\"Empirical P-value:\", p_value, \"\\n\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#goodness-of-fit-using-resampling-1",
+    "href": "Lecture_Folder/Week9a.html#goodness-of-fit-using-resampling-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Goodness of fit using resampling",
+    "text": "Goodness of fit using resampling\n\n\nObserved Chi-square: 0.48 \n\n\nEmpirical P-value: 0.5615"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#goodness-of-fit-null-distribution",
+    "href": "Lecture_Folder/Week9a.html#goodness-of-fit-null-distribution",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Goodness of fit null distribution",
+    "text": "Goodness of fit null distribution\n\nhist(sim_chisq, breaks = 50, main = \"Resampling Null Distribution\",\n     xlab = \"Chi-square statistic\", col = \"lightblue\", border = \"white\")\nabline(v = obs_chisq, col = \"red\", lwd = 2)\nlegend(\"topright\", legend = \"Observed\", col = \"red\", lwd = 2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#on-your-own",
+    "href": "Lecture_Folder/Week9a.html#on-your-own",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "On your own",
+    "text": "On your own\n\nChange around the data in the examples above and see how it affects the results\nTake your term-long data set or one of the data sets we’ve examined in class\nCreate a hypothesis of expected proportions and test it\nCreate a side-by-side plot of observed and expected frequencies"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#what-is-a-chi-square-test-of-association",
+    "href": "Lecture_Folder/Week9a.html#what-is-a-chi-square-test-of-association",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "What is a Chi-square Test of Association?",
+    "text": "What is a Chi-square Test of Association?\n\nA statistical test to determine whether two categorical variables are associated (not independent).\nNull hypothesis (H₀): The two variables are independent.\nAlternative hypothesis (H₁): There is an association between the variables."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#assumptions-1",
+    "href": "Lecture_Folder/Week9a.html#assumptions-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nObservations are independent.\nExpected counts ≥ 5 in at least 80% of cells.\nNo more than 20% of cells have expected counts &lt; 5."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#example-scenario-1",
+    "href": "Lecture_Folder/Week9a.html#example-scenario-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Example Scenario",
+    "text": "Example Scenario\nA researcher surveys students about their study preference:\n\n\n\n\nMorning\nEvening\n\n\n\n\nUndergraduates\n30\n20\n\n\nGraduates\n10\n40\n\n\n\n\nAre study time preference and academic level associated?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#performing-a-chi-square-test-of-association-in-r",
+    "href": "Lecture_Folder/Week9a.html#performing-a-chi-square-test-of-association-in-r",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Performing a Chi-square test of association in R",
+    "text": "Performing a Chi-square test of association in R\n\n# Create contingency table\nstudy_table &lt;- matrix(c(30, 20, 10, 40),\n                      nrow = 2,\n                      byrow = TRUE)\n\n# Add row and column names\nrownames(study_table) &lt;- c(\"Undergraduate\", \"Graduate\")\ncolnames(study_table) &lt;- c(\"Morning\", \"Evening\")\n\n# View the table\nstudy_table\n\n# Perform Chi-square test of independence\nchisq.test(study_table)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#performing-a-chi-square-test-of-association-in-r-1",
+    "href": "Lecture_Folder/Week9a.html#performing-a-chi-square-test-of-association-in-r-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Performing a Chi-square test of association in R",
+    "text": "Performing a Chi-square test of association in R\n\n\n              Morning Evening\nUndergraduate      30      20\nGraduate           10      40\n\n\n\n    Pearson's Chi-squared test with Yates' continuity correction\n\ndata:  study_table\nX-squared = 15.042, df = 1, p-value = 0.0001052"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#paired-histogram",
+    "href": "Lecture_Folder/Week9a.html#paired-histogram",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Paired Histogram",
+    "text": "Paired Histogram\n\nlibrary(ggplot2)\n\ndf &lt;- as.data.frame(as.table(study_table))\nggplot(df, aes(x = Var2, y = Freq, fill = Var1)) +\n  geom_bar(stat = \"identity\", position = \"dodge\") +\n  labs(x = \"Study Time\", y = \"Number of Students\", fill = \"Student Type\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#paired-histogram-1",
+    "href": "Lecture_Folder/Week9a.html#paired-histogram-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Paired Histogram",
+    "text": "Paired Histogram\n\n\n\n\n\nStudy Preferences by Student Type"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#mosaic-plot",
+    "href": "Lecture_Folder/Week9a.html#mosaic-plot",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Mosaic Plot",
+    "text": "Mosaic Plot\n\nmosaicplot(study_table,\n           main = \"Study Time Preference by Student Type\",\n           xlab = \"Student Type\",\n           ylab = \"Study Preference\",\n           color = TRUE)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#mosaic-plot-1",
+    "href": "Lecture_Folder/Week9a.html#mosaic-plot-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Mosaic Plot",
+    "text": "Mosaic Plot\n\n\n\n\n\nMosaic Plot of Study Preference by Student Type"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#calculating-the-effect-size-using-cramérs-v",
+    "href": "Lecture_Folder/Week9a.html#calculating-the-effect-size-using-cramérs-v",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Calculating the effect size using Cramér’s V",
+    "text": "Calculating the effect size using Cramér’s V\n\\[\nV = \\sqrt{\\frac{\\chi^2}{n(k-1)}}\n\\] where\n\n\\(\\chi^2\\) is the test statistic\nn is the total number of observations\nk is the min(number of rows, number of columns)\nranges from 0 to 1, with\n\n0.1 being a small effect\n0.3 being a medium effect\n0.5 being a large effect"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#calculating-the-effect-size-in-r",
+    "href": "Lecture_Folder/Week9a.html#calculating-the-effect-size-in-r",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Calculating the effect size in R",
+    "text": "Calculating the effect size in R\n\n# Example 2x2 contingency table\ntbl &lt;- matrix(c(500, 10, 20, 40), nrow = 2, byrow = TRUE)\nrownames(tbl) &lt;- c(\"Group1\", \"Group2\")\ncolnames(tbl) &lt;- c(\"Outcome1\", \"Outcome2\")\n\n# Chi-square test of independence\ntest &lt;- chisq.test(tbl)\n\n# Extract test statistic\nchisq_val &lt;- test$statistic\n\n# Total number of observations\nn &lt;- sum(tbl)\n\n# Minimum of (rows, columns) for Cramér’s V formula\nk &lt;- min(nrow(tbl), ncol(tbl))\n\n# Cramér’s V calculation\ncramers_v &lt;- sqrt(chisq_val / (n * (k - 1)))\n\n# Print result\ncramers_v"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#calculating-the-effect-size-in-r-1",
+    "href": "Lecture_Folder/Week9a.html#calculating-the-effect-size-in-r-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Calculating the effect size in R",
+    "text": "Calculating the effect size in R\n\n\nCramer's V: 0.4901895"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#what-is-fishers-exact-test",
+    "href": "Lecture_Folder/Week9a.html#what-is-fishers-exact-test",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "What is Fisher’s Exact Test?",
+    "text": "What is Fisher’s Exact Test?\n\nA statistical test used to determine if there is a nonrandom association between two categorical variables.\nAppropriate when:\n\nSample sizes are small\nExpected frequencies are &lt; 5"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#when-to-use-a-fishers-exact-test",
+    "href": "Lecture_Folder/Week9a.html#when-to-use-a-fishers-exact-test",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "When to use a Fisher’s Exact Test",
+    "text": "When to use a Fisher’s Exact Test\n\n2x2 tables (most common)\nVery small sample sizes\nWhen Chi-square assumptions are violated\nExpected frequency &lt; 5 in &gt;20% of cells"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#caution-and-notes",
+    "href": "Lecture_Folder/Week9a.html#caution-and-notes",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Caution and Notes",
+    "text": "Caution and Notes\n\nNot limited to 2x2 tables (but computationally expensive for larger ones)\nMore accurate than Chi-square in small samples\nCannot directly compute effect size (but odds ratio is available)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#hypotheses-1",
+    "href": "Lecture_Folder/Week9a.html#hypotheses-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\nH₀: The row and column variables are independent.\nH₁: There is an association between the variables."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#example-scenario-2",
+    "href": "Lecture_Folder/Week9a.html#example-scenario-2",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Example Scenario",
+    "text": "Example Scenario\nA researcher asks 20 people whether they prefer coffee or tea.\n\n\n\n\nCoffee\nTea\n\n\n\n\nEnglish\n8\n2\n\n\nAmerican\n1\n9\n\n\n\nIs beverage preference independent of nationality?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#creating-the-table-in-r",
+    "href": "Lecture_Folder/Week9a.html#creating-the-table-in-r",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Creating the Table in R",
+    "text": "Creating the Table in R\n\n# Create 2x2 contingency table\nbeverage_table &lt;- matrix(c(8, 2, 1, 9),\n                         nrow = 2,\n                         byrow = TRUE)\n\nrownames(beverage_table) &lt;- c(\"American\", \"English\")\ncolnames(beverage_table) &lt;- c(\"Coffee\", \"Tea\")\n\nbeverage_table\n\n         Coffee Tea\nAmerican      8   2\nEnglish       1   9"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#running-the-fishers-exact-test",
+    "href": "Lecture_Folder/Week9a.html#running-the-fishers-exact-test",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Running the Fisher’s exact test",
+    "text": "Running the Fisher’s exact test\n\n# Perform Fisher's Exact Test\nfisher.test(beverage_table)\n\n\n    Fisher's Exact Test for Count Data\n\ndata:  beverage_table\np-value = 0.005477\nalternative hypothesis: true odds ratio is not equal to 1\n95 percent confidence interval:\n    2.057999 1740.081669\nsample estimates:\nodds ratio \n  27.32632"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#paired-histogram-2",
+    "href": "Lecture_Folder/Week9a.html#paired-histogram-2",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Paired Histogram",
+    "text": "Paired Histogram\n\nlibrary(ggplot2)\n\ndf &lt;- as.data.frame(as.table(beverage_table))\nggplot(df, aes(x = Var2, y = Freq, fill = Var1)) +\n  geom_bar(stat = \"identity\", position = \"dodge\") +\n  labs(x = \"Beverage\", y = \"Count\", fill = \"Nationality\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#paired-histogram-3",
+    "href": "Lecture_Folder/Week9a.html#paired-histogram-3",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Paired Histogram",
+    "text": "Paired Histogram\n\n\n\n\n\nBeverage Preference by Nationality"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#mosaic-plot-2",
+    "href": "Lecture_Folder/Week9a.html#mosaic-plot-2",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Mosaic Plot",
+    "text": "Mosaic Plot\n\nmosaicplot(beverage_table,\n           main = \"Beverage preference by nationality\",\n           xlab = \"Nationality\",\n           ylab = \"Beverage\",\n           color = TRUE)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#mosaic-plot-3",
+    "href": "Lecture_Folder/Week9a.html#mosaic-plot-3",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Mosaic Plot",
+    "text": "Mosaic Plot\n\n\n\n\n\nBeverage Preference by Nationality"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#what-is-an-odds-ratio",
+    "href": "Lecture_Folder/Week9a.html#what-is-an-odds-ratio",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "What is an Odds Ratio?",
+    "text": "What is an Odds Ratio?\n\nAn odds is the ratio of the probability an event occurs to the probability it does not occur.\nThe odds ratio (OR) compares the odds of an event between two groups."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#interpretation",
+    "href": "Lecture_Folder/Week9a.html#interpretation",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nOdds (linear scale) show how much more likely men are to prefer coffee than women.\nLog(odds) scale:\n\nMakes multiplicative differences additive.\nUseful for regression and effect size comparison.\n\nA large positive log(OR) indicates strong association."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#example-coffee-preference-by-nationality",
+    "href": "Lecture_Folder/Week9a.html#example-coffee-preference-by-nationality",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Example: Coffee Preference by Nationality",
+    "text": "Example: Coffee Preference by Nationality\n\n\n\n\nCoffee\nTea\nTotal\n\n\n\n\nAmerican\n8\n2\n10\n\n\nEnglish\n1\n9\n10\n\n\n\n\nOdds (Americans prefer Coffee) = \\(\\frac{8}{2} = 4\\)\nOdds (English prefer Coffee) = \\(\\frac{1}{9} ≈ 0.111\\)\nOdds Ratio of preferring coffee = \\(\\frac{4}{0.111} ≈ 36\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#interpreting-the-odds-ratio",
+    "href": "Lecture_Folder/Week9a.html#interpreting-the-odds-ratio",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Interpreting the Odds Ratio",
+    "text": "Interpreting the Odds Ratio\n\nOR = 1 → No association (odds are equal)\nOR &gt; 1 → Group 1 has higher odds of the event\nOR &lt; 1 → Group 1 has lower odds of the event\n\nIn this case, Americans are 36 times more likely to prefer coffee compared to English — a strong association."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#visualizing-odds-and-log-odds-ratio",
+    "href": "Lecture_Folder/Week9a.html#visualizing-odds-and-log-odds-ratio",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Visualizing Odds and Log Odds Ratio",
+    "text": "Visualizing Odds and Log Odds Ratio\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Data setup\nodds_data &lt;- data.frame(\n  Nationality = c(\"American\", \"English\"),\n  Coffee = c(8, 1),\n  Tea = c(2, 9)\n)\n\n# Compute odds and log(odds)\nodds_data &lt;- odds_data |&gt;\n  mutate(\n    Odds = Coffee / Tea,\n    LogOdds = log(Odds)\n  )\n\n# Long format for bar plot\nodds_long &lt;- odds_data |&gt;\n  select(Nationality, Odds, LogOdds) |&gt;\n  tidyr::pivot_longer(cols = c(Odds, LogOdds), names_to = \"Metric\", values_to = \"Value\")\n\n# Bar plot for odds and log(odds)\nggplot(odds_long, aes(x = Nationality, y = Value, fill = Nationality)) +\n  geom_col(width = 0.6, show.legend = FALSE) +\n  facet_wrap(~Metric, scales = \"free_y\") +\n  labs(title = \"Comparison of Odds and Log(Odds)\",\n       y = \"Value\", x = \"Nationality\") +\n  theme_minimal(base_size = 14)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#visualizing-odds-and-log-odds-ratio-1",
+    "href": "Lecture_Folder/Week9a.html#visualizing-odds-and-log-odds-ratio-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Visualizing Odds and Log Odds Ratio",
+    "text": "Visualizing Odds and Log Odds Ratio\n\n\n\n\n\nOdds and Log(Odds Ratio) for Coffee Preference by Nationality"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#what-is-a-confusion-matrix",
+    "href": "Lecture_Folder/Week9a.html#what-is-a-confusion-matrix",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "What Is a Confusion Matrix?",
+    "text": "What Is a Confusion Matrix?\n\nA confusion matrix summarizes the outcomes of a classification task.\nIt compares predicted labels to actual (true) labels.\nHelps identify where the model is getting things right or wrong.\nExample for binary classification:"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#confusion-matrix-layout-binary",
+    "href": "Lecture_Folder/Week9a.html#confusion-matrix-layout-binary",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Confusion Matrix Layout (Binary)",
+    "text": "Confusion Matrix Layout (Binary)\n\n\n\n\n\n\n\n\n\nPredicted: Positive\nPredicted: Negative\n\n\n\n\nActual: Positive\nTrue Positive (TP)\nFalse Negative (FN)\n\n\nActual: Negative\nFalse Positive (FP)\nTrue Negative (TN)\n\n\n\n\n\n\nTP: Correctly predicted positive case\nTN: Correctly predicted negative case\nFP: Incorrectly predicted positive (Type I error)\nFN: Incorrectly predicted negative (Type II error)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#confusion-matrix-contingency-table",
+    "href": "Lecture_Folder/Week9a.html#confusion-matrix-contingency-table",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Confusion Matrix = Contingency Table",
+    "text": "Confusion Matrix = Contingency Table\n\nA confusion matrix is a special case of a contingency table:\n\nPredicted class ↔︎ Variable 1\nTrue class ↔︎ Variable 2\n\nEntries are counts of observations in each combination of categories.\nIt is just a labeled 2×2 (or K×K) contingency table."
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#key-metrics",
+    "href": "Lecture_Folder/Week9a.html#key-metrics",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Key Metrics",
+    "text": "Key Metrics\n\nAccuracy\n\\[ \\text{Accuracy} = \\frac{TP + TN}{TP + TN + FP + FN} \\]\n\n\nPrecision (Positive Predictive Value)\n\\[\n\\text{Precision} = \\frac{TP}{TP + FP}\n\\]\n\n\nRecall (Sensitivity, True Positive Rate)\n\\[\n\\text{Recall} = \\frac{TP}{TP + FN}\n\\]\n\n\nF1 Score\n\\[\n\\text{F1} = 2 \\cdot \\frac{\\text{Precision} \\cdot \\text{Recall}}{\\text{Precision} + \\text{Recall}}\n\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#an-example-confusion-matrix",
+    "href": "Lecture_Folder/Week9a.html#an-example-confusion-matrix",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "An example confusion matrix",
+    "text": "An example confusion matrix\n\n\n\n\nPredicted Positive\nPredicted Negative\n\n\n\n\nActual Positive\nTP = 50\nFN = 10\n\n\nActual Negative\nFP = 5\nTN = 35"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#calculating-the-confusion-matrix-metrics",
+    "href": "Lecture_Folder/Week9a.html#calculating-the-confusion-matrix-metrics",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Calculating the confusion matrix metrics",
+    "text": "Calculating the confusion matrix metrics\n\nTP &lt;- 50; FN &lt;- 10; FP &lt;- 5; TN &lt;- 35\n\naccuracy &lt;- (TP + TN) / (TP + TN + FP + FN)\nprecision &lt;- TP / (TP + FP)\nrecall &lt;- TP / (TP + FN)\nf1 &lt;- 2 * precision * recall / (precision + recall)\n\nc(Accuracy = accuracy, Precision = precision, Recall = recall, F1 = f1)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#calculating-the-confusion-matrix-metrics-1",
+    "href": "Lecture_Folder/Week9a.html#calculating-the-confusion-matrix-metrics-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Calculating the confusion matrix metrics",
+    "text": "Calculating the confusion matrix metrics\n\n\n Accuracy Precision    Recall        F1 \n0.8500000 0.9090909 0.8333333 0.8695652"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#visualizing-the-confusion-matrix-in-r",
+    "href": "Lecture_Folder/Week9a.html#visualizing-the-confusion-matrix-in-r",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Visualizing the Confusion Matrix in R",
+    "text": "Visualizing the Confusion Matrix in R\n\n# Create confusion matrix\nconf_mat &lt;- matrix(c(50, 10, 5, 35), nrow = 2,\n                   dimnames = list(\"Actual\" = c(\"Positive\", \"Negative\"),\n                                   \"Predicted\" = c(\"Positive\", \"Negative\")))\n\nconf_mat\n\n          Predicted\nActual     Positive Negative\n  Positive       50        5\n  Negative       10       35"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#applying-statistical-tests-to-a-confusion-matrix",
+    "href": "Lecture_Folder/Week9a.html#applying-statistical-tests-to-a-confusion-matrix",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "Applying Statistical Tests to a Confusion Matrix",
+    "text": "Applying Statistical Tests to a Confusion Matrix\n\nYou can apply a Chi-square test of independence to a confusion matrix:\n\nTests if predicted and actual labels are statistically independent.\n\nFor small sample sizes or sparse data, use Fisher’s Exact Test.\n\n\nconf_matrix &lt;- matrix(c(50, 10, 5, 35), nrow = 2)\ndimnames(conf_matrix) &lt;- list(\n  \"Actual\" = c(\"Positive\", \"Negative\"),\n  \"Predicted\" = c(\"Positive\", \"Negative\")\n)\n\nchisq.test(conf_matrix)\n\n\n    Pearson's Chi-squared test with Yates' continuity correction\n\ndata:  conf_matrix\nX-squared = 45.833, df = 1, p-value = 1.288e-11"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#on-your-own-1",
+    "href": "Lecture_Folder/Week9a.html#on-your-own-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "On your own",
+    "text": "On your own\n\ncalculate the odds ratios for this confusion matrix\ncan you see how odds ratios can be used to evaluate fit?\nParticularly in the case of training vs. test data sets?"
   }
 ]
