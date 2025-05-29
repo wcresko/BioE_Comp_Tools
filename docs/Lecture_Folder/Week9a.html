@@ -233,6 +233,7 @@ window.Quarto = {
   <li><a href="#chi2-goodness-of-fit-test-using-resampling" id="toc-chi2-goodness-of-fit-test-using-resampling" class="nav-link" data-scroll-target="#chi2-goodness-of-fit-test-using-resampling"><span class="math inline">\(\chi^2\)</span> goodness of fit test using resampling</a></li>
   <li><a href="#chi2-goodness-of-fit-test-using-resampling-1" id="toc-chi2-goodness-of-fit-test-using-resampling-1" class="nav-link" data-scroll-target="#chi2-goodness-of-fit-test-using-resampling-1"><span class="math inline">\(\chi^2\)</span> goodness of fit test using resampling</a></li>
   <li><a href="#chi2-goodness-of-fit-null-distribution" id="toc-chi2-goodness-of-fit-null-distribution" class="nav-link" data-scroll-target="#chi2-goodness-of-fit-null-distribution"><span class="math inline">\(\chi^2\)</span> goodness of fit null distribution</a></li>
+  <li><a href="#chi2-goodness-of-fit-null-distribution-1" id="toc-chi2-goodness-of-fit-null-distribution-1" class="nav-link" data-scroll-target="#chi2-goodness-of-fit-null-distribution-1"><span class="math inline">\(\chi^2\)</span> goodness of fit null distribution</a></li>
   <li><a href="#on-your-own" id="toc-on-your-own" class="nav-link" data-scroll-target="#on-your-own">On your own</a></li>
   </ul></li>
   <li><a href="#chi2-test-of-association" id="toc-chi2-test-of-association" class="nav-link" data-scroll-target="#chi2-test-of-association">## <span class="math inline">\(\chi^2\)</span> test of association</a>
@@ -273,28 +274,7 @@ window.Quarto = {
   <li><a href="#visualizing-odds-and-log-odds-ratio" id="toc-visualizing-odds-and-log-odds-ratio" class="nav-link" data-scroll-target="#visualizing-odds-and-log-odds-ratio">Visualizing Odds and Log Odds Ratio</a></li>
   <li><a href="#visualizing-odds-and-log-odds-ratio-1" id="toc-visualizing-odds-and-log-odds-ratio-1" class="nav-link" data-scroll-target="#visualizing-odds-and-log-odds-ratio-1">Visualizing Odds and Log Odds Ratio</a></li>
   </ul></li>
-  <li><a href="#confusion-matrices-are-contingency-tests" id="toc-confusion-matrices-are-contingency-tests" class="nav-link" data-scroll-target="#confusion-matrices-are-contingency-tests">Confusion matrices are contingency tests</a>
-  <ul class="collapse">
-  <li><a href="#what-is-a-confusion-matrix" id="toc-what-is-a-confusion-matrix" class="nav-link" data-scroll-target="#what-is-a-confusion-matrix">What Is a Confusion Matrix?</a></li>
-  <li><a href="#confusion-matrix-layout-binary" id="toc-confusion-matrix-layout-binary" class="nav-link" data-scroll-target="#confusion-matrix-layout-binary">Confusion Matrix Layout (Binary)</a></li>
-  <li><a href="#confusion-matrix-contingency-table" id="toc-confusion-matrix-contingency-table" class="nav-link" data-scroll-target="#confusion-matrix-contingency-table">Confusion Matrix = Contingency Table</a></li>
-  </ul></li>
-  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why This Matters</a>
-  <ul class="collapse">
-  <li><a href="#key-metrics" id="toc-key-metrics" class="nav-link" data-scroll-target="#key-metrics">Key Metrics</a>
-  <ul class="collapse">
-  <li><a href="#accuracy" id="toc-accuracy" class="nav-link" data-scroll-target="#accuracy">Accuracy</a></li>
-  <li><a href="#precision-positive-predictive-value" id="toc-precision-positive-predictive-value" class="nav-link" data-scroll-target="#precision-positive-predictive-value">Precision (Positive Predictive Value)</a></li>
-  <li><a href="#recall-sensitivity-true-positive-rate" id="toc-recall-sensitivity-true-positive-rate" class="nav-link" data-scroll-target="#recall-sensitivity-true-positive-rate">Recall (Sensitivity, True Positive Rate)</a></li>
-  <li><a href="#f1-score" id="toc-f1-score" class="nav-link" data-scroll-target="#f1-score">F1 Score</a></li>
-  </ul></li>
-  <li><a href="#an-example-confusion-matrix" id="toc-an-example-confusion-matrix" class="nav-link" data-scroll-target="#an-example-confusion-matrix">An example confusion matrix</a></li>
-  <li><a href="#calculating-the-confusion-matrix-metrics" id="toc-calculating-the-confusion-matrix-metrics" class="nav-link" data-scroll-target="#calculating-the-confusion-matrix-metrics">Calculating the confusion matrix metrics</a></li>
-  <li><a href="#calculating-the-confusion-matrix-metrics-1" id="toc-calculating-the-confusion-matrix-metrics-1" class="nav-link" data-scroll-target="#calculating-the-confusion-matrix-metrics-1">Calculating the confusion matrix metrics</a></li>
-  <li><a href="#visualizing-the-confusion-matrix-in-r" id="toc-visualizing-the-confusion-matrix-in-r" class="nav-link" data-scroll-target="#visualizing-the-confusion-matrix-in-r">Visualizing the Confusion Matrix in R</a></li>
-  <li><a href="#applying-statistical-tests-to-a-confusion-matrix" id="toc-applying-statistical-tests-to-a-confusion-matrix" class="nav-link" data-scroll-target="#applying-statistical-tests-to-a-confusion-matrix">Applying Statistical Tests to a Confusion Matrix</a></li>
-  <li><a href="#on-your-own-1" id="toc-on-your-own-1" class="nav-link" data-scroll-target="#on-your-own-1">On your own</a></li>
-  </ul></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Week9a.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -363,7 +343,7 @@ window.Quarto = {
 <li><p>How do we test <strong>frequencies</strong> of a categorical variable against <strong>what we expect</strong>?</p></li>
 <li><p>How do we test for <strong>correlation</strong> among two or more categorical variables?</p></li>
 <li><p>How do we measure the <strong>effect size of the correlation</strong> of two or more categorical variables?</p></li>
-<li><p>These each involve <strong>contingency tables</strong> and the <strong><span class="math inline">\(\chi^2\)</span> distribution</strong></p></li>
+<li><p>These each involve <strong>contingency tables</strong> and the <span class="math inline">\(\chi^2\)</span> distribution</p></li>
 </ul>
 </section>
 <section id="what-is-the-chi2-distribution" class="level2">
@@ -676,14 +656,36 @@ X-squared = 1, df = 5, p-value = 0.9626</code></pre>
 <section id="chi2-goodness-of-fit-null-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="chi2-goodness-of-fit-null-distribution"><span class="math inline">\(\chi^2\)</span> goodness of fit null distribution</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(sim_chisq, <span class="at">breaks =</span> <span class="dv">50</span>, <span class="at">main =</span> <span class="st">"Resampling Null Distribution"</span>,</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Chi-square statistic"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">border =</span> <span class="st">"white"</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> obs_chisq, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> <span class="st">"Observed"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|eval: false</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|echo: true</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(sim_chisq, <span class="at">breaks =</span> <span class="dv">50</span>, <span class="at">main =</span> <span class="st">"Resampling Null Distribution"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Chi-square statistic"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">border =</span> <span class="st">"white"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> obs_chisq, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> <span class="st">"Observed"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="Week9a_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="chi2-goodness-of-fit-null-distribution-1" class="level2">
+<h2 class="anchored" data-anchor-id="chi2-goodness-of-fit-null-distribution-1"><span class="math inline">\(\chi^2\)</span> goodness of fit null distribution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#|eval: true</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#|echo: false</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(sim_chisq, <span class="at">breaks =</span> <span class="dv">50</span>, <span class="at">main =</span> <span class="st">"Resampling Null Distribution"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Chi-square statistic"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">border =</span> <span class="st">"white"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> obs_chisq, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> <span class="st">"Observed"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Week9a_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -749,20 +751,20 @@ X-squared = 1, df = 5, p-value = 0.9626</code></pre>
 <section id="performing-a-chi2-test-of-association-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="performing-a-chi2-test-of-association-in-r">Performing a <span class="math inline">\(\chi^2\)</span> test of association in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create contingency table</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>study_table <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">40</span>),</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nrow =</span> <span class="dv">2</span>,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add row and column names</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(study_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Undergraduate"</span>, <span class="st">"Graduate"</span>)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(study_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Morning"</span>, <span class="st">"Evening"</span>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co"># View the table</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>study_table</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Chi-square test of independence</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(study_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create contingency table</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>study_table <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">40</span>),</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add row and column names</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(study_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Undergraduate"</span>, <span class="st">"Graduate"</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(study_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Morning"</span>, <span class="st">"Evening"</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># View the table</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>study_table</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Chi-square test of independence</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(study_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="performing-a-chi2-test-of-association-in-r-1" class="level2">
@@ -785,13 +787,13 @@ X-squared = 15.042, df = 1, p-value = 0.0001052</code></pre>
 <section id="paired-histogram" class="level2">
 <h2 class="anchored" data-anchor-id="paired-histogram">Paired Histogram</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as.table</span>(study_table))</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Var2, <span class="at">y =</span> Freq, <span class="at">fill =</span> Var1)) <span class="sc">+</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Study Time"</span>, <span class="at">y =</span> <span class="st">"Number of Students"</span>, <span class="at">fill =</span> <span class="st">"Student Type"</span>) <span class="sc">+</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as.table</span>(study_table))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Var2, <span class="at">y =</span> Freq, <span class="at">fill =</span> Var1)) <span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Study Time"</span>, <span class="at">y =</span> <span class="st">"Number of Students"</span>, <span class="at">fill =</span> <span class="st">"Student Type"</span>) <span class="sc">+</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="paired-histogram-1" class="level2">
@@ -810,11 +812,11 @@ X-squared = 15.042, df = 1, p-value = 0.0001052</code></pre>
 <section id="mosaic-plot" class="level2">
 <h2 class="anchored" data-anchor-id="mosaic-plot">Mosaic Plot</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(study_table,</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">main =</span> <span class="st">"Study Time Preference by Student Type"</span>,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Student Type"</span>,</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"Study Preference"</span>,</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(study_table,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">main =</span> <span class="st">"Study Time Preference by Student Type"</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Student Type"</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"Study Preference"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="mosaic-plot-1" class="level2">
@@ -850,28 +852,28 @@ V = \sqrt{\frac{\chi^2}{n(k-1)}}
 <section id="calculating-the-effect-size-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-the-effect-size-in-r">Calculating the effect size in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2x2 contingency table</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">40</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tbl) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Group1"</span>, <span class="st">"Group2"</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tbl) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Outcome1"</span>, <span class="st">"Outcome2"</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Chi-square test of independence</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tbl)</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract test statistic</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>chisq_val <span class="ot">&lt;-</span> test<span class="sc">$</span>statistic</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Total number of observations</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">sum</span>(tbl)</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimum of (rows, columns) for Cramér’s V formula</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">min</span>(<span class="fu">nrow</span>(tbl), <span class="fu">ncol</span>(tbl))</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Cramér’s V calculation</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>cramers_v <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(chisq_val <span class="sc">/</span> (n <span class="sc">*</span> (k <span class="sc">-</span> <span class="dv">1</span>)))</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Print result</span></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>cramers_v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2x2 contingency table</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">40</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tbl) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Group1"</span>, <span class="st">"Group2"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tbl) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Outcome1"</span>, <span class="st">"Outcome2"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Chi-square test of independence</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tbl)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract test statistic</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>chisq_val <span class="ot">&lt;-</span> test<span class="sc">$</span>statistic</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Total number of observations</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">sum</span>(tbl)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimum of (rows, columns) for Cramér’s V formula</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">min</span>(<span class="fu">nrow</span>(tbl), <span class="fu">ncol</span>(tbl))</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Cramér’s V calculation</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>cramers_v <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(chisq_val <span class="sc">/</span> (n <span class="sc">*</span> (k <span class="sc">-</span> <span class="dv">1</span>)))</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Print result</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>cramers_v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="calculating-the-effect-size-in-r-1" class="level2">
@@ -949,15 +951,15 @@ V = \sqrt{\frac{\chi^2}{n(k-1)}}
 <section id="creating-the-table-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="creating-the-table-in-r">Creating the Table in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 2x2 contingency table</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>beverage_table <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>),</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">nrow =</span> <span class="dv">2</span>,</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(beverage_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"American"</span>, <span class="st">"English"</span>)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(beverage_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Coffee"</span>, <span class="st">"Tea"</span>)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>beverage_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 2x2 contingency table</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>beverage_table <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>),</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(beverage_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"American"</span>, <span class="st">"English"</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(beverage_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Coffee"</span>, <span class="st">"Tea"</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>beverage_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         Coffee Tea
 American      8   2
@@ -968,8 +970,8 @@ English       1   9</code></pre>
 <section id="running-the-fishers-exact-test" class="level2">
 <h2 class="anchored" data-anchor-id="running-the-fishers-exact-test">Running the Fisher’s exact test</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Fisher's Exact Test</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(beverage_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform Fisher's Exact Test</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fisher.test</span>(beverage_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Fisher's Exact Test for Count Data
@@ -988,13 +990,13 @@ odds ratio
 <section id="paired-histogram-2" class="level2">
 <h2 class="anchored" data-anchor-id="paired-histogram-2">Paired Histogram</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as.table</span>(beverage_table))</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Var2, <span class="at">y =</span> Freq, <span class="at">fill =</span> Var1)) <span class="sc">+</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Beverage"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">fill =</span> <span class="st">"Nationality"</span>) <span class="sc">+</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as.table</span>(beverage_table))</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> Var2, <span class="at">y =</span> Freq, <span class="at">fill =</span> Var1)) <span class="sc">+</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Beverage"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">fill =</span> <span class="st">"Nationality"</span>) <span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="paired-histogram-3" class="level2">
@@ -1013,11 +1015,11 @@ odds ratio
 <section id="mosaic-plot-2" class="level2">
 <h2 class="anchored" data-anchor-id="mosaic-plot-2">Mosaic Plot</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(beverage_table,</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">main =</span> <span class="st">"Beverage preference by nationality"</span>,</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Nationality"</span>,</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"Beverage"</span>,</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(beverage_table,</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">main =</span> <span class="st">"Beverage preference by nationality"</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">xlab =</span> <span class="st">"Nationality"</span>,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">ylab =</span> <span class="st">"Beverage"</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="mosaic-plot-3" class="level2">
@@ -1101,35 +1103,35 @@ odds ratio
 <section id="visualizing-odds-and-log-odds-ratio" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-odds-and-log-odds-ratio">Visualizing Odds and Log Odds Ratio</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Data setup</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>odds_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Nationality =</span> <span class="fu">c</span>(<span class="st">"American"</span>, <span class="st">"English"</span>),</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Coffee =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">1</span>),</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Tea =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">9</span>)</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute odds and log(odds)</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>odds_data <span class="ot">&lt;-</span> odds_data <span class="sc">|&gt;</span></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Odds =</span> Coffee <span class="sc">/</span> Tea,</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">LogOdds =</span> <span class="fu">log</span>(Odds)</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Long format for bar plot</span></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>odds_long <span class="ot">&lt;-</span> odds_data <span class="sc">|&gt;</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Nationality, Odds, LogOdds) <span class="sc">|&gt;</span></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Odds, LogOdds), <span class="at">names_to =</span> <span class="st">"Metric"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar plot for odds and log(odds)</span></span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(odds_long, <span class="fu">aes</span>(<span class="at">x =</span> Nationality, <span class="at">y =</span> Value, <span class="at">fill =</span> Nationality)) <span class="sc">+</span></span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.6</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Metric, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparison of Odds and Log(Odds)"</span>,</span>
-<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Value"</span>, <span class="at">x =</span> <span class="st">"Nationality"</span>) <span class="sc">+</span></span>
-<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Data setup</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>odds_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Nationality =</span> <span class="fu">c</span>(<span class="st">"American"</span>, <span class="st">"English"</span>),</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Coffee =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">1</span>),</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Tea =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">9</span>)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute odds and log(odds)</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>odds_data <span class="ot">&lt;-</span> odds_data <span class="sc">|&gt;</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Odds =</span> Coffee <span class="sc">/</span> Tea,</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">LogOdds =</span> <span class="fu">log</span>(Odds)</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Long format for bar plot</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>odds_long <span class="ot">&lt;-</span> odds_data <span class="sc">|&gt;</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Nationality, Odds, LogOdds) <span class="sc">|&gt;</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Odds, LogOdds), <span class="at">names_to =</span> <span class="st">"Metric"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar plot for odds and log(odds)</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(odds_long, <span class="fu">aes</span>(<span class="at">x =</span> Nationality, <span class="at">y =</span> Value, <span class="at">fill =</span> Nationality)) <span class="sc">+</span></span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.6</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Metric, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparison of Odds and Log(Odds)"</span>,</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Value"</span>, <span class="at">x =</span> <span class="st">"Nationality"</span>) <span class="sc">+</span></span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="visualizing-odds-and-log-odds-ratio-1" class="level2">
@@ -1146,202 +1148,10 @@ odds ratio
 </div>
 </section>
 </section>
-<section id="confusion-matrices-are-contingency-tests" class="level1">
-<h1>Confusion matrices are contingency tests</h1>
-<section id="what-is-a-confusion-matrix" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-confusion-matrix">What Is a Confusion Matrix?</h2>
-<ul>
-<li>A <strong>confusion matrix</strong> summarizes the outcomes of a classification task.</li>
-<li>It compares <strong>predicted</strong> labels to <strong>actual</strong> (true) labels.</li>
-<li>Helps identify <strong>where</strong> the model is getting things right or wrong.</li>
-<li>Example for binary classification:</li>
-</ul>
-</section>
-<section id="confusion-matrix-layout-binary" class="level2">
-<h2 class="anchored" data-anchor-id="confusion-matrix-layout-binary">Confusion Matrix Layout (Binary)</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 34%">
-<col style="width: 34%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Predicted: Positive</strong></th>
-<th><strong>Predicted: Negative</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Actual: Positive</strong></td>
-<td>True Positive (TP)</td>
-<td>False Negative (FN)</td>
-</tr>
-<tr class="even">
-<td><strong>Actual: Negative</strong></td>
-<td>False Positive (FP)</td>
-<td>True Negative (TN)</td>
-</tr>
-</tbody>
-</table>
-<p><br>
-</p>
-<ul>
-<li><strong>TP</strong>: Correctly predicted positive case</li>
-<li><strong>TN</strong>: Correctly predicted negative case</li>
-<li><strong>FP</strong>: Incorrectly predicted positive (Type I error)</li>
-<li><strong>FN</strong>: Incorrectly predicted negative (Type II error)</li>
-</ul>
-</section>
-<section id="confusion-matrix-contingency-table" class="level2">
-<h2 class="anchored" data-anchor-id="confusion-matrix-contingency-table">Confusion Matrix = Contingency Table</h2>
-<ul>
-<li>A confusion matrix <strong>is a special case</strong> of a contingency table:
-<ul>
-<li><strong>Predicted class</strong> ↔︎ Variable 1</li>
-<li><strong>True class</strong> ↔︎ Variable 2</li>
-</ul></li>
-<li>Entries are <strong>counts</strong> of observations in each combination of categories.</li>
-<li>It is just a <strong>labeled 2×2 (or K×K)</strong> contingency table.</li>
-</ul>
-</section>
-</section>
-<section id="why-this-matters" class="level1">
-<h1>Why This Matters</h1>
-<ul>
-<li><strong>Confusion matrix</strong> helps <strong>evaluate models</strong>.</li>
-<li><strong>Contingency tables</strong> help <strong>test statistical relationships</strong>.</li>
-<li>This duality allows:
-<ul>
-<li>Calculation of classification metrics (accuracy, precision, etc.)</li>
-<li>Application of statistical tests (Chi-square, Fisher’s Exact)</li>
-</ul></li>
-</ul>
-<section id="key-metrics" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="key-metrics">Key Metrics</h2>
-<section id="accuracy" class="level3">
-<h3 class="anchored" data-anchor-id="accuracy">Accuracy</h3>
-<p><span class="math display">\[ \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN} \]</span></p>
-</section>
-<section id="precision-positive-predictive-value" class="level3">
-<h3 class="anchored" data-anchor-id="precision-positive-predictive-value">Precision (Positive Predictive Value)</h3>
-<p><span class="math display">\[
-\text{Precision} = \frac{TP}{TP + FP}
-\]</span></p>
-</section>
-<section id="recall-sensitivity-true-positive-rate" class="level3">
-<h3 class="anchored" data-anchor-id="recall-sensitivity-true-positive-rate">Recall (Sensitivity, True Positive Rate)</h3>
-<p><span class="math display">\[
-\text{Recall} = \frac{TP}{TP + FN}
-\]</span></p>
-</section>
-<section id="f1-score" class="level3">
-<h3 class="anchored" data-anchor-id="f1-score">F1 Score</h3>
-<p><span class="math display">\[
-\text{F1} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
-\]</span></p>
-</section>
-</section>
-<section id="an-example-confusion-matrix" class="level2">
-<h2 class="anchored" data-anchor-id="an-example-confusion-matrix">An example confusion matrix</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Predicted Positive</th>
-<th>Predicted Negative</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Actual Positive</strong></td>
-<td>TP = 50</td>
-<td>FN = 10</td>
-</tr>
-<tr class="even">
-<td><strong>Actual Negative</strong></td>
-<td>FP = 5</td>
-<td>TN = 35</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="calculating-the-confusion-matrix-metrics" class="level2">
-<h2 class="anchored" data-anchor-id="calculating-the-confusion-matrix-metrics">Calculating the confusion matrix metrics</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>TP <span class="ot">&lt;-</span> <span class="dv">50</span>; FN <span class="ot">&lt;-</span> <span class="dv">10</span>; FP <span class="ot">&lt;-</span> <span class="dv">5</span>; TN <span class="ot">&lt;-</span> <span class="dv">35</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>accuracy <span class="ot">&lt;-</span> (TP <span class="sc">+</span> TN) <span class="sc">/</span> (TP <span class="sc">+</span> TN <span class="sc">+</span> FP <span class="sc">+</span> FN)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>precision <span class="ot">&lt;-</span> TP <span class="sc">/</span> (TP <span class="sc">+</span> FP)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>recall <span class="ot">&lt;-</span> TP <span class="sc">/</span> (TP <span class="sc">+</span> FN)</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> precision <span class="sc">*</span> recall <span class="sc">/</span> (precision <span class="sc">+</span> recall)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Accuracy =</span> accuracy, <span class="at">Precision =</span> precision, <span class="at">Recall =</span> recall, <span class="at">F1 =</span> f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="calculating-the-confusion-matrix-metrics-1" class="level2">
-<h2 class="anchored" data-anchor-id="calculating-the-confusion-matrix-metrics-1">Calculating the confusion matrix metrics</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code> Accuracy Precision    Recall        F1 
-0.8500000 0.9090909 0.8333333 0.8695652 </code></pre>
-</div>
-</div>
-</section>
-<section id="visualizing-the-confusion-matrix-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-the-confusion-matrix-in-r">Visualizing the Confusion Matrix in R</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create confusion matrix</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>conf_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">35</span>), <span class="at">nrow =</span> <span class="dv">2</span>,</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="st">"Actual"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Positive"</span>, <span class="st">"Negative"</span>),</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Predicted"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Positive"</span>, <span class="st">"Negative"</span>)))</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>conf_mat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>          Predicted
-Actual     Positive Negative
-  Positive       50        5
-  Negative       10       35</code></pre>
-</div>
-</div>
-</section>
-<section id="applying-statistical-tests-to-a-confusion-matrix" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="applying-statistical-tests-to-a-confusion-matrix">Applying Statistical Tests to a Confusion Matrix</h2>
-<ul>
-<li>You can apply a <strong>Chi-square test of independence</strong> to a confusion matrix:
-<ul>
-<li>Tests if predicted and actual labels are <strong>statistically independent</strong>.</li>
-</ul></li>
-<li>For small sample sizes or sparse data, use <strong>Fisher’s Exact Test</strong>.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>conf_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">35</span>), <span class="at">nrow =</span> <span class="dv">2</span>)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(conf_matrix) <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Actual"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Positive"</span>, <span class="st">"Negative"</span>),</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Predicted"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Positive"</span>, <span class="st">"Negative"</span>)</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(conf_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Pearson's Chi-squared test with Yates' continuity correction
-
-data:  conf_matrix
-X-squared = 45.833, df = 1, p-value = 1.288e-11</code></pre>
-</div>
-</div>
-</section>
-<section id="on-your-own-1" class="level2">
-<h2 class="anchored" data-anchor-id="on-your-own-1">On your own</h2>
-<ul>
-<li>calculate the odds ratios for this confusion matrix</li>
-<li>can you see how odds ratios can be used to evaluate fit?</li>
-<li>Particularly in the case of training vs.&nbsp;test data sets?</li>
-</ul>
+<section id="section-1" class="level1">
+<h1></h1>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -34,14 +34,13 @@ library(tibble)
 
 ## Analyzing categorical variables
 
-- How do we test **frequencies** of a categorical variable against **what we expect**?
+-   How do we test **frequencies** of a categorical variable against **what we expect**?
 
-- How do we test for **correlation** among two or more categorical variables?
+-   How do we test for **correlation** among two or more categorical variables?
 
-- How do we measure the **effect size of the correlation** of two or more categorical variables?
+-   How do we measure the **effect size of the correlation** of two or more categorical variables?
 
-- These each involve **contingency tables** and the **$\chi^2$ distribution**
-
+-   These each involve **contingency tables** and the $\chi^2$ distribution
 
 ## What is the $\chi^2$ Distribution ?
 
@@ -158,7 +157,7 @@ $$
 
 -   **Test of homogeneity**: Do different groups have the same distribution?
 
-_________________________
+------------------------------------------------------------------------
 
 # Goodness of Fit Test
 
@@ -173,7 +172,6 @@ _________________________
 
 -   **Null hypothesis (H₀)**: Observed data follows the expected distribution.
 -   **Alternative hypothesis (H₁)**: Observed data does not follow the expected distribution.
-
 
 ## When to use this test
 
@@ -295,7 +293,7 @@ chisq.test(x = observed, p = expected_probs)
 
 ## $\chi^2$ Parametric Test
 
-- rolling a six-sided die 60 times
+-   rolling a six-sided die 60 times
 
 ```{r}
 #| label: gof-example-dice-show
@@ -311,7 +309,7 @@ chisq.test(x = observed, p = expected_probs)
 
 ## $\chi^2$ Parametric Test
 
-- rolling a six-sided die 60 times
+-   rolling a six-sided die 60 times
 
 ```{r}
 #| label: gof-example-dice-tell
@@ -406,6 +404,21 @@ cat("Empirical P-value:", p_value, "\n")
 ## $\chi^2$ goodness of fit null distribution
 
 ```{r}
+#|eval: false
+#|echo: true
+
+hist(sim_chisq, breaks = 50, main = "Resampling Null Distribution",
+     xlab = "Chi-square statistic", col = "lightblue", border = "white")
+abline(v = obs_chisq, col = "red", lwd = 2)
+legend("topright", legend = "Observed", col = "red", lwd = 2)
+```
+
+## $\chi^2$ goodness of fit null distribution
+
+```{r}
+#|eval: true
+#|echo: false
+
 hist(sim_chisq, breaks = 50, main = "Resampling Null Distribution",
      xlab = "Chi-square statistic", col = "lightblue", border = "white")
 abline(v = obs_chisq, col = "red", lwd = 2)
@@ -421,7 +434,7 @@ legend("topright", legend = "Observed", col = "red", lwd = 2)
 
 ------------------------------------------------------------------------
 
-# ## $\chi^2$ test of association
+# \## $\chi^2$ test of association
 
 ## What is a $\chi^2$ Test of Association?
 
@@ -666,8 +679,6 @@ cat("Cramer's V:", cramers_v)
 -   **H₀**: The row and column variables are **independent**.
 -   **H₁**: There is an **association** between the variables.
 
-
-
 ## Example Scenario
 
 A researcher asks 20 people whether they prefer coffee or tea.
@@ -678,7 +689,6 @@ A researcher asks 20 people whether they prefer coffee or tea.
 | American | 1      | 9   |
 
 Is beverage preference independent of nationality?
-
 
 ## Creating the Table in R
 
@@ -770,7 +780,7 @@ mosaicplot(beverage_table,
            color = TRUE)
 ```
 
-_____________________________________________________________________
+------------------------------------------------------------------------
 
 # Odds ratios
 
@@ -891,150 +901,4 @@ ggplot(odds_long, aes(x = Nationality, y = Value, fill = Nationality)) +
   theme_minimal(base_size = 14)
 ```
 
-# Confusion matrices are contingency tests
-
-## What Is a Confusion Matrix?
-
--   A **confusion matrix** summarizes the outcomes of a classification task.
--   It compares **predicted** labels to **actual** (true) labels.
--   Helps identify **where** the model is getting things right or wrong.
--   Example for binary classification:
-
-## Confusion Matrix Layout (Binary)
-
-|                      | **Predicted: Positive** | **Predicted: Negative** |
-|----------------------|-------------------------|-------------------------|
-| **Actual: Positive** | True Positive (TP)      | False Negative (FN)     |
-| **Actual: Negative** | False Positive (FP)     | True Negative (TN)      |
-
-\
-
--   **TP**: Correctly predicted positive case
--   **TN**: Correctly predicted negative case
--   **FP**: Incorrectly predicted positive (Type I error)
--   **FN**: Incorrectly predicted negative (Type II error)
-
-## Confusion Matrix = Contingency Table
-
--   A confusion matrix **is a special case** of a contingency table:
-    -   **Predicted class** ↔ Variable 1
-    -   **True class** ↔ Variable 2
--   Entries are **counts** of observations in each combination of categories.
--   It is just a **labeled 2×2 (or K×K)** contingency table.
-
-# Why This Matters
-
--   **Confusion matrix** helps **evaluate models**.
--   **Contingency tables** help **test statistical relationships**.
--   This duality allows:
-    -   Calculation of classification metrics (accuracy, precision, etc.)
-    -   Application of statistical tests (Chi-square, Fisher’s Exact)
-
-## Key Metrics {.smaller}
-
-### Accuracy
-
-$$ \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN} $$
-
-### Precision (Positive Predictive Value)
-
-$$
-\text{Precision} = \frac{TP}{TP + FP}
-$$
-
-### Recall (Sensitivity, True Positive Rate)
-
-$$
-\text{Recall} = \frac{TP}{TP + FN}
-$$
-
-### F1 Score
-
-$$
-\text{F1} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
-$$
-
-## An example confusion matrix
-
-|                     | Predicted Positive | Predicted Negative |
-|---------------------|--------------------|--------------------|
-| **Actual Positive** | TP = 50            | FN = 10            |
-| **Actual Negative** | FP = 5             | TN = 35            |
-
-## Calculating the confusion matrix metrics
-
-```{r}
-#| label: confusion-matrix-calc-show
-#| eval: false
-#| echo: true
-
-TP <- 50; FN <- 10; FP <- 5; TN <- 35
-
-accuracy <- (TP + TN) / (TP + TN + FP + FN)
-precision <- TP / (TP + FP)
-recall <- TP / (TP + FN)
-f1 <- 2 * precision * recall / (precision + recall)
-
-c(Accuracy = accuracy, Precision = precision, Recall = recall, F1 = f1)
-
-```
-
-## Calculating the confusion matrix metrics
-
-```{r}
-#| label: confusion-matrix-calc-tell
-#| eval: true
-#| echo: false
-
-# Calculate metrics
-TP <- 50; FN <- 10; FP <- 5; TN <- 35
-
-accuracy <- (TP + TN) / (TP + TN + FP + FN)
-precision <- TP / (TP + FP)
-recall <- TP / (TP + FN)
-f1 <- 2 * precision * recall / (precision + recall)
-
-c(Accuracy = accuracy, Precision = precision, Recall = recall, F1 = f1)
-
-```
-
-## Visualizing the Confusion Matrix in R
-
-```{r}
-#| label: confusion-matrix-vis-show
-#| echo: true
-#| eval: true
-
-# Create confusion matrix
-conf_mat <- matrix(c(50, 10, 5, 35), nrow = 2,
-                   dimnames = list("Actual" = c("Positive", "Negative"),
-                                   "Predicted" = c("Positive", "Negative")))
-
-conf_mat
-```
-
-## Applying Statistical Tests to a Confusion Matrix {.smaller}
-
--   You can apply a **Chi-square test of independence** to a confusion matrix:
-    -   Tests if predicted and actual labels are **statistically independent**.
--   For small sample sizes or sparse data, use **Fisher’s Exact Test**.
-
-```{r}
-#| label: conf-matrix-test
-#| echo: true
-#| eval: true
-
-conf_matrix <- matrix(c(50, 10, 5, 35), nrow = 2)
-dimnames(conf_matrix) <- list(
-  "Actual" = c("Positive", "Negative"),
-  "Predicted" = c("Positive", "Negative")
-)
-
-chisq.test(conf_matrix)
-```
-
-## On your own
-
--   calculate the odds ratios for this confusion matrix
--   can you see how odds ratios can be used to evaluate fit?
--   Particularly in the case of training vs. test data sets?
+# 

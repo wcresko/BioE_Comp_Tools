@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b\nLecture_9a"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b\nLecture_9a\nLecture_9b"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -13731,7 +13731,7 @@
     "href": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-null-distribution",
     "title": "Week 9a - Statistics for Bioengineering",
     "section": "\\(\\chi^2\\) goodness of fit null distribution",
-    "text": "\\(\\chi^2\\) goodness of fit null distribution\n\nhist(sim_chisq, breaks = 50, main = \"Resampling Null Distribution\",\n     xlab = \"Chi-square statistic\", col = \"lightblue\", border = \"white\")\nabline(v = obs_chisq, col = \"red\", lwd = 2)\nlegend(\"topright\", legend = \"Observed\", col = \"red\", lwd = 2)"
+    "text": "\\(\\chi^2\\) goodness of fit null distribution\n\n#|eval: false\n#|echo: true\n\nhist(sim_chisq, breaks = 50, main = \"Resampling Null Distribution\",\n     xlab = \"Chi-square statistic\", col = \"lightblue\", border = \"white\")\nabline(v = obs_chisq, col = \"red\", lwd = 2)\nlegend(\"topright\", legend = \"Observed\", col = \"red\", lwd = 2)"
   },
   {
     "objectID": "Lecture_Folder/Week9a.html#what-is-a-chi2-test-of-association",
@@ -13753,5 +13753,292 @@
     "title": "Week 9a - Statistics for Bioengineering",
     "section": "Performing a \\(\\chi^2\\) test of association in R",
     "text": "Performing a \\(\\chi^2\\) test of association in R\n\n\n              Morning Evening\nUndergraduate      30      20\nGraduate           10      40\n\n\n\n    Pearson's Chi-squared test with Yates' continuity correction\n\ndata:  study_table\nX-squared = 15.042, df = 1, p-value = 0.0001052"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html",
+    "href": "Lecture_Folder/Week9b.html",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(tibble)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#this-week",
+    "href": "Lecture_Folder/Week9b.html#this-week",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "This week",
+    "text": "This week\n\nChi-square tests of association and goodness of fit\nConnections to confusion matrices\nBasics of statistical (classical) machine learning\nToday - brief presentation to the class of your dataset\nNext week - finish statistical (classical) machine learning including decision trees and random forests"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#what-is-machine-learning",
+    "href": "Lecture_Folder/Week9b.html#what-is-machine-learning",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "What is Machine Learning?",
+    "text": "What is Machine Learning?\n\nMachine learning is a subset of artificial intelligence that enables computers to learn and make decisions from data without being explicitly programmed for every task.\nTwo main paradigms:\n\nStatistical (classical) Machine Learning\nDeep Learning"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#statistical-machine-learning",
+    "href": "Lecture_Folder/Week9b.html#statistical-machine-learning",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Statistical Machine Learning",
+    "text": "Statistical Machine Learning\n\nTraditional approach using statistical methods and algorithms that require manual feature engineering.\nKey characteristics:\n\nExplicit feature extraction\nRelatively simple model architectures\nInterpretable results\nWorks well with smaller datasets"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#deep-learning",
+    "href": "Lecture_Folder/Week9b.html#deep-learning",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Deep Learning",
+    "text": "Deep Learning\n\nModern approach using artificial neural networks with multiple layers to automatically learn hierarchical representations.\nKey characteristics:\n\nAutomatic feature learning\nComplex, multi-layered architectures\nOften requires large datasets\nHigh computational requirements"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#common-classical-ml-algorithms",
+    "href": "Lecture_Folder/Week9b.html#common-classical-ml-algorithms",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Common Classical ML Algorithms",
+    "text": "Common Classical ML Algorithms\n\nSupervised Learning:\n\nLinear/Logistic Regression\nDecision Trees\nRandom Forest\nSupport Vector Machines (SVM)\nNaive Bayes\nK-Nearest Neighbors (KNN)\n\nUnsupervised Learning:\n\nK-Means Clustering\nHierarchical Clustering\nPrincipal Component Analysis (PCA)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#common-deep-learning-architectures",
+    "href": "Lecture_Folder/Week9b.html#common-deep-learning-architectures",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Common Deep Learning Architectures",
+    "text": "Common Deep Learning Architectures\n\nNeural Networks:\n\nFeedforward Neural Networks\nConvolutional Neural Networks (CNNs)\nRecurrent Neural Networks (RNNs)\nTransformer Networks\n\nApplications:\n\nComputer Vision\nNatural Language Processing\nSpeech Recognition\nGenerative Models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#feature-engineering",
+    "href": "Lecture_Folder/Week9b.html#feature-engineering",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Feature Engineering",
+    "text": "Feature Engineering\n\n\n\nClassical ML\n\nManual feature extraction\nDomain expertise required\nTime-intensive process\nFeatures explicitly defined\n\n\n\n\nDeep Learning\n\nAutomatic feature learning\nNetworks learn features during training\nHierarchical feature representation\nNo manual feature engineering needed"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#model-complexity",
+    "href": "Lecture_Folder/Week9b.html#model-complexity",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Model Complexity",
+    "text": "Model Complexity\n\n\n\nClassical ML\n\nSimpler architectures\nLinear models, tree-based methods\nLogistic Regression, Random Forest, SVM\nFewer parameters (hundreds to thousands)\nEasier to understand and debug\n\n\n\n\nDeep Learning\n\nComplex architectures\nMultiple hidden layers\nCNNs, RNNs, Transformers\nMillions to billions of parameters\n“Black box” nature"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#data-requirements",
+    "href": "Lecture_Folder/Week9b.html#data-requirements",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Data Requirements",
+    "text": "Data Requirements\n\n\n\nClassical ML\n\nWorks with smaller datasets\nHundreds to thousands of samples\nCan handle tabular data effectively\nLess prone to overfitting with small data\nGood performance with limited data\n\n\n\n\nDeep Learning\n\nRequires large datasets\nThousands to millions of samples\nNeeds big data to avoid overfitting\nData-hungry algorithms\nPerformance improves with more data"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#when-to-use-statistical-ml",
+    "href": "Lecture_Folder/Week9b.html#when-to-use-statistical-ml",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "When to Use Statistical ML",
+    "text": "When to Use Statistical ML\n\nSmall to medium datasets (&lt; 10,000 samples)\nStructured/tabular data\nNeed for interpretability\nLimited computational resources\nQuick prototyping\nRegulatory requirements for explainability"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#two-general-goals-of-statistical-ml",
+    "href": "Lecture_Folder/Week9b.html#two-general-goals-of-statistical-ml",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Two General Goals of Statistical ML",
+    "text": "Two General Goals of Statistical ML\n\nPrediction\n\ngenerally using linear models such as regression\noutcome is a prediction of the response variable value and associated error\n\nClassification\n\nuse logistic regression, random forest, Bayes classifiers, etc…\noutcome is a statement about what category each observation belongs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#the-learning-process",
+    "href": "Lecture_Folder/Week9b.html#the-learning-process",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "The Learning Process",
+    "text": "The Learning Process\n\nCollect Data: Features (X) and target (Y)\nSplit Data:\n\nTraining set\nValidation set\n\nSelect Model: Choose algorithm, e.g.\n\nlinear regression\nlogistic regression\ndecision trees\n\nTrain Model: Fit model to training data\nEvaluate: Use independent test data to assess performance\nDeploy: Use model to make future predictions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#overfitting-vs.-underfitting",
+    "href": "Lecture_Folder/Week9b.html#overfitting-vs.-underfitting",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Overfitting vs. Underfitting",
+    "text": "Overfitting vs. Underfitting\n\nUnderfitting: Model too simple → high bias\nOverfitting: Model too complex → high variance\nUse cross-validation to estimate test error and tune model complexity\nUse independent test data to estimate generalizability of model"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#model-accuracy-metrics",
+    "href": "Lecture_Folder/Week9b.html#model-accuracy-metrics",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Model Accuracy Metrics",
+    "text": "Model Accuracy Metrics\n\nPrediction:\n\nMean Squared Error (MSE)\nR²\n\nClassification:\n\nAccuracy\nPrecision\nRecall\nAUC\n\nSplit data and thus error into:\n\nTraining error: fit to training set\nValidation error: fit to the validation set\nTest error: error generalized to new data"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#simulated-binary-data",
+    "href": "Lecture_Folder/Week9b.html#simulated-binary-data",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Simulated binary data",
+    "text": "Simulated binary data\n\nmetal_exposure &lt;- runif(200, -2, 2)\np &lt;- 1 / (1 + exp(-(-0.5 + 2 * metal_exposure)))\ncancer_diagnosis &lt;- rbinom(200, 1, prob = p)\nlogit_model &lt;- glm(cancer_diagnosis ~ metal_exposure, family = binomial)\nsummary(logit_model)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#simulated-binary-data-1",
+    "href": "Lecture_Folder/Week9b.html#simulated-binary-data-1",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Simulated binary data",
+    "text": "Simulated binary data\n\n\n\nCall:\nglm(formula = cancer_diagnosis ~ metal_exposure, family = binomial)\n\nCoefficients:\n               Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)     -0.2788     0.1926  -1.448    0.148    \nmetal_exposure   1.8039     0.2407   7.496 6.58e-14 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 276.28  on 199  degrees of freedom\nResidual deviance: 171.89  on 198  degrees of freedom\nAIC: 175.89\n\nNumber of Fisher Scoring iterations: 5"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#plotting-the-logistic-regression-curve",
+    "href": "Lecture_Folder/Week9b.html#plotting-the-logistic-regression-curve",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Plotting the Logistic Regression Curve",
+    "text": "Plotting the Logistic Regression Curve\n\ncancer_df &lt;- data.frame(metal_exposure, cancer_diagnosis)\ncancer_df$prob &lt;- predict(logit_model, type = \"response\")\n\nggplot(cancer_df, aes(metal_exposure, cancer_diagnosis)) +\n  geom_point(alpha = 0.4) +\n  geom_line(aes(y = prob), color = \"red\") +\n  labs(title = \"Logistic Regression Fit\", \n       x= \"Heavy Metal Exposure\", \n       y = \"Probability of Cancer\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#plotting-logistic-regression-curve",
+    "href": "Lecture_Folder/Week9b.html#plotting-logistic-regression-curve",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Plotting Logistic Regression Curve",
+    "text": "Plotting Logistic Regression Curve"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#making-predictions-using-the-iris-dataset",
+    "href": "Lecture_Folder/Week9b.html#making-predictions-using-the-iris-dataset",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Making predictions using the Iris dataset",
+    "text": "Making predictions using the Iris dataset\n\nwe’re using the tidymodels package for splitting the data\nHere we’re just creating binary variable for whether the plant is or isn’t a setosa\n\n\nlibrary(tidymodels)\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.3.0 ──\n\n\n✔ broom        1.0.8     ✔ rsample      1.3.0\n✔ dials        1.4.0     ✔ tune         1.3.0\n✔ infer        1.0.8     ✔ workflows    1.2.0\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.3.1     ✔ yardstick    1.3.2\n✔ recipes      1.3.0     \n\n\n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n\niris &lt;- iris %&gt;% \n  mutate(setosa = as.integer(Species == \"setosa\"))"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#split-data-into-training-and-validation-sets",
+    "href": "Lecture_Folder/Week9b.html#split-data-into-training-and-validation-sets",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Split data into training and validation sets",
+    "text": "Split data into training and validation sets\n\nThis function allows you to split the data into test vs. training data objects\nNote how we make the split data object which contains both groups of data\nThen we pull those out into two different data sets\n\n\nsplit &lt;- initial_split(iris, \n                       prop = .80, \n                       strata = setosa) \niris_train &lt;- training(split)\niris_test &lt;- testing(split)\n\n\nTake a look at those new data objects in R Studio. How many observations are in each, and how many observations are there in the original data set?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#visualize-sepal-length-to-prob-of-setosa",
+    "href": "Lecture_Folder/Week9b.html#visualize-sepal-length-to-prob-of-setosa",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Visualize sepal length to prob of setosa",
+    "text": "Visualize sepal length to prob of setosa\n\nNote that this is another way to visualize the logit function\nDoes it look like sepal length can predict whether a plant is a setosa?\n\n\nggplot(iris_train, aes(x = Sepal.Length,\n                       y = setosa)) +\n  geom_jitter(height = .05, \n              alpha = .5) +\n  geom_smooth(method = \"glm\",\n              method.args = list(family = \"binomial\"),\n              se = TRUE) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#visualize-sepal-length-to-prob-of-setosa-1",
+    "href": "Lecture_Folder/Week9b.html#visualize-sepal-length-to-prob-of-setosa-1",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Visualize sepal length to prob of setosa",
+    "text": "Visualize sepal length to prob of setosa\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#build-a-model-with-training-data",
+    "href": "Lecture_Folder/Week9b.html#build-a-model-with-training-data",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Build a model with training data",
+    "text": "Build a model with training data\n\ntraining_model &lt;- glm(setosa ~ Sepal.Length,\n             data = iris_train,\n             family = \"binomial\")\nsummary(training_model)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#build-a-model-with-training-data-1",
+    "href": "Lecture_Folder/Week9b.html#build-a-model-with-training-data-1",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Build a model with training data",
+    "text": "Build a model with training data\n\n\n\nCall:\nglm(formula = setosa ~ Sepal.Length, family = \"binomial\", data = iris_train)\n\nCoefficients:\n             Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)   26.2777     5.1234   5.129 2.91e-07 ***\nSepal.Length  -4.9127     0.9532  -5.154 2.55e-07 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 152.763  on 119  degrees of freedom\nResidual deviance:  61.179  on 118  degrees of freedom\nAIC: 65.179\n\nNumber of Fisher Scoring iterations: 7"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#evaluate-the-model",
+    "href": "Lecture_Folder/Week9b.html#evaluate-the-model",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Evaluate the model",
+    "text": "Evaluate the model\n\nFirst we create predictions of the validation data from the training model\nNote that the output is a probability, but we just turn it into a binary classification\n\n\niris_test &lt;- iris_test %&gt;% \n  mutate(setosa_prob = predict(training_model,\n                               iris_test,\n                               type = \"response\"),\n         setosa_pred = ifelse(setosa_prob &gt; .5, 1, 0))\n\n\nTake a look at the iris_test data object\nYou should now see the setosa_pred variable"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#evaluate-the-model-1",
+    "href": "Lecture_Folder/Week9b.html#evaluate-the-model-1",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Evaluate the model",
+    "text": "Evaluate the model\n\nNow let’s create a confusion matrix to see how well the trained model predicted on the validation data set\n\n\nsetosa_conf_matrix &lt;- table(iris_test$setosa,\n           iris_test$setosa_pred)\n\nas.data.frame.matrix(setosa_conf_matrix) %&gt;%\n  gt(rownames_to_stub = TRUE) %&gt;%\n  tab_header(title = \"Setosa Confusion Matrix\") %&gt;%\n  tab_stubhead(label = \"Actual\") %&gt;%\n  tab_spanner(label = \"Predicted\", columns = everything())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#evaluate-the-model-2",
+    "href": "Lecture_Folder/Week9b.html#evaluate-the-model-2",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Evaluate the model",
+    "text": "Evaluate the model\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetosa Confusion Matrix\n\n\nActual\n\nPredicted\n\n\n\n0\n1\n\n\n\n\n0\n20\n0\n\n\n1\n2\n8"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#what-is-a-confusion-matrix",
+    "href": "Lecture_Folder/Week9b.html#what-is-a-confusion-matrix",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "What Is a Confusion Matrix?",
+    "text": "What Is a Confusion Matrix?\n\nA confusion matrix summarizes the outcomes of a classification task.\nIt compares predicted labels to actual (true) labels.\nHelps identify where the model is getting things right or wrong.\nExample for binary classification:"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#confusion-matrix-layout-binary",
+    "href": "Lecture_Folder/Week9b.html#confusion-matrix-layout-binary",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Confusion Matrix Layout (Binary)",
+    "text": "Confusion Matrix Layout (Binary)\n\n\n\n\n\n\n\n\n\nPredicted: Positive\nPredicted: Negative\n\n\n\n\nActual: Positive\nTrue Positive (TP)\nFalse Negative (FN)\n\n\nActual: Negative\nFalse Positive (FP)\nTrue Negative (TN)\n\n\n\n\n\n\nTP: Correctly predicted positive case\nTN: Correctly predicted negative case\nFP: Incorrectly predicted positive (Type I error)\nFN: Incorrectly predicted negative (Type II error)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#key-metrics-for-classification",
+    "href": "Lecture_Folder/Week9b.html#key-metrics-for-classification",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Key Metrics for Classification",
+    "text": "Key Metrics for Classification\n\\[\n\\text{Accuracy} = \\frac{TP + TN}{TP + TN + FP + FN}\n\\]\n\n\\[\n\\text{Precision} = \\frac{TP}{TP + FP}\n\\]\n\n\\[\n\\text{Sensitivity} = \\frac{TP}{TP + FN}\n\\]\n\n\\[\n\\text{Specificity} = \\frac{TN}{TN + FP}\n\\]\n\n\\[\n\\text{F1_score} = 2 \\cdot \\frac{\\text{Precision} \\cdot \\text{Recall}}{\\text{Precision} + \\text{Recall}}\n\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#key-metrics-for-classification-1",
+    "href": "Lecture_Folder/Week9b.html#key-metrics-for-classification-1",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Key Metrics for Classification",
+    "text": "Key Metrics for Classification\n\n\n\n\n\n\nWarning\n\n\n\n\nThere is no single best evaluation metric for model fit for prediction\nHow important is it to identify true positives and what are the costs of false positives?\nHow important is it to identify true negatives, and what are the costs of false negatives?\nBoth of these need to be determined based upon the use of the classification\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDifferent types of evaluation are used for prediction (e.g. regression) models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#evaluate-the-model-3",
+    "href": "Lecture_Folder/Week9b.html#evaluate-the-model-3",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Evaluate the model",
+    "text": "Evaluate the model\n\nNow let’s calculate various metrics for the setosa analysis\n\n\ntn &lt;- setosa_conf_matrix[1,1]  # True Negative\nfp &lt;- setosa_conf_matrix[1,2]  # False Positive  \nfn &lt;- setosa_conf_matrix[2,1]  # False Negative\ntp &lt;- setosa_conf_matrix[2,2]  # True Positive\n\n# Calculate metrics\nmetrics_df &lt;- data.frame(\n  Metric = c(\"Accuracy\", \"Precision\", \"Recall\", \"Specificity\", \"F1-Score\"),\n  Value = c(\n    (tp + tn) / (tp + tn + fp + fn),           # Accuracy\n    tp / (tp + fp),                            # Precision\n    tp / (tp + fn),                            # Recall/Sensitivity\n    tn / (tn + fp),                            # Specificity\n    2 * (tp / (tp + fp)) * (tp / (tp + fn)) / \n    ((tp / (tp + fp)) + (tp / (tp + fn)))      # F1-Score\n  )\n)\n\n# Create simple gt table\nmetrics_df %&gt;%\n  gt() %&gt;%\n  tab_header(title = \"Classification Evaluation Metrics\") %&gt;%\n  fmt_number(columns = Value, decimals = 3)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#evaluate-the-model-4",
+    "href": "Lecture_Folder/Week9b.html#evaluate-the-model-4",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Evaluate the model",
+    "text": "Evaluate the model\n\n\n\n\n\n\n\n\nClassification Evaluation Metrics\n\n\nMetric\nValue\n\n\n\n\nAccuracy\n0.933\n\n\nPrecision\n1.000\n\n\nRecall\n0.800\n\n\nSpecificity\n1.000\n\n\nF1-Score\n0.889"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#what-is-cross-validation",
+    "href": "Lecture_Folder/Week9b.html#what-is-cross-validation",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "What is Cross-Validation?",
+    "text": "What is Cross-Validation?\nCross-validation is a statistical technique for assessing how well a model generalizes to new data by repeatedly splitting your dataset into training and testing portions.\nThe Process:\n\nSplit your data into k groups (folds)\nTrain your model on k-1 folds\n\nTest on the remaining fold\nRepeat this process k times\nAverage the results to get a robust estimate of model performance"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#the-boot-library",
+    "href": "Lecture_Folder/Week9b.html#the-boot-library",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "The boot Library",
+    "text": "The boot Library\nThe boot library’s main function is cv.glm(), which performs cross-validation for generalized linear models.\n\nlibrary(boot)\n\n# Example with linear regression\nmodel &lt;- glm(mpg ~ wt + hp, data = mtcars)\n\n# Perform 10-fold cross-validation\ncv_result &lt;- cv.glm(mtcars, model, K = 10)\n\nWarning in cv.glm(mtcars, model, K = 10): 'K' has been set to 11.000000\n\n# Extract cross-validation error\ncv_error &lt;- cv_result$delta[1]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#key-parameters",
+    "href": "Lecture_Folder/Week9b.html#key-parameters",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Key Parameters",
+    "text": "Key Parameters\nK parameter - Controls the number of folds:\n\nK = nrow(data) → Leave-one-out cross-validation (LOOCV)\nK = 10 → 10-fold CV (common choice)\nK = 5 → 5-fold CV\n\nCustom cost functions - Specify different loss functions:\n\n# Custom cost function (mean absolute error)\nmae_cost &lt;- function(y, yhat) mean(abs(y - yhat))\n\ncv_result &lt;- cv.glm(mtcars, model, K = 10, cost = mae_cost)\n\nWarning in cv.glm(mtcars, model, K = 10, cost = mae_cost): 'K' has been set to\n11.000000"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#practical-example-model-comparison",
+    "href": "Lecture_Folder/Week9b.html#practical-example-model-comparison",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Practical Example: Model Comparison",
+    "text": "Practical Example: Model Comparison\n\nlibrary(boot)\ndata(mtcars)\n\n# Fit different models\nmodel1 &lt;- glm(mpg ~ wt, data = mtcars)\nmodel2 &lt;- glm(mpg ~ wt + hp, data = mtcars)\nmodel3 &lt;- glm(mpg ~ wt + hp + disp, data = mtcars)\n\n# Compare models using 10-fold CV\ncv1 &lt;- cv.glm(mtcars, model1, K = 10)\n\nWarning in cv.glm(mtcars, model1, K = 10): 'K' has been set to 11.000000\n\ncv2 &lt;- cv.glm(mtcars, model2, K = 10)\n\nWarning in cv.glm(mtcars, model2, K = 10): 'K' has been set to 11.000000\n\ncv3 &lt;- cv.glm(mtcars, model3, K = 10)\n\nWarning in cv.glm(mtcars, model3, K = 10): 'K' has been set to 11.000000\n\n# Compare cross-validation errors\ncv_errors &lt;- c(cv1$delta[1], cv2$delta[1], cv3$delta[1])\nnames(cv_errors) &lt;- c(\"Model 1\", \"Model 2\", \"Model 3\")\nprint(cv_errors)\n\n  Model 1   Model 2   Model 3 \n10.458141  7.499546  8.309597"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#understanding-the-output",
+    "href": "Lecture_Folder/Week9b.html#understanding-the-output",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Understanding the Output",
+    "text": "Understanding the Output\nThe cv.glm() function returns:\n\ndelta[1]: Raw cross-validation estimate\ndelta[2]: Bias-corrected cross-validation estimate\n\nK: Number of folds used\n\nInterpretation: Lower cross-validation error = better expected performance on new data"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9b.html#advantages-of-the-boot-library",
+    "href": "Lecture_Folder/Week9b.html#advantages-of-the-boot-library",
+    "title": "Week 9b - Statistics for Bioengineering",
+    "section": "Advantages of the boot Library",
+    "text": "Advantages of the boot Library\n✓ Automatically handles data splitting\n✓ Ensures each observation appears in exactly one test fold per iteration\n✓ Provides both biased and bias-corrected estimates\n✓ Well-suited for GLMs\n✓ Integrates seamlessly with R’s modeling framework"
+  },
+  {
+    "objectID": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-null-distribution-1",
+    "href": "Lecture_Folder/Week9a.html#chi2-goodness-of-fit-null-distribution-1",
+    "title": "Week 9a - Statistics for Bioengineering",
+    "section": "\\(\\chi^2\\) goodness of fit null distribution",
+    "text": "\\(\\chi^2\\) goodness of fit null distribution\n\n#|eval: true\n#|echo: false\n\nhist(sim_chisq, breaks = 50, main = \"Resampling Null Distribution\",\n     xlab = \"Chi-square statistic\", col = \"lightblue\", border = \"white\")\nabline(v = obs_chisq, col = \"red\", lwd = 2)\nlegend(\"topright\", legend = \"Observed\", col = \"red\", lwd = 2)"
   }
 ]
