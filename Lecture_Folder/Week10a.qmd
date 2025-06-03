@@ -29,12 +29,11 @@ library(boot)
 
 -   Support Vector Machines (if there's time)
 
-
 ## Building Models for Prediction
 
-- We build a model using the sample data with the goal of applying it to new data from the population to make predictions about response variables of interest.
+-   We build a model using the sample data with the goal of applying it to new data from the population to make predictions about response variables of interest.
 
-- Statistical and machine learning models are built to fit the data on which they're trained as closely as possible within their particular structures.
+-   Statistical and machine learning models are built to fit the data on which they're trained as closely as possible within their particular structures.
 
 ## Optimization Examples
 
@@ -44,12 +43,11 @@ library(boot)
 
 ## The Overfitting Problem
 
-- Unfortunately, models that perform better on their training data are often worse at making predictions from new data.
+-   Unfortunately, models that perform better on their training data are often worse at making predictions from new data.
 
-- **Overfitting** refers to when a model goes too far out of its way to accommodate the peculiarities of the set used to build it, integrating random noise as if it were meaningful information.
+-   **Overfitting** refers to when a model goes too far out of its way to accommodate the peculiarities of the set used to build it, integrating random noise as if it were meaningful information.
 
-- More flexible modeling techniques are more susceptible to overfitting.
-
+-   More flexible modeling techniques are more susceptible to overfitting.
 
 ## Overfitting vs. Underfitting
 
@@ -139,13 +137,11 @@ legend("topright",
 
 ## Historical Context
 
-
-- **Built on earlier work:** 
-    - Kernel regression methods 
-    - k-nearest neighbor approaches
-    - Local polynomial fitting
-
-- **Part of the "smooth" revolution** in statistics
+-   **Built on earlier work:**
+    -   Kernel regression methods
+    -   k-nearest neighbor approaches
+    -   Local polynomial fitting
+-   **Part of the "smooth" revolution** in statistics
 
 ## How LOESS Works: The Intuition
 
@@ -212,7 +208,6 @@ legend("topright",
        lwd = c(NA, NA, 2))
 ```
 
-
 ## The Tricube Function
 
 The tricube weight function is defined as:
@@ -256,7 +251,6 @@ ggplot(data.frame(x = x_vals, weight = y_vals), aes(x, weight)) +
   theme_minimal()
 ```
 
-
 ## Step 1: Neighborhood Selection
 
 -   Choose a **bandwidth** or **span** parameter (α)
@@ -280,7 +274,6 @@ ggplot(data.frame(x = x_vals, weight = y_vals), aes(x, weight)) +
 -   Quadratic: better for curved regions
 -   Higher degrees rarely used (overfitting risk)
 
-
 ## When to Use LOESS
 
 ::: callout-tip
@@ -300,7 +293,6 @@ ggplot(data.frame(x = x_vals, weight = y_vals), aes(x, weight)) +
 -   **High dimensions** - Curse of dimensionality
 -   **Inference** - Limited theoretical framework
 :::
-
 
 # Example of overfitting a model
 
@@ -325,8 +317,6 @@ df_sample <- df |> slice_sample(n = 25)
 -   **Sample**: 25 randomly selected points for model fitting
 :::
 
-
-
 ## Population Data with True Relationship
 
 ```{r}
@@ -343,7 +333,6 @@ ggplot(df, aes(x, y)) +
   labs(title = "Population Data with True Relationship",
        subtitle = "Blue line shows true relationship: y = 6 - 0.5x")
 ```
-
 
 ## Population Data with True Relationship
 
@@ -407,7 +396,7 @@ ggplot(df, aes(x, y)) +
        subtitle = "Black points: sample data, Black line: linear regression")
 ```
 
-##
+## 
 
 ```{r}
 #| echo: false
@@ -460,13 +449,12 @@ model_linear <- lm(y ~ x, data = df_sample)
 model_loess <- loess(y ~ x, data = df_sample)
 ```
 
-## {.smaller}
+##  {.smaller}
 
-
-:::: {.columns}
-
+::::: columns
 ::: {.column width="50%"}
 Linear Model Summary
+
 ```{r}
 #| echo: true
 summary(model_linear)
@@ -475,13 +463,13 @@ summary(model_linear)
 
 ::: {.column width="50%"}
 LOESS Model Summary
+
 ```{r}
 #| echo: true
 summary(model_loess)
 ```
 :::
-
-::::
+:::::
 
 ## Model Evaluation
 
@@ -511,7 +499,6 @@ cat("Difference:", round(rss_linear - rss_loess, 2))
 
 The more flexible LOESS model performs **worse** on new data despite fitting the sample better - this is **overfitting**!
 :::
-
 
 # Testing set vs. cross-validation
 
@@ -547,8 +534,6 @@ Split data into training and testing sets
 -   **High variance** - Unreliable performance estimates
 :::
 
-
-
 ## Cross-Validation: A Better Approach
 
 ::: callout-important
@@ -582,7 +567,6 @@ Split data into training and testing sets
 ::::
 :::::::
 
-
 # Cross-Validation with the boot Library in R
 
 ## What is Cross-Validation?
@@ -596,7 +580,6 @@ Cross-validation is a statistical method used to:
 
 The core principle: Use part of your data for training, part for testing
 
-
 ## What is Cross-Validation?
 
 Cross-validation is a statistical technique for assessing how well a model generalizes to new data by repeatedly splitting your dataset into training and testing portions.
@@ -608,8 +591,6 @@ Cross-validation is a statistical technique for assessing how well a model gener
 3.  Test on the remaining fold
 4.  Repeat this process k times
 5.  Average the results to get a robust estimate of model performance
-
-
 
 ## Key Functions in Boot Package
 
@@ -627,11 +608,12 @@ Cross-validation is a statistical technique for assessing how well a model gener
 3.  **Stratified Cross-Validation**
 4.  **Time Series Cross-Validation**
 
-## Leave-One-Out Cross-Validation (LOOCV)
+## Leave-One-Out Cross-Validation (LOOCV) {.smaller}
 
 **Concept**: Use n-1 observations for training, 1 for testing, repeat n times
 
 ```{r}
+#| echo: true
 
 library(boot)
 # LOOCV with cv.glm
@@ -645,11 +627,12 @@ print(paste("LOOCV MSE:", round(loocv_mse, 3)))
 
 **Advantages**: Uses maximum data for training **Disadvantages**: Computationally expensive for large datasets
 
-## K-Fold Cross-Validation
+## K-Fold Cross-Validation  {.smaller}
 
 **Concept**: Divide data into K folds, use K-1 for training, 1 for testing
 
 ```{r}
+#| echo: true
 # 10-fold cross-validation
 model <- glm(mpg ~ hp + wt + disp, data = mtcars)
 k10_error <- cv.glm(mtcars, model, K = 10)
@@ -663,9 +646,10 @@ print(paste("10-fold CV MSE:", round(cv_mse, 3)))
 
 **Common choices**: K = 5, 10, or √n
 
-## Practical Example: Polynomial Regression
+## Practical Example: Polynomial Regression  {.smaller}
 
 ```{r}
+#| echo: true
 library(boot)
 library(ggplot2)
 
@@ -690,9 +674,10 @@ for(i in seq_along(degrees)) {
 }
 ```
 
-## Visualizing CV Results
+## Visualizing CV Results  {.smaller}
 
 ```{r}
+#| echo: true
 # Create results data frame
 results <- data.frame(
   degree = degrees,
@@ -713,9 +698,10 @@ optimal_degree <- degrees[which.min(cv_errors)]
 print(paste("Optimal polynomial degree:", optimal_degree))
 ```
 
-## Custom Cross-Validation Function
+## Custom Cross-Validation Function  {.smaller}
 
 ```{r}
+#| echo: true
 # Custom CV function for specific needs
 custom_cv <- function(data, model_formula, K = 10) {
   n <- nrow(data)
@@ -745,9 +731,10 @@ custom_cv <- function(data, model_formula, K = 10) {
 }
 ```
 
-## Model Comparison Example
+## Model Comparison Example  {.smaller}
 
 ```{r}
+#| echo: true
 # Compare different models
 models <- list(
   linear = y ~ x,
@@ -771,9 +758,10 @@ cv_comparison <- data.frame(
 print(cv_comparison)
 ```
 
-## Bootstrap Cross-Validation
+## Bootstrap Cross-Validation  {.smaller}
 
 ```{r}
+#| echo: true
 # Bootstrap approach for CV
 bootstrap_cv <- function(data, indices) {
   # Sample data with replacement
@@ -801,11 +789,12 @@ print(paste("Bootstrap CV Error:", round(boot_cv_error, 3),
            "±", round(boot_cv_se, 3)))
 ```
 
-## Stratified Cross-Validation
+## Stratified Cross-Validation  {.smaller}
 
 For classification problems:
 
 ```{r}
+#| echo: true
 # Example with classification
 library(MASS)
 data(iris)
@@ -830,11 +819,12 @@ create_stratified_folds <- function(y, K = 10) {
 folds <- create_stratified_folds(iris$Species, K = 5)
 ```
 
-## Time Series Cross-Validation
+## Time Series Cross-Validation  {.smaller}
 
 For temporal data:
 
 ```{r}
+#| echo: true
 # Time series CV (forward chaining)
 ts_cv <- function(data, window_size, horizon = 1) {
   n <- nrow(data)
@@ -861,11 +851,12 @@ ts_cv <- function(data, window_size, horizon = 1) {
 }
 ```
 
-## Advanced: Nested Cross-Validation
+## Advanced: Nested Cross-Validation  {.smaller}
 
 For hyperparameter tuning:
 
 ```{r}
+#| echo: true
 # Nested CV for model selection and evaluation
 nested_cv <- function(data, param_grid, outer_K = 10, inner_K = 5) {
   n <- nrow(data)
@@ -894,4 +885,3 @@ nested_cv <- function(data, param_grid, outer_K = 10, inner_K = 5) {
   ))
 }
 ```
-
