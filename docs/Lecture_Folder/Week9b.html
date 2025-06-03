@@ -253,15 +253,6 @@ window.Quarto = {
   <li><a href="#evaluate-the-model-3" id="toc-evaluate-the-model-3" class="nav-link" data-scroll-target="#evaluate-the-model-3">Evaluate the model</a></li>
   <li><a href="#evaluate-the-model-4" id="toc-evaluate-the-model-4" class="nav-link" data-scroll-target="#evaluate-the-model-4">Evaluate the model</a></li>
   </ul></li>
-  <li><a href="#cross-validation-with-the-boot-library-in-r" id="toc-cross-validation-with-the-boot-library-in-r" class="nav-link" data-scroll-target="#cross-validation-with-the-boot-library-in-r">Cross-Validation with the boot Library in R</a>
-  <ul class="collapse">
-  <li><a href="#what-is-cross-validation" id="toc-what-is-cross-validation" class="nav-link" data-scroll-target="#what-is-cross-validation">What is Cross-Validation?</a></li>
-  <li><a href="#the-boot-library" id="toc-the-boot-library" class="nav-link" data-scroll-target="#the-boot-library">The boot Library</a></li>
-  <li><a href="#key-parameters" id="toc-key-parameters" class="nav-link" data-scroll-target="#key-parameters">Key Parameters</a></li>
-  <li><a href="#practical-example-model-comparison" id="toc-practical-example-model-comparison" class="nav-link" data-scroll-target="#practical-example-model-comparison">Practical Example: Model Comparison</a></li>
-  <li><a href="#understanding-the-output" id="toc-understanding-the-output" class="nav-link" data-scroll-target="#understanding-the-output">Understanding the Output</a></li>
-  <li><a href="#advantages-of-the-boot-library" id="toc-advantages-of-the-boot-library" class="nav-link" data-scroll-target="#advantages-of-the-boot-library">Advantages of the boot Library</a></li>
-  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Week9b.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -595,18 +586,18 @@ glm(formula = cancer_diagnosis ~ metal_exposure, family = binomial)
 
 Coefficients:
                Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)     -0.2788     0.1926  -1.448    0.148    
-metal_exposure   1.8039     0.2407   7.496 6.58e-14 ***
+(Intercept)     -0.9842     0.2445  -4.026 5.68e-05 ***
+metal_exposure   2.3420     0.3144   7.450 9.34e-14 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 276.28  on 199  degrees of freedom
-Residual deviance: 171.89  on 198  degrees of freedom
-AIC: 175.89
+    Null deviance: 271.45  on 199  degrees of freedom
+Residual deviance: 142.19  on 198  degrees of freedom
+AIC: 146.19
 
-Number of Fisher Scoring iterations: 5</code></pre>
+Number of Fisher Scoring iterations: 6</code></pre>
 </div>
 </div>
 </section>
@@ -741,16 +732,16 @@ glm(formula = setosa ~ Sepal.Length, family = "binomial", data = iris_train)
 
 Coefficients:
              Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)   26.2777     5.1234   5.129 2.91e-07 ***
-Sepal.Length  -4.9127     0.9532  -5.154 2.55e-07 ***
+(Intercept)    28.432      5.587   5.089 3.60e-07 ***
+Sepal.Length   -5.273      1.031  -5.116 3.11e-07 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
     Null deviance: 152.763  on 119  degrees of freedom
-Residual deviance:  61.179  on 118  degrees of freedom
-AIC: 65.179
+Residual deviance:  54.665  on 118  degrees of freedom
+AIC: 58.665
 
 Number of Fisher Scoring iterations: 7</code></pre>
 </div>
@@ -794,23 +785,23 @@ Number of Fisher Scoring iterations: 7</code></pre>
 <h2 class="anchored" data-anchor-id="evaluate-the-model-2">Evaluate the model</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="yqzhihkavr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yqzhihkavr table {
+<div id="xwaelfjyfn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xwaelfjyfn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yqzhihkavr thead, #yqzhihkavr tbody, #yqzhihkavr tfoot, #yqzhihkavr tr, #yqzhihkavr td, #yqzhihkavr th {
+#xwaelfjyfn thead, #xwaelfjyfn tbody, #xwaelfjyfn tfoot, #xwaelfjyfn tr, #xwaelfjyfn td, #xwaelfjyfn th {
   border-style: none;
 }
 
-#yqzhihkavr p {
+#xwaelfjyfn p {
   margin: 0;
   padding: 0;
 }
 
-#yqzhihkavr .gt_table {
+#xwaelfjyfn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -836,12 +827,12 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_caption {
+#xwaelfjyfn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yqzhihkavr .gt_title {
+#xwaelfjyfn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -853,7 +844,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-bottom-width: 0;
 }
 
-#yqzhihkavr .gt_subtitle {
+#xwaelfjyfn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -865,7 +856,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-top-width: 0;
 }
 
-#yqzhihkavr .gt_heading {
+#xwaelfjyfn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -877,13 +868,13 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_bottom_border {
+#xwaelfjyfn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_col_headings {
+#xwaelfjyfn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -898,7 +889,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_col_heading {
+#xwaelfjyfn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -918,7 +909,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   overflow-x: hidden;
 }
 
-#yqzhihkavr .gt_column_spanner_outer {
+#xwaelfjyfn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -930,15 +921,15 @@ Number of Fisher Scoring iterations: 7</code></pre>
   padding-right: 4px;
 }
 
-#yqzhihkavr .gt_column_spanner_outer:first-child {
+#xwaelfjyfn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yqzhihkavr .gt_column_spanner_outer:last-child {
+#xwaelfjyfn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yqzhihkavr .gt_column_spanner {
+#xwaelfjyfn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -950,11 +941,11 @@ Number of Fisher Scoring iterations: 7</code></pre>
   width: 100%;
 }
 
-#yqzhihkavr .gt_spanner_row {
+#xwaelfjyfn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yqzhihkavr .gt_group_heading {
+#xwaelfjyfn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -980,7 +971,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   text-align: left;
 }
 
-#yqzhihkavr .gt_empty_group_heading {
+#xwaelfjyfn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -995,15 +986,15 @@ Number of Fisher Scoring iterations: 7</code></pre>
   vertical-align: middle;
 }
 
-#yqzhihkavr .gt_from_md > :first-child {
+#xwaelfjyfn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yqzhihkavr .gt_from_md > :last-child {
+#xwaelfjyfn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yqzhihkavr .gt_row {
+#xwaelfjyfn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1022,7 +1013,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   overflow-x: hidden;
 }
 
-#yqzhihkavr .gt_stub {
+#xwaelfjyfn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1035,7 +1026,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   padding-right: 5px;
 }
 
-#yqzhihkavr .gt_stub_row_group {
+#xwaelfjyfn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1049,15 +1040,15 @@ Number of Fisher Scoring iterations: 7</code></pre>
   vertical-align: top;
 }
 
-#yqzhihkavr .gt_row_group_first td {
+#xwaelfjyfn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yqzhihkavr .gt_row_group_first th {
+#xwaelfjyfn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yqzhihkavr .gt_summary_row {
+#xwaelfjyfn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1067,16 +1058,16 @@ Number of Fisher Scoring iterations: 7</code></pre>
   padding-right: 5px;
 }
 
-#yqzhihkavr .gt_first_summary_row {
+#xwaelfjyfn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_first_summary_row.thick {
+#xwaelfjyfn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yqzhihkavr .gt_last_summary_row {
+#xwaelfjyfn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1086,7 +1077,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_grand_summary_row {
+#xwaelfjyfn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1096,7 +1087,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   padding-right: 5px;
 }
 
-#yqzhihkavr .gt_first_grand_summary_row {
+#xwaelfjyfn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1106,7 +1097,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_last_grand_summary_row_top {
+#xwaelfjyfn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1116,11 +1107,11 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_striped {
+#xwaelfjyfn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yqzhihkavr .gt_table_body {
+#xwaelfjyfn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1129,7 +1120,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_footnotes {
+#xwaelfjyfn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1143,7 +1134,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_footnote {
+#xwaelfjyfn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1152,7 +1143,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   padding-right: 5px;
 }
 
-#yqzhihkavr .gt_sourcenotes {
+#xwaelfjyfn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1166,7 +1157,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#yqzhihkavr .gt_sourcenote {
+#xwaelfjyfn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1174,72 +1165,72 @@ Number of Fisher Scoring iterations: 7</code></pre>
   padding-right: 5px;
 }
 
-#yqzhihkavr .gt_left {
+#xwaelfjyfn .gt_left {
   text-align: left;
 }
 
-#yqzhihkavr .gt_center {
+#xwaelfjyfn .gt_center {
   text-align: center;
 }
 
-#yqzhihkavr .gt_right {
+#xwaelfjyfn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yqzhihkavr .gt_font_normal {
+#xwaelfjyfn .gt_font_normal {
   font-weight: normal;
 }
 
-#yqzhihkavr .gt_font_bold {
+#xwaelfjyfn .gt_font_bold {
   font-weight: bold;
 }
 
-#yqzhihkavr .gt_font_italic {
+#xwaelfjyfn .gt_font_italic {
   font-style: italic;
 }
 
-#yqzhihkavr .gt_super {
+#xwaelfjyfn .gt_super {
   font-size: 65%;
 }
 
-#yqzhihkavr .gt_footnote_marks {
+#xwaelfjyfn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yqzhihkavr .gt_asterisk {
+#xwaelfjyfn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yqzhihkavr .gt_indent_1 {
+#xwaelfjyfn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yqzhihkavr .gt_indent_2 {
+#xwaelfjyfn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yqzhihkavr .gt_indent_3 {
+#xwaelfjyfn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yqzhihkavr .gt_indent_4 {
+#xwaelfjyfn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yqzhihkavr .gt_indent_5 {
+#xwaelfjyfn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yqzhihkavr .katex-display {
+#xwaelfjyfn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yqzhihkavr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xwaelfjyfn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1268,13 +1259,13 @@ Predicted
 <tbody class="gt_table_body">
 <tr class="odd">
 <td id="stub_1_1" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">0</td>
-<td class="gt_row gt_right" headers="stub_1_1 0">20</td>
-<td class="gt_row gt_right" headers="stub_1_1 1">0</td>
+<td class="gt_row gt_right" headers="stub_1_1 0">19</td>
+<td class="gt_row gt_right" headers="stub_1_1 1">1</td>
 </tr>
 <tr class="even">
 <td id="stub_1_2" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">1</td>
-<td class="gt_row gt_right" headers="stub_1_2 0">2</td>
-<td class="gt_row gt_right" headers="stub_1_2 1">8</td>
+<td class="gt_row gt_right" headers="stub_1_2 0">1</td>
+<td class="gt_row gt_right" headers="stub_1_2 1">9</td>
 </tr>
 </tbody>
 </table>
@@ -1420,23 +1411,23 @@ Note
 <h2 class="anchored" data-anchor-id="evaluate-the-model-4">Evaluate the model</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="kcefqnuxql" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kcefqnuxql table {
+<div id="nvyyfhibix" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nvyyfhibix table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kcefqnuxql thead, #kcefqnuxql tbody, #kcefqnuxql tfoot, #kcefqnuxql tr, #kcefqnuxql td, #kcefqnuxql th {
+#nvyyfhibix thead, #nvyyfhibix tbody, #nvyyfhibix tfoot, #nvyyfhibix tr, #nvyyfhibix td, #nvyyfhibix th {
   border-style: none;
 }
 
-#kcefqnuxql p {
+#nvyyfhibix p {
   margin: 0;
   padding: 0;
 }
 
-#kcefqnuxql .gt_table {
+#nvyyfhibix .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1462,12 +1453,12 @@ Note
   border-left-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_caption {
+#nvyyfhibix .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kcefqnuxql .gt_title {
+#nvyyfhibix .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1479,7 +1470,7 @@ Note
   border-bottom-width: 0;
 }
 
-#kcefqnuxql .gt_subtitle {
+#nvyyfhibix .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1491,7 +1482,7 @@ Note
   border-top-width: 0;
 }
 
-#kcefqnuxql .gt_heading {
+#nvyyfhibix .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1503,13 +1494,13 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_bottom_border {
+#nvyyfhibix .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_col_headings {
+#nvyyfhibix .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1524,7 +1515,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_col_heading {
+#nvyyfhibix .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1544,7 +1535,7 @@ Note
   overflow-x: hidden;
 }
 
-#kcefqnuxql .gt_column_spanner_outer {
+#nvyyfhibix .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1556,15 +1547,15 @@ Note
   padding-right: 4px;
 }
 
-#kcefqnuxql .gt_column_spanner_outer:first-child {
+#nvyyfhibix .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kcefqnuxql .gt_column_spanner_outer:last-child {
+#nvyyfhibix .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kcefqnuxql .gt_column_spanner {
+#nvyyfhibix .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1576,11 +1567,11 @@ Note
   width: 100%;
 }
 
-#kcefqnuxql .gt_spanner_row {
+#nvyyfhibix .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kcefqnuxql .gt_group_heading {
+#nvyyfhibix .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1606,7 +1597,7 @@ Note
   text-align: left;
 }
 
-#kcefqnuxql .gt_empty_group_heading {
+#nvyyfhibix .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1621,15 +1612,15 @@ Note
   vertical-align: middle;
 }
 
-#kcefqnuxql .gt_from_md > :first-child {
+#nvyyfhibix .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kcefqnuxql .gt_from_md > :last-child {
+#nvyyfhibix .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kcefqnuxql .gt_row {
+#nvyyfhibix .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1648,7 +1639,7 @@ Note
   overflow-x: hidden;
 }
 
-#kcefqnuxql .gt_stub {
+#nvyyfhibix .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1661,7 +1652,7 @@ Note
   padding-right: 5px;
 }
 
-#kcefqnuxql .gt_stub_row_group {
+#nvyyfhibix .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1675,15 +1666,15 @@ Note
   vertical-align: top;
 }
 
-#kcefqnuxql .gt_row_group_first td {
+#nvyyfhibix .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kcefqnuxql .gt_row_group_first th {
+#nvyyfhibix .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kcefqnuxql .gt_summary_row {
+#nvyyfhibix .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1693,16 +1684,16 @@ Note
   padding-right: 5px;
 }
 
-#kcefqnuxql .gt_first_summary_row {
+#nvyyfhibix .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_first_summary_row.thick {
+#nvyyfhibix .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kcefqnuxql .gt_last_summary_row {
+#nvyyfhibix .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1712,7 +1703,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_grand_summary_row {
+#nvyyfhibix .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1722,7 +1713,7 @@ Note
   padding-right: 5px;
 }
 
-#kcefqnuxql .gt_first_grand_summary_row {
+#nvyyfhibix .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1732,7 +1723,7 @@ Note
   border-top-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_last_grand_summary_row_top {
+#nvyyfhibix .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1742,11 +1733,11 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_striped {
+#nvyyfhibix .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kcefqnuxql .gt_table_body {
+#nvyyfhibix .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1755,7 +1746,7 @@ Note
   border-bottom-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_footnotes {
+#nvyyfhibix .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1769,7 +1760,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_footnote {
+#nvyyfhibix .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1778,7 +1769,7 @@ Note
   padding-right: 5px;
 }
 
-#kcefqnuxql .gt_sourcenotes {
+#nvyyfhibix .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1792,7 +1783,7 @@ Note
   border-right-color: #D3D3D3;
 }
 
-#kcefqnuxql .gt_sourcenote {
+#nvyyfhibix .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1800,72 +1791,72 @@ Note
   padding-right: 5px;
 }
 
-#kcefqnuxql .gt_left {
+#nvyyfhibix .gt_left {
   text-align: left;
 }
 
-#kcefqnuxql .gt_center {
+#nvyyfhibix .gt_center {
   text-align: center;
 }
 
-#kcefqnuxql .gt_right {
+#nvyyfhibix .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kcefqnuxql .gt_font_normal {
+#nvyyfhibix .gt_font_normal {
   font-weight: normal;
 }
 
-#kcefqnuxql .gt_font_bold {
+#nvyyfhibix .gt_font_bold {
   font-weight: bold;
 }
 
-#kcefqnuxql .gt_font_italic {
+#nvyyfhibix .gt_font_italic {
   font-style: italic;
 }
 
-#kcefqnuxql .gt_super {
+#nvyyfhibix .gt_super {
   font-size: 65%;
 }
 
-#kcefqnuxql .gt_footnote_marks {
+#nvyyfhibix .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kcefqnuxql .gt_asterisk {
+#nvyyfhibix .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kcefqnuxql .gt_indent_1 {
+#nvyyfhibix .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kcefqnuxql .gt_indent_2 {
+#nvyyfhibix .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kcefqnuxql .gt_indent_3 {
+#nvyyfhibix .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kcefqnuxql .gt_indent_4 {
+#nvyyfhibix .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kcefqnuxql .gt_indent_5 {
+#nvyyfhibix .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kcefqnuxql .katex-display {
+#nvyyfhibix .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kcefqnuxql div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nvyyfhibix div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1887,19 +1878,19 @@ Note
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Metric">Precision</td>
-<td class="gt_row gt_right" headers="Value">1.000</td>
+<td class="gt_row gt_right" headers="Value">0.900</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Metric">Recall</td>
-<td class="gt_row gt_right" headers="Value">0.800</td>
+<td class="gt_row gt_right" headers="Value">0.900</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Metric">Specificity</td>
-<td class="gt_row gt_right" headers="Value">1.000</td>
+<td class="gt_row gt_right" headers="Value">0.950</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Metric">F1-Score</td>
-<td class="gt_row gt_right" headers="Value">0.889</td>
+<td class="gt_row gt_right" headers="Value">0.900</td>
 </tr>
 </tbody>
 </table>
@@ -1907,115 +1898,6 @@ Note
 </div>
 </div>
 </div>
-<hr>
-</section>
-</section>
-<section id="cross-validation-with-the-boot-library-in-r" class="level1">
-<h1>Cross-Validation with the boot Library in R</h1>
-<section id="what-is-cross-validation" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-cross-validation">What is Cross-Validation?</h2>
-<p>Cross-validation is a statistical technique for assessing how well a model generalizes to new data by repeatedly splitting your dataset into training and testing portions.</p>
-<p><strong>The Process:</strong></p>
-<ol type="1">
-<li>Split your data into k groups (folds)</li>
-<li>Train your model on k-1 folds<br>
-</li>
-<li>Test on the remaining fold</li>
-<li>Repeat this process k times</li>
-<li>Average the results to get a robust estimate of model performance</li>
-</ol>
-</section>
-<section id="the-boot-library" class="level2">
-<h2 class="anchored" data-anchor-id="the-boot-library">The boot Library</h2>
-<p>The <code>boot</code> library’s main function is <code>cv.glm()</code>, which performs cross-validation for generalized linear models.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example with linear regression</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">glm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform 10-fold cross-validation</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>cv_result <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(mtcars, model, <span class="at">K =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in cv.glm(mtcars, model, K = 10): 'K' has been set to 11.000000</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract cross-validation error</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>cv_error <span class="ot">&lt;-</span> cv_result<span class="sc">$</span>delta[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="key-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="key-parameters">Key Parameters</h2>
-<p><strong>K parameter</strong> - Controls the number of folds:</p>
-<ul>
-<li><code>K = nrow(data)</code> → Leave-one-out cross-validation (LOOCV)</li>
-<li><code>K = 10</code> → 10-fold CV (common choice)</li>
-<li><code>K = 5</code> → 5-fold CV</li>
-</ul>
-<p><strong>Custom cost functions</strong> - Specify different loss functions:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom cost function (mean absolute error)</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>mae_cost <span class="ot">&lt;-</span> <span class="cf">function</span>(y, yhat) <span class="fu">mean</span>(<span class="fu">abs</span>(y <span class="sc">-</span> yhat))</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>cv_result <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(mtcars, model, <span class="at">K =</span> <span class="dv">10</span>, <span class="at">cost =</span> mae_cost)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in cv.glm(mtcars, model, K = 10, cost = mae_cost): 'K' has been set to
-11.000000</code></pre>
-</div>
-</div>
-</section>
-<section id="practical-example-model-comparison" class="level2">
-<h2 class="anchored" data-anchor-id="practical-example-model-comparison">Practical Example: Model Comparison</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit different models</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> mtcars)</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp <span class="sc">+</span> disp, <span class="at">data =</span> mtcars)</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare models using 10-fold CV</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>cv1 <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(mtcars, model1, <span class="at">K =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in cv.glm(mtcars, model1, K = 10): 'K' has been set to 11.000000</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>cv2 <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(mtcars, model2, <span class="at">K =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in cv.glm(mtcars, model2, K = 10): 'K' has been set to 11.000000</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>cv3 <span class="ot">&lt;-</span> <span class="fu">cv.glm</span>(mtcars, model3, <span class="at">K =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in cv.glm(mtcars, model3, K = 10): 'K' has been set to 11.000000</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare cross-validation errors</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>cv_errors <span class="ot">&lt;-</span> <span class="fu">c</span>(cv1<span class="sc">$</span>delta[<span class="dv">1</span>], cv2<span class="sc">$</span>delta[<span class="dv">1</span>], cv3<span class="sc">$</span>delta[<span class="dv">1</span>])</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cv_errors) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Model 1"</span>, <span class="st">"Model 2"</span>, <span class="st">"Model 3"</span>)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cv_errors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Model 1   Model 2   Model 3 
-10.458141  7.499546  8.309597 </code></pre>
-</div>
-</div>
-</section>
-<section id="understanding-the-output" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-the-output">Understanding the Output</h2>
-<p>The <code>cv.glm()</code> function returns:</p>
-<ul>
-<li><strong><code>delta[1]</code></strong>: Raw cross-validation estimate</li>
-<li><strong><code>delta[2]</code></strong>: Bias-corrected cross-validation estimate<br>
-</li>
-<li><strong><code>K</code></strong>: Number of folds used</li>
-</ul>
-<p><strong>Interpretation:</strong> Lower cross-validation error = better expected performance on new data</p>
-</section>
-<section id="advantages-of-the-boot-library" class="level2">
-<h2 class="anchored" data-anchor-id="advantages-of-the-boot-library">Advantages of the boot Library</h2>
-<p>✓ Automatically handles data splitting</p>
-<p>✓ Ensures each observation appears in exactly one test fold per iteration</p>
-<p>✓ Provides both biased and bias-corrected estimates</p>
-<p>✓ Well-suited for GLMs</p>
-<p>✓ Integrates seamlessly with R’s modeling framework</p>
-<hr>
 
 
 </section>

@@ -485,7 +485,6 @@ $$
 ## Key Metrics for Classification
 
 ::: callout-warning
-
 -   There is no single best evaluation metric for model fit for prediction
 
 -   How important is it to identify true positives and what are the costs of false positives?
@@ -498,7 +497,6 @@ $$
 ::: callout-note
 Different types of evaluation are used for prediction (e.g. regression) models
 :::
-
 
 ## Evaluate the model
 
@@ -565,99 +563,3 @@ metrics_df %>%
   fmt_number(columns = Value, decimals = 3)
 
 ```
-
-------------------------------------------------------------------------
-
-# Cross-Validation with the boot Library in R
-
-## What is Cross-Validation?
-
-Cross-validation is a statistical technique for assessing how well a model generalizes to new data by repeatedly splitting your dataset into training and testing portions.
-
-**The Process:**
-
-1.  Split your data into k groups (folds)
-2.  Train your model on k-1 folds\
-3.  Test on the remaining fold
-4.  Repeat this process k times
-5.  Average the results to get a robust estimate of model performance
-
-## The boot Library
-
-The `boot` library's main function is `cv.glm()`, which performs cross-validation for generalized linear models.
-
-```{r}
-library(boot)
-
-# Example with linear regression
-model <- glm(mpg ~ wt + hp, data = mtcars)
-
-# Perform 10-fold cross-validation
-cv_result <- cv.glm(mtcars, model, K = 10)
-
-# Extract cross-validation error
-cv_error <- cv_result$delta[1]
-```
-
-## Key Parameters
-
-**K parameter** - Controls the number of folds:
-
--   `K = nrow(data)` → Leave-one-out cross-validation (LOOCV)
--   `K = 10` → 10-fold CV (common choice)
--   `K = 5` → 5-fold CV
-
-**Custom cost functions** - Specify different loss functions:
-
-```{r}
-# Custom cost function (mean absolute error)
-mae_cost <- function(y, yhat) mean(abs(y - yhat))
-
-cv_result <- cv.glm(mtcars, model, K = 10, cost = mae_cost)
-```
-
-## Practical Example: Model Comparison
-
-```{r}
-library(boot)
-data(mtcars)
-
-# Fit different models
-model1 <- glm(mpg ~ wt, data = mtcars)
-model2 <- glm(mpg ~ wt + hp, data = mtcars)
-model3 <- glm(mpg ~ wt + hp + disp, data = mtcars)
-
-# Compare models using 10-fold CV
-cv1 <- cv.glm(mtcars, model1, K = 10)
-cv2 <- cv.glm(mtcars, model2, K = 10)
-cv3 <- cv.glm(mtcars, model3, K = 10)
-
-# Compare cross-validation errors
-cv_errors <- c(cv1$delta[1], cv2$delta[1], cv3$delta[1])
-names(cv_errors) <- c("Model 1", "Model 2", "Model 3")
-print(cv_errors)
-```
-
-## Understanding the Output
-
-The `cv.glm()` function returns:
-
--   **`delta[1]`**: Raw cross-validation estimate
--   **`delta[2]`**: Bias-corrected cross-validation estimate\
--   **`K`**: Number of folds used
-
-**Interpretation:** Lower cross-validation error = better expected performance on new data
-
-## Advantages of the boot Library
-
-✓ Automatically handles data splitting
-
-✓ Ensures each observation appears in exactly one test fold per iteration
-
-✓ Provides both biased and bias-corrected estimates
-
-✓ Well-suited for GLMs
-
-✓ Integrates seamlessly with R's modeling framework
-
-------------------------------------------------------------------------

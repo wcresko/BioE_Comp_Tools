@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b\nLecture_9a\nLecture_9b"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b\nLecture_9a\nLecture_9b\nLecture_10a"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -13871,7 +13871,7 @@
     "href": "Lecture_Folder/Week9b.html#simulated-binary-data-1",
     "title": "Week 9b - Statistics for Bioengineering",
     "section": "Simulated binary data",
-    "text": "Simulated binary data\n\n\n\nCall:\nglm(formula = cancer_diagnosis ~ metal_exposure, family = binomial)\n\nCoefficients:\n               Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)     -0.2788     0.1926  -1.448    0.148    \nmetal_exposure   1.8039     0.2407   7.496 6.58e-14 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 276.28  on 199  degrees of freedom\nResidual deviance: 171.89  on 198  degrees of freedom\nAIC: 175.89\n\nNumber of Fisher Scoring iterations: 5"
+    "text": "Simulated binary data\n\n\n\nCall:\nglm(formula = cancer_diagnosis ~ metal_exposure, family = binomial)\n\nCoefficients:\n               Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)     -0.9842     0.2445  -4.026 5.68e-05 ***\nmetal_exposure   2.3420     0.3144   7.450 9.34e-14 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 271.45  on 199  degrees of freedom\nResidual deviance: 142.19  on 198  degrees of freedom\nAIC: 146.19\n\nNumber of Fisher Scoring iterations: 6"
   },
   {
     "objectID": "Lecture_Folder/Week9b.html#plotting-the-logistic-regression-curve",
@@ -13927,7 +13927,7 @@
     "href": "Lecture_Folder/Week9b.html#build-a-model-with-training-data-1",
     "title": "Week 9b - Statistics for Bioengineering",
     "section": "Build a model with training data",
-    "text": "Build a model with training data\n\n\n\nCall:\nglm(formula = setosa ~ Sepal.Length, family = \"binomial\", data = iris_train)\n\nCoefficients:\n             Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)   26.2777     5.1234   5.129 2.91e-07 ***\nSepal.Length  -4.9127     0.9532  -5.154 2.55e-07 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 152.763  on 119  degrees of freedom\nResidual deviance:  61.179  on 118  degrees of freedom\nAIC: 65.179\n\nNumber of Fisher Scoring iterations: 7"
+    "text": "Build a model with training data\n\n\n\nCall:\nglm(formula = setosa ~ Sepal.Length, family = \"binomial\", data = iris_train)\n\nCoefficients:\n             Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)    28.432      5.587   5.089 3.60e-07 ***\nSepal.Length   -5.273      1.031  -5.116 3.11e-07 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 152.763  on 119  degrees of freedom\nResidual deviance:  54.665  on 118  degrees of freedom\nAIC: 58.665\n\nNumber of Fisher Scoring iterations: 7"
   },
   {
     "objectID": "Lecture_Folder/Week9b.html#evaluate-the-model",
@@ -13948,7 +13948,7 @@
     "href": "Lecture_Folder/Week9b.html#evaluate-the-model-2",
     "title": "Week 9b - Statistics for Bioengineering",
     "section": "Evaluate the model",
-    "text": "Evaluate the model\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetosa Confusion Matrix\n\n\nActual\n\nPredicted\n\n\n\n0\n1\n\n\n\n\n0\n20\n0\n\n\n1\n2\n8"
+    "text": "Evaluate the model\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetosa Confusion Matrix\n\n\nActual\n\nPredicted\n\n\n\n0\n1\n\n\n\n\n0\n19\n1\n\n\n1\n1\n9"
   },
   {
     "objectID": "Lecture_Folder/Week9b.html#what-is-a-confusion-matrix",
@@ -13990,7 +13990,7 @@
     "href": "Lecture_Folder/Week9b.html#evaluate-the-model-4",
     "title": "Week 9b - Statistics for Bioengineering",
     "section": "Evaluate the model",
-    "text": "Evaluate the model\n\n\n\n\n\n\n\n\nClassification Evaluation Metrics\n\n\nMetric\nValue\n\n\n\n\nAccuracy\n0.933\n\n\nPrecision\n1.000\n\n\nRecall\n0.800\n\n\nSpecificity\n1.000\n\n\nF1-Score\n0.889"
+    "text": "Evaluate the model\n\n\n\n\n\n\n\n\nClassification Evaluation Metrics\n\n\nMetric\nValue\n\n\n\n\nAccuracy\n0.933\n\n\nPrecision\n0.900\n\n\nRecall\n0.900\n\n\nSpecificity\n0.950\n\n\nF1-Score\n0.900"
   },
   {
     "objectID": "Lecture_Folder/Week9b.html#what-is-cross-validation",
@@ -14040,5 +14040,299 @@
     "title": "Week 9a - Statistics for Bioengineering",
     "section": "\\(\\chi^2\\) goodness of fit null distribution",
     "text": "\\(\\chi^2\\) goodness of fit null distribution\n\n#|eval: true\n#|echo: false\n\nhist(sim_chisq, breaks = 50, main = \"Resampling Null Distribution\",\n     xlab = \"Chi-square statistic\", col = \"lightblue\", border = \"white\")\nabline(v = obs_chisq, col = \"red\", lwd = 2)\nlegend(\"topright\", legend = \"Observed\", col = \"red\", lwd = 2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html",
+    "href": "Lecture_Folder/Week10a.html",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(tibble)\nlibrary(boot)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#this-week",
+    "href": "Lecture_Folder/Week10a.html#this-week",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "This week",
+    "text": "This week\n\nThe problem of overfitting\nLOESS (Locally Estimated Scatterplot Smoothing)\nCross validation using the boot package\nDecision trees and random forests\nSupport Vector Machines (if there’s time)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#building-models-for-prediction",
+    "href": "Lecture_Folder/Week10a.html#building-models-for-prediction",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Building Models for Prediction",
+    "text": "Building Models for Prediction\n\nWe build a model using the sample data with the goal of applying it to new data from the population to make predictions about response variables of interest.\nStatistical and machine learning models are built to fit the data on which they’re trained as closely as possible within their particular structures."
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#optimization-examples",
+    "href": "Lecture_Folder/Week10a.html#optimization-examples",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Optimization Examples",
+    "text": "Optimization Examples\n\nLinear regression picks out the line that minimizes the squared residuals (RSE) in the set\nLogistic regression minimizes residual deviance\nClassification models might be optimized to identify as high a proportion of the sample correctly as possible"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#the-overfitting-problem",
+    "href": "Lecture_Folder/Week10a.html#the-overfitting-problem",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "The Overfitting Problem",
+    "text": "The Overfitting Problem\n\nUnfortunately, models that perform better on their training data are often worse at making predictions from new data.\nOverfitting refers to when a model goes too far out of its way to accommodate the peculiarities of the set used to build it, integrating random noise as if it were meaningful information.\nMore flexible modeling techniques are more susceptible to overfitting."
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#overfitting-vs.-underfitting",
+    "href": "Lecture_Folder/Week10a.html#overfitting-vs.-underfitting",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Overfitting vs. Underfitting",
+    "text": "Overfitting vs. Underfitting\n\n\n\n\n\n\n\n\nUnderfitting\n\n\n\n\nModel too simple\nHigh bias\nMisses important patterns\nPoor performance everywhere\n\n\n\n\n\n\n\n\n\n\nOverfitting\n\n\n\n\nModel too complex\nHigh variance\n\nMemorizes noise\nGreat on training, poor on testing\n\n\n\n\n\n\n\n\n\n\n\nThe Solution\n\n\n\nMeasuring model performance on training data is unreliable - we need cross-validation."
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#what-is-loess",
+    "href": "Lecture_Folder/Week10a.html#what-is-loess",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "What is LOESS?",
+    "text": "What is LOESS?\n\nLOESS = LOcally wEighted Scatterplot Smoothing\nAlso known as LOWESS (locally weighted regression)\nNon-parametric regression method\nIt fits local regressions to subsets of the data\nEach local fit is weighted using a kernel function\nOne popular kernel: the tricube weighting function"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#the-big-picture",
+    "href": "Lecture_Folder/Week10a.html#the-big-picture",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "The Big Picture",
+    "text": "The Big Picture\n\n\n\n\n\n\n\n\n\n\n\n\n\nLinear regression assumes a straight line relationship\n\n\nLOESS discovers the underlying pattern without assumptions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#historical-context",
+    "href": "Lecture_Folder/Week10a.html#historical-context",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Historical Context",
+    "text": "Historical Context\n\nBuilt on earlier work:\n\nKernel regression methods\nk-nearest neighbor approaches\nLocal polynomial fitting\n\nPart of the “smooth” revolution in statistics"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#how-loess-works-the-intuition",
+    "href": "Lecture_Folder/Week10a.html#how-loess-works-the-intuition",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "How LOESS Works: The Intuition",
+    "text": "How LOESS Works: The Intuition\n\nFor each point where you want a prediction:\n\n\n\nFind neighbors - Identify nearby data points\nAssign weights - Closer points get higher weights\n\nFit locally - Use weighted regression on neighbors\nMake prediction - Use the local model\nRepeat - Do this for every point"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#visual-intuition",
+    "href": "Lecture_Folder/Week10a.html#visual-intuition",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Visual Intuition",
+    "text": "Visual Intuition"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#the-tricube-function",
+    "href": "Lecture_Folder/Week10a.html#the-tricube-function",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "The Tricube Function",
+    "text": "The Tricube Function\nThe tricube weight function is defined as:\n\\[\nw(x) =\n\\begin{cases}\n(1 - |x|^3)^3 & \\text{if } |x| &lt; 1 \\\\\n0 & \\text{otherwise}\n\\end{cases}\n\\]\n\nDefined on the interval \\([-1, 1]\\)\nSmooth and bell-shaped\nWeight goes to 0 smoothly at the boundary"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#tricube-weighting-function",
+    "href": "Lecture_Folder/Week10a.html#tricube-weighting-function",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Tricube Weighting Function",
+    "text": "Tricube Weighting Function"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#step-1-neighborhood-selection",
+    "href": "Lecture_Folder/Week10a.html#step-1-neighborhood-selection",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Step 1: Neighborhood Selection",
+    "text": "Step 1: Neighborhood Selection\n\nChoose a bandwidth or span parameter (α)\nTypically ranges from 0.2 to 0.8\nα = 0.5 means use 50% of data points for each local fit\nLarger α → smoother curve\nSmaller α → more flexible, follows data closely"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#step-2-distance-based-weighting",
+    "href": "Lecture_Folder/Week10a.html#step-2-distance-based-weighting",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Step 2: Distance-Based Weighting",
+    "text": "Step 2: Distance-Based Weighting\n\nPoints closer to target point get higher weights\nPoints farther away get lower weights\nWeight decreases smoothly with distance\nCreates smooth transitions between local fits"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#step-3-local-polynomial-fitting",
+    "href": "Lecture_Folder/Week10a.html#step-3-local-polynomial-fitting",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Step 3: Local Polynomial Fitting",
+    "text": "Step 3: Local Polynomial Fitting\n\nFit polynomial regression to weighted neighborhood\nUsually degree 1 (linear) or degree 2 (quadratic)\nLinear: good for straight-line segments\nQuadratic: better for curved regions\nHigher degrees rarely used (overfitting risk)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#when-to-use-loess",
+    "href": "Lecture_Folder/Week10a.html#when-to-use-loess",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "When to Use LOESS",
+    "text": "When to Use LOESS\n\n\n\n\n\n\nLOESS is Great For:\n\n\n\n\nExploratory data analysis - Understanding relationships\nNon-linear patterns - Complex curves and trends\n\nVisualization - Smooth trend lines\nFlexible modeling - When you don’t know the functional form\n\n\n\n\n\n\n\n\n\nLOESS Limitations:\n\n\n\n\nLarge datasets - Computationally intensive\nExtrapolation - Poor predictions outside data range\nHigh dimensions - Curse of dimensionality\nInference - Limited theoretical framework"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#data-generation",
+    "href": "Lecture_Folder/Week10a.html#data-generation",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Data Generation",
+    "text": "Data Generation\n\nset.seed(1)\nx &lt;- runif(1000, 0, 10)\ny &lt;- 6 - .5 * x + rnorm(1000, sd = 2)\ndf &lt;- data.frame(x, y)\n\nset.seed(1)\ndf_sample &lt;- df |&gt; slice_sample(n = 25)\n\n\n\n\n\n\n\nWhat We’re Creating\n\n\n\n\nPopulation: 1000 points with true relationship y = 6 - 0.5x + noise\nSample: 25 randomly selected points for model fitting"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#population-data-with-true-relationship",
+    "href": "Lecture_Folder/Week10a.html#population-data-with-true-relationship",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Population Data with True Relationship",
+    "text": "Population Data with True Relationship\n\nggplot(df, aes(x, y)) + \n  geom_point(color = \"lightblue\") + \n  geom_abline(slope = -.5, \n              intercept = 6,\n              color = \"blue\",\n              linewidth = 1) +\n  labs(title = \"Population Data with True Relationship\",\n       subtitle = \"Blue line shows true relationship: y = 6 - 0.5x\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#population-data-with-true-relationship-1",
+    "href": "Lecture_Folder/Week10a.html#population-data-with-true-relationship-1",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Population Data with True Relationship",
+    "text": "Population Data with True Relationship"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#sample-data-with-smooth-fit",
+    "href": "Lecture_Folder/Week10a.html#sample-data-with-smooth-fit",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Sample Data with Smooth Fit",
+    "text": "Sample Data with Smooth Fit\n\nggplot(df, aes(x, y)) + \n  geom_point(color = \"lightblue\") + \n  geom_abline(slope = -.5, \n              intercept = 6,\n              color = \"blue\",\n              linewidth = 1) +\n  geom_point(data = df_sample,\n             color = \"black\") +\n  geom_smooth(data = df_sample,\n              se = FALSE,\n              color = \"black\") +\n  labs(title = \"Sample Data with LOESS Smooth\",\n       subtitle = \"Black points: sample data, Black curve: LOESS fit\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#sample-data-with-linear-fit",
+    "href": "Lecture_Folder/Week10a.html#sample-data-with-linear-fit",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Sample Data with Linear Fit",
+    "text": "Sample Data with Linear Fit\n\nggplot(df, aes(x, y)) + \n  geom_point(color = \"lightblue\") + \n  geom_abline(slope = -.5, \n              intercept = 6,\n              color = \"blue\",\n              linewidth = 1) +\n  geom_point(data = df_sample,\n             color = \"black\") +\n  geom_smooth(data = df_sample,\n              se = FALSE,\n              method = \"lm\",\n              color = \"black\") +\n  labs(title = \"Sample Data with Linear Fit\",\n       subtitle = \"Black points: sample data, Black line: linear regression\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#section",
+    "href": "Lecture_Folder/Week10a.html#section",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "",
+    "text": "`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\nSample Data with LOESS Smooth\n\n\n\n\n\n\n\nSample Data with Linear Fit"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#model-building",
+    "href": "Lecture_Folder/Week10a.html#model-building",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Model Building",
+    "text": "Model Building\n\nmodel_linear &lt;- lm(y ~ x, data = df_sample)\nmodel_loess &lt;- loess(y ~ x, data = df_sample)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#section-1",
+    "href": "Lecture_Folder/Week10a.html#section-1",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "",
+    "text": "Linear Model Summary\n\nsummary(model_linear)\n\n\nCall:\nlm(formula = y ~ x, data = df_sample)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.5098 -1.1427 -0.1999  1.1595  4.9768 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   6.3284     1.1020   5.743 7.54e-06 ***\nx            -0.5213     0.2062  -2.528   0.0188 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.494 on 23 degrees of freedom\nMultiple R-squared:  0.2175,    Adjusted R-squared:  0.1834 \nF-statistic: 6.391 on 1 and 23 DF,  p-value: 0.01879\n\n\n\nLOESS Model Summary\n\nsummary(model_loess)\n\nCall:\nloess(formula = y ~ x, data = df_sample)\n\nNumber of Observations: 25 \nEquivalent Number of Parameters: 4.78 \nResidual Standard Error: 1.956 \nTrace of smoother matrix: 5.26  (exact)\n\nControl settings:\n  span     :  0.75 \n  degree   :  2 \n  family   :  gaussian\n  surface  :  interpolate     cell = 0.2\n  normalize:  TRUE\n parametric:  FALSE\ndrop.square:  FALSE"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#model-evaluation",
+    "href": "Lecture_Folder/Week10a.html#model-evaluation",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Model Evaluation",
+    "text": "Model Evaluation\n\n# Calculate RSS for both models\n\ndf_resid &lt;- df %&gt;% \n  mutate(linear_resid = df$y - predict(model_linear, df),\n         loess_resid = df$y - predict(model_loess, df)) %&gt;% \n  drop_na()\n\nrss_linear &lt;- sum(df_resid$linear_resid^2)\nrss_loess &lt;- sum(df_resid$loess_resid^2)\n\n\n\nLinear Model RSS: 3814.17 \n\n\nLOESS Model RSS: 6099.69 \n\n\nDifference: -2285.52\n\n\n\n\n\n\n\n\nKey Finding\n\n\n\nThe more flexible LOESS model performs worse on new data despite fitting the sample better - this is overfitting!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#the-testing-set-approach",
+    "href": "Lecture_Folder/Week10a.html#the-testing-set-approach",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "The Testing Set Approach",
+    "text": "The Testing Set Approach\n\n\n\n\n\n\n\n\nSimple Solution\n\n\n\nSplit data into training and testing sets\nProcess: 1. Train model on training set 2. Evaluate on testing set 3. Report testing performance\n\n\n\n\n\n\n\n\n\n✅ Benefits\n\n\n\n\nEasy to understand and implement\nComputationally very efficient\nClear separation of training/testing\n\n\n\n\n\n\n\n\n\n\n\n❌ Major Drawbacks\n\n\n\n\nReduced training data - Less data to learn from\nSplit dependency - Results vary based on random split\nHigh variance - Unreliable performance estimates"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#cross-validation-a-better-approach",
+    "href": "Lecture_Folder/Week10a.html#cross-validation-a-better-approach",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Cross-Validation: A Better Approach",
+    "text": "Cross-Validation: A Better Approach\n\n\n\n\n\n\nThe Cross-Validation Process\n\n\n\n\nSplit data into K folds\nTrain on K-1 folds, test on 1 fold\n\nRepeat K times (each fold gets to be the test set)\nAverage results across all folds\n\n\n\n\n\n\n\n\n\n\n\nKey Benefits\n\n\n\n\nUses all data for both training and testing\nMore reliable performance estimates\nReduces variance in results\n\n\n\n\n\n\n\n\n\n\nCommon Choices\n\n\n\n\nK = 5: Good balance of bias/variance\nK = 10: Most popular choice\nK = n: Leave-one-out (LOOCV)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#what-is-cross-validation",
+    "href": "Lecture_Folder/Week10a.html#what-is-cross-validation",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "What is Cross-Validation?",
+    "text": "What is Cross-Validation?\nCross-validation is a statistical method used to:\n\nAssess model performance on unseen data\nReduce overfitting by testing generalization\nCompare different models objectively\nEstimate prediction error more reliably\n\nThe core principle: Use part of your data for training, part for testing"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#what-is-cross-validation-1",
+    "href": "Lecture_Folder/Week10a.html#what-is-cross-validation-1",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "What is Cross-Validation?",
+    "text": "What is Cross-Validation?\nCross-validation is a statistical technique for assessing how well a model generalizes to new data by repeatedly splitting your dataset into training and testing portions.\nThe Process:\n\nSplit your data into k groups (folds)\nTrain your model on k-1 folds\n\nTest on the remaining fold\nRepeat this process k times\nAverage the results to get a robust estimate of model performance"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#key-functions-in-boot-package",
+    "href": "Lecture_Folder/Week10a.html#key-functions-in-boot-package",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Key Functions in Boot Package",
+    "text": "Key Functions in Boot Package\n\n\n\nFunction\nPurpose\n\n\n\n\ncv.glm()\nCross-validation for GLMs\n\n\nboot()\nBootstrap resampling\n\n\nboot.ci()\nBootstrap confidence intervals\n\n\ncv.glm.object\nCross-validation results object"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#types-of-cross-validation",
+    "href": "Lecture_Folder/Week10a.html#types-of-cross-validation",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Types of Cross-Validation",
+    "text": "Types of Cross-Validation\n\nLeave-One-Out (LOOCV)\nK-Fold Cross-Validation\nStratified Cross-Validation\nTime Series Cross-Validation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#leave-one-out-cross-validation-loocv",
+    "href": "Lecture_Folder/Week10a.html#leave-one-out-cross-validation-loocv",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Leave-One-Out Cross-Validation (LOOCV)",
+    "text": "Leave-One-Out Cross-Validation (LOOCV)\nConcept: Use n-1 observations for training, 1 for testing, repeat n times\n\nlibrary(boot)\n# LOOCV with cv.glm\nmodel &lt;- glm(mpg ~ hp + wt, data = mtcars)\nloocv_error &lt;- cv.glm(mtcars, model)\n\n# Extract CV error\nloocv_mse &lt;- loocv_error$delta[1]\nprint(paste(\"LOOCV MSE:\", round(loocv_mse, 3)))\n\n[1] \"LOOCV MSE: 7.703\"\n\n\nAdvantages: Uses maximum data for training Disadvantages: Computationally expensive for large datasets"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#k-fold-cross-validation",
+    "href": "Lecture_Folder/Week10a.html#k-fold-cross-validation",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "K-Fold Cross-Validation",
+    "text": "K-Fold Cross-Validation\nConcept: Divide data into K folds, use K-1 for training, 1 for testing\n\n# 10-fold cross-validation\nmodel &lt;- glm(mpg ~ hp + wt + disp, data = mtcars)\nk10_error &lt;- cv.glm(mtcars, model, K = 10)\n\nWarning in cv.glm(mtcars, model, K = 10): 'K' has been set to 11.000000\n\n# Results\ncv_mse &lt;- k10_error$delta[1]\ncv_mse_adjusted &lt;- k10_error$delta[2]  # Bias-corrected\n\nprint(paste(\"10-fold CV MSE:\", round(cv_mse, 3)))\n\n[1] \"10-fold CV MSE: 8.359\"\n\n\nCommon choices: K = 5, 10, or √n"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#practical-example-polynomial-regression",
+    "href": "Lecture_Folder/Week10a.html#practical-example-polynomial-regression",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Practical Example: Polynomial Regression",
+    "text": "Practical Example: Polynomial Regression\n\nlibrary(boot)\nlibrary(ggplot2)\n\n# Generate sample data\nset.seed(123)\nn &lt;- 100\nx &lt;- runif(n, 0, 2*pi)\ny &lt;- sin(x) + rnorm(n, 0, 0.3)\ndata &lt;- data.frame(x = x, y = y)\n\n# Test different polynomial degrees\ndegrees &lt;- 1:10\ncv_errors &lt;- numeric(length(degrees))\n\nfor(i in seq_along(degrees)) {\n  # Fit polynomial model\n  model &lt;- glm(y ~ poly(x, degrees[i]), data = data)\n  \n  # 10-fold cross-validation\n  cv_result &lt;- cv.glm(data, model, K = 10)\n  cv_errors[i] &lt;- cv_result$delta[1]\n}"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#visualizing-cv-results",
+    "href": "Lecture_Folder/Week10a.html#visualizing-cv-results",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Visualizing CV Results",
+    "text": "Visualizing CV Results\n\n# Create results data frame\nresults &lt;- data.frame(\n  degree = degrees,\n  cv_error = cv_errors\n)\n\n# Plot CV error vs polynomial degree\nggplot(results, aes(x = degree, y = cv_error)) +\n  geom_line(color = \"blue\", size = 1) +\n  geom_point(color = \"red\", size = 2) +\n  labs(title = \"Cross-Validation Error vs Polynomial Degree\",\n       x = \"Polynomial Degree\",\n       y = \"10-Fold CV Error\") +\n  theme_minimal()\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n# Find optimal degree\noptimal_degree &lt;- degrees[which.min(cv_errors)]\nprint(paste(\"Optimal polynomial degree:\", optimal_degree))\n\n[1] \"Optimal polynomial degree: 6\""
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#custom-cross-validation-function",
+    "href": "Lecture_Folder/Week10a.html#custom-cross-validation-function",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Custom Cross-Validation Function",
+    "text": "Custom Cross-Validation Function\n\n# Custom CV function for specific needs\ncustom_cv &lt;- function(data, model_formula, K = 10) {\n  n &lt;- nrow(data)\n  folds &lt;- sample(rep(1:K, length.out = n))\n  errors &lt;- numeric(K)\n  \n  for(k in 1:K) {\n    # Split data\n    train_data &lt;- data[folds != k, ]\n    test_data &lt;- data[folds == k, ]\n    \n    # Fit model on training data\n    model &lt;- lm(model_formula, data = train_data)\n    \n    # Predict on test data\n    predictions &lt;- predict(model, test_data)\n    \n    # Calculate error\n    errors[k] &lt;- mean((test_data$y - predictions)^2)\n  }\n  \n  return(list(\n    cv_error = mean(errors),\n    fold_errors = errors,\n    se = sd(errors) / sqrt(K)\n  ))\n}"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#model-comparison-example",
+    "href": "Lecture_Folder/Week10a.html#model-comparison-example",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Model Comparison Example",
+    "text": "Model Comparison Example\n\n# Compare different models\nmodels &lt;- list(\n  linear = y ~ x,\n  quadratic = y ~ x + I(x^2),\n  cubic = y ~ x + I(x^2) + I(x^3),\n  sine = y ~ sin(x) + cos(x)\n)\n\n# Perform CV for each model\ncv_results &lt;- list()\nfor(name in names(models)) {\n  model &lt;- glm(models[[name]], data = data)\n  cv_results[[name]] &lt;- cv.glm(data, model, K = 10)$delta[1]\n}\n\n# Display results\ncv_comparison &lt;- data.frame(\n  Model = names(cv_results),\n  CV_Error = unlist(cv_results)\n)\nprint(cv_comparison)\n\n              Model   CV_Error\nlinear       linear 0.31539669\nquadratic quadratic 0.33241714\ncubic         cubic 0.10240748\nsine           sine 0.08786227"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#bootstrap-cross-validation",
+    "href": "Lecture_Folder/Week10a.html#bootstrap-cross-validation",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Bootstrap Cross-Validation",
+    "text": "Bootstrap Cross-Validation\n\n# Bootstrap approach for CV\nbootstrap_cv &lt;- function(data, indices) {\n  # Sample data with replacement\n  boot_data &lt;- data[indices, ]\n  \n  # Fit model\n  model &lt;- lm(y ~ poly(x, 3), data = boot_data)\n  \n  # Predict on original data (out-of-bag prediction)\n  predictions &lt;- predict(model, data)\n  mse &lt;- mean((data$y - predictions)^2)\n  \n  return(mse)\n}\n\n# Perform bootstrap CV\nset.seed(123)\nboot_results &lt;- boot(data, bootstrap_cv, R = 1000)\n\n# Bootstrap CV estimate\nboot_cv_error &lt;- mean(boot_results$t)\nboot_cv_se &lt;- sd(boot_results$t)\n\nprint(paste(\"Bootstrap CV Error:\", round(boot_cv_error, 3), \n           \"±\", round(boot_cv_se, 3)))\n\n[1] \"Bootstrap CV Error: 0.097 ± 0.004\""
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#stratified-cross-validation",
+    "href": "Lecture_Folder/Week10a.html#stratified-cross-validation",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Stratified Cross-Validation",
+    "text": "Stratified Cross-Validation\nFor classification problems:\n\n# Example with classification\nlibrary(MASS)\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\ndata(iris)\n\n# Create stratified folds manually\ncreate_stratified_folds &lt;- function(y, K = 10) {\n  folds &lt;- vector(\"list\", K)\n  classes &lt;- unique(y)\n  \n  for(class in classes) {\n    class_indices &lt;- which(y == class)\n    class_folds &lt;- sample(rep(1:K, length.out = length(class_indices)))\n    \n    for(k in 1:K) {\n      folds[[k]] &lt;- c(folds[[k]], class_indices[class_folds == k])\n    }\n  }\n  return(folds)\n}\n\n# Use stratified folds\nfolds &lt;- create_stratified_folds(iris$Species, K = 5)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#time-series-cross-validation",
+    "href": "Lecture_Folder/Week10a.html#time-series-cross-validation",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Time Series Cross-Validation",
+    "text": "Time Series Cross-Validation\nFor temporal data:\n\n# Time series CV (forward chaining)\nts_cv &lt;- function(data, window_size, horizon = 1) {\n  n &lt;- nrow(data)\n  n_folds &lt;- n - window_size - horizon + 1\n  errors &lt;- numeric(n_folds)\n  \n  for(i in 1:n_folds) {\n    # Training window\n    train_end &lt;- window_size + i - 1\n    train_data &lt;- data[i:train_end, ]\n    \n    # Test data\n    test_start &lt;- train_end + 1\n    test_end &lt;- min(test_start + horizon - 1, n)\n    test_data &lt;- data[test_start:test_end, ]\n    \n    # Fit and predict (example with linear model)\n    model &lt;- lm(y ~ x, data = train_data)\n    pred &lt;- predict(model, test_data)\n    errors[i] &lt;- mean((test_data$y - pred)^2)\n  }\n  \n  return(mean(errors))\n}"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10a.html#advanced-nested-cross-validation",
+    "href": "Lecture_Folder/Week10a.html#advanced-nested-cross-validation",
+    "title": "Week 10a - Statistics for Bioengineering",
+    "section": "Advanced: Nested Cross-Validation",
+    "text": "Advanced: Nested Cross-Validation\nFor hyperparameter tuning:\n\n# Nested CV for model selection and evaluation\nnested_cv &lt;- function(data, param_grid, outer_K = 10, inner_K = 5) {\n  n &lt;- nrow(data)\n  outer_folds &lt;- sample(rep(1:outer_K, length.out = n))\n  outer_errors &lt;- numeric(outer_K)\n  \n  for(k in 1:outer_K) {\n    # Outer split\n    train_data &lt;- data[outer_folds != k, ]\n    test_data &lt;- data[outer_folds == k, ]\n    \n    # Inner CV for parameter selection\n    best_param &lt;- tune_parameters(train_data, param_grid, inner_K)\n    \n    # Fit final model with best parameters\n    final_model &lt;- fit_model(train_data, best_param)\n    \n    # Evaluate on outer test set\n    pred &lt;- predict(final_model, test_data)\n    outer_errors[k] &lt;- mean((test_data$y - pred)^2)\n  }\n  \n  return(list(\n    cv_error = mean(outer_errors),\n    se = sd(outer_errors) / sqrt(outer_K)\n  ))\n}"
   }
 ]
