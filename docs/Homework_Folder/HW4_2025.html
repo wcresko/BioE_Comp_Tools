@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Homeworks – BioEngineering Statistics Spring 2025</title>
+<title>BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests – BioEngineering Statistics Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f7fe251563e67c05764dc4775ff48cfc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f7fe251563e67c05764dc4775ff48cfc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">BioEngineering Statistics Spring 2025</span>
     </a>
   </div>
@@ -90,39 +90,39 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Syllabus.html"> 
+    <a class="nav-link" href="../Syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Policies.html"> 
+    <a class="nav-link" href="../Policies.html"> 
 <span class="menu-text">Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Schedule.html"> 
+    <a class="nav-link" href="../Schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Lectures.html"> 
+    <a class="nav-link" href="../Lectures.html"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Homework.html" aria-current="page"> 
+    <a class="nav-link" href="../Homework.html"> 
 <span class="menu-text">Homeworks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Software.html"> 
+    <a class="nav-link" href="../Software.html"> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Resources.html"> 
+    <a class="nav-link" href="../Resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -136,15 +136,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#directions" id="toc-directions" class="nav-link active" data-scroll-target="#directions">Directions</a></li>
+  <li><a href="#problem-4.1-logistic-regression-analysis-of-injury-risk" id="toc-problem-4.1-logistic-regression-analysis-of-injury-risk" class="nav-link" data-scroll-target="#problem-4.1-logistic-regression-analysis-of-injury-risk">Problem 4.1 : Logistic regression analysis of injury risk</a></li>
+  <li><a href="#the-study" id="toc-the-study" class="nav-link" data-scroll-target="#the-study">The Study</a></li>
+  <li><a href="#problem-4.2-random-forest-analysis-of-injury-risk" id="toc-problem-4.2-random-forest-analysis-of-injury-risk" class="nav-link" data-scroll-target="#problem-4.2-random-forest-analysis-of-injury-risk">Problem 4.2 : Random forest analysis of injury risk</a>
+  <ul class="collapse">
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><strong>Tasks</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homeworks</h1>
+<h1 class="title">BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests</h1>
 </div>
 
 
@@ -161,12 +173,81 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="./Homework_Folder/HW1_2025.html">Homework 1</a></p>
-<p><a href="./Homework_Folder/HW2_2025.html">Homework 2</a></p>
-<p><a href="./Homework_Folder/HW3_2025.html">Homework 3</a></p>
-<p><a href="./Homework_Folder/HW4_2025.html">Homework 4</a></p>
+<section id="directions" class="level2">
+<h2 class="anchored" data-anchor-id="directions">Directions</h2>
+<p><strong>Assignment:</strong> Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set studying the <strong>predictive ability of different (<code>knee_injury.csv</code>)</strong> which is a synthetic data set of various measurements and whether the participant developed a knee injury.</p>
+<p>In addition, perform at least one of these statistical analyses on <strong>the dataset that you’ve identified for your term long project</strong> depending on the nature of your data.</p>
+<p><strong>Due:</strong> Submit your work via Canvas by the end of the day (midnight) on <strong>Wednesday, June 11th.</strong> Please submit <strong>both the Quarto_md file <em>and</em> the resulting html or pdf file</strong>. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself.</p>
+</section>
+<section id="problem-4.1-logistic-regression-analysis-of-injury-risk" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4.1-logistic-regression-analysis-of-injury-risk">Problem 4.1 : Logistic regression analysis of injury risk</h2>
+</section>
+<section id="the-study" class="level2">
+<h2 class="anchored" data-anchor-id="the-study">The Study</h2>
+<p>Knee injuries are common among individuals who engage in physical activity. Understanding the risk factors contributing to such injuries is essential for developing preventative strategies. In this assignment, you will use logistic regression to model the probability of experiencing a knee injury based on physiological and lifestyle variables.</p>
+<p><strong>Dataset Description:</strong> You have been provided with a dataset (available on Canvas) containing 300 synthetic observations with the following variables:</p>
+<ul>
+<li><p><code>knee_injury</code>: Binary response variable (1 = injury occurred, 0 = no injury)</p></li>
+<li><p><code>age</code>: Age of the individual in years</p></li>
+<li><p><code>fitness_level</code>: Composite fitness score (0–100 scale)</p></li>
+<li><p><code>exercise_hours_per_week</code>: Average number of hours of physical activity per week</p></li>
+<li><p><code>metabolic_marker</code>: A standardized metabolic biomarker level (unitless)</p></li>
+<li><p><code>bmi</code>: Body Mass Index</p></li>
+<li><p><code>muscle_strength</code>: a measurement of maximum resistance</p></li>
+<li><p><code>flexibility score</code>: a scaled integrative measurement of various stretching tests</p></li>
+<li><p><code>previous injury</code>: whether the participant had a similar previous injury</p></li>
+<li><p><code>balance score</code>: a summary score of how well the individual balances on one leg</p></li>
+</ul>
+<p><strong>Tasks:</strong></p>
+<ol type="1">
+<li><p><strong>Exploratory Data Analysis</strong></p>
+<ul>
+<li><p>Summarize the distribution of each variable.</p></li>
+<li><p>Visualize relationships between each predictor and the injury outcome.</p></li>
+</ul></li>
+<li><p><strong>Model Building</strong></p>
+<ul>
+<li><p>Fit a logistic regression model to predict <code>knee_injury</code> using the other variables.</p></li>
+<li><p>Interpret the coefficients, especially in terms of odds ratios.</p></li>
+</ul></li>
+<li><p><strong>Model Evaluation</strong></p>
+<ul>
+<li>Assess model performance using appropriate metrics (e.g.&nbsp;confusion matrix).</li>
+</ul></li>
+</ol>
+</section>
+<section id="problem-4.2-random-forest-analysis-of-injury-risk" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4.2-random-forest-analysis-of-injury-risk">Problem 4.2 : Random forest analysis of injury risk</h2>
+<p>Now you’re going to analyze the exact same data set using a random forest classifier using the following steps.</p>
+<section id="tasks" class="level3">
+<h3 class="anchored" data-anchor-id="tasks"><strong>Tasks</strong></h3>
+<ol type="1">
+<li><p><strong>Data Preparation</strong></p>
+<ul>
+<li><p>Load the dataset in R.</p></li>
+<li><p>Inspect the variables and perform any necessary preprocessing (e.g., scaling, handling missing values if present).</p></li>
+</ul></li>
+<li><p><strong>Model Fitting</strong></p>
+<ul>
+<li>Use the <code>randomForest</code> package to fit a random forest model predicting&nbsp;<code>knee_injury</code>.</li>
+</ul></li>
+<li><p><strong>Model Interpretation</strong></p>
+<ul>
+<li><p>Report model accuracy, confusion matrix, and OOB (out-of-bag) error estimate.</p></li>
+<li><p>Plot and interpret variable importance</p></li>
+<li><p>Identify which variables were most useful in predicting injury risk.</p></li>
+</ul></li>
+<li><p><strong>Model Evaluation</strong></p>
+<ul>
+<li><p>Use ROC analysis (<code>pROC</code>&nbsp;or&nbsp;<code>caret</code>&nbsp;packages) to evaluate model performance.</p></li>
+<li><p>Analyze performance using LOOCV and K-fold CV.</p></li>
+</ul></li>
+<li><p><strong>Compare results to a logistic regression model</strong></p></li>
+</ol>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

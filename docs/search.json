@@ -3623,7 +3623,7 @@
     "href": "Homework.html",
     "title": "Homeworks",
     "section": "",
-    "text": "Homework 1\nHomework 2\nHomework 3"
+    "text": "Homework 1\nHomework 2\nHomework 3\nHomework 4"
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html",
@@ -14334,5 +14334,54 @@
     "title": "Week 10a - Statistics for Bioengineering",
     "section": "Advanced: Nested Cross-Validation",
     "text": "Advanced: Nested Cross-Validation\nFor hyperparameter tuning:\n\n# Nested CV for model selection and evaluation\nnested_cv &lt;- function(data, param_grid, outer_K = 10, inner_K = 5) {\n  n &lt;- nrow(data)\n  outer_folds &lt;- sample(rep(1:outer_K, length.out = n))\n  outer_errors &lt;- numeric(outer_K)\n  \n  for(k in 1:outer_K) {\n    # Outer split\n    train_data &lt;- data[outer_folds != k, ]\n    test_data &lt;- data[outer_folds == k, ]\n    \n    # Inner CV for parameter selection\n    best_param &lt;- tune_parameters(train_data, param_grid, inner_K)\n    \n    # Fit final model with best parameters\n    final_model &lt;- fit_model(train_data, best_param)\n    \n    # Evaluate on outer test set\n    pred &lt;- predict(final_model, test_data)\n    outer_errors[k] &lt;- mean((test_data$y - pred)^2)\n  }\n  \n  return(list(\n    cv_error = mean(outer_errors),\n    se = sd(outer_errors) / sqrt(outer_K)\n  ))\n}"
+  },
+  {
+    "objectID": "Homework_Folder/HW4_2025.html",
+    "href": "Homework_Folder/HW4_2025.html",
+    "title": "BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set studying the predictive ability of different (knee_injury.csv) which is a synthetic data set of various measurements and whether the participant developed a knee injury.\nIn addition, perform at least one of these statistical analyses on the dataset that you’ve identified for your term long project depending on the nature of your data.\nDue: Submit your work via Canvas by the end of the day (midnight) on Wednesday, June 11th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+  },
+  {
+    "objectID": "Homework_Folder/HW4_2025.html#directions",
+    "href": "Homework_Folder/HW4_2025.html#directions",
+    "title": "BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests",
+    "section": "",
+    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set studying the predictive ability of different (knee_injury.csv) which is a synthetic data set of various measurements and whether the participant developed a knee injury.\nIn addition, perform at least one of these statistical analyses on the dataset that you’ve identified for your term long project depending on the nature of your data.\nDue: Submit your work via Canvas by the end of the day (midnight) on Wednesday, June 11th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+  },
+  {
+    "objectID": "Homework_Folder/HW4_2025.html#problem-3.1-logistic-regression-analysis-of-injury-risk",
+    "href": "Homework_Folder/HW4_2025.html#problem-3.1-logistic-regression-analysis-of-injury-risk",
+    "title": "BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests",
+    "section": "Problem 3.1 : Logistic regression analysis of injury risk",
+    "text": "Problem 3.1 : Logistic regression analysis of injury risk"
+  },
+  {
+    "objectID": "Homework_Folder/HW4_2025.html#the-study",
+    "href": "Homework_Folder/HW4_2025.html#the-study",
+    "title": "BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests",
+    "section": "The Study",
+    "text": "The Study\nKnee injuries are common among individuals who engage in physical activity. Understanding the risk factors contributing to such injuries is essential for developing preventative strategies. In this assignment, you will use logistic regression to model the probability of experiencing a knee injury based on physiological and lifestyle variables.\nDataset Description: You have been provided with a dataset (available on Canvas) containing 300 synthetic observations with the following variables:\n\nknee_injury: Binary response variable (1 = injury occurred, 0 = no injury)\nage: Age of the individual in years\nfitness_level: Composite fitness score (0–100 scale)\nexercise_hours_per_week: Average number of hours of physical activity per week\nmetabolic_marker: A standardized metabolic biomarker level (unitless)\nbmi: Body Mass Index\nmuscle_strength: a measurement of maximum resistance\nflexibility score: a scaled integrative measurement of various stretching tests\nprevious injury: whether the participant had a similar previous injury\nbalance score: a summary score of how well the individual balances on one leg\n\nTasks:\n\nExploratory Data Analysis\n\nSummarize the distribution of each variable.\nVisualize relationships between each predictor and the injury outcome.\n\nModel Building\n\nFit a logistic regression model to predict knee_injury using the other variables.\nInterpret the coefficients, especially in terms of odds ratios.\n\nModel Evaluation\n\nAssess model performance using appropriate metrics (e.g. confusion matrix)."
+  },
+  {
+    "objectID": "Homework_Folder/HW4_2025.html#problem-3.2-random-forest-analysis-of-injury-risk",
+    "href": "Homework_Folder/HW4_2025.html#problem-3.2-random-forest-analysis-of-injury-risk",
+    "title": "BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests",
+    "section": "Problem 3.2 : Random forest analysis of injury risk",
+    "text": "Problem 3.2 : Random forest analysis of injury risk\nNow you’re going to analyze the exact same data set using a random forest classifier using the following steps.\n\nTasks\n\nData Preparation\n\nLoad the dataset in R.\nInspect the variables and perform any necessary preprocessing (e.g., scaling, handling missing values if present).\n\nModel Fitting\n\nUse the randomForest package to fit a random forest model predicting knee_injury.\n\nModel Interpretation\n\nReport model accuracy, confusion matrix, and OOB (out-of-bag) error estimate.\nPlot and interpret variable importance\nIdentify which variables were most useful in predicting injury risk.\n\nModel Evaluation\n\nUse ROC analysis (pROC or caret packages) to evaluate model performance.\nAnalyze performance using LOOCV and K-fold CV.\n\nCompare results to a logistic regression model"
+  },
+  {
+    "objectID": "Homework_Folder/HW4_2025.html#problem-4.1-logistic-regression-analysis-of-injury-risk",
+    "href": "Homework_Folder/HW4_2025.html#problem-4.1-logistic-regression-analysis-of-injury-risk",
+    "title": "BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests",
+    "section": "Problem 4.1 : Logistic regression analysis of injury risk",
+    "text": "Problem 4.1 : Logistic regression analysis of injury risk"
+  },
+  {
+    "objectID": "Homework_Folder/HW4_2025.html#problem-4.2-random-forest-analysis-of-injury-risk",
+    "href": "Homework_Folder/HW4_2025.html#problem-4.2-random-forest-analysis-of-injury-risk",
+    "title": "BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests",
+    "section": "Problem 4.2 : Random forest analysis of injury risk",
+    "text": "Problem 4.2 : Random forest analysis of injury risk\nNow you’re going to analyze the exact same data set using a random forest classifier using the following steps.\n\nTasks\n\nData Preparation\n\nLoad the dataset in R.\nInspect the variables and perform any necessary preprocessing (e.g., scaling, handling missing values if present).\n\nModel Fitting\n\nUse the randomForest package to fit a random forest model predicting knee_injury.\n\nModel Interpretation\n\nReport model accuracy, confusion matrix, and OOB (out-of-bag) error estimate.\nPlot and interpret variable importance\nIdentify which variables were most useful in predicting injury risk.\n\nModel Evaluation\n\nUse ROC analysis (pROC or caret packages) to evaluate model performance.\nAnalyze performance using LOOCV and K-fold CV.\n\nCompare results to a logistic regression model"
   }
 ]

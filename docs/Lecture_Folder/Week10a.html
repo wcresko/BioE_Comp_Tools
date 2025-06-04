@@ -980,8 +980,8 @@ Common Choices
 <li><strong>Time Series Cross-Validation</strong></li>
 </ol>
 </section>
-<section id="leave-one-out-cross-validation-loocv" class="level2">
-<h2 class="anchored" data-anchor-id="leave-one-out-cross-validation-loocv">Leave-One-Out Cross-Validation (LOOCV)</h2>
+<section id="leave-one-out-cross-validation-loocv" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="leave-one-out-cross-validation-loocv">Leave-One-Out Cross-Validation (LOOCV)</h2>
 <p><strong>Concept</strong>: Use n-1 observations for training, 1 for testing, repeat n times</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
@@ -998,8 +998,8 @@ Common Choices
 </div>
 <p><strong>Advantages</strong>: Uses maximum data for training <strong>Disadvantages</strong>: Computationally expensive for large datasets</p>
 </section>
-<section id="k-fold-cross-validation" class="level2">
-<h2 class="anchored" data-anchor-id="k-fold-cross-validation">K-Fold Cross-Validation</h2>
+<section id="k-fold-cross-validation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="k-fold-cross-validation">K-Fold Cross-Validation</h2>
 <p><strong>Concept</strong>: Divide data into K folds, use K-1 for training, 1 for testing</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 10-fold cross-validation</span></span>
@@ -1019,8 +1019,8 @@ Common Choices
 </div>
 <p><strong>Common choices</strong>: K = 5, 10, or √n</p>
 </section>
-<section id="practical-example-polynomial-regression" class="level2">
-<h2 class="anchored" data-anchor-id="practical-example-polynomial-regression">Practical Example: Polynomial Regression</h2>
+<section id="practical-example-polynomial-regression" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="practical-example-polynomial-regression">Practical Example: Polynomial Regression</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -1046,8 +1046,8 @@ Common Choices
 <span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="visualizing-cv-results" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-cv-results">Visualizing CV Results</h2>
+<section id="visualizing-cv-results" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="visualizing-cv-results">Visualizing CV Results</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create results data frame</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -1082,8 +1082,8 @@ Common Choices
 </div>
 </div>
 </section>
-<section id="custom-cross-validation-function" class="level2">
-<h2 class="anchored" data-anchor-id="custom-cross-validation-function">Custom Cross-Validation Function</h2>
+<section id="custom-cross-validation-function" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="custom-cross-validation-function">Custom Cross-Validation Function</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom CV function for specific needs</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>custom_cv <span class="ot">&lt;-</span> <span class="cf">function</span>(data, model_formula, <span class="at">K =</span> <span class="dv">10</span>) {</span>
@@ -1114,8 +1114,8 @@ Common Choices
 <span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="model-comparison-example" class="level2">
-<h2 class="anchored" data-anchor-id="model-comparison-example">Model Comparison Example</h2>
+<section id="model-comparison-example" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="model-comparison-example">Model Comparison Example</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare different models</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>models <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
@@ -1147,8 +1147,8 @@ sine           sine 0.08786227</code></pre>
 </div>
 </div>
 </section>
-<section id="bootstrap-cross-validation" class="level2">
-<h2 class="anchored" data-anchor-id="bootstrap-cross-validation">Bootstrap Cross-Validation</h2>
+<section id="bootstrap-cross-validation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="bootstrap-cross-validation">Bootstrap Cross-Validation</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bootstrap approach for CV</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>bootstrap_cv <span class="ot">&lt;-</span> <span class="cf">function</span>(data, indices) {</span>
@@ -1180,8 +1180,8 @@ sine           sine 0.08786227</code></pre>
 </div>
 </div>
 </section>
-<section id="stratified-cross-validation" class="level2">
-<h2 class="anchored" data-anchor-id="stratified-cross-validation">Stratified Cross-Validation</h2>
+<section id="stratified-cross-validation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="stratified-cross-validation">Stratified Cross-Validation</h2>
 <p>For classification problems:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example with classification</span></span>
@@ -1217,8 +1217,8 @@ Attaching package: 'MASS'</code></pre>
 <span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>folds <span class="ot">&lt;-</span> <span class="fu">create_stratified_folds</span>(iris<span class="sc">$</span>Species, <span class="at">K =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="time-series-cross-validation" class="level2">
-<h2 class="anchored" data-anchor-id="time-series-cross-validation">Time Series Cross-Validation</h2>
+<section id="time-series-cross-validation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="time-series-cross-validation">Time Series Cross-Validation</h2>
 <p>For temporal data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Time series CV (forward chaining)</span></span>
@@ -1247,8 +1247,8 @@ Attaching package: 'MASS'</code></pre>
 <span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="advanced-nested-cross-validation" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-nested-cross-validation">Advanced: Nested Cross-Validation</h2>
+<section id="advanced-nested-cross-validation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="advanced-nested-cross-validation">Advanced: Nested Cross-Validation</h2>
 <p>For hyperparameter tuning:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nested CV for model selection and evaluation</span></span>
