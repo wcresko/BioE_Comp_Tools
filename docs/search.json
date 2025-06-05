@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b\nLecture_9a\nLecture_9b\nLecture_10a"
+    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b\nLecture_9a\nLecture_9b\nLecture_10a\nLecture_10b"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -14383,5 +14383,264 @@
     "title": "BioE_Stats_2025_HW4 - Classification using Logistic Regression and Random Forests",
     "section": "Problem 4.2 : Random forest analysis of injury risk",
     "text": "Problem 4.2 : Random forest analysis of injury risk\nNow you’re going to analyze the exact same data set using a random forest classifier using the following steps.\n\nTasks\n\nData Preparation\n\nLoad the dataset in R.\nInspect the variables and perform any necessary preprocessing (e.g., scaling, handling missing values if present).\n\nModel Fitting\n\nUse the randomForest package to fit a random forest model predicting knee_injury.\n\nModel Interpretation\n\nReport model accuracy, confusion matrix, and OOB (out-of-bag) error estimate.\nPlot and interpret variable importance\nIdentify which variables were most useful in predicting injury risk.\n\nModel Evaluation\n\nUse ROC analysis (pROC or caret packages) to evaluate model performance.\nAnalyze performance using LOOCV and K-fold CV.\n\nCompare results to a logistic regression model"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html",
+    "href": "Lecture_Folder/Week10b.html",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(tibble)\nlibrary(randomForest)\n\nrandomForest 4.7-1.2\nType rfNews() to see new features/changes/bug fixes.\n\nAttaching package: 'randomForest'\n\nThe following object is masked from 'package:dplyr':\n\n    combine\n\nThe following object is masked from 'package:ggplot2':\n\n    margin\n\nlibrary(rpart)\nlibrary(rpart.plot)\nlibrary(caret)\n\nLoading required package: lattice\n\nAttaching package: 'caret'\n\nThe following object is masked from 'package:purrr':\n\n    lift\n\nlibrary(pROC)\n\nType 'citation(\"pROC\")' for a citation.\n\nAttaching package: 'pROC'\n\nThe following objects are masked from 'package:stats':\n\n    cov, smooth, var\n\nlibrary(ROCR)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#todays-topics",
+    "href": "Lecture_Folder/Week10b.html#todays-topics",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Today’s Topics",
+    "text": "Today’s Topics\n\nBias-Variance tradeoff\nDecision trees and random forests\nCross-validation strategies\nROC curves and AUC analysis\nBioengineering applications"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#bias-variance-tradeoff",
+    "href": "Lecture_Folder/Week10b.html#bias-variance-tradeoff",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Bias-Variance Tradeoff",
+    "text": "Bias-Variance Tradeoff\n\\[\n\\text{Expected Test Error} = \\text{Bias}^2 + \\text{Variance} + \\text{Irreducible Error}\n\\]\n\nBias: Error from overly simple models (underfitting)\nVariance: Error from overly complex models (overfitting)\nGoal: Balance model complexity with generalization"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#strategies-to-address-the-tradeoff",
+    "href": "Lecture_Folder/Week10b.html#strategies-to-address-the-tradeoff",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Strategies to Address the Tradeoff",
+    "text": "Strategies to Address the Tradeoff\n\nRegularization (Lasso, Ridge) to constrain model complexity\nCross-validation to choose optimal model complexity\nEnsemble methods (bagging, boosting) to reduce variance\n\nThis often used with decision tree models"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#decision-trees",
+    "href": "Lecture_Folder/Week10b.html#decision-trees",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Decision Trees",
+    "text": "Decision Trees\n\nA non-parametric way to build models\nKey Characteristics:\n\nTree-like structure of decision rules\nEasy to interpret and visualize\nHandle both numerical and categorical data\nNo distributional assumptions\nCapture non-linear relationships naturally\n\nAlgorithm:\n\nRecursively split data to maximize information gain until stopping criteria are met"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#decision-tree-example",
+    "href": "Lecture_Folder/Week10b.html#decision-tree-example",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Decision tree example",
+    "text": "Decision tree example"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#introduction-to-impurity-measures",
+    "href": "Lecture_Folder/Week10b.html#introduction-to-impurity-measures",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Introduction to Impurity Measures",
+    "text": "Introduction to Impurity Measures\n\nDecision trees need to decide which features to split on\nImpurity measures help quantify how “mixed” or “pure” a dataset is\nTwo main measures: Gini Index and Entropy\nBoth measure the same concept but with different mathematical approaches"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#what-is-impurity",
+    "href": "Lecture_Folder/Week10b.html#what-is-impurity",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "What is “Impurity”?",
+    "text": "What is “Impurity”?\n\nPure Node:\n\nAll samples belong to the same class\nEasy to make predictions\nLow impurity\n\nImpure Node:\n\nSamples belong to multiple classes\nHarder to make predictions\nHigh impurity\n\nExample: If participants at a node are “injured” → pure\nIf 50% injured, 50% not → impure"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#gini-index-definition",
+    "href": "Lecture_Folder/Week10b.html#gini-index-definition",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Gini Index: Definition",
+    "text": "Gini Index: Definition\nThe Gini Index measures the probability of misclassifying a randomly chosen sample.\n\\[\\text{Gini} = 1 - \\sum_{i=1}^{c} p_i^2\\]\n\nWhere:\n\n\\(c\\) = number of classes\n\\(p_i\\) = probability of class \\(i\\)\n\nRange: 0 to 0.5 (for binary classification)\n\n0 = perfectly pure\n0.5 = maximum impurity (50-50 split)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#gini-index-examples",
+    "href": "Lecture_Folder/Week10b.html#gini-index-examples",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Gini Index: Examples",
+    "text": "Gini Index: Examples\n\nExample 1: Pure Node\n\n100 inuries, 0 not injuries\n\\(p_{injury} = 1.0, p_{not} = 0.0\\)\n\\(\\text{Gini} = 1 - (1.0^2 + 0.0^2) = 0\\)\n\nExample 2: Mixed Node\n\n\n60 injuries, 40 not injuries\n\\(p_{injury} = 0.6, p_{not} = 0.4\\)\n\\(\\text{Gini} = 1 - (0.6^2 + 0.4^2)\\)\n\\(\\text{Gini} = 1 - (0.36 + 0.16) = 0.48\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#entropy-definition",
+    "href": "Lecture_Folder/Week10b.html#entropy-definition",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Entropy: Definition",
+    "text": "Entropy: Definition\n\nEntropy measures the amount of information or surprise in the data.\n\n\\[\\text{Entropy} = -\\sum_{i=1}^{c} p_i \\log_2(p_i)\\]\n\nWhere:\n\n\\(c\\) = number of classes\n\n\\(p_i\\) = probability of class \\(i\\)\n\nRange: 0 to \\(\\log_2(c)\\)\n\n0 = perfectly pure\n1 = maximum impurity (for binary classification)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#entropy-examples",
+    "href": "Lecture_Folder/Week10b.html#entropy-examples",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Entropy: Examples",
+    "text": "Entropy: Examples\n\nExample 1: Pure Node\n\n100 injuries, 0 not injufies\n\\(p_{injury} = 1.0, p_{not} = 0.0\\)\n\\(\\text{Entropy} = -1.0 \\log_2(1.0) = 0\\)\n\nExample 2: Mixed Node\n\n60 injuries, 40 not injuries\n\\(p_{injury} = 0.6, p_{not} = 0.4\\)\n\\(\\text{Entropy} = -0.6\\log_2(0.6) - 0.4\\log_2(0.4)\\)\n\\(\\text{Entropy} = 0.44 + 0.53 = 0.97\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#gini-vs-entropy",
+    "href": "Lecture_Folder/Week10b.html#gini-vs-entropy",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Gini vs Entropy",
+    "text": "Gini vs Entropy\n\n\n\n\n\n\n\n\nAspect\nGini Index\nEntropy\n\n\n\n\nComputation\nFaster\nSlower\n\n\nRange (binary)\n0 to 0.5\n0 to 1.0\n\n\nSensitivity\nLess sensitive to changes\nMore sensitive to changes\n\n\n\nIn practice: Both usually give similar results, Gini preferred for speed."
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#information-gain",
+    "href": "Lecture_Folder/Week10b.html#information-gain",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Information Gain",
+    "text": "Information Gain\nBoth measures are used to calculate Information Gain:\n\\[\\text{Information Gain} = \\text{Impurity}_{parent} - \\sum \\frac{n_{child}}{n_{parent}} \\times \\text{Impurity}_{child}\\]\n\nDecision trees choose splits that maximize information gain\nHigher gain = better split = more homogeneous child nodes"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#practical-example",
+    "href": "Lecture_Folder/Week10b.html#practical-example",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Practical Example",
+    "text": "Practical Example\n\nDataset: 100 patients (60 injured, 40 not injured)\nBefore split:\n\nGini = \\(1 - (0.6^2 + 0.4^2) = 0.48\\)\nEntropy = \\(-0.6\\log_2(0.6) - 0.4\\log_2(0.4) = 0.97\\)\n\nAfter split on “BMI”:\n\nLeft: 50 patients (45 injured, 5 not injured)\nRight: 50 patients (15 injured, 35 not injured)\n\nCalculate weighted average impurity to find information gain!\nDo this again and again on different variables (features) to see which one provides the biggest gain"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#calculations-after-split",
+    "href": "Lecture_Folder/Week10b.html#calculations-after-split",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Calculations After Split",
+    "text": "Calculations After Split\n\nLeft Node (50 patients: 45 injured, 5 not injured)\n\nProportions: \\(p_{injured} = 45/50 = 0.9\\), \\(p_{not\\_injured} = 5/50 = 0.1\\)\nGini Left: \\(1 - (0.9^2 + 0.1^2) = 0.18\\)\nEntropy Left: \\(-0.9\\log_2(0.9) - 0.1\\log_2(0.1) = 0.469\\)\n\nRight Node (50 patients: 15 injured, 35 not injured)\n\nProportions: \\(p_{injured} = 15/50 = 0.3\\), \\(p_{not\\_injured} = 35/50 = 0.7\\)\nGini Right: \\(1 - (0.3^2 + 0.7^2) = 0.42\\)\nEntropy Right: \\(-0.3\\log_2(0.3) - 0.7\\log_2(0.7) = 0.882\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#calculations-after-split-1",
+    "href": "Lecture_Folder/Week10b.html#calculations-after-split-1",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Calculations After Split",
+    "text": "Calculations After Split\n\nWeighted Average Impurity After Split\n\nWeighted Gini: \\(\\frac{50}{100} \\times 0.18 + \\frac{50}{100} \\times 0.42 = 0.09 + 0.21 = 0.30\\)\nWeighted Entropy: \\(\\frac{50}{100} \\times 0.469 + \\frac{50}{100} \\times 0.882 = 0.235 + 0.441 = 0.676\\)\n\nInformation Gain\n\nGini Information Gain: \\(0.48 - 0.30 = 0.18\\)\nEntropy Information Gain: \\(0.97 - 0.676 = 0.294\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#building-decision-trees-in-r",
+    "href": "Lecture_Folder/Week10b.html#building-decision-trees-in-r",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Building Decision Trees in R",
+    "text": "Building Decision Trees in R\n\nlibrary(rpart)\nlibrary(rpart.plot)\n\ndata(iris)\nset.seed(123)\ntrain_index &lt;- createDataPartition(iris$Species, p = 0.7, list = FALSE)\ntrain_data &lt;- iris[train_index, ]\ntest_data &lt;- iris[-train_index, ]\n\n# Build and visualize tree\ntree_model &lt;- rpart(Species ~ ., data = train_data, method = \"class\")\nrpart.plot(tree_model, type = 4, extra = 102, main = \"Iris Classification Tree\")\n\n# Evaluate performance\npredictions &lt;- predict(tree_model, test_data, type = \"class\")\nconfusionMatrix(predictions, test_data$Species)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#building-decision-trees-in-r-1",
+    "href": "Lecture_Folder/Week10b.html#building-decision-trees-in-r-1",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Building Decision Trees in R",
+    "text": "Building Decision Trees in R"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#building-decision-trees-in-r-2",
+    "href": "Lecture_Folder/Week10b.html#building-decision-trees-in-r-2",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Building Decision Trees in R",
+    "text": "Building Decision Trees in R\n\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         15          0         0\n  versicolor      0         14         2\n  virginica       0          1        13\n\nOverall Statistics\n                                         \n               Accuracy : 0.9333         \n                 95% CI : (0.8173, 0.986)\n    No Information Rate : 0.3333         \n    P-Value [Acc &gt; NIR] : &lt; 2.2e-16      \n                                         \n                  Kappa : 0.9            \n                                         \n Mcnemar's Test P-Value : NA             \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            0.9333           0.8667\nSpecificity                 1.0000            0.9333           0.9667\nPos Pred Value              1.0000            0.8750           0.9286\nNeg Pred Value              1.0000            0.9655           0.9355\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3111           0.2889\nDetection Prevalence        0.3333            0.3556           0.3111\nBalanced Accuracy           1.0000            0.9333           0.9167"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#decision-trees-pros-and-cons",
+    "href": "Lecture_Folder/Week10b.html#decision-trees-pros-and-cons",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Decision Trees: Pros and Cons",
+    "text": "Decision Trees: Pros and Cons\n\nAdvantages:\n\nHighly interpretable\nNo preprocessing required\nAutomatic feature selection\nHandles interactions naturally\n\nLimitations:\n\nProne to overfitting\nHigh variance (unstable)\nBias toward features with more levels\nLimited expressiveness for linear relationships\n\nSolution: Use ensemble methods like Random Forests!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#random-forests---embrace-the-ensemble",
+    "href": "Lecture_Folder/Week10b.html#random-forests---embrace-the-ensemble",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Random Forests - Embrace the Ensemble",
+    "text": "Random Forests - Embrace the Ensemble\nKey Innovation: Combine multiple decision trees through:\n\nBootstrap sampling (bagging) for training data\nRandom feature selection at each split\nAggregate predictions (voting/averaging)\nOut-of-bag validation for built-in cross-validation\n\nResult: Reduced overfitting, improved accuracy, maintained interpretability through variable importance"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#random-forest-implementation",
+    "href": "Lecture_Folder/Week10b.html#random-forest-implementation",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Random Forest Implementation",
+    "text": "Random Forest Implementation\n\n# Classification\nrf_model &lt;- randomForest(\n  Species ~ ., \n  data = train_data,\n  ntree = 500,           # Number of trees\n  mtry = 2,              # Features per split (√p for classification)\n  importance = TRUE      # Calculate variable importance\n)\n\nprint(rf_model)\nplot(rf_model, main = \"Random Forest Error Rates\")\n\n# Variable importance\nvarImpPlot(rf_model, main = \"Variable Importance\")\nimportance(rf_model)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#random-forest-implementation-1",
+    "href": "Lecture_Folder/Week10b.html#random-forest-implementation-1",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Random Forest Implementation",
+    "text": "Random Forest Implementation\n\n\n\nCall:\n randomForest(formula = Species ~ ., data = train_data, ntree = 500,      mtry = 2, importance = TRUE) \n               Type of random forest: classification\n                     Number of trees: 500\nNo. of variables tried at each split: 2\n\n        OOB estimate of  error rate: 4.76%\nConfusion matrix:\n           setosa versicolor virginica class.error\nsetosa         35          0         0  0.00000000\nversicolor      0         33         2  0.05714286\nvirginica       0          3        32  0.08571429\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                setosa versicolor virginica MeanDecreaseAccuracy\nSepal.Length  7.147216   9.184321  8.580944            11.835818\nSepal.Width   4.447419   2.125054  5.530193             6.303784\nPetal.Length 21.678714  28.332242 26.876953            32.361134\nPetal.Width  22.023943  28.785681 31.409603            32.888441\n             MeanDecreaseGini\nSepal.Length         8.202889\nSepal.Width          1.463770\nPetal.Length        28.830718\nPetal.Width         30.736584"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#hyperparameter-tuning-with-cross-validation",
+    "href": "Lecture_Folder/Week10b.html#hyperparameter-tuning-with-cross-validation",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Hyperparameter Tuning with Cross-Validation",
+    "text": "Hyperparameter Tuning with Cross-Validation\n\n# Define parameter grid\nrf_grid &lt;- expand.grid(mtry = c(1, 2, 3, 4))\n\n# Cross-validation setup\nctrl &lt;- trainControl(\n  method = \"repeatedcv\",\n  number = 5,\n  repeats = 3,\n  savePredictions = TRUE,\n  classProbs = TRUE\n)\n\n# Train with tuning\nrf_tuned &lt;- train(\n  Species ~ .,\n  data = train_data,\n  method = \"rf\",\n  tuneGrid = rf_grid,\n  trControl = ctrl,\n  ntree = 300\n)\n\nplot(rf_tuned)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#hyperparameter-tuning-with-cross-validation-1",
+    "href": "Lecture_Folder/Week10b.html#hyperparameter-tuning-with-cross-validation-1",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Hyperparameter Tuning with Cross-Validation",
+    "text": "Hyperparameter Tuning with Cross-Validation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#cross-validation-beyond-built-in-oob",
+    "href": "Lecture_Folder/Week10b.html#cross-validation-beyond-built-in-oob",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Cross-Validation: Beyond Built-in OOB",
+    "text": "Cross-Validation: Beyond Built-in OOB\n\nWhy Cross-Validation for Random Forests?\n\nMore reliable performance estimates\nFair comparison with other algorithms\nHyperparameter optimization\nNested CV for unbiased evaluation\n\nMethods:\n\nK-fold CV: Split into k folds, train on k-1, test on 1\nStratified CV: Maintains class proportions\nRepeated CV: Multiple rounds for stability"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#biomedical-case-study-knee-injury-prediction",
+    "href": "Lecture_Folder/Week10b.html#biomedical-case-study-knee-injury-prediction",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Biomedical Case Study: Knee Injury Prediction",
+    "text": "Biomedical Case Study: Knee Injury Prediction\nContext: Early identification of injury risk factors\n\n# Load and prepare data\ndata &lt;- read.csv(\"data/knee_injury.csv\")\ndata$knee_injury &lt;- as.factor(data$knee_injury)\n\n# Train Random Forest with CV\nset.seed(123)\ntrain_control &lt;- trainControl(\n  method = \"cv\",\n  number = 10,\n  classProbs = FALSE,  # Set to FALSE\n  summaryFunction = defaultSummary  # Use default instead of twoClassSummary\n)\n\nrf_knee &lt;- train(\n  knee_injury ~ .,\n  data = data,\n  method = \"rf\",\n  trControl = train_control,\n  metric = \"Accuracy\",  # Change metric since no ROC without probabilities\n  importance = TRUE\n)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#clinical-interpretation-variable-importance",
+    "href": "Lecture_Folder/Week10b.html#clinical-interpretation-variable-importance",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Clinical Interpretation: Variable Importance",
+    "text": "Clinical Interpretation: Variable Importance\n\n# Extract and visualize importance\nimportance_scores &lt;- varImp(rf_knee)\nplot(importance_scores, main = \"Risk Factors for Knee Injury\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#clinical-interpretation-variable-importance-1",
+    "href": "Lecture_Folder/Week10b.html#clinical-interpretation-variable-importance-1",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Clinical Interpretation: Variable Importance",
+    "text": "Clinical Interpretation: Variable Importance"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#model-evaluation-roc-curves-and-auc",
+    "href": "Lecture_Folder/Week10b.html#model-evaluation-roc-curves-and-auc",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Model Evaluation: ROC Curves and AUC",
+    "text": "Model Evaluation: ROC Curves and AUC\n\nROC Curve: Plots True Positive Rate vs False Positive Rate across all classification thresholds\nKey Metrics:\n\nSensitivity (TPR): \\(\\frac{TP}{TP + FN}\\) - How well we catch positive cases\nSpecificity (TNR): \\(\\frac{TN}{TN + FP}\\) - How well we avoid false alarms\nAUC: Area under ROC curve - Overall discriminative ability\nAUC Range: 0 to 1 (higher is better)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#mathematical-foundation",
+    "href": "Lecture_Folder/Week10b.html#mathematical-foundation",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Mathematical Foundation",
+    "text": "Mathematical Foundation\nFor discrete points \\((x_i, y_i)\\) on the ROC curve:\n\\[AUC = \\sum_{i=1}^{n-1} \\frac{1}{2}(x_{i+1} - x_i)(y_i + y_{i+1})\\]\n\nWhere:\n\n\\(x_i\\) = FPR at threshold \\(i\\)\n\\(y_i\\) = TPR at threshold \\(i\\)\nPoints are sorted by increasing FPR"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#auc-interpretation",
+    "href": "Lecture_Folder/Week10b.html#auc-interpretation",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "AUC interpretation",
+    "text": "AUC interpretation\n\nAUC = 0.5: Random guessing\nAUC = 0.7-0.8: Acceptable\nAUC = 0.8-0.9: Excellent\nAUC &gt; 0.9: Outstanding (check for overfitting)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#calculation-in-r",
+    "href": "Lecture_Folder/Week10b.html#calculation-in-r",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Calculation in R",
+    "text": "Calculation in R\n\n# Load required libraries\nlibrary(ROCR)\nlibrary(pROC)\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Set seed for reproducibility\nset.seed(42)\n\n# Generate sample data\nn &lt;- 1000\nx1 &lt;- rnorm(n)\nx2 &lt;- rnorm(n)\n# Create binary outcome with some relationship to predictors\ny &lt;- rbinom(n, 1, plogis(0.5 * x1 + 0.3 * x2 + rnorm(n, 0, 0.5)))\n\n# Split data\ntrain_idx &lt;- sample(1:n, 0.7 * n)\ntrain_data &lt;- data.frame(x1 = x1[train_idx], x2 = x2[train_idx], y = y[train_idx])\ntest_data &lt;- data.frame(x1 = x1[-train_idx], x2 = x2[-train_idx], y = y[-train_idx])\n\n# Fit logistic regression\nmodel &lt;- glm(y ~ x1 + x2, data = train_data, family = binomial)\n\n# Get predicted probabilities\npred_probs &lt;- predict(model, test_data, type = \"response\")\nactual &lt;- test_data$y"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#calculate-roc-curve-points",
+    "href": "Lecture_Folder/Week10b.html#calculate-roc-curve-points",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Calculate ROC Curve Points",
+    "text": "Calculate ROC Curve Points\n\n# Using ROCR package\npred_obj &lt;- prediction(pred_probs, actual)\nperf_obj &lt;- performance(pred_obj, \"tpr\", \"fpr\")\n\n# Extract TPR and FPR\nfpr &lt;- perf_obj@x.values[[1]]\ntpr &lt;- perf_obj@y.values[[1]]\nthresholds &lt;- perf_obj@alpha.values[[1]]\n\n# Calculate AUC using ROCR\nauc_rocr &lt;- performance(pred_obj, \"auc\")@y.values[[1]]\n\n# Alternative using pROC package\nroc_obj &lt;- roc(actual, pred_probs, quiet = TRUE)\nauc_proc &lt;- auc(roc_obj)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#visualization",
+    "href": "Lecture_Folder/Week10b.html#visualization",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "Visualization",
+    "text": "Visualization\n\n# Create comprehensive visualization\nlibrary(gridExtra)\n\n\nAttaching package: 'gridExtra'\n\n\nThe following object is masked from 'package:randomForest':\n\n    combine\n\n\nThe following object is masked from 'package:dplyr':\n\n    combine\n\n# ROC Curve plot\nroc_data &lt;- data.frame(FPR = fpr, TPR = tpr)\n\np1 &lt;- ggplot(roc_data, aes(x = FPR, y = TPR)) +\n  geom_ribbon(aes(ymin = 0, ymax = TPR), alpha = 0.3, fill = \"blue\") +\n  geom_line(color = \"darkorange\", size = 1.2) +\n  geom_abline(intercept = 0, slope = 1, linetype = \"dashed\", color = \"gray\") +\n  labs(title = paste(\"ROC Curve (AUC =\", round(auc_rocr, 4), \")\"),\n       x = \"False Positive Rate\", y = \"True Positive Rate\") +\n  theme_minimal() +\n  coord_fixed()\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n# Distribution of predicted probabilities\nprob_data &lt;- data.frame(\n  Probability = pred_probs,\n  Actual = factor(actual, labels = c(\"Negative\", \"Positive\"))\n)\n\np2 &lt;- ggplot(prob_data, aes(x = Probability, fill = Actual)) +\n  geom_histogram(alpha = 0.7, bins = 30, position = \"identity\") +\n  labs(title = \"Distribution of Predicted Probabilities\",\n       x = \"Predicted Probability\", y = \"Count\") +\n  theme_minimal() +\n  scale_fill_manual(values = c(\"red\", \"blue\"))\n\ngrid.arrange(p1, p2, ncol = 2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week10b.html#when-to-use-each-method",
+    "href": "Lecture_Folder/Week10b.html#when-to-use-each-method",
+    "title": "Week 10b - Statistics for Bioengineering",
+    "section": "When to Use Each Method",
+    "text": "When to Use Each Method\n\n\n\n\n\n\n\n\nMethod\nBest For\nLimitations\n\n\n\n\nLogistic Regression\nLinear relationships, inference needs, regulatory requirements\nAssumes linearity, manual interaction terms\n\n\nDecision Trees\nHigh interpretability needs, small datasets, understanding interactions\nOverfitting, instability\n\n\nRandom Forest\nPrediction accuracy, complex patterns, robust performance\nLess interpretable, computational cost"
   }
 ]

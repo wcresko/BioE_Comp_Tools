@@ -627,7 +627,7 @@ print(paste("LOOCV MSE:", round(loocv_mse, 3)))
 
 **Advantages**: Uses maximum data for training **Disadvantages**: Computationally expensive for large datasets
 
-## K-Fold Cross-Validation  {.smaller}
+## K-Fold Cross-Validation {.smaller}
 
 **Concept**: Divide data into K folds, use K-1 for training, 1 for testing
 
@@ -646,7 +646,7 @@ print(paste("10-fold CV MSE:", round(cv_mse, 3)))
 
 **Common choices**: K = 5, 10, or √n
 
-## Practical Example: Polynomial Regression  {.smaller}
+## Practical Example: Polynomial Regression {.smaller}
 
 ```{r}
 #| echo: true
@@ -674,7 +674,7 @@ for(i in seq_along(degrees)) {
 }
 ```
 
-## Visualizing CV Results  {.smaller}
+## Visualizing CV Results {.smaller}
 
 ```{r}
 #| echo: true
@@ -698,7 +698,7 @@ optimal_degree <- degrees[which.min(cv_errors)]
 print(paste("Optimal polynomial degree:", optimal_degree))
 ```
 
-## Custom Cross-Validation Function  {.smaller}
+## Custom Cross-Validation Function {.smaller}
 
 ```{r}
 #| echo: true
@@ -731,7 +731,7 @@ custom_cv <- function(data, model_formula, K = 10) {
 }
 ```
 
-## Model Comparison Example  {.smaller}
+## Model Comparison Example {.smaller}
 
 ```{r}
 #| echo: true
@@ -758,7 +758,7 @@ cv_comparison <- data.frame(
 print(cv_comparison)
 ```
 
-## Bootstrap Cross-Validation  {.smaller}
+## Bootstrap Cross-Validation {.smaller}
 
 ```{r}
 #| echo: true
@@ -789,7 +789,7 @@ print(paste("Bootstrap CV Error:", round(boot_cv_error, 3),
            "±", round(boot_cv_se, 3)))
 ```
 
-## Stratified Cross-Validation  {.smaller}
+## Stratified Cross-Validation {.smaller}
 
 For classification problems:
 
@@ -819,7 +819,7 @@ create_stratified_folds <- function(y, K = 10) {
 folds <- create_stratified_folds(iris$Species, K = 5)
 ```
 
-## Time Series Cross-Validation  {.smaller}
+## Time Series Cross-Validation {.smaller}
 
 For temporal data:
 
@@ -851,7 +851,7 @@ ts_cv <- function(data, window_size, horizon = 1) {
 }
 ```
 
-## Advanced: Nested Cross-Validation  {.smaller}
+## Advanced: Nested Cross-Validation {.smaller}
 
 For hyperparameter tuning:
 
