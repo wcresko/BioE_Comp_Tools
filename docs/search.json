@@ -3623,7 +3623,7 @@
     "href": "Homework.html",
     "title": "Homeworks",
     "section": "",
-    "text": "Homework 1\nHomework 2\nHomework 3\nHomework 4"
+    "text": "Homework 1\nHomework 2\nHomework 3\nHomework 4\nTerm Project"
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html",
@@ -14642,5 +14642,19 @@
     "title": "Week 10b - Statistics for Bioengineering",
     "section": "When to Use Each Method",
     "text": "When to Use Each Method\n\n\n\n\n\n\n\n\nMethod\nBest For\nLimitations\n\n\n\n\nLogistic Regression\nLinear relationships, inference needs, regulatory requirements\nAssumes linearity, manual interaction terms\n\n\nDecision Trees\nHigh interpretability needs, small datasets, understanding interactions\nOverfitting, instability\n\n\nRandom Forest\nPrediction accuracy, complex patterns, robust performance\nLess interpretable, computational cost"
+  },
+  {
+    "objectID": "Homework_Folder/Term_Project.html",
+    "href": "Homework_Folder/Term_Project.html",
+    "title": "Term Long Project - Pulling it All Together",
+    "section": "",
+    "text": "Assignment:\nPull together all of the activities that you performed on your own data that you’ve chosen to analyze throughout the term in association with each homework set and put it into one complete Markdown document that can be rendered.\nIn addition to packaging these previous analyses together, you can also perform any additional visualizations and analyses that make sense. Lastly, add some interpretive writing that explains the nature of your data, the types of analyses you performed at each step, your outcomes or findings from each, and the conclusions that you might draw from each finding.\nThe overall goal is to create something like a report to share with a collaborator or your PI, or should your work be far enough along the skeleton of a manuscript that can submitted for subsequent publication.\nDue: Submit your work via Canvas by the end of the day (midnight) on Friday, June 13th. Please submit both the Quarto_md file and the resulting html or pdf file."
+  },
+  {
+    "objectID": "Homework_Folder/Term_Project.html#directions",
+    "href": "Homework_Folder/Term_Project.html#directions",
+    "title": "Term Long Project - Pulling it All Together",
+    "section": "",
+    "text": "Assignment:\nPull together all of the activities that you performed on your own data that you’ve chosen to analyze throughout the term in association with each homework set and put it into one complete Markdown document that can be rendered.\nIn addition to packaging these previous analyses together, you can also perform any additional visualizations and analyses that make sense. Lastly, add some interpretive writing that explains the nature of your data, the types of analyses you performed at each step, your outcomes or findings from each, and the conclusions that you might draw from each finding.\nThe overall goal is to create something like a report to share with a collaborator or your PI, or should your work be far enough along the skeleton of a manuscript that can submitted for subsequent publication.\nDue: Submit your work via Canvas by the end of the day (midnight) on Friday, June 13th. Please submit both the Quarto_md file and the resulting html or pdf file."
   }
 ]
