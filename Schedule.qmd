@@ -21,30 +21,30 @@ title: "Schedule"
 
 ## Course schedule
 
-+----------+-------------+---------------------------------------+----------------------------+
-| Week     | Dates       | Topics                                | Assignments                |
-+:========:+=============+=======================================+:==========================:+
-| 1        | October 20  | -   Unix & shell commands             |                            |
-|          |             | -   R scripts & reproducible analysis |                            |
-|          |             | -   Use of GenAI                      |                            |
-|          |             | -   Tidy data and data wrangling      |                            |
-|          |             | -   Git, GitHub & Markdown            |                            |
-+----------+-------------+---------------------------------------+----------------------------+
-| 2        | October 27  | -   Exploratory data analysis         |                            |
-|          |             | -   Data visualization                |                            |
-+----------+-------------+---------------------------------------+----------------------------+
-| 3        | November 3  | -   xxx                               | HW1 Due                    |
-+----------+-------------+---------------------------------------+----------------------------+
-| 4        | November 10 | -   xxx                               |                            |
-+----------+-------------+---------------------------------------+----------------------------+
-| 5        | November 17 | -   xxx                               | HW2 Due                    |
-+----------+-------------+---------------------------------------+----------------------------+
-| 6        | November 24 | -   xxx                               |                            |
-+----------+-------------+---------------------------------------+----------------------------+
-| 7        | December 1  | -   xxx                               | HW3 Due                    |
-+----------+-------------+---------------------------------------+----------------------------+
-|          | December 8  | FINALS WEEK                           | Project Due                |
-+----------+-------------+---------------------------------------+----------------------------+
++------------+-------------+---------------------------------------+----------------+
+| Week       | Dates       | Topics                                | Assignments    |
++:==========:+=============+=======================================+:==============:+
+| 1          | October 20  | -   Unix & shell commands             |                |
+|            |             | -   R scripts & reproducible analysis |                |
+|            |             | -   Use of GenAI                      |                |
+|            |             | -   Tidy data and data wrangling      |                |
+|            |             | -   Git, GitHub & Markdown            |                |
++------------+-------------+---------------------------------------+----------------+
+| 2          | October 27  | -   Exploratory data analysis         |                |
+|            |             | -   Data visualization                |                |
++------------+-------------+---------------------------------------+----------------+
+| 3          | November 3  | -   xxx                               | HW1 Due        |
++------------+-------------+---------------------------------------+----------------+
+| 4          | November 10 | -   xxx                               |                |
++------------+-------------+---------------------------------------+----------------+
+| 5          | November 17 | -   xxx                               | HW2 Due        |
++------------+-------------+---------------------------------------+----------------+
+| 6          | November 24 | -   xxx                               |                |
++------------+-------------+---------------------------------------+----------------+
+| 7          | December 1  | -   xxx                               | HW3 Due        |
++------------+-------------+---------------------------------------+----------------+
+|            | December 8  | FINALS WEEK                           | Project Due    |
++------------+-------------+---------------------------------------+----------------+
 
 ## Proposed Scientific Computation Course Topics
 
@@ -86,3 +86,8 @@ title: "Schedule"
 |          |     -   Slurm scripts for big jobs                                                                                                  |
 |          |     -   Other remote systems such as AWS Azure                                                                                      |
 +----------+-------------------------------------------------------------------------------------------------------------------------------------+
+
+History of computers; General computing, Transistors to computers, laptop components, operating systems, file systems and project organization, local vs. cloud storage, interfaces, command line, internet history, safety - malware and passwords, AI how it works and best practices
+
+
+Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases.
