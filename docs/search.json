@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Computational Tools for Bioengineers 2025",
     "section": "",
-    "text": "I created this course website using Quarto. To learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources. Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases.\nI created this course website using Quarto. To learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "about.html",
