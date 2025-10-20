@@ -13,6 +13,7 @@ title: "Schedule"
 ### *Tools*
 
 -   You will be working on your own laptop computer
+-   A Terminal application (see 'Software' Tab for installation)
 -   Latest version of R ([install here](https://www.r-project.org))
 -   Latest version of RStudio ([install here](https://www.rstudio.org))
 -   A terminal that allows ssh connection to the UO computing cluster (Talapas)
@@ -21,72 +22,51 @@ title: "Schedule"
 
 ## Course schedule
 
-+------------+-------------+---------------------------------------+-------------+
-| Week       | Dates       | Topics                                | Assignments |
-+:==========:+=============+=======================================+:===========:+
-| 1          | October 20  | -   Unix & shell commands             |             |
-|            |             | -   R scripts & reproducible analysis |             |
-|            |             | -   Use of GenAI                      |             |
-|            |             | -   Tidy data and data wrangling      |             |
-|            |             | -   Git, GitHub & Markdown            |             |
-+------------+-------------+---------------------------------------+-------------+
-| 2          | October 27  | -   Exploratory data analysis         |             |
-|            |             | -   Data visualization                |             |
-+------------+-------------+---------------------------------------+-------------+
-| 3          | November 3  | -   xxx                               |             |
-+------------+-------------+---------------------------------------+-------------+
-| 4          | November 10 | -   xxx                               | HW1 Due     |
-+------------+-------------+---------------------------------------+-------------+
-| 5          | November 17 | -   xxx                               |             |
-+------------+-------------+---------------------------------------+-------------+
-| 6          | November 24 | -   xxx                               | HW2 Due     |
-+------------+-------------+---------------------------------------+-------------+
-| 7          | December 1  | -   xxx                               |             |
-+------------+-------------+---------------------------------------+-------------+
-|            | December 8  | FINALS WEEK                           | Project Due |
-+------------+-------------+---------------------------------------+-------------+
-
-## Proposed Scientific Computation Course Topics
-
-+----------+-------------------------------------------------------------------------------------------------------------------------------------+
-| Session  | Topics                                                                                                                              |
-+:========:+=====================================================================================================================================+
-| 1        | -   Computers and data                                                                                                              |
-|          |                                                                                                                                     |
-|          |     -   CPUs, GPUs, storage                                                                                                         |
-|          |     -   Fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.   |
-|          |     -   Unix, paths & shell commands including GREP, AWK and SED                                                                    |
-|          |     -   Basics of data structures, databases and tidy dataProperly organize and format primary data and metadata files for analysis |
-|          |                                                                                                                                     |
-|          | -   Integrative developer environments (IDEs)                                                                                       |
-|          |                                                                                                                                     |
-|          |     -   Virtual Code Studio                                                                                                         |
-|          |     -   RStudio                                                                                                                     |
-|          |     -   upyter notebooks                                                                                                            |
-+----------+-------------------------------------------------------------------------------------------------------------------------------------+
-| 2-3      | -   Foundations of scripting using Python and R                                                                                     |
-|          |                                                                                                                                     |
-|          |     -   R and Python fundamentals                                                                                                   |
-|          |     -   packages and extending functionality                                                                                        |
-|          |     -   objects and object oriented programming                                                                                     |
-|          |     -   functions, iteration, and simulation                                                                                        |
-|          |     -   data wrangling                                                                                                              |
-|          |     -   Use and misuse of Generative AI as a digital assistant and 'vibe coding'                                                    |
-+----------+-------------------------------------------------------------------------------------------------------------------------------------+
-| 4        | -   Reproducible science                                                                                                            |
-|          |                                                                                                                                     |
-|          |     -   the NIH FAIR (Findable, accessible, interoperable) principles                                                               |
-|          |     -   Git and GitHub for project management and collaboration                                                                     |
-|          |     -   Markdown for use in manuscripts, presentations and websites                                                                 |
-|          |     -   Including LaTeX mathematical expressions in markdown                                                                        |
-+----------+-------------------------------------------------------------------------------------------------------------------------------------+
-| 5        | -   Remote super computing                                                                                                          |
-|          |                                                                                                                                     |
-|          |     -   Utilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.                                       |
-|          |     -   Slurm scripts for big jobs                                                                                                  |
-|          |     -   Other remote systems such as AWS Azure                                                                                      |
-+----------+-------------------------------------------------------------------------------------------------------------------------------------+
-
-History of computers; General computing, Transistors to computers, laptop components, operating systems, file systems and project organization, local vs. cloud storage, interfaces, command line, internet history, safety - malware and passwords, AI how it works and best practices
-
-Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases.
++------------+-------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+| Week       | Dates       | Topics                                                                                                                            | Assignments |
++:==========:+=============+===================================================================================================================================+:===========:+
+| 1          | October 20  | -   Computers and Shells - 1                                                                                                      |             |
+|            |             |     -   Fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. |             |
+|            |             |     -   Unix paths                                                                                                                |             |
+|            |             |     -   Unix shell commands                                                                                                       |             |
++------------+-------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+| 2          | October 27  | -   Computers and Shells - 2                                                                                                      |             |
+|            |             |                                                                                                                                   |             |
+|            |             |     -   Advanced Unix shell commands including GREP, AWK and SED                                                                  |             |
+|            |             |                                                                                                                                   |             |
+|            |             |     -   Unix data flows and pipes                                                                                                 |             |
+|            |             |                                                                                                                                   |             |
+|            |             |     -   Basics of data structures, databases and tidy data                                                                        |             |
+|            |             |                                                                                                                                   |             |
+|            |             |     -   Properly organized and formatted primary data and metadata files for analysis                                             |             |
++------------+-------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+| 3          | November 3  | -   Foundations of scripting using Python and R - 1                                                                               |             |
+|            |             |                                                                                                                                   |             |
+|            |             |     -   R and Python fundamentals                                                                                                 |             |
+|            |             |     -   Integrative developer environments (IDEs)                                                                                 |             |
+|            |             |     -   packages and extending functionality                                                                                      |             |
+|            |             |     -   objects and object oriented programming                                                                                   |             |
++------------+-------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+| 4          | November 10 | -   Foundations of scripting using Python and R - 2                                                                               | HW1 Due     |
+|            |             |                                                                                                                                   |             |
+|            |             |     -   functions, iteration, and simulation                                                                                      |             |
+|            |             |     -   data wrangling                                                                                                            |             |
+|            |             |     -   creating figures                                                                                                          |             |
+|            |             |     -   Use and misuse of Generative AI as a digital assistant                                                                    |             |
+|            |             |     -   'vibe coding'                                                                                                             |             |
++------------+-------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+| 5          | November 17 | -   Reproducible science                                                                                                          |             |
+|            |             |     -   the NIH FAIR (Findable, accessible, interoperable) principles                                                             |             |
+|            |             |     -   Git and GitHub for project management and collaboration                                                                   |             |
+|            |             |     -   Markdown for use in manuscripts, presentations and websites                                                               |             |
+|            |             |     -   Including LaTeX mathematical expressions in markdown                                                                      |             |
++------------+-------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+| 6          | November 24 | -   Remote super computing - 1                                                                                                    | HW2 Due     |
+|            |             |     -   Utilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.                                     |             |
++------------+-------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+| 7          | December 1  | -   Remote super computing - 2                                                                                                    |             |
+|            |             |     -   Slurm scripts for big jobs                                                                                                |             |
+|            |             |     -   Other remote systems such as AWS Azure                                                                                    |             |
++------------+-------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+|            | December 8  | FINALS WEEK                                                                                                                       | Project Due |
++------------+-------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+

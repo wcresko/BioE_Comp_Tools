@@ -18,12 +18,12 @@ title: "About"
 
 ## Class information
 
-|                      |                     |
-|----------------------|---------------------|
-| Class times          | Monday 2:30 to 3:50 |
-| Class room           | KC108               |
-| Office Hours         | Tuesday 3 to 4      |
-| Office hour location | TBD                 |
+|                      |                      |
+|----------------------|----------------------|
+| Class times          | Monday 2:30 to 3:50  |
+| Class room           | KC108                |
+| Office Hours         | Tuesday 3:00 to 4:00 |
+| Office hour location | KC Connector         |
 
 ## Online Course Resources
 
@@ -36,6 +36,7 @@ title: "About"
 
 -   You will be working on your own laptop computer.
 -   If you would like to borrow a laptop let me know.
+-   If you are working on Windows you need to install WSL2 via PowerShell (see Software page)
 -   Latest version of R ([install here](https://www.r-project.org)).
 -   Latest version of RStudio ([install here](https://www.rstudio.org)).
 -   A terminal that allows ssh connection to the UO computing cluster (Talapas).

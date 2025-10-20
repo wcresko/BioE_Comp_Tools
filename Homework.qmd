@@ -2,6 +2,8 @@
 title: "Homeworks"
 ---
 
+Below you can find links to the homework directions as they become available. You will be able to submit your homework via the Canvas website.
+
 [Homework 1](Homework_Folder/HW1_2025.qmd)
 
 [Homework 2](Homework_Folder/HW2_2025.qmd)
