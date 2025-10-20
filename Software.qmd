@@ -1,6 +1,7 @@
 ---
 title: "Software"
 ---
+
 ## Software tools to install
 
 -   Latest version of R
@@ -39,9 +40,9 @@ title: "Software"
 
 ## Git and GitHub
 
-- Lastest version of Git ([install here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
-- A GitHub account ([information here](https://github.com/signup))
+-   Lastest version of Git ([install here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git))
+-   A GitHub account ([information here](https://github.com/signup))
 
 ## LaTeX
 
-- Lastest version of LaTeX ([install here](https://www.latex-project.org/get/))
+-   Lastest version of LaTeX ([install here](https://www.latex-project.org/get/))

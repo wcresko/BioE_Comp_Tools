@@ -4,21 +4,21 @@
     "href": "index.html",
     "title": "Computational Tools for Bioengineers 2025",
     "section": "",
-    "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources. Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases.\nI created this course website using Quarto. To learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Welcome to the website for BioE610 - Statistics for Bioengineers.\nBelow you will find the core information for the course.\nMore detailed information can be found under the ‘Syllabus’ and ‘Policies’ links.\nThe course schedule can be found under the ‘Schedule’ header.\nI will be posting the lectures after each class under the ‘Lectures’ header.\nAdditional resources for the class will gradually accrue under the ‘Resources’ Header."
+    "text": "Welcome to the website for BioE610 - Computational Tools for Bioengineers.\nBelow you will find the core information for the course.\nMore detailed information can be found under the ‘Syllabus’ and ‘Policies’ links.\nThe course schedule can be found under the ‘Schedule’ header.\nI will be posting the lectures after each class under the ‘Lectures’ header."
   },
   {
     "objectID": "Syllabus.html",
     "href": "Syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "This course in an introduction to data management, data visualization and statistical inference that is intended for early-stage bioengineering and bioscience graduate students with no background in statistics. This is a practical course with a foundation of conceptual intuition matched with hands-on coding each week. The primary objective of the course is to provide foundational training in the organization, manipulation, visualization, and analysis of data, using the R statistical language in a reproducible manner. After this course students will be able to analyze their own data sets with confidence using reasonable approaches, and to provide a foundation for more advanced courses in statistics, data science and machine learning. The course is designed to primarily for the analysis of univariate (single response variable) data. For students interested in multivariate analysis, other courses in Department of Data Science are available. Examples and assignments in class will largely be drawn from bioengineering and the life sciences."
+    "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources. Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases."
   },
   {
     "objectID": "Lecture_1.html",
@@ -46,7 +46,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1a\nLecture_1b\nLecture_2a\nLecture_2b\nLecture_3a\nLecture_3b\nLecture_4a\nLecture_4b\nLecture_5a\nLecture_5b\nLecture_6a\nLecture_6b\nLecture_7a\nLecture_7b\nLecture_8a\nLecture_8b\nLecture_9a\nLecture_9b\nLecture_10a\nLecture_10b"
+    "text": "Lecture_1"
   },
   {
     "objectID": "Lecture_Folder/Lecture_1.html",
@@ -109,7 +109,7 @@
     "href": "about.html#class-information",
     "title": "About",
     "section": "Class information",
-    "text": "Class information\n\n\n\nClass times\nTuesday/Thursday 4:00 to 5:50\n\n\nClass room\nKC158\n\n\nOffice Hours\nMonday 3:30 to 4:30\n\n\nOffice hour location\nTBD"
+    "text": "Class information\n\n\n\nClass times\nMonday 2:30 to 3:50\n\n\nClass room\nKC108\n\n\nOffice Hours\nTuesday 3 to 4\n\n\nOffice hour location\nTBD"
   },
   {
     "objectID": "about.html#course-structure",
@@ -123,35 +123,35 @@
     "href": "Syllabus.html#course-description",
     "title": "Syllabus",
     "section": "",
-    "text": "This course in an introduction to data management, data visualization and statistical inference that is intended for early-stage bioengineering and bioscience graduate students with no background in statistics. This is a practical course with a foundation of conceptual intuition matched with hands-on coding each week. The primary objective of the course is to provide foundational training in the organization, manipulation, visualization, and analysis of data, using the R statistical language in a reproducible manner. After this course students will be able to analyze their own data sets with confidence using reasonable approaches, and to provide a foundation for more advanced courses in statistics, data science and machine learning. The course is designed to primarily for the analysis of univariate (single response variable) data. For students interested in multivariate analysis, other courses in Department of Data Science are available. Examples and assignments in class will largely be drawn from bioengineering and the life sciences."
+    "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources. Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases."
   },
   {
     "objectID": "Syllabus.html#course-structure",
     "href": "Syllabus.html#course-structure",
     "title": "Syllabus",
     "section": "Course Structure",
-    "text": "Course Structure\nWe will hold on Tuesdays and Thursdays from 4:00PM to 5:50PM. These meetings will be relatively informal, and will usually begin with a 30-45 min. conceptual overview of topics with R coding demonstrations. I will post all lecture slides as Markdown and HTML after class to the course website under the ‘Lectures’ tab. The remaining meeting time will be reserved for group work, questions, answers, and discussion (similar to a “recitation”, or additional “office hours”). I encourage students to work on exercises and assignments during these periods so that questions can be directly addressed as they emerge."
+    "text": "Course Structure\nWe will hold class on Mondays from 2:30 to 3:50PM. These meetings will be relatively informal, and will usually begin with a 30-45 min. conceptual overview of topics with coding demonstrations. I will post all lecture slides as Markdown and HTML after class to the course website under the ‘Lectures’ tab. The remaining meeting time will be reserved for group work, questions, answers, and discussion. I encourage students to work on exercises and assignments during these periods so that questions can be directly addressed as they emerge."
   },
   {
     "objectID": "Syllabus.html#course-objectives",
     "href": "Syllabus.html#course-objectives",
     "title": "Syllabus",
     "section": "Course Objectives",
-    "text": "Course Objectives\n\nScientific Computing Fundamentals\n\nDescribe fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nRead and write code in Unix.\nRead and write code in R using RStudio.\nProperly organize and format primary data and metadata files for analysis\nLearn programming fundamentals of the R statistical language, including objects, functions, iteration, and simulation.\nArticulate the importance of and requirements for reproducible science in bioinformatics.\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\n\nProbability and Exploratory Data Analysis\n\nDescribe the history of data analysis and statistics, particularly its eugenics origins.\nExplain probability in the context of distributions and sampling.\nDescribe the meaning of p-values, test statistics, and types of errors.\n\nStatistical Visualization\n\nProduce well-designed and informative figures in RStudio.\nMake publication-quality data visualizations, including scatterplots, boxplots, frequency distributions, mosaic plots, etc.\n\nPoint Estimation\n\nParameters and statistics\nConfidence intervals\nStatistical distributions\nT-statistics\n\nExperimental Design and Linear Models\n\nDesign experiments and clinical trials to produce the necessary types of data required to answer a given scientific question.\nUnderstand Type I and Type II statistical error, including p-values and power analysis.\nUnderstand ordinary least-squares regression and linear models in general\nLearn to apply general linear models to basic univariate analysis problems,including Analysis of Variance (ANOVA)\n\nApplication of Linear Models to Machine Learning\n\nExamining linear models as classical machine learning\nPrediction and estimation\nShrinkage and regularization\nCross-validation\n\nNonparameteric Statistics\n\nLearn nonparametric approaches to parameter estimate and statistical inference,\nincluding resampling (bootstrapping), permutation, and rank-based analysis.\nUnderstand how to analyze binary response variables and frequency-based (e.g. contingency table) data sets."
+    "text": "Course Objectives\n\nScientific Computing Fundamentals\n\nDescribe fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nRead and write code in Unix.\nRead and write code in R using RStudio.\nProperly organize and format primary data and metadata files for analysis\nLearn programming fundamentals of the R statistical language, including objects, functions, iteration, and simulation.\nArticulate the importance of and requirements for reproducible science in bioinformatics.\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\n\nStatistical Visualization\n\nProduce well-designed and informative figures in RStudio.\nMake publication-quality data visualizations, including scatterplots, boxplots, frequency distributions, mosaic plots, etc.\n\nComputers and data\n\nCPUs, GPUs, storage\nFundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nUnix, paths & shell commands including GREP, AWK and SED\nBasics of data structures, databases and tidy dataProperly organize and format primary data and metadata files for analysis\n\nIntegrative developer environments (IDEs)\n\nVirtual Code Studio\nRStudio\nupyter notebooks\n\nFoundations of scripting using Python and R\n\nR and Python fundamentals\npackages and extending functionality\nobjects and object oriented programming\nfunctions, iteration, and simulation\ndata wrangling\nUse and misuse of Generative AI as a digital assistant and ’vibe coding\n\nReproducible science\n\nthe NIH FAIR (Findable, accessible, interoperable) principles\nGit and GitHub for project management and collaboration\nMarkdown for use in manuscripts, presentations and websites\nIncluding LaTeX mathematical expressions in markdown\n\nRemote super computing\n\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\nSlurm scripts for big jobs\nOther remote systems such as AWS Azure"
   },
   {
     "objectID": "Policies.html",
     "href": "Policies.html",
     "title": "Policies",
     "section": "",
-    "text": "This is a 4-credit hour course, so you should expect to complete ~ 120 hours of work for the course—an average, or about 12 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n3-4\n\n\nPre-class reading\n4\n\n\nInformal exercises\n1\n\n\nHomework assignments\n2\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n12"
+    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course—an average, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
   },
   {
     "objectID": "Schedule.html",
     "href": "Schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "I’ve started putting together out online textbook\nHere’s a link\n\n\n\n\n\nR for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
+    "text": "I’ll soon have material in an online textbook for you\n\n\n\n\nBioinformatics Data Skills. 2015. Holmes and Huber. O’Reilly.\n\n\n\n\n\nYou will be working on your own laptop computer\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
   },
   {
     "objectID": "Resources.html",
@@ -193,7 +193,7 @@
     "href": "Syllabus.html#graded-assignments",
     "title": "Syllabus",
     "section": "Graded Assignments",
-    "text": "Graded Assignments\nProblem sets: Students will be assigned four problem sets (roughly one every 2 weeks) to complete independently. These will mostly focus on one or a few data sets each, and the goal will be for the students to organize, visualize, analyze, and interpret the data sets in light of specific scientific motivations. - 80% of grade.\nTerm project: Students will choose to analyze a dataset of their choice from their own research. The goal of this project is allow students agency in applying what they are learning in class to their own data, and to format the results in an appropriate Rmarkdown or Quarto document that can form the nucleus of a subsequent publication - 20% of grade.\nPreparing and submitting assignments: The information required to complete all in-class assignments and problem sets will be given in instructions on Canvas. Students should carefully follow the detailed instructions associated with each assignment. Students are encouraged to work together and share information. In particular, some students will have a higher skill level than others, and we encourage those students with more experience to help their peers. However, no direct sharing of code is allowed.\nPreparing and submitting assignments: Assignments will be submitted on Canvas in the form of Quarto files, with the rendered html output. Be sure to include your name on the document. Be professional – appropriately name your files, make sure they are organized, and submit only the information requested. Late assignments will not be accepted.\n\nGrading\n\n\n\nAssignment\nPercentage of Total Grade\n\n\n\n\nProblem Sets - 4 in total, 20% each\n80%\n\n\nTerm-long Projects\n20%\n\n\n\n\n\n\nGrade Percentage\nLetter Grade\nPass/No Pass Grade\n\n\n\n\n100% - 90%\nA\nPass\n\n\n89% - 80%\nB\nPass\n\n\n79% - 80%\nC\nNo Pass\n\n\n69% - 60%\nD\nNo Pass\n\n\n60% - 0%\nF\nNo Pass"
+    "text": "Graded Assignments\nProblem sets: Students will be assigned four problem sets (roughly one every 2 weeks) to complete independently. These will mostly focus on one or a few data sets each, and the goal will be for the students to organize, visualize, analyze, and interpret the data sets in light of specific scientific motivations. - 80% of grade.\nTerm project: Students will choose a large dataset to process on Talapas. The goal of this project is allow students agency in applying what they are learning in class to their own data - 40% of grade.\nPreparing and submitting assignments: The information required to complete all in-class assignments and problem sets will be given in instructions on Canvas. Students should carefully follow the detailed instructions associated with each assignment. Students are encouraged to work together and share information. In particular, some students will have a higher skill level than others, and we encourage those students with more experience to help their peers. However, no direct sharing of code is allowed.\nPreparing and submitting assignments: Assignments will be submitted on Canvas. Be sure to include your name on the document. Be professional – appropriately name your files, make sure they are organized, and submit only the information requested. Late assignments will not be accepted.\n\nGrading\n\n\n\nAssignment\nPercentage of Total Grade\n\n\n\n\nProblem Sets - 2 in total, 30% each\n60%\n\n\nTerm-long Projects\n40%\n\n\n\n\n\n\nGrade Percentage\nLetter Grade\nPass/No Pass Grade\n\n\n\n\n100% - 90%\nA\nPass\n\n\n89% - 80%\nB\nPass\n\n\n79% - 80%\nC\nNo Pass\n\n\n69% - 60%\nD\nNo Pass\n\n\n60% - 0%\nF\nNo Pass"
   },
   {
     "objectID": "Syllabus.html#grading",
@@ -214,21 +214,21 @@
     "href": "Schedule.html#course-schedule",
     "title": "Schedule",
     "section": "Course schedule",
-    "text": "Course schedule\n\n\n\nWeek\nDates\nTopics\nReadings\nAssignments\n\n\n\n\n1\nApril1/3\n\nUnix & shell commands\nR scripts & reproducible analysis\nUse of GenAI\nTidy data and data wrangling\nGit, GitHub & Markdown\nSundry history of statistics\n\n\nRDS: 1-8; 27-29\nMSR: 1-2\nHappy Git\n\n\n\n\n2\nApril8/10\n\nExploratory data analysis\nData visualization\nParameters & statistics\nProbability distributions\nEstimates & confidence intervals\nClinical trials & experimental design\n\n\nRDS: 9-11\nMSR: 3-5\n\n\n\n\n3\nApril15/17\n\nHypothesis testing & significance\nType I & II errors\nT-tests\n\n\nMSR: 6-7\n\nHW1 Due\n\n\n4\nApril22/24\n\nFrequency analyses\nContingency tests\nNon-parametric tests\n\n\n\n\n\n5\nApril29/May1\n\nCorrelation & covariance\nOrdinary Linear Models (OLMs)\nSimple linear regression\n\n\nMSR: 8\n\nHW2 Due\n\n\n6\nMay 6/8\n\nAnalysis of Variance (ANOVA)\nSingle factor ANOVA\nPlanned & post hoc comparisons\n\n\nMSR: 8\n\n\n\n\n7\nMay 13/15\n\nMultiple factor ANOVA\nFactorial & Nested ANOVA\nRandom effects\n\n\nMSR: 8\n\nHW3 Due\n\n\n8\nMay 20/22\n\nHierarchical & mixed models\nGeneralized Linear Models (GLMs)\nLogistic & Poisson regression\n\n\nISLR: 1-3\n\n\n\n\n9\nMay 27/29\n\nIntro to statistical learning\nClassification & prediction\nValidation\nSimulation in statistics\n\n\nMSR: 11\nISLR: 4-6\n\nHW4 Due\n\n\n10\nJune 3/5\n\nRemote super computing\nTalapas and SLURM\nAWS Azure\n\n\n\n\n\n11\n10 June\nFINALS WEEK\n\nProject Due"
+    "text": "Course schedule\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nAssignments\n\n\n\n\n1\nOctober 20\n\nUnix & shell commands\nR scripts & reproducible analysis\nUse of GenAI\nTidy data and data wrangling\nGit, GitHub & Markdown\n\n\n\n\n2\nOctober 27\n\nExploratory data analysis\nData visualization\n\n\n\n\n3\nNovember 3\n\nxxx\n\n\n\n\n4\nNovember 10\n\nxxx\n\nHW1 Due\n\n\n5\nNovember 17\n\nxxx\n\n\n\n\n6\nNovember 24\n\nxxx\n\nHW2 Due\n\n\n7\nDecember 1\n\nxxx\n\n\n\n\n\nDecember 8\nFINALS WEEK\nProject Due"
   },
   {
     "objectID": "Schedule.html#reading-materials-and-tools",
     "href": "Schedule.html#reading-materials-and-tools",
     "title": "Schedule",
     "section": "",
-    "text": "I’ve started putting together out online textbook\nHere’s a link\n\n\n\n\n\nR for Data Science (RDS). 2025. Wickham, Çetinkaya-Rundel, and Grolemund. O’Reilly Press.\nModern Statistics with R (MSR). 2025. Måns Thulin, CRC Press.\nAn Introduction to Statistical Learning (ISLR). 2023. James, Witten, Hastie, Tibshirani. Springer\n\n\n\n\n\nModern Statistics for Modern Biology. 2019. Holmes and Huber. Cambridge University Press.\nggPlot2: Elegant Graphics for Data Analysis, 3rd Edition. Wickham, Navarro, Pedersen. Springer.\nThe Visual Display of Quantitative Information. Tufte, E.R. Graphics Press, Cheshire CT\n\n\n\n\n\nYou will be working on your own laptop computeri\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
+    "text": "I’ll soon have material in an online textbook for you\n\n\n\n\nBioinformatics Data Skills. 2015. Holmes and Huber. O’Reilly.\n\n\n\n\n\nYou will be working on your own laptop computer\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
   },
   {
     "objectID": "about.html#online-course-resources",
     "href": "about.html#online-course-resources",
     "title": "About",
     "section": "Online Course Resources",
-    "text": "Online Course Resources\n\nWe will be using Canvas as well as this GitHub Pages website (https://wcresko.github.io/BioE_Stats/).\nTo access our course Canvas site, log into canvas.uoregon.edu using your DuckID.\nIf you have questions about using Canvas, visit the Canvas support page.\nCanvas and Technology Support also is available by phone (541-346-4357) or by live chat."
+    "text": "Online Course Resources\n\nWe will be using Canvas as well as this GitHub Pages website (https://wcresko.github.io/BioE_Comp_Tools/).\nTo access our course Canvas site, log into canvas.uoregon.edu using your DuckID.\nIf you have questions about using Canvas, visit the Canvas support page.\nCanvas and Technology Support also is available by phone (541-346-4357) or by live chat."
   },
   {
     "objectID": "about.html#technical-requirements",
@@ -242,14 +242,14 @@
     "href": "Policies.html#workload-expectations",
     "title": "Policies",
     "section": "",
-    "text": "This is a 4-credit hour course, so you should expect to complete ~ 120 hours of work for the course—an average, or about 12 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n3-4\n\n\nPre-class reading\n4\n\n\nInformal exercises\n1\n\n\nHomework assignments\n2\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n12"
+    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course—an average, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
   },
   {
     "objectID": "Policies.html#communication",
     "href": "Policies.html#communication",
     "title": "Policies",
     "section": "Communication",
-    "text": "Communication\n\nElectronic\n\nOur class will communicate through our Canvas site. Announcements and emails are archived there, automatically forwarded to your UO email, and can even reach you by text. Check and adjust your settings under Account &gt; Notifications.\nWe will also be using this GitHub Pages website (https://wcresko.github.io/BioE_Stats/) for the course as the repository for lecture schedule, syllabus, lecture slides and other materials.\nEvery Monday I will post an Announcement that previews critical concepts we’ll work on that week and a checklist of the week’s due dates.\nI will contact individual students when needed through email, and I try to respond to questions within one business day.\nWhen giving feedback on assignments, I do so in Canvas, and turnaround time for feedback is generally one week.\n\n\n\nOffice hours\n\nI will host office hours each week on Monday and from 3:30 to 4:30. The end of many class periods will also function as a form of office hour.\nI welcome meetings outside my regular office hours as well - please email me to set a time.\nDuring office hours, students bring in a wide range of concerns, questions, and successes. We might\n\ntalk through a specific concept or problem to clarify it\nthink together about an issue a student is curious about that relates to the class\ndiscuss a student’s post-graduation goals\nidentify more supportive methods to study for a future exam or to begin a project\nor any number of other topics"
+    "text": "Communication\n\nElectronic\n\nOur class will communicate through our Canvas site. Announcements and emails are archived there, automatically forwarded to your UO email, and can even reach you by text. Check and adjust your settings under Account &gt; Notifications.\nWe will also be using this GitHub Pages website (https://wcresko.github.io/BioE_Comp_Tools/) for the course as the repository for lecture schedule, syllabus, lecture slides and other materials.\nEvery Monday I will post an Announcement that previews critical concepts we’ll work on that week and a checklist of the week’s due dates.\nI will contact individual students when needed through email, and I try to respond to questions within one business day.\nWhen giving feedback on assignments, I do so in Canvas, and turnaround time for feedback is generally one week.\n\n\n\nOffice hours\n\nI will host office hours each week on Tuesday and from 3:00 to 4:00. The end of many class periods will also function as a form of office hour.\nI welcome meetings outside my regular office hours as well - please email me to set a time.\nDuring office hours, students bring in a wide range of concerns, questions, and successes. We might\n\ntalk through a specific concept or problem to clarify it\nthink together about an issue a student is curious about that relates to the class\ndiscuss a student’s post-graduation goals\nidentify more supportive methods to study for a future exam or to begin a project\nor any number of other topics"
   },
   {
     "objectID": "Policies.html#classroom-community-expectations",
@@ -3623,14 +3623,14 @@
     "href": "Homework.html",
     "title": "Homeworks",
     "section": "",
-    "text": "Homework 1\nHomework 2\nHomework 3\nHomework 4\nTerm Project"
+    "text": "Homework 1\nHomework 2\nTerm Project"
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html",
     "href": "Homework_Folder/HW1_2025.html",
-    "title": "EDA, t-test and Power Calculations",
+    "title": "Homework 1 - TBD",
     "section": "",
-    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use both the microbiota/RNAseq data set that you have been using in class, as well as the dataset that you’ve identified for your term long project. Try to accomplish a version of the tasks I lay out below on your own dataset, but you’re undoubtedly going to need to make some modifications and adjustments. In addition, you will be performing one set of power analyses using simulation on a hypothetical problem\nDue: Submit your work via Canvas by the end of the day (midnight) on Tuesday, April 29th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+    "text": "Assignment: TBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Monday, November 10th.\nDirections: TBD"
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html#directions",
@@ -7996,9 +7996,9 @@
   {
     "objectID": "Homework_Folder/HW2_2025.html",
     "href": "Homework_Folder/HW2_2025.html",
-    "title": "Linear Regression and ANOVA",
+    "title": "Homework 2 - TBD",
     "section": "",
-    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set of effects of IGF-1 on growth rate in mouse (igf.tsv), and a simplified stickleback microbiota/RNAseq data (RNAseq_microbiome.csv) set that you have been using in class. In addition, perform either a simple linear regression (2.1) or an ANOVA (2.2) on the dataset that you’ve identified for your term long project depending on the nature of your data.\nDue: Submit your work via Canvas by the end of the day (midnight) on Wednesday, May 14th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+    "text": "Assignment: TBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Monday, November 24th.\nDirections: TBD"
   },
   {
     "objectID": "Homework_Folder/HW2_2025.html#directions",
@@ -8024,16 +8024,16 @@
   {
     "objectID": "Homework_Folder/HW2_2025.html#problem-set-2---directions",
     "href": "Homework_Folder/HW2_2025.html#problem-set-2---directions",
-    "title": "Linear Regression and ANOVA",
+    "title": "Homework 2 - TBD",
     "section": "",
-    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use a new data set of effects of IGF-1 on growth rate in mouse (igf.tsv), and a simplified stickleback microbiota/RNAseq data (RNAseq_microbiome.csv) set that you have been using in class. In addition, perform either a simple linear regression (2.1) or an ANOVA (2.2) on the dataset that you’ve identified for your term long project depending on the nature of your data.\nDue: Submit your work via Canvas by the end of the day (midnight) on Wednesday, May 14th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+    "text": "Assignment: TBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Monday, November 24th.\nDirections: TBD"
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html#problem-set-1---directions",
     "href": "Homework_Folder/HW1_2025.html#problem-set-1---directions",
-    "title": "EDA, t-test and Power Calculations",
+    "title": "Homework 1 - TBD",
     "section": "",
-    "text": "Assignment: Your task is to use R and Quarto Markdown to write a short report including the following tasks. You will use both the microbiota/RNAseq data set that you have been using in class, as well as the dataset that you’ve identified for your term long project. Try to accomplish a version of the tasks I lay out below on your own dataset, but you’re undoubtedly going to need to make some modifications and adjustments. In addition, you will be performing one set of power analyses using simulation on a hypothetical problem\nDue: Submit your work via Canvas by the end of the day (midnight) on Tuesday, April 29th. Please submit both the Quarto_md file and the resulting html or pdf file. You can work with other members of class, but I expect each of you to construct and run all of the scripts yourself."
+    "text": "Assignment: TBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Monday, November 10th.\nDirections: TBD"
   },
   {
     "objectID": "Lecture_Folder/Week6a.html",
@@ -14648,20 +14648,20 @@
     "href": "Homework_Folder/Term_Project.html",
     "title": "Term Long Project - Pulling it All Together",
     "section": "",
-    "text": "Assignment:\nPull together all of the activities that you performed on your own data that you’ve chosen to analyze throughout the term in association with each homework set and put it into one complete Markdown document that can be rendered.\nIn addition to packaging these previous analyses together, you can also perform any additional visualizations and analyses that make sense. Lastly, add some interpretive writing that explains the nature of your data, the types of analyses you performed at each step, your outcomes or findings from each, and the conclusions that you might draw from each finding.\nThe overall goal is to create something like a report to share with a collaborator or your PI, or should your work be far enough along the skeleton of a manuscript that can submitted for subsequent publication.\nDue: Submit your work via Canvas by the end of the day (midnight) on Friday, June 13th. Please submit both the Quarto_md file and the resulting html or pdf file."
+    "text": "Assignment:\nTBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Friday, December 12th."
   },
   {
     "objectID": "Homework_Folder/Term_Project.html#directions",
     "href": "Homework_Folder/Term_Project.html#directions",
     "title": "Term Long Project - Pulling it All Together",
     "section": "",
-    "text": "Assignment:\nPull together all of the activities that you performed on your own data that you’ve chosen to analyze throughout the term in association with each homework set and put it into one complete Markdown document that can be rendered.\nIn addition to packaging these previous analyses together, you can also perform any additional visualizations and analyses that make sense. Lastly, add some interpretive writing that explains the nature of your data, the types of analyses you performed at each step, your outcomes or findings from each, and the conclusions that you might draw from each finding.\nThe overall goal is to create something like a report to share with a collaborator or your PI, or should your work be far enough along the skeleton of a manuscript that can submitted for subsequent publication.\nDue: Submit your work via Canvas by the end of the day (midnight) on Friday, June 13th. Please submit both the Quarto_md file and the resulting html or pdf file."
+    "text": "Assignment:\nTBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Friday, December 12th."
   },
   {
     "objectID": "Schedule.html#proposed-scientific-computation-course-topics",
     "href": "Schedule.html#proposed-scientific-computation-course-topics",
     "title": "Schedule",
     "section": "Proposed Scientific Computation Course Topics",
-    "text": "Proposed Scientific Computation Course Topics\n\n\n\n\n\n\n\nSession\nTopics\n\n\n\n\n1\n\nComputers and data\n\nCPUs, GPUs, storage\nFundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nUnix, paths & shell commands including GREP, AWK and SED\nBasics of data structures, databases and tidy dataProperly organize and format primary data and metadata files for analysis\n\nIntegrative developer environments (IDEs)\n\nVirtual Code Studio\nRStudio\nupyter notebooks\n\n\n\n\n2-3\n\nFoundations of scripting using Python and R\n\nR and Python fundamentals\npackages and extending functionality\nobjects and object oriented programming\nfunctions, iteration, and simulation\ndata wrangling\nUse and misuse of Generative AI as a digital assistant and ‘vibe coding’\n\n\n\n\n4\n\nReproducible science\n\nthe NIH FAIR (Findable, accessible, interoperable) principles\nGit and GitHub for project management and collaboration\nMarkdown for use in manuscripts, presentations and websites\nIncluding LaTeX mathematical expressions in markdown\n\n\n\n\n5\n\nRemote super computing\n\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\nSlurm scripts for big jobs\nOther remote systems such as AWS Azure"
+    "text": "Proposed Scientific Computation Course Topics\n\n\n\n\n\n\n\nSession\nTopics\n\n\n\n\n1\n\nComputers and data\n\nCPUs, GPUs, storage\nFundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nUnix, paths & shell commands including GREP, AWK and SED\nBasics of data structures, databases and tidy dataProperly organize and format primary data and metadata files for analysis\n\nIntegrative developer environments (IDEs)\n\nVirtual Code Studio\nRStudio\nupyter notebooks\n\n\n\n\n2-3\n\nFoundations of scripting using Python and R\n\nR and Python fundamentals\npackages and extending functionality\nobjects and object oriented programming\nfunctions, iteration, and simulation\ndata wrangling\nUse and misuse of Generative AI as a digital assistant and ‘vibe coding’\n\n\n\n\n4\n\nReproducible science\n\nthe NIH FAIR (Findable, accessible, interoperable) principles\nGit and GitHub for project management and collaboration\nMarkdown for use in manuscripts, presentations and websites\nIncluding LaTeX mathematical expressions in markdown\n\n\n\n\n5\n\nRemote super computing\n\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\nSlurm scripts for big jobs\nOther remote systems such as AWS Azure\n\n\n\n\n\nHistory of computers; General computing, Transistors to computers, laptop components, operating systems, file systems and project organization, local vs. cloud storage, interfaces, command line, internet history, safety - malware and passwords, AI how it works and best practices\nLearning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases."
   }
 ]
