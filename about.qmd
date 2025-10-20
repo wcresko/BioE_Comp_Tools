@@ -21,7 +21,7 @@ title: "About"
 |                      |                      |
 |----------------------|----------------------|
 | Class times          | Monday 2:30 to 3:50  |
-| Class room           | KC108                |
+| Class room           | KC106                |
 | Office Hours         | Tuesday 3:00 to 4:00 |
 | Office hour location | KC Connector         |
 

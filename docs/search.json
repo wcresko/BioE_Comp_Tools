@@ -109,7 +109,7 @@
     "href": "about.html#class-information",
     "title": "About",
     "section": "Class information",
-    "text": "Class information\n\n\n\nClass times\nMonday 2:30 to 3:50\n\n\nClass room\nKC108\n\n\nOffice Hours\nTuesday 3 to 4\n\n\nOffice hour location\nTBD"
+    "text": "Class information\n\n\n\nClass times\nMonday 2:30 to 3:50\n\n\nClass room\nKC106\n\n\nOffice Hours\nTuesday 3:00 to 4:00\n\n\nOffice hour location\nKC Connector"
   },
   {
     "objectID": "about.html#course-structure",
@@ -144,14 +144,14 @@
     "href": "Policies.html",
     "title": "Policies",
     "section": "",
-    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course—an average, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
+    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
   },
   {
     "objectID": "Schedule.html",
     "href": "Schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "I’ll soon have material in an online textbook for you\n\n\n\n\nBioinformatics Data Skills. 2015. Holmes and Huber. O’Reilly.\n\n\n\n\n\nYou will be working on your own laptop computer\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
+    "text": "I’ll soon have material in an online textbook for you\n\n\n\n\nBioinformatics Data Skills. 2015. Holmes and Huber. O’Reilly.\n\n\n\n\n\nYou will be working on your own laptop computer\nA Terminal application (see ‘Software’ Tab for installation)\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
   },
   {
     "objectID": "Resources.html",
@@ -214,14 +214,14 @@
     "href": "Schedule.html#course-schedule",
     "title": "Schedule",
     "section": "Course schedule",
-    "text": "Course schedule\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nAssignments\n\n\n\n\n1\nOctober 20\n\nUnix & shell commands\nR scripts & reproducible analysis\nUse of GenAI\nTidy data and data wrangling\nGit, GitHub & Markdown\n\n\n\n\n2\nOctober 27\n\nExploratory data analysis\nData visualization\n\n\n\n\n3\nNovember 3\n\nxxx\n\n\n\n\n4\nNovember 10\n\nxxx\n\nHW1 Due\n\n\n5\nNovember 17\n\nxxx\n\n\n\n\n6\nNovember 24\n\nxxx\n\nHW2 Due\n\n\n7\nDecember 1\n\nxxx\n\n\n\n\n\nDecember 8\nFINALS WEEK\nProject Due"
+    "text": "Course schedule\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics\nAssignments\n\n\n\n\n1\nOctober 20\n\nComputers and Shells - 1\n\nFundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nUnix paths\nUnix shell commands\n\n\n\n\n\n2\nOctober 27\n\nComputers and Shells - 2\n\nAdvanced Unix shell commands including GREP, AWK and SED\nUnix data flows and pipes\nBasics of data structures, databases and tidy data\nProperly organized and formatted primary data and metadata files for analysis\n\n\n\n\n\n3\nNovember 3\n\nFoundations of scripting using Python and R - 1\n\nR and Python fundamentals\nIntegrative developer environments (IDEs)\npackages and extending functionality\nobjects and object oriented programming\n\n\n\n\n\n4\nNovember 10\n\nFoundations of scripting using Python and R - 2\n\nfunctions, iteration, and simulation\ndata wrangling\ncreating figures\nUse and misuse of Generative AI as a digital assistant\n‘vibe coding’\n\n\nHW1 Due\n\n\n5\nNovember 17\n\nReproducible science\n\nthe NIH FAIR (Findable, accessible, interoperable) principles\nGit and GitHub for project management and collaboration\nMarkdown for use in manuscripts, presentations and websites\nIncluding LaTeX mathematical expressions in markdown\n\n\n\n\n\n6\nNovember 24\n\nRemote super computing - 1\n\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\n\n\nHW2 Due\n\n\n7\nDecember 1\n\nRemote super computing - 2\n\nSlurm scripts for big jobs\nOther remote systems such as AWS Azure\n\n\n\n\n\n\nDecember 8\nFINALS WEEK\nProject Due"
   },
   {
     "objectID": "Schedule.html#reading-materials-and-tools",
     "href": "Schedule.html#reading-materials-and-tools",
     "title": "Schedule",
     "section": "",
-    "text": "I’ll soon have material in an online textbook for you\n\n\n\n\nBioinformatics Data Skills. 2015. Holmes and Huber. O’Reilly.\n\n\n\n\n\nYou will be working on your own laptop computer\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
+    "text": "I’ll soon have material in an online textbook for you\n\n\n\n\nBioinformatics Data Skills. 2015. Holmes and Huber. O’Reilly.\n\n\n\n\n\nYou will be working on your own laptop computer\nA Terminal application (see ‘Software’ Tab for installation)\nLatest version of R (install here)\nLatest version of RStudio (install here)\nA terminal that allows ssh connection to the UO computing cluster (Talapas)\nGit installed and a GitHub account\nLaTeX installed on your computer"
   },
   {
     "objectID": "about.html#online-course-resources",
@@ -235,21 +235,21 @@
     "href": "about.html#technical-requirements",
     "title": "About",
     "section": "Technical Requirements",
-    "text": "Technical Requirements\n\nYou will be working on your own laptop computer.\nIf you would like to borrow a laptop let me know.\nLatest version of R (install here).\nLatest version of RStudio (install here).\nA terminal that allows ssh connection to the UO computing cluster (Talapas)."
+    "text": "Technical Requirements\n\nYou will be working on your own laptop computer.\nIf you would like to borrow a laptop let me know.\nIf you are working on Windows you need to install WSL2 via PowerShell (see Software page)\nLatest version of R (install here).\nLatest version of RStudio (install here).\nA terminal that allows ssh connection to the UO computing cluster (Talapas)."
   },
   {
     "objectID": "Policies.html#workload-expectations",
     "href": "Policies.html#workload-expectations",
     "title": "Policies",
     "section": "",
-    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course—an average, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
+    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
   },
   {
     "objectID": "Policies.html#communication",
     "href": "Policies.html#communication",
     "title": "Policies",
     "section": "Communication",
-    "text": "Communication\n\nElectronic\n\nOur class will communicate through our Canvas site. Announcements and emails are archived there, automatically forwarded to your UO email, and can even reach you by text. Check and adjust your settings under Account &gt; Notifications.\nWe will also be using this GitHub Pages website (https://wcresko.github.io/BioE_Comp_Tools/) for the course as the repository for lecture schedule, syllabus, lecture slides and other materials.\nEvery Monday I will post an Announcement that previews critical concepts we’ll work on that week and a checklist of the week’s due dates.\nI will contact individual students when needed through email, and I try to respond to questions within one business day.\nWhen giving feedback on assignments, I do so in Canvas, and turnaround time for feedback is generally one week.\n\n\n\nOffice hours\n\nI will host office hours each week on Tuesday and from 3:00 to 4:00. The end of many class periods will also function as a form of office hour.\nI welcome meetings outside my regular office hours as well - please email me to set a time.\nDuring office hours, students bring in a wide range of concerns, questions, and successes. We might\n\ntalk through a specific concept or problem to clarify it\nthink together about an issue a student is curious about that relates to the class\ndiscuss a student’s post-graduation goals\nidentify more supportive methods to study for a future exam or to begin a project\nor any number of other topics"
+    "text": "Communication\n\nElectronic\n\nOur class will communicate through our Canvas site. Announcements and emails are archived there, automatically forwarded to your UO email, and can even reach you by text. Check and adjust your settings under Account &gt; Notifications.\nWe will also be using this GitHub Pages website (https://wcresko.github.io/BioE_Comp_Tools/) for the course as the repository for lecture schedule, syllabus, lecture slides and other materials.\nEvery Monday I will post an Announcement that previews critical concepts we’ll work on that week and a checklist of the week’s due dates.\nI will contact individual students when needed through email, and I try to respond to questions within one business day.\nWhen giving feedback on assignments, I do so in Canvas, and turnaround time for feedback is generally one week.\n\n\n\nOffice hours\n\nI will host office hours each week on Tuesday from 3:00 to 4:00 in the KC connector on the 2nd floor. The end of many class periods will also function as a form of office hour.\nI welcome meetings outside my regular office hours as well - please email me to set a time.\nDuring office hours, students bring in a wide range of concerns, questions, and successes. We might\n\ntalk through a specific concept or problem to clarify it\nthink together about an issue a student is curious about that relates to the class\ndiscuss a student’s post-graduation goals\nidentify more supportive methods to study for a future exam or to begin a project\nor any number of other topics"
   },
   {
     "objectID": "Policies.html#classroom-community-expectations",
@@ -263,7 +263,7 @@
     "href": "Policies.html#generative-artificial-intelligence-genai-use",
     "title": "Policies",
     "section": "Generative Artificial Intelligence (GenAI) Use",
-    "text": "Generative Artificial Intelligence (GenAI) Use\nStudents can use GenAI tools in this class to help with certain aspects of coding. We will discuss during the first week how GenAI can be a tool to help you, but it cannot replace your statistical intuition and knowledge. However, you cannot use content such as text, graphics and code created by GenAI tools in your work. You must be the author/creator of your work submissions. For example, you can use a GenAI tool to suggest a paper outline based on a draft you provide it, or suggest some code, but you cannot submit a paper with text or code generated by GenAI as if the text or code is your own writing. If you are in doubt or have questions about a particular GenAI tool and if its use is okay, check in with me and let’s discuss!"
+    "text": "Generative Artificial Intelligence (GenAI) Use\nStudents can use GenAI tools in this class to help with certain aspects of coding. We will discuss during the the class about GenAI can be a tool to help you, but it cannot replace your computational intuition and knowledge. However, you cannot use content such as text, graphics and code created by GenAI tools in your work. You must be the author/creator of your work submissions. For example, you can use a GenAI tool to suggest a paper outline based on a draft you provide it, or suggest some code, but you cannot submit a paper with text or code generated by GenAI as if the text or code is your own writing. If you are in doubt or have questions about a particular GenAI tool and if its use is okay, check in with me and let’s discuss!"
   },
   {
     "objectID": "Policies.html#university-course-policies",
@@ -3623,7 +3623,7 @@
     "href": "Homework.html",
     "title": "Homeworks",
     "section": "",
-    "text": "Homework 1\nHomework 2\nTerm Project"
+    "text": "Below you can find links to the homework directions as they become available. You will be able to submit your homework via the Canvas website.\nHomework 1\nHomework 2\nTerm Project"
   },
   {
     "objectID": "Homework_Folder/HW1_2025.html",

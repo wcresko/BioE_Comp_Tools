@@ -102,10 +102,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Policies.html"> 
-<span class="menu-text">Policies</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./Schedule.html" aria-current="page"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
@@ -120,6 +116,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./Software.html"> 
 <span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Policies.html"> 
+<span class="menu-text">Policies</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Resources.html"> 
@@ -147,7 +147,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><em>Tools</em></a></li>
   </ul></li>
   <li><a href="#course-schedule" id="toc-course-schedule" class="nav-link" data-scroll-target="#course-schedule">Course schedule</a></li>
-  <li><a href="#proposed-scientific-computation-course-topics" id="toc-proposed-scientific-computation-course-topics" class="nav-link" data-scroll-target="#proposed-scientific-computation-course-topics">Proposed Scientific Computation Course Topics</a></li>
   </ul>
 </nav>
     </div>
@@ -188,6 +187,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="tools"><em>Tools</em></h3>
 <ul>
 <li>You will be working on your own laptop computer</li>
+<li>A Terminal application (see ‘Software’ Tab for installation)</li>
 <li>Latest version of R (<a href="https://www.r-project.org">install here</a>)</li>
 <li>Latest version of RStudio (<a href="https://www.rstudio.org">install here</a>)</li>
 <li>A terminal that allows ssh connection to the UO computing cluster (Talapas)</li>
@@ -200,10 +200,10 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="course-schedule">Course schedule</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 16%">
-<col style="width: 48%">
-<col style="width: 16%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 78%">
+<col style="width: 8%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -218,11 +218,12 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">1</td>
 <td>October 20</td>
 <td><ul>
-<li>Unix &amp; shell commands</li>
-<li>R scripts &amp; reproducible analysis</li>
-<li>Use of GenAI</li>
-<li>Tidy data and data wrangling</li>
-<li>Git, GitHub &amp; Markdown</li>
+<li>Computers and Shells - 1
+<ul>
+<li>Fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.</li>
+<li>Unix paths</li>
+<li>Unix shell commands</li>
+</ul></li>
 </ul></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -230,8 +231,13 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">2</td>
 <td>October 27</td>
 <td><ul>
-<li>Exploratory data analysis</li>
-<li>Data visualization</li>
+<li><p>Computers and Shells - 2</p>
+<ul>
+<li><p>Advanced Unix shell commands including GREP, AWK and SED</p></li>
+<li><p>Unix data flows and pipes</p></li>
+<li><p>Basics of data structures, databases and tidy data</p></li>
+<li><p>Properly organized and formatted primary data and metadata files for analysis</p></li>
+</ul></li>
 </ul></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -239,7 +245,13 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">3</td>
 <td>November 3</td>
 <td><ul>
-<li>xxx</li>
+<li><p>Foundations of scripting using Python and R - 1</p>
+<ul>
+<li>R and Python fundamentals</li>
+<li>Integrative developer environments (IDEs)</li>
+<li>packages and extending functionality</li>
+<li>objects and object oriented programming</li>
+</ul></li>
 </ul></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -247,7 +259,14 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">4</td>
 <td>November 10</td>
 <td><ul>
-<li>xxx</li>
+<li><p>Foundations of scripting using Python and R - 2</p>
+<ul>
+<li>functions, iteration, and simulation</li>
+<li>data wrangling</li>
+<li>creating figures</li>
+<li>Use and misuse of Generative AI as a digital assistant</li>
+<li>‘vibe coding’</li>
+</ul></li>
 </ul></td>
 <td style="text-align: center;">HW1 Due</td>
 </tr>
@@ -255,7 +274,13 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">5</td>
 <td>November 17</td>
 <td><ul>
-<li>xxx</li>
+<li>Reproducible science
+<ul>
+<li>the NIH FAIR (Findable, accessible, interoperable) principles</li>
+<li>Git and GitHub for project management and collaboration</li>
+<li>Markdown for use in manuscripts, presentations and websites</li>
+<li>Including LaTeX mathematical expressions in markdown</li>
+</ul></li>
 </ul></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -263,7 +288,10 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">6</td>
 <td>November 24</td>
 <td><ul>
-<li>xxx</li>
+<li>Remote super computing - 1
+<ul>
+<li>Utilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.</li>
+</ul></li>
 </ul></td>
 <td style="text-align: center;">HW2 Due</td>
 </tr>
@@ -271,7 +299,11 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">7</td>
 <td>December 1</td>
 <td><ul>
-<li>xxx</li>
+<li>Remote super computing - 2
+<ul>
+<li>Slurm scripts for big jobs</li>
+<li>Other remote systems such as AWS Azure</li>
+</ul></li>
 </ul></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -283,80 +315,6 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</section>
-<section id="proposed-scientific-computation-course-topics" class="level2">
-<h2 class="anchored" data-anchor-id="proposed-scientific-computation-course-topics">Proposed Scientific Computation Course Topics</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 92%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Session</th>
-<th>Topics</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td><ul>
-<li><p>Computers and data</p>
-<ul>
-<li>CPUs, GPUs, storage</li>
-<li>Fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.</li>
-<li>Unix, paths &amp; shell commands including GREP, AWK and SED</li>
-<li>Basics of data structures, databases and tidy dataProperly organize and format primary data and metadata files for analysis</li>
-</ul></li>
-<li><p>Integrative developer environments (IDEs)</p>
-<ul>
-<li>Virtual Code Studio</li>
-<li>RStudio</li>
-<li>upyter notebooks</li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2-3</td>
-<td><ul>
-<li><p>Foundations of scripting using Python and R</p>
-<ul>
-<li>R and Python fundamentals</li>
-<li>packages and extending functionality</li>
-<li>objects and object oriented programming</li>
-<li>functions, iteration, and simulation</li>
-<li>data wrangling</li>
-<li>Use and misuse of Generative AI as a digital assistant and ‘vibe coding’</li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">4</td>
-<td><ul>
-<li><p>Reproducible science</p>
-<ul>
-<li>the NIH FAIR (Findable, accessible, interoperable) principles</li>
-<li>Git and GitHub for project management and collaboration</li>
-<li>Markdown for use in manuscripts, presentations and websites</li>
-<li>Including LaTeX mathematical expressions in markdown</li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">5</td>
-<td><ul>
-<li><p>Remote super computing</p>
-<ul>
-<li>Utilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.</li>
-<li>Slurm scripts for big jobs</li>
-<li>Other remote systems such as AWS Azure</li>
-</ul></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-<p>History of computers; General computing, Transistors to computers, laptop components, operating systems, file systems and project organization, local vs.&nbsp;cloud storage, interfaces, command line, internet history, safety - malware and passwords, AI how it works and best practices</p>
-<p>Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases.</p>
 
 
 </section>

@@ -10,11 +10,11 @@ website:
         text: Home
       - about.qmd
       - Syllabus.qmd
-      - Policies.qmd
       - Schedule.qmd
       - Lectures.qmd
       - Homework.qmd
       - Software.qmd
+      - Policies.qmd
       - Resources.qmd
 
 format:
