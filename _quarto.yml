@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "BioEngineering Statistics Spring 2025"
+  title: "Comp Tools Bioengineers F25"
   navbar:
     left:
       - href: index.qmd
