@@ -14663,5 +14663,292 @@
     "title": "Schedule",
     "section": "Proposed Scientific Computation Course Topics",
     "text": "Proposed Scientific Computation Course Topics\n\n\n\n\n\n\n\nSession\nTopics\n\n\n\n\n1\n\nComputers and data\n\nCPUs, GPUs, storage\nFundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nUnix, paths & shell commands including GREP, AWK and SED\nBasics of data structures, databases and tidy dataProperly organize and format primary data and metadata files for analysis\n\nIntegrative developer environments (IDEs)\n\nVirtual Code Studio\nRStudio\nupyter notebooks\n\n\n\n\n2-3\n\nFoundations of scripting using Python and R\n\nR and Python fundamentals\npackages and extending functionality\nobjects and object oriented programming\nfunctions, iteration, and simulation\ndata wrangling\nUse and misuse of Generative AI as a digital assistant and ‘vibe coding’\n\n\n\n\n4\n\nReproducible science\n\nthe NIH FAIR (Findable, accessible, interoperable) principles\nGit and GitHub for project management and collaboration\nMarkdown for use in manuscripts, presentations and websites\nIncluding LaTeX mathematical expressions in markdown\n\n\n\n\n5\n\nRemote super computing\n\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\nSlurm scripts for big jobs\nOther remote systems such as AWS Azure\n\n\n\n\n\nHistory of computers; General computing, Transistors to computers, laptop components, operating systems, file systems and project organization, local vs. cloud storage, interfaces, command line, internet history, safety - malware and passwords, AI how it works and best practices\nLearning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases."
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\ntheme_set(theme_minimal())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#goals-of-the-course",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#goals-of-the-course",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Goals of the course",
+    "text": "Goals of the course\n\n\n\n\n\n\nThis is a practical course and we will learn by doing\n\n\n\n\nTeach fundamental skills for your scientific careers\nProvide you with the computational tools necessary to carry out your work\nTo prepare you for more advanced statistics and programming education"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-introductions",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-introductions",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Class Introductions",
+    "text": "Class Introductions\n\n\n\n\n\n\nWho are you?\n\n\n\n\nYour name\nYear in grad school\nHome lab or rotation lab\nWhat has your experience with programming/statistics been like?\nWhat is your good news this week?"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-2",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-2",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "What will you learn?\n\n\n\n\nWhat is local, cluster and cloud computing\nUnix paths, commands and scripts\nRead and write basic scripts in R and Python\nImplement reproducible research practices\nMarkdown and LaTeX\nGitHub and GitHub Pages\nTalapas and Amazon Web Services (AWS)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-logistics",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-logistics",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Class Logistics",
+    "text": "Class Logistics\n\nMeet Mondays from 2:30pm - 3:50pm in KC106\n\nMost of class time will be hands-on coding practice, less time lecturing\n\nCoding practice via two homeworks later in the term\n\nAvailable Tuesday of that week, due before class on Tuesday in two weeks\n\nWeeks 10-11 you will complete a final coding project\n\nDesign script(s) that works with your research and interests using the skills you’ve learned this term"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#required-materials",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#required-materials",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Required Materials",
+    "text": "Required Materials\n\nNo textbooks or purchases required\nAccess to a laptop or computer running Windows, MacOS, or Linux operating systems\nAn account on Talapas (through your lab, or through CBDS)\nAnnouncements and assignments posted on Canvas\nThe majority of course material on our class website https://wcresko.github.io/BioE_Comp_Tools/"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Computational Tools",
+    "text": "Computational Tools\n\n\n\n\n\n\nMac vs. Linux vs. Windows\n\n\n\n\nMac and Linux systems run using the same language, but previous versions of Windows lacks some of the basic features found on other systems\nTo help you practice and learn how to code in Unix, we will help you install some programs on your computer for running Unix\nR and RStudio should work on any computer\nVisual Studio Code will also work on any computer\nSimilarly, LaTeX and Git will work on any computer"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-1",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-1",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Computational Tools",
+    "text": "Computational Tools\n\nNeed to make sure that you have R installed\n\nlocally or on a server\nhttps://www.r-project.org\n\nCan run R from the command line\n\njust type R\ncan run it locally as well as on clusters"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-2",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-2",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Computational Tools",
+    "text": "Computational Tools\n\nInstall an R Integrated Development Environment (IDE)\n\nRStudio: http://www.rstudio.com\nMakes working with R much easier, particularly for a new R user\nRun on Windows, Mac or Linux OS\nUse the RStudio Desktop Open Source (Free)\n\nOther IDEs\n\nWe will also use an IDE called Visual Studio Code\nYou will also use Jupyter Notebooks"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---mac-and-linux",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---mac-and-linux",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Accessing the shell - Mac and Linux",
+    "text": "Accessing the shell - Mac and Linux\n\nMac users: open the “Terminal” app, or use another app like ‘iTerm2’\nLinux users: open one of several “Terminal” apps\n\n\n\n\n\n\nWindows users have a little more work to do\n\n\n\nSee the next slides"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Accessing the shell - Windows",
+    "text": "Accessing the shell - Windows\n\nGuide: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview\nRun Windows PowerShell as administrator\nInstall WSL2 by typing wsl --install\nRestart your computer\nSearch for and install Ubuntu from Microsoft store app\nOR type wsl --install -d ubuntu on PowerShell to do both at once"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows-1",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows-1",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Accessing the shell - Windows",
+    "text": "Accessing the shell - Windows\n\nOpen Ubuntu and set up a username and password\nDoes not have to match your login info for Windows\nRun sudo apt update then sudo apt upgrade to ensure everything is up to date\nWill need to create folders and files within your Ubuntu folder on your computer"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-do-we-need-coding-and-scripting",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-do-we-need-coding-and-scripting",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Why do we need coding and scripting?",
+    "text": "Why do we need coding and scripting?\n\nIt is incredibly fast and powerful, particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands\nAbility to analyze large datasets that Excel and other GUIs can’t handle well\nAccess to thousands of free programs made for and by scientists\nThe commands work almost identically across platforms\nAbility to use computer clusters like Talapas"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-the-difference-between-coding-and-scripting",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-the-difference-between-coding-and-scripting",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is the difference between coding and scripting?",
+    "text": "What is the difference between coding and scripting?\n\n\ncoding generally involves computer languages that use compilers\n\nC++, Fortran, Basic, etc\n\nscripting generally involves computer languages that are interpreted on the fly\n\nUnix, Python, R, Julia, etc.\n\ncoding - faster but less flexible; scripting - flexible but slower\nThe distinction between the two has become somewhat fuzzy and most modern analytical pipelines contain a combination of both"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-computer-system",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-computer-system",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is a Computer System?",
+    "text": "What is a Computer System?\n\n\n\nHardware: Physical components\nSoftware: Programs and instructions\nFirmware: Low-level software in hardware\nData: Information being processed\n\n\n\n\n\n\n\ngraph TD\n    A[Input Devices] --&gt; B[CPU]\n    B --&gt; C[Memory]\n    C --&gt; B\n    B --&gt; D[Output Devices]\n    E[Storage] --&gt; C\n    C --&gt; E"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#the-fetch-decode-execute-cycle",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#the-fetch-decode-execute-cycle",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "The Fetch-Decode-Execute Cycle",
+    "text": "The Fetch-Decode-Execute Cycle\n\n\n\n\n\ngraph LR\n    A[Fetch Instruction] --&gt; B[Decode Instruction]\n    B --&gt; C[Execute Instruction]\n    C --&gt; D[Store Results]\n    D --&gt; A\n\n\n\n\n\n\n\n\n\nFetch: Retrieve instruction from memory\nDecode: Interpret what the instruction means\nExecute: Perform the operation\nStore: Save results to memory or register\n\n\nThis is the fundamental cycle that every CPU performs billions of times per second"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#central-processing-unit-cpu",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#central-processing-unit-cpu",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Central Processing Unit (CPU)",
+    "text": "Central Processing Unit (CPU)\n\n\nCore Components\n\nControl Unit (CU): Directs operations\nArithmetic Logic Unit (ALU): Performs calculations\nRegisters: Ultra-fast temporary storage\nCache: High-speed memory buffer\n\n\nKey Concepts\n\nClock Speed: Cycles per second (GHz)\nCores: Independent processing units\nThreads: Virtual cores for parallel processing\nInstruction Set: CPU’s language (x86, ARM)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#graphics-processing-unit-gpu",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#graphics-processing-unit-gpu",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Graphics Processing Unit (GPU)",
+    "text": "Graphics Processing Unit (GPU)\n\n\nCore Components\n\nStreaming Multiprocessors (SMs): Processing clusters\nCUDA Cores/Stream Processors: Parallel compute units\nVideo Memory (VRAM): Dedicated high-bandwidth memory\nMemory Controller: Manages data flow to/from VRAM\n\n\nKey Concepts\n\nParallel Architecture: Thousands of cores for simultaneous tasks\nMemory Bandwidth: Data throughput (GB/s)\nCompute Units: Groups of processing cores\nAPIs: Programming interfaces (CUDA, OpenCL, Vulkan)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-vs-gpu-comparison",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-vs-gpu-comparison",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "CPU vs GPU Comparison",
+    "text": "CPU vs GPU Comparison\n\n\nCPU Characteristics\n\nDesign Focus: Sequential processing & complex tasks\nCore Count: 4-64 powerful cores\nArchitecture: Optimized for single-thread performance\nMemory: Large cache, lower bandwidth\nBest For:\n\nOperating systems & general computing\nComplex branching logic\nLow-latency operations\nSerial tasks\n\n\n\nGPU Characteristics\n\nDesign Focus: Parallel processing & high throughput\nCore Count: Thousands of smaller cores\nArchitecture: Optimized for massive parallelism\nMemory: Smaller cache, higher bandwidth\nBest For:\n\nGraphics rendering\nMachine learning/AI\nScientific simulations\nParallel computations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#random-access-memory-ram",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#random-access-memory-ram",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Random Access Memory (RAM)",
+    "text": "Random Access Memory (RAM)\n\n\nTypes of RAM\nDRAM (Dynamic RAM)\n\nMain system memory\nNeeds constant refresh\nCheaper, higher density\nDDR4, DDR5 standards\n\nSRAM (Static RAM)\n\nUsed in CPU cache\nNo refresh needed\nFaster but expensive\nLower density\n\n\nKey Characteristics\n\nVolatile: Data lost when power off\nRandom Access: Any location equally fast\nBandwidth: Data transfer rate\nLatency: Access delay\nDual Channel: Parallel data paths"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#persistent-storage-systems",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#persistent-storage-systems",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Persistent Storage Systems",
+    "text": "Persistent Storage Systems\n\n\nHard Disk Drives (HDD)\n\nMechanical spinning platters\nMagnetic storage\nLarge capacity, low cost\n~100-200 MB/s throughput\nHigher latency (~10ms)\n\n\nSolid State Drives (SSD)\n\nNo moving parts (NAND Flash)\nElectronic storage\nFaster access (~0.1ms)\n500-7000 MB/s throughput\nMore expensive per GB"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#inputoutput-io-systems",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#inputoutput-io-systems",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Input/Output (I/O) Systems",
+    "text": "Input/Output (I/O) Systems\n\n\nInput Devices\n\nKeyboard & Mouse\nTouchscreen\nMicrophone\nCamera\nSensors\nNetwork Interface\n\n\nOutput Devices\n\nMonitor/Display\nPrinter\nSpeakers\nNetwork Interface\nActuators\n\n\n\nOperating Systems"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-an-operating-system",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-an-operating-system",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is an Operating System?",
+    "text": "What is an Operating System?\nAn OS is system software that manages computer hardware, software resources, and provides common services for computer programs.\n\n\nKey Roles\n\nResource Manager\nExtended Machine\nUser Interface Provider\nSecurity Enforcer\n\n\nCommon Operating Systems\n\nDesktop: Windows, macOS, Unix, Linux\nMobile: Android, iOS\nServer: Unix, Linux, Windows Server\nSpecialized: Supercomputers, IoT"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#operating-system-architecture",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#operating-system-architecture",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Operating System Architecture",
+    "text": "Operating System Architecture\n\n\n\n\n\ngraph TD\n    A[User Applications] --&gt; B[System Calls Interface]\n    B --&gt; C[Kernel]\n    C --&gt; D[Device Drivers]\n    D --&gt; E[Hardware]\n    \n    C --&gt; F[Process Management]\n    C --&gt; G[Memory Management]\n    C --&gt; H[File System]\n    C --&gt; I[I/O Management]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#core-os-functions",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#core-os-functions",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Core OS Functions",
+    "text": "Core OS Functions\n\n\n1. Process Management\n\nProcess Creation & Termination\nProcess Scheduling: CPU time allocation\nInter-Process Communication (IPC)\nSynchronization\nDeadlock Handling\n\n\n3. File System Management\n\nFile Operations: Create, read, write, delete\nDirectory Structure\nAccess Control & Permissions\nFile Allocation Methods\nDisk Space Management\n\n\n2. Memory Management\n\nMemory Allocation/Deallocation\nVirtual Memory\nPaging & Segmentation\nMemory Protection\nSwap Space Management\n\n\n4. Device Management\n\nDevice Drivers: Hardware abstraction\nI/O Scheduling\nBuffering & Caching\nInterrupt Handling\nPlug and Play Support"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-scheduling",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-scheduling",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "CPU Scheduling",
+    "text": "CPU Scheduling\n\n\nScheduling Algorithms\n\nFirst-Come-First-Served (FCFS)\n\nSimple but can cause long waits\n\nShortest Job First (SJF)\n\nOptimal average wait time\n\nRound Robin (RR)\n\nFair time slices for all\n\nPriority Scheduling\n\nImportant tasks first\n\n\n\nPerformance Metrics\n\nCPU Utilization: Keep CPU busy\nThroughput: Jobs completed/time\nTurnaround Time: Total completion time\nWaiting Time: Time in ready queue\nResponse Time: First response delay"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#security-protection",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#security-protection",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Security & Protection",
+    "text": "Security & Protection\n\n\nProtection Mechanisms\n\nAccess Control Lists (ACLs)\nUser/Group Permissions\nMemory Protection: Segmentation\nCPU Modes: User vs Kernel\nSandboxing: Isolate processes\n\n\nSecurity Features\n\nAuthentication: User verification\nEncryption: Data protection\nFirewall: Network protection\nAntivirus: Malware detection\nUpdates: Patch vulnerabilities\n\n\n\n\n“Every program and user should operate using the least amount of privilege necessary”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-4",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-4",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "graph LR\n    A[1960s-70s&lt;br/&gt;Mainframes] --&gt; B[1980s-90s&lt;br/&gt;Personal Computers]\n    B --&gt; C[1990s-2000s&lt;br/&gt;Client-Server]\n    C --&gt; D[2000s&lt;br/&gt;Clusters/Grids]\n    D --&gt; E[2006+&lt;br/&gt;Cloud Computing]\n    E --&gt; F[2020s&lt;br/&gt;Edge/Hybrid]\n\n\n\n\n\n\n\nKey Drivers of Change\n\nPerformance Needs: Growing computational demands\nEconomics: Cost optimization and economies of scale\nConnectivity: Internet bandwidth improvements\nVirtualization: Hardware abstraction technologies"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-overview",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-overview",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Local Computing Overview",
+    "text": "Local Computing Overview\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nComputing resources that are physically present and directly controlled by the user or organization\n\n\n\n\n\n\nCharacteristics\n\nComplete control over hardware\nData stays on-premises\nNo network dependency for compute\nPredictable performance\nOne-time purchase model\n\n\nCommon Setups\n\nDesktop workstations\nLaptop computers\nOn-premises servers\nLocal development machines"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-architecture",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-architecture",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Local Computing Architecture",
+    "text": "Local Computing Architecture\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    A[Applications] --&gt; B[Operating System]\n    B --&gt; C[Hardware Abstraction Layer]\n    C --&gt; D[CPU]\n    C --&gt; E[Memory]\n    C --&gt; F[Storage]\n    C --&gt; G[GPU]\n    C --&gt; H[Network Card]\n    H --&gt; I[Internet/LAN]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-pros-and-cons",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-pros-and-cons",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Local Computing: Pros and Cons",
+    "text": "Local Computing: Pros and Cons\n\n\n\nAdvantages ✓\n\nLow Latency: No network overhead\nData Control: Complete ownership\nPrivacy: Data never leaves premises\nPredictable Costs: One-time investment\nOffline Capability: Works without internet\nCustomization: Full hardware/software control\n\n\n\n\nDisadvantages ✗\n\nLimited Scale: Hardware constraints\nMaintenance: User responsibility\nUpfront Costs: High initial investment\nDisaster Recovery: Manual backup needed\nResource Waste: Idle during off-hours\nUpgrade Complexity: Physical intervention"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-overview",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-overview",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Cluster Computing Overview",
+    "text": "Cluster Computing Overview\nA collection of interconnected computers working together as a single system\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    M[Master/Head Node] --&gt; N1[Node 1]\n    M --&gt; N2[Node 2]\n    M --&gt; N3[Node 3]\n    M --&gt; N4[Node N]\n    N1 -.-&gt; S[Shared Storage]\n    N2 -.-&gt; S\n    N3 -.-&gt; S\n    N4 -.-&gt; S\n    U[Users] --&gt; M\n\n\n\n\n\n\nKey Components\n\nHead Node: Job scheduling and management\nCompute Nodes: Worker machines\nInterconnect: High-speed network (InfiniBand, 10GbE+)\nShared Storage: Parallel file systems (Lustre, GPFS)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#resource-managers",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#resource-managers",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Resource Managers",
+    "text": "Resource Managers\nThese are used to schedule computing jobs on computer clusters.\n\n\n\nSystem\nUse Case\nKey Features\n\n\n\n\nSLURM\nHPC\nAdvanced scheduling, power management\n\n\nPBS/Torque\nTraditional HPC\nMature, stable, wide support\n\n\nSGE/UGE\nMixed workloads\nFlexible policies\n\n\nKubernetes\nContainers\nMicroservices, auto-scaling\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWe use SLURM on Talapas at the University of Oregon for scheduling compute jobs"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-pros-and-cons",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-pros-and-cons",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Cluster Computing: Pros and Cons",
+    "text": "Cluster Computing: Pros and Cons\n\n\n\nAdvantages ✓\n\nScalability: Add nodes as needed\nPerformance: Parallel processing power\nCost-Effective: Commodity hardware\nFault Tolerance: Node redundancy\nResource Sharing: Multiple users/projects\nSpecialized Hardware: GPUs, high-mem nodes\n\n\n\n\nDisadvantages ✗\n\nComplexity: Requires expertise\nInfrastructure: Space, power, cooling\nNetwork Dependency: Interconnect bottlenecks\nSoftware Licenses: Per-node costs\nMaintenance: Hardware failures\nInitial Setup: Complex configuration"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-overview",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-overview",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Cloud Computing Overview",
+    "text": "Cloud Computing Overview\nOn-demand delivery of computing resources over the internet with pay-as-you-go pricing\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    R[Region 1] --&gt; AZ1[Availability Zone 1]\n    R --&gt; AZ2[Availability Zone 2]\n    AZ1 --&gt; C[Compute]\n    AZ1 --&gt; S[Storage]\n    AZ1 --&gt; N[Networking]\n    AZ2 --&gt; C2[Compute]\n    AZ2 --&gt; S2[Storage]\n    AZ2 --&gt; N2[Networking]\n    U[Users] -.Internet.-&gt; R\n\n\n\n\n\n\n\nMajor Providers\n\nAmazon Web Services (AWS): Market leader, 200+ services\nMicrosoft Azure: Enterprise integration\nGoogle Cloud Platform: AI/ML focus\nOthers: IBM Cloud, Oracle Cloud, Alibaba Cloud"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-pros-and-cons",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-pros-and-cons",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Cloud Computing: Pros and Cons",
+    "text": "Cloud Computing: Pros and Cons\n\n\n\nAdvantages ✓\n\nElastic Scaling: Instant resource adjustment\nPay-per-Use: No idle resource costs\nGlobal Reach: Multiple regions\nManaged Services: Reduced operations\nInnovation Speed: Latest technologies\nDisaster Recovery: Built-in redundancy\nNo CAPEX: Operating expense model\n\n\n\n\nDisadvantages ✗\n\nOngoing Costs: Can exceed on-prem\nVendor Lock-in: Proprietary services\nInternet Dependency: Connectivity required\nData Transfer Costs: Egress fees\nCompliance Complexity: Data residency\nLess Control: Shared responsibility\nPerformance Variability: Noisy neighbors"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-unix",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-unix",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is Unix?",
+    "text": "What is Unix?\n\n\nA scripting language developed in 1969, released in 1973\nServes as the base language for many programs and computers\nRuns both locally on your computer and on large clusters like Talapas\nLinux is an open-source version of the same language"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-shell",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-shell",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is a shell?",
+    "text": "What is a shell?\n\nThe ‘shell’ is a program that runs UNIX and takes in commands and gives them to the operating system\nBash acts as the shell in macs, linux, and now windows\nYou can access the shell via a terminal window"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Recipes for a shell command",
+    "text": "Recipes for a shell command\n\nPrompt: notation used to indicate your computer is ready to accept a new command\nCommand: the building blocks of programming, tell computer to do a specific task\nOptions: change the behavior of a command\nArgument: what the command should operate on"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-use-the-shell",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-use-the-shell",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Why use the shell?",
+    "text": "Why use the shell?\n\n\nSpeed\nCan handle extremely large file sizes\nUse programs only available via shell\nThe commands work almost identically across platforms\nYou can even use them on a large computer cluster like Talapas and AWS\nIt is incredibly powerful particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands"
+  },
+  {
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#where-do-you-get-help",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#where-do-you-get-help",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Where do you get help?",
+    "text": "Where do you get help?\n\nManual pages!\n\nThe shell has manuals for all basic commands\nType man [command_name] to access the manual for a specific command\nType q to exit\n\nAlso…the internet!"
   }
 ]
