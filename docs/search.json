@@ -14676,21 +14676,21 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#goals-of-the-course",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Goals of the course",
-    "text": "Goals of the course\n\n\n\n\n\n\nThis is a practical course and we will learn by doing\n\n\n\n\nTeach fundamental skills for your scientific careers\nProvide you with the computational tools necessary to carry out your work\nTo prepare you for more advanced statistics and programming education"
+    "text": "Goals of the course\n\n\n\n\n\n\n\nThis is a practical course and we will learn by doing\n\n\n\nTeach fundamental skills for your scientific careers\nProvide you with the computational tools necessary to carry out your work\nTo prepare you for more advanced statistics and programming education"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-introductions",
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-introductions",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Class Introductions",
-    "text": "Class Introductions\n\n\n\n\n\n\nWho are you?\n\n\n\n\nYour name\nYear in grad school\nHome lab or rotation lab\nWhat has your experience with programming/statistics been like?\nWhat is your good news this week?"
+    "text": "Class Introductions\n\n\n\n\n\n\n\nWho are you?\n\n\n\nYour name\nYear in grad school\nHome lab or rotation lab\nWhat has your experience with programming/statistics been like?\nWhat is your good news this week?"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-2",
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-2",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "",
-    "text": "What will you learn?\n\n\n\n\nWhat is local, cluster and cloud computing\nUnix paths, commands and scripts\nRead and write basic scripts in R and Python\nImplement reproducible research practices\nMarkdown and LaTeX\nGitHub and GitHub Pages\nTalapas and Amazon Web Services (AWS)"
+    "text": "What will you learn?\n\n\n\nWhat is local, cluster and cloud computing\nUnix paths, commands and scripts\nRead and write basic scripts in R and Python\nImplement reproducible research practices\nMarkdown and LaTeX\nGitHub and GitHub Pages\nTalapas and Amazon Web Services (AWS)"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-logistics",
@@ -14711,7 +14711,7 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Computational Tools",
-    "text": "Computational Tools\n\n\n\n\n\n\nMac vs. Linux vs. Windows\n\n\n\n\nMac and Linux systems run using the same language, but previous versions of Windows lacks some of the basic features found on other systems\nTo help you practice and learn how to code in Unix, we will help you install some programs on your computer for running Unix\nR and RStudio should work on any computer\nVisual Studio Code will also work on any computer\nSimilarly, LaTeX and Git will work on any computer"
+    "text": "Computational Tools\n\n\n\n\n\n\n\nMac vs. Linux vs. Windows\n\n\n\nMac and Linux systems run using the same language, but previous versions of Windows lacks some of the basic features found on other systems\nTo help you practice and learn how to code in Unix, we will help you install some programs on your computer for running Unix\nR and RStudio should work on any computer\nVisual Studio Code will also work on any computer\nSimilarly, LaTeX and Git will work on any computer"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-1",
@@ -14732,7 +14732,7 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---mac-and-linux",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Accessing the shell - Mac and Linux",
-    "text": "Accessing the shell - Mac and Linux\n\nMac users: open the “Terminal” app, or use another app like ‘iTerm2’\nLinux users: open one of several “Terminal” apps\n\n\n\n\n\n\nWindows users have a little more work to do\n\n\n\nSee the next slides"
+    "text": "Accessing the shell - Mac and Linux\n\nMac users: open the “Terminal” app, or use another app like ‘iTerm2’\nLinux users: open one of several “Terminal” apps\n\n\n\n\n\n\nWindows users have a little more work to do\n\n\nSee the next slides"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows",
@@ -14760,7 +14760,7 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-the-difference-between-coding-and-scripting",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "What is the difference between coding and scripting?",
-    "text": "What is the difference between coding and scripting?\n\n\ncoding generally involves computer languages that use compilers\n\nC++, Fortran, Basic, etc\n\nscripting generally involves computer languages that are interpreted on the fly\n\nUnix, Python, R, Julia, etc.\n\ncoding - faster but less flexible; scripting - flexible but slower\nThe distinction between the two has become somewhat fuzzy and most modern analytical pipelines contain a combination of both"
+    "text": "What is the difference between coding and scripting?\n\ncoding generally involves computer languages that use compilers\n\nC++, Fortran, Basic, etc\n\nscripting generally involves computer languages that are interpreted on the fly\n\nUnix, Python, R, Julia, etc.\n\ncoding - faster but less flexible; scripting - flexible but slower\nThe distinction between the two has become somewhat fuzzy and most modern analytical pipelines contain a combination of both"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-computer-system",
@@ -14774,7 +14774,7 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#the-fetch-decode-execute-cycle",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "The Fetch-Decode-Execute Cycle",
-    "text": "The Fetch-Decode-Execute Cycle\n\n\n\n\n\ngraph LR\n    A[Fetch Instruction] --&gt; B[Decode Instruction]\n    B --&gt; C[Execute Instruction]\n    C --&gt; D[Store Results]\n    D --&gt; A\n\n\n\n\n\n\n\n\n\nFetch: Retrieve instruction from memory\nDecode: Interpret what the instruction means\nExecute: Perform the operation\nStore: Save results to memory or register\n\n\nThis is the fundamental cycle that every CPU performs billions of times per second"
+    "text": "The Fetch-Decode-Execute Cycle\n\n\n\n\n\ngraph LR\n    A[Fetch Instruction] --&gt; B[Decode Instruction]\n    B --&gt; C[Execute Instruction]\n    C --&gt; D[Store Results]\n    D --&gt; A\n\n\n\n\n\n\n\n\nFetch: Retrieve instruction from memory\nDecode: Interpret what the instruction means\nExecute: Perform the operation\nStore: Save results to memory or register\n\n\nThis is the fundamental cycle that every CPU performs billions of times per second"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#central-processing-unit-cpu",
@@ -14816,7 +14816,7 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#inputoutput-io-systems",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Input/Output (I/O) Systems",
-    "text": "Input/Output (I/O) Systems\n\n\nInput Devices\n\nKeyboard & Mouse\nTouchscreen\nMicrophone\nCamera\nSensors\nNetwork Interface\n\n\nOutput Devices\n\nMonitor/Display\nPrinter\nSpeakers\nNetwork Interface\nActuators\n\n\n\nOperating Systems"
+    "text": "Input/Output (I/O) Systems\n\n\nInput Devices\n\nKeyboard & Mouse\nTouchscreen\nMicrophone\nCamera\nSensors\nNetwork Interface\n\n\nOutput Devices\n\nMonitor/Display\nPrinter\nSpeakers\nNetwork Interface\nActuators\n\n\nOperating Systems"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-an-operating-system",
@@ -14851,21 +14851,21 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#security-protection",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Security & Protection",
-    "text": "Security & Protection\n\n\nProtection Mechanisms\n\nAccess Control Lists (ACLs)\nUser/Group Permissions\nMemory Protection: Segmentation\nCPU Modes: User vs Kernel\nSandboxing: Isolate processes\n\n\nSecurity Features\n\nAuthentication: User verification\nEncryption: Data protection\nFirewall: Network protection\nAntivirus: Malware detection\nUpdates: Patch vulnerabilities\n\n\n\n\n“Every program and user should operate using the least amount of privilege necessary”"
+    "text": "Security & Protection\n\n\nProtection Mechanisms\n\nAccess Control Lists (ACLs)\nUser/Group Permissions\nMemory Protection: Segmentation\nCPU Modes: User vs Kernel\nSandboxing: Isolate processes\n\n\nSecurity Features\n\nAuthentication: User verification\nEncryption: Data protection\nFirewall: Network protection\nAntivirus: Malware detection\nUpdates: Patch vulnerabilities\n\n\n\n“Every program and user should operate using the least amount of privilege necessary”"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-4",
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-4",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "",
-    "text": "graph LR\n    A[1960s-70s&lt;br/&gt;Mainframes] --&gt; B[1980s-90s&lt;br/&gt;Personal Computers]\n    B --&gt; C[1990s-2000s&lt;br/&gt;Client-Server]\n    C --&gt; D[2000s&lt;br/&gt;Clusters/Grids]\n    D --&gt; E[2006+&lt;br/&gt;Cloud Computing]\n    E --&gt; F[2020s&lt;br/&gt;Edge/Hybrid]\n\n\n\n\n\n\n\nKey Drivers of Change\n\nPerformance Needs: Growing computational demands\nEconomics: Cost optimization and economies of scale\nConnectivity: Internet bandwidth improvements\nVirtualization: Hardware abstraction technologies"
+    "text": "graph LR\n    A[1960s-70s&lt;br/&gt;Mainframes] --&gt; B[1980s-90s&lt;br/&gt;Personal Computers]\n    B --&gt; C[1990s-2000s&lt;br/&gt;Client-Server]\n    C --&gt; D[2000s&lt;br/&gt;Clusters/Grids]\n    D --&gt; E[2006+&lt;br/&gt;Cloud Computing]\n    E --&gt; F[2020s&lt;br/&gt;Edge/Hybrid]\n\n\n\n\n\n\nKey Drivers of Change\n\nPerformance Needs: Growing computational demands\nEconomics: Cost optimization and economies of scale\nConnectivity: Internet bandwidth improvements\nVirtualization: Hardware abstraction technologies"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-overview",
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-overview",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Local Computing Overview",
-    "text": "Local Computing Overview\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nComputing resources that are physically present and directly controlled by the user or organization\n\n\n\n\n\n\nCharacteristics\n\nComplete control over hardware\nData stays on-premises\nNo network dependency for compute\nPredictable performance\nOne-time purchase model\n\n\nCommon Setups\n\nDesktop workstations\nLaptop computers\nOn-premises servers\nLocal development machines"
+    "text": "Local Computing Overview\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\nImportant\n\n\nComputing resources that are physically present and directly controlled by the user or organization\n\n\n\n\n\n\n\n\nCharacteristics\n\nComplete control over hardware\nData stays on-premises\nNo network dependency for compute\nPredictable performance\nOne-time purchase model\n\n\nCommon Setups\n\nDesktop workstations\nLaptop computers\nOn-premises servers\nLocal development machines"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-architecture",
@@ -14879,7 +14879,7 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-pros-and-cons",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Local Computing: Pros and Cons",
-    "text": "Local Computing: Pros and Cons\n\n\n\nAdvantages ✓\n\nLow Latency: No network overhead\nData Control: Complete ownership\nPrivacy: Data never leaves premises\nPredictable Costs: One-time investment\nOffline Capability: Works without internet\nCustomization: Full hardware/software control\n\n\n\n\nDisadvantages ✗\n\nLimited Scale: Hardware constraints\nMaintenance: User responsibility\nUpfront Costs: High initial investment\nDisaster Recovery: Manual backup needed\nResource Waste: Idle during off-hours\nUpgrade Complexity: Physical intervention"
+    "text": "Local Computing: Pros and Cons\n\n\nAdvantages ✓\n\nLow Latency: No network overhead\nData Control: Complete ownership\nPrivacy: Data never leaves premises\nPredictable Costs: One-time investment\nOffline Capability: Works without internet\nCustomization: Full hardware/software control\n\n\nDisadvantages ✗\n\nLimited Scale: Hardware constraints\nMaintenance: User responsibility\nUpfront Costs: High initial investment\nDisaster Recovery: Manual backup needed\nResource Waste: Idle during off-hours\nUpgrade Complexity: Physical intervention"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-overview",
@@ -14893,35 +14893,35 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#resource-managers",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Resource Managers",
-    "text": "Resource Managers\nThese are used to schedule computing jobs on computer clusters.\n\n\n\nSystem\nUse Case\nKey Features\n\n\n\n\nSLURM\nHPC\nAdvanced scheduling, power management\n\n\nPBS/Torque\nTraditional HPC\nMature, stable, wide support\n\n\nSGE/UGE\nMixed workloads\nFlexible policies\n\n\nKubernetes\nContainers\nMicroservices, auto-scaling\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWe use SLURM on Talapas at the University of Oregon for scheduling compute jobs"
+    "text": "Resource Managers\nThese are used to schedule computing jobs on computer clusters.\n\n\n\nSystem\nUse Case\nKey Features\n\n\n\n\nSLURM\nHPC\nAdvanced scheduling, power management\n\n\nPBS/Torque\nTraditional HPC\nMature, stable, wide support\n\n\nSGE/UGE\nMixed workloads\nFlexible policies\n\n\nKubernetes\nContainers\nMicroservices, auto-scaling\n\n\n\n\n\n\n\n\n\nImportant\n\n\nWe use SLURM on Talapas at the University of Oregon for scheduling compute jobs"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-pros-and-cons",
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-pros-and-cons",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Cluster Computing: Pros and Cons",
-    "text": "Cluster Computing: Pros and Cons\n\n\n\nAdvantages ✓\n\nScalability: Add nodes as needed\nPerformance: Parallel processing power\nCost-Effective: Commodity hardware\nFault Tolerance: Node redundancy\nResource Sharing: Multiple users/projects\nSpecialized Hardware: GPUs, high-mem nodes\n\n\n\n\nDisadvantages ✗\n\nComplexity: Requires expertise\nInfrastructure: Space, power, cooling\nNetwork Dependency: Interconnect bottlenecks\nSoftware Licenses: Per-node costs\nMaintenance: Hardware failures\nInitial Setup: Complex configuration"
+    "text": "Cluster Computing: Pros and Cons\n\n\nAdvantages ✓\n\nScalability: Add nodes as needed\nPerformance: Parallel processing power\nCost-Effective: Commodity hardware\nFault Tolerance: Node redundancy\nResource Sharing: Multiple users/projects\nSpecialized Hardware: GPUs, high-mem nodes\n\n\nDisadvantages ✗\n\nComplexity: Requires expertise\nInfrastructure: Space, power, cooling\nNetwork Dependency: Interconnect bottlenecks\nSoftware Licenses: Per-node costs\nMaintenance: Hardware failures\nInitial Setup: Complex configuration"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-overview",
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-overview",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Cloud Computing Overview",
-    "text": "Cloud Computing Overview\nOn-demand delivery of computing resources over the internet with pay-as-you-go pricing\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    R[Region 1] --&gt; AZ1[Availability Zone 1]\n    R --&gt; AZ2[Availability Zone 2]\n    AZ1 --&gt; C[Compute]\n    AZ1 --&gt; S[Storage]\n    AZ1 --&gt; N[Networking]\n    AZ2 --&gt; C2[Compute]\n    AZ2 --&gt; S2[Storage]\n    AZ2 --&gt; N2[Networking]\n    U[Users] -.Internet.-&gt; R\n\n\n\n\n\n\n\nMajor Providers\n\nAmazon Web Services (AWS): Market leader, 200+ services\nMicrosoft Azure: Enterprise integration\nGoogle Cloud Platform: AI/ML focus\nOthers: IBM Cloud, Oracle Cloud, Alibaba Cloud"
+    "text": "Cloud Computing Overview\nOn-demand delivery of computing resources over the internet with pay-as-you-go pricing\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    R[Region 1] --&gt; AZ1[Availability Zone 1]\n    R --&gt; AZ2[Availability Zone 2]\n    AZ1 --&gt; C[Compute]\n    AZ1 --&gt; S[Storage]\n    AZ1 --&gt; N[Networking]\n    AZ2 --&gt; C2[Compute]\n    AZ2 --&gt; S2[Storage]\n    AZ2 --&gt; N2[Networking]\n    U[Users] -.Internet.-&gt; R\n\n\n\n\n\n\nMajor Providers\n\nAmazon Web Services (AWS): Market leader, 200+ services\nMicrosoft Azure: Enterprise integration\nGoogle Cloud Platform: AI/ML focus\nOthers: IBM Cloud, Oracle Cloud, Alibaba Cloud"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-pros-and-cons",
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-pros-and-cons",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Cloud Computing: Pros and Cons",
-    "text": "Cloud Computing: Pros and Cons\n\n\n\nAdvantages ✓\n\nElastic Scaling: Instant resource adjustment\nPay-per-Use: No idle resource costs\nGlobal Reach: Multiple regions\nManaged Services: Reduced operations\nInnovation Speed: Latest technologies\nDisaster Recovery: Built-in redundancy\nNo CAPEX: Operating expense model\n\n\n\n\nDisadvantages ✗\n\nOngoing Costs: Can exceed on-prem\nVendor Lock-in: Proprietary services\nInternet Dependency: Connectivity required\nData Transfer Costs: Egress fees\nCompliance Complexity: Data residency\nLess Control: Shared responsibility\nPerformance Variability: Noisy neighbors"
+    "text": "Cloud Computing: Pros and Cons\n\n\nAdvantages ✓\n\nElastic Scaling: Instant resource adjustment\nPay-per-Use: No idle resource costs\nGlobal Reach: Multiple regions\nManaged Services: Reduced operations\nInnovation Speed: Latest technologies\nDisaster Recovery: Built-in redundancy\nNo CAPEX: Operating expense model\n\n\nDisadvantages ✗\n\nOngoing Costs: Can exceed on-prem\nVendor Lock-in: Proprietary services\nInternet Dependency: Connectivity required\nData Transfer Costs: Egress fees\nCompliance Complexity: Data residency\nLess Control: Shared responsibility\nPerformance Variability: Noisy neighbors"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-unix",
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-unix",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "What is Unix?",
-    "text": "What is Unix?\n\n\nA scripting language developed in 1969, released in 1973\nServes as the base language for many programs and computers\nRuns both locally on your computer and on large clusters like Talapas\nLinux is an open-source version of the same language"
+    "text": "What is Unix?\n\nA scripting language developed in 1969, released in 1973\nServes as the base language for many programs and computers\nRuns both locally on your computer and on large clusters like Talapas\nLinux is an open-source version of the same language"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-shell",
@@ -14942,7 +14942,7 @@
     "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-use-the-shell",
     "title": "Week 1 Computational Tools for Bioengineers",
     "section": "Why use the shell?",
-    "text": "Why use the shell?\n\n\nSpeed\nCan handle extremely large file sizes\nUse programs only available via shell\nThe commands work almost identically across platforms\nYou can even use them on a large computer cluster like Talapas and AWS\nIt is incredibly powerful particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands"
+    "text": "Why use the shell?\n\nSpeed\nCan handle extremely large file sizes\nUse programs only available via shell\nThe commands work almost identically across platforms\nYou can even use them on a large computer cluster like Talapas and AWS\nIt is incredibly powerful particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#where-do-you-get-help",
