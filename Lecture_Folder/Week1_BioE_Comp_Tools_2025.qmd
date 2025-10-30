@@ -636,10 +636,9 @@ graph TB
 | SGE/UGE    | Mixed workloads | Flexible policies                     |
 | Kubernetes | Containers      | Microservices, auto-scaling           |
 
-:::{.callout-important}
+::: callout-important
 We use SLURM on Talapas at the University of Oregon for scheduling compute jobs
 :::
-
 
 ## Cluster Computing: Pros and Cons {.smaller}
 
@@ -694,7 +693,6 @@ graph TB
 -   **Google Cloud Platform**: AI/ML focus
 -   **Others**: IBM Cloud, Oracle Cloud, Alibaba Cloud
 
-
 ## Cloud Computing: Pros and Cons {.smaller}
 
 ::::: columns
@@ -731,7 +729,7 @@ graph TB
 knitr::include_graphics("images/w1_code.jpeg")
 ```
 
-## What is Unix?  {.smaller}
+## What is Unix? {.smaller}
 
 ::: incremental
 -   A scripting language developed in 1969, released in 1973
