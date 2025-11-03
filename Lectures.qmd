@@ -6,4 +6,6 @@ title: "Lectures"
 
 [Lecture_2](Lecture_Folder/Week2_BioE_Comp_Tools_2025.qmd)
 
+[Lecture_3](Lecture_Folder/Week3_BioE_Comp_Tools_2025.qmd)
+
 

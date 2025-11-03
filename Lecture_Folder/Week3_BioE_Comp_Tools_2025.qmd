@@ -1,0 +1,1361 @@
+---
+title: "Week 3 Computational Tools for Bioengineers"
+author: "Bill Cresko"
+format: 
+  revealjs:
+    footer: BioE_Comp_Tools_2025 - Knight Campus 
+    transition: fade
+    transition-speed: slow
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(readxl)
+theme_set(theme_minimal())
+```
+
+## Goals for today
+
+-   Finish advanced Unix
+-   Work with human chromosome 1 sequence data
+-   Tidy Data
+-   R and RStudio
+
+# The Command Line
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/w1_code.jpeg")
+```
+
+## Making new files {.smaller}
+
+-   Make new folders: `mkdir`
+-   Make new files: `nano`, `touch`
+-   Rename files: `mv`
+-   Move files: `mv`
+-   Copy files: `cp`
+-   Delete files: `rm`
+-   Delete directories: `rmdir`
+-   Examining file length: `wc`
+-   Reading files: `cat`
+-   Looking at beginning or end: `head` or `tail`
+
+## Things to keep in mind {.smaller}
+
+-   The shell trusts you
+    -   It will delete files you say to delete
+    -   It will override files if you name 2 things the same
+-   Naming conventions
+    -   Avoid spaces
+    -   Don’t start with a –
+    -   Stick to letters, numbers, . , -, and \_
+-   Use appropriate file extensions in file names
+    -   Some software expect files with certain extensions (.fasta, .txt, etc.)
+
+## Practice making files and directories {.smaller}
+
+-   Make a new directory called whatever you'd like.
+-   Add a file named `Practice.txt` to the directory and add some text to it
+-   Read the contents of the file and get its length
+-   Rename the file to `Super_practice.txt`
+-   Move the file to a new folder named `Testing`
+-   Make a copy of the file named `Super_practice_copy.txt`
+-   Read the contents of the file and get its length to make sure it’s the same as `Super_practice.txt`
+-   Delete the original `Super_practice.txt`
+
+# Reading and Writing Files in Unix
+
+## Commands for Reading Files {.smaller}
+
+-   **`cat`** = concatenate and display files
+    -   Shows entire file at once
+    -   Good for small files
+-   **`less`** = view file page by page
+    -   Navigate with `space` (forward), `b` (back), `q` (quit)
+    -   Search with `/pattern`
+-   **`more`** = similar to less but simpler
+    -   Space to go forward, `q` to quit
+-   **`head`** = display first 10 lines (default)
+    -   `head -n 20 file.txt` shows first 20 lines
+-   **`tail`** = display last 10 lines (default)
+    -   `tail -n 20 file.txt` shows last 20 lines
+    -   `tail -f file.txt` follows file as it grows (useful for logs)
+
+## Input Redirection {.smaller}
+
+-   **`<`** = redirect input from a file
+    -   `command < input.txt`
+    -   Sends contents of file as input to command
+-   **`<<`** = here document (multi-line input)
+    -   Allows you to provide multi-line input directly in the terminal
+-   Example uses:
+    -   `wc -l < data.txt` counts lines in data.txt
+    -   `sort < names.txt` sorts contents of names.txt
+
+## Output Redirection {.smaller}
+
+-   **`>`** = redirect output to a file (overwrites)
+    -   `ls -l > filelist.txt`
+    -   Creates new file or overwrites existing
+-   **`>>`** = append output to a file
+    -   `echo "new line" >> existing.txt`
+    -   Adds to the end of existing file
+-   **`2>`** = redirect error messages
+    -   `command 2> errors.txt`
+    -   Captures error messages separately
+-   **`&>`** = redirect both output and errors
+    -   `command &> all_output.txt`
+
+## Unix Three Standard Streams {.smaller}
+
+-   **stdin (0)** = Standard Input
+    -   Where programs read input from
+    -   Default: keyboard
+-   **stdout (1)** = Standard Output
+    -   Where programs write normal output
+    -   Default: terminal screen
+-   **stderr (2)** = Standard Error
+    -   Where programs write error messages
+    -   Default: terminal screen (same as stdout)
+
+## Visualizing Data Streams {.smaller}
+
+``` bash
+# Every Unix program has these three streams
+         ┌──────────────┐
+stdin ───>│              │───> stdout
+    (0)  │   Program    │      (1)
+         │              │───> stderr
+         └──────────────┘      (2)
+```
+
+-   File descriptor numbers: 0, 1, 2
+-   Can redirect each stream independently
+-   Programs don't know if streams are redirected
+-   This abstraction is key to Unix philosophy
+
+## Basic Stream Redirection {.smaller}
+
+``` bash
+# Redirect stdout to file (equivalent ways)
+
+ls -l > files.txt
+ls -l 1> files.txt      # Explicitly using fd 1
+
+# Redirect stderr to file
+
+ls /nonexistent 2> errors.txt
+
+# Redirect both stdout and stderr to same file
+
+ls -l /nonexistent &> all_output.txt
+```
+
+## Bioinformatics Example {.smaller}
+
+Processing sequence data with stream control:
+
+``` bash
+# FASTQ processing pipeline with error handling
+
+zcat reads.fastq.gz 2> unzip_errors.log | 
+fastqc stdin 2> qc_errors.log | 
+trimmomatic 2> trim_errors.log | 
+bowtie2 -x genome - 2> alignment_stats.txt | 
+samtools sort 2> sort_errors.log | 
+samtools index - 2> index_errors.log
+
+# Check all error logs at once
+
+cat *_errors.log | grep -E "ERROR|WARNING"
+```
+
+# Unix Pipes {.flexbox .vcenter}
+
+## What are Pipes? {.smaller}
+
+-   **`|`** = the pipe operator
+    -   Takes output from one command as input to another
+    -   Chains commands together
+    -   No intermediate files needed!
+-   Basic syntax:
+    -   `command1 | command2 | command3`
+-   Power of Unix philosophy:
+    -   Small tools that do one thing well
+    -   Combine them to do complex tasks
+
+## Common Pipe Patterns {.smaller}
+
+-   **Counting patterns:**
+    -   `grep "pattern" file.txt | wc -l`
+    -   Count lines matching a pattern
+-   **Sorting and uniqueness:**
+    -   `cat file.txt | sort | uniq`
+    -   Sort lines and remove duplicates
+-   **Finding top/bottom items:**
+    -   `sort data.txt | head -5`
+    -   Get top 5 after sorting
+-   **Filtering and processing:**
+    -   `ls -l | grep ".txt" | awk '{print $5, $9}'`
+    -   List txt files with sizes
+
+## Advanced Pipe Examples {.smaller}
+
+-   **Multi-step data processing:**
+    -   `cat data.csv | cut -d',' -f2 | sort | uniq -c | sort -rn`
+    -   Extract column 2, count unique values, sort by frequency
+-   **Complex transformations:**
+    -   `find . -name "*.txt" | xargs wc -l | sort -n`
+    -   Find all txt files and sort by line count
+-   **Real-time monitoring:**
+    -   `tail -f logfile.txt | grep ERROR`
+    -   Watch log file for errors in real-time
+
+## Tips for Working with Files and Pipes {.smaller}
+
+-   Test pipes step by step
+    -   Build complex pipes incrementally
+    -   Check output at each stage
+-   Use `less` for large files instead of `cat`
+-   Remember: `>` overwrites, `>>` appends
+-   Pipe efficiency:
+    -   Filter early in the pipeline
+    -   Reduces data passed between commands
+-   Save intermediate results when debugging complex pipes \# Unix Data Streams
+
+## Practice Exercise: Files and Pipes {.smaller}
+
+Try these exercises:
+
+1.  Create a file with a list of numbers (one per line)
+2.  Use pipes to sort them numerically
+3.  Save the sorted list to a new file using redirection
+4.  Display and save the top 5 numbers
+5.  Count how many unique numbers you have using pipes
+6.  Append the count to your results file
+
+# Working with Large Genomic Data Files
+
+## Human Chromosome Data {.smaller}
+
+-   Genomic data files can be massive (human genome \~6 billion base pairs)
+-   FASTA format is standard for sequence data
+-   Perfect use case for Unix pipes and redirection
+-   Let's work with human genome assembly version 38 (\~3.1 GB)
+
+## Downloading Genomic Data {.smaller}
+
+Download version 38 of the human genome from NCBI:
+
+``` bash
+
+# Using `wget` to download human genome
+
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/\
+GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz
+
+# Or using `curl` and save with specific name
+
+curl -o human_genome.fa.gz https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/\
+GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz
+```
+
+-   `wget` and `curl` are both tools for downloading files
+-   The backslash allows long URLs to span multiple lines
+-   `.gz` extension means the file is compressed
+
+## Examining Large Files Efficiently {.smaller}
+
+Don't use `cat` on huge files! Use these approaches:
+
+``` bash
+# Decompress and look at first 10 lines
+
+gunzip -c chr21.fa.gz | head -10
+
+# Check file size before and after decompression
+
+ls -lh chr21.fa.gz
+gunzip chr21.fa.gz
+ls -lh chr21.fa
+
+# Count sequences in FASTA file (lines starting with >)
+
+grep "^>" chr21.fa | wc -l
+
+# View sequence headers only
+
+grep "^>" chr21.fa | less
+```
+
+## Creating a Subset for Analysis {.smaller}
+
+Make a smaller working file for testing:
+
+``` bash
+# Extract first 1MB of sequence for testing
+
+head -n 20000 chr21.fa > chr21_subset.fa
+
+# Or extract specific scaffold/contig by name
+
+awk '/^>chr21:1000000-2000000/,/^>/' chr21.fa | \
+  head -n -1 > region_of_interest.fa
+
+# Create a random sample of sequences
+
+grep "^>" chr21.fa | \
+  shuf -n 10 | \
+  while read header; do
+    grep -A 1000 "$header" chr21.fa
+  done > random_sample.fa
+```
+
+## Processing FASTA Files with Pipes {.smaller}
+
+Extract specific regions or sequences:
+
+``` bash
+# Extract just the sequence (no headers) and count bases
+
+grep -v "^>" chr21.fa | tr -d '\n' | wc -c
+
+# Count each type of nucleotide
+
+grep -v "^>" chr21.fa | \
+  tr -d '\n' | \
+  fold -w1 | \
+  sort | \
+  uniq -c
+
+# Extract a specific gene region (lines 1000-2000)
+
+sed -n '1000,2000p' chr21.fa > gene_region.fa
+```
+
+-   `grep -v` inverts the match (excludes lines)
+-   `tr -d '\n'` removes newlines
+-   `fold -w1` puts each character on its own line
+
+## Finding Patterns in Genomic Data {.smaller}
+
+Search for specific sequences and motifs:
+
+``` bash
+# Find all instances of a restriction enzyme site (EcoRI: GAATTC)
+
+grep -v "^>" chr21.fa | \
+  tr -d '\n' | \
+  grep -o "GAATTC" | \
+  wc -l
+
+# Extract 100 bases around each EcoRI site
+
+grep -v "^>" chr21.fa | \
+  tr -d '\n' | \
+  grep -oE ".{100}GAATTC.{100}" > ecori_contexts.txt
+
+# Find all start codons (ATG) and their positions
+
+grep -v "^>" chr21.fa | \
+  tr -d '\n' | \
+  grep -b -o "ATG" | \
+  head -20
+```
+
+## Combining Downloads with Processing {.smaller}
+
+Stream processing without saving intermediate files:
+
+``` bash
+# Download, decompress, and process in one pipeline
+curl -s https://url/to/genome.fa.gz | \
+  gunzip -c | \
+  grep -v "^>" | \
+  tr -d '\n' | \
+  cut -c1-1000000 > first_megabase.txt
+
+# Download and immediately analyze GC content
+wget -O - https://url/to/genome.fa.gz | \
+  gunzip -c | \
+  grep -v "^>" | \
+  tr -d '\n' | \
+  tr 'ATGC' '0011' | \
+  awk '{s+=gsub(/1/,"")} END {print "GC%:", s/length*100}'
+```
+
+::: notes
+-   The `-O -` flag tells wget to output to stdout
+-   This approach saves disk space and time
+:::
+
+## Key Takeaways {.smaller}
+
+-   **Real bioinformatics often involves gigabytes of data - these Unix tools scale beautifully!**
+-   **Never load entire genome files into memory** - use streaming
+-   **Combine tools** - each does one thing well
+-   **Test on subsets first** - extract small portions for development
+-   **Document your pipelines** - save commands in scripts
+-   **Use compression** - work with .gz files directly when possible
+-   **Think in streams** - data flows through pipes without intermediate files
+
+## Practice Exercise: Genomic Data Pipeline {.smaller}
+
+Build a complete analysis pipeline:
+
+1.  Download a bacterial genome (smaller, \~5 MB)
+2.  Count the total number of genes (hint: count headers)
+3.  Calculate the genome size in base pairs
+4.  Find the 10 most common 6-base sequences
+5.  Extract all genes with "ribosomal" in the header
+6.  Save your pipeline as a shell script for reproducibility
+
+# BREAK
+
+# Tidy Data {.smaller}
+
+## An example to get us started {.smaller}
+
+##  {.flexbox .vcenter}
+
+```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/week_01.005.jpeg")
+```
+
+##  {.flexbox .vcenter}
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/week_01.006.jpeg")
+```
+
+## Data set rules of thumb (aka Tidy Data) {.smaller}
+
+-   Store a copy of data in nonproprietary software and hardware formats, such as plain ASCII text (aka a flat file)
+-   Leave an uncorrected file when doing analyses
+-   Use descriptive names for your data files and variables
+-   Include a header line with descriptive variable names
+-   Maintain effective metadata about the data (data dictionary)
+-   When you add observations to a database, add rows
+-   When you add variables to a database, add columns, not rows
+-   A column of data should contain only one data type
+
+## Not all data are tidy to begin with
+
+-   Sometimes need to do some data wrangling
+
+-   But also contingency tables
+
+## Types of data {.smaller}
+
+|  |  |  |  |
+|:--:|:--:|:--:|:--:|
+| Categorical |  | Quantitative |  |
+| Ordinal | Nominal | Ratio | Interval |
+| small, medium, large | apples, oranges, bananas | kilograms, dollars, years | temperature, calendar year |
+| ordered character | character | numeric | integer |
+
+'Factor' is a special type of character variable that we will explore more later
+
+# Tools for repeatable science
+
+##  {.flexbox .vcenter}
+
+```{r, echo=FALSE, out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/week_01.007.jpeg")
+```
+
+## Computational Tools - R and RStudio {.flexbox .vcenter}
+
+```{r, echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics("images/RStudio_Screenshot.png")
+```
+
+## Why use `R`? {.flexbox .vcenter .smaller}
+
+::: incremental
+-   Good general scripting tool for statistics and mathematics
+-   Powerful and flexible and free
+-   Runs on all computer platforms
+-   New enhancements coming out all the time
+-   Superb data management & graphics capabilities
+:::
+
+## Why use `R`? {.flexbox .vcenter .smaller}
+
+::: incremental
+-   Reproducibility - can keep your scripts to see exactly what was done
+-   You can write your own functions
+-   Lots of online help available
+-   Can use a nice GUI front end such as `Rstudio`
+-   Can embed your `R` analyses in dynamic, polished files using `Markdown`
+-   Markdown can be reused for websites, papers, books, presentations...
+:::
+
+## `R scripts` and `Markdown files` {.flexbox .vcenter .smaller}
+
+-   Often we want to write scripts that can just be run
+-   We can also embed code in Markdown files that provide more annotations
+-   https://quarto.org/docs/authoring/markdown-basics.html
+-   You can insert `Rchunks` into `Quarto markdown` documents
+
+## Rscript basics {.flexbox .vcenter .smaller}
+
+-   A series of R commands that will be executed
+-   Can add comments using hashtags `#`
+-   Can have pipes (`|>`) to connect one step to the next
+
+## Markdown basics {.flexbox .vcenter .smaller}
+
+-   a very simplified way for standard typesetting
+-   simple markdown can be rendered in numerous different ways
+-   Lists, codeblocks, images and more can all be inserted
+
+## Inserting equations in markdown {.flexbox .vcenter .smaller}
+
+``` latex
+$$e=mc^2$$
+```
+
+$$e=mc^2$$
+
+``` latex
+$$\iint\limits_{a}^{b} f(x,y) \, dx \, dy$$
+```
+
+$$\iint\limits_{a}^{b} f(x,y) \, dx \, dy$$
+
+## BASICS of `R` {.flexbox .vcenter .smaller}
+
+-   Commands can be submitted through the terminal, console or scripts
+-   In your scripts, anything that follows '\#' symbol (aka hash) is just for humans
+-   Notice on these slides I'm evaluating the code chunks and showing output
+-   The output is shown here after the two `#` symbols and the number of output items is in `[]`
+-   Also notice that `R` follows the normal priority of mathematical evaluation
+
+```{r basic multiplication, echo=TRUE}
+4*4
+```
+
+```{r more multiplication, echo=TRUE}
+(4+3*2^2)
+```
+
+## Assigning Variables {.flexbox .vcenter .smaller}
+
+-   A better way to do this is to assign variables
+-   Variables are assigned values using the `<-` operator.
+-   Variable names must begin with a letter, but other than that, just about anything goes.
+-   Do keep in mind that `R` is case sensitive.
+
+## Assigning Variables {.flexbox .vcenter .smaller}
+
+```{r assigning variables, echo=TRUE, tidy=TRUE}
+
+x <- 2
+x*3
+y <- x * 3
+y-2
+
+```
+
+These do not work
+
+```{r eval=FALSE, echo=TRUE}
+3y <- 3
+3*y <- 3
+```
+
+## Arithmetic operations on functions {.flexbox .vcenter .smaller}
+
+-   Arithmetic operations can be performed easily on functions as well as numbers.
+-   Try the following, and then your own.
+
+```{r functions, eval = FALSE, echo = TRUE}
+x+2
+x^2
+log(x)
+```
+
+-   Note that the last of these - `log` - is a built in function of `R`, and therefore the object of the function needs to be put in parentheses
+-   These parentheses will be important, and we'll come back to them later when we add arguments after the object in the parentheses
+-   The outcome of calculations can be assigned to new variables as well, and the results can be checked using the 'print' command
+
+## Arithmetic operations on functions {.flexbox .vcenter}
+
+```{r, echo=TRUE}
+y <- 67
+print(y)
+
+x <- 124
+z <- (x*y)^2
+print(z)
+```
+
+## STRINGS {.flexbox .vcenter .smaller}
+
+-   Variables and operations can be performed on characters as well
+-   Note that characters need to be set off by quotation marks to differentiate them from numbers
+-   The `c` stands for `concatenate`
+-   Note that we are using the same variable names as we did previously, which means that we're overwriting our previous assignment
+-   A good rule of thumb is to use new names for each variable, and make them short but still descriptive
+
+## STRINGS {.flexbox .vcenter .smaller}
+
+```{r, echo=TRUE}
+x <- "I Love"
+print (x)
+y <- "Biostatistics"
+print (y)
+z <- c(x,y)
+print (z)
+```
+
+## FACTORS {.flexbox .vcenter .smaller}
+
+-   The variable `z` is now what is called a list of character values.
+-   Sometimes we would like to treat the characters as if they were units for subsequent calculations.
+-   These are called `factors`, and we can redefine our character variables as factors.
+-   This might seem a bit strange, but it’s important for statistical analyses where we might want to see the mean or variance for two different treatments.
+
+## FACTORS {.flexbox .vcenter}
+
+```{r, eval = FALSE, echo = TRUE}
+z_factor <- as.factor(z)
+print (z_factor)
+```
+
+-   Note that factor levels are reported alphabetically
+
+## VECTORS {.flexbox .vcenter .smaller}
+
+-   In general `R` thinks in terms of vectors (a list of characters, factors or numerical values)
+
+-   it will benefit any `R` user to try to write programs with that in mind, as it will simplify most things.
+
+-   Vectors can be assigned directly using the 'c()' function and then entering the exact values.
+
+## VECTORS {.flexbox .vcenter}
+
+```{r Example vectors, echo=TRUE}
+x <- c(2,3,4,2,1,2,4,5,10,8,9)
+print(x)
+```
+
+## Basic Statistics {.flexbox .vcenter}
+
+-   Many functions exist to operate on vectors.
+-   Combine these with your previous variable to see what happens.
+-   Also, try to find other functions (e.g. standard deviation).
+
+## Basic Statistics {.flexbox .vcenter}
+
+```{r, eval = FALSE, echo = TRUE}
+mean(x)
+median(x)
+var(x)
+log(x)
+ln(x)
+sqrt(x)
+sum(x)
+length(x)
+sample(x, replace = T)
+```
+
+-   Notice that the last function (`sample`) has an argument (`replace=T`)
+-   Arguments simply modify or direct the function in some way
+-   There are many arguments for each function, some of which are defaults
+
+## Getting Help {.flexbox .vcenter}
+
+-   Getting Help on any function is very easy - just type a question mark and the name of the function.
+-   There are functions for just about anything within `R` and it is easy enough to write your own functions if none already exist to do what you want to do.
+-   In general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters to send to the function.
+-   Help pages exist for all functions that, at a minimum, explain what parameters exist for the function.
+-   Help can be accessed a few ways - try them :
+
+## Getting Help {.flexbox .vcenter}
+
+```{r, eval = FALSE, echo = TRUE}
+- help(mean)
+- ?mean
+- example(mean)
+- help.search("mean")
+- apropos("mean")
+- args(mean)
+```
+
+## Creating vectors {.smaller}
+
+-   Creating vector of new data by entering it by hand can be a drag
+-   However, it is also very easy to use functions such as `seq` and `sample`
+-   Try the examples below Can you figure out what the three arguments in the parentheses mean?
+-   Try varying the arguments to see what happens.
+-   Don't go too crazy with the last one or your computer might slow way down
+
+## Creating vectors {.smaller}
+
+```{r, echo = TRUE}
+seq_1 <- seq(0.0, 10.0, by = 0.1)
+print(seq_1)
+seq_2 <- seq(10.0, 0.0, by = -0.1)
+print(seq_2)
+```
+
+## Creating vectors {.smaller}
+
+```{r, echo = TRUE}
+seq_square <- (seq_2)*(seq_2)
+print(seq_square)
+```
+
+## Creating vectors {.smaller}
+
+```{r, echo = TRUE}
+seq_square_new <- (seq_2)^2
+print(seq_square_new)
+```
+
+## Drawing samples from distributions {.flexbox .vcenter}
+
+-   Here is a way to create your own data sets that are random samples.
+-   Again, play around with the arguments in the parentheses to see what happens.
+
+## Drawing samples from distributions {.smaller}
+
+```{r Samples from distributions 1, out.width='100%', echo = TRUE}
+x <- rnorm (10000, 0, 10)
+y <- sample (1:10000, 10000, replace = T)
+xy <- cbind(x,y)
+plot(x,y) 
+```
+
+## Drawing samples from distributions {.smaller}
+
+```{r Samples from distributions 2, out.width='100%', echo = TRUE}
+x <- rnorm (10000, 0, 10)
+y <- sample (1:10000, 10000, replace = T)
+xy <- cbind(x,y)
+plot(xy)
+```
+
+## Drawing samples from distributions {.smaller}
+
+```{r Samples from distributions 3, out.width='100%', echo = TRUE}
+x <- rnorm (10000, 0, 10)
+y <- sample (1:10000, 10000, replace = T)
+xy <- cbind(x,y)
+hist(x)
+```
+
+## Drawing samples from distributions {.flexbox .vcenter .smaller}
+
+-   You’ve probably figured out that y from the last example is drawing numbers with equal probability.
+-   What if you want to draw from a distribution?
+-   Again, play around with the arguments in the parentheses to see what happens.
+
+## Drawing samples from distributions {.flexbox .vcenter out.width="50%"}
+
+```{r, out.width='100%', echo = TRUE}
+x <-rnorm(1000, 0, 100)
+hist(x, xlim = c(-500,500))
+curve(50000*dnorm(x, 0, 100), xlim = c(-500,500), add=TRUE, col='Red')
+```
+
+-   `dnorm()` generates the probability density, which can be plotted using the `curve()` function.
+-   Note that is curve is added to the plot using `add=TRUE`
+
+## Visualizing Data {.flexbox .vcenter}
+
+-   So far you've been visualizing just the list of output numbers
+-   Except for the last example where I snuck in a `hist` function.
+-   You can also visualize all of the variables that you've created using the `plot` function (as well as a number of more sophisticated plotting functions).
+-   Each of these is called a `high level` plotting function, which sets the stage
+-   `Low level` plotting functions will tweak the plots and make them beautiful
+
+## Visualizing Data {.flexbox .vcenter}
+
+-   What do you think that each of the arguments means for the plot function?
+-   A cool thing about `R` is that the options for the arguments make sense.
+-   Try adjusting an argument and see if it works
+-   Note soon we will be exploring the plotting in `ggplot2`
+
+## Visualizing Data {.flexbox .vcenter .smaller}
+
+```{r, echo = TRUE}
+seq_1 <- seq(0.0, 10.0, by = 0.1) 
+plot (seq_1, xlab="space", ylab ="function of space", type = "p", col = "red")
+```
+
+## Putting plots in a single figure {.flexbox .vcenter}
+
+-   On the next slide
+-   The first line of the lower script tells R that you are going to create a composite figure that has two rows and two columns. Can you tell how?
+-   Now, modify the code to add two more variables and add one more row of two panels.
+
+```{r, echo=TRUE, outwidth="50%", out.height="20%"}
+seq_1 <- seq(0.0, 10.0, by = 0.1)
+seq_2 <- seq(10.0, 0.0, by = -0.1)
+```
+
+## Putting plots in a single figure {.flexbox .vcenter .smaller}
+
+```{r, echo=TRUE, outwidth="50%", out.height="50%"}
+par(mfrow=c(2,2))
+plot (seq_1, xlab="time", ylab ="p in population 1", type = "p", col = 'red')
+plot (seq_2, xlab="time", ylab ="p in population 2", type = "p", col = 'green')
+plot (seq_square, xlab="time", ylab ="p2 in population 2", type = "p", col = 'blue')
+plot (seq_square_new, xlab="time", ylab ="p in population 1", type = "l", col = 'yellow')
+```
+
+## Example using binomial distribution {.flexbox .vcenter}
+
+-   As above for the normal distribution, data can be generated by being sampled from nearly any distribution and then visualized.
+-   Below I’m having you use the ‘histogram’ function. What does it do?
+
+## Example using binomial distribution {.smaller}
+
+-   10 successes (out of 20 trials) is the most frequent outcome
+
+```{r binomial function, echo=TRUE}
+heads <- rbinom(n=1000, size=20, prob=0.5)
+hist(heads)
+```
+
+## Example using binomial distribution {.smaller}
+
+-   This kind of statement can be run in one line as well, which is sometimes easier.
+
+```{r binomial function again, echo=TRUE}
+hist(rbinom(n=1000, size=20, prob=0.5))
+```
+
+## Creating Data Frames in R {.smaller}
+
+-   As you have seen, in R you can generate your own random data set drawn from nearly any distribution very easily.
+-   Often we will want to use collected data.
+-   Now, let’s make a dummy dataset to get used to dealing with data frames
+-   Set up three variables (hydrogel_concentration, compression and conductivity) as vectors
+
+```{r, echo=TRUE}
+hydrogel_concentration <- factor(c("low", "high", "high", "high", "medium", "medium", "medium","low"))
+compression <- c(3.4, 3.4, 8.4, 3, 5.6, 8.1, 8.3, 4.5)
+conductivity <- c(0, 9.2, 3.8, 5, 5.6, 4.1, 7.1, 5.3)
+```
+
+-   Create a data frame where vectors become columns
+
+```{r, echo=TRUE}
+mydata <- data.frame(hydrogel_concentration, compression, conductivity)
+row.names(mydata) <- c("Sample_1", "Sample_2", "Sample_3", "Sample_4", 
+                       "Sample_5", "Sample_6", "Sample_7", "Sample_8")
+```
+
+-   Now you have a hand-made data frame with row names
+-   Take a look at it in the data section of RStudio
+
+## Reading in Data Frames in R {.flexbox .vcenter .smaller}
+
+-   A strength of `R` is being able to import data from an external source
+-   Create the same table that you did above in a spreadsheet like Excel
+-   Export it to comma separated and tab separated text files for importing into `R`.
+-   The first will read in a comma-delimited file, whereas the second is a tab-delimited
+-   In both cases the header and row.names arguments indicate that there is a header row and row label column
+-   Note that the name of the file by itself will have R look in the CWD, whereas a full path can also be used
+
+## Reading in Data Frames in R {.flexbox .vcenter}
+
+```{r, eval = FALSE, echo = TRUE}
+YourFile <- read.table('yourfile.csv', header=T, row.names=1, sep=',')
+YourFile <- read.table('yourfile.txt', header=T, row.names=1, sep='\t')
+```
+
+## Exporting Data Frames in R {.flexbox .vcenter}
+
+```{r, eval = FALSE, echo = TRUE}
+write.table(YourFile, "yourfile.csv", quote=F, row.names=T, sep=",")
+write.table(YourFile, "yourfile.txt", quote=F, row.names=T, sep="\t")
+```
+
+## Indexing in data frames {.flexbox .vcenter}
+
+-   Next up - indexing just a subset of the data
+-   This is a very important idea in R, that you can analyze just a subset of the data.
+-   This is analyzing only the data in the file you made that has the factor value 'mixed'.
+
+```{r, echo=TRUE, eval=FALSE}
+print (YourFile[,2])
+print (YourFile$variable)
+print (YourFile[2,])
+plot (YourFile$variable1, YourFile$variable2)
+```
+
+## R INTERLUDE \| Some real transcriptomic data {.flexbox .vcenter}
+
+-   Examine the data file
+-   How many many rows and columns are there?
+-   How many different variables are there?
+-   What are the general types of variables?
+-   Now let’s read the data file into R and analyze it
+-   This exercise will help you get used to reading in and manipulating genomic data files
+-   First off, remember to set your working directory to find your file correctly
+
+## Some real transcriptomic data {.smaller}
+
+```{r, eval = FALSE, echo = TRUE}
+RNAseq_Data <- read.table('<name_of_file>', header=TRUE, sep=',')
+
+print (RNAseq_Data)
+head (RNAseq_Data)
+tail (RNAseq_Data)
+
+print (RNAseq_Data[,2])
+print (RNAseq_Data[1,])
+print (RNAseq_Data[1,2])
+print (RNAseq_Data$ENSGACG00000000010)
+print (RNAseq_Data$ENSGACG00000000010>45.0)
+```
+
+## Summary stats and figures {.smaller}
+
+```{r, eval = FALSE, echo = TRUE}
+summary1 <- summary(RNAseq_Data $ENSGACG00000000003)
+print (summary1)
+
+hist(RNAseq_Data $ENSGACG00000000003)
+boxplot(RNAseq_Data$ENSGACG00000000003)
+boxplot(RNAseq_Data$ENSGACG00000000003~RNAseq_Data$Population)
+plot(RNAseq_Data $ENSGACG00000000003, RNAseq_Data$ENSGACG00000000003)
+
+boxplot(RNAseq_Data $ENSGACG00000000003~RNAseq_Data$Treatment, 
+        col = "red", ylab = "Expression Level", xlab = "Treatment level", 
+        border ="orange", 
+        main = "Boxplot of variation in gene expression across microbiota treatments")
+```
+
+# Markdown and LaTeX
+
+## What is markdown? {.smaller}
+
+-   Lightweight *formal* markup languages are used to add formatting to plaintext documents
+    -   Adding basic syntax to the text will make elements look different once rendered/knit
+    -   Available in many base editors
+-   You then need a markdown application with a markdown processor/parser to render your text files into something more exciting
+    -   Static and dynamic outputs!
+    -   pdf, HTML, presentations, websites, scientific articles, books etc
+
+## Formatting text
+
+```{r, eval=FALSE, echo=TRUE}
+*Italic* or _Italic_
+**Bold** or __Bold__
+```
+
+-   *Italic* or *Italic*
+-   **Bold** or **Bold**
+
+## Formatting text {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+> "You know the greatest danger facing us is ourselves, an irrational fear of the unknown. 
+But there’s no such thing as the unknown — only things temporarily hidden, temporarily not understood."
+>
+> --- Captain James T. Kirk
+```
+
+> "You know the greatest danger facing us is ourselves, an irrational fear of the unknown. But there’s no such thing as the unknown — only things temporarily hidden, temporarily not understood."
+>
+> --- Captain James T. Kirk
+
+## Formatting lists {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+- list_element
+    - sub_list_element #double tab to indent
+    - sub_list_element #double tab to indent
+    - sub_list_element #double tab to indent
+- list_element
+    - sub_list_element #double tab to indent
+#note the space after each dash- this is important!
+```
+
+-   list_element
+    -   sub_list_element
+    -   sub_list_element
+    -   sub_list_element
+-   list_element
+    -   sub_list_element
+
+## Formatting lists
+
+```{r, eval=FALSE, echo=TRUE}
+1. One
+2. Two
+3. Three
+4. Four
+```
+
+1.  One
+2.  Two
+3.  Three
+4.  Four
+
+## Inserting images or URLs {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+[Link](https://commonmark.org/help/)
+![Image](https://i1.wp.com/evomics.org/wp-content/uploads/2012/07/20120115-IMG_0297.jpg)
+```
+
+[Link](https://commonmark.org/help/) ![Image](https://i1.wp.com/evomics.org/wp-content/uploads/2012/07/20120115-IMG_0297.jpg){alt="Image"}
+
+## Including code chunks {.smaller}
+
+```{R, echo=TRUE}
+
+x <- 2
+x^2
+
+```
+
+## What is LaTeX? {.smaller}
+
+-   Pronounced «Lah-tech» or «Lay-tech» (to rhyme with «Bertolt Brecht»)
+-   A document preparation system for high-quality typesetting
+-   It is most often used for medium-to-large technical or scientific documents
+-   Can be used for almost any form of publishing.
+-   Typesetting journal articles, technical reports, books, and slide presentations
+-   Allows for precise mathematical statements
+-   https://www.latex-project.org
+-   **Importantly, LaTeX can be included right into Markdown documents**
+
+## Operators and Symbols
+
+```{r, eval=FALSE, echo=TRUE}
+$$ \large a^x, \sqrt[n]{x}, \vec{\jmath}, \tilde{\imath}$$
+```
+
+$$ \large a^x, \sqrt[n]{x}, \vec{\jmath}, \tilde{\imath}$$
+
+```{r, eval=FALSE, echo=TRUE}
+$$ \large \alpha, \beta, \gamma$$
+```
+
+$$ \large \alpha, \beta, \gamma$$
+
+## Operators and Symbols
+
+```{r, eval=FALSE, echo=TRUE}
+$$ \large\approx, \neq, \nsim $$
+```
+
+$$ \large\approx, \neq, \nsim $$
+
+```{r, eval=FALSE, echo=TRUE}
+$$\large \partial, \mathbb{R}, \flat$$
+```
+
+$$\large \partial, \mathbb{R}, \flat$$
+
+## Equations {.smaller}
+
+Binomial sampling equation
+
+```{r, eval=FALSE, echo=TRUE}
+$$\large f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$
+```
+
+$$\large f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$
+
+Poisson Sampling Equation
+
+```{r, eval=FALSE, echo=TRUE}
+$$\large Pr(Y=r) = \frac{e^{-\mu}\mu^r}{r!}$$
+```
+
+$$\large Pr(Y=r) = \frac{e^{-\mu}\mu^r}{r!}$$
+
+## Differential Equations {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+$$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
+```
+
+$$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
+
+## Matrix formulations {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+$$	\begin{matrix}
+		-2 & 1 & 0 & 0 & \cdots & 0  \\
+		1 & -2 & 1 & 0 & \cdots & 0  \\
+		0 & 1 & -2 & 1 & \cdots & 0  \\
+		0 & 0 & 1 & -2 & \ddots & \vdots \\
+		\vdots & \vdots & \vdots & \ddots & \ddots & 1  \\
+		0 & 0 & 0 & \cdots & 1 & -2
+	\end{matrix} $$
+```
+
+$$  \begin{matrix}
+        -2 & 1 & 0 & 0 & \cdots & 0  \\
+        1 & -2 & 1 & 0 & \cdots & 0  \\
+        0 & 1 & -2 & 1 & \cdots & 0  \\
+        0 & 0 & 1 & -2 & \ddots & \vdots \\
+        \vdots & \vdots & \vdots & \ddots & \ddots & 1  \\
+        0 & 0 & 0 & \cdots & 1 & -2
+    \end{matrix} $$
+
+## In-line versus fenced {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+This equation, $y=\frac{1}{2}$, is included inline
+```
+
+This equation, $y=\frac{1}{2}$, is included inline
+
+```{r, eval=FALSE, echo=TRUE}
+Whereas this equation, $$y=\frac{1}{2}$$, is put on a separate line
+```
+
+Whereas this equation $$y=\frac{1}{2}$$ is put on a separate line
+
+## Markdown is very flexible {.smaller}
+
+-   You can import RMarkdown templates into RStudio and open as a new Rmarkdown file
+-   Better yet there are packages that add functionality
+    -   books
+    -   journal articles
+    -   slide shows (these slides!)
+    -   interactive exercises
+
+------------------------------------------------------------------------
+
+# Exploratory Data Analysis with ggplot2
+
+## Reading in and Exporting Data Frames {.flexbox .vcenter}
+
+\
+
+```{r, eval = FALSE, echo = TRUE}
+YourFile <- read.table('yourfile.csv', header=T, row.names=1, sep=',')
+YourFile <- read.table('yourfile.txt', header=T, row.names=1, sep='\t')
+```
+
+\
+
+```{r, eval = FALSE, echo = TRUE}
+write.table(YourFile, "yourfile.csv", quote=F, row.names=T, sep=",")
+write.table(YourFile, "yourfile.txt", quote=F, row.names=T, sep="\t")
+```
+
+## Indexing in data frames {.flexbox .vcenter}
+
+-   Next up - indexing just a subset of the data
+-   This is a very important idea in R, that you can analyze just a subset of the data.
+-   This is analyzing only the data in the file you made that has the factor value 'mixed'.
+
+```{r, echo=TRUE, eval=FALSE}
+print (YourFile[,2])
+print (YourFile$variable)
+print (YourFile[2,])
+plot (YourFile$variable1, YourFile$variable2)
+```
+
+## Types of vectors of data {.smaller}
+
+-   `int` stands for integers
+
+-   `dbl` stands for doubles, or real numbers
+
+-   `chr` stands for character vectors, or strings
+
+-   `dttm` stands for date-times (a date + a time)
+
+-   `lgl` stands for logical, vectors that contain only TRUE or FALSE
+
+-   `fctr` stands for factors, which R uses to represent categorical variables with fixed possible values
+
+-   `date` stands for dates
+
+<!-- -->
+
+-   Integer and double vectors are known collectively as numeric vectors.
+-   In `R` numbers are doubles by default.
+
+## Types of vectors of data {.smaller}
+
+-   Logical vectors can take only three possible values:
+    -   `FALSE`
+    -   `TRUE`
+    -   `NA` which is 'not available'.
+-   Integers have one special value: NA, while doubles have four:
+    -   `NA`
+    -   `NaN` which is 'not a number'
+    -   `Inf`
+    -   `-Inf`
+
+# ggplot2
+
+## Plotting using `ggplot2()` {.smaller}
+
+-   Part of the `tidyverse` suite of packages
+-   In most cases, you start with `ggplot2()`
+-   Supply a dataset and aesthetic mapping with `aes()`
+-   Determine the type of plot using `geom_point()` or `geom_histogram()` or others
+-   Many more options and controls available!
+-   More info: https://ggplot2.tidyverse.org/
+
+## GGPlot2 and the Grammar of Graphics
+
+-   GG stands for ‘Grammar of Graphics’
+-   A good paragraph uses good grammar to convey information
+-   A good figure uses good grammar in the same way
+-   Seven general components can be used to create most figures
+
+## GGPlot2 and the Grammar of Graphics
+
+```{r, echo=FALSE, fig.cap="", out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.017.jpeg")
+```
+
+## Plotting using `ggplot()` {.smaller}
+
+-   Install and load `ggplot2`
+
+```{r, echo=TRUE}
+# install.packages("ggplot2")
+library("ggplot2")
+```
+
+## Scatterplots with `ggplot`
+
+-   Use the preloaded `mpg` dataset available in RStudio
+
+```{r, echo=TRUE, out.width='55%', fig.asp=.75, fig.align='center'}
+ggplot(mpg, aes(displ, hwy, color = class)) + 
+  geom_point(size = 6,
+             shape = "square",
+             alpha = 0.4)
+```
+
+## Boxplots in `ggplot`
+
+```{r, echo=TRUE, out.width='100%', fig.asp=.3, fig.align='center'}
+ggplot(mpg, aes(manufacturer, hwy, colour = class)) + 
+  geom_boxplot() + 
+  theme_classic() + 
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+```
+
+## The `geom_bar` function {.flexbox .vcenter}
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut))
+```
+
+Now try this...
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut, color=cut))
+```
+
+and this...
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut, fill=cut))
+```
+
+and finally this...
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut, fill=clarity), position="dodge")
+```
+
+## The `geom_histogram` and `geom_freqpoly`function {.flexbox .vcenter}
+
+With this function you can make a histogram
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_histogram(mapping=aes(x=carat), binwidth=0.5)
+```
+
+This allows you to make a frequency polygram
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_histogram(mapping=aes(x=carat), binwidth=0.5)
+```
+
+## The `geom_boxplot` function {.flexbox .vcenter}
+
+Boxplots are very useful for visualizing data
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds, mapping=aes(x=cut, y=price)) +
+  geom_boxplot()
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg, mapping=aes(x=reorder(class, hwy, FUN=median), y=hwy)) +
+  coordflip()
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg, mapping=aes(x=class, y=hwy)) +
+  geom_boxplot() +
+  coordflip
+```
+
+## The `geom_point` & `geom_smooth` functions {.flexbox .vcenter}
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds2, mapping=aes(x=x, y=y)) +
+  geompoint()
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg) +
+  geompoint(mapping=aes(x=displ, y=hwy)) +
+  facet_wrap(~class, nrow=2)
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg) +
+  geompoint(mapping=aes(x=displ, y=hwy)) +
+  facet_grid(drv~cyl)
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg) +
+  geomsmooth(mapping=aes(x=displ, y=hwy))
+```
+
+## Combining geoms {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(data=mpg) +
+  geom_point(mapping=aes(x=displ, y=hwy)) +
+  geom_smooth(mapping=aes(x=displ, y=hwy))
+```
+
+## Adding labels {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(data=mpg, aes(displ, hwy)) +
+  geom_point(aes(color=class)) +
+  geom_smooth(se=FALSE) +
+  labs(
+    title = "Fuel efficiency generally decreases with engine size",
+    caption = "Data from fueleconomy.gov"
+  )
+```
+
+## What type of plot do I use for each data type?
+
+![Flow chart to determine what type of data visualization and which ggplot geom to use](images/Chart_flow_chart.jpeg)
