@@ -1,0 +1,1394 @@
+---
+title: "Week 4 Computational Tools for Bioengineers"
+author: "Bill Cresko"
+format: 
+  revealjs:
+    footer: BioE_Comp_Tools_2025 - Knight Campus 
+    transition: fade
+    transition-speed: slow
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(readxl)
+theme_set(theme_minimal())
+```
+
+## Goals for today
+
+-   Finish using GREP for large files
+-   Introduction to Scripts in Unix and R
+-   Using R Studio and Visual Studio Code (VSC) as script editors
+
+# Working with Large Genomic Data Files
+
+## Human Chromosome Data {.smaller}
+
+-   Genomic data files can be massive (human genome \~6 billion base pairs)
+-   FASTA format is standard for sequence data
+-   Perfect use case for Unix pipes and redirection
+-   Let's work with human genome assembly version 38 (\~3.1 GB)
+
+## Downloading Genomic Data {.smaller}
+
+Download version 38 of the human genome from NCBI:
+
+``` bash
+
+# Using `wget` to download human genome
+
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/\
+GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz
+
+# Or using `curl` and save with specific name
+
+curl -o human_genome.fa.gz https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/\
+GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz
+```
+
+-   `wget` and `curl` are both tools for downloading files
+-   The backslash (`\`) allows long URLs to span multiple lines
+-   `.gz` extension means the file is compressed
+
+
+# GREP and Regular Expressions
+
+## What is GREP? {.smaller}
+
+-   **GREP** = Global Regular Expression Print
+-   Powerful text search tool in Unix
+-   Searches for patterns in files or input streams
+-   Returns lines that match the pattern
+-   Essential for large data processing
+
+Basic syntax:
+
+``` bash
+grep [options] pattern [file...]
+```
+
+## Basic GREP Usage {.smaller}
+
+``` bash
+# Search for a simple pattern
+grep "ACGT" sequences.txt
+
+# Case-insensitive search
+grep -i "gene" annotations.txt
+
+# Count matching lines
+grep -c ">" proteins.fasta
+
+# Show line numbers
+grep -n "ERROR" logfile.txt
+
+# Invert match (show non-matching lines)
+grep -v "^#" data.txt    # Skip comment lines
+
+# Search multiple files
+grep "mutation" *.txt
+```
+
+## Introduction to Regular Expressions {.smaller}
+
+Regular expressions (regex) are patterns for matching text:
+
+-   **`.`** = any single character
+-   **`*`** = zero or more of preceding character
+-   **`+`** = one or more of preceding character
+-   **`?`** = zero or one of preceding character
+-   **`^`** = start of line
+-   **`$`** = end of line
+-   **`[abc]`** = any character in set
+-   **`[^abc]`** = any character NOT in set
+-   **`\`** = escape special characters
+
+## Basic Regex Examples {.smaller}
+
+``` bash
+# Match DNA sequences
+grep "^ATG" genes.txt         # Lines starting with ATG
+grep "TAG$" genes.txt         # Lines ending with TAG
+grep "A.G" sequences.txt      # A, any char, then G
+
+# Character classes
+grep "[ACGT]" dna.txt         # Any DNA base
+grep "[^ACGT]" dna.txt        # Non-DNA characters
+grep "[0-9]" data.txt         # Any digit
+grep "[A-Za-z]" text.txt      # Any letter
+
+# Quantifiers
+grep "A\{3\}" sequence.txt    # Exactly 3 A's
+grep "T\{2,4\}" sequence.txt  # 2 to 4 T's
+grep "GC*" sequence.txt       # G followed by 0+ C's
+```
+
+## Extended Regular Expressions {.smaller}
+
+Use `grep -E` or `egrep` for extended regex:
+
+``` bash
+# Alternation (OR)
+grep -E "start|stop|pause" commands.txt
+
+# Grouping
+grep -E "(ATG|GTG|TTG)" codons.txt
+
+# Plus quantifier (one or more)
+grep -E "A+T+G+" sequences.txt
+
+# Question mark (optional)
+grep -E "colou?r" british_american.txt
+
+# Complex patterns for bioinformatics
+grep -E "^>sp\|[A-Z0-9]+\|" uniprot.fasta  # UniProt headers
+grep -E "[ACGT]{20,}" primers.txt          # Sequences 20bp+
+```
+
+## Combining GREP with Pipes {.smaller}
+
+``` bash
+# Count unique sequence headers
+grep "^>" sequences.fasta | sort | uniq | wc -l
+
+# Extract gene names from GFF file
+grep -v "^#" annotation.gff | cut -f9 | grep -oE "gene=[^;]+"
+
+# Find sequences without stop codons
+grep -v -E "(TAA|TAG|TGA)" orfs.txt
+
+# Quality control pipeline
+zcat reads.fastq.gz | grep -A1 "^@" | grep -v "^--" | 
+  grep -E "^[ACGTN]+$" | grep -c "N"
+
+# Search and replace with sed (uses regex)
+grep "gene" data.txt | sed 's/gene/GENE/g'
+```
+
+## Analyzing Sequence Content {.smaller}
+
+Combine Unix tools to analyze genomic data:
+
+``` bash
+# Count total bases in chromosome 21
+
+grep -v "^>" human_genome.fa | tr -d '\n' | wc -c
+
+# Count each type of base
+
+grep -v "^>" human_genome.fa | tr -d '\n' | 
+  fold -w1 | sort | uniq -c
+
+# Calculate GC content
+
+grep -v "^>" human_genome.fa | tr -d '\n' | 
+  tr -cd 'GCgc' | wc -c
+
+# Find simple sequence repeats (e.g., "ATATAT...")
+
+grep -v "^>" human_genome.fa | grep -oE "(AT){5,}"
+```
+## Working with Compressed Files {.smaller}
+
+Most genomic data is compressed to save space:
+
+``` bash
+# View compressed files without extracting
+
+zcat file.gz | head
+zless file.gz
+zgrep "pattern" file.gz
+
+# Compress and decompress
+
+gzip file.txt          # Creates file.txt.gz
+gunzip file.txt.gz     # Restores file.txt
+gzip -k file.txt       # Keep original file
+
+# Work directly with compressed files
+
+zcat reads.fastq.gz | grep "^@" | wc -l
+
+# Concatenate compressed files
+
+zcat file1.gz file2.gz | gzip > combined.gz
+```
+
+## Examining Large Files Efficiently {.smaller}
+
+Don't use `cat` on huge files! Use these approaches:
+
+``` bash
+# Decompress and look at first 10 lines
+
+gunzip -c human_genome.fa.gz | head -10
+
+# Check file size before and after decompression
+
+ls -lh human_genome.fa.gz
+gunzip human_genome.fa.gz
+ls -lh human_genome.fa
+
+# Count sequences in FASTA file (lines starting with >)
+
+grep "^>" human_genome.fa | wc -l
+
+# View sequence headers only
+
+grep "^>" human_genome.fa | less
+```
+
+
+## Homework - microbial genome analysis {.smaller}
+
+With a sample FASTA file:
+
+1.  Download a bacterial genome from NCBI
+2.  Count the number of genes (sequences)
+3.  Calculate the total genome size
+4.  Find the longest and shortest genes
+5.  Calculate overall GC content
+6.  Search for specific motifs or restriction sites
+7.  Extract protein-coding sequences based on headers
+
+------------------------------------------------------------------------
+
+# Scripting in Unix, R and Python
+
+```{r, echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics("images/RStudio_Screenshot.png")
+```
+
+------------------------------------------------------------------------
+
+## What is a Shell Script? {.smaller}
+
+-   Text file containing Unix commands
+-   Automates repetitive tasks
+-   Makes complex workflows reproducible
+-   Essential for bioinformatics pipelines
+-   Can include:
+    -   Variables and arrays
+    -   Conditionals (if/then/else)
+    -   Loops (for/while)
+    -   Functions
+    -   Command-line arguments
+
+## Creating Your First Script {.smaller}
+
+``` bash
+#!/bin/bash
+# This is a shebang - tells system which interpreter to use
+
+# This is a comment - documents your code
+echo "Hello, Bioengineering!"
+
+# Set a variable
+NAME="DNA Analysis"
+echo "Running $NAME"
+
+# Use command output as variable
+DATE=$(date +%Y-%m-%d)
+echo "Analysis date: $DATE"
+
+# Simple calculation
+COUNT=5
+DOUBLE=$((COUNT * 2))
+echo "Double of $COUNT is $DOUBLE"
+```
+
+Save as `first_script.sh` and run with `bash first_script.sh`
+
+## Making Scripts Executable {.smaller}
+
+``` bash
+# Check current permissions
+ls -l first_script.sh
+
+# Make executable (add execute permission)
+chmod +x first_script.sh
+
+# Now you can run it directly
+./first_script.sh
+```
+
+Best practice: Always use `chmod +x` for your scripts
+
+## Command-Line Arguments {.smaller}
+
+``` bash
+#!/bin/bash
+# Script: process_fasta.sh
+
+# $0 is the script name
+
+echo "Script name: $0"
+
+# $# is the number of arguments
+
+echo "Number of arguments: $#"
+
+# Check if enough arguments provided FIRST
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 input.fasta output.txt"
+    exit 1
+fi
+
+# Now safe to use the arguments
+
+echo "Processing file: $1"
+echo "Output will be: $2"
+
+# $@ is all arguments (should be quoted)
+
+echo "All arguments: $@"
+```
+
+Run as: `./process_fasta.sh input.fa results.txt`
+
+## Variables and Arrays {.smaller}
+
+``` bash
+#!/bin/bash
+
+# Variables (no spaces around =)
+SPECIES="Homo sapiens"
+CHROMOSOME=21
+GENE_COUNT=234
+
+# Arrays
+BASES=(A C G T)
+echo "First base: ${BASES[0]}"
+echo "All bases: ${BASES[@]}"
+
+# Add to array
+BASES+=(N)
+
+# Array length
+echo "Number of bases: ${#BASES[@]}"
+
+# String operations
+FILE="sample_001.fastq.gz"
+NAME="${FILE%.fastq.gz}"     # Remove suffix
+echo "Sample name: $NAME"
+```
+
+## Conditionals (if/then/else) {.smaller}
+
+``` bash
+#!/bin/bash
+
+# Numeric comparisons
+COUNT=100
+if [ $COUNT -gt 50 ]; then
+    echo "High read count"
+elif [ $COUNT -gt 10 ]; then
+    echo "Medium read count"
+else
+    echo "Low read count"
+fi
+
+# String comparisons
+FILETYPE="fasta"
+if [ "$FILETYPE" = "fasta" ]; then
+    echo "Processing FASTA file"
+fi
+
+# File tests
+if [ -f "data.txt" ]; then
+    echo "File exists"
+fi
+
+if [ -d "results" ]; then
+    echo "Directory exists"
+else
+    mkdir results
+fi
+```
+
+## Loops in Shell Scripts {.smaller}
+
+``` bash
+#!/bin/bash
+
+# For loop over list
+for BASE in A C G T; do
+    echo "Processing base: $BASE"
+done
+
+# For loop over files
+for FILE in *.fasta; do
+    echo "Analyzing $FILE"
+    grep -c ">" "$FILE"
+done
+
+# For loop with counter
+for i in {1..10}; do
+    echo "Iteration $i"
+done
+
+# While loop
+COUNT=1
+while [ $COUNT -le 5 ]; do
+    echo "Count: $COUNT"
+    COUNT=$((COUNT + 1))
+done
+
+# Read file line by line
+while read LINE; do
+    echo "Processing: $LINE"
+done < input.txt
+```
+
+## Functions in Scripts {.smaller}
+
+``` bash
+#!/bin/bash
+
+# Define a function
+count_sequences() {
+    local FILE=$1  # Local variable
+    local COUNT=$(grep -c "^>" "$FILE")
+    echo "File $FILE has $COUNT sequences"
+    return $COUNT  # Optional return value
+}
+
+# Another function with multiple parameters
+process_fasta() {
+    local INPUT=$1
+    local OUTPUT=$2
+    
+    echo "Processing $INPUT..."
+    grep "^>" "$INPUT" > "$OUTPUT"
+    count_sequences "$INPUT"
+}
+
+# Call functions
+count_sequences "proteins.fasta"
+process_fasta "input.fasta" "headers.txt"
+```
+
+## Error Handling {.smaller}
+
+``` bash
+#!/bin/bash
+
+# Exit on error
+set -e
+
+# Exit on undefined variable
+set -u
+
+# Pipe failure detection
+set -o pipefail
+
+# Custom error handling
+check_file() {
+    if [ ! -f "$1" ]; then
+        echo "Error: File $1 not found!" >&2
+        exit 1
+    fi
+}
+
+# Trap errors
+trap 'echo "Error on line $LINENO"' ERR
+
+# Try-catch style
+if ! grep "pattern" file.txt > /dev/null 2>&1; then
+    echo "Pattern not found"
+fi
+```
+
+## Real Bioinformatics Script Example {.smaller}
+
+``` bash
+#!/bin/bash
+# Script: fasta_stats.sh
+# Purpose: Calculate basic statistics for FASTA files
+
+# Check arguments
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 sequences.fasta"
+    exit 1
+fi
+
+INPUT=$1
+
+# Check if file exists
+if [ ! -f "$INPUT" ]; then
+    echo "Error: File $INPUT not found!"
+    exit 1
+fi
+
+echo "=== FASTA Statistics for $INPUT ==="
+
+# Count sequences
+SEQ_COUNT=$(grep -c "^>" "$INPUT")
+echo "Number of sequences: $SEQ_COUNT"
+
+# Calculate total length
+TOTAL_LENGTH=$(grep -v "^>" "$INPUT" | tr -d '\n' | wc -c)
+echo "Total length: $TOTAL_LENGTH bp"
+
+# Average length
+AVG_LENGTH=$((TOTAL_LENGTH / SEQ_COUNT))
+echo "Average length: $AVG_LENGTH bp"
+
+# GC content
+GC_COUNT=$(grep -v "^>" "$INPUT" | tr -d '\n' | grep -o "[GC]" | wc -l)
+GC_PERCENT=$((GC_COUNT * 100 / TOTAL_LENGTH))
+echo "GC content: $GC_PERCENT%"
+```
+
+## Best Practices for Shell Scripts {.smaller}
+
+1.  **Always include a shebang**: `#!/bin/bash`
+2.  **Comment your code**: Explain what and why
+3.  **Use meaningful variable names**: `GENE_COUNT` not `GC`
+4.  **Check inputs**: Validate files exist and arguments are correct
+5.  **Handle errors gracefully**: Use `set -e` and error checking
+6.  **Make scripts portable**: Don't hardcode paths
+7.  **Use version control**: Track changes with git
+8.  **Test incrementally**: Build scripts step by step
+9.  **Create help messages**: Document usage
+10. **Log important steps**: Keep records of what was done
+
+_______________________________________________________________________
+
+# BREAK
+
+# R scripts and Markdown
+
+## Why use `R`? {.smaller}
+
+-   Good general scripting tool for statistics and mathematics
+-   Powerful and flexible and free
+-   Runs on all computer platforms
+-   New enhancements coming out all the time
+-   Superb data management & graphics capabilities
+
+## Why use `R`? {.smaller}
+
+-   Reproducibility - can keep your scripts to see exactly what was done
+-   You can write your own functions
+-   Lots of online help available
+-   Can use a nice GUI front end such as `Rstudio`
+-   Can embed your `R` analyses in dynamic, polished files using `Markdown`
+-   Markdown can be reused for websites, papers, books, presentations...
+
+## `R scripts` and `Markdown files` {.smaller}
+
+-   Often we want to write scripts that can just be run - ` R scripts `
+-   We can also embed code in Markdown files that provide more annotations
+-   This improves interpertability and reproducibility
+-   You can insert `R code chunks` into `Quarto markdown` documents
+-   https://quarto.org/docs/authoring/markdown-basics.html
+
+## Rscript basics {.smaller}
+
+-   A series of R commands that will be executed
+-   Can add comments using hashtags `#`
+-   Can have pipes (`|>`) to connect one step to the next
+
+## Markdown basics {.smaller}
+
+-   a document with R code chunks (and other chunks) embedded in it
+-   a very simplified way for standard typesetting
+-   simple markdown can be rendered in numerous different ways
+-   Lists, codeblocks, images and more can all be inserted
+-   Also much more complex formatting like equations
+
+## Inserting equations in markdown
+
+``` latex
+$$e=mc^2$$
+```
+
+$$e=mc^2$$
+
+``` latex
+$$\iint\limits_{a}^{b} f(x,y) \, dx \, dy$$
+```
+
+$$\iint\limits_{a}^{b} f(x,y) \, dx \, dy$$
+
+## BASICS of `R` {.flexbox .vcenter .smaller}
+
+-   Commands can be submitted through the terminal, console or scripts
+-   In your scripts, anything that follows '\#' symbol (aka hash) is just for humans
+-   Notice on these slides I'm evaluating the code chunks and showing output
+-   The output is shown here after the two `#` symbols and the number of output items is in `[]`
+-   Also notice that `R` follows the normal priority of mathematical evaluation
+
+```{r basic multiplication, echo=TRUE}
+4*4
+```
+
+```{r more multiplication, echo=TRUE}
+(4+3*2^2)
+```
+
+## Assigning Variables {.flexbox .vcenter}
+
+-   A better way to do this is to assign variables
+-   Variables are assigned values using the `<-` operator.
+-   Variable names must begin with a letter, but other than that, just about anything goes.
+-   Do keep in mind that `R` is case sensitive.
+
+## Assigning Variables {.flexbox .vcenter}
+
+```{r assigning variables, echo=TRUE, tidy=TRUE}
+
+x <- 2
+x*3
+y <- x * 3
+y-2
+
+```
+
+These do not work
+
+```{r eval=FALSE, echo=TRUE}
+3y <- 3
+3*y <- 3
+```
+
+## Arithmetic operations on functions {.smaller}
+
+-   Arithmetic operations can be performed easily on functions as well as numbers.
+-   Try the following, and then your own.
+
+```{r functions, eval = FALSE, echo = TRUE}
+x+2
+x^2
+log(x)
+```
+
+-   Note that the last of these - `log` - is a built in function of `R`, and therefore the object of the function needs to be put in parentheses
+-   These parentheses will be important, and we'll come back to them later when we add arguments after the object in the parentheses\
+-   The outcome of calculations can be assigned to new variables as well, and the results can be checked using the 'print' command
+
+## Arithmetic operations on functions {.smaller}
+
+```{r, echo=TRUE}
+y <- 67
+print(y)
+
+x <- 124
+z <- (x*y)^2
+print(z)
+```
+
+## STRINGS {.smaller}
+
+-   Variables and operations can be performed on characters as well
+-   Note that characters need to be set off by quotation marks to differentiate them from numbers
+-   The `c` stands for `concatenate`
+-   Note that we are using the same variable names as we did previously, which means that we're overwriting our previous assignment
+-   A good rule of thumb is to use new names for each variable, and make them short but still descriptive
+
+## STRINGS {.smaller}
+
+```{r, echo=TRUE}
+x <- "I Love"
+print (x)
+y <- "Bioengineering"
+print (y)
+z <- c(x,y)
+print (z)
+```
+
+## FACTORS {.smaller}
+
+-   The variable `z` is now what is called a list of character values.
+-   Sometimes we would like to treat the characters as if they were units for subsequent calculations.
+-   These are called `factors`, and we can redefine our character variables as factors.
+-   This might seem a bit strange, but it’s important for statistical analyses where we might want to see the mean or variance for two different treatments.
+
+## FACTORS {.smaller}
+
+```{r, eval = FALSE, echo = TRUE}
+z_factor <- as.factor(z)
+print (z_factor)
+```
+
+-   Note that factor levels are reported alphabetically
+
+## VECTORS {.smaller}
+
+-   In general `R` thinks in terms of vectors (a list of characters, factors or numerical values) and it will benefit any `R` user to try to write programs with that in mind, as it will simplify most things.
+-   Vectors can be assigned directly using the 'c()' function and then entering the exact values.
+
+## VECTORS {.smaller}
+
+```{r Example vectors, echo=TRUE}
+x <- c(2,3,4,2,1,2,4,5,10,8,9)
+print(x)
+```
+
+## Basic Statistics {.smaller}
+
+-   Many functions exist to operate on vectors.
+-   Combine these with your previous variable to see what happens.
+-   Also, try to find other functions (e.g. standard deviation).
+
+## Basic Statistics {.smaller}
+
+```{r, eval = FALSE, echo = TRUE}
+mean(x)
+median(x)
+var(x)
+log(x)
+ln(x)
+sqrt(x)
+sum(x)
+length(x)
+sample(x, replace = T)
+```
+
+-   Notice that the last function (`sample`) has an argument (`replace=T`)
+-   Arguments simply modify or direct the function in some way
+-   There are many arguments for each function, some of which are defaults
+
+## Getting Help {.smaller}
+
+-   Getting Help on any function is very easy - just type a question mark and the name of the function.
+-   There are functions for just about anything within `R` and it is easy enough to write your own functions if none already exist to do what you want to do.
+-   In general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters to send to the function.
+-   Help pages exist for all functions that, at a minimum, explain what parameters exist for the function.\
+-   Help can be accessed a few ways - try them :
+
+## Getting Help {.smaller}
+
+```{r, eval = FALSE, echo = TRUE}
+- help(mean)
+- ?mean
+- example(mean)
+- help.search("mean")
+- apropos("mean")
+- args(mean)
+```
+
+## Creating vectors {.smaller}
+
+-   Creating vector of new data by entering it by hand can be a drag
+-   However, it is also very easy to use functions such as `seq` and `sample`
+-   Try the examples below Can you figure out what the three arguments in the parentheses mean?
+-   Try varying the arguments to see what happens.
+-   Don't go too crazy with the last one or your computer might slow way down
+
+## Creating vectors {.smaller}
+
+```{r, echo = TRUE}
+seq_1 <- seq(0.0, 10.0, by = 0.1)
+print(seq_1)
+seq_2 <- seq(10.0, 0.0, by = -0.1)
+print(seq_2)
+```
+
+## Creating vectors {.smaller}
+
+```{r, echo = TRUE}
+seq_square <- (seq_2)*(seq_2)
+print(seq_square)
+```
+
+## Creating vectors {.smaller}
+
+```{r, echo = TRUE}
+seq_square_new <- (seq_2)^2
+print(seq_square_new)
+```
+
+## Drawing samples from distributions {.smaller}
+
+-   Here is a way to create your own data sets that are random samples.
+-   Again, play around with the arguments in the parentheses to see what happens.
+
+## Drawing samples from distributions {.smaller}
+
+```{r Samples from distributions 1, out.width='100%', echo = TRUE}
+x <- rnorm (10000, 0, 10)
+y <- sample (1:10000, 10000, replace = T)
+xy <- cbind(x,y)
+plot(x,y) 
+```
+
+## Drawing samples from distributions {.smaller}
+
+```{r Samples from distributions 2, out.width='100%', echo = TRUE}
+x <- rnorm (10000, 0, 10)
+y <- sample (1:10000, 10000, replace = T)
+xy <- cbind(x,y)
+plot(xy)
+```
+
+## Drawing samples from distributions {.smaller}
+
+```{r Samples from distributions 3, out.width='100%', echo = TRUE}
+x <- rnorm (10000, 0, 10)
+y <- sample (1:10000, 10000, replace = T)
+xy <- cbind(x,y)
+hist(x)
+```
+
+## Drawing samples from distributions {.smaller}
+
+-   You’ve probably figured out that y from the last example is drawing numbers with equal probability.
+-   What if you want to draw from a distribution?
+-   Again, play around with the arguments in the parentheses to see what happens.
+
+## Drawing samples from distributions {out.width="50%"}
+
+```{r, out.width='100%', echo = TRUE}
+x <-rnorm(1000, 0, 100)
+hist(x, xlim = c(-500,500))
+curve(50000*dnorm(x, 0, 100), xlim = c(-500,500), add=TRUE, col='Red')
+```
+
+-   `dnorm()` generates the probability density, which can be plotted using the `curve()` function.
+-   Note that is curve is added to the plot using `add=TRUE`
+
+## Visualizing Data {.smaller}
+
+-   So far you've been visualizing just the list of output numbers
+-   Except for the last example where I snuck in a `hist` function.
+-   You can also visualize all of the variables that you've created using the `plot` function (as well as a number of more sophisticated plotting functions).
+-   Each of these is called a `high level` plotting function, which sets the stage
+-   `Low level` plotting functions will tweak the plots and make them beautiful
+
+## Visualizing Data {.smaller}
+
+-   What do you think that each of the arguments means for the plot function?
+-   A cool thing about `R` is that the options for the arguments make sense.
+-   Try adjusting an argument and see if it works
+-   Note next week we will be exploring the plotting in `GGPlot2`
+
+## Visualizing Data {.smaller}
+
+```{r, echo = TRUE}
+seq_1 <- seq(0.0, 10.0, by = 0.1) 
+plot (seq_1, xlab="space", ylab ="function of space", type = "p", col = "red")
+```
+
+## Putting plots in a single figure {.smaller}
+
+-   On the next slide
+-   The first line of the lower script tells R that you are going to create a composite figure that has two rows and two columns. Can you tell how?
+-   Now, modify the code to add two more variables and add one more row of two panels.
+
+```{r, echo=TRUE, outwidth="50%", out.height="20%"}
+seq_1 <- seq(0.0, 10.0, by = 0.1)
+seq_2 <- seq(10.0, 0.0, by = -0.1)
+```
+
+## Putting plots in a single figure {.smaller}
+
+```{r, echo=TRUE, outwidth="50%", out.height="50%"}
+par(mfrow=c(2,2))
+plot (seq_1, xlab="time", ylab ="p in population 1", type = "p", col = 'red')
+plot (seq_2, xlab="time", ylab ="p in population 2", type = "p", col = 'green')
+plot (seq_square, xlab="time", ylab ="p2 in population 2", type = "p", col = 'blue')
+plot (seq_square_new, xlab="time", ylab ="p in population 1", type = "l", col = 'yellow')
+```
+
+## Example using binomial distribution {.smaller}
+
+-   As above for the normal distribution, data can be generated by being sampled from nearly any distribution and then visualized.
+-   Below I’m having you use the ‘histogram’ function. What does it do?
+
+## Example using binomial distribution {.smaller}
+
+-   10 successes (out of 20 trials) is the most frequent outcome
+
+```{r binomial function, echo=TRUE}
+heads <- rbinom(n=1000, size=20, prob=0.5)
+hist(heads)
+```
+
+## Example using binomial distribution {.smaller}
+
+-   This kind of statement can be run in one line as well, which is sometimes easier.
+
+```{r binomial function again, echo=TRUE}
+hist(rbinom(n=1000, size=20, prob=0.5))
+```
+
+## Creating Data Frames in R {.smaller}
+
+-   As you have seen, in R you can generate your own random data set drawn from nearly any distribution very easily.
+-   Often we will want to use collected data.
+-   Now, let’s make a dummy dataset to get used to dealing with data frames
+-   Set up three variables (hydrogel_concentration, compression and conductivity) as vectors
+
+```{r, echo=TRUE}
+hydrogel_concentration <- factor(c("low", "high", "high", "high", "medium", "medium", "medium","low"))
+compression <- c(3.4, 3.4, 8.4, 3, 5.6, 8.1, 8.3, 4.5)
+conductivity <- c(0, 9.2, 3.8, 5, 5.6, 4.1, 7.1, 5.3)
+```
+
+-   Create a data frame where vectors become columns
+
+```{r, echo=TRUE}
+mydata <- data.frame(hydrogel_concentration, compression, conductivity)
+row.names(mydata) <- c("Sample_1", "Sample_2", "Sample_3", "Sample_4", 
+                       "Sample_5", "Sample_6", "Sample_7", "Sample_8")
+```
+
+-   Now you have a hand-made data frame with row names
+-   Take a look at it in the data section of RStudio
+
+## Reading in and Exporting Data Frames
+
+\
+
+```{r, eval = FALSE, echo = TRUE}
+YourFile <- read.table('yourfile.csv', header=T, row.names=1, sep=',')
+YourFile <- read.table('yourfile.txt', header=T, row.names=1, sep='\t')
+```
+
+\
+
+```{r, eval = FALSE, echo = TRUE}
+write.table(YourFile, "yourfile.csv", quote=F, row.names=T, sep=",")
+write.table(YourFile, "yourfile.txt", quote=F, row.names=T, sep="\t")
+```
+
+## Indexing in data frames
+
+-   Next up - indexing just a subset of the data
+-   This is a very important idea in R, that you can analyze just a subset of the data.
+-   This is analyzing only the data in the file you made that has the factor value 'mixed'.
+
+```{r, echo=TRUE, eval=FALSE}
+print (YourFile[,2])
+print (YourFile$variable)
+print (YourFile[2,])
+plot (YourFile$variable1, YourFile$variable2)
+```
+
+## Types of vectors of data {.smaller}
+
+-   `int` stands for integers
+
+-   `dbl` stands for doubles, or real numbers
+
+-   `chr` stands for character vectors, or strings
+
+-   `dttm` stands for date-times (a date + a time)
+
+-   `lgl` stands for logical, vectors that contain only TRUE or FALSE
+
+-   `fctr` stands for factors, which R uses to represent categorical variables with fixed possible values
+
+-   `date` stands for dates
+
+<!-- -->
+
+-   Integer and double vectors are known collectively as numeric vectors.
+-   In `R` numbers are doubles by default.
+
+## Types of vectors of data {.smaller}
+
+-   Logical vectors can take only three possible values:
+    -   `FALSE`
+    -   `TRUE`
+    -   `NA` which is 'not available'.
+-   Integers have one special value: NA, while doubles have four:
+    -   `NA`
+    -   `NaN` which is 'not a number'
+    -   `Inf`
+    -   `-Inf`## Reading in Data Frames in R {.smaller}
+
+-   A strength of `R` is being able to import data from an external source
+-   Create the same table that you did above in a spreadsheet like Excel
+-   Export it to comma separated and tab separated text files for importing into `R`.
+-   The first will read in a comma-delimited file, whereas the second is a tab-delimited
+-   In both cases the header and row.names arguments indicate that there is a header row and row label column
+-   Note that the name of the file by itself will have R look in the CWD, whereas a full path can also be used
+
+
+_____________________________________
+
+# Markdown
+
+## What is it?
+
+Markdown is a lightweight markup language for creating formatted text using a plain-text editor
+
+## Rmarkdown {.smaller}
+
+R Markdown (https://rmarkdown.rstudio.com/) provides an authoring framework for data science.
+
+-   You can use an R Markdown files to save and execute code \*and\* generate high quality reports that can be shared with an audience.
+-   You can make html, pdf, docx, websites, slides, etc.
+
+When you save your document, the output will be in the format indicated in your YAML header. This could be an html document, Word document, pdf, website, book, etc.
+
+## Getting started {.smaller}
+
+-   Open a new markdown document from RStudio
+
+You should see a document that is already populated with some example text and code
+
+
+## This is markdown {.smaller}
+
+``` markdown
+---
+title: "title"
+output: html_document
+---
+```
+
+Note that `---` delineates yaml. This controls document-level settings and rendering.
+
+``` markdown
+# Header size 1
+
+## Header size 2
+
+I can write text and it will look normal!
+
+I can still run code!
+```
+
+## This is Markdown {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+# ```{r code_chunk_name}
+# x <- 5
+# print(x^2)
+# ```
+```
+
+-   By default, the code and output will print to your document
+-   Note the back tick marks - these delineate the code
+-   The {r} indicates this is r code
+
+## Navigating chunks {.smaller}
+
+-   Easy to run chunks - a few ways to do this
+-   Top right of each chunk - just run, run all above, etc.
+-   Cog wheel at the top of the markdown document - run options
+-   Keyboard shortcuts
+
+## Chunk options {.smaller}
+
+-   `include = FALSE` prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.
+-   `echo = FALSE` prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.
+-   `message = FALSE` prevents messages that are generated by code from appearing in the finished file.
+-   `warning = FALSE` prevents warnings that are generated by code from appearing in the finished.
+-   `fig.cap = "..."` adds a caption to graphical results.
+
+## Chunk options {.smaller}
+
+-   `eval = FALSE` shows code, but doesn't run it
+-   `results = 'hide'` runs code, but doesn't show results
+-   `fig.height, fig.width` set the dimensions of plots
+-   `cache = TRUE` saves the results of a code chunk, can be helpful if a particular code chunk is intensive
+
+## Inline code {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+There are `r '\x60r nrow(data)\x60'` observations.
+```
+
+This is the in-line code to count rows in the iris data set
+
+```{r}
+library(tidyverse)
+```
+
+There are `r nrow(iris)` observations.
+
+## Markdown formatting {.smaller}
+
+``` markdown
+*italic*
+**bold**
+$A = \pi \times r^{2}$
+```
+
+*italic*
+
+**bold**
+
+$A = \pi \times r^{2}$
+
+## Markdown lists {.smaller}
+
+``` markdown
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+```
+
+-   Item 1
+-   Item 2
+    -   Item 2a
+    -   Item 2b
+
+## Markdown lists {.smaller}
+
+``` markdown
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+```
+
+1.  Item 1
+2.  Item 2
+3.  Item 3
+    -   Item 3a
+    -   Item 3b
+
+## More on Markdown {.smaller}
+
+-   https://bookdown.org/yihui/rmarkdown-cookbook/
+-   https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf
+-   Lots more fun stuff you can do!
+
+## Typesetting Mathematics
+
+-   Since 'tex' in embedded in markdown you can type set mathematics easily using LaTeX (https://en.wikibooks.org/wiki/LaTeX)
+
+-   Essentially, just surround your mathematics in \$ symbols
+
+-   \$\$ centers the expressions
+
+## Typeset mathematics
+
+Poisson Sampling Equation
+
+```{r, eval=FALSE, echo=TRUE}
+$$\large Pr(Y=r) = \frac{e^{-\mu}\mu^r}{r!}$$
+```
+
+$$\large Pr(Y=r) = \frac{e^{-\mu}\mu^r}{r!}$$
+
+## Differential Equations {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+$$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
+```
+
+$$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
+
+## Matrix formulations {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+$$	\begin{matrix}
+		-2 & 1 & 0 & 0 & \cdots & 0  \\
+		1 & -2 & 1 & 0 & \cdots & 0  \\
+		0 & 1 & -2 & 1 & \cdots & 0  \\
+		0 & 0 & 1 & -2 & \ddots & \vdots \\
+		\vdots & \vdots & \vdots & \ddots & \ddots & 1  \\
+		0 & 0 & 0 & \cdots & 1 & -2
+	\end{matrix} $$
+```
+
+$$  \begin{matrix}
+        -2 & 1 & 0 & 0 & \cdots & 0  \\
+        1 & -2 & 1 & 0 & \cdots & 0  \\
+        0 & 1 & -2 & 1 & \cdots & 0  \\
+        0 & 0 & 1 & -2 & \ddots & \vdots \\
+        \vdots & \vdots & \vdots & \ddots & \ddots & 1  \\
+        0 & 0 & 0 & \cdots & 1 & -2
+    \end{matrix} $$
+
+## In-line versus fenced {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+This equation, $y=\frac{1}{2}$, is included inline
+```
+
+This equation, $y=\frac{1}{2}$, is included inline
+
+```{r, eval=FALSE, echo=TRUE}
+Whereas this equation, $$y=\frac{1}{2}$$, is put on a separate line
+```
+
+Whereas this equation $$y=\frac{1}{2}$$ is put on a separate line
+
+## Markdown is very flexible {.smaller}
+
+-   You can import RMarkdown templates into RStudio and open as a new Rmarkdown file
+-   Better yet there are packages that add functionality
+    -   books
+    -   journal articles
+    -   slide shows (these slides!)
+    -   interactive exercises
+
+------------------------------------------------------------------------
+
+# Exploratory Data Analysis with ggplot2
+
+## Plotting using `ggplot2()` {.smaller}
+
+-   Part of the `tidyverse` suite of packages
+-   In most cases, you start with `ggplot2()`
+-   Supply a dataset and aesthetic mapping with `aes()`
+-   Determine the type of plot using `geom_point()` or `geom_histogram()` or others
+-   Many more options and controls available!
+-   More info: https://ggplot2.tidyverse.org/
+
+## GGPlot2 and the Grammar of Graphics
+
+-   GG stands for 'Grammar of Graphics'
+-   A good paragraph uses good grammar to convey information
+-   A good figure uses good grammar in the same way
+-   Seven general components can be used to create most figures
+
+## GGPlot2 and the Grammar of Graphics
+
+```{r, echo=FALSE, fig.cap="", out.width='90%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.017.jpeg")
+```
+
+## Plotting using `ggplot()` {.smaller}
+
+-   Install and load `ggplot2`
+
+```{r, echo=TRUE}
+# install.packages("ggplot2")
+library("ggplot2")
+```
+
+## Scatterplots with `ggplot`
+
+-   Use the preloaded `mpg` dataset available in RStudio
+
+```{r, echo=TRUE, out.width='55%', fig.asp=.75, fig.align='center'}
+ggplot(mpg, aes(displ, hwy, color = class)) + 
+  geom_point(size = 6,
+             shape = "square",
+             alpha = 0.4)
+```
+
+## Boxplots in `ggplot`
+
+```{r, echo=TRUE, out.width='100%', fig.asp=.3, fig.align='center'}
+ggplot(mpg, aes(manufacturer, hwy, colour = class)) + 
+  geom_boxplot() + 
+  theme_classic() + 
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+```
+
+## The `geom_bar` function
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut))
+```
+
+Now try this...
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut, color=cut))
+```
+
+and this...
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut, fill=cut))
+```
+
+and finally this...
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut, fill=clarity), position="dodge")
+```
+
+## The `geom_histogram` and `geom_freqpoly`function
+
+With this function you can make a histogram
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_histogram(mapping=aes(x=carat), binwidth=0.5)
+```
+
+This allows you to make a frequency polygram
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds) +
+  geom_histogram(mapping=aes(x=carat), binwidth=0.5)
+```
+
+## The `geom_boxplot` function
+
+Boxplots are very useful for visualizing data
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds, mapping=aes(x=cut, y=price)) +
+  geom_boxplot()
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg, mapping=aes(x=reorder(class, hwy, FUN=median), y=hwy)) +
+  coordflip()
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg, mapping=aes(x=class, y=hwy)) +
+  geom_boxplot() +
+  coordflip
+```
+
+## The `geom_point` & `geom_smooth` functions
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=diamonds2, mapping=aes(x=x, y=y)) +
+  geompoint()
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg) +
+  geompoint(mapping=aes(x=displ, y=hwy)) +
+  facet_wrap(~class, nrow=2)
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg) +
+  geompoint(mapping=aes(x=displ, y=hwy)) +
+  facet_grid(drv~cyl)
+```
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data=mpg) +
+  geomsmooth(mapping=aes(x=displ, y=hwy))
+```
+
+## Combining geoms
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(data=mpg) +
+  geom_point(mapping=aes(x=displ, y=hwy)) +
+  geom_smooth(mapping=aes(x=displ, y=hwy))
+```
+
+## Adding labels
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(data=mpg, aes(displ, hwy)) +
+  geom_point(aes(color=class)) +
+  geom_smooth(se=FALSE) +
+  labs(
+    title = "Fuel efficiency generally decreases with engine size",
+    caption = "Data from fueleconomy.gov"
+  )
+```
+
+## What type of plot do I use for each data type?
+
+![Flow chart to determine what type of data visualization and which ggplot geom to use](images/Chart_flow_chart.jpeg)
