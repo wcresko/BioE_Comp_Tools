@@ -7,48 +7,6 @@
     "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources."
   },
   {
-    "objectID": "Lectures.html",
-    "href": "Lectures.html",
-    "title": "Lectures",
-    "section": "",
-    "text": "Lecture_1\nLecture_2\nLecture_3"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Welcome to the website for BioE610 - Computational Tools for Bioengineers.\nBelow you will find the core information for the course.\nMore detailed information can be found under the ‘Syllabus’ and ‘Policies’ links.\nThe course schedule can be found under the ‘Schedule’ header.\nI will be posting the lectures after each class under the ‘Lectures’ header."
-  },
-  {
-    "objectID": "about.html#instructor-information",
-    "href": "about.html#instructor-information",
-    "title": "About",
-    "section": "Instructor information",
-    "text": "Instructor information\n\n\n\nInstructor\nBill Cresko\n\n\nOffices\nM306 KC East Tower & Pacific 312\n\n\ne-mail\nwcresko@uoregon.edu"
-  },
-  {
-    "objectID": "about.html#class-information",
-    "href": "about.html#class-information",
-    "title": "About",
-    "section": "Class information",
-    "text": "Class information\n\n\n\nClass times\nMonday 2:30 to 3:50\n\n\nClass room\nKC106\n\n\nOffice Hours\nTuesday 3:00 to 4:00\n\n\nOffice hour location\nKC Connector"
-  },
-  {
-    "objectID": "about.html#online-course-resources",
-    "href": "about.html#online-course-resources",
-    "title": "About",
-    "section": "Online Course Resources",
-    "text": "Online Course Resources\n\nWe will be using Canvas as well as this GitHub Pages website (https://wcresko.github.io/BioE_Comp_Tools/).\nTo access our course Canvas site, log into canvas.uoregon.edu using your DuckID.\nIf you have questions about using Canvas, visit the Canvas support page.\nCanvas and Technology Support also is available by phone (541-346-4357) or by live chat."
-  },
-  {
-    "objectID": "about.html#technical-requirements",
-    "href": "about.html#technical-requirements",
-    "title": "About",
-    "section": "Technical Requirements",
-    "text": "Technical Requirements\n\nYou will be working on your own laptop computer.\nIf you would like to borrow a laptop let me know.\nIf you are working on Windows you need to install WSL2 via PowerShell (see Software page)\nLatest version of R (install here).\nLatest version of RStudio (install here).\nA terminal that allows ssh connection to the UO computing cluster (Talapas)."
-  },
-  {
     "objectID": "Schedule.html",
     "href": "Schedule.html",
     "title": "Schedule",
@@ -140,6 +98,41 @@
     "text": "LaTeX\n\nLastest version of LaTeX (install here)"
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Welcome to the website for BioE610 - Computational Tools for Bioengineers.\nBelow you will find the core information for the course.\nMore detailed information can be found under the ‘Syllabus’ and ‘Policies’ links.\nThe course schedule can be found under the ‘Schedule’ header.\nI will be posting the lectures after each class under the ‘Lectures’ header."
+  },
+  {
+    "objectID": "about.html#instructor-information",
+    "href": "about.html#instructor-information",
+    "title": "About",
+    "section": "Instructor information",
+    "text": "Instructor information\n\n\n\nInstructor\nBill Cresko\n\n\nOffices\nM306 KC East Tower & Pacific 312\n\n\ne-mail\nwcresko@uoregon.edu"
+  },
+  {
+    "objectID": "about.html#class-information",
+    "href": "about.html#class-information",
+    "title": "About",
+    "section": "Class information",
+    "text": "Class information\n\n\n\nClass times\nMonday 2:30 to 3:50\n\n\nClass room\nKC106\n\n\nOffice Hours\nTuesday 3:00 to 4:00\n\n\nOffice hour location\nKC Connector"
+  },
+  {
+    "objectID": "about.html#online-course-resources",
+    "href": "about.html#online-course-resources",
+    "title": "About",
+    "section": "Online Course Resources",
+    "text": "Online Course Resources\n\nWe will be using Canvas as well as this GitHub Pages website (https://wcresko.github.io/BioE_Comp_Tools/).\nTo access our course Canvas site, log into canvas.uoregon.edu using your DuckID.\nIf you have questions about using Canvas, visit the Canvas support page.\nCanvas and Technology Support also is available by phone (541-346-4357) or by live chat."
+  },
+  {
+    "objectID": "about.html#technical-requirements",
+    "href": "about.html#technical-requirements",
+    "title": "About",
+    "section": "Technical Requirements",
+    "text": "Technical Requirements\n\nYou will be working on your own laptop computer.\nIf you would like to borrow a laptop let me know.\nIf you are working on Windows you need to install WSL2 via PowerShell (see Software page)\nLatest version of R (install here).\nLatest version of RStudio (install here).\nA terminal that allows ssh connection to the UO computing cluster (Talapas)."
+  },
+  {
     "objectID": "Homework.html",
     "href": "Homework.html",
     "title": "Homeworks",
@@ -147,592 +140,11 @@
     "text": "Below you can find links to the homework directions as they become available. You will be able to submit your homework via the Canvas website.\nHomework 1\nHomework 2\nTerm Project"
   },
   {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "",
-    "text": "Deeper dive into Unix tools\nReading and writing files\nTidy data\nAdvanced Unix tools to manipulate large files"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#goals-for-today",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#goals-for-today",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Goals for today",
-    "text": "Goals for today\n\nDeeper dive into Unix tools\nReading and writing files\nTidy data\nAdvanced Unix tools to manipulate large files"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-is-unix",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-is-unix",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "What is Unix?",
-    "text": "What is Unix?\n\nA scripting language developed in 1969, released in 1973\nServes as the base language for many programs and computers\nRuns both locally on your computer and on large clusters like Talapas\nLinux is an open-source version of the same language"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-is-a-shell",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-is-a-shell",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "What is a shell?",
-    "text": "What is a shell?\n\nThe ‘shell’ is a program that runs UNIX and takes in commands and gives them to the operating system\nBash acts as the shell in macs, linux, and now windows\nYou can access the shell via a terminal window"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Recipes for a shell command",
-    "text": "Recipes for a shell command\n\nPrompt: notation used to indicate your computer is ready to accept a new command\nCommand: the building blocks of programming, tell computer to do a specific task\nOptions: change the behavior of a command\nArgument: what the command should operate on"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#why-use-the-shell",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#why-use-the-shell",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Why use the shell?",
-    "text": "Why use the shell?\n\nSpeed\nCan handle extremely large file sizes\nUse programs only available via shell\nThe commands work almost identically across platforms\nYou can even use them on a large computer cluster like Talapas and AWS\nIt is incredibly powerful particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#where-do-you-get-help",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#where-do-you-get-help",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Where do you get help?",
-    "text": "Where do you get help?\n\nManual pages!\n\nThe shell has manuals for all basic commands\nType man [command_name] to access the manual for a specific command\nType q to exit\n\nAlso…the internet!\nAlso… Generative AI (ChaptGPT, Claude, etc..)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#the-way-you-normally-navigate",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#the-way-you-normally-navigate",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "The way you normally navigate",
-    "text": "The way you normally navigate"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#how-is-a-computer-organized",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#how-is-a-computer-organized",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "How is a computer organized?",
-    "text": "How is a computer organized?\n\nSystem of directories (folders) and files\n/ = the root directory, which holds all other directories\nMost of your files will be located under /Users in a directory of your username\nthe ~ is shorthand for your home folder\nNavigation in the shell consists of jumping up and down between directories and seeing what’s in them\nThe “path” refers to the location a file is in\n\nex: “/Users/wcresko/Documents”"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-navigation-commands-1",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-navigation-commands-1",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Common navigation commands",
-    "text": "Common navigation commands\n\npwd = “print working directory”, which will print where you currently are in the system\nls = “list”, list all directories and files in your current position\n\nls –F = denote which results are directories, files, etc.\nls –l = ”long format”, lists total file sizes\nls –r = “reverse”, lists the results in reverse order\nls –S = “size”, sort results by size\nls –t = “time”, sort results by time created, from most recent to last"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-navigation-commands-2",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-navigation-commands-2",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Common Navigation Commands",
-    "text": "Common Navigation Commands\n\ncd = “change directory”, will place you in a new position based on your path argument\n\ncd .. “go up one directory”\ncd – “go to the directory you were at last (like the back arrow on an internet browser)”\ncd ~ “go to my home directory”"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#lets-practice",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#lets-practice",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Let’s practice!",
-    "text": "Let’s practice!\n\nTry navigating around your computer using cd and ls\nIf you are on Ubuntu, you may need to create some empty directories in your Ubuntu folder before navigating in the terminal"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#making-new-files",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#making-new-files",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Making new files",
-    "text": "Making new files\n\nMake new folders: mkdir\nMake new files: nano, touch\nRename files: mv\nMove files: mv\nCopy files: cp\nDelete files: rm\nDelete directories: rmdir\nExamining file length: wc\nReading files: cat\nLooking at beginning or end: head or tail"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#things-to-keep-in-mind",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#things-to-keep-in-mind",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Things to keep in mind",
-    "text": "Things to keep in mind\n\nThe shell trusts you\n\nIt will delete files you say to delete\nIt will override files if you name 2 things the same\n\nNaming conventions\n\nAvoid spaces\nDon’t start with a –\nStick to letters, numbers, . , -, and _\n\nUse appropriate file extensions in file names\n\nSome software expect files with certain extensions (.fasta, .txt, etc.)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#lets-try-it-out",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#lets-try-it-out",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Let’s try it out",
-    "text": "Let’s try it out\n\nMake a new directory called whatever you’d like.\nAdd a file named “Practice.txt” to the directory and add some text to it\nRead the contents of the file and get its length\nRename the file to “Super_practice.txt”\nMove the file to a new folder named “Testing”\nMake a copy of the file named “Super_practice_copy.txt”\nRead the contents of the file and get its length to make sure it’s the same as Super_practice.txt\nDelete the original “Super_practice.txt”"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#commands-for-reading-files",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#commands-for-reading-files",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Commands for Reading Files",
-    "text": "Commands for Reading Files\n\ncat = concatenate and display files\n\nShows entire file at once\nGood for small files\n\nless = view file page by page\n\nNavigate with space (forward), b (back), q (quit)\nSearch with /pattern\n\nmore = similar to less but simpler\n\nSpace to go forward, q to quit\n\nhead = display first 10 lines (default)\n\nhead -n 20 file.txt shows first 20 lines\n\ntail = display last 10 lines (default)\n\ntail -n 20 file.txt shows last 20 lines\ntail -f file.txt follows file as it grows (useful for logs)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#input-redirection",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#input-redirection",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Input Redirection",
-    "text": "Input Redirection\n\n&lt; = redirect input from a file\n\ncommand &lt; input.txt\nSends contents of file as input to command\n\n&lt;&lt; = here document (multi-line input)\n\nAllows you to provide multi-line input directly in the terminal\n\nExample uses:\n\nwc -l &lt; data.txt counts lines in data.txt\nsort &lt; names.txt sorts contents of names.txt\nMany commands can read from files directly OR from stdin"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#output-redirection",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#output-redirection",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Output Redirection",
-    "text": "Output Redirection\n\n&gt; = redirect output to a file (overwrites)\n\nls -l &gt; filelist.txt\nCreates new file or overwrites existing\n\n&gt;&gt; = append output to a file\n\necho \"new line\" &gt;&gt; existing.txt\nAdds to the end of existing file\n\n2&gt; = redirect error messages\n\ncommand 2&gt; errors.txt\nCaptures error messages separately\n\n&&gt; = redirect both output and errors\n\ncommand &&gt; all_output.txt"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-are-pipes",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-are-pipes",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "What are Pipes?",
-    "text": "What are Pipes?\n\n| = the pipe operator\n\nTakes output from one command as input to another\nChains commands together\nNo intermediate files needed!\n\nBasic syntax:\n\ncommand1 | command2 | command3\n\nPower of Unix philosophy:\n\nSmall tools that do one thing well\nCombine them to do complex tasks"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-pipe-patterns",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-pipe-patterns",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Common Pipe Patterns",
-    "text": "Common Pipe Patterns\n\nCounting patterns:\n\ngrep \"pattern\" file.txt | wc -l\nCount lines matching a pattern\n\nSorting and uniqueness:\n\ncat file.txt | sort | uniq\nSort lines and remove duplicates\n\nFinding top/bottom items:\n\nsort data.txt | head -5\nGet top 5 after sorting\n\nFiltering and processing:\n\nls -l | grep \".txt\" | awk '{print $5, $9}'\nList txt files with sizes"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#advanced-pipe-examples",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#advanced-pipe-examples",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Advanced Pipe Examples",
-    "text": "Advanced Pipe Examples\n\nMulti-step data processing:\n\ncat data.csv | cut -d',' -f2 | sort | uniq -c | sort -rn\nExtract column 2, count unique values, sort by frequency\n\nReal-time monitoring:\n\ntail -f logfile.txt | grep ERROR\nWatch log file for errors in real-time\n\nComplex transformations:\n\nfind . -name \"*.txt\" | xargs wc -l | sort -n\nFind all txt files and sort by line count"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#combining-it-all-together",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#combining-it-all-together",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Combining It All Together",
-    "text": "Combining It All Together\nExample workflow:\n# Read a file, process it, save results, and display\ncat data.txt | \\\n  grep -v \"^#\" | \\       # Remove comment lines\n  cut -f1,3 | \\          # Extract columns 1 and 3\n  sort -k2 -n | \\        # Sort by column 2 numerically\n  tee results.txt | \\    # Save to file\n  head -10               # Show top 10\n\nThe backslash allows you to continue commands on multiple lines for readability"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#practice-exercise-files-and-pipes",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#practice-exercise-files-and-pipes",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Practice Exercise: Files and Pipes",
-    "text": "Practice Exercise: Files and Pipes\nTry these exercises:\n\nCreate a file with a list of numbers (one per line)\nUse pipes to sort them numerically\nSave the sorted list to a new file using redirection\nUse tee to display and save the top 5 numbers\nCount how many unique numbers you have using pipes\nAppend the count to your results file"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#tips-for-working-with-files-and-pipes",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#tips-for-working-with-files-and-pipes",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Tips for Working with Files and Pipes",
-    "text": "Tips for Working with Files and Pipes\n\nTest pipes step by step\n\nBuild complex pipes incrementally\nCheck output at each stage\n\nUse less for large files instead of cat\nRemember: &gt; overwrites, &gt;&gt; appends\nPipe efficiency:\n\nFilter early in the pipeline\nReduces data passed between commands\n\nSave intermediate results when debugging complex pipes"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#an-example-to-get-us-started",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#an-example-to-get-us-started",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "An example to get us started",
-    "text": "An example to get us started"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#data-set-rules-of-thumb-aka-tidy-data",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#data-set-rules-of-thumb-aka-tidy-data",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Data set rules of thumb (aka Tidy Data)",
-    "text": "Data set rules of thumb (aka Tidy Data)\n\nStore a copy of data in nonproprietary software and hardware formats, such as plain ASCII text (aka a flat file)\nLeave an uncorrected file when doing analyses\nUse descriptive names for your data files and variables\nInclude a header line with descriptive variable names\nMaintain effective metadata about the data (data dictionary)\nWhen you add observations to a database, add rows\nWhen you add variables to a database, add columns, not rows\nA column of data should contain only one data type"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#not-all-data-are-tidy-to-begin-with",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#not-all-data-are-tidy-to-begin-with",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Not all data are tidy to begin with",
-    "text": "Not all data are tidy to begin with\n\nSometimes need to do some data wrangling\nBut also contingency tables"
-  },
-  {
-    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#types-of-data",
-    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#types-of-data",
-    "title": "Week 2 Computational Tools for Bioengineers",
-    "section": "Types of data",
-    "text": "Types of data\n\n\n\n\n\n\n\n\n\nCategorical\n\nQuantitative\n\n\n\nOrdinal\nNominal\nRatio\nInterval\n\n\nsmall, medium, large\napples, oranges, bananas\nkilograms, dollars, years\ntemperature, calendar year\n\n\nordered character\ncharacter\nnumeric\ninteger\n\n\n\n‘Factor’ is a special type of character variable that we will explore more later"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html",
-    "title": "Week 1 Computational Tools for Bioengineers",
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html",
+    "title": "Week 3 Computational Tools for Bioengineers",
     "section": "",
     "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\ntheme_set(theme_minimal())"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#goals-of-the-course",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#goals-of-the-course",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Goals of the course",
-    "text": "Goals of the course\n\n\n\n\n\n\n\nThis is a practical course and we will learn by doing\n\n\n\nTeach fundamental skills for your scientific careers\nProvide you with the computational tools necessary to carry out your work\nTo prepare you for more advanced statistics and programming education"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-introductions",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-introductions",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Class Introductions",
-    "text": "Class Introductions\n\n\n\n\n\n\n\nWho are you?\n\n\n\nYour name\nYear in grad school\nHome lab or rotation lab\nWhat has your experience with programming/statistics been like?\nWhat is your good news this week?"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-2",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-2",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "",
-    "text": "What will you learn?\n\n\n\nWhat is local, cluster and cloud computing\nUnix paths, commands and scripts\nRead and write basic scripts in R and Python\nImplement reproducible research practices\nMarkdown and LaTeX\nGitHub and GitHub Pages\nTalapas and Amazon Web Services (AWS)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-logistics",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-logistics",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Class Logistics",
-    "text": "Class Logistics\n\nMeet Mondays from 2:30pm - 3:50pm in KC106\n\nMost of class time will be hands-on coding practice, less time lecturing\n\nCoding practice via two homeworks later in the term\n\nAvailable Tuesday of that week, due before class on Tuesday in two weeks\n\nWeeks 10-11 you will complete a final coding project\n\nDesign script(s) that works with your research and interests using the skills you’ve learned this term"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#required-materials",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#required-materials",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Required Materials",
-    "text": "Required Materials\n\nNo textbooks or purchases required\nAccess to a laptop or computer running Windows, MacOS, or Linux operating systems\nAn account on Talapas (through your lab, or through CBDS)\nAnnouncements and assignments posted on Canvas\nThe majority of course material on our class website https://wcresko.github.io/BioE_Comp_Tools/"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Computational Tools",
-    "text": "Computational Tools\n\n\n\n\n\n\n\nMac vs. Linux vs. Windows\n\n\n\nMac and Linux systems run using the same language, but previous versions of Windows lacks some of the basic features found on other systems\nTo help you practice and learn how to code in Unix, we will help you install some programs on your computer for running Unix\nR and RStudio should work on any computer\nVisual Studio Code will also work on any computer\nSimilarly, LaTeX and Git will work on any computer"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-1",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-1",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Computational Tools",
-    "text": "Computational Tools\n\nNeed to make sure that you have R installed\n\nlocally or on a server\nhttps://www.r-project.org\n\nCan run R from the command line\n\njust type R\ncan run it locally as well as on clusters"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-2",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-2",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Computational Tools",
-    "text": "Computational Tools\n\nInstall an R Integrated Development Environment (IDE)\n\nRStudio: http://www.rstudio.com\nMakes working with R much easier, particularly for a new R user\nRun on Windows, Mac or Linux OS\nUse the RStudio Desktop Open Source (Free)\n\nOther IDEs\n\nWe will also use an IDE called Visual Studio Code\nYou will also use Jupyter Notebooks"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---mac-and-linux",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---mac-and-linux",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Accessing the shell - Mac and Linux",
-    "text": "Accessing the shell - Mac and Linux\n\nMac users: open the “Terminal” app, or use another app like ‘iTerm2’\nLinux users: open one of several “Terminal” apps\n\n\n\n\n\n\nWindows users have a little more work to do\n\n\nSee the next slides"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Accessing the shell - Windows",
-    "text": "Accessing the shell - Windows\n\nGuide: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview\nRun Windows PowerShell as administrator\nInstall WSL2 by typing wsl --install\nRestart your computer\nSearch for and install Ubuntu from Microsoft store app\nOR type wsl --install -d ubuntu on PowerShell to do both at once"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows-1",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows-1",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Accessing the shell - Windows",
-    "text": "Accessing the shell - Windows\n\nOpen Ubuntu and set up a username and password\nDoes not have to match your login info for Windows\nRun sudo apt update then sudo apt upgrade to ensure everything is up to date\nWill need to create folders and files within your Ubuntu folder on your computer"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-do-we-need-coding-and-scripting",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-do-we-need-coding-and-scripting",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Why do we need coding and scripting?",
-    "text": "Why do we need coding and scripting?\n\nIt is incredibly fast and powerful, particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands\nAbility to analyze large datasets that Excel and other GUIs can’t handle well\nAccess to thousands of free programs made for and by scientists\nThe commands work almost identically across platforms\nAbility to use computer clusters like Talapas"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-the-difference-between-coding-and-scripting",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-the-difference-between-coding-and-scripting",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "What is the difference between coding and scripting?",
-    "text": "What is the difference between coding and scripting?\n\ncoding generally involves computer languages that use compilers\n\nC++, Fortran, Basic, etc\n\nscripting generally involves computer languages that are interpreted on the fly\n\nUnix, Python, R, Julia, etc.\n\ncoding - faster but less flexible; scripting - flexible but slower\nThe distinction between the two has become somewhat fuzzy and most modern analytical pipelines contain a combination of both"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-computer-system",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-computer-system",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "What is a Computer System?",
-    "text": "What is a Computer System?\n\n\n\nHardware: Physical components\nSoftware: Programs and instructions\nFirmware: Low-level software in hardware\nData: Information being processed\n\n\n\n\n\n\n\ngraph TD\n    A[Input Devices] --&gt; B[CPU]\n    B --&gt; C[Memory]\n    C --&gt; B\n    B --&gt; D[Output Devices]\n    E[Storage] --&gt; C\n    C --&gt; E"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#the-fetch-decode-execute-cycle",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#the-fetch-decode-execute-cycle",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "The Fetch-Decode-Execute Cycle",
-    "text": "The Fetch-Decode-Execute Cycle\n\n\n\n\n\ngraph LR\n    A[Fetch Instruction] --&gt; B[Decode Instruction]\n    B --&gt; C[Execute Instruction]\n    C --&gt; D[Store Results]\n    D --&gt; A\n\n\n\n\n\n\n\n\nFetch: Retrieve instruction from memory\nDecode: Interpret what the instruction means\nExecute: Perform the operation\nStore: Save results to memory or register\n\n\nThis is the fundamental cycle that every CPU performs billions of times per second"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#central-processing-unit-cpu",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#central-processing-unit-cpu",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Central Processing Unit (CPU)",
-    "text": "Central Processing Unit (CPU)\n\n\nCore Components\n\nControl Unit (CU): Directs operations\nArithmetic Logic Unit (ALU): Performs calculations\nRegisters: Ultra-fast temporary storage\nCache: High-speed memory buffer\n\n\nKey Concepts\n\nClock Speed: Cycles per second (GHz)\nCores: Independent processing units\nThreads: Virtual cores for parallel processing\nInstruction Set: CPU’s language (x86, ARM)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#graphics-processing-unit-gpu",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#graphics-processing-unit-gpu",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Graphics Processing Unit (GPU)",
-    "text": "Graphics Processing Unit (GPU)\n\n\nCore Components\n\nStreaming Multiprocessors (SMs): Processing clusters\nCUDA Cores/Stream Processors: Parallel compute units\nVideo Memory (VRAM): Dedicated high-bandwidth memory\nMemory Controller: Manages data flow to/from VRAM\n\n\nKey Concepts\n\nParallel Architecture: Thousands of cores for simultaneous tasks\nMemory Bandwidth: Data throughput (GB/s)\nCompute Units: Groups of processing cores\nAPIs: Programming interfaces (CUDA, OpenCL, Vulkan)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-vs-gpu-comparison",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-vs-gpu-comparison",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "CPU vs GPU Comparison",
-    "text": "CPU vs GPU Comparison\n\n\nCPU Characteristics\n\nDesign Focus: Sequential processing & complex tasks\nCore Count: 4-64 powerful cores\nArchitecture: Optimized for single-thread performance\nMemory: Large cache, lower bandwidth\nBest For:\n\nOperating systems & general computing\nComplex branching logic\nLow-latency operations\nSerial tasks\n\n\n\nGPU Characteristics\n\nDesign Focus: Parallel processing & high throughput\nCore Count: Thousands of smaller cores\nArchitecture: Optimized for massive parallelism\nMemory: Smaller cache, higher bandwidth\nBest For:\n\nGraphics rendering\nMachine learning/AI\nScientific simulations\nParallel computations"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#random-access-memory-ram",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#random-access-memory-ram",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Random Access Memory (RAM)",
-    "text": "Random Access Memory (RAM)\n\n\nTypes of RAM\nDRAM (Dynamic RAM)\n\nMain system memory\nNeeds constant refresh\nCheaper, higher density\nDDR4, DDR5 standards\n\nSRAM (Static RAM)\n\nUsed in CPU cache\nNo refresh needed\nFaster but expensive\nLower density\n\n\nKey Characteristics\n\nVolatile: Data lost when power off\nRandom Access: Any location equally fast\nBandwidth: Data transfer rate\nLatency: Access delay\nDual Channel: Parallel data paths"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#persistent-storage-systems",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#persistent-storage-systems",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Persistent Storage Systems",
-    "text": "Persistent Storage Systems\n\n\nHard Disk Drives (HDD)\n\nMechanical spinning platters\nMagnetic storage\nLarge capacity, low cost\n~100-200 MB/s throughput\nHigher latency (~10ms)\n\n\nSolid State Drives (SSD)\n\nNo moving parts (NAND Flash)\nElectronic storage\nFaster access (~0.1ms)\n500-7000 MB/s throughput\nMore expensive per GB"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#inputoutput-io-systems",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#inputoutput-io-systems",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Input/Output (I/O) Systems",
-    "text": "Input/Output (I/O) Systems\n\n\nInput Devices\n\nKeyboard & Mouse\nTouchscreen\nMicrophone\nCamera\nSensors\nNetwork Interface\n\n\nOutput Devices\n\nMonitor/Display\nPrinter\nSpeakers\nNetwork Interface\nActuators\n\n\nOperating Systems"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-an-operating-system",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-an-operating-system",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "What is an Operating System?",
-    "text": "What is an Operating System?\nAn OS is system software that manages computer hardware, software resources, and provides common services for computer programs.\n\n\nKey Roles\n\nResource Manager\nExtended Machine\nUser Interface Provider\nSecurity Enforcer\n\n\nCommon Operating Systems\n\nDesktop: Windows, macOS, Unix, Linux\nMobile: Android, iOS\nServer: Unix, Linux, Windows Server\nSpecialized: Supercomputers, IoT"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#operating-system-architecture",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#operating-system-architecture",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Operating System Architecture",
-    "text": "Operating System Architecture\n\n\n\n\n\ngraph TD\n    A[User Applications] --&gt; B[System Calls Interface]\n    B --&gt; C[Kernel]\n    C --&gt; D[Device Drivers]\n    D --&gt; E[Hardware]\n    \n    C --&gt; F[Process Management]\n    C --&gt; G[Memory Management]\n    C --&gt; H[File System]\n    C --&gt; I[I/O Management]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#core-os-functions",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#core-os-functions",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Core OS Functions",
-    "text": "Core OS Functions\n\n\n1. Process Management\n\nProcess Creation & Termination\nProcess Scheduling: CPU time allocation\nInter-Process Communication (IPC)\nSynchronization\nDeadlock Handling\n\n\n3. File System Management\n\nFile Operations: Create, read, write, delete\nDirectory Structure\nAccess Control & Permissions\nFile Allocation Methods\nDisk Space Management\n\n\n2. Memory Management\n\nMemory Allocation/Deallocation\nVirtual Memory\nPaging & Segmentation\nMemory Protection\nSwap Space Management\n\n\n4. Device Management\n\nDevice Drivers: Hardware abstraction\nI/O Scheduling\nBuffering & Caching\nInterrupt Handling\nPlug and Play Support"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-scheduling",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-scheduling",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "CPU Scheduling",
-    "text": "CPU Scheduling\n\n\nScheduling Algorithms\n\nFirst-Come-First-Served (FCFS)\n\nSimple but can cause long waits\n\nShortest Job First (SJF)\n\nOptimal average wait time\n\nRound Robin (RR)\n\nFair time slices for all\n\nPriority Scheduling\n\nImportant tasks first\n\n\n\nPerformance Metrics\n\nCPU Utilization: Keep CPU busy\nThroughput: Jobs completed/time\nTurnaround Time: Total completion time\nWaiting Time: Time in ready queue\nResponse Time: First response delay"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#security-protection",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#security-protection",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Security & Protection",
-    "text": "Security & Protection\n\n\nProtection Mechanisms\n\nAccess Control Lists (ACLs)\nUser/Group Permissions\nMemory Protection: Segmentation\nCPU Modes: User vs Kernel\nSandboxing: Isolate processes\n\n\nSecurity Features\n\nAuthentication: User verification\nEncryption: Data protection\nFirewall: Network protection\nAntivirus: Malware detection\nUpdates: Patch vulnerabilities\n\n\n\n“Every program and user should operate using the least amount of privilege necessary”"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-4",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-4",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "",
-    "text": "graph LR\n    A[1960s-70s&lt;br/&gt;Mainframes] --&gt; B[1980s-90s&lt;br/&gt;Personal Computers]\n    B --&gt; C[1990s-2000s&lt;br/&gt;Client-Server]\n    C --&gt; D[2000s&lt;br/&gt;Clusters/Grids]\n    D --&gt; E[2006+&lt;br/&gt;Cloud Computing]\n    E --&gt; F[2020s&lt;br/&gt;Edge/Hybrid]\n\n\n\n\n\n\nKey Drivers of Change\n\nPerformance Needs: Growing computational demands\nEconomics: Cost optimization and economies of scale\nConnectivity: Internet bandwidth improvements\nVirtualization: Hardware abstraction technologies"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-overview",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-overview",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Local Computing Overview",
-    "text": "Local Computing Overview\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\nImportant\n\n\nComputing resources that are physically present and directly controlled by the user or organization\n\n\n\n\n\n\n\n\nCharacteristics\n\nComplete control over hardware\nData stays on-premises\nNo network dependency for compute\nPredictable performance\nOne-time purchase model\n\n\nCommon Setups\n\nDesktop workstations\nLaptop computers\nOn-premises servers\nLocal development machines"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-architecture",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-architecture",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Local Computing Architecture",
-    "text": "Local Computing Architecture\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    A[Applications] --&gt; B[Operating System]\n    B --&gt; C[Hardware Abstraction Layer]\n    C --&gt; D[CPU]\n    C --&gt; E[Memory]\n    C --&gt; F[Storage]\n    C --&gt; G[GPU]\n    C --&gt; H[Network Card]\n    H --&gt; I[Internet/LAN]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-pros-and-cons",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-pros-and-cons",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Local Computing: Pros and Cons",
-    "text": "Local Computing: Pros and Cons\n\n\nAdvantages ✓\n\nLow Latency: No network overhead\nData Control: Complete ownership\nPrivacy: Data never leaves premises\nPredictable Costs: One-time investment\nOffline Capability: Works without internet\nCustomization: Full hardware/software control\n\n\nDisadvantages ✗\n\nLimited Scale: Hardware constraints\nMaintenance: User responsibility\nUpfront Costs: High initial investment\nDisaster Recovery: Manual backup needed\nResource Waste: Idle during off-hours\nUpgrade Complexity: Physical intervention"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-overview",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-overview",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Cluster Computing Overview",
-    "text": "Cluster Computing Overview\nA collection of interconnected computers working together as a single system\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    M[Master/Head Node] --&gt; N1[Node 1]\n    M --&gt; N2[Node 2]\n    M --&gt; N3[Node 3]\n    M --&gt; N4[Node N]\n    N1 -.-&gt; S[Shared Storage]\n    N2 -.-&gt; S\n    N3 -.-&gt; S\n    N4 -.-&gt; S\n    U[Users] --&gt; M\n\n\n\n\n\n\nKey Components\n\nHead Node: Job scheduling and management\nCompute Nodes: Worker machines\nInterconnect: High-speed network (InfiniBand, 10GbE+)\nShared Storage: Parallel file systems (Lustre, GPFS)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#resource-managers",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#resource-managers",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Resource Managers",
-    "text": "Resource Managers\nThese are used to schedule computing jobs on computer clusters.\n\n\n\nSystem\nUse Case\nKey Features\n\n\n\n\nSLURM\nHPC\nAdvanced scheduling, power management\n\n\nPBS/Torque\nTraditional HPC\nMature, stable, wide support\n\n\nSGE/UGE\nMixed workloads\nFlexible policies\n\n\nKubernetes\nContainers\nMicroservices, auto-scaling\n\n\n\n\n\n\n\n\n\nImportant\n\n\nWe use SLURM on Talapas at the University of Oregon for scheduling compute jobs"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-pros-and-cons",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-pros-and-cons",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Cluster Computing: Pros and Cons",
-    "text": "Cluster Computing: Pros and Cons\n\n\nAdvantages ✓\n\nScalability: Add nodes as needed\nPerformance: Parallel processing power\nCost-Effective: Commodity hardware\nFault Tolerance: Node redundancy\nResource Sharing: Multiple users/projects\nSpecialized Hardware: GPUs, high-mem nodes\n\n\nDisadvantages ✗\n\nComplexity: Requires expertise\nInfrastructure: Space, power, cooling\nNetwork Dependency: Interconnect bottlenecks\nSoftware Licenses: Per-node costs\nMaintenance: Hardware failures\nInitial Setup: Complex configuration"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-overview",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-overview",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Cloud Computing Overview",
-    "text": "Cloud Computing Overview\nOn-demand delivery of computing resources over the internet with pay-as-you-go pricing\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    R[Region 1] --&gt; AZ1[Availability Zone 1]\n    R --&gt; AZ2[Availability Zone 2]\n    AZ1 --&gt; C[Compute]\n    AZ1 --&gt; S[Storage]\n    AZ1 --&gt; N[Networking]\n    AZ2 --&gt; C2[Compute]\n    AZ2 --&gt; S2[Storage]\n    AZ2 --&gt; N2[Networking]\n    U[Users] -.Internet.-&gt; R\n\n\n\n\n\n\nMajor Providers\n\nAmazon Web Services (AWS): Market leader, 200+ services\nMicrosoft Azure: Enterprise integration\nGoogle Cloud Platform: AI/ML focus\nOthers: IBM Cloud, Oracle Cloud, Alibaba Cloud"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-pros-and-cons",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-pros-and-cons",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Cloud Computing: Pros and Cons",
-    "text": "Cloud Computing: Pros and Cons\n\n\nAdvantages ✓\n\nElastic Scaling: Instant resource adjustment\nPay-per-Use: No idle resource costs\nGlobal Reach: Multiple regions\nManaged Services: Reduced operations\nInnovation Speed: Latest technologies\nDisaster Recovery: Built-in redundancy\nNo CAPEX: Operating expense model\n\n\nDisadvantages ✗\n\nOngoing Costs: Can exceed on-prem\nVendor Lock-in: Proprietary services\nInternet Dependency: Connectivity required\nData Transfer Costs: Egress fees\nCompliance Complexity: Data residency\nLess Control: Shared responsibility\nPerformance Variability: Noisy neighbors"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-unix",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-unix",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "What is Unix?",
-    "text": "What is Unix?\n\nA scripting language developed in 1969, released in 1973\nServes as the base language for many programs and computers\nRuns both locally on your computer and on large clusters like Talapas\nLinux is an open-source version of the same language"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-shell",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-shell",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "What is a shell?",
-    "text": "What is a shell?\n\nThe ‘shell’ is a program that runs UNIX and takes in commands and gives them to the operating system\nBash acts as the shell in macs, linux, and now windows\nYou can access the shell via a terminal window"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Recipes for a shell command",
-    "text": "Recipes for a shell command\n\nPrompt: notation used to indicate your computer is ready to accept a new command\nCommand: the building blocks of programming, tell computer to do a specific task\nOptions: change the behavior of a command\nArgument: what the command should operate on"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-use-the-shell",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-use-the-shell",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Why use the shell?",
-    "text": "Why use the shell?\n\nSpeed\nCan handle extremely large file sizes\nUse programs only available via shell\nThe commands work almost identically across platforms\nYou can even use them on a large computer cluster like Talapas and AWS\nIt is incredibly powerful particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands"
-  },
-  {
-    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#where-do-you-get-help",
-    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#where-do-you-get-help",
-    "title": "Week 1 Computational Tools for Bioengineers",
-    "section": "Where do you get help?",
-    "text": "Where do you get help?\n\nManual pages!\n\nThe shell has manuals for all basic commands\nType man [command_name] to access the manual for a specific command\nType q to exit\n\nAlso…the internet!"
-  },
-  {
-    "objectID": "Policies.html",
-    "href": "Policies.html",
-    "title": "Policies",
-    "section": "",
-    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
-  },
-  {
-    "objectID": "Policies.html#workload-expectations",
-    "href": "Policies.html#workload-expectations",
-    "title": "Policies",
-    "section": "",
-    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
-  },
-  {
-    "objectID": "Policies.html#communication",
-    "href": "Policies.html#communication",
-    "title": "Policies",
-    "section": "Communication",
-    "text": "Communication\n\nElectronic\n\nOur class will communicate through our Canvas site. Announcements and emails are archived there, automatically forwarded to your UO email, and can even reach you by text. Check and adjust your settings under Account &gt; Notifications.\nWe will also be using this GitHub Pages website (https://wcresko.github.io/BioE_Comp_Tools/) for the course as the repository for lecture schedule, syllabus, lecture slides and other materials.\nEvery Monday I will post an Announcement that previews critical concepts we’ll work on that week and a checklist of the week’s due dates.\nI will contact individual students when needed through email, and I try to respond to questions within one business day.\nWhen giving feedback on assignments, I do so in Canvas, and turnaround time for feedback is generally one week.\n\n\n\nOffice hours\n\nI will host office hours each week on Tuesday from 3:00 to 4:00 in the KC connector on the 2nd floor. The end of many class periods will also function as a form of office hour.\nI welcome meetings outside my regular office hours as well - please email me to set a time.\nDuring office hours, students bring in a wide range of concerns, questions, and successes. We might\n\ntalk through a specific concept or problem to clarify it\nthink together about an issue a student is curious about that relates to the class\ndiscuss a student’s post-graduation goals\nidentify more supportive methods to study for a future exam or to begin a project\nor any number of other topics"
-  },
-  {
-    "objectID": "Policies.html#classroom-community-expectations",
-    "href": "Policies.html#classroom-community-expectations",
-    "title": "Policies",
-    "section": "Classroom Community Expectations",
-    "text": "Classroom Community Expectations\n\nParticipate and Contribute:\nAll students are expected to participate by sharing ideas and contributing to the learning environment. This entails preparing, following instructions, and engaging respectfully and thoughtfully with others. While all students should participate, participation is not just talking, and a range of participation activities support learning. Participation might look like speaking aloud in the full class and in small groups, and working collaboratively on coding projects. We will establish more specific participation guidelines and criteria for contributions in our first weeks of the term.\n\n\nExpect and Respect Diversity\nAll classes at the University of Oregon welcome and respect diverse experiences, perspectives, and approaches. What is not welcome are behaviors or contributions that undermine, demean, or marginalize others based on race, ethnicity, gender, sex, age, sexual orientation, religion, ability, or socioeconomic status. We will value differences and communicate disagreements with respect. We may establish more specific guidelines and protocols to ensure inclusion and equity for all members of our learning community.\n\n\nHelp Everyone Learn\nPart of how we learn together is by learning from one another. To do this effectively, we need to be patient with each other, identify ways we can assist others, and be open-minded to receiving help and feedback from others. Don’t hesitate to contact me to ask for assistance or offer suggestions that might help us learn better."
-  },
-  {
-    "objectID": "Policies.html#generative-artificial-intelligence-genai-use",
-    "href": "Policies.html#generative-artificial-intelligence-genai-use",
-    "title": "Policies",
-    "section": "Generative Artificial Intelligence (GenAI) Use",
-    "text": "Generative Artificial Intelligence (GenAI) Use\nStudents can use GenAI tools in this class to help with certain aspects of coding. We will discuss during the the class about GenAI can be a tool to help you, but it cannot replace your computational intuition and knowledge. However, you cannot use content such as text, graphics and code created by GenAI tools in your work. You must be the author/creator of your work submissions. For example, you can use a GenAI tool to suggest a paper outline based on a draft you provide it, or suggest some code, but you cannot submit a paper with text or code generated by GenAI as if the text or code is your own writing. If you are in doubt or have questions about a particular GenAI tool and if its use is okay, check in with me and let’s discuss!"
-  },
-  {
-    "objectID": "Policies.html#university-course-policies",
-    "href": "Policies.html#university-course-policies",
-    "title": "Policies",
-    "section": "University Course Policies",
-    "text": "University Course Policies\nPlease read and make sure you are familiar with the important policies that apply to all UO courses, which can be found here."
-  },
-  {
-    "objectID": "Syllabus.html",
-    "href": "Syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources. Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases."
-  },
-  {
-    "objectID": "Syllabus.html#course-description",
-    "href": "Syllabus.html#course-description",
-    "title": "Syllabus",
-    "section": "",
-    "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources. Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases."
-  },
-  {
-    "objectID": "Syllabus.html#course-structure",
-    "href": "Syllabus.html#course-structure",
-    "title": "Syllabus",
-    "section": "Course Structure",
-    "text": "Course Structure\nWe will hold class on Mondays from 2:30 to 3:50PM. These meetings will be relatively informal, and will usually begin with a 30-45 min. conceptual overview of topics with coding demonstrations. I will post all lecture slides as Markdown and HTML after class to the course website under the ‘Lectures’ tab. The remaining meeting time will be reserved for group work, questions, answers, and discussion. I encourage students to work on exercises and assignments during these periods so that questions can be directly addressed as they emerge."
-  },
-  {
-    "objectID": "Syllabus.html#course-objectives",
-    "href": "Syllabus.html#course-objectives",
-    "title": "Syllabus",
-    "section": "Course Objectives",
-    "text": "Course Objectives\n\nScientific Computing Fundamentals\n\nDescribe fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nRead and write code in Unix.\nRead and write code in R using RStudio.\nProperly organize and format primary data and metadata files for analysis\nLearn programming fundamentals of the R statistical language, including objects, functions, iteration, and simulation.\nArticulate the importance of and requirements for reproducible science in bioinformatics.\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\n\nStatistical Visualization\n\nProduce well-designed and informative figures in RStudio.\nMake publication-quality data visualizations, including scatterplots, boxplots, frequency distributions, mosaic plots, etc.\n\nComputers and data\n\nCPUs, GPUs, storage\nFundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nUnix, paths & shell commands including GREP, AWK and SED\nBasics of data structures, databases and tidy dataProperly organize and format primary data and metadata files for analysis\n\nIntegrative developer environments (IDEs)\n\nVirtual Code Studio\nRStudio\nupyter notebooks\n\nFoundations of scripting using Python and R\n\nR and Python fundamentals\npackages and extending functionality\nobjects and object oriented programming\nfunctions, iteration, and simulation\ndata wrangling\nUse and misuse of Generative AI as a digital assistant and ’vibe coding\n\nReproducible science\n\nthe NIH FAIR (Findable, accessible, interoperable) principles\nGit and GitHub for project management and collaboration\nMarkdown for use in manuscripts, presentations and websites\nIncluding LaTeX mathematical expressions in markdown\n\nRemote super computing\n\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\nSlurm scripts for big jobs\nOther remote systems such as AWS Azure"
-  },
-  {
-    "objectID": "Syllabus.html#graded-assignments",
-    "href": "Syllabus.html#graded-assignments",
-    "title": "Syllabus",
-    "section": "Graded Assignments",
-    "text": "Graded Assignments\nProblem sets: Students will be assigned four problem sets (roughly one every 2 weeks) to complete independently. These will mostly focus on one or a few data sets each, and the goal will be for the students to organize, visualize, analyze, and interpret the data sets in light of specific scientific motivations. - 80% of grade.\nTerm project: Students will choose a large dataset to process on Talapas. The goal of this project is allow students agency in applying what they are learning in class to their own data - 40% of grade.\nPreparing and submitting assignments: The information required to complete all in-class assignments and problem sets will be given in instructions on Canvas. Students should carefully follow the detailed instructions associated with each assignment. Students are encouraged to work together and share information. In particular, some students will have a higher skill level than others, and we encourage those students with more experience to help their peers. However, no direct sharing of code is allowed.\nPreparing and submitting assignments: Assignments will be submitted on Canvas. Be sure to include your name on the document. Be professional – appropriately name your files, make sure they are organized, and submit only the information requested. Late assignments will not be accepted.\n\nGrading\n\n\n\nAssignment\nPercentage of Total Grade\n\n\n\n\nProblem Sets - 2 in total, 30% each\n60%\n\n\nTerm-long Projects\n40%\n\n\n\n\n\n\nGrade Percentage\nLetter Grade\nPass/No Pass Grade\n\n\n\n\n100% - 90%\nA\nPass\n\n\n89% - 80%\nB\nPass\n\n\n79% - 80%\nC\nNo Pass\n\n\n69% - 60%\nD\nNo Pass\n\n\n60% - 0%\nF\nNo Pass"
-  },
-  {
-    "objectID": "Homework_Folder/HW2_2025.html",
-    "href": "Homework_Folder/HW2_2025.html",
-    "title": "Homework 2 - TBD",
-    "section": "",
-    "text": "Assignment: TBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Monday, November 24th.\nDirections: TBD"
-  },
-  {
-    "objectID": "Homework_Folder/HW2_2025.html#problem-set-2---directions",
-    "href": "Homework_Folder/HW2_2025.html#problem-set-2---directions",
-    "title": "Homework 2 - TBD",
-    "section": "",
-    "text": "Assignment: TBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Monday, November 24th.\nDirections: TBD"
-  },
-  {
-    "objectID": "Resources.html",
-    "href": "Resources.html",
-    "title": "Resources",
-    "section": "",
-    "text": "Base R Cheat Sheet\nRStudio Collection of Cheat Sheets\nGit Cheat Sheet\nMarkdown Cheat Sheet\nLaTeX Cheat Sheet"
-  },
-  {
-    "objectID": "Resources.html#cheat-sheets",
-    "href": "Resources.html#cheat-sheets",
-    "title": "Resources",
-    "section": "",
-    "text": "Base R Cheat Sheet\nRStudio Collection of Cheat Sheets\nGit Cheat Sheet\nMarkdown Cheat Sheet\nLaTeX Cheat Sheet"
   },
   {
     "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#goals-for-today",
@@ -840,13 +252,6 @@
     "text": "Tips for Working with Files and Pipes\n\nTest pipes step by step\n\nBuild complex pipes incrementally\nCheck output at each stage\n\nUse less for large files instead of cat\nRemember: &gt; overwrites, &gt;&gt; appends\nPipe efficiency:\n\nFilter early in the pipeline\nReduces data passed between commands\n\nSave intermediate results when debugging complex pipes # Unix Data Streams"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-exercise-files-and-pipes",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-exercise-files-and-pipes",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Practice Exercise: Files and Pipes",
-    "text": "Practice Exercise: Files and Pipes\nTry these exercises:\n\nCreate a file with a list of numbers (one per line)\nUse pipes to sort them numerically\nSave the sorted list to a new file using redirection\nDisplay and save the top 5 numbers\nCount how many unique numbers you have using pipes\nAppend the count to your results file"
-  },
-  {
     "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#human-chromosome-data",
     "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#human-chromosome-data",
     "title": "Week 3 Computational Tools for Bioengineers",
@@ -865,28 +270,28 @@
     "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#examining-large-files-efficiently",
     "title": "Week 3 Computational Tools for Bioengineers",
     "section": "Examining Large Files Efficiently",
-    "text": "Examining Large Files Efficiently\nDon’t use cat on huge files! Use these approaches:\n# Decompress and look at first 10 lines\n\ngunzip -c chr21.fa.gz | head -10\n\n# Check file size before and after decompression\n\nls -lh chr21.fa.gz\ngunzip chr21.fa.gz\nls -lh chr21.fa\n\n# Count sequences in FASTA file (lines starting with &gt;)\n\ngrep \"^&gt;\" chr21.fa | wc -l\n\n# View sequence headers only\n\ngrep \"^&gt;\" chr21.fa | less"
+    "text": "Examining Large Files Efficiently\nDon’t use cat on huge files! Use these approaches:\n# Decompress and look at first 10 lines\n\ngunzip -c human_genome.fa.gz | head -10\n\n# Check file size before and after decompression\n\nls -lh human_genome.fa.gz\ngunzip human_genome.fa.gz\nls -lh human_genome.fa\n\n# Count sequences in FASTA file (lines starting with &gt;)\n\ngrep \"^&gt;\" human_genome.fa.gz | wc -l\n\n# View sequence headers only\n\ngrep \"^&gt;\" human_genome.fa.gz | less"
   },
   {
     "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-a-subset-for-analysis",
     "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-a-subset-for-analysis",
     "title": "Week 3 Computational Tools for Bioengineers",
     "section": "Creating a Subset for Analysis",
-    "text": "Creating a Subset for Analysis\nMake a smaller working file for testing:\n# Extract first 1MB of sequence for testing\n\nhead -n 20000 chr21.fa &gt; chr21_subset.fa\n\n# Or extract specific scaffold/contig by name\n\nawk '/^&gt;chr21:1000000-2000000/,/^&gt;/' chr21.fa | \\\n  head -n -1 &gt; region_of_interest.fa\n\n# Create a random sample of sequences\n\ngrep \"^&gt;\" chr21.fa | \\\n  shuf -n 10 | \\\n  while read header; do\n    grep -A 1000 \"$header\" chr21.fa\n  done &gt; random_sample.fa"
+    "text": "Creating a Subset for Analysis\nMake a smaller working file for testing:\n# Extract first 1MB of sequence for testing\n\nhead -n 20000 human_genome.fa.gz &gt; human_genome_subset.fa\n\n# Or extract specific scaffold/contig by name\n\nawk '/^&gt;chr21:1000000-2000000/,/^&gt;/' human_genome.fa | \\\n  head -n -1 &gt; region_of_interest.fa\n\n# Create a random sample of sequences\n\ngrep \"^&gt;\" human_genome.fa | \\\n  shuf -n 10 | \\\n  while read header; do\n    grep -A 1000 \"$header\" human_genome.fa\n  done &gt; random_sample.fa"
   },
   {
     "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#processing-fasta-files-with-pipes",
     "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#processing-fasta-files-with-pipes",
     "title": "Week 3 Computational Tools for Bioengineers",
     "section": "Processing FASTA Files with Pipes",
-    "text": "Processing FASTA Files with Pipes\nExtract specific regions or sequences:\n# Extract just the sequence (no headers) and count bases\n\ngrep -v \"^&gt;\" chr21.fa | tr -d '\\n' | wc -c\n\n# Count each type of nucleotide\n\ngrep -v \"^&gt;\" chr21.fa | \\\n  tr -d '\\n' | \\\n  fold -w1 | \\\n  sort | \\\n  uniq -c\n\n# Extract a specific gene region (lines 1000-2000)\n\nsed -n '1000,2000p' chr21.fa &gt; gene_region.fa\n\ngrep -v inverts the match (excludes lines)\ntr -d '\\n' removes newlines\nfold -w1 puts each character on its own line"
+    "text": "Processing FASTA Files with Pipes\nExtract specific regions or sequences:\n# Extract just the sequence (no headers) and count bases\n\ngrep -v \"^&gt;\" human_genome.fa | tr -d '\\n' | wc -c\n\n# Count each type of nucleotide\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  fold -w1 | \\\n  sort | \\\n  uniq -c\n\n# Extract a specific gene region (lines 1000-2000)\n\nsed -n '1000,2000p' human_genome.fa &gt; gene_region.fa\n\ngrep -v inverts the match (excludes lines)\ntr -d '\\n' removes newlines\nfold -w1 puts each character on its own line"
   },
   {
     "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#finding-patterns-in-genomic-data",
     "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#finding-patterns-in-genomic-data",
     "title": "Week 3 Computational Tools for Bioengineers",
     "section": "Finding Patterns in Genomic Data",
-    "text": "Finding Patterns in Genomic Data\nSearch for specific sequences and motifs:\n# Find all instances of a restriction enzyme site (EcoRI: GAATTC)\n\ngrep -v \"^&gt;\" chr21.fa | \\\n  tr -d '\\n' | \\\n  grep -o \"GAATTC\" | \\\n  wc -l\n\n# Extract 100 bases around each EcoRI site\n\ngrep -v \"^&gt;\" chr21.fa | \\\n  tr -d '\\n' | \\\n  grep -oE \".{100}GAATTC.{100}\" &gt; ecori_contexts.txt\n\n# Find all start codons (ATG) and their positions\n\ngrep -v \"^&gt;\" chr21.fa | \\\n  tr -d '\\n' | \\\n  grep -b -o \"ATG\" | \\\n  head -20"
+    "text": "Finding Patterns in Genomic Data\nSearch for specific sequences and motifs:\n# Find all instances of a restriction enzyme site (EcoRI: GAATTC)\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  grep -o \"GAATTC\" | \\\n  wc -l\n\n# Extract 100 bases around each EcoRI site\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  grep -oE \".{100}GAATTC.{100}\" &gt; ecori_contexts.txt\n\n# Find all start codons (ATG) and their positions\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  grep -b -o \"ATG\" | \\\n  head -20"
   },
   {
     "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#combining-downloads-with-processing",
@@ -910,591 +315,598 @@
     "text": "Practice Exercise: Genomic Data Pipeline\nBuild a complete analysis pipeline:\n\nDownload a bacterial genome (smaller, ~5 MB)\nCount the total number of genes (hint: count headers)\nCalculate the genome size in base pairs\nFind the 10 most common 6-base sequences\nExtract all genes with “ribosomal” in the header\nSave your pipeline as a shell script for reproducibility"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#an-example-to-get-us-started",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#an-example-to-get-us-started",
-    "title": "Week 3 Computational Tools for Bioengineers",
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "Deeper dive into Unix tools\nReading and writing files\nTidy data\nAdvanced Unix tools to manipulate large files"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#goals-for-today",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#goals-for-today",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "Deeper dive into Unix tools\nReading and writing files\nTidy data\nAdvanced Unix tools to manipulate large files"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-is-unix",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-is-unix",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "What is Unix?",
+    "text": "What is Unix?\n\nA scripting language developed in 1969, released in 1973\nServes as the base language for many programs and computers\nRuns both locally on your computer and on large clusters like Talapas\nLinux is an open-source version of the same language"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-is-a-shell",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-is-a-shell",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "What is a shell?",
+    "text": "What is a shell?\n\nThe ‘shell’ is a program that runs UNIX and takes in commands and gives them to the operating system\nBash acts as the shell in macs, linux, and now windows\nYou can access the shell via a terminal window"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Recipes for a shell command",
+    "text": "Recipes for a shell command\n\nPrompt: notation used to indicate your computer is ready to accept a new command\nCommand: the building blocks of programming, tell computer to do a specific task\nOptions: change the behavior of a command\nArgument: what the command should operate on"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#why-use-the-shell",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#why-use-the-shell",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Why use the shell?",
+    "text": "Why use the shell?\n\n\nSpeed\nCan handle extremely large file sizes\nUse programs only available via shell\nThe commands work almost identically across platforms\nYou can even use them on a large computer cluster like Talapas and AWS\nIt is incredibly powerful particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#where-do-you-get-help",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#where-do-you-get-help",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Where do you get help?",
+    "text": "Where do you get help?\n\nManual pages!\n\nThe shell has manuals for all basic commands\nType man [command_name] to access the manual for a specific command\nType q to exit\n\nAlso…the internet!\nAlso… Generative AI (ChaptGPT, Claude, etc..)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#the-way-you-normally-navigate",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#the-way-you-normally-navigate",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "The way you normally navigate",
+    "text": "The way you normally navigate"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#how-is-a-computer-organized",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#how-is-a-computer-organized",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "How is a computer organized?",
+    "text": "How is a computer organized?\n\nSystem of directories (folders) and files\n/ = the root directory, which holds all other directories\nMost of your files will be located under /Users in a directory of your username\nthe ~ is shorthand for your home folder\nNavigation in the shell consists of jumping up and down between directories and seeing what’s in them\nThe “path” refers to the location a file is in\n\nex: “/Users/wcresko/Documents”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-navigation-commands-1",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-navigation-commands-1",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Common navigation commands",
+    "text": "Common navigation commands\n\n\npwd = “print working directory”, which will print where you currently are in the system\nls = “list”, list all directories and files in your current position\n\nls –F = denote which results are directories, files, etc.\nls –l = ”long format”, lists total file sizes\nls –r = “reverse”, lists the results in reverse order\nls –S = “size”, sort results by size\nls –t = “time”, sort results by time created, from most recent to last"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-navigation-commands-2",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-navigation-commands-2",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Common Navigation Commands",
+    "text": "Common Navigation Commands\n\ncd = “change directory”, will place you in a new position based on your path argument\n\ncd .. “go up one directory”\ncd – “go to the directory you were at last (like the back arrow on an internet browser)”\ncd ~ “go to my home directory”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#lets-practice",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#lets-practice",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Let’s practice!",
+    "text": "Let’s practice!\n\nTry navigating around your computer using cd and ls\nIf you are on Ubuntu, you may need to create some empty directories in your Ubuntu folder before navigating in the terminal"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#making-new-files",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#making-new-files",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Making new files",
+    "text": "Making new files\n\n\nMake new folders: mkdir\nMake new files: nano, touch\nRename files: mv\nMove files: mv\nCopy files: cp\nDelete files: rm\nDelete directories: rmdir\nExamining file length: wc\nReading files: cat\nLooking at beginning or end: head or tail"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#things-to-keep-in-mind",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#things-to-keep-in-mind",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Things to keep in mind",
+    "text": "Things to keep in mind\n\nThe shell trusts you\n\nIt will delete files you say to delete\nIt will override files if you name 2 things the same\n\nNaming conventions\n\nAvoid spaces\nDon’t start with a –\nStick to letters, numbers, . , -, and _\n\nUse appropriate file extensions in file names\n\nSome software expect files with certain extensions (.fasta, .txt, etc.)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#lets-try-it-out",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#lets-try-it-out",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Let’s try it out",
+    "text": "Let’s try it out\n\nMake a new directory called whatever you’d like.\nAdd a file named “Practice.txt” to the directory and add some text to it\nRead the contents of the file and get its length\nRename the file to “Super_practice.txt”\nMove the file to a new folder named “Testing”\nMake a copy of the file named “Super_practice_copy.txt”\nRead the contents of the file and get its length to make sure it’s the same as Super_practice.txt\nDelete the original “Super_practice.txt”"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#commands-for-reading-files",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#commands-for-reading-files",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Commands for Reading Files",
+    "text": "Commands for Reading Files\n\n\ncat = concatenate and display files\n\nShows entire file at once\nGood for small files\n\nless = view file page by page\n\nNavigate with space (forward), b (back), q (quit)\nSearch with /pattern\n\nmore = similar to less but simpler\n\nSpace to go forward, q to quit\n\nhead = display first 10 lines (default)\n\nhead -n 20 file.txt shows first 20 lines\n\ntail = display last 10 lines (default)\n\ntail -n 20 file.txt shows last 20 lines\ntail -f file.txt follows file as it grows (useful for logs)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#input-redirection",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#input-redirection",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Input Redirection",
+    "text": "Input Redirection\n\n\n&lt; = redirect input from a file\n\ncommand &lt; input.txt\nSends contents of file as input to command\n\n&lt;&lt; = here document (multi-line input)\n\nAllows you to provide multi-line input directly in the terminal\n\nExample uses:\n\nwc -l &lt; data.txt counts lines in data.txt\nsort &lt; names.txt sorts contents of names.txt\nMany commands can read from files directly OR from stdin"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#output-redirection",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#output-redirection",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Output Redirection",
+    "text": "Output Redirection\n\n\n&gt; = redirect output to a file (overwrites)\n\nls -l &gt; filelist.txt\nCreates new file or overwrites existing\n\n&gt;&gt; = append output to a file\n\necho \"new line\" &gt;&gt; existing.txt\nAdds to the end of existing file\n\n2&gt; = redirect error messages\n\ncommand 2&gt; errors.txt\nCaptures error messages separately\n\n&&gt; = redirect both output and errors\n\ncommand &&gt; all_output.txt"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-are-pipes",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#what-are-pipes",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "What are Pipes?",
+    "text": "What are Pipes?\n\n\n| = the pipe operator\n\nTakes output from one command as input to another\nChains commands together\nNo intermediate files needed!\n\nBasic syntax:\n\ncommand1 | command2 | command3\n\nPower of Unix philosophy:\n\nSmall tools that do one thing well\nCombine them to do complex tasks"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-pipe-patterns",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#common-pipe-patterns",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Common Pipe Patterns",
+    "text": "Common Pipe Patterns\n\n\nCounting patterns:\n\ngrep \"pattern\" file.txt | wc -l\nCount lines matching a pattern\n\nSorting and uniqueness:\n\ncat file.txt | sort | uniq\nSort lines and remove duplicates\n\nFinding top/bottom items:\n\nsort data.txt | head -5\nGet top 5 after sorting\n\nFiltering and processing:\n\nls -l | grep \".txt\" | awk '{print $5, $9}'\nList txt files with sizes"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#advanced-pipe-examples",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#advanced-pipe-examples",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Advanced Pipe Examples",
+    "text": "Advanced Pipe Examples\n\n\nMulti-step data processing:\n\ncat data.csv | cut -d',' -f2 | sort | uniq -c | sort -rn\nExtract column 2, count unique values, sort by frequency\n\nReal-time monitoring:\n\ntail -f logfile.txt | grep ERROR\nWatch log file for errors in real-time\n\nComplex transformations:\n\nfind . -name \"*.txt\" | xargs wc -l | sort -n\nFind all txt files and sort by line count"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#combining-it-all-together",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#combining-it-all-together",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Combining It All Together",
+    "text": "Combining It All Together\nExample workflow:\n# Read a file, process it, save results, and display\ncat data.txt | \\\n  grep -v \"^#\" | \\       # Remove comment lines\n  cut -f1,3 | \\          # Extract columns 1 and 3\n  sort -k2 -n | \\        # Sort by column 2 numerically\n  tee results.txt | \\    # Save to file\n  head -10               # Show top 10\n\nThe backslash allows you to continue commands on multiple lines for readability"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#practice-exercise-files-and-pipes",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#practice-exercise-files-and-pipes",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Practice Exercise: Files and Pipes",
+    "text": "Practice Exercise: Files and Pipes\nTry these exercises:\n\nCreate a file with a list of numbers (one per line)\nUse pipes to sort them numerically\nSave the sorted list to a new file using redirection\nUse tee to display and save the top 5 numbers\nCount how many unique numbers you have using pipes\nAppend the count to your results file"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#tips-for-working-with-files-and-pipes",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#tips-for-working-with-files-and-pipes",
+    "title": "Week 2 Computational Tools for Bioengineers",
+    "section": "Tips for Working with Files and Pipes",
+    "text": "Tips for Working with Files and Pipes\n\n\nTest pipes step by step\n\nBuild complex pipes incrementally\nCheck output at each stage\n\nUse less for large files instead of cat\nRemember: &gt; overwrites, &gt;&gt; appends\nPipe efficiency:\n\nFilter early in the pipeline\nReduces data passed between commands\n\nSave intermediate results when debugging complex pipes"
+  },
+  {
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#an-example-to-get-us-started",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#an-example-to-get-us-started",
+    "title": "Week 2 Computational Tools for Bioengineers",
     "section": "An example to get us started",
     "text": "An example to get us started"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#data-set-rules-of-thumb-aka-tidy-data",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#data-set-rules-of-thumb-aka-tidy-data",
-    "title": "Week 3 Computational Tools for Bioengineers",
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#data-set-rules-of-thumb-aka-tidy-data",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#data-set-rules-of-thumb-aka-tidy-data",
+    "title": "Week 2 Computational Tools for Bioengineers",
     "section": "Data set rules of thumb (aka Tidy Data)",
     "text": "Data set rules of thumb (aka Tidy Data)\n\nStore a copy of data in nonproprietary software and hardware formats, such as plain ASCII text (aka a flat file)\nLeave an uncorrected file when doing analyses\nUse descriptive names for your data files and variables\nInclude a header line with descriptive variable names\nMaintain effective metadata about the data (data dictionary)\nWhen you add observations to a database, add rows\nWhen you add variables to a database, add columns, not rows\nA column of data should contain only one data type"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#not-all-data-are-tidy-to-begin-with",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#not-all-data-are-tidy-to-begin-with",
-    "title": "Week 3 Computational Tools for Bioengineers",
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#not-all-data-are-tidy-to-begin-with",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#not-all-data-are-tidy-to-begin-with",
+    "title": "Week 2 Computational Tools for Bioengineers",
     "section": "Not all data are tidy to begin with",
     "text": "Not all data are tidy to begin with\n\nSometimes need to do some data wrangling\nBut also contingency tables"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#types-of-data",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#types-of-data",
-    "title": "Week 3 Computational Tools for Bioengineers",
+    "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#types-of-data",
+    "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html#types-of-data",
+    "title": "Week 2 Computational Tools for Bioengineers",
     "section": "Types of data",
     "text": "Types of data\n\n\n\n\n\n\n\n\n\nCategorical\n\nQuantitative\n\n\n\nOrdinal\nNominal\nRatio\nInterval\n\n\nsmall, medium, large\napples, oranges, bananas\nkilograms, dollars, years\ntemperature, calendar year\n\n\nordered character\ncharacter\nnumeric\ninteger\n\n\n\n‘Factor’ is a special type of character variable that we will explore more later"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#computational-tools---r-and-rstudio",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#computational-tools---r-and-rstudio",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Computational Tools - R and RStudio",
-    "text": "Computational Tools - R and RStudio"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "This is a practical course and we will learn by doing\n\n\n\n\nTeach fundamental skills for your scientific careers\nProvide you with the computational tools necessary to carry out your work\nTo prepare you for more advanced statistics and programming education"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#why-use-r",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#why-use-r",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Why use R?",
-    "text": "Why use R?\n\nGood general scripting tool for statistics and mathematics\nPowerful and flexible and free\nRuns on all computer platforms\nNew enhancements coming out all the time\nSuperb data management & graphics capabilities"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#goals-of-the-course",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#goals-of-the-course",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "This is a practical course and we will learn by doing\n\n\n\n\nTeach fundamental skills for your scientific careers\nProvide you with the computational tools necessary to carry out your work\nTo prepare you for more advanced statistics and programming education"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#why-use-r-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#why-use-r-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Why use R?",
-    "text": "Why use R?\n\nReproducibility - can keep your scripts to see exactly what was done\nYou can write your own functions\nLots of online help available\nCan use a nice GUI front end such as Rstudio\nCan embed your R analyses in dynamic, polished files using Markdown\nMarkdown can be reused for websites, papers, books, presentations…"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-introductions",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-introductions",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Class Introductions",
+    "text": "Class Introductions\n\n\n\n\n\n\nWho are you?\n\n\n\n\nYour name\nYear in grad school\nHome lab or rotation lab\nWhat has your experience with programming/statistics been like?\nWhat is your good news this week?"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#r-scripts-and-markdown-files",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#r-scripts-and-markdown-files",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "R scripts and Markdown files",
-    "text": "R scripts and Markdown files\n\nOften we want to write scripts that can just be run\nWe can also embed code in Markdown files that provide more annotations\nhttps://quarto.org/docs/authoring/markdown-basics.html\nYou can insert Rchunks into Quarto markdown documents"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-2",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-2",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "What will you learn?\n\n\n\n\nWhat is local, cluster and cloud computing\nUnix paths, commands and scripts\nRead and write basic scripts in R and Python\nImplement reproducible research practices\nMarkdown and LaTeX\nGitHub and GitHub Pages\nTalapas and Amazon Web Services (AWS)"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#rscript-basics",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#rscript-basics",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Rscript basics",
-    "text": "Rscript basics\n\nA series of R commands that will be executed\nCan add comments using hashtags #\nCan have pipes (|&gt;) to connect one step to the next"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-logistics",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#class-logistics",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Class Logistics",
+    "text": "Class Logistics\n\nMeet Mondays from 2:30pm - 3:50pm in KC106\n\nMost of class time will be hands-on coding practice, less time lecturing\n\nCoding practice via two homeworks later in the term\n\nAvailable Tuesday of that week, due before class on Tuesday in two weeks\n\nWeeks 10-11 you will complete a final coding project\n\nDesign script(s) that works with your research and interests using the skills you’ve learned this term"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#markdown-basics",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#markdown-basics",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Markdown basics",
-    "text": "Markdown basics\n\na very simplified way for standard typesetting\nsimple markdown can be rendered in numerous different ways\nLists, codeblocks, images and more can all be inserted"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#required-materials",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#required-materials",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Required Materials",
+    "text": "Required Materials\n\nNo textbooks or purchases required\nAccess to a laptop or computer running Windows, MacOS, or Linux operating systems\nAn account on Talapas (through your lab, or through CBDS)\nAnnouncements and assignments posted on Canvas\nThe majority of course material on our class website https://wcresko.github.io/BioE_Comp_Tools/"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#inserting-equations-in-markdown",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#inserting-equations-in-markdown",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Inserting equations in markdown",
-    "text": "Inserting equations in markdown\n$$e=mc^2$$\n\\[e=mc^2\\]\n$$\\iint\\limits_{a}^{b} f(x,y) \\, dx \\, dy$$\n\\[\\iint\\limits_{a}^{b} f(x,y) \\, dx \\, dy\\]"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Computational Tools",
+    "text": "Computational Tools\n\n\n\n\n\n\nMac vs. Linux vs. Windows\n\n\n\n\nMac and Linux systems run using the same language, but previous versions of Windows lacks some of the basic features found on other systems\nTo help you practice and learn how to code in Unix, we will help you install some programs on your computer for running Unix\nR and RStudio should work on any computer\nVisual Studio Code will also work on any computer\nSimilarly, LaTeX and Git will work on any computer"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basics-of-r",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basics-of-r",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "BASICS of R",
-    "text": "BASICS of R\n\nCommands can be submitted through the terminal, console or scripts\nIn your scripts, anything that follows ‘#’ symbol (aka hash) is just for humans\nNotice on these slides I’m evaluating the code chunks and showing output\nThe output is shown here after the two # symbols and the number of output items is in []\nAlso notice that R follows the normal priority of mathematical evaluation\n\n\n4*4\n\n[1] 16\n\n\n\n(4+3*2^2)\n\n[1] 16"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-1",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-1",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Computational Tools",
+    "text": "Computational Tools\n\nNeed to make sure that you have R installed\n\nlocally or on a server\nhttps://www.r-project.org\n\nCan run R from the command line\n\njust type R\ncan run it locally as well as on clusters"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#assigning-variables",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#assigning-variables",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Assigning Variables",
-    "text": "Assigning Variables\n\nA better way to do this is to assign variables\nVariables are assigned values using the &lt;- operator.\nVariable names must begin with a letter, but other than that, just about anything goes.\nDo keep in mind that R is case sensitive."
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-2",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#computational-tools-2",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Computational Tools",
+    "text": "Computational Tools\n\nInstall an R Integrated Development Environment (IDE)\n\nRStudio: http://www.rstudio.com\nMakes working with R much easier, particularly for a new R user\nRun on Windows, Mac or Linux OS\nUse the RStudio Desktop Open Source (Free)\n\nOther IDEs\n\nWe will also use an IDE called Visual Studio Code\nYou will also use Jupyter Notebooks"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#assigning-variables-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#assigning-variables-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Assigning Variables",
-    "text": "Assigning Variables\n\nx &lt;- 2\nx * 3\n\n[1] 6\n\ny &lt;- x * 3\ny - 2\n\n[1] 4\n\n\nThese do not work\n\n3y &lt;- 3\n3*y &lt;- 3"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---mac-and-linux",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---mac-and-linux",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Accessing the shell - Mac and Linux",
+    "text": "Accessing the shell - Mac and Linux\n\nMac users: open the “Terminal” app, or use another app like ‘iTerm2’\nLinux users: open one of several “Terminal” apps\n\n\n\n\n\n\nWindows users have a little more work to do\n\n\n\nSee the next slides"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#arithmetic-operations-on-functions",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#arithmetic-operations-on-functions",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Arithmetic operations on functions",
-    "text": "Arithmetic operations on functions\n\nArithmetic operations can be performed easily on functions as well as numbers.\nTry the following, and then your own.\n\n\nx+2\nx^2\nlog(x)\n\n\nNote that the last of these - log - is a built in function of R, and therefore the object of the function needs to be put in parentheses\nThese parentheses will be important, and we’ll come back to them later when we add arguments after the object in the parentheses\nThe outcome of calculations can be assigned to new variables as well, and the results can be checked using the ‘print’ command"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Accessing the shell - Windows",
+    "text": "Accessing the shell - Windows\n\nGuide: https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview\nRun Windows PowerShell as administrator\nInstall WSL2 by typing wsl --install\nRestart your computer\nSearch for and install Ubuntu from Microsoft store app\nOR type wsl --install -d ubuntu on PowerShell to do both at once"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#arithmetic-operations-on-functions-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#arithmetic-operations-on-functions-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Arithmetic operations on functions",
-    "text": "Arithmetic operations on functions\n\ny &lt;- 67\nprint(y)\n\n[1] 67\n\nx &lt;- 124\nz &lt;- (x*y)^2\nprint(z)\n\n[1] 69022864"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows-1",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#accessing-the-shell---windows-1",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Accessing the shell - Windows",
+    "text": "Accessing the shell - Windows\n\nOpen Ubuntu and set up a username and password\nDoes not have to match your login info for Windows\nRun sudo apt update then sudo apt upgrade to ensure everything is up to date\nWill need to create folders and files within your Ubuntu folder on your computer"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#strings",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#strings",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "STRINGS",
-    "text": "STRINGS\n\nVariables and operations can be performed on characters as well\nNote that characters need to be set off by quotation marks to differentiate them from numbers\nThe c stands for concatenate\nNote that we are using the same variable names as we did previously, which means that we’re overwriting our previous assignment\nA good rule of thumb is to use new names for each variable, and make them short but still descriptive"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-do-we-need-coding-and-scripting",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-do-we-need-coding-and-scripting",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Why do we need coding and scripting?",
+    "text": "Why do we need coding and scripting?\n\nIt is incredibly fast and powerful, particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands\nAbility to analyze large datasets that Excel and other GUIs can’t handle well\nAccess to thousands of free programs made for and by scientists\nThe commands work almost identically across platforms\nAbility to use computer clusters like Talapas"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#strings-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#strings-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "STRINGS",
-    "text": "STRINGS\n\nx &lt;- \"I Love\"\nprint (x)\n\n[1] \"I Love\"\n\ny &lt;- \"Biostatistics\"\nprint (y)\n\n[1] \"Biostatistics\"\n\nz &lt;- c(x,y)\nprint (z)\n\n[1] \"I Love\"        \"Biostatistics\""
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-the-difference-between-coding-and-scripting",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-the-difference-between-coding-and-scripting",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is the difference between coding and scripting?",
+    "text": "What is the difference between coding and scripting?\n\n\ncoding generally involves computer languages that use compilers\n\nC++, Fortran, Basic, etc\n\nscripting generally involves computer languages that are interpreted on the fly\n\nUnix, Python, R, Julia, etc.\n\ncoding - faster but less flexible; scripting - flexible but slower\nThe distinction between the two has become somewhat fuzzy and most modern analytical pipelines contain a combination of both"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#factors",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#factors",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "FACTORS",
-    "text": "FACTORS\n\nThe variable z is now what is called a list of character values.\nSometimes we would like to treat the characters as if they were units for subsequent calculations.\nThese are called factors, and we can redefine our character variables as factors.\nThis might seem a bit strange, but it’s important for statistical analyses where we might want to see the mean or variance for two different treatments."
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-computer-system",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-computer-system",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is a Computer System?",
+    "text": "What is a Computer System?\n\n\n\nHardware: Physical components\nSoftware: Programs and instructions\nFirmware: Low-level software in hardware\nData: Information being processed\n\n\n\n\n\n\n\ngraph TD\n    A[Input Devices] --&gt; B[CPU]\n    B --&gt; C[Memory]\n    C --&gt; B\n    B --&gt; D[Output Devices]\n    E[Storage] --&gt; C\n    C --&gt; E"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#factors-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#factors-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "FACTORS",
-    "text": "FACTORS\n\nz_factor &lt;- as.factor(z)\nprint (z_factor)\n\n\nNote that factor levels are reported alphabetically"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#the-fetch-decode-execute-cycle",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#the-fetch-decode-execute-cycle",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "The Fetch-Decode-Execute Cycle",
+    "text": "The Fetch-Decode-Execute Cycle\n\n\n\n\n\ngraph LR\n    A[Fetch Instruction] --&gt; B[Decode Instruction]\n    B --&gt; C[Execute Instruction]\n    C --&gt; D[Store Results]\n    D --&gt; A\n\n\n\n\n\n\n\n\n\nFetch: Retrieve instruction from memory\nDecode: Interpret what the instruction means\nExecute: Perform the operation\nStore: Save results to memory or register\n\n\nThis is the fundamental cycle that every CPU performs billions of times per second"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#vectors",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#vectors",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "VECTORS",
-    "text": "VECTORS\n\nIn general R thinks in terms of vectors (a list of characters, factors or numerical values)\nit will benefit any R user to try to write programs with that in mind, as it will simplify most things.\nVectors can be assigned directly using the ‘c()’ function and then entering the exact values."
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#central-processing-unit-cpu",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#central-processing-unit-cpu",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Central Processing Unit (CPU)",
+    "text": "Central Processing Unit (CPU)\n\n\nCore Components\n\nControl Unit (CU): Directs operations\nArithmetic Logic Unit (ALU): Performs calculations\nRegisters: Ultra-fast temporary storage\nCache: High-speed memory buffer\n\n\nKey Concepts\n\nClock Speed: Cycles per second (GHz)\nCores: Independent processing units\nThreads: Virtual cores for parallel processing\nInstruction Set: CPU’s language (x86, ARM)"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#vectors-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#vectors-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "VECTORS",
-    "text": "VECTORS\n\nx &lt;- c(2,3,4,2,1,2,4,5,10,8,9)\nprint(x)\n\n [1]  2  3  4  2  1  2  4  5 10  8  9"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#graphics-processing-unit-gpu",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#graphics-processing-unit-gpu",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Graphics Processing Unit (GPU)",
+    "text": "Graphics Processing Unit (GPU)\n\n\nCore Components\n\nStreaming Multiprocessors (SMs): Processing clusters\nCUDA Cores/Stream Processors: Parallel compute units\nVideo Memory (VRAM): Dedicated high-bandwidth memory\nMemory Controller: Manages data flow to/from VRAM\n\n\nKey Concepts\n\nParallel Architecture: Thousands of cores for simultaneous tasks\nMemory Bandwidth: Data throughput (GB/s)\nCompute Units: Groups of processing cores\nAPIs: Programming interfaces (CUDA, OpenCL, Vulkan)"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basic-statistics",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basic-statistics",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Basic Statistics",
-    "text": "Basic Statistics\n\nMany functions exist to operate on vectors.\nCombine these with your previous variable to see what happens.\nAlso, try to find other functions (e.g. standard deviation)."
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-vs-gpu-comparison",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-vs-gpu-comparison",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "CPU vs GPU Comparison",
+    "text": "CPU vs GPU Comparison\n\n\nCPU Characteristics\n\nDesign Focus: Sequential processing & complex tasks\nCore Count: 4-64 powerful cores\nArchitecture: Optimized for single-thread performance\nMemory: Large cache, lower bandwidth\nBest For:\n\nOperating systems & general computing\nComplex branching logic\nLow-latency operations\nSerial tasks\n\n\n\nGPU Characteristics\n\nDesign Focus: Parallel processing & high throughput\nCore Count: Thousands of smaller cores\nArchitecture: Optimized for massive parallelism\nMemory: Smaller cache, higher bandwidth\nBest For:\n\nGraphics rendering\nMachine learning/AI\nScientific simulations\nParallel computations"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basic-statistics-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basic-statistics-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Basic Statistics",
-    "text": "Basic Statistics\n\nmean(x)\nmedian(x)\nvar(x)\nlog(x)\nln(x)\nsqrt(x)\nsum(x)\nlength(x)\nsample(x, replace = T)\n\n\nNotice that the last function (sample) has an argument (replace=T)\nArguments simply modify or direct the function in some way\nThere are many arguments for each function, some of which are defaults"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#random-access-memory-ram",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#random-access-memory-ram",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Random Access Memory (RAM)",
+    "text": "Random Access Memory (RAM)\n\n\nTypes of RAM\nDRAM (Dynamic RAM)\n\nMain system memory\nNeeds constant refresh\nCheaper, higher density\nDDR4, DDR5 standards\n\nSRAM (Static RAM)\n\nUsed in CPU cache\nNo refresh needed\nFaster but expensive\nLower density\n\n\nKey Characteristics\n\nVolatile: Data lost when power off\nRandom Access: Any location equally fast\nBandwidth: Data transfer rate\nLatency: Access delay\nDual Channel: Parallel data paths"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#getting-help",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#getting-help",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Getting Help",
-    "text": "Getting Help\n\nGetting Help on any function is very easy - just type a question mark and the name of the function.\nThere are functions for just about anything within R and it is easy enough to write your own functions if none already exist to do what you want to do.\nIn general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters to send to the function.\nHelp pages exist for all functions that, at a minimum, explain what parameters exist for the function.\nHelp can be accessed a few ways - try them :"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#persistent-storage-systems",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#persistent-storage-systems",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Persistent Storage Systems",
+    "text": "Persistent Storage Systems\n\n\nHard Disk Drives (HDD)\n\nMechanical spinning platters\nMagnetic storage\nLarge capacity, low cost\n~100-200 MB/s throughput\nHigher latency (~10ms)\n\n\nSolid State Drives (SSD)\n\nNo moving parts (NAND Flash)\nElectronic storage\nFaster access (~0.1ms)\n500-7000 MB/s throughput\nMore expensive per GB"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#getting-help-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#getting-help-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Getting Help",
-    "text": "Getting Help\n\n- help(mean)\n- ?mean\n- example(mean)\n- help.search(\"mean\")\n- apropos(\"mean\")\n- args(mean)"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#inputoutput-io-systems",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#inputoutput-io-systems",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Input/Output (I/O) Systems",
+    "text": "Input/Output (I/O) Systems\n\n\nInput Devices\n\nKeyboard & Mouse\nTouchscreen\nMicrophone\nCamera\nSensors\nNetwork Interface\n\n\nOutput Devices\n\nMonitor/Display\nPrinter\nSpeakers\nNetwork Interface\nActuators\n\n\n\nOperating Systems"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-vectors",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-vectors",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Creating vectors",
-    "text": "Creating vectors\n\nCreating vector of new data by entering it by hand can be a drag\nHowever, it is also very easy to use functions such as seq and sample\nTry the examples below Can you figure out what the three arguments in the parentheses mean?\nTry varying the arguments to see what happens.\nDon’t go too crazy with the last one or your computer might slow way down"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-an-operating-system",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-an-operating-system",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is an Operating System?",
+    "text": "What is an Operating System?\nAn OS is system software that manages computer hardware, software resources, and provides common services for computer programs.\n\n\nKey Roles\n\nResource Manager\nExtended Machine\nUser Interface Provider\nSecurity Enforcer\n\n\nCommon Operating Systems\n\nDesktop: Windows, macOS, Unix, Linux\nMobile: Android, iOS\nServer: Unix, Linux, Windows Server\nSpecialized: Supercomputers, IoT"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-vectors-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-vectors-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Creating vectors",
-    "text": "Creating vectors\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1)\nprint(seq_1)\n\n  [1]  0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  1.3  1.4\n [16]  1.5  1.6  1.7  1.8  1.9  2.0  2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9\n [31]  3.0  3.1  3.2  3.3  3.4  3.5  3.6  3.7  3.8  3.9  4.0  4.1  4.2  4.3  4.4\n [46]  4.5  4.6  4.7  4.8  4.9  5.0  5.1  5.2  5.3  5.4  5.5  5.6  5.7  5.8  5.9\n [61]  6.0  6.1  6.2  6.3  6.4  6.5  6.6  6.7  6.8  6.9  7.0  7.1  7.2  7.3  7.4\n [76]  7.5  7.6  7.7  7.8  7.9  8.0  8.1  8.2  8.3  8.4  8.5  8.6  8.7  8.8  8.9\n [91]  9.0  9.1  9.2  9.3  9.4  9.5  9.6  9.7  9.8  9.9 10.0\n\nseq_2 &lt;- seq(10.0, 0.0, by = -0.1)\nprint(seq_2)\n\n  [1] 10.0  9.9  9.8  9.7  9.6  9.5  9.4  9.3  9.2  9.1  9.0  8.9  8.8  8.7  8.6\n [16]  8.5  8.4  8.3  8.2  8.1  8.0  7.9  7.8  7.7  7.6  7.5  7.4  7.3  7.2  7.1\n [31]  7.0  6.9  6.8  6.7  6.6  6.5  6.4  6.3  6.2  6.1  6.0  5.9  5.8  5.7  5.6\n [46]  5.5  5.4  5.3  5.2  5.1  5.0  4.9  4.8  4.7  4.6  4.5  4.4  4.3  4.2  4.1\n [61]  4.0  3.9  3.8  3.7  3.6  3.5  3.4  3.3  3.2  3.1  3.0  2.9  2.8  2.7  2.6\n [76]  2.5  2.4  2.3  2.2  2.1  2.0  1.9  1.8  1.7  1.6  1.5  1.4  1.3  1.2  1.1\n [91]  1.0  0.9  0.8  0.7  0.6  0.5  0.4  0.3  0.2  0.1  0.0"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#operating-system-architecture",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#operating-system-architecture",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Operating System Architecture",
+    "text": "Operating System Architecture\n\n\n\n\n\ngraph TD\n    A[User Applications] --&gt; B[System Calls Interface]\n    B --&gt; C[Kernel]\n    C --&gt; D[Device Drivers]\n    D --&gt; E[Hardware]\n    \n    C --&gt; F[Process Management]\n    C --&gt; G[Memory Management]\n    C --&gt; H[File System]\n    C --&gt; I[I/O Management]"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-vectors-2",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-vectors-2",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Creating vectors",
-    "text": "Creating vectors\n\nseq_square &lt;- (seq_2)*(seq_2)\nprint(seq_square)\n\n  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81\n [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61\n [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41\n [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21\n [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01\n [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81\n [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61\n [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41\n [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21\n [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01\n[101]   0.00"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#core-os-functions",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#core-os-functions",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Core OS Functions",
+    "text": "Core OS Functions\n\n\n1. Process Management\n\nProcess Creation & Termination\nProcess Scheduling: CPU time allocation\nInter-Process Communication (IPC)\nSynchronization\nDeadlock Handling\n\n\n3. File System Management\n\nFile Operations: Create, read, write, delete\nDirectory Structure\nAccess Control & Permissions\nFile Allocation Methods\nDisk Space Management\n\n\n2. Memory Management\n\nMemory Allocation/Deallocation\nVirtual Memory\nPaging & Segmentation\nMemory Protection\nSwap Space Management\n\n\n4. Device Management\n\nDevice Drivers: Hardware abstraction\nI/O Scheduling\nBuffering & Caching\nInterrupt Handling\nPlug and Play Support"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-vectors-3",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-vectors-3",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Creating vectors",
-    "text": "Creating vectors\n\nseq_square_new &lt;- (seq_2)^2\nprint(seq_square_new)\n\n  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81\n [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61\n [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41\n [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21\n [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01\n [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81\n [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61\n [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41\n [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21\n [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01\n[101]   0.00"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-scheduling",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cpu-scheduling",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "CPU Scheduling",
+    "text": "CPU Scheduling\n\n\nScheduling Algorithms\n\nFirst-Come-First-Served (FCFS)\n\nSimple but can cause long waits\n\nShortest Job First (SJF)\n\nOptimal average wait time\n\nRound Robin (RR)\n\nFair time slices for all\n\nPriority Scheduling\n\nImportant tasks first\n\n\n\nPerformance Metrics\n\nCPU Utilization: Keep CPU busy\nThroughput: Jobs completed/time\nTurnaround Time: Total completion time\nWaiting Time: Time in ready queue\nResponse Time: First response delay"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Drawing samples from distributions",
-    "text": "Drawing samples from distributions\n\nHere is a way to create your own data sets that are random samples.\nAgain, play around with the arguments in the parentheses to see what happens."
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#security-protection",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#security-protection",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Security & Protection",
+    "text": "Security & Protection\n\n\nProtection Mechanisms\n\nAccess Control Lists (ACLs)\nUser/Group Permissions\nMemory Protection: Segmentation\nCPU Modes: User vs Kernel\nSandboxing: Isolate processes\n\n\nSecurity Features\n\nAuthentication: User verification\nEncryption: Data protection\nFirewall: Network protection\nAntivirus: Malware detection\nUpdates: Patch vulnerabilities\n\n\n\n\n“Every program and user should operate using the least amount of privilege necessary”"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Drawing samples from distributions",
-    "text": "Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nplot(x,y)"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-4",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#section-4",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "graph LR\n    A[1960s-70s&lt;br/&gt;Mainframes] --&gt; B[1980s-90s&lt;br/&gt;Personal Computers]\n    B --&gt; C[1990s-2000s&lt;br/&gt;Client-Server]\n    C --&gt; D[2000s&lt;br/&gt;Clusters/Grids]\n    D --&gt; E[2006+&lt;br/&gt;Cloud Computing]\n    E --&gt; F[2020s&lt;br/&gt;Edge/Hybrid]\n\n\n\n\n\n\n\nKey Drivers of Change\n\nPerformance Needs: Growing computational demands\nEconomics: Cost optimization and economies of scale\nConnectivity: Internet bandwidth improvements\nVirtualization: Hardware abstraction technologies"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-2",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-2",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Drawing samples from distributions",
-    "text": "Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nplot(xy)"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-overview",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-overview",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Local Computing Overview",
+    "text": "Local Computing Overview\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nComputing resources that are physically present and directly controlled by the user or organization\n\n\n\n\n\n\nCharacteristics\n\nComplete control over hardware\nData stays on-premises\nNo network dependency for compute\nPredictable performance\nOne-time purchase model\n\n\nCommon Setups\n\nDesktop workstations\nLaptop computers\nOn-premises servers\nLocal development machines"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-3",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-3",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Drawing samples from distributions",
-    "text": "Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nhist(x)"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-architecture",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-architecture",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Local Computing Architecture",
+    "text": "Local Computing Architecture\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    A[Applications] --&gt; B[Operating System]\n    B --&gt; C[Hardware Abstraction Layer]\n    C --&gt; D[CPU]\n    C --&gt; E[Memory]\n    C --&gt; F[Storage]\n    C --&gt; G[GPU]\n    C --&gt; H[Network Card]\n    H --&gt; I[Internet/LAN]"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-4",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-4",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Drawing samples from distributions",
-    "text": "Drawing samples from distributions\n\nYou’ve probably figured out that y from the last example is drawing numbers with equal probability.\nWhat if you want to draw from a distribution?\nAgain, play around with the arguments in the parentheses to see what happens."
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-pros-and-cons",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#local-computing-pros-and-cons",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Local Computing: Pros and Cons",
+    "text": "Local Computing: Pros and Cons\n\n\n\nAdvantages ✓\n\nLow Latency: No network overhead\nData Control: Complete ownership\nPrivacy: Data never leaves premises\nPredictable Costs: One-time investment\nOffline Capability: Works without internet\nCustomization: Full hardware/software control\n\n\n\n\nDisadvantages ✗\n\nLimited Scale: Hardware constraints\nMaintenance: User responsibility\nUpfront Costs: High initial investment\nDisaster Recovery: Manual backup needed\nResource Waste: Idle during off-hours\nUpgrade Complexity: Physical intervention"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-5",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-5",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Drawing samples from distributions",
-    "text": "Drawing samples from distributions\n\nx &lt;-rnorm(1000, 0, 100)\nhist(x, xlim = c(-500,500))\ncurve(50000*dnorm(x, 0, 100), xlim = c(-500,500), add=TRUE, col='Red')\n\n\n\ndnorm() generates the probability density, which can be plotted using the curve() function.\nNote that is curve is added to the plot using add=TRUE"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-overview",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-overview",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Cluster Computing Overview",
+    "text": "Cluster Computing Overview\nA collection of interconnected computers working together as a single system\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    M[Master/Head Node] --&gt; N1[Node 1]\n    M --&gt; N2[Node 2]\n    M --&gt; N3[Node 3]\n    M --&gt; N4[Node N]\n    N1 -.-&gt; S[Shared Storage]\n    N2 -.-&gt; S\n    N3 -.-&gt; S\n    N4 -.-&gt; S\n    U[Users] --&gt; M\n\n\n\n\n\n\nKey Components\n\nHead Node: Job scheduling and management\nCompute Nodes: Worker machines\nInterconnect: High-speed network (InfiniBand, 10GbE+)\nShared Storage: Parallel file systems (Lustre, GPFS)"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Visualizing Data",
-    "text": "Visualizing Data\n\nSo far you’ve been visualizing just the list of output numbers\nExcept for the last example where I snuck in a hist function.\nYou can also visualize all of the variables that you’ve created using the plot function (as well as a number of more sophisticated plotting functions).\nEach of these is called a high level plotting function, which sets the stage\nLow level plotting functions will tweak the plots and make them beautiful"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#resource-managers",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#resource-managers",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Resource Managers",
+    "text": "Resource Managers\nThese are used to schedule computing jobs on computer clusters.\n\n\n\nSystem\nUse Case\nKey Features\n\n\n\n\nSLURM\nHPC\nAdvanced scheduling, power management\n\n\nPBS/Torque\nTraditional HPC\nMature, stable, wide support\n\n\nSGE/UGE\nMixed workloads\nFlexible policies\n\n\nKubernetes\nContainers\nMicroservices, auto-scaling\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWe use SLURM on Talapas at the University of Oregon for scheduling compute jobs"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Visualizing Data",
-    "text": "Visualizing Data\n\nWhat do you think that each of the arguments means for the plot function?\nA cool thing about R is that the options for the arguments make sense.\nTry adjusting an argument and see if it works\nNote soon we will be exploring the plotting in ggplot2"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-pros-and-cons",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cluster-computing-pros-and-cons",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Cluster Computing: Pros and Cons",
+    "text": "Cluster Computing: Pros and Cons\n\n\n\nAdvantages ✓\n\nScalability: Add nodes as needed\nPerformance: Parallel processing power\nCost-Effective: Commodity hardware\nFault Tolerance: Node redundancy\nResource Sharing: Multiple users/projects\nSpecialized Hardware: GPUs, high-mem nodes\n\n\n\n\nDisadvantages ✗\n\nComplexity: Requires expertise\nInfrastructure: Space, power, cooling\nNetwork Dependency: Interconnect bottlenecks\nSoftware Licenses: Per-node costs\nMaintenance: Hardware failures\nInitial Setup: Complex configuration"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data-2",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data-2",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Visualizing Data",
-    "text": "Visualizing Data\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1) \nplot (seq_1, xlab=\"space\", ylab =\"function of space\", type = \"p\", col = \"red\")"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-overview",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-overview",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Cloud Computing Overview",
+    "text": "Cloud Computing Overview\nOn-demand delivery of computing resources over the internet with pay-as-you-go pricing\n\n\n\n\n\n%%{init: {'theme':'base'}}%%\ngraph TB\n    R[Region 1] --&gt; AZ1[Availability Zone 1]\n    R --&gt; AZ2[Availability Zone 2]\n    AZ1 --&gt; C[Compute]\n    AZ1 --&gt; S[Storage]\n    AZ1 --&gt; N[Networking]\n    AZ2 --&gt; C2[Compute]\n    AZ2 --&gt; S2[Storage]\n    AZ2 --&gt; N2[Networking]\n    U[Users] -.Internet.-&gt; R\n\n\n\n\n\n\n\nMajor Providers\n\nAmazon Web Services (AWS): Market leader, 200+ services\nMicrosoft Azure: Enterprise integration\nGoogle Cloud Platform: AI/ML focus\nOthers: IBM Cloud, Oracle Cloud, Alibaba Cloud"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#putting-plots-in-a-single-figure",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#putting-plots-in-a-single-figure",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Putting plots in a single figure",
-    "text": "Putting plots in a single figure\n\nOn the next slide\nThe first line of the lower script tells R that you are going to create a composite figure that has two rows and two columns. Can you tell how?\nNow, modify the code to add two more variables and add one more row of two panels.\n\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1)\nseq_2 &lt;- seq(10.0, 0.0, by = -0.1)"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-pros-and-cons",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#cloud-computing-pros-and-cons",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Cloud Computing: Pros and Cons",
+    "text": "Cloud Computing: Pros and Cons\n\n\n\nAdvantages ✓\n\nElastic Scaling: Instant resource adjustment\nPay-per-Use: No idle resource costs\nGlobal Reach: Multiple regions\nManaged Services: Reduced operations\nInnovation Speed: Latest technologies\nDisaster Recovery: Built-in redundancy\nNo CAPEX: Operating expense model\n\n\n\n\nDisadvantages ✗\n\nOngoing Costs: Can exceed on-prem\nVendor Lock-in: Proprietary services\nInternet Dependency: Connectivity required\nData Transfer Costs: Egress fees\nCompliance Complexity: Data residency\nLess Control: Shared responsibility\nPerformance Variability: Noisy neighbors"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#putting-plots-in-a-single-figure-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#putting-plots-in-a-single-figure-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Putting plots in a single figure",
-    "text": "Putting plots in a single figure\n\npar(mfrow=c(2,2))\nplot (seq_1, xlab=\"time\", ylab =\"p in population 1\", type = \"p\", col = 'red')\nplot (seq_2, xlab=\"time\", ylab =\"p in population 2\", type = \"p\", col = 'green')\nplot (seq_square, xlab=\"time\", ylab =\"p2 in population 2\", type = \"p\", col = 'blue')\nplot (seq_square_new, xlab=\"time\", ylab =\"p in population 1\", type = \"l\", col = 'yellow')"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-unix",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-unix",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is Unix?",
+    "text": "What is Unix?\n\n\nA scripting language developed in 1969, released in 1973\nServes as the base language for many programs and computers\nRuns both locally on your computer and on large clusters like Talapas\nLinux is an open-source version of the same language"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#example-using-binomial-distribution",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#example-using-binomial-distribution",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Example using binomial distribution",
-    "text": "Example using binomial distribution\n\nAs above for the normal distribution, data can be generated by being sampled from nearly any distribution and then visualized.\nBelow I’m having you use the ‘histogram’ function. What does it do?"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-shell",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#what-is-a-shell",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "What is a shell?",
+    "text": "What is a shell?\n\nThe ‘shell’ is a program that runs UNIX and takes in commands and gives them to the operating system\nBash acts as the shell in macs, linux, and now windows\nYou can access the shell via a terminal window"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#example-using-binomial-distribution-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#example-using-binomial-distribution-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Example using binomial distribution",
-    "text": "Example using binomial distribution\n\n10 successes (out of 20 trials) is the most frequent outcome\n\n\nheads &lt;- rbinom(n=1000, size=20, prob=0.5)\nhist(heads)"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#recipes-for-a-shell-command",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Recipes for a shell command",
+    "text": "Recipes for a shell command\n\nPrompt: notation used to indicate your computer is ready to accept a new command\nCommand: the building blocks of programming, tell computer to do a specific task\nOptions: change the behavior of a command\nArgument: what the command should operate on"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#example-using-binomial-distribution-2",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#example-using-binomial-distribution-2",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Example using binomial distribution",
-    "text": "Example using binomial distribution\n\nThis kind of statement can be run in one line as well, which is sometimes easier.\n\n\nhist(rbinom(n=1000, size=20, prob=0.5))"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-use-the-shell",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#why-use-the-shell",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Why use the shell?",
+    "text": "Why use the shell?\n\n\nSpeed\nCan handle extremely large file sizes\nUse programs only available via shell\nThe commands work almost identically across platforms\nYou can even use them on a large computer cluster like Talapas and AWS\nIt is incredibly powerful particularly for repeated actions\nIt allows you to do thousands of ‘clicks’ with single commands"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-data-frames-in-r",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-data-frames-in-r",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Creating Data Frames in R",
-    "text": "Creating Data Frames in R\n\nAs you have seen, in R you can generate your own random data set drawn from nearly any distribution very easily.\nOften we will want to use collected data.\nNow, let’s make a dummy dataset to get used to dealing with data frames\nSet up three variables (hydrogel_concentration, compression and conductivity) as vectors\n\n\nhydrogel_concentration &lt;- factor(c(\"low\", \"high\", \"high\", \"high\", \"medium\", \"medium\", \"medium\",\"low\"))\ncompression &lt;- c(3.4, 3.4, 8.4, 3, 5.6, 8.1, 8.3, 4.5)\nconductivity &lt;- c(0, 9.2, 3.8, 5, 5.6, 4.1, 7.1, 5.3)\n\n\nCreate a data frame where vectors become columns\n\n\nmydata &lt;- data.frame(hydrogel_concentration, compression, conductivity)\nrow.names(mydata) &lt;- c(\"Sample_1\", \"Sample_2\", \"Sample_3\", \"Sample_4\", \n                       \"Sample_5\", \"Sample_6\", \"Sample_7\", \"Sample_8\")\n\n\nNow you have a hand-made data frame with row names\nTake a look at it in the data section of RStudio"
+    "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#where-do-you-get-help",
+    "href": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html#where-do-you-get-help",
+    "title": "Week 1 Computational Tools for Bioengineers",
+    "section": "Where do you get help?",
+    "text": "Where do you get help?\n\nManual pages!\n\nThe shell has manuals for all basic commands\nType man [command_name] to access the manual for a specific command\nType q to exit\n\nAlso…the internet!"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#reading-in-data-frames-in-r",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#reading-in-data-frames-in-r",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Reading in Data Frames in R",
-    "text": "Reading in Data Frames in R\n\nA strength of R is being able to import data from an external source\nCreate the same table that you did above in a spreadsheet like Excel\nExport it to comma separated and tab separated text files for importing into R.\nThe first will read in a comma-delimited file, whereas the second is a tab-delimited\nIn both cases the header and row.names arguments indicate that there is a header row and row label column\nNote that the name of the file by itself will have R look in the CWD, whereas a full path can also be used"
+    "objectID": "Policies.html",
+    "href": "Policies.html",
+    "title": "Policies",
+    "section": "",
+    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#reading-in-data-frames-in-r-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#reading-in-data-frames-in-r-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Reading in Data Frames in R",
-    "text": "Reading in Data Frames in R\n\nYourFile &lt;- read.table('yourfile.csv', header=T, row.names=1, sep=',')\nYourFile &lt;- read.table('yourfile.txt', header=T, row.names=1, sep='\\t')"
+    "objectID": "Policies.html#workload-expectations",
+    "href": "Policies.html#workload-expectations",
+    "title": "Policies",
+    "section": "",
+    "text": "This is a 1-credit hour course, so you should expect to complete ~ 30-40 hours of work for the course, or about 4 hours each week (this includes time in-class).\nMy estimate for time usage for activities and assignments in an average week is below – some weeks may have shorter or longer time commitments either by design or due to course scheduling.\n\n\n\nActivity\nHours per Week\n\n\n\n\nIn-class meetings\n~1.5 hours\n\n\nInformal exercises\n0.5\n\n\nHomework assignments\n1.0\n\n\nResearch, drafting, editing for final project\n1\n\n\nTOTAL\n4"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#exporting-data-frames-in-r",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#exporting-data-frames-in-r",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Exporting Data Frames in R",
-    "text": "Exporting Data Frames in R\n\nwrite.table(YourFile, \"yourfile.csv\", quote=F, row.names=T, sep=\",\")\nwrite.table(YourFile, \"yourfile.txt\", quote=F, row.names=T, sep=\"\\t\")"
+    "objectID": "Policies.html#communication",
+    "href": "Policies.html#communication",
+    "title": "Policies",
+    "section": "Communication",
+    "text": "Communication\n\nElectronic\n\nOur class will communicate through our Canvas site. Announcements and emails are archived there, automatically forwarded to your UO email, and can even reach you by text. Check and adjust your settings under Account &gt; Notifications.\nWe will also be using this GitHub Pages website (https://wcresko.github.io/BioE_Comp_Tools/) for the course as the repository for lecture schedule, syllabus, lecture slides and other materials.\nEvery Monday I will post an Announcement that previews critical concepts we’ll work on that week and a checklist of the week’s due dates.\nI will contact individual students when needed through email, and I try to respond to questions within one business day.\nWhen giving feedback on assignments, I do so in Canvas, and turnaround time for feedback is generally one week.\n\n\n\nOffice hours\n\nI will host office hours each week on Tuesday from 3:00 to 4:00 in the KC connector on the 2nd floor. The end of many class periods will also function as a form of office hour.\nI welcome meetings outside my regular office hours as well - please email me to set a time.\nDuring office hours, students bring in a wide range of concerns, questions, and successes. We might\n\ntalk through a specific concept or problem to clarify it\nthink together about an issue a student is curious about that relates to the class\ndiscuss a student’s post-graduation goals\nidentify more supportive methods to study for a future exam or to begin a project\nor any number of other topics"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#indexing-in-data-frames",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#indexing-in-data-frames",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Indexing in data frames",
-    "text": "Indexing in data frames\n\nNext up - indexing just a subset of the data\nThis is a very important idea in R, that you can analyze just a subset of the data.\nThis is analyzing only the data in the file you made that has the factor value ‘mixed’.\n\n\nprint (YourFile[,2])\nprint (YourFile$variable)\nprint (YourFile[2,])\nplot (YourFile$variable1, YourFile$variable2)"
+    "objectID": "Policies.html#classroom-community-expectations",
+    "href": "Policies.html#classroom-community-expectations",
+    "title": "Policies",
+    "section": "Classroom Community Expectations",
+    "text": "Classroom Community Expectations\n\nParticipate and Contribute:\nAll students are expected to participate by sharing ideas and contributing to the learning environment. This entails preparing, following instructions, and engaging respectfully and thoughtfully with others. While all students should participate, participation is not just talking, and a range of participation activities support learning. Participation might look like speaking aloud in the full class and in small groups, and working collaboratively on coding projects. We will establish more specific participation guidelines and criteria for contributions in our first weeks of the term.\n\n\nExpect and Respect Diversity\nAll classes at the University of Oregon welcome and respect diverse experiences, perspectives, and approaches. What is not welcome are behaviors or contributions that undermine, demean, or marginalize others based on race, ethnicity, gender, sex, age, sexual orientation, religion, ability, or socioeconomic status. We will value differences and communicate disagreements with respect. We may establish more specific guidelines and protocols to ensure inclusion and equity for all members of our learning community.\n\n\nHelp Everyone Learn\nPart of how we learn together is by learning from one another. To do this effectively, we need to be patient with each other, identify ways we can assist others, and be open-minded to receiving help and feedback from others. Don’t hesitate to contact me to ask for assistance or offer suggestions that might help us learn better."
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#r-interlude-some-real-transcriptomic-data",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#r-interlude-some-real-transcriptomic-data",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "R INTERLUDE | Some real transcriptomic data",
-    "text": "R INTERLUDE | Some real transcriptomic data\n\nExamine the data file\nHow many many rows and columns are there?\nHow many different variables are there?\nWhat are the general types of variables?\nNow let’s read the data file into R and analyze it\nThis exercise will help you get used to reading in and manipulating genomic data files\nFirst off, remember to set your working directory to find your file correctly"
+    "objectID": "Policies.html#generative-artificial-intelligence-genai-use",
+    "href": "Policies.html#generative-artificial-intelligence-genai-use",
+    "title": "Policies",
+    "section": "Generative Artificial Intelligence (GenAI) Use",
+    "text": "Generative Artificial Intelligence (GenAI) Use\nStudents can use GenAI tools in this class to help with certain aspects of coding. We will discuss during the the class about GenAI can be a tool to help you, but it cannot replace your computational intuition and knowledge. However, you cannot use content such as text, graphics and code created by GenAI tools in your work. You must be the author/creator of your work submissions. For example, you can use a GenAI tool to suggest a paper outline based on a draft you provide it, or suggest some code, but you cannot submit a paper with text or code generated by GenAI as if the text or code is your own writing. If you are in doubt or have questions about a particular GenAI tool and if its use is okay, check in with me and let’s discuss!"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#some-real-transcriptomic-data",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#some-real-transcriptomic-data",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Some real transcriptomic data",
-    "text": "Some real transcriptomic data\n\nRNAseq_Data &lt;- read.table('&lt;name_of_file&gt;', header=TRUE, sep=',')\n\nprint (RNAseq_Data)\nhead (RNAseq_Data)\ntail (RNAseq_Data)\n\nprint (RNAseq_Data[,2])\nprint (RNAseq_Data[1,])\nprint (RNAseq_Data[1,2])\nprint (RNAseq_Data$ENSGACG00000000010)\nprint (RNAseq_Data$ENSGACG00000000010&gt;45.0)"
+    "objectID": "Policies.html#university-course-policies",
+    "href": "Policies.html#university-course-policies",
+    "title": "Policies",
+    "section": "University Course Policies",
+    "text": "University Course Policies\nPlease read and make sure you are familiar with the important policies that apply to all UO courses, which can be found here."
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#summary-stats-and-figures",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#summary-stats-and-figures",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Summary stats and figures",
-    "text": "Summary stats and figures\n\nsummary1 &lt;- summary(RNAseq_Data $ENSGACG00000000003)\nprint (summary1)\n\nhist(RNAseq_Data $ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003~RNAseq_Data$Population)\nplot(RNAseq_Data $ENSGACG00000000003, RNAseq_Data$ENSGACG00000000003)\n\nboxplot(RNAseq_Data $ENSGACG00000000003~RNAseq_Data$Treatment, \n        col = \"red\", ylab = \"Expression Level\", xlab = \"Treatment level\", \n        border =\"orange\", \n        main = \"Boxplot of variation in gene expression across microbiota treatments\")"
+    "objectID": "Lectures.html",
+    "href": "Lectures.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "Lecture_1\nLecture_2\nLecture_3"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-is-markdown",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-is-markdown",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "What is markdown?",
-    "text": "What is markdown?\n\nLightweight formal markup languages are used to add formatting to plaintext documents\n\nAdding basic syntax to the text will make elements look different once rendered/knit\nAvailable in many base editors\n\nYou then need a markdown application with a markdown processor/parser to render your text files into something more exciting\n\nStatic and dynamic outputs!\npdf, HTML, presentations, websites, scientific articles, books etc"
+    "objectID": "Syllabus.html",
+    "href": "Syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources. Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases."
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#formatting-text",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#formatting-text",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Formatting text",
-    "text": "Formatting text\n\n*Italic* or _Italic_\n**Bold** or __Bold__\n\n\nItalic or Italic\nBold or Bold"
+    "objectID": "Syllabus.html#course-description",
+    "href": "Syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "",
+    "text": "The goal of this 1 credit course is to provide graduate students in bioengineering and biosciences with foundational understanding of modern computational tools to aid in their research. The target audience is graduate students who have little or no experience with computational tools, or who would like a refresher and exposure to a broad quiver of resources. Learning outcomes for the course are understanding the fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages. Unix command line for the manipulation of large data sets and running scripts both locally and on UO’s supercomputer Talapas. How to properly organize and format primary data and metadata files for analysis. The use of integrated developer environment (IDE) to write basic scripts in Python and R. NIH’s FAIR (findable, accessible, interoperable and reusable) principle and best practices for reproducible science including the use of Git/GitHub, Markdown and remote databases."
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#formatting-text-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#formatting-text-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Formatting text",
-    "text": "Formatting text\n\n&gt; \"You know the greatest danger facing us is ourselves, an irrational fear of the unknown. \nBut there’s no such thing as the unknown — only things temporarily hidden, temporarily not understood.\"\n&gt;\n&gt; --- Captain James T. Kirk\n\n\n“You know the greatest danger facing us is ourselves, an irrational fear of the unknown. But there’s no such thing as the unknown — only things temporarily hidden, temporarily not understood.”\n— Captain James T. Kirk"
+    "objectID": "Syllabus.html#course-structure",
+    "href": "Syllabus.html#course-structure",
+    "title": "Syllabus",
+    "section": "Course Structure",
+    "text": "Course Structure\nWe will hold class on Mondays from 2:30 to 3:50PM. These meetings will be relatively informal, and will usually begin with a 30-45 min. conceptual overview of topics with coding demonstrations. I will post all lecture slides as Markdown and HTML after class to the course website under the ‘Lectures’ tab. The remaining meeting time will be reserved for group work, questions, answers, and discussion. I encourage students to work on exercises and assignments during these periods so that questions can be directly addressed as they emerge."
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#formatting-lists",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#formatting-lists",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Formatting lists",
-    "text": "Formatting lists\n\n- list_element\n    - sub_list_element #double tab to indent\n    - sub_list_element #double tab to indent\n    - sub_list_element #double tab to indent\n- list_element\n    - sub_list_element #double tab to indent\n#note the space after each dash- this is important!\n\n\nlist_element\n\nsub_list_element\nsub_list_element\nsub_list_element\n\nlist_element\n\nsub_list_element"
+    "objectID": "Syllabus.html#course-objectives",
+    "href": "Syllabus.html#course-objectives",
+    "title": "Syllabus",
+    "section": "Course Objectives",
+    "text": "Course Objectives\n\nScientific Computing Fundamentals\n\nDescribe fundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nRead and write code in Unix.\nRead and write code in R using RStudio.\nProperly organize and format primary data and metadata files for analysis\nLearn programming fundamentals of the R statistical language, including objects, functions, iteration, and simulation.\nArticulate the importance of and requirements for reproducible science in bioinformatics.\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\n\nStatistical Visualization\n\nProduce well-designed and informative figures in RStudio.\nMake publication-quality data visualizations, including scatterplots, boxplots, frequency distributions, mosaic plots, etc.\n\nComputers and data\n\nCPUs, GPUs, storage\nFundamental aspects of computer systems, including file types, storage structure, and the logic of programming languages.\nUnix, paths & shell commands including GREP, AWK and SED\nBasics of data structures, databases and tidy dataProperly organize and format primary data and metadata files for analysis\n\nIntegrative developer environments (IDEs)\n\nVirtual Code Studio\nRStudio\nupyter notebooks\n\nFoundations of scripting using Python and R\n\nR and Python fundamentals\npackages and extending functionality\nobjects and object oriented programming\nfunctions, iteration, and simulation\ndata wrangling\nUse and misuse of Generative AI as a digital assistant and ’vibe coding\n\nReproducible science\n\nthe NIH FAIR (Findable, accessible, interoperable) principles\nGit and GitHub for project management and collaboration\nMarkdown for use in manuscripts, presentations and websites\nIncluding LaTeX mathematical expressions in markdown\n\nRemote super computing\n\nUtilize the UO’s supercomputer cluster, Talapas, for computationally intensive tasks.\nSlurm scripts for big jobs\nOther remote systems such as AWS Azure"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#formatting-lists-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#formatting-lists-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Formatting lists",
-    "text": "Formatting lists\n\n1. One\n2. Two\n3. Three\n4. Four\n\n\nOne\nTwo\nThree\nFour"
+    "objectID": "Syllabus.html#graded-assignments",
+    "href": "Syllabus.html#graded-assignments",
+    "title": "Syllabus",
+    "section": "Graded Assignments",
+    "text": "Graded Assignments\nProblem sets: Students will be assigned four problem sets (roughly one every 2 weeks) to complete independently. These will mostly focus on one or a few data sets each, and the goal will be for the students to organize, visualize, analyze, and interpret the data sets in light of specific scientific motivations. - 80% of grade.\nTerm project: Students will choose a large dataset to process on Talapas. The goal of this project is allow students agency in applying what they are learning in class to their own data - 40% of grade.\nPreparing and submitting assignments: The information required to complete all in-class assignments and problem sets will be given in instructions on Canvas. Students should carefully follow the detailed instructions associated with each assignment. Students are encouraged to work together and share information. In particular, some students will have a higher skill level than others, and we encourage those students with more experience to help their peers. However, no direct sharing of code is allowed.\nPreparing and submitting assignments: Assignments will be submitted on Canvas. Be sure to include your name on the document. Be professional – appropriately name your files, make sure they are organized, and submit only the information requested. Late assignments will not be accepted.\n\nGrading\n\n\n\nAssignment\nPercentage of Total Grade\n\n\n\n\nProblem Sets - 2 in total, 30% each\n60%\n\n\nTerm-long Projects\n40%\n\n\n\n\n\n\nGrade Percentage\nLetter Grade\nPass/No Pass Grade\n\n\n\n\n100% - 90%\nA\nPass\n\n\n89% - 80%\nB\nPass\n\n\n79% - 80%\nC\nNo Pass\n\n\n69% - 60%\nD\nNo Pass\n\n\n60% - 0%\nF\nNo Pass"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#inserting-images-or-urls",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#inserting-images-or-urls",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Inserting images or URLs",
-    "text": "Inserting images or URLs\n\n[Link](https://commonmark.org/help/)\n![Image](https://i1.wp.com/evomics.org/wp-content/uploads/2012/07/20120115-IMG_0297.jpg)\n\nLink"
+    "objectID": "Homework_Folder/HW2_2025.html",
+    "href": "Homework_Folder/HW2_2025.html",
+    "title": "Homework 2 - TBD",
+    "section": "",
+    "text": "Assignment: TBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Monday, November 24th.\nDirections: TBD"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#including-code-chunks",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#including-code-chunks",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Including code chunks",
-    "text": "Including code chunks\n\nx &lt;- 2\nx^2\n\n[1] 4"
+    "objectID": "Homework_Folder/HW2_2025.html#problem-set-2---directions",
+    "href": "Homework_Folder/HW2_2025.html#problem-set-2---directions",
+    "title": "Homework 2 - TBD",
+    "section": "",
+    "text": "Assignment: TBD\nDue: Submit your work via Canvas by the end of the day (midnight) on Monday, November 24th.\nDirections: TBD"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-is-latex",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-is-latex",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "What is LaTeX?",
-    "text": "What is LaTeX?\n\nPronounced «Lah-tech» or «Lay-tech» (to rhyme with «Bertolt Brecht»)\nA document preparation system for high-quality typesetting\nIt is most often used for medium-to-large technical or scientific documents\nCan be used for almost any form of publishing.\nTypesetting journal articles, technical reports, books, and slide presentations\nAllows for precise mathematical statements\nhttps://www.latex-project.org\nImportantly, LaTeX can be included right into Markdown documents"
+    "objectID": "Resources.html",
+    "href": "Resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Base R Cheat Sheet\nRStudio Collection of Cheat Sheets\nGit Cheat Sheet\nMarkdown Cheat Sheet\nLaTeX Cheat Sheet"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#operators-and-symbols",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#operators-and-symbols",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Operators and Symbols",
-    "text": "Operators and Symbols\n\n$$ \\large a^x, \\sqrt[n]{x}, \\vec{\\jmath}, \\tilde{\\imath}$$\n\n\\[ \\large a^x, \\sqrt[n]{x}, \\vec{\\jmath}, \\tilde{\\imath}\\]\n\n$$ \\large \\alpha, \\beta, \\gamma$$\n\n\\[ \\large \\alpha, \\beta, \\gamma\\]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#operators-and-symbols-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#operators-and-symbols-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Operators and Symbols",
-    "text": "Operators and Symbols\n\n$$ \\large\\approx, \\neq, \\nsim $$\n\n\\[ \\large\\approx, \\neq, \\nsim \\]\n\n$$\\large \\partial, \\mathbb{R}, \\flat$$\n\n\\[\\large \\partial, \\mathbb{R}, \\flat\\]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#equations",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#equations",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Equations",
-    "text": "Equations\nBinomial sampling equation\n\n$$\\large f(k) = {n \\choose k} p^{k} (1-p)^{n-k}$$\n\n\\[\\large f(k) = {n \\choose k} p^{k} (1-p)^{n-k}\\]\nPoisson Sampling Equation\n\n$$\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}$$\n\n\\[\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}\\]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#differential-equations",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#differential-equations",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Differential Equations",
-    "text": "Differential Equations\n\n$$\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3$$\n\n\\[\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3\\]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#matrix-formulations",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#matrix-formulations",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Matrix formulations",
-    "text": "Matrix formulations\n\n$$  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} $$\n\n\\[  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} \\]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#in-line-versus-fenced",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#in-line-versus-fenced",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "In-line versus fenced",
-    "text": "In-line versus fenced\n\nThis equation, $y=\\frac{1}{2}$, is included inline\n\nThis equation, \\(y=\\frac{1}{2}\\), is included inline\n\nWhereas this equation, $$y=\\frac{1}{2}$$, is put on a separate line\n\nWhereas this equation \\[y=\\frac{1}{2}\\] is put on a separate line"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#markdown-is-very-flexible",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#markdown-is-very-flexible",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Markdown is very flexible",
-    "text": "Markdown is very flexible\n\nYou can import RMarkdown templates into RStudio and open as a new Rmarkdown file\nBetter yet there are packages that add functionality\n\nbooks\njournal articles\nslide shows (these slides!)\ninteractive exercises"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#reading-in-and-exporting-data-frames",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#reading-in-and-exporting-data-frames",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Reading in and Exporting Data Frames",
-    "text": "Reading in and Exporting Data Frames\n\n\n\nYourFile &lt;- read.table('yourfile.csv', header=T, row.names=1, sep=',')\nYourFile &lt;- read.table('yourfile.txt', header=T, row.names=1, sep='\\t')\n\n\n\n\nwrite.table(YourFile, \"yourfile.csv\", quote=F, row.names=T, sep=\",\")\nwrite.table(YourFile, \"yourfile.txt\", quote=F, row.names=T, sep=\"\\t\")"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#indexing-in-data-frames-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#indexing-in-data-frames-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Indexing in data frames",
-    "text": "Indexing in data frames\n\nNext up - indexing just a subset of the data\nThis is a very important idea in R, that you can analyze just a subset of the data.\nThis is analyzing only the data in the file you made that has the factor value ‘mixed’.\n\n\nprint (YourFile[,2])\nprint (YourFile$variable)\nprint (YourFile[2,])\nplot (YourFile$variable1, YourFile$variable2)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#types-of-vectors-of-data",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#types-of-vectors-of-data",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Types of vectors of data",
-    "text": "Types of vectors of data\n\nint stands for integers\ndbl stands for doubles, or real numbers\nchr stands for character vectors, or strings\ndttm stands for date-times (a date + a time)\nlgl stands for logical, vectors that contain only TRUE or FALSE\nfctr stands for factors, which R uses to represent categorical variables with fixed possible values\ndate stands for dates\n\n\n\nInteger and double vectors are known collectively as numeric vectors.\nIn R numbers are doubles by default."
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#types-of-vectors-of-data-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#types-of-vectors-of-data-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Types of vectors of data",
-    "text": "Types of vectors of data\n\nLogical vectors can take only three possible values:\n\nFALSE\nTRUE\nNA which is ‘not available’.\n\nIntegers have one special value: NA, while doubles have four:\n\nNA\nNaN which is ‘not a number’\nInf\n-Inf"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#plotting-using-ggplot2",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#plotting-using-ggplot2",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Plotting using ggplot2()",
-    "text": "Plotting using ggplot2()\n\nPart of the tidyverse suite of packages\nIn most cases, you start with ggplot2()\nSupply a dataset and aesthetic mapping with aes()\nDetermine the type of plot using geom_point() or geom_histogram() or others\nMany more options and controls available!\nMore info: https://ggplot2.tidyverse.org/"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#ggplot2-and-the-grammar-of-graphics",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#ggplot2-and-the-grammar-of-graphics",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "GGPlot2 and the Grammar of Graphics",
-    "text": "GGPlot2 and the Grammar of Graphics\n\nGG stands for ‘Grammar of Graphics’\nA good paragraph uses good grammar to convey information\nA good figure uses good grammar in the same way\nSeven general components can be used to create most figures"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#ggplot2-and-the-grammar-of-graphics-1",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#ggplot2-and-the-grammar-of-graphics-1",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "GGPlot2 and the Grammar of Graphics",
-    "text": "GGPlot2 and the Grammar of Graphics"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#plotting-using-ggplot",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#plotting-using-ggplot",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Plotting using ggplot()",
-    "text": "Plotting using ggplot()\n\nInstall and load ggplot2\n\n\n# install.packages(\"ggplot2\")\nlibrary(\"ggplot2\")"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#scatterplots-with-ggplot",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#scatterplots-with-ggplot",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Scatterplots with ggplot",
-    "text": "Scatterplots with ggplot\n\nUse the preloaded mpg dataset available in RStudio\n\n\nggplot(mpg, aes(displ, hwy, color = class)) + \n  geom_point(size = 6,\n             shape = \"square\",\n             alpha = 0.4)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#boxplots-in-ggplot",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#boxplots-in-ggplot",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Boxplots in ggplot",
-    "text": "Boxplots in ggplot\n\nggplot(mpg, aes(manufacturer, hwy, colour = class)) + \n  geom_boxplot() + \n  theme_classic() + \n  theme(axis.text.x = element_text(angle = 45, hjust=1))"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#the-geom_bar-function",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#the-geom_bar-function",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "The geom_bar function",
-    "text": "The geom_bar function\n\nggplot(data=diamonds) +\n  geom_bar(mapping=aes(x=cut))\n\nNow try this…\n\nggplot(data=diamonds) +\n  geom_bar(mapping=aes(x=cut, color=cut))\n\nand this…\n\nggplot(data=diamonds) +\n  geom_bar(mapping=aes(x=cut, fill=cut))\n\nand finally this…\n\nggplot(data=diamonds) +\n  geom_bar(mapping=aes(x=cut, fill=clarity), position=\"dodge\")"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#the-geom_histogram-and-geom_freqpolyfunction",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#the-geom_histogram-and-geom_freqpolyfunction",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "The geom_histogram and geom_freqpolyfunction",
-    "text": "The geom_histogram and geom_freqpolyfunction\nWith this function you can make a histogram\n\nggplot(data=diamonds) +\n  geom_histogram(mapping=aes(x=carat), binwidth=0.5)\n\nThis allows you to make a frequency polygram\n\nggplot(data=diamonds) +\n  geom_histogram(mapping=aes(x=carat), binwidth=0.5)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#the-geom_boxplot-function",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#the-geom_boxplot-function",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "The geom_boxplot function",
-    "text": "The geom_boxplot function\nBoxplots are very useful for visualizing data\n\nggplot(data=diamonds, mapping=aes(x=cut, y=price)) +\n  geom_boxplot()\n\n\nggplot(data=mpg, mapping=aes(x=reorder(class, hwy, FUN=median), y=hwy)) +\n  coordflip()\n\n\nggplot(data=mpg, mapping=aes(x=class, y=hwy)) +\n  geom_boxplot() +\n  coordflip"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#the-geom_point-geom_smooth-functions",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#the-geom_point-geom_smooth-functions",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "The geom_point & geom_smooth functions",
-    "text": "The geom_point & geom_smooth functions\n\nggplot(data=diamonds2, mapping=aes(x=x, y=y)) +\n  geompoint()\n\n\nggplot(data=mpg) +\n  geompoint(mapping=aes(x=displ, y=hwy)) +\n  facet_wrap(~class, nrow=2)\n\n\nggplot(data=mpg) +\n  geompoint(mapping=aes(x=displ, y=hwy)) +\n  facet_grid(drv~cyl)\n\n\nggplot(data=mpg) +\n  geomsmooth(mapping=aes(x=displ, y=hwy))"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#combining-geoms",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#combining-geoms",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Combining geoms",
-    "text": "Combining geoms\n\nggplot(data=mpg) +\n  geom_point(mapping=aes(x=displ, y=hwy)) +\n  geom_smooth(mapping=aes(x=displ, y=hwy))"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#adding-labels",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#adding-labels",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Adding labels",
-    "text": "Adding labels\n\nggplot(data=mpg, aes(displ, hwy)) +\n  geom_point(aes(color=class)) +\n  geom_smooth(se=FALSE) +\n  labs(\n    title = \"Fuel efficiency generally decreases with engine size\",\n    caption = \"Data from fueleconomy.gov\"\n  )"
-  },
-  {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-type-of-plot-do-i-use-for-each-data-type",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-type-of-plot-do-i-use-for-each-data-type",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "What type of plot do I use for each data type?",
-    "text": "What type of plot do I use for each data type?\n\n\n\nFlow chart to determine what type of data visualization and which ggplot geom to use"
+    "objectID": "Resources.html#cheat-sheets",
+    "href": "Resources.html#cheat-sheets",
+    "title": "Resources",
+    "section": "",
+    "text": "Base R Cheat Sheet\nRStudio Collection of Cheat Sheets\nGit Cheat Sheet\nMarkdown Cheat Sheet\nLaTeX Cheat Sheet"
   }
 ]
