@@ -6,6 +6,4 @@ Below you can find links to the homework directions as they become available. Yo
 
 [Homework 1](Homework_Folder/HW1_2025.qmd)
 
-[Homework 2](Homework_Folder/HW2_2025.qmd)
 
-[Term Project](Homework_Folder/Term_Project.qmd)
