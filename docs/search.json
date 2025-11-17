@@ -81,7 +81,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1\nLecture_2\nLecture_3\nLecture_4"
+    "text": "Lecture_1\nLecture_2\nLecture_3\nLecture_4\nLecture_5"
   },
   {
     "objectID": "Policies.html",
@@ -301,179 +301,543 @@
     "text": "Best Practices for Shell Scripts\n\nAlways include a shebang: #!/bin/bash\nComment your code: Explain what and why\nUse meaningful variable names: GENE_COUNT not GC\nCheck inputs: Validate files exist and arguments are correct\nHandle errors gracefully: Use set -e and error checking\nMake scripts portable: Don’t hardcode paths\nUse version control: Track changes with git\nTest incrementally: Build scripts step by step\nCreate help messages: Document usage\nLog important steps: Keep records of what was done"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html",
-    "title": "Week 3 Computational Tools for Bioengineers",
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html",
+    "title": "Week 5 Computational Tools for Bioengineers",
     "section": "",
     "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\ntheme_set(theme_minimal())"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#goals-for-today",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#goals-for-today",
-    "title": "Week 3 Computational Tools for Bioengineers",
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#goals-for-today",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#goals-for-today",
+    "title": "Week 5 Computational Tools for Bioengineers",
     "section": "Goals for today",
-    "text": "Goals for today\n\nFinish advanced Unix\nWork with human chromosome 1 sequence data\nTidy Data\nR and RStudio"
+    "text": "Goals for today\n\nUsing R Studio and Visual Studio Code (VSC) as script editors\nR and Quarto Markdown\nVibe Coding with LLMs\nGit and GitHub"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#making-new-files",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#making-new-files",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Making new files",
-    "text": "Making new files\n\nMake new folders: mkdir\nMake new files: nano, touch\nRename files: mv\nMove files: mv\nCopy files: cp\nDelete files: rm\nDelete directories: rmdir\nExamining file length: wc\nReading files: cat\nLooking at beginning or end: head or tail"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-a-shell-script",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-a-shell-script",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "What is a Shell Script?",
+    "text": "What is a Shell Script?\n\nText file containing Unix commands\nAutomates repetitive tasks\nMakes complex workflows reproducible\nEssential for bioinformatics pipelines\nCan include:\n\nVariables and arrays\nConditionals (if/then/else)\nLoops (for/while)\nFunctions\nCommand-line arguments"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#things-to-keep-in-mind",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#things-to-keep-in-mind",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Things to keep in mind",
-    "text": "Things to keep in mind\n\nThe shell trusts you\n\nIt will delete files you say to delete\nIt will override files if you name 2 things the same\n\nNaming conventions\n\nAvoid spaces\nDon’t start with a –\nStick to letters, numbers, . , -, and _\n\nUse appropriate file extensions in file names\n\nSome software expect files with certain extensions (.fasta, .txt, etc.)"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-your-first-script",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-your-first-script",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Creating Your First Script",
+    "text": "Creating Your First Script\n#!/bin/bash\n# This is a shebang - tells system which interpreter to use\n\n# This is a comment - documents your code\necho \"Hello, Bioengineering!\"\n\n# Set a variable\nNAME=\"DNA Analysis\"\necho \"Running $NAME\"\n\n# Use command output as variable\nDATE=$(date +%Y-%m-%d)\necho \"Analysis date: $DATE\"\n\n# Simple calculation\nCOUNT=5\nDOUBLE=$((COUNT * 2))\necho \"Double of $COUNT is $DOUBLE\"\nSave as first_script.sh and run with bash first_script.sh"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-making-files-and-directories",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-making-files-and-directories",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Practice making files and directories",
-    "text": "Practice making files and directories\n\nMake a new directory called whatever you’d like.\nAdd a file named Practice.txt to the directory and add some text to it\nRead the contents of the file and get its length\nRename the file to Super_practice.txt\nMove the file to a new folder named Testing\nMake a copy of the file named Super_practice_copy.txt\nRead the contents of the file and get its length to make sure it’s the same as Super_practice.txt\nDelete the original Super_practice.txt"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#making-scripts-executable",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#making-scripts-executable",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Making Scripts Executable",
+    "text": "Making Scripts Executable\n# Check current permissions\nls -l first_script.sh\n\n# Make executable (add execute permission)\nchmod +x first_script.sh\n\n# Now you can run it directly\n./first_script.sh\nBest practice: Always use chmod +x for your scripts"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#commands-for-reading-files",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#commands-for-reading-files",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Commands for Reading Files",
-    "text": "Commands for Reading Files\n\ncat = concatenate and display files\n\nShows entire file at once\nGood for small files\n\nless = view file page by page\n\nNavigate with space (forward), b (back), q (quit)\nSearch with /pattern\n\nmore = similar to less but simpler\n\nSpace to go forward, q to quit\n\nhead = display first 10 lines (default)\n\nhead -n 20 file.txt shows first 20 lines\n\ntail = display last 10 lines (default)\n\ntail -n 20 file.txt shows last 20 lines\ntail -f file.txt follows file as it grows (useful for logs)"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#why-use-r",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#why-use-r",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Why use R?",
+    "text": "Why use R?\n\nGood general scripting tool for statistics and mathematics\nPowerful and flexible and free\nRuns on all computer platforms\nNew enhancements coming out all the time\nSuperb data management & graphics capabilities\nReproducibility - can keep your scripts to see exactly what was done\nYou can write your own functions\nLots of online help available\nCan use a nice GUI front end such as Rstudio\nCan embed your R analyses in dynamic, polished files using Quarto Markdown\nQuarto Markdown can be reused for websites, papers, books, presentations…"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#input-redirection",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#input-redirection",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Input Redirection",
-    "text": "Input Redirection\n\n&lt; = redirect input from a file\n\ncommand &lt; input.txt\nSends contents of file as input to command\n\n&lt;&lt; = here document (multi-line input)\n\nAllows you to provide multi-line input directly in the terminal\n\nExample uses:\n\nwc -l &lt; data.txt counts lines in data.txt\nsort &lt; names.txt sorts contents of names.txt"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#r-scripts-and-quarto-markdown",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#r-scripts-and-quarto-markdown",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "R scripts and Quarto Markdown",
+    "text": "R scripts and Quarto Markdown\n\nOften we want to write scripts that can just be run - R scripts\nWe can also embed code in Quarto Markdown files that provide more annotations\nThis improves interpertability and reproducibility\nYou can insert R code chunks into Quarto Markdown documents"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#output-redirection",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#output-redirection",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Output Redirection",
-    "text": "Output Redirection\n\n&gt; = redirect output to a file (overwrites)\n\nls -l &gt; filelist.txt\nCreates new file or overwrites existing\n\n&gt;&gt; = append output to a file\n\necho \"new line\" &gt;&gt; existing.txt\nAdds to the end of existing file\n\n2&gt; = redirect error messages\n\ncommand 2&gt; errors.txt\nCaptures error messages separately\n\n&&gt; = redirect both output and errors\n\ncommand &&gt; all_output.txt"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#r-script-basics",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#r-script-basics",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "R script basics",
+    "text": "R script basics\n\nA series of R commands that will be executed\n\nCan add comments using hashtags #\n\nCan have pipes (|&gt;) to connect one step to the next"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#unix-three-standard-streams",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#unix-three-standard-streams",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Unix Three Standard Streams",
-    "text": "Unix Three Standard Streams\n\nstdin (0) = Standard Input\n\nWhere programs read input from\nDefault: keyboard\n\nstdout (1) = Standard Output\n\nWhere programs write normal output\nDefault: terminal screen\n\nstderr (2) = Standard Error\n\nWhere programs write error messages\nDefault: terminal screen (same as stdout)"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#basics-of-r",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#basics-of-r",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "BASICS of R",
+    "text": "BASICS of R\n\nCommands can be submitted through the terminal, console or scripts\nNotice on these slides I’m evaluating the code chunks and showing output\nAlso notice that R follows the normal priority of mathematical evaluation\n\n\n\n\n\n4*4\n\n[1] 16\n\n\n\n(4+3*2^2)\n\n[1] 16"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data-streams",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data-streams",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Visualizing Data Streams",
-    "text": "Visualizing Data Streams\n# Every Unix program has these three streams\n         ┌──────────────┐\nstdin ───&gt;│              │───&gt; stdout\n    (0)  │   Program    │      (1)\n         │              │───&gt; stderr\n         └──────────────┘      (2)\n\nFile descriptor numbers: 0, 1, 2\nCan redirect each stream independently\nPrograms don’t know if streams are redirected\nThis abstraction is key to Unix philosophy"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#assigning-variables",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#assigning-variables",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Assigning Variables",
+    "text": "Assigning Variables\n\nA better way to do this is to assign variables\nVariables are assigned values using the &lt;- operator.\nVariable names must begin with a letter, but other than that, just about anything goes.\nDo keep in mind that R is case sensitive."
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basic-stream-redirection",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basic-stream-redirection",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Basic Stream Redirection",
-    "text": "Basic Stream Redirection\n# Redirect stdout to file (equivalent ways)\n\nls -l &gt; files.txt\nls -l 1&gt; files.txt      # Explicitly using fd 1\n\n# Redirect stderr to file\n\nls /nonexistent 2&gt; errors.txt\n\n# Redirect both stdout and stderr to same file\n\nls -l /nonexistent &&gt; all_output.txt"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#assigning-variables-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#assigning-variables-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Assigning Variables",
+    "text": "Assigning Variables\n\nx &lt;- 2\nx * 3\n\n[1] 6\n\ny &lt;- x * 3\ny - 2\n\n[1] 4\n\n\nThese do not work\n\n3y &lt;- 3\n3*y &lt;- 3"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#bioinformatics-example",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#bioinformatics-example",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Bioinformatics Example",
-    "text": "Bioinformatics Example\nProcessing sequence data with stream control:\n# FASTQ processing pipeline with error handling\n\nzcat reads.fastq.gz 2&gt; unzip_errors.log | \nfastqc stdin 2&gt; qc_errors.log | \ntrimmomatic 2&gt; trim_errors.log | \nbowtie2 -x genome - 2&gt; alignment_stats.txt | \nsamtools sort 2&gt; sort_errors.log | \nsamtools index - 2&gt; index_errors.log\n\n# Check all error logs at once\n\ncat *_errors.log | grep -E \"ERROR|WARNING\""
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#arithmetic-operations-on-functions",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#arithmetic-operations-on-functions",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Arithmetic operations on functions",
+    "text": "Arithmetic operations on functions\n\nArithmetic operations can be performed easily on functions as well as numbers.\nTry the following, and then your own.\n\n\nx+2\nx^2\nlog(x)\n\n\nNote that the last of these - log - is a built in function of R, and therefore the object of the function needs to be put in parentheses\nThese parentheses will be important, and we’ll come back to them later when we add arguments after the object in the parentheses\n\nThe outcome of calculations can be assigned to new variables as well, and the results can be checked using the ‘print’ command"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-are-pipes",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-are-pipes",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "What are Pipes?",
-    "text": "What are Pipes?\n\n| = the pipe operator\n\nTakes output from one command as input to another\nChains commands together\nNo intermediate files needed!\n\nBasic syntax:\n\ncommand1 | command2 | command3\n\nPower of Unix philosophy:\n\nSmall tools that do one thing well\nCombine them to do complex tasks"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#arithmetic-operations-on-functions-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#arithmetic-operations-on-functions-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Arithmetic operations on functions",
+    "text": "Arithmetic operations on functions\n\ny &lt;- 67\nprint(y)\n\n[1] 67\n\nx &lt;- 124\nz &lt;- (x*y)^2\nprint(z)\n\n[1] 69022864"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#common-pipe-patterns",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#common-pipe-patterns",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Common Pipe Patterns",
-    "text": "Common Pipe Patterns\n\nCounting patterns:\n\ngrep \"pattern\" file.txt | wc -l\nCount lines matching a pattern\n\nSorting and uniqueness:\n\ncat file.txt | sort | uniq\nSort lines and remove duplicates\n\nFinding top/bottom items:\n\nsort data.txt | head -5\nGet top 5 after sorting\n\nFiltering and processing:\n\nls -l | grep \".txt\" | awk '{print $5, $9}'\nList txt files with sizes"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#strings",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#strings",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "STRINGS",
+    "text": "STRINGS\n\nVariables and operations can be performed on characters as well\nNote that characters need to be set off by quotation marks to differentiate them from numbers\nThe c stands for concatenate\nNote that we are using the same variable names as we did previously, which means that we’re overwriting our previous assignment\nA good rule of thumb is to use new names for each variable, and make them short but still descriptive"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#advanced-pipe-examples",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#advanced-pipe-examples",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Advanced Pipe Examples",
-    "text": "Advanced Pipe Examples\n\nMulti-step data processing:\n\ncat data.csv | cut -d',' -f2 | sort | uniq -c | sort -rn\nExtract column 2, count unique values, sort by frequency\n\nComplex transformations:\n\nfind . -name \"*.txt\" | xargs wc -l | sort -n\nFind all txt files and sort by line count\n\nReal-time monitoring:\n\ntail -f logfile.txt | grep ERROR\nWatch log file for errors in real-time"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#strings-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#strings-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "STRINGS",
+    "text": "STRINGS\n\nx &lt;- \"I Love\"\nprint (x)\n\n[1] \"I Love\"\n\ny &lt;- \"Bioengineering\"\nprint (y)\n\n[1] \"Bioengineering\"\n\nz &lt;- c(x,y)\nprint (z)\n\n[1] \"I Love\"         \"Bioengineering\""
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#tips-for-working-with-files-and-pipes",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#tips-for-working-with-files-and-pipes",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Tips for Working with Files and Pipes",
-    "text": "Tips for Working with Files and Pipes\n\nTest pipes step by step\n\nBuild complex pipes incrementally\nCheck output at each stage\n\nUse less for large files instead of cat\nRemember: &gt; overwrites, &gt;&gt; appends\nPipe efficiency:\n\nFilter early in the pipeline\nReduces data passed between commands\n\nSave intermediate results when debugging complex pipes # Unix Data Streams"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#vectors",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#vectors",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "VECTORS",
+    "text": "VECTORS\n\nIn general R thinks in terms of vectors (a list of characters, factors or numerical values).\nIt will benefit any R user to try to write programs with that in mind, as it will simplify most things.\nVectors can be assigned directly using the c() function and then entering the exact values."
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#human-chromosome-data",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#human-chromosome-data",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Human Chromosome Data",
-    "text": "Human Chromosome Data\n\nGenomic data files can be massive (human genome ~6 billion base pairs)\nFASTA format is standard for sequence data\nPerfect use case for Unix pipes and redirection\nLet’s work with human genome assembly version 38 (~3.1 GB)"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#vectors-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#vectors-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "VECTORS",
+    "text": "VECTORS\n\nx &lt;- c(2,3,4,2,1,2,4,5,10,8,9)\nprint(x)\n\n [1]  2  3  4  2  1  2  4  5 10  8  9\n\n\n\nx &lt;- c(2,3,4,2,1,2,4,5,10,8,9)\ny &lt;- x^2\nprint(x)\n\n [1]  2  3  4  2  1  2  4  5 10  8  9\n\nprint(y)\n\n [1]   4   9  16   4   1   4  16  25 100  64  81\n\n\n\nplot(x,y)"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#downloading-genomic-data",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#downloading-genomic-data",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Downloading Genomic Data",
-    "text": "Downloading Genomic Data\nDownload version 38 of the human genome from NCBI:\n\n# Using `wget` to download human genome\n\nwget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/\\\nGCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz\n\n# Or using `curl` and save with specific name\n\ncurl -o human_genome.fa.gz https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/\\\nGCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz\n\nwget and curl are both tools for downloading files\nThe backslash allows long URLs to span multiple lines\n.gz extension means the file is compressed"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#basic-statistics",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#basic-statistics",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Basic Statistics",
+    "text": "Basic Statistics\n\nMany functions exist to operate on vectors.\nCombine these with your previous variable to see what happens.\nAlso, try to find other functions (e.g. standard deviation).\n\n\nmean(x)\nmedian(x)\nvar(x)\nlog(x)\nln(x)\nsqrt(x)\nsum(x)\nlength(x)\nsample(x, replace = T)\n\n\nNotice that the last function (sample) has an argument (replace=T)\nArguments simply modify or direct the function in some way\nThere are many arguments for each function, some of which are defaults"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#examining-large-files-efficiently",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#examining-large-files-efficiently",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Examining Large Files Efficiently",
-    "text": "Examining Large Files Efficiently\nDon’t use cat on huge files! Use these approaches:\n# Decompress and look at first 10 lines\n\ngunzip -c human_genome.fa.gz | head -10\n\n# Check file size before and after decompression\n\nls -lh human_genome.fa.gz\ngunzip human_genome.fa.gz\nls -lh human_genome.fa\n\n# Count sequences in FASTA file (lines starting with &gt;)\n\ngrep \"^&gt;\" human_genome.fa.gz | wc -l\n\n# View sequence headers only\n\ngrep \"^&gt;\" human_genome.fa.gz | less"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#getting-help",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#getting-help",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nGetting Help on any function is very easy - just type a question mark and the name of the function.\nThere are functions for just about anything within R and it is easy enough to write your own functions if none already exist to do what you want to do.\nIn general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters to send to the function.\nHelp pages exist for all functions that, at a minimum, explain what parameters exist for the function.\n\nHelp can be accessed a few ways - try them :"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-a-subset-for-analysis",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-a-subset-for-analysis",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Creating a Subset for Analysis",
-    "text": "Creating a Subset for Analysis\nMake a smaller working file for testing:\n# Extract first 1MB of sequence for testing\n\nhead -n 20000 human_genome.fa.gz &gt; human_genome_subset.fa\n\n# Or extract specific scaffold/contig by name\n\nawk '/^&gt;chr21:1000000-2000000/,/^&gt;/' human_genome.fa | \\\n  head -n -1 &gt; region_of_interest.fa\n\n# Create a random sample of sequences\n\ngrep \"^&gt;\" human_genome.fa | \\\n  shuf -n 10 | \\\n  while read header; do\n    grep -A 1000 \"$header\" human_genome.fa\n  done &gt; random_sample.fa"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#getting-help-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#getting-help-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Getting Help",
+    "text": "Getting Help\n\n- help(mean)\n- ?mean\n- example(mean)\n- help.search(\"mean\")\n- apropos(\"mean\")\n- args(mean)"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#processing-fasta-files-with-pipes",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#processing-fasta-files-with-pipes",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Processing FASTA Files with Pipes",
-    "text": "Processing FASTA Files with Pipes\nExtract specific regions or sequences:\n# Extract just the sequence (no headers) and count bases\n\ngrep -v \"^&gt;\" human_genome.fa | tr -d '\\n' | wc -c\n\n# Count each type of nucleotide\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  fold -w1 | \\\n  sort | \\\n  uniq -c\n\n# Extract a specific gene region (lines 1000-2000)\n\nsed -n '1000,2000p' human_genome.fa &gt; gene_region.fa\n\ngrep -v inverts the match (excludes lines)\ntr -d '\\n' removes newlines\nfold -w1 puts each character on its own line"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-vectors",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-vectors",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Creating vectors",
+    "text": "Creating vectors\n\nCreating vector of new data by entering it by hand can be a drag\nHowever, it is also very easy to use functions such as seq and sample\nTry the examples below; can you figure out what the three arguments in the parentheses mean?\nTry varying the arguments to see what happens.\nDon’t go too crazy with the last one or your computer might slow way down"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#finding-patterns-in-genomic-data",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#finding-patterns-in-genomic-data",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Finding Patterns in Genomic Data",
-    "text": "Finding Patterns in Genomic Data\nSearch for specific sequences and motifs:\n# Find all instances of a restriction enzyme site (EcoRI: GAATTC)\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  grep -o \"GAATTC\" | \\\n  wc -l\n\n# Extract 100 bases around each EcoRI site\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  grep -oE \".{100}GAATTC.{100}\" &gt; ecori_contexts.txt\n\n# Find all start codons (ATG) and their positions\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  grep -b -o \"ATG\" | \\\n  head -20"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-vectors-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-vectors-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Creating vectors",
+    "text": "Creating vectors\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1)\nprint(seq_1)\n\n  [1]  0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  1.3  1.4\n [16]  1.5  1.6  1.7  1.8  1.9  2.0  2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9\n [31]  3.0  3.1  3.2  3.3  3.4  3.5  3.6  3.7  3.8  3.9  4.0  4.1  4.2  4.3  4.4\n [46]  4.5  4.6  4.7  4.8  4.9  5.0  5.1  5.2  5.3  5.4  5.5  5.6  5.7  5.8  5.9\n [61]  6.0  6.1  6.2  6.3  6.4  6.5  6.6  6.7  6.8  6.9  7.0  7.1  7.2  7.3  7.4\n [76]  7.5  7.6  7.7  7.8  7.9  8.0  8.1  8.2  8.3  8.4  8.5  8.6  8.7  8.8  8.9\n [91]  9.0  9.1  9.2  9.3  9.4  9.5  9.6  9.7  9.8  9.9 10.0\n\nseq_2 &lt;- seq(10.0, 0.0, by = -0.1)\nprint(seq_2)\n\n  [1] 10.0  9.9  9.8  9.7  9.6  9.5  9.4  9.3  9.2  9.1  9.0  8.9  8.8  8.7  8.6\n [16]  8.5  8.4  8.3  8.2  8.1  8.0  7.9  7.8  7.7  7.6  7.5  7.4  7.3  7.2  7.1\n [31]  7.0  6.9  6.8  6.7  6.6  6.5  6.4  6.3  6.2  6.1  6.0  5.9  5.8  5.7  5.6\n [46]  5.5  5.4  5.3  5.2  5.1  5.0  4.9  4.8  4.7  4.6  4.5  4.4  4.3  4.2  4.1\n [61]  4.0  3.9  3.8  3.7  3.6  3.5  3.4  3.3  3.2  3.1  3.0  2.9  2.8  2.7  2.6\n [76]  2.5  2.4  2.3  2.2  2.1  2.0  1.9  1.8  1.7  1.6  1.5  1.4  1.3  1.2  1.1\n [91]  1.0  0.9  0.8  0.7  0.6  0.5  0.4  0.3  0.2  0.1  0.0"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#combining-downloads-with-processing",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#combining-downloads-with-processing",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Combining Downloads with Processing",
-    "text": "Combining Downloads with Processing\nStream processing without saving intermediate files:\n# Download, decompress, and process in one pipeline\ncurl -s https://url/to/genome.fa.gz | \\\n  gunzip -c | \\\n  grep -v \"^&gt;\" | \\\n  tr -d '\\n' | \\\n  cut -c1-1000000 &gt; first_megabase.txt\n\n# Download and immediately analyze GC content\nwget -O - https://url/to/genome.fa.gz | \\\n  gunzip -c | \\\n  grep -v \"^&gt;\" | \\\n  tr -d '\\n' | \\\n  tr 'ATGC' '0011' | \\\n  awk '{s+=gsub(/1/,\"\")} END {print \"GC%:\", s/length*100}'\n\n\nThe -O - flag tells wget to output to stdout\nThis approach saves disk space and time"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-vectors-2",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-vectors-2",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Creating vectors",
+    "text": "Creating vectors\n\nseq_square &lt;- (seq_2)*(seq_2)\nprint(seq_square)\n\n  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81\n [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61\n [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41\n [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21\n [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01\n [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81\n [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61\n [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41\n [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21\n [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01\n[101]   0.00"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#key-takeaways",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#key-takeaways",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nReal bioinformatics often involves gigabytes of data - these Unix tools scale beautifully!\nNever load entire genome files into memory - use streaming\nCombine tools - each does one thing well\nTest on subsets first - extract small portions for development\nDocument your pipelines - save commands in scripts\nUse compression - work with .gz files directly when possible\nThink in streams - data flows through pipes without intermediate files"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-vectors-3",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-vectors-3",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Creating vectors",
+    "text": "Creating vectors\n\nseq_square_new &lt;- (seq_2)^2\nprint(seq_square_new)\n\n  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81\n [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61\n [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41\n [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21\n [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01\n [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81\n [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61\n [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41\n [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21\n [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01\n[101]   0.00"
   },
   {
-    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-exercise-genomic-data-pipeline",
-    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-exercise-genomic-data-pipeline",
-    "title": "Week 3 Computational Tools for Bioengineers",
-    "section": "Practice Exercise: Genomic Data Pipeline",
-    "text": "Practice Exercise: Genomic Data Pipeline\nBuild a complete analysis pipeline:\n\nDownload a bacterial genome (smaller, ~5 MB)\nCount the total number of genes (hint: count headers)\nCalculate the genome size in base pairs\nFind the 10 most common 6-base sequences\nExtract all genes with “ribosomal” in the header\nSave your pipeline as a shell script for reproducibility"
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#types-of-vectors-of-data",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#types-of-vectors-of-data",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Types of vectors of data",
+    "text": "Types of vectors of data\n\nint stands for integers\ndbl stands for doubles, or real numbers\nchr stands for character vectors, or strings\ndttm stands for date-times (a date + a time)\nlgl stands for logical, vectors that contain only TRUE or FALSE\nfctr stands for factors, which R uses to represent categorical variables with fixed possible values\ndate stands for dates\n\n\n\nInteger and double vectors are known collectively as numeric vectors.\nIn R numbers are doubles by default."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#types-of-vectors-of-data-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#types-of-vectors-of-data-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Types of vectors of data",
+    "text": "Types of vectors of data\n\nLogical vectors can take only three possible values:\n\nFALSE\nTRUE\nNA which is ‘not available’.\n\nIntegers have one special value: NA, while doubles have four:\n\nNA\nNaN which is ‘not a number’\nInf\n-Inf## Reading in Data Frames in R {.smaller}\n\nA strength of R is being able to import data from an external source\nCreate the same table that you did above in a spreadsheet like Excel\nExport it to comma separated and tab separated text files for importing into R.\nThe first will read in a comma-delimited file, whereas the second is a tab-delimited\nIn both cases the header and row.names arguments indicate that there is a header row and row label column\nNote that the name of the file by itself will have R look in the CWD, whereas a full path can also be used"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nHere is a way to create your own data sets that are random samples.\nAgain, play around with the arguments in the parentheses to see what happens."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nplot(x,y)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-2",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-2",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nplot(xy)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-3",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-3",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nhist(x)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-4",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-4",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nYou’ve probably figured out that y from the last example is drawing numbers with equal probability.\nWhat if you want to draw from a distribution?\nAgain, play around with the arguments in the parentheses to see what happens."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-5",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#drawing-samples-from-distributions-5",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Drawing samples from distributions",
+    "text": "Drawing samples from distributions\n\nx &lt;-rnorm(1000, 0, 100)\nhist(x, xlim = c(-500,500))\ncurve(50000*dnorm(x, 0, 100), xlim = c(-500,500), add=TRUE, col='Red')\n\n\n\n\n\n\n\n\n\ndnorm() generates the probability density, which can be plotted using the curve() function.\nNote that is curve is added to the plot using add=TRUE"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#visualizing-data",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#visualizing-data",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Visualizing Data",
+    "text": "Visualizing Data\n\nSo far you’ve been visualizing just the list of output numbers\nExcept for the last example where I snuck in a hist function.\nYou can also visualize all of the variables that you’ve created using the plot function (as well as a number of more sophisticated plotting functions).\nEach of these is called a high level plotting function, which sets the stage\nLow level plotting functions will tweak the plots and make them beautiful"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#visualizing-data-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#visualizing-data-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Visualizing Data",
+    "text": "Visualizing Data\n\nWhat do you think that each of the arguments means for the plot function?\nA cool thing about R is that the options for the arguments make sense.\nTry adjusting an argument and see if it works\nNote- most people use the package GGPlot2 for nice scientific graphics"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#visualizing-data-2",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#visualizing-data-2",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Visualizing Data",
+    "text": "Visualizing Data\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1) \nplot (seq_1, xlab=\"space\", ylab =\"function of space\", type = \"p\", col = \"red\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#putting-plots-in-a-single-figure",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#putting-plots-in-a-single-figure",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Putting plots in a single figure",
+    "text": "Putting plots in a single figure\n\nOn the next slide\nThe first line of the lower script tells R that you are going to create a composite figure that has two rows and two columns. Can you tell how?\nNow, modify the code to add two more variables and add one more row of two panels.\n\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1)\nseq_2 &lt;- seq(10.0, 0.0, by = -0.1)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#putting-plots-in-a-single-figure-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#putting-plots-in-a-single-figure-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Putting plots in a single figure",
+    "text": "Putting plots in a single figure\n\npar(mfrow=c(2,2))\nplot (seq_1, xlab=\"time\", ylab =\"p in population 1\", type = \"p\", col = 'red')\nplot (seq_2, xlab=\"time\", ylab =\"p in population 2\", type = \"p\", col = 'green')\nplot (seq_square, xlab=\"time\", ylab =\"p2 in population 2\", type = \"p\", col = 'blue')\nplot (seq_square_new, xlab=\"time\", ylab =\"p in population 1\", type = \"l\", col = 'yellow')"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-data-frames-in-r",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-data-frames-in-r",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Creating Data Frames in R",
+    "text": "Creating Data Frames in R\n\nAs you have seen, in R you can generate your own random data set drawn from nearly any distribution very easily.\nOften we will want to use collected data.\nNow, let’s make a dummy dataset to get used to dealing with data frames\nSet up three variables (hydrogel_concentration, compression and conductivity) as vectors\n\n\nhydrogel_concentration &lt;- factor(c(\"low\", \"high\", \"high\", \"high\", \"medium\", \"medium\", \"medium\",\"low\"))\ncompression &lt;- c(3.4, 3.4, 8.4, 3, 5.6, 8.1, 8.3, 4.5)\nconductivity &lt;- c(0, 9.2, 3.8, 5, 5.6, 4.1, 7.1, 5.3)\n\n\nCreate a data frame where vectors become columns\n\n\nmydata &lt;- data.frame(hydrogel_concentration, compression, conductivity)\nrow.names(mydata) &lt;- c(\"Sample_1\", \"Sample_2\", \"Sample_3\", \"Sample_4\", \n                       \"Sample_5\", \"Sample_6\", \"Sample_7\", \"Sample_8\")\n\n\nNow you have a hand-made data frame with row names\nTake a look at it in the data section of RStudio"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#reading-in-and-exporting-data-frames",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#reading-in-and-exporting-data-frames",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Reading in and Exporting Data Frames",
+    "text": "Reading in and Exporting Data Frames\n\n\n\nYourFile &lt;- read.table('yourfile.csv', header=T, row.names=1, sep=',')\nYourFile &lt;- read.table('yourfile.txt', header=T, row.names=1, sep='\\t')\n\n\n\n\nwrite.table(YourFile, \"yourfile.csv\", quote=F, row.names=T, sep=\",\")\nwrite.table(YourFile, \"yourfile.txt\", quote=F, row.names=T, sep=\"\\t\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#indexing-in-data-frames",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#indexing-in-data-frames",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Indexing in data frames",
+    "text": "Indexing in data frames\n\nNext up - indexing just a subset of the data\nThis is a very important idea in R, that you can analyze just a subset of the data.\nThis is analyzing only the data in the file you made that has the factor value ‘mixed’.\n\n\nprint (YourFile[,2])\nprint (YourFile$variable)\nprint (YourFile[2,])\nplot (YourFile$variable1, YourFile$variable2)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#practice-reading-in-transcriptomic-data",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#practice-reading-in-transcriptomic-data",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Practice reading in transcriptomic data",
+    "text": "Practice reading in transcriptomic data\n\nRNAseq_Data &lt;- read.table('&lt;name_of_file&gt;', header=TRUE, sep=',')\n\nprint (RNAseq_Data)\nhead (RNAseq_Data)\ntail (RNAseq_Data)\n\nprint (RNAseq_Data[,2])\nprint (RNAseq_Data[1,])\nprint (RNAseq_Data[1,2])\nprint (RNAseq_Data$ENSGACG00000000010)\nprint (RNAseq_Data$ENSGACG00000000010&gt;45.0)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#summary-stats-and-figures",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#summary-stats-and-figures",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Summary stats and figures",
+    "text": "Summary stats and figures\n\nsummary1 &lt;- summary(RNAseq_Data $ENSGACG00000000003)\nprint (summary1)\n\nhist(RNAseq_Data $ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003~RNAseq_Data$Population)\nplot(RNAseq_Data $ENSGACG00000000003, RNAseq_Data$ENSGACG00000000003)\n\nboxplot(RNAseq_Data $ENSGACG00000000003~RNAseq_Data$Treatment, \n        col = \"red\", ylab = \"Expression Level\", xlab = \"Treatment level\", \n        border =\"orange\", \n        main = \"Boxplot of variation in gene expression across microbiota treatments\")"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-markdown",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-markdown",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "What is Markdown?",
+    "text": "What is Markdown?\n\na very light weight but flexible editing language\nallows the rendering of markdown text to a variety of different formats (pdf, html, web pages, powerpoint, etc….)\nvery simple and common across science and engineering\ninvolves a yaml header (which stands for yet another markdown language)\nsimilar to html but simpler"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-quarto-markdown",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-quarto-markdown",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "What is Quarto Markdown?",
+    "text": "What is Quarto Markdown?\nQuarto (https://quarto.org/) provides a next-generation authoring framework for data science.\n\nQuarto Markdown is a powerful scientific and technical publishing system that extends the lightweight markup language Markdown for creating formatted text using a plain-text editor\nYou can use Quarto Markdown files to save and execute code *and* generate high quality reports that can be shared with an audience.\nYou can make html, pdf, docx, websites, slides, books, and more.\n\nWhen you save your document, the output will be in the format indicated in your YAML header. This could be an html document, Word document, pdf, website, book, etc."
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#getting-started",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#getting-started",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Getting started",
+    "text": "Getting started\n\nOpen a new Quarto Markdown document from RStudio\nYou should see a document that is already populated with some example text and code"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "This is Quarto Markdown",
+    "text": "This is Quarto Markdown\n\n---\ntitle: \"title\"\noutput: html_document\n---\n\n\nNote that --- delineates the yaml header.\nThis controls document-level settings and rendering.\nThere are a lot of options that you can put in the yaml header"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "This is Quarto Markdown",
+    "text": "This is Quarto Markdown\n\n# Header size 1\n\n## Header size 2\n\nI can write text and it will look normal!\n\nI can still run code!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-2",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-2",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "This is Quarto Markdown",
+    "text": "This is Quarto Markdown\n\n# ```{r code_chunk_name option1 option 2}\n# x &lt;- 5\n# print(x^2)\n# ```\n\n\nBy default, the code and output will print to your document\nNote the back tick marks - these delineate the code\nThe {r} indicates this is r code"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#navigating-chunks",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#navigating-chunks",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Navigating chunks",
+    "text": "Navigating chunks\n\nEasy to run chunks - a few ways to do this\nTop right of each chunk - just run, run all above, etc.\nCog wheel at the top of the Quarto Markdown document - run options\nKeyboard shortcuts"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#chunk-options",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#chunk-options",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Chunk options",
+    "text": "Chunk options\n\ninclude = FALSE prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.\necho = FALSE prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.\nmessage = FALSE prevents messages that are generated by code from appearing in the finished file.\nwarning = FALSE prevents warnings that are generated by code from appearing in the finished.\nfig.cap = \"...\" adds a caption to graphical results.\neval = FALSE shows code, but doesn’t run it\nresults = 'hide' runs code, but doesn’t show results\nfig.height, fig.width set the dimensions of plots\ncache = TRUE saves the results of a code chunk, can be helpful if a particular code chunk is intensive"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-formatting",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-formatting",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Quarto Markdown formatting",
+    "text": "Quarto Markdown formatting\n*italic*\n**bold**\n$A = \\pi \\times r^{2}$\nitalic\nbold\n\\(A = \\pi \\times r^{2}\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-lists",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-lists",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Quarto Markdown lists",
+    "text": "Quarto Markdown lists\n* Item 1\n* Item 2\n    + Item 2a\n    + Item 2b\n\nItem 1\nItem 2\n\nItem 2a\nItem 2b"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-lists-1",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-lists-1",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Quarto Markdown lists",
+    "text": "Quarto Markdown lists\n1. Item 1\n2. Item 2\n3. Item 3\n    + Item 3a\n    + Item 3b\n\nItem 1\nItem 2\nItem 3\n\nItem 3a\nItem 3b"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#typesetting-mathematics",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#typesetting-mathematics",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Typesetting Mathematics",
+    "text": "Typesetting Mathematics\n\nSince ‘tex’ is embedded in Quarto Markdown you can typeset mathematics easily using LaTeX (https://en.wikibooks.org/wiki/LaTeX)\nEssentially, just surround your mathematics in $ symbols\n$$ centers the expressions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#typeset-mathematics",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#typeset-mathematics",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Typeset mathematics",
+    "text": "Typeset mathematics\nPoisson Sampling Equation\n\n$$\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}$$\n\n\\[\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#differential-equations",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#differential-equations",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Differential Equations",
+    "text": "Differential Equations\n\n$$\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3$$\n\n\\[\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#in-line-versus-fenced",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#in-line-versus-fenced",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "In-line versus fenced",
+    "text": "In-line versus fenced\n\nThis equation, $y=\\frac{1}{2}$, is included inline\n\nThis equation, \\(y=\\frac{1}{2}\\), is included inline\n\nWhereas this equation, $$y=\\frac{1}{2}$$, is put on a separate line\n\nWhereas this equation \\[y=\\frac{1}{2}\\] is put on a separate line"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#matrix-formulations",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#matrix-formulations",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Matrix formulations",
+    "text": "Matrix formulations\n\n$$  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} $$\n\n\\[  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-is-very-flexible",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-is-very-flexible",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Quarto Markdown is very flexible",
+    "text": "Quarto Markdown is very flexible\n\nYou can use Quarto templates and open as a new Quarto Markdown file\nBetter yet there are extensions that add functionality\n\nbooks\njournal articles\nslide shows (these slides!)\ninteractive exercises"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#more-on-quarto-markdown",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#more-on-quarto-markdown",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "More on Quarto Markdown",
+    "text": "More on Quarto Markdown\n\nhttps://quarto.org/docs/authoring/\nhttps://quarto.org/docs/reference/\nLots more fun stuff you can do!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-git",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-git",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "What is Git?",
+    "text": "What is Git?\n\nGit is a distributed version control system\nTracks changes in your code over time\nAllows collaboration with others\nMaintains complete history of all changes\nEssential tool for reproducible research\nWorks locally on your computer"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-github",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-github",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nGitHub is a web-based hosting service for Git repositories\nProvides cloud storage for your code\nEnables collaboration features:\n\nPull requests\nIssues tracking\nProject management\n\nHosts documentation and websites (GitHub Pages)\nFree for public repositories"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#version-control-benefits",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#version-control-benefits",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Version Control Benefits",
+    "text": "Version Control Benefits\n\n\n\n\n\nflowchart LR\n    A[Working Directory] --&gt;|git add| B[Staging Area]\n    B --&gt;|git commit| C[Local Repository]\n    C --&gt;|git push| D[Remote Repository]\n    D --&gt;|git pull| A\n    \n    style A fill:#f9d71c\n    style B fill:#87ceeb\n    style C fill:#98fb98\n    style D fill:#ffa07a\n\n\n\n\n\n\n\nTrack Changes: Every modification is recorded\nCollaboration: Multiple people can work simultaneously\nBackup: Your code is safe in multiple places\nExperimentation: Try new things without breaking working code"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#git-workflow-concept",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#git-workflow-concept",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Git Workflow Concept",
+    "text": "Git Workflow Concept\n\n\n\n\n\ngraph TB\n    subgraph \"Your Computer\"\n        WD[Working Directory&lt;br/&gt;Your actual files]\n        SA[Staging Area&lt;br/&gt;Files ready to commit]\n        LR[Local Repository&lt;br/&gt;Committed changes]\n    end\n    \n    subgraph \"GitHub\"\n        RR[Remote Repository&lt;br/&gt;Shared with others]\n    end\n    \n    WD --&gt;|git add| SA\n    SA --&gt;|git commit| LR\n    LR --&gt;|git push| RR\n    RR --&gt;|git pull| WD\n    \n    style WD fill:#e1f5fe\n    style SA fill:#fff3e0\n    style LR fill:#f3e5f5\n    style RR fill:#e8f5e9"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#setting-up-git",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#setting-up-git",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Setting Up Git",
+    "text": "Setting Up Git\n\n1. Install Git\n# Check if Git is installed\ngit --version\n\n# Ubuntu/Debian\nsudo apt-get install git\n\n# macOS (with Homebrew)\nbrew install git\n\n# Windows: Download from git-scm.com\n\n\n2. Configure Git\n# Set your name and email\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\n\n# Check your settings\ngit config --list"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-for-scientific-collaboration",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-for-scientific-collaboration",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "GitHub for Scientific Collaboration",
+    "text": "GitHub for Scientific Collaboration\n\nPerfect for Research Projects:\n\nReproducibility: Complete history of analysis development\nCollaboration: Work with colleagues worldwide\nDocumentation: README files, wikis, and GitHub Pages\nIssues: Track bugs, ideas, and to-dos\nReleases: Tag specific versions for publications\nDOI Integration: Link with Zenodo for citations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#resources-and-help",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#resources-and-help",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Resources and Help",
+    "text": "Resources and Help\n\nLearning Resources:\n\nGitHub Docs (https://docs.github.com)\nPro Git Book (https://git-scm.com/book) (free online)\nGitHub Learning Lab (https://github.com/apps/github-learning-lab)\nQuarto + GitHub Pages (https://quarto.org/docs/publishing/github-pages.html)\n\n\n\nGetting Help:\n# Git help\ngit help &lt;command&gt;\ngit &lt;command&gt; --help\n\n# Quick reference\ngit help everyday"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-a-github-account",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-a-github-account",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Creating a GitHub Account",
+    "text": "Creating a GitHub Account\n\nSteps to Get Started:\n\nGo to github.com\nClick “Sign up”\nChoose a username (professional, memorable)\nAdd your university email\nVerify your account\nConsider GitHub Student Developer Pack:\n\nFree GitHub Pro while you’re a student\nAccess to development tools\nApply at education.github.com"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#basic-git-commands",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#basic-git-commands",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Basic Git Commands",
+    "text": "Basic Git Commands\n\nInitialize a Repository\n# Create a new repository\ngit init\n\n# Clone an existing repository\ngit clone https://github.com/username/repository.git\n\n\nTrack Changes\n# Check status\ngit status\n\n# Add files to staging\ngit add filename.txt        # Add specific file\ngit add .                   # Add all changes\n\n# Commit changes\ngit commit -m \"Descriptive message about changes\""
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#working-with-remotes",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#working-with-remotes",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Working with Remotes",
+    "text": "Working with Remotes\n# Add a remote repository\ngit remote add origin https://github.com/username/repo.git\n\n# View remotes\ngit remote -v\n\n# Push changes to GitHub\ngit push origin main\n\n# Pull changes from GitHub\ngit pull origin main\n\n# Fetch without merging\ngit fetch origin"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#branching-and-merging",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#branching-and-merging",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Branching and Merging",
+    "text": "Branching and Merging\n\n\n\n\n\ngitGraph\n    commit id: \"Initial commit\"\n    commit id: \"Add README\"\n    branch feature\n    checkout feature\n    commit id: \"New feature\"\n    commit id: \"Fix bug\"\n    checkout main\n    commit id: \"Update docs\"\n    merge feature\n    commit id: \"Continue work\"\n\n\n\n\n\n\n# Create and switch to new branch\ngit checkout -b feature-branch\n\n# Switch branches\ngit checkout main\n\n# Merge branch\ngit merge feature-branch"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#common-git-workflow",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#common-git-workflow",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Common Git Workflow",
+    "text": "Common Git Workflow\n\nDaily Development Cycle\n# 1. Start your day - update your local copy\ngit pull origin main\n\n# 2. Create a feature branch\ngit checkout -b new-feature\n\n# 3. Make changes and commit regularly\ngit add .\ngit commit -m \"Add new analysis function\"\n\n# 4. Push your branch\ngit push origin new-feature\n\n# 5. Create pull request on GitHub (via website)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#viewing-history",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#viewing-history",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Viewing History",
+    "text": "Viewing History\n# View commit history\ngit log\n\n# Prettier one-line format\ngit log --oneline\n\n# With graph\ngit log --graph --oneline --all\n\n# Show changes in commits\ngit log -p\n\n# Show last n commits\ngit log -3"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-pages",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-pages",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "GitHub Pages",
+    "text": "GitHub Pages\n\nHost Your Research Website for Free!\n\n\n\n\n\nflowchart LR\n    A[Quarto Documents] --&gt;|Render| B[HTML Files]\n    B --&gt;|git push| C[GitHub Repository]\n    C --&gt;|Automatic| D[GitHub Pages Website]\n    D --&gt; E[yourname.github.io/project]\n    \n    style A fill:#e3f2fd\n    style E fill:#c8e6c9\n\n\n\n\n\n\n\n\nSetup Steps:\n\nCreate repository\nPush your HTML files\nEnable Pages in repository settings\nYour site is live at https://username.github.io"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-pages-configuration",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-pages-configuration",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "GitHub Pages Configuration",
+    "text": "GitHub Pages Configuration\n\nIn your repository:\n\nGo to Settings → Pages\nSource: Deploy from a branch\nBranch: main (or gh-pages)\nFolder: / (root) or /docs\n\n\n\nFor Quarto projects:\n# In _quarto.yml\nproject:\n  type: website\n  output-dir: docs\n\npublish:\n  gh-pages:\n    branch: gh-pages\n# Publish with Quarto\nquarto publish gh-pages"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#best-practices",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#best-practices",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": "Best Practices",
+    "text": "Best Practices\n\nCommit Messages\n\nBe descriptive and concise\nUse present tense: “Add feature” not “Added feature”\nReference issues: “Fix bug #123”\n\n\n\nRepository Organization\nproject/\n├── README.md           # Project description\n├── data/              # Raw data (consider .gitignore)\n├── analysis/          # Analysis scripts\n├── results/           # Output files\n└── docs/              # Documentation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#gitignore-file",
+    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#gitignore-file",
+    "title": "Week 5 Computational Tools for Bioengineers",
+    "section": ".gitignore File",
+    "text": ".gitignore File\n\nExclude files from version control:\n# Create .gitignore file\ntouch .gitignore\n\n\nCommon patterns to exclude:\n# Data files\n*.fastq\n*.fasta\n*.bam\n*.vcf\ndata/raw/*\n\n# R files\n.Rhistory\n.RData\n.Rproj.user\n\n# Output files\nresults/temp/*\n*.log\n\n# System files\n.DS_Store"
   },
   {
     "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html",
@@ -670,6 +1034,181 @@
     "title": "Week 2 Computational Tools for Bioengineers",
     "section": "Types of data",
     "text": "Types of data\n\n\n\n\n\n\n\n\n\nCategorical\n\nQuantitative\n\n\n\nOrdinal\nNominal\nRatio\nInterval\n\n\nsmall, medium, large\napples, oranges, bananas\nkilograms, dollars, years\ntemperature, calendar year\n\n\nordered character\ncharacter\nnumeric\ninteger\n\n\n\n‘Factor’ is a special type of character variable that we will explore more later"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\ntheme_set(theme_minimal())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#goals-for-today",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#goals-for-today",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Goals for today",
+    "text": "Goals for today\n\nFinish advanced Unix\nWork with human chromosome 1 sequence data\nTidy Data\nR and RStudio"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#making-new-files",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#making-new-files",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Making new files",
+    "text": "Making new files\n\nMake new folders: mkdir\nMake new files: nano, touch\nRename files: mv\nMove files: mv\nCopy files: cp\nDelete files: rm\nDelete directories: rmdir\nExamining file length: wc\nReading files: cat\nLooking at beginning or end: head or tail"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#things-to-keep-in-mind",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#things-to-keep-in-mind",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Things to keep in mind",
+    "text": "Things to keep in mind\n\nThe shell trusts you\n\nIt will delete files you say to delete\nIt will override files if you name 2 things the same\n\nNaming conventions\n\nAvoid spaces\nDon’t start with a –\nStick to letters, numbers, . , -, and _\n\nUse appropriate file extensions in file names\n\nSome software expect files with certain extensions (.fasta, .txt, etc.)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-making-files-and-directories",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-making-files-and-directories",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Practice making files and directories",
+    "text": "Practice making files and directories\n\nMake a new directory called whatever you’d like.\nAdd a file named Practice.txt to the directory and add some text to it\nRead the contents of the file and get its length\nRename the file to Super_practice.txt\nMove the file to a new folder named Testing\nMake a copy of the file named Super_practice_copy.txt\nRead the contents of the file and get its length to make sure it’s the same as Super_practice.txt\nDelete the original Super_practice.txt"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#commands-for-reading-files",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#commands-for-reading-files",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Commands for Reading Files",
+    "text": "Commands for Reading Files\n\ncat = concatenate and display files\n\nShows entire file at once\nGood for small files\n\nless = view file page by page\n\nNavigate with space (forward), b (back), q (quit)\nSearch with /pattern\n\nmore = similar to less but simpler\n\nSpace to go forward, q to quit\n\nhead = display first 10 lines (default)\n\nhead -n 20 file.txt shows first 20 lines\n\ntail = display last 10 lines (default)\n\ntail -n 20 file.txt shows last 20 lines\ntail -f file.txt follows file as it grows (useful for logs)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#input-redirection",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#input-redirection",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Input Redirection",
+    "text": "Input Redirection\n\n&lt; = redirect input from a file\n\ncommand &lt; input.txt\nSends contents of file as input to command\n\n&lt;&lt; = here document (multi-line input)\n\nAllows you to provide multi-line input directly in the terminal\n\nExample uses:\n\nwc -l &lt; data.txt counts lines in data.txt\nsort &lt; names.txt sorts contents of names.txt"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#output-redirection",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#output-redirection",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Output Redirection",
+    "text": "Output Redirection\n\n&gt; = redirect output to a file (overwrites)\n\nls -l &gt; filelist.txt\nCreates new file or overwrites existing\n\n&gt;&gt; = append output to a file\n\necho \"new line\" &gt;&gt; existing.txt\nAdds to the end of existing file\n\n2&gt; = redirect error messages\n\ncommand 2&gt; errors.txt\nCaptures error messages separately\n\n&&gt; = redirect both output and errors\n\ncommand &&gt; all_output.txt"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#unix-three-standard-streams",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#unix-three-standard-streams",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Unix Three Standard Streams",
+    "text": "Unix Three Standard Streams\n\nstdin (0) = Standard Input\n\nWhere programs read input from\nDefault: keyboard\n\nstdout (1) = Standard Output\n\nWhere programs write normal output\nDefault: terminal screen\n\nstderr (2) = Standard Error\n\nWhere programs write error messages\nDefault: terminal screen (same as stdout)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data-streams",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#visualizing-data-streams",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Visualizing Data Streams",
+    "text": "Visualizing Data Streams\n# Every Unix program has these three streams\n         ┌──────────────┐\nstdin ───&gt;│              │───&gt; stdout\n    (0)  │   Program    │      (1)\n         │              │───&gt; stderr\n         └──────────────┘      (2)\n\nFile descriptor numbers: 0, 1, 2\nCan redirect each stream independently\nPrograms don’t know if streams are redirected\nThis abstraction is key to Unix philosophy"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basic-stream-redirection",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#basic-stream-redirection",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Basic Stream Redirection",
+    "text": "Basic Stream Redirection\n# Redirect stdout to file (equivalent ways)\n\nls -l &gt; files.txt\nls -l 1&gt; files.txt      # Explicitly using fd 1\n\n# Redirect stderr to file\n\nls /nonexistent 2&gt; errors.txt\n\n# Redirect both stdout and stderr to same file\n\nls -l /nonexistent &&gt; all_output.txt"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#bioinformatics-example",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#bioinformatics-example",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Bioinformatics Example",
+    "text": "Bioinformatics Example\nProcessing sequence data with stream control:\n# FASTQ processing pipeline with error handling\n\nzcat reads.fastq.gz 2&gt; unzip_errors.log | \nfastqc stdin 2&gt; qc_errors.log | \ntrimmomatic 2&gt; trim_errors.log | \nbowtie2 -x genome - 2&gt; alignment_stats.txt | \nsamtools sort 2&gt; sort_errors.log | \nsamtools index - 2&gt; index_errors.log\n\n# Check all error logs at once\n\ncat *_errors.log | grep -E \"ERROR|WARNING\""
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-are-pipes",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#what-are-pipes",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "What are Pipes?",
+    "text": "What are Pipes?\n\n| = the pipe operator\n\nTakes output from one command as input to another\nChains commands together\nNo intermediate files needed!\n\nBasic syntax:\n\ncommand1 | command2 | command3\n\nPower of Unix philosophy:\n\nSmall tools that do one thing well\nCombine them to do complex tasks"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#common-pipe-patterns",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#common-pipe-patterns",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Common Pipe Patterns",
+    "text": "Common Pipe Patterns\n\nCounting patterns:\n\ngrep \"pattern\" file.txt | wc -l\nCount lines matching a pattern\n\nSorting and uniqueness:\n\ncat file.txt | sort | uniq\nSort lines and remove duplicates\n\nFinding top/bottom items:\n\nsort data.txt | head -5\nGet top 5 after sorting\n\nFiltering and processing:\n\nls -l | grep \".txt\" | awk '{print $5, $9}'\nList txt files with sizes"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#advanced-pipe-examples",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#advanced-pipe-examples",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Advanced Pipe Examples",
+    "text": "Advanced Pipe Examples\n\nMulti-step data processing:\n\ncat data.csv | cut -d',' -f2 | sort | uniq -c | sort -rn\nExtract column 2, count unique values, sort by frequency\n\nComplex transformations:\n\nfind . -name \"*.txt\" | xargs wc -l | sort -n\nFind all txt files and sort by line count\n\nReal-time monitoring:\n\ntail -f logfile.txt | grep ERROR\nWatch log file for errors in real-time"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#tips-for-working-with-files-and-pipes",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#tips-for-working-with-files-and-pipes",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Tips for Working with Files and Pipes",
+    "text": "Tips for Working with Files and Pipes\n\nTest pipes step by step\n\nBuild complex pipes incrementally\nCheck output at each stage\n\nUse less for large files instead of cat\nRemember: &gt; overwrites, &gt;&gt; appends\nPipe efficiency:\n\nFilter early in the pipeline\nReduces data passed between commands\n\nSave intermediate results when debugging complex pipes # Unix Data Streams"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#human-chromosome-data",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#human-chromosome-data",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Human Chromosome Data",
+    "text": "Human Chromosome Data\n\nGenomic data files can be massive (human genome ~6 billion base pairs)\nFASTA format is standard for sequence data\nPerfect use case for Unix pipes and redirection\nLet’s work with human genome assembly version 38 (~3.1 GB)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#downloading-genomic-data",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#downloading-genomic-data",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Downloading Genomic Data",
+    "text": "Downloading Genomic Data\nDownload version 38 of the human genome from NCBI:\n\n# Using `wget` to download human genome\n\nwget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/\\\nGCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz\n\n# Or using `curl` and save with specific name\n\ncurl -o human_genome.fa.gz https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/\\\nGCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz\n\nwget and curl are both tools for downloading files\nThe backslash allows long URLs to span multiple lines\n.gz extension means the file is compressed"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#examining-large-files-efficiently",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#examining-large-files-efficiently",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Examining Large Files Efficiently",
+    "text": "Examining Large Files Efficiently\nDon’t use cat on huge files! Use these approaches:\n# Decompress and look at first 10 lines\n\ngunzip -c human_genome.fa.gz | head -10\n\n# Check file size before and after decompression\n\nls -lh human_genome.fa.gz\ngunzip human_genome.fa.gz\nls -lh human_genome.fa\n\n# Count sequences in FASTA file (lines starting with &gt;)\n\ngrep \"^&gt;\" human_genome.fa.gz | wc -l\n\n# View sequence headers only\n\ngrep \"^&gt;\" human_genome.fa.gz | less"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-a-subset-for-analysis",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#creating-a-subset-for-analysis",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Creating a Subset for Analysis",
+    "text": "Creating a Subset for Analysis\nMake a smaller working file for testing:\n# Extract first 1MB of sequence for testing\n\nhead -n 20000 human_genome.fa.gz &gt; human_genome_subset.fa\n\n# Or extract specific scaffold/contig by name\n\nawk '/^&gt;chr21:1000000-2000000/,/^&gt;/' human_genome.fa | \\\n  head -n -1 &gt; region_of_interest.fa\n\n# Create a random sample of sequences\n\ngrep \"^&gt;\" human_genome.fa | \\\n  shuf -n 10 | \\\n  while read header; do\n    grep -A 1000 \"$header\" human_genome.fa\n  done &gt; random_sample.fa"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#processing-fasta-files-with-pipes",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#processing-fasta-files-with-pipes",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Processing FASTA Files with Pipes",
+    "text": "Processing FASTA Files with Pipes\nExtract specific regions or sequences:\n# Extract just the sequence (no headers) and count bases\n\ngrep -v \"^&gt;\" human_genome.fa | tr -d '\\n' | wc -c\n\n# Count each type of nucleotide\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  fold -w1 | \\\n  sort | \\\n  uniq -c\n\n# Extract a specific gene region (lines 1000-2000)\n\nsed -n '1000,2000p' human_genome.fa &gt; gene_region.fa\n\ngrep -v inverts the match (excludes lines)\ntr -d '\\n' removes newlines\nfold -w1 puts each character on its own line"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#finding-patterns-in-genomic-data",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#finding-patterns-in-genomic-data",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Finding Patterns in Genomic Data",
+    "text": "Finding Patterns in Genomic Data\nSearch for specific sequences and motifs:\n# Find all instances of a restriction enzyme site (EcoRI: GAATTC)\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  grep -o \"GAATTC\" | \\\n  wc -l\n\n# Extract 100 bases around each EcoRI site\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  grep -oE \".{100}GAATTC.{100}\" &gt; ecori_contexts.txt\n\n# Find all start codons (ATG) and their positions\n\ngrep -v \"^&gt;\" human_genome.fa | \\\n  tr -d '\\n' | \\\n  grep -b -o \"ATG\" | \\\n  head -20"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#combining-downloads-with-processing",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#combining-downloads-with-processing",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Combining Downloads with Processing",
+    "text": "Combining Downloads with Processing\nStream processing without saving intermediate files:\n# Download, decompress, and process in one pipeline\ncurl -s https://url/to/genome.fa.gz | \\\n  gunzip -c | \\\n  grep -v \"^&gt;\" | \\\n  tr -d '\\n' | \\\n  cut -c1-1000000 &gt; first_megabase.txt\n\n# Download and immediately analyze GC content\nwget -O - https://url/to/genome.fa.gz | \\\n  gunzip -c | \\\n  grep -v \"^&gt;\" | \\\n  tr -d '\\n' | \\\n  tr 'ATGC' '0011' | \\\n  awk '{s+=gsub(/1/,\"\")} END {print \"GC%:\", s/length*100}'\n\n\nThe -O - flag tells wget to output to stdout\nThis approach saves disk space and time"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#key-takeaways",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#key-takeaways",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nReal bioinformatics often involves gigabytes of data - these Unix tools scale beautifully!\nNever load entire genome files into memory - use streaming\nCombine tools - each does one thing well\nTest on subsets first - extract small portions for development\nDocument your pipelines - save commands in scripts\nUse compression - work with .gz files directly when possible\nThink in streams - data flows through pipes without intermediate files"
+  },
+  {
+    "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-exercise-genomic-data-pipeline",
+    "href": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html#practice-exercise-genomic-data-pipeline",
+    "title": "Week 3 Computational Tools for Bioengineers",
+    "section": "Practice Exercise: Genomic Data Pipeline",
+    "text": "Practice Exercise: Genomic Data Pipeline\nBuild a complete analysis pipeline:\n\nDownload a bacterial genome (smaller, ~5 MB)\nCount the total number of genes (hint: count headers)\nCalculate the genome size in base pairs\nFind the 10 most common 6-base sequences\nExtract all genes with “ribosomal” in the header\nSave your pipeline as a shell script for reproducibility"
   },
   {
     "objectID": "Lecture_Folder/Week1_BioE_Comp_Tools_2025.html",

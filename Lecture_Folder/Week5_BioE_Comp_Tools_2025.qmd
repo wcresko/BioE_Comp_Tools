@@ -1,0 +1,1086 @@
+---
+title: "Week 5 Computational Tools for Bioengineers"
+author: "Bill Cresko"
+format: 
+  revealjs:
+    footer: BioE_Comp_Tools_2025 - Knight Campus 
+    transition: fade
+    transition-speed: slow
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(gt)
+library(readxl)
+theme_set(theme_minimal())
+```
+
+## Goals for today
+
+-   Using R Studio and Visual Studio Code (VSC) as script editors
+-   R and Quarto Markdown
+-   Vibe Coding with LLMs
+-   Git and GitHub
+
+## What is a Shell Script? {.smaller}
+
+-   Text file containing Unix commands
+-   Automates repetitive tasks
+-   Makes complex workflows reproducible
+-   Essential for bioinformatics pipelines
+-   Can include:
+    -   Variables and arrays
+    -   Conditionals (if/then/else)
+    -   Loops (for/while)
+    -   Functions
+    -   Command-line arguments
+
+## Creating Your First Script {.smaller}
+
+``` bash
+#!/bin/bash
+# This is a shebang - tells system which interpreter to use
+
+# This is a comment - documents your code
+echo "Hello, Bioengineering!"
+
+# Set a variable
+NAME="DNA Analysis"
+echo "Running $NAME"
+
+# Use command output as variable
+DATE=$(date +%Y-%m-%d)
+echo "Analysis date: $DATE"
+
+# Simple calculation
+COUNT=5
+DOUBLE=$((COUNT * 2))
+echo "Double of $COUNT is $DOUBLE"
+```
+
+Save as `first_script.sh` and run with `bash first_script.sh`
+
+## Making Scripts Executable {.smaller}
+
+``` bash
+# Check current permissions
+ls -l first_script.sh
+
+# Make executable (add execute permission)
+chmod +x first_script.sh
+
+# Now you can run it directly
+./first_script.sh
+```
+
+Best practice: Always use `chmod +x` for your scripts
+
+
+# R statistical programming language
+
+## Why use `R`? {.smaller}
+
+-   Good general scripting tool for statistics and mathematics
+-   Powerful and flexible and free
+-   Runs on all computer platforms
+-   New enhancements coming out all the time
+-   Superb data management & graphics capabilities
+-   Reproducibility - can keep your scripts to see exactly what was done
+-   You can write your own functions
+-   Lots of online help available
+-   Can use a nice GUI front end such as `Rstudio`
+-   Can embed your `R` analyses in dynamic, polished files using `Quarto Markdown`
+-   Quarto Markdown can be reused for websites, papers, books, presentations...
+
+## `R scripts` and `Quarto Markdown` {.smaller}
+
+-   Often we want to write scripts that can just be run - `R scripts`
+-   We can also embed code in Quarto Markdown files that provide more annotations
+-   This improves interpertability and reproducibility
+-   You can insert `R code chunks` into `Quarto Markdown` documents
+
+## `R script` basics {.smaller}
+
+-   A series of R commands that will be executed
+\
+
+-   Can add comments using hashtags `#`
+\
+
+-   Can have pipes (`|>`) to connect one step to the next
+\
+
+
+## BASICS of `R` {.flexbox .vcenter .smaller}
+
+-   Commands can be submitted through the terminal, console or scripts
+-   Notice on these slides I'm evaluating the code chunks and showing output
+-   Also notice that `R` follows the normal priority of mathematical evaluation
+
+\
+\
+
+```{r basic multiplication, echo=TRUE}
+4*4
+```
+
+```{r more multiplication, echo=TRUE}
+(4+3*2^2)
+```
+
+## Assigning Variables {.flexbox .vcenter}
+
+-   A better way to do this is to assign variables
+-   Variables are assigned values using the `<-` operator.
+-   Variable names must begin with a letter, but other than that, just about anything goes.
+-   Do keep in mind that `R` is case sensitive.
+
+## Assigning Variables {.flexbox .vcenter}
+
+```{r assigning variables, echo=TRUE, tidy=TRUE}
+
+x <- 2
+x*3
+y <- x * 3
+y-2
+
+```
+
+These do not work
+
+```{r eval=FALSE, echo=TRUE}
+3y <- 3
+3*y <- 3
+```
+
+## Arithmetic operations on functions {.smaller}
+
+-   Arithmetic operations can be performed easily on functions as well as numbers.
+-   Try the following, and then your own.
+
+```{r functions, eval = FALSE, echo = TRUE}
+x+2
+x^2
+log(x)
+```
+
+-   Note that the last of these - `log` - is a built in function of `R`, and therefore the object of the function needs to be put in parentheses
+-   These parentheses will be important, and we'll come back to them later when we add arguments after the object in the parentheses\
+-   The outcome of calculations can be assigned to new variables as well, and the results can be checked using the 'print' command
+
+## Arithmetic operations on functions {.smaller}
+
+```{r, echo=TRUE}
+y <- 67
+print(y)
+
+x <- 124
+z <- (x*y)^2
+print(z)
+```
+
+## STRINGS {.smaller}
+
+-   Variables and operations can be performed on characters as well
+-   Note that characters need to be set off by quotation marks to differentiate them from numbers
+-   The `c` stands for `concatenate`
+-   Note that we are using the same variable names as we did previously, which means that we're overwriting our previous assignment
+-   A good rule of thumb is to use new names for each variable, and make them short but still descriptive
+
+## STRINGS {.smaller}
+
+```{r, echo=TRUE}
+x <- "I Love"
+print (x)
+y <- "Bioengineering"
+print (y)
+z <- c(x,y)
+print (z)
+```
+
+## VECTORS {.smaller}
+
+-   In general `R` thinks in terms of vectors (a list of characters, factors or numerical values).
+-   It will benefit any `R` user to try to write programs with that in mind, as it will simplify most things.
+-   Vectors can be assigned directly using the `c()` function and then entering the exact values.
+
+## VECTORS {.smaller}
+
+```{r Example vectors, echo=TRUE}
+x <- c(2,3,4,2,1,2,4,5,10,8,9)
+print(x)
+```
+
+```{r Example vector multiplication, echo=TRUE}
+x <- c(2,3,4,2,1,2,4,5,10,8,9)
+y <- x^2
+print(x)
+print(y)
+```
+
+```{r Example vector plot, echo=TRUE}
+plot(x,y)
+```
+
+## Basic Statistics {.smaller}
+
+-   Many functions exist to operate on vectors.
+-   Combine these with your previous variable to see what happens.
+-   Also, try to find other functions (e.g. standard deviation).
+
+```{r, eval = FALSE, echo = TRUE}
+mean(x)
+median(x)
+var(x)
+log(x)
+ln(x)
+sqrt(x)
+sum(x)
+length(x)
+sample(x, replace = T)
+```
+
+-   Notice that the last function (`sample`) has an argument (`replace=T`)
+-   Arguments simply modify or direct the function in some way
+-   There are many arguments for each function, some of which are defaults
+
+## Getting Help {.smaller}
+
+-   Getting Help on any function is very easy - just type a question mark and the name of the function.
+-   There are functions for just about anything within `R` and it is easy enough to write your own functions if none already exist to do what you want to do.
+-   In general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters to send to the function.
+-   Help pages exist for all functions that, at a minimum, explain what parameters exist for the function.\
+-   Help can be accessed a few ways - try them :
+
+## Getting Help
+
+```{r, eval = FALSE, echo = TRUE}
+- help(mean)
+- ?mean
+- example(mean)
+- help.search("mean")
+- apropos("mean")
+- args(mean)
+```
+
+## Creating vectors {.smaller}
+
+-   Creating vector of new data by entering it by hand can be a drag
+-   However, it is also very easy to use functions such as `seq` and `sample`
+-   Try the examples below; can you figure out what the three arguments in the parentheses mean?
+-   Try varying the arguments to see what happens.
+-   Don't go too crazy with the last one or your computer might slow way down
+
+## Creating vectors {.smaller}
+
+```{r, echo = TRUE}
+seq_1 <- seq(0.0, 10.0, by = 0.1)
+print(seq_1)
+seq_2 <- seq(10.0, 0.0, by = -0.1)
+print(seq_2)
+```
+
+## Creating vectors {.smaller}
+
+```{r, echo = TRUE}
+seq_square <- (seq_2)*(seq_2)
+print(seq_square)
+```
+
+## Creating vectors {.smaller}
+
+```{r, echo = TRUE}
+seq_square_new <- (seq_2)^2
+print(seq_square_new)
+```
+
+## Types of vectors of data {.smaller}
+
+-   `int` stands for integers
+
+-   `dbl` stands for doubles, or real numbers
+
+-   `chr` stands for character vectors, or strings
+
+-   `dttm` stands for date-times (a date + a time)
+
+-   `lgl` stands for logical, vectors that contain only TRUE or FALSE
+
+-   `fctr` stands for factors, which R uses to represent categorical variables with fixed possible values
+
+-   `date` stands for dates
+
+<!-- -->
+
+-   Integer and double vectors are known collectively as numeric vectors.
+-   In `R` numbers are doubles by default.
+
+## Types of vectors of data {.smaller}
+
+-   Logical vectors can take only three possible values:
+    -   `FALSE`
+    -   `TRUE`
+    -   `NA` which is 'not available'.
+-   Integers have one special value: NA, while doubles have four:
+    -   `NA`
+    -   `NaN` which is 'not a number'
+    -   `Inf`
+    -   `-Inf`\## Reading in Data Frames in R {.smaller}
+-   A strength of `R` is being able to import data from an external source
+-   Create the same table that you did above in a spreadsheet like Excel
+-   Export it to comma separated and tab separated text files for importing into `R`.
+-   The first will read in a comma-delimited file, whereas the second is a tab-delimited
+-   In both cases the header and row.names arguments indicate that there is a header row and row label column
+-   Note that the name of the file by itself will have R look in the CWD, whereas a full path can also be used
+
+## Drawing samples from distributions {.smaller}
+
+-   Here is a way to create your own data sets that are random samples.
+-   Again, play around with the arguments in the parentheses to see what happens.
+
+## Drawing samples from distributions {.smaller}
+
+```{r Samples from distributions 1, out.width='100%', echo = TRUE}
+x <- rnorm (10000, 0, 10)
+y <- sample (1:10000, 10000, replace = T)
+xy <- cbind(x,y)
+plot(x,y) 
+```
+
+## Drawing samples from distributions {.smaller}
+
+```{r Samples from distributions 2, out.width='100%', echo = TRUE}
+x <- rnorm (10000, 0, 10)
+y <- sample (1:10000, 10000, replace = T)
+xy <- cbind(x,y)
+plot(xy)
+```
+
+## Drawing samples from distributions {.smaller}
+
+```{r Samples from distributions 3, out.width='100%', echo = TRUE}
+x <- rnorm (10000, 0, 10)
+y <- sample (1:10000, 10000, replace = T)
+xy <- cbind(x,y)
+hist(x)
+```
+
+## Drawing samples from distributions {.smaller}
+
+-   You’ve probably figured out that y from the last example is drawing numbers with equal probability.
+-   What if you want to draw from a distribution?
+-   Again, play around with the arguments in the parentheses to see what happens.
+
+## Drawing samples from distributions {out.width="50%"}
+
+```{r, out.width='100%', echo = TRUE}
+x <-rnorm(1000, 0, 100)
+hist(x, xlim = c(-500,500))
+curve(50000*dnorm(x, 0, 100), xlim = c(-500,500), add=TRUE, col='Red')
+```
+
+-   `dnorm()` generates the probability density, which can be plotted using the `curve()` function.
+-   Note that is curve is added to the plot using `add=TRUE`
+
+## Visualizing Data {.smaller}
+
+-   So far you've been visualizing just the list of output numbers
+-   Except for the last example where I snuck in a `hist` function.
+-   You can also visualize all of the variables that you've created using the `plot` function (as well as a number of more sophisticated plotting functions).
+-   Each of these is called a `high level` plotting function, which sets the stage
+-   `Low level` plotting functions will tweak the plots and make them beautiful
+
+## Visualizing Data {.smaller}
+
+-   What do you think that each of the arguments means for the plot function?
+-   A cool thing about `R` is that the options for the arguments make sense.
+-   Try adjusting an argument and see if it works
+-   Note- most people use the package `GGPlot2` for nice scientific graphics
+
+## Visualizing Data {.smaller}
+
+```{r, echo = TRUE}
+seq_1 <- seq(0.0, 10.0, by = 0.1) 
+plot (seq_1, xlab="space", ylab ="function of space", type = "p", col = "red")
+```
+
+## Putting plots in a single figure {.smaller}
+
+-   On the next slide
+-   The first line of the lower script tells R that you are going to create a composite figure that has two rows and two columns. Can you tell how?
+-   Now, modify the code to add two more variables and add one more row of two panels.
+
+```{r, echo=TRUE, outwidth="50%", out.height="20%"}
+seq_1 <- seq(0.0, 10.0, by = 0.1)
+seq_2 <- seq(10.0, 0.0, by = -0.1)
+```
+
+## Putting plots in a single figure {.smaller}
+
+```{r, echo=TRUE, outwidth="50%", out.height="50%"}
+par(mfrow=c(2,2))
+plot (seq_1, xlab="time", ylab ="p in population 1", type = "p", col = 'red')
+plot (seq_2, xlab="time", ylab ="p in population 2", type = "p", col = 'green')
+plot (seq_square, xlab="time", ylab ="p2 in population 2", type = "p", col = 'blue')
+plot (seq_square_new, xlab="time", ylab ="p in population 1", type = "l", col = 'yellow')
+```
+
+
+## Creating Data Frames in R {.smaller}
+
+-   As you have seen, in R you can generate your own random data set drawn from nearly any distribution very easily.
+-   Often we will want to use collected data.
+-   Now, let’s make a dummy dataset to get used to dealing with data frames
+-   Set up three variables (hydrogel_concentration, compression and conductivity) as vectors
+
+```{r, echo=TRUE}
+hydrogel_concentration <- factor(c("low", "high", "high", "high", "medium", "medium", "medium","low"))
+compression <- c(3.4, 3.4, 8.4, 3, 5.6, 8.1, 8.3, 4.5)
+conductivity <- c(0, 9.2, 3.8, 5, 5.6, 4.1, 7.1, 5.3)
+```
+
+-   Create a data frame where vectors become columns
+
+```{r, echo=TRUE}
+mydata <- data.frame(hydrogel_concentration, compression, conductivity)
+row.names(mydata) <- c("Sample_1", "Sample_2", "Sample_3", "Sample_4", 
+                       "Sample_5", "Sample_6", "Sample_7", "Sample_8")
+```
+
+-   Now you have a hand-made data frame with row names
+-   Take a look at it in the data section of RStudio
+
+## Reading in and Exporting Data Frames
+
+\
+
+```{r, eval = FALSE, echo = TRUE}
+YourFile <- read.table('yourfile.csv', header=T, row.names=1, sep=',')
+YourFile <- read.table('yourfile.txt', header=T, row.names=1, sep='\t')
+```
+
+\
+
+```{r, eval = FALSE, echo = TRUE}
+write.table(YourFile, "yourfile.csv", quote=F, row.names=T, sep=",")
+write.table(YourFile, "yourfile.txt", quote=F, row.names=T, sep="\t")
+```
+
+## Indexing in data frames
+
+-   Next up - indexing just a subset of the data
+-   This is a very important idea in R, that you can analyze just a subset of the data.
+-   This is analyzing only the data in the file you made that has the factor value 'mixed'.
+
+```{r, echo=TRUE, eval=FALSE}
+print (YourFile[,2])
+print (YourFile$variable)
+print (YourFile[2,])
+plot (YourFile$variable1, YourFile$variable2)
+```
+
+
+## Practice reading in transcriptomic data {.smaller}
+
+```{r, eval = FALSE, echo = TRUE}
+RNAseq_Data <- read.table('<name_of_file>', header=TRUE, sep=',')
+
+print (RNAseq_Data)
+head (RNAseq_Data)
+tail (RNAseq_Data)
+
+print (RNAseq_Data[,2])
+print (RNAseq_Data[1,])
+print (RNAseq_Data[1,2])
+print (RNAseq_Data$ENSGACG00000000010)
+print (RNAseq_Data$ENSGACG00000000010>45.0)
+```
+
+## Summary stats and figures {.smaller}
+
+```{r, eval = FALSE, echo = TRUE}
+summary1 <- summary(RNAseq_Data $ENSGACG00000000003)
+print (summary1)
+
+hist(RNAseq_Data $ENSGACG00000000003)
+boxplot(RNAseq_Data$ENSGACG00000000003)
+boxplot(RNAseq_Data$ENSGACG00000000003~RNAseq_Data$Population)
+plot(RNAseq_Data $ENSGACG00000000003, RNAseq_Data$ENSGACG00000000003)
+
+boxplot(RNAseq_Data $ENSGACG00000000003~RNAseq_Data$Treatment, 
+        col = "red", ylab = "Expression Level", xlab = "Treatment level", 
+        border ="orange", 
+        main = "Boxplot of variation in gene expression across microbiota treatments")
+```
+
+# BREAK
+
+------------------------------------------------------------------------
+
+# Markdown and Quarto Markdown
+
+## What is Markdown? {.smaller}
+
+- a very light weight but flexible editing language
+- allows the `rendering` of markdown text to a variety of different formats (pdf, html, web pages, powerpoint, etc....)
+- very simple and common across science and engineering
+- involves a `yaml` header (which stands for `yet another markdown language`)
+- similar to `html` but simpler
+
+## What is Quarto Markdown? {.smaller}
+
+Quarto `(https://quarto.org/)` provides a next-generation authoring framework for data science.
+
+-   `Quarto Markdown` is a powerful scientific and technical publishing system that extends the lightweight markup language Markdown for creating formatted text using a plain-text editor
+-   You can use `Quarto Markdown` files to save and execute code \*and\* generate high quality reports that can be shared with an audience.
+-   You can make html, pdf, docx, websites, slides, books, and more.
+
+When you save your document, the output will be in the format indicated in your YAML header. This could be an html document, Word document, pdf, website, book, etc.
+
+## Getting started {.smaller}
+
+-   Open a new Quarto Markdown document from RStudio
+
+-   You should see a document that is already populated with some example text and code
+
+## This is Quarto Markdown {.smaller}
+
+```{markdown, eval=F, echo=T}
+---
+title: "title"
+output: html_document
+---
+```
+
+- Note that `---` delineates the `yaml header`. 
+- This controls document-level settings and rendering.
+- There are a lot of options that you can put in the `yaml header`
+
+## This is Quarto Markdown {.smaller}
+
+```{markdown, eval=T, echo=T}
+# Header size 1
+
+## Header size 2
+
+I can write text and it will look normal!
+
+I can still run code!
+```
+
+
+## This is Quarto Markdown {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+# ```{r code_chunk_name option1 option 2}
+# x <- 5
+# print(x^2)
+# ```
+```
+
+-   By default, the code and output will print to your document
+-   Note the back tick marks - these delineate the code
+-   The {r} indicates this is r code
+
+## Navigating chunks {.smaller}
+
+-   Easy to run chunks - a few ways to do this
+-   Top right of each chunk - just run, run all above, etc.
+-   Cog wheel at the top of the Quarto Markdown document - run options
+-   Keyboard shortcuts
+
+## Chunk options {.smaller}
+
+-   `include = FALSE` prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.
+-   `echo = FALSE` prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.
+-   `message = FALSE` prevents messages that are generated by code from appearing in the finished file.
+-   `warning = FALSE` prevents warnings that are generated by code from appearing in the finished.
+-   `fig.cap = "..."` adds a caption to graphical results.
+-   `eval = FALSE` shows code, but doesn't run it
+-   `results = 'hide'` runs code, but doesn't show results
+-   `fig.height, fig.width` set the dimensions of plots
+-   `cache = TRUE` saves the results of a code chunk, can be helpful if a particular code chunk is intensive
+
+
+## Quarto Markdown formatting {.smaller}
+
+``` markdown
+*italic*
+**bold**
+$A = \pi \times r^{2}$
+```
+
+*italic*
+
+**bold**
+
+$A = \pi \times r^{2}$
+
+## Quarto Markdown lists {.smaller}
+
+``` markdown
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+```
+
+-   Item 1
+-   Item 2
+    -   Item 2a
+    -   Item 2b
+
+## Quarto Markdown lists {.smaller}
+
+``` markdown
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+```
+
+1.  Item 1
+2.  Item 2
+3.  Item 3
+    -   Item 3a
+    -   Item 3b
+
+
+
+## Typesetting Mathematics
+
+-   Since 'tex' is embedded in Quarto Markdown you can typeset mathematics easily using LaTeX (https://en.wikibooks.org/wiki/LaTeX)
+
+-   Essentially, just surround your mathematics in \$ symbols
+
+-   \$\$ centers the expressions
+
+## Typeset mathematics
+
+Poisson Sampling Equation
+
+```{r, eval=FALSE, echo=TRUE}
+$$\large Pr(Y=r) = \frac{e^{-\mu}\mu^r}{r!}$$
+```
+
+$$\large Pr(Y=r) = \frac{e^{-\mu}\mu^r}{r!}$$
+
+## Differential Equations {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+$$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
+```
+
+$$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
+
+
+## In-line versus fenced {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+This equation, $y=\frac{1}{2}$, is included inline
+```
+
+This equation, $y=\frac{1}{2}$, is included inline
+
+```{r, eval=FALSE, echo=TRUE}
+Whereas this equation, $$y=\frac{1}{2}$$, is put on a separate line
+```
+
+Whereas this equation $$y=\frac{1}{2}$$ is put on a separate line
+
+## Matrix formulations {.smaller}
+
+```{r, eval=FALSE, echo=TRUE}
+$$	\begin{matrix}
+		-2 & 1 & 0 & 0 & \cdots & 0  \\
+		1 & -2 & 1 & 0 & \cdots & 0  \\
+		0 & 1 & -2 & 1 & \cdots & 0  \\
+		0 & 0 & 1 & -2 & \ddots & \vdots \\
+		\vdots & \vdots & \vdots & \ddots & \ddots & 1  \\
+		0 & 0 & 0 & \cdots & 1 & -2
+	\end{matrix} $$
+```
+
+$$  \begin{matrix}
+        -2 & 1 & 0 & 0 & \cdots & 0  \\
+        1 & -2 & 1 & 0 & \cdots & 0  \\
+        0 & 1 & -2 & 1 & \cdots & 0  \\
+        0 & 0 & 1 & -2 & \ddots & \vdots \\
+        \vdots & \vdots & \vdots & \ddots & \ddots & 1  \\
+        0 & 0 & 0 & \cdots & 1 & -2
+    \end{matrix} $$
+    
+## Quarto Markdown is very flexible {.smaller}
+
+-   You can use Quarto templates and open as a new Quarto Markdown file
+-   Better yet there are extensions that add functionality
+    -   books
+    -   journal articles
+    -   slide shows (these slides!)
+    -   interactive exercises
+    
+## More on Quarto Markdown {.smaller}
+
+-   https://quarto.org/docs/authoring/
+-   https://quarto.org/docs/reference/
+-   Lots more fun stuff you can do!
+
+------------------------------------------------------------------------
+
+# `Vibe coding` with the ***help*** of Large Language Models (LLMs)
+
+------------------------------------------------------------------------
+
+# Git and GitHub
+
+## What is Git? {.smaller}
+
+-   **Git** is a distributed version control system
+-   Tracks changes in your code over time
+-   Allows collaboration with others
+-   Maintains complete history of all changes
+-   Essential tool for reproducible research
+-   Works locally on your computer
+
+## What is GitHub? {.smaller}
+
+-   **GitHub** is a web-based hosting service for Git repositories
+-   Provides cloud storage for your code
+-   Enables collaboration features:
+    -   Pull requests
+    -   Issues tracking
+    -   Project management
+-   Hosts documentation and websites (GitHub Pages)
+-   Free for public repositories
+
+## Version Control Benefits {.smaller}
+
+```{mermaid}
+%%| fig-width: 10
+%%| fig-height: 6
+flowchart LR
+    A[Working Directory] -->|git add| B[Staging Area]
+    B -->|git commit| C[Local Repository]
+    C -->|git push| D[Remote Repository]
+    D -->|git pull| A
+    
+    style A fill:#f9d71c
+    style B fill:#87ceeb
+    style C fill:#98fb98
+    style D fill:#ffa07a
+```
+
+-   **Track Changes**: Every modification is recorded
+-   **Collaboration**: Multiple people can work simultaneously
+-   **Backup**: Your code is safe in multiple places
+-   **Experimentation**: Try new things without breaking working code
+
+## Git Workflow Concept {.smaller}
+
+```{mermaid}
+%%| fig-width: 10
+%%| fig-height: 7
+graph TB
+    subgraph "Your Computer"
+        WD[Working Directory<br/>Your actual files]
+        SA[Staging Area<br/>Files ready to commit]
+        LR[Local Repository<br/>Committed changes]
+    end
+    
+    subgraph "GitHub"
+        RR[Remote Repository<br/>Shared with others]
+    end
+    
+    WD -->|git add| SA
+    SA -->|git commit| LR
+    LR -->|git push| RR
+    RR -->|git pull| WD
+    
+    style WD fill:#e1f5fe
+    style SA fill:#fff3e0
+    style LR fill:#f3e5f5
+    style RR fill:#e8f5e9
+```
+
+## Setting Up Git {.smaller}
+
+### 1. Install Git
+``` bash
+# Check if Git is installed
+git --version
+
+# Ubuntu/Debian
+sudo apt-get install git
+
+# macOS (with Homebrew)
+brew install git
+
+# Windows: Download from git-scm.com
+```
+
+### 2. Configure Git
+``` bash
+# Set your name and email
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Check your settings
+git config --list
+```
+# GitHub
+
+## GitHub for Scientific Collaboration {.smaller}
+
+### Perfect for Research Projects:
+
+-   **Reproducibility**: Complete history of analysis development
+-   **Collaboration**: Work with colleagues worldwide
+-   **Documentation**: README files, wikis, and GitHub Pages
+-   **Issues**: Track bugs, ideas, and to-dos
+-   **Releases**: Tag specific versions for publications
+-   **DOI Integration**: Link with Zenodo for citations
+
+## Resources and Help {.smaller}
+
+### Learning Resources:
+-   GitHub Docs `(https://docs.github.com)`
+-   Pro Git Book `(https://git-scm.com/book) (free online)`
+-   GitHub Learning Lab `(https://github.com/apps/github-learning-lab)`
+-   Quarto + GitHub Pages `(https://quarto.org/docs/publishing/github-pages.html)`
+
+### Getting Help:
+``` bash
+# Git help
+git help <command>
+git <command> --help
+
+# Quick reference
+git help everyday
+```
+
+## Creating a GitHub Account {.smaller}
+
+### Steps to Get Started:
+
+1. Go to [github.com](https://github.com)
+2. Click "Sign up"
+3. Choose a username (professional, memorable)
+4. Add your university email
+5. Verify your account
+6. Consider GitHub Student Developer Pack:
+   - Free GitHub Pro while you're a student
+   - Access to development tools
+   - Apply at [education.github.com](https://education.github.com)
+
+## Basic Git Commands {.smaller}
+
+### Initialize a Repository
+``` bash
+# Create a new repository
+git init
+
+# Clone an existing repository
+git clone https://github.com/username/repository.git
+```
+
+### Track Changes
+``` bash
+# Check status
+git status
+
+# Add files to staging
+git add filename.txt        # Add specific file
+git add .                   # Add all changes
+
+# Commit changes
+git commit -m "Descriptive message about changes"
+```
+
+## Working with Remotes {.smaller}
+
+``` bash
+# Add a remote repository
+git remote add origin https://github.com/username/repo.git
+
+# View remotes
+git remote -v
+
+# Push changes to GitHub
+git push origin main
+
+# Pull changes from GitHub
+git pull origin main
+
+# Fetch without merging
+git fetch origin
+```
+
+## Branching and Merging {.smaller}
+
+```{mermaid}
+%%| fig-width: 10
+%%| fig-height: 6
+gitGraph
+    commit id: "Initial commit"
+    commit id: "Add README"
+    branch feature
+    checkout feature
+    commit id: "New feature"
+    commit id: "Fix bug"
+    checkout main
+    commit id: "Update docs"
+    merge feature
+    commit id: "Continue work"
+```
+
+``` bash
+# Create and switch to new branch
+git checkout -b feature-branch
+
+# Switch branches
+git checkout main
+
+# Merge branch
+git merge feature-branch
+```
+
+## Common Git Workflow {.smaller}
+
+### Daily Development Cycle
+
+``` bash
+# 1. Start your day - update your local copy
+git pull origin main
+
+# 2. Create a feature branch
+git checkout -b new-feature
+
+# 3. Make changes and commit regularly
+git add .
+git commit -m "Add new analysis function"
+
+# 4. Push your branch
+git push origin new-feature
+
+# 5. Create pull request on GitHub (via website)
+```
+
+## Viewing History {.smaller}
+
+``` bash
+# View commit history
+git log
+
+# Prettier one-line format
+git log --oneline
+
+# With graph
+git log --graph --oneline --all
+
+# Show changes in commits
+git log -p
+
+# Show last n commits
+git log -3
+```
+
+## GitHub Pages {.smaller}
+
+### Host Your Research Website for Free!
+
+```{mermaid}
+%%| fig-width: 10
+%%| fig-height: 5
+flowchart LR
+    A[Quarto Documents] -->|Render| B[HTML Files]
+    B -->|git push| C[GitHub Repository]
+    C -->|Automatic| D[GitHub Pages Website]
+    D --> E[yourname.github.io/project]
+    
+    style A fill:#e3f2fd
+    style E fill:#c8e6c9
+```
+
+### Setup Steps:
+1. Create repository
+2. Push your HTML files
+3. Enable Pages in repository settings
+4. Your site is live at `https://username.github.io`
+
+## GitHub Pages Configuration {.smaller}
+
+### In your repository:
+
+1. Go to Settings → Pages
+2. Source: Deploy from a branch
+3. Branch: main (or gh-pages)
+4. Folder: / (root) or /docs
+
+### For Quarto projects:
+``` yaml
+# In _quarto.yml
+project:
+  type: website
+  output-dir: docs
+
+publish:
+  gh-pages:
+    branch: gh-pages
+```
+
+``` bash
+# Publish with Quarto
+quarto publish gh-pages
+```
+
+## Best Practices {.smaller}
+
+### Commit Messages
+-   Be descriptive and concise
+-   Use present tense: "Add feature" not "Added feature"
+-   Reference issues: "Fix bug #123"
+
+### Repository Organization
+``` 
+project/
+├── README.md           # Project description
+├── data/              # Raw data (consider .gitignore)
+├── analysis/          # Analysis scripts
+├── results/           # Output files
+└── docs/              # Documentation
+```
+
+## .gitignore File {.smaller}
+
+### Exclude files from version control:
+
+``` bash
+# Create .gitignore file
+touch .gitignore
+```
+
+### Common patterns to exclude:
+
+``` bash
+# Data files
+*.fastq
+*.fasta
+*.bam
+*.vcf
+data/raw/*
+
+# R files
+.Rhistory
+.RData
+.Rproj.user
+
+# Output files
+results/temp/*
+*.log
+
+# System files
+.DS_Store
+```
+
