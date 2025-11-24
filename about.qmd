@@ -7,6 +7,7 @@ title: "About"
 -   More detailed information can be found under the 'Syllabus' and 'Policies' links.
 -   The course schedule can be found under the 'Schedule' header.
 -   I will be posting the lectures after each class under the 'Lectures' header.
+-   And here's one more line
 
 ## Instructor information
 
