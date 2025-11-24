@@ -81,7 +81,7 @@
     "href": "Lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture_1\nLecture_2\nLecture_3\nLecture_4\nLecture_5"
+    "text": "Lecture_1\nLecture_2\nLecture_3\nLecture_4\nLecture_5\nLecture_6"
   },
   {
     "objectID": "Policies.html",
@@ -595,251 +595,6 @@
     "text": "Summary stats and figures\n\nsummary1 &lt;- summary(RNAseq_Data $ENSGACG00000000003)\nprint (summary1)\n\nhist(RNAseq_Data $ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003)\nboxplot(RNAseq_Data$ENSGACG00000000003~RNAseq_Data$Population)\nplot(RNAseq_Data $ENSGACG00000000003, RNAseq_Data$ENSGACG00000000003)\n\nboxplot(RNAseq_Data $ENSGACG00000000003~RNAseq_Data$Treatment, \n        col = \"red\", ylab = \"Expression Level\", xlab = \"Treatment level\", \n        border =\"orange\", \n        main = \"Boxplot of variation in gene expression across microbiota treatments\")"
   },
   {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-markdown",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-markdown",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "What is Markdown?",
-    "text": "What is Markdown?\n\na very light weight but flexible editing language\nallows the rendering of markdown text to a variety of different formats (pdf, html, web pages, powerpoint, etc….)\nvery simple and common across science and engineering\ninvolves a yaml header (which stands for yet another markdown language)\nsimilar to html but simpler"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-quarto-markdown",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-quarto-markdown",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "What is Quarto Markdown?",
-    "text": "What is Quarto Markdown?\nQuarto (https://quarto.org/) provides a next-generation authoring framework for data science.\n\nQuarto Markdown is a powerful scientific and technical publishing system that extends the lightweight markup language Markdown for creating formatted text using a plain-text editor\nYou can use Quarto Markdown files to save and execute code *and* generate high quality reports that can be shared with an audience.\nYou can make html, pdf, docx, websites, slides, books, and more.\n\nWhen you save your document, the output will be in the format indicated in your YAML header. This could be an html document, Word document, pdf, website, book, etc."
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#getting-started",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#getting-started",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Getting started",
-    "text": "Getting started\n\nOpen a new Quarto Markdown document from RStudio\nYou should see a document that is already populated with some example text and code"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "This is Quarto Markdown",
-    "text": "This is Quarto Markdown\n\n---\ntitle: \"title\"\noutput: html_document\n---\n\n\nNote that --- delineates the yaml header.\nThis controls document-level settings and rendering.\nThere are a lot of options that you can put in the yaml header"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-1",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-1",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "This is Quarto Markdown",
-    "text": "This is Quarto Markdown\n\n# Header size 1\n\n## Header size 2\n\nI can write text and it will look normal!\n\nI can still run code!"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-2",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-2",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "This is Quarto Markdown",
-    "text": "This is Quarto Markdown\n\n# ```{r code_chunk_name option1 option 2}\n# x &lt;- 5\n# print(x^2)\n# ```\n\n\nBy default, the code and output will print to your document\nNote the back tick marks - these delineate the code\nThe {r} indicates this is r code"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#navigating-chunks",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#navigating-chunks",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Navigating chunks",
-    "text": "Navigating chunks\n\nEasy to run chunks - a few ways to do this\nTop right of each chunk - just run, run all above, etc.\nCog wheel at the top of the Quarto Markdown document - run options\nKeyboard shortcuts"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#chunk-options",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#chunk-options",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Chunk options",
-    "text": "Chunk options\n\ninclude = FALSE prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.\necho = FALSE prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.\nmessage = FALSE prevents messages that are generated by code from appearing in the finished file.\nwarning = FALSE prevents warnings that are generated by code from appearing in the finished.\nfig.cap = \"...\" adds a caption to graphical results.\neval = FALSE shows code, but doesn’t run it\nresults = 'hide' runs code, but doesn’t show results\nfig.height, fig.width set the dimensions of plots\ncache = TRUE saves the results of a code chunk, can be helpful if a particular code chunk is intensive"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-formatting",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-formatting",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Quarto Markdown formatting",
-    "text": "Quarto Markdown formatting\n*italic*\n**bold**\n$A = \\pi \\times r^{2}$\nitalic\nbold\n\\(A = \\pi \\times r^{2}\\)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-lists",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-lists",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Quarto Markdown lists",
-    "text": "Quarto Markdown lists\n* Item 1\n* Item 2\n    + Item 2a\n    + Item 2b\n\nItem 1\nItem 2\n\nItem 2a\nItem 2b"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-lists-1",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-lists-1",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Quarto Markdown lists",
-    "text": "Quarto Markdown lists\n1. Item 1\n2. Item 2\n3. Item 3\n    + Item 3a\n    + Item 3b\n\nItem 1\nItem 2\nItem 3\n\nItem 3a\nItem 3b"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#typesetting-mathematics",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#typesetting-mathematics",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Typesetting Mathematics",
-    "text": "Typesetting Mathematics\n\nSince ‘tex’ is embedded in Quarto Markdown you can typeset mathematics easily using LaTeX (https://en.wikibooks.org/wiki/LaTeX)\nEssentially, just surround your mathematics in $ symbols\n$$ centers the expressions"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#typeset-mathematics",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#typeset-mathematics",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Typeset mathematics",
-    "text": "Typeset mathematics\nPoisson Sampling Equation\n\n$$\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}$$\n\n\\[\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}\\]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#differential-equations",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#differential-equations",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Differential Equations",
-    "text": "Differential Equations\n\n$$\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3$$\n\n\\[\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3\\]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#in-line-versus-fenced",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#in-line-versus-fenced",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "In-line versus fenced",
-    "text": "In-line versus fenced\n\nThis equation, $y=\\frac{1}{2}$, is included inline\n\nThis equation, \\(y=\\frac{1}{2}\\), is included inline\n\nWhereas this equation, $$y=\\frac{1}{2}$$, is put on a separate line\n\nWhereas this equation \\[y=\\frac{1}{2}\\] is put on a separate line"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#matrix-formulations",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#matrix-formulations",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Matrix formulations",
-    "text": "Matrix formulations\n\n$$  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} $$\n\n\\[  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} \\]"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-is-very-flexible",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#quarto-markdown-is-very-flexible",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Quarto Markdown is very flexible",
-    "text": "Quarto Markdown is very flexible\n\nYou can use Quarto templates and open as a new Quarto Markdown file\nBetter yet there are extensions that add functionality\n\nbooks\njournal articles\nslide shows (these slides!)\ninteractive exercises"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#more-on-quarto-markdown",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#more-on-quarto-markdown",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "More on Quarto Markdown",
-    "text": "More on Quarto Markdown\n\nhttps://quarto.org/docs/authoring/\nhttps://quarto.org/docs/reference/\nLots more fun stuff you can do!"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-git",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-git",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "What is Git?",
-    "text": "What is Git?\n\nGit is a distributed version control system\nTracks changes in your code over time\nAllows collaboration with others\nMaintains complete history of all changes\nEssential tool for reproducible research\nWorks locally on your computer"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-github",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#what-is-github",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "What is GitHub?",
-    "text": "What is GitHub?\n\nGitHub is a web-based hosting service for Git repositories\nProvides cloud storage for your code\nEnables collaboration features:\n\nPull requests\nIssues tracking\nProject management\n\nHosts documentation and websites (GitHub Pages)\nFree for public repositories"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#version-control-benefits",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#version-control-benefits",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Version Control Benefits",
-    "text": "Version Control Benefits\n\n\n\n\n\nflowchart LR\n    A[Working Directory] --&gt;|git add| B[Staging Area]\n    B --&gt;|git commit| C[Local Repository]\n    C --&gt;|git push| D[Remote Repository]\n    D --&gt;|git pull| A\n    \n    style A fill:#f9d71c\n    style B fill:#87ceeb\n    style C fill:#98fb98\n    style D fill:#ffa07a\n\n\n\n\n\n\n\nTrack Changes: Every modification is recorded\nCollaboration: Multiple people can work simultaneously\nBackup: Your code is safe in multiple places\nExperimentation: Try new things without breaking working code"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#git-workflow-concept",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#git-workflow-concept",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Git Workflow Concept",
-    "text": "Git Workflow Concept\n\n\n\n\n\ngraph TB\n    subgraph \"Your Computer\"\n        WD[Working Directory&lt;br/&gt;Your actual files]\n        SA[Staging Area&lt;br/&gt;Files ready to commit]\n        LR[Local Repository&lt;br/&gt;Committed changes]\n    end\n    \n    subgraph \"GitHub\"\n        RR[Remote Repository&lt;br/&gt;Shared with others]\n    end\n    \n    WD --&gt;|git add| SA\n    SA --&gt;|git commit| LR\n    LR --&gt;|git push| RR\n    RR --&gt;|git pull| WD\n    \n    style WD fill:#e1f5fe\n    style SA fill:#fff3e0\n    style LR fill:#f3e5f5\n    style RR fill:#e8f5e9"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#setting-up-git",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#setting-up-git",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Setting Up Git",
-    "text": "Setting Up Git\n\n1. Install Git\n# Check if Git is installed\ngit --version\n\n# Ubuntu/Debian\nsudo apt-get install git\n\n# macOS (with Homebrew)\nbrew install git\n\n# Windows: Download from git-scm.com\n\n\n2. Configure Git\n# Set your name and email\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\n\n# Check your settings\ngit config --list"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-for-scientific-collaboration",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-for-scientific-collaboration",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "GitHub for Scientific Collaboration",
-    "text": "GitHub for Scientific Collaboration\n\nPerfect for Research Projects:\n\nReproducibility: Complete history of analysis development\nCollaboration: Work with colleagues worldwide\nDocumentation: README files, wikis, and GitHub Pages\nIssues: Track bugs, ideas, and to-dos\nReleases: Tag specific versions for publications\nDOI Integration: Link with Zenodo for citations"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#resources-and-help",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#resources-and-help",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Resources and Help",
-    "text": "Resources and Help\n\nLearning Resources:\n\nGitHub Docs (https://docs.github.com)\nPro Git Book (https://git-scm.com/book) (free online)\nGitHub Learning Lab (https://github.com/apps/github-learning-lab)\nQuarto + GitHub Pages (https://quarto.org/docs/publishing/github-pages.html)\n\n\n\nGetting Help:\n# Git help\ngit help &lt;command&gt;\ngit &lt;command&gt; --help\n\n# Quick reference\ngit help everyday"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-a-github-account",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#creating-a-github-account",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Creating a GitHub Account",
-    "text": "Creating a GitHub Account\n\nSteps to Get Started:\n\nGo to github.com\nClick “Sign up”\nChoose a username (professional, memorable)\nAdd your university email\nVerify your account\nConsider GitHub Student Developer Pack:\n\nFree GitHub Pro while you’re a student\nAccess to development tools\nApply at education.github.com"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#basic-git-commands",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#basic-git-commands",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Basic Git Commands",
-    "text": "Basic Git Commands\n\nInitialize a Repository\n# Create a new repository\ngit init\n\n# Clone an existing repository\ngit clone https://github.com/username/repository.git\n\n\nTrack Changes\n# Check status\ngit status\n\n# Add files to staging\ngit add filename.txt        # Add specific file\ngit add .                   # Add all changes\n\n# Commit changes\ngit commit -m \"Descriptive message about changes\""
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#working-with-remotes",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#working-with-remotes",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Working with Remotes",
-    "text": "Working with Remotes\n# Add a remote repository\ngit remote add origin https://github.com/username/repo.git\n\n# View remotes\ngit remote -v\n\n# Push changes to GitHub\ngit push origin main\n\n# Pull changes from GitHub\ngit pull origin main\n\n# Fetch without merging\ngit fetch origin"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#branching-and-merging",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#branching-and-merging",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Branching and Merging",
-    "text": "Branching and Merging\n\n\n\n\n\ngitGraph\n    commit id: \"Initial commit\"\n    commit id: \"Add README\"\n    branch feature\n    checkout feature\n    commit id: \"New feature\"\n    commit id: \"Fix bug\"\n    checkout main\n    commit id: \"Update docs\"\n    merge feature\n    commit id: \"Continue work\"\n\n\n\n\n\n\n# Create and switch to new branch\ngit checkout -b feature-branch\n\n# Switch branches\ngit checkout main\n\n# Merge branch\ngit merge feature-branch"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#common-git-workflow",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#common-git-workflow",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Common Git Workflow",
-    "text": "Common Git Workflow\n\nDaily Development Cycle\n# 1. Start your day - update your local copy\ngit pull origin main\n\n# 2. Create a feature branch\ngit checkout -b new-feature\n\n# 3. Make changes and commit regularly\ngit add .\ngit commit -m \"Add new analysis function\"\n\n# 4. Push your branch\ngit push origin new-feature\n\n# 5. Create pull request on GitHub (via website)"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#viewing-history",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#viewing-history",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Viewing History",
-    "text": "Viewing History\n# View commit history\ngit log\n\n# Prettier one-line format\ngit log --oneline\n\n# With graph\ngit log --graph --oneline --all\n\n# Show changes in commits\ngit log -p\n\n# Show last n commits\ngit log -3"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-pages",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-pages",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "GitHub Pages",
-    "text": "GitHub Pages\n\nHost Your Research Website for Free!\n\n\n\n\n\nflowchart LR\n    A[Quarto Documents] --&gt;|Render| B[HTML Files]\n    B --&gt;|git push| C[GitHub Repository]\n    C --&gt;|Automatic| D[GitHub Pages Website]\n    D --&gt; E[yourname.github.io/project]\n    \n    style A fill:#e3f2fd\n    style E fill:#c8e6c9\n\n\n\n\n\n\n\n\nSetup Steps:\n\nCreate repository\nPush your HTML files\nEnable Pages in repository settings\nYour site is live at https://username.github.io"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-pages-configuration",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#github-pages-configuration",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "GitHub Pages Configuration",
-    "text": "GitHub Pages Configuration\n\nIn your repository:\n\nGo to Settings → Pages\nSource: Deploy from a branch\nBranch: main (or gh-pages)\nFolder: / (root) or /docs\n\n\n\nFor Quarto projects:\n# In _quarto.yml\nproject:\n  type: website\n  output-dir: docs\n\npublish:\n  gh-pages:\n    branch: gh-pages\n# Publish with Quarto\nquarto publish gh-pages"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#best-practices",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#best-practices",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": "Best Practices",
-    "text": "Best Practices\n\nCommit Messages\n\nBe descriptive and concise\nUse present tense: “Add feature” not “Added feature”\nReference issues: “Fix bug #123”\n\n\n\nRepository Organization\nproject/\n├── README.md           # Project description\n├── data/              # Raw data (consider .gitignore)\n├── analysis/          # Analysis scripts\n├── results/           # Output files\n└── docs/              # Documentation"
-  },
-  {
-    "objectID": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#gitignore-file",
-    "href": "Lecture_Folder/Week5_BioE_Comp_Tools_2025.html#gitignore-file",
-    "title": "Week 5 Computational Tools for Bioengineers",
-    "section": ".gitignore File",
-    "text": ".gitignore File\n\nExclude files from version control:\n# Create .gitignore file\ntouch .gitignore\n\n\nCommon patterns to exclude:\n# Data files\n*.fastq\n*.fasta\n*.bam\n*.vcf\ndata/raw/*\n\n# R files\n.Rhistory\n.RData\n.Rproj.user\n\n# Output files\nresults/temp/*\n*.log\n\n# System files\n.DS_Store"
-  },
-  {
     "objectID": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html",
     "href": "Lecture_Folder/Week2_BioE_Comp_Tools_2025.html",
     "title": "Week 2 Computational Tools for Bioengineers",
@@ -1034,6 +789,258 @@
     "title": "Week 2 Computational Tools for Bioengineers",
     "section": "Types of data",
     "text": "Types of data\n\n\n\n\n\n\n\n\n\nCategorical\n\nQuantitative\n\n\n\nOrdinal\nNominal\nRatio\nInterval\n\n\nsmall, medium, large\napples, oranges, bananas\nkilograms, dollars, years\ntemperature, calendar year\n\n\nordered character\ncharacter\nnumeric\ninteger\n\n\n\n‘Factor’ is a special type of character variable that we will explore more later"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.1     ✔ stringr   1.5.2\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gt)\nlibrary(readxl)\ntheme_set(theme_minimal())"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#goals-for-today",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#goals-for-today",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Goals for today",
+    "text": "Goals for today\n\nQuarto Markdown\nVibe Coding with LLMs\nGit and GitHub"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#what-is-markdown",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#what-is-markdown",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "What is Markdown?",
+    "text": "What is Markdown?\n\na very light weight but flexible editing language\nallows the rendering of markdown text to a variety of different formats (pdf, html, web pages, powerpoint, etc….)\nvery simple and common across science and engineering\ninvolves a yaml header (which stands for yet another markdown language)\nsimilar to html but simpler"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#what-is-quarto-markdown",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#what-is-quarto-markdown",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "What is Quarto Markdown?",
+    "text": "What is Quarto Markdown?\nQuarto (https://quarto.org/) provides a next-generation authoring framework for data science.\n\nQuarto Markdown is a powerful scientific and technical publishing system that extends the lightweight markup language Markdown for creating formatted text using a plain-text editor\nYou can use Quarto Markdown files to save and execute code *and* generate high quality reports that can be shared with an audience.\nYou can make html, pdf, docx, websites, slides, books, and more.\n\nWhen you save your document, the output will be in the format indicated in your YAML header. This could be an html document, Word document, pdf, website, book, etc."
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#getting-started",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#getting-started",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Getting started",
+    "text": "Getting started\n\nOpen a new Quarto Markdown document from RStudio\nYou should see a document that is already populated with some example text and code"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#this-is-quarto-markdown",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#this-is-quarto-markdown",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "This is Quarto Markdown",
+    "text": "This is Quarto Markdown\n\n---\ntitle: \"title\"\noutput: html_document\n---\n\n\nNote that --- delineates the yaml header.\nThis controls document-level settings and rendering.\nThere are a lot of options that you can put in the yaml header"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-1",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-1",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "This is Quarto Markdown",
+    "text": "This is Quarto Markdown\n\n# Header size 1\n\n## Header size 2\n\nI can write text and it will look normal!\n\nI can still run code!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-2",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#this-is-quarto-markdown-2",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "This is Quarto Markdown",
+    "text": "This is Quarto Markdown\n\n# ```{r code_chunk_name option1 option 2}\n# x &lt;- 5\n# print(x^2)\n# ```\n\n\nBy default, the code and output will print to your document\nNote the back tick marks - these delineate the code\nThe {r} indicates this is r code"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#navigating-chunks",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#navigating-chunks",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Navigating chunks",
+    "text": "Navigating chunks\n\nEasy to run chunks - a few ways to do this\nTop right of each chunk - just run, run all above, etc.\nCog wheel at the top of the Quarto Markdown document - run options\nKeyboard shortcuts"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#chunk-options",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#chunk-options",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Chunk options",
+    "text": "Chunk options\n\ninclude = FALSE prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.\necho = FALSE prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.\nmessage = FALSE prevents messages that are generated by code from appearing in the finished file.\nwarning = FALSE prevents warnings that are generated by code from appearing in the finished.\nfig.cap = \"...\" adds a caption to graphical results.\neval = FALSE shows code, but doesn’t run it\nresults = 'hide' runs code, but doesn’t show results\nfig.height, fig.width set the dimensions of plots\ncache = TRUE saves the results of a code chunk, can be helpful if a particular code chunk is intensive"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#quarto-markdown-formatting",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#quarto-markdown-formatting",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Quarto Markdown formatting",
+    "text": "Quarto Markdown formatting\n*italic*\n**bold**\n$A = \\pi \\times r^{2}$\nitalic\nbold\n\\(A = \\pi \\times r^{2}\\)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#quarto-markdown-lists",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#quarto-markdown-lists",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Quarto Markdown lists",
+    "text": "Quarto Markdown lists\n* Item 1\n* Item 2\n    + Item 2a\n    + Item 2b\n\nItem 1\nItem 2\n\nItem 2a\nItem 2b"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#quarto-markdown-lists-1",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#quarto-markdown-lists-1",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Quarto Markdown lists",
+    "text": "Quarto Markdown lists\n1. Item 1\n2. Item 2\n3. Item 3\n    + Item 3a\n    + Item 3b\n\nItem 1\nItem 2\nItem 3\n\nItem 3a\nItem 3b"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#typesetting-mathematics",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#typesetting-mathematics",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Typesetting Mathematics",
+    "text": "Typesetting Mathematics\n\nSince ‘tex’ is embedded in Quarto Markdown you can typeset mathematics easily using LaTeX (https://en.wikibooks.org/wiki/LaTeX)\nEssentially, just surround your mathematics in $ symbols\n$$ centers the expressions"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#typeset-mathematics",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#typeset-mathematics",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Typeset mathematics",
+    "text": "Typeset mathematics\nPoisson Sampling Equation\n\n$$\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}$$\n\n\\[\\large Pr(Y=r) = \\frac{e^{-\\mu}\\mu^r}{r!}\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#differential-equations",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#differential-equations",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Differential Equations",
+    "text": "Differential Equations\n\n$$\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3$$\n\n\\[\\iint xy^2\\,dx\\,dy =\\frac{1}{6}x^2y^3\\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#in-line-versus-fenced",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#in-line-versus-fenced",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "In-line versus fenced",
+    "text": "In-line versus fenced\n\nThis equation, $y=\\frac{1}{2}$, is included inline\n\nThis equation, \\(y=\\frac{1}{2}\\), is included inline\n\nWhereas this equation, $$y=\\frac{1}{2}$$, is put on a separate line\n\nWhereas this equation \\[y=\\frac{1}{2}\\] is put on a separate line"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#matrix-formulations",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#matrix-formulations",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Matrix formulations",
+    "text": "Matrix formulations\n\n$$  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} $$\n\n\\[  \\begin{matrix}\n        -2 & 1 & 0 & 0 & \\cdots & 0  \\\\\n        1 & -2 & 1 & 0 & \\cdots & 0  \\\\\n        0 & 1 & -2 & 1 & \\cdots & 0  \\\\\n        0 & 0 & 1 & -2 & \\ddots & \\vdots \\\\\n        \\vdots & \\vdots & \\vdots & \\ddots & \\ddots & 1  \\\\\n        0 & 0 & 0 & \\cdots & 1 & -2\n    \\end{matrix} \\]"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#quarto-markdown-is-very-flexible",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#quarto-markdown-is-very-flexible",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Quarto Markdown is very flexible",
+    "text": "Quarto Markdown is very flexible\n\nYou can use Quarto templates and open as a new Quarto Markdown file\nBetter yet there are extensions that add functionality\n\nbooks\njournal articles\nslide shows (these slides!)\ninteractive exercises"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#more-on-quarto-markdown",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#more-on-quarto-markdown",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "More on Quarto Markdown",
+    "text": "More on Quarto Markdown\n\nhttps://quarto.org/docs/authoring/\nhttps://quarto.org/docs/reference/\nLots more fun stuff you can do!"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#what-is-git",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#what-is-git",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "What is Git?",
+    "text": "What is Git?\n\nGit is a distributed version control system\nTracks changes in your code over time\nAllows collaboration with others\nMaintains complete history of all changes\nEssential tool for reproducible research\nWorks locally on your computer"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#what-is-github",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#what-is-github",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nGitHub is a web-based hosting service for Git repositories\nProvides cloud storage for your code\nEnables collaboration features:\n\nPull requests\nIssues tracking\nProject management\n\nHosts documentation and websites (GitHub Pages)\nFree for public repositories"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#git-workflow-concept",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#git-workflow-concept",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Git Workflow Concept",
+    "text": "Git Workflow Concept\n\n\n\n\n\nflowchart LR\n    A[Working Directory] --&gt;|git add| B[Staging Area]\n    B --&gt;|git commit| C[Local Repository]\n    C --&gt;|git push| D[Remote Repository]\n    D --&gt;|git pull| A\n    \n    style A fill:#f9d71c\n    style B fill:#87ceeb\n    style C fill:#98fb98\n    style D fill:#ffa07a\n\n\n\n\n\n\n\nTrack Changes: Every modification is recorded\nCollaboration: Multiple people can work simultaneously\nBackup: Your code is safe in multiple places\nExperimentation: Try new things without breaking working code"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#setting-up-git",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#setting-up-git",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Setting Up Git",
+    "text": "Setting Up Git\n\n1. Install Git\n# Check if Git is installed\ngit --version\n\n# Ubuntu/Debian\nsudo apt-get install git\n\n# macOS (with Homebrew)\nbrew install git\n\n# Windows: Download from git-scm.com\n\n\n2. Configure Git\n# Set your name and email\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\n\n# Check your settings\ngit config --list"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#github-for-scientific-collaboration",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#github-for-scientific-collaboration",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "GitHub for Scientific Collaboration",
+    "text": "GitHub for Scientific Collaboration\n\nPerfect for Research Projects:\n\nReproducibility: Complete history of analysis development\nCollaboration: Work with colleagues worldwide\nDocumentation: README files, wikis, and GitHub Pages\nIssues: Track bugs, ideas, and to-dos\nReleases: Tag specific versions for publications\nDOI Integration: Link with Zenodo for citations"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#resources-and-help",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#resources-and-help",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Resources and Help",
+    "text": "Resources and Help\n\nLearning Resources:\n\nGitHub Docs (https://docs.github.com)\nPro Git Book (https://git-scm.com/book) (free online)\nGitHub Learning Lab (https://github.com/apps/github-learning-lab)\nQuarto + GitHub Pages (https://quarto.org/docs/publishing/github-pages.html)\n\n\n\nGetting Help:\n# Git help\ngit help &lt;command&gt;\ngit &lt;command&gt; --help\n\n# Quick reference\ngit help everyday"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#creating-a-github-account",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#creating-a-github-account",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Creating a GitHub Account",
+    "text": "Creating a GitHub Account\n\nSteps to Get Started:\n\nGo to github.com\nClick “Sign up”\nChoose a username (professional, memorable)\nAdd your university email\nVerify your account\nConsider GitHub Student Developer Pack:\n\nFree GitHub Pro while you’re a student\nAccess to development tools\nApply at education.github.com"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#basic-git-commands",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#basic-git-commands",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Basic Git Commands",
+    "text": "Basic Git Commands\n\nInitialize a Repository\n# Create a new repository\ngit init\n\n# Clone an existing repository\ngit clone https://github.com/username/repository.git\n\n\nTrack Changes\n# Check status\ngit status\n\n# Add files to staging\ngit add filename.txt        # Add specific file\ngit add .                   # Add all changes\n\n# Commit changes\ngit commit -m \"Descriptive message about changes\""
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#working-with-remotes",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#working-with-remotes",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Working with Remotes",
+    "text": "Working with Remotes\n# Add a remote repository\ngit remote add origin https://github.com/username/repo.git\n\n# View remotes\ngit remote -v\n\n# Push changes to GitHub\ngit push origin main\n\n# Pull changes from GitHub\ngit pull origin main\n\n# Fetch without merging\ngit fetch origin"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#branching-and-merging",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#branching-and-merging",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Branching and Merging",
+    "text": "Branching and Merging\n\n\n\n\n\ngitGraph\n    commit id: \"Initial commit\"\n    commit id: \"Add README\"\n    branch feature\n    checkout feature\n    commit id: \"New feature\"\n    commit id: \"Fix bug\"\n    checkout main\n    commit id: \"Update docs\"\n    merge feature\n    commit id: \"Continue work\"\n\n\n\n\n\n\n# Create and switch to new branch\ngit checkout -b feature-branch\n\n# Switch branches\ngit checkout main\n\n# Merge branch\ngit merge feature-branch"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#common-git-workflow",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#common-git-workflow",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Common Git Workflow",
+    "text": "Common Git Workflow\n\nDaily Development Cycle\n# 1. Start your day - update your local copy\ngit pull origin main\n\n# 2. Create a feature branch\ngit checkout -b new-feature\n\n# 3. Make changes and commit regularly\ngit add .\ngit commit -m \"Add new analysis function\"\n\n# 4. Push your branch\ngit push origin new-feature\n\n# 5. Create pull request on GitHub (via website)"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#viewing-history",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#viewing-history",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Viewing History",
+    "text": "Viewing History\n# View commit history\ngit log\n\n# Prettier one-line format\ngit log --oneline\n\n# With graph\ngit log --graph --oneline --all\n\n# Show changes in commits\ngit log -p\n\n# Show last n commits\ngit log -3"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#github-pages",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#github-pages",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "GitHub Pages",
+    "text": "GitHub Pages\n\nHost Your Research Website for Free!\n\n\n\n\n\nflowchart LR\n    A[Quarto Documents] --&gt;|Render| B[HTML Files]\n    B --&gt;|git push| C[GitHub Repository]\n    C --&gt;|Automatic| D[GitHub Pages Website]\n    D --&gt; E[yourname.github.io/project]\n    \n    style A fill:#e3f2fd\n    style E fill:#c8e6c9\n\n\n\n\n\n\n\n\nSetup Steps:\n\nCreate repository\nPush your HTML files\nEnable Pages in repository settings\nYour site is live at https://username.github.io"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#github-pages-configuration",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#github-pages-configuration",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "GitHub Pages Configuration",
+    "text": "GitHub Pages Configuration\n\nIn your repository:\n\nGo to Settings → Pages\nSource: Deploy from a branch\nBranch: main (or gh-pages)\nFolder: / (root) or /docs\n\n\n\nFor Quarto projects:\n# In _quarto.yml\nproject:\n  type: website\n  output-dir: docs\n\npublish:\n  gh-pages:\n    branch: gh-pages\n# Publish with Quarto\nquarto publish gh-pages"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#best-practices",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#best-practices",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": "Best Practices",
+    "text": "Best Practices\n\nCommit Messages\n\nBe descriptive and concise\nUse present tense: “Add feature” not “Added feature”\nReference issues: “Fix bug #123”\n\n\n\nRepository Organization\nproject/\n├── README.md           # Project description\n├── data/              # Raw data (consider .gitignore)\n├── analysis/          # Analysis scripts\n├── results/           # Output files\n└── docs/              # Documentation"
+  },
+  {
+    "objectID": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#gitignore-file",
+    "href": "Lecture_Folder/Week6_BioE_Comp_Tools_2025.html#gitignore-file",
+    "title": "Week 6 Computational Tools for Bioengineers",
+    "section": ".gitignore File",
+    "text": ".gitignore File\n\nExclude files from version control:\n# Create .gitignore file\ntouch .gitignore\n\n\nCommon patterns to exclude:\n# Data files\n*.fastq\n*.fasta\n*.bam\n*.vcf\ndata/raw/*\n\n# R files\n.Rhistory\n.RData\n.Rproj.user\n\n# Output files\nresults/temp/*\n*.log\n\n# System files\n.DS_Store"
   },
   {
     "objectID": "Lecture_Folder/Week3_BioE_Comp_Tools_2025.html",
