@@ -13,3 +13,5 @@ title: "Lectures"
 [Lecture_5](Lecture_Folder/Week5_BioE_Comp_Tools_2025.qmd)
 
 [Lecture_6](Lecture_Folder/Week6_BioE_Comp_Tools_2025.qmd)
+
+[Lecture_7](Lecture_Folder/Week7_BioE_Comp_Tools_2025.qmd)

@@ -26,11 +26,13 @@ theme_set(theme_minimal())
 
 ## What is Markdown? {.smaller}
 
+::: {.incremental}
 -   a very light weight but flexible editing language
 -   allows the `rendering` of markdown text to a variety of different formats (pdf, html, web pages, powerpoint, etc....)
 -   very simple and common across science and engineering
 -   involves a `yaml` header (which stands for `yet another markdown language`)
 -   similar to `html` but simpler
+:::
 
 ## What is Quarto Markdown? {.smaller}
 
@@ -170,7 +172,7 @@ $$\large Pr(Y=r) = \frac{e^{-\mu}\mu^r}{r!}$$
 ## Differential Equations {.smaller}
 
 ```{r, eval=FALSE, echo=TRUE}
-$$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
+$$\int xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
 ```
 
 $$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
