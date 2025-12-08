@@ -20,6 +20,7 @@ theme_set(theme_minimal())
 
 -   Finish Git and GitHub
 -   Basics of working with Talapas
+-   <https://wcresko.github.io/computational_tools_book/>
 
 ## Git and GitHub
 
